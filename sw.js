@@ -1,94 +1,65 @@
-# Menja Fresh — Deployment Guide (www.menja-fresh.com)
+// Menja Fresh — Service Worker
+// Caches the app shell for offline use
 
----
+const CACHE_NAME = 'menja-v4';
+const SHELL = [
+  '/',
+  '/index.html',
+  '/manifest.json',
+];
 
-## Step 1 — Deploy to Vercel
+// Install: cache app shell
+self.addEventListener('install', event => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then(cache => cache.addAll(SHELL))
+  );
+  self.skipWaiting();
+});
 
-### Option A: Drag & Drop
-1. Go to https://vercel.com → sign up free
-2. Click **Add New → Project → Deploy without Git**
-3. Drag this entire `menja-deploy` folder
-4. Done — you get a temporary URL like `menja-fresh-xxx.vercel.app`
+// Activate: remove old caches
+self.addEventListener('activate', event => {
+  event.waitUntil(
+    caches.keys().then(keys =>
+      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
+    )
+  );
+  self.clients.claim();
+});
 
-### Option B: CLI
-```bash
-cd menja-deploy
-npx vercel --prod
-```
+// Fetch: network-first for API calls, cache-first for app shell
+self.addEventListener('fetch', event => {
+  const url = new URL(event.request.url);
 
----
+  // Always go network-first for Supabase API calls
+  if (url.hostname.includes('supabase.co') || url.hostname.includes('googleapis.com')) {
+    event.respondWith(
+      fetch(event.request).catch(() => new Response('{}', { headers: { 'Content-Type': 'application/json' } }))
+    );
+    return;
+  }
 
-## Step 2 — Connect your custom domain on Vercel
+  // Cache-first for fonts and static assets
+  if (url.hostname.includes('fonts.googleapis.com') || url.hostname.includes('fonts.gstatic.com')) {
+    event.respondWith(
+      caches.match(event.request).then(cached => cached || fetch(event.request).then(resp => {
+        const clone = resp.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+        return resp;
+      }))
+    );
+    return;
+  }
 
-1. In Vercel → open your project → **Settings → Domains**
-2. Click **Add Domain** → type `www.menja-fresh.com` → Add
-3. Also add `menja-fresh.com` (Vercel will redirect it to www automatically)
-4. Vercel gives you two DNS records to add — go to your domain registrar:
-
-**Add these at your domain registrar (GoDaddy / Namecheap / etc.):**
-
-| Type  | Name | Value |
-|-------|------|-------|
-| CNAME | www  | cname.vercel-dns.com |
-| A     | @    | 76.76.21.21 |
-
-5. Wait 5–30 minutes for DNS to propagate
-6. Vercel issues HTTPS automatically — no setup needed ✓
-
----
-
-## Step 3 — Update Supabase
-
-Go to **Supabase Dashboard → Authentication → URL Configuration**
-
-| Field | Value |
-|-------|-------|
-| **Site URL** | `https://www.menja-fresh.com` |
-| **Redirect URLs** | `https://www.menja-fresh.com` |
-|  | `https://www.menja-fresh.com/**` |
-|  | `https://menja-fresh.com` |
-|  | `https://menja-fresh.com/**` |
-
-Click **Save**.
-
----
-
-## Step 4 — Update Google OAuth
-
-In **Google Cloud Console → APIs & Services → Credentials → your OAuth Client**:
-
-**Authorized JavaScript origins — add:**
-```
-https://www.menja-fresh.com
-https://menja-fresh.com
-```
-
-**Authorized redirect URIs — make sure this exists:**
-```
-https://ekuynkjtcvpiueollznp.supabase.co/auth/v1/callback
-```
-
-Click **Save**.
-
----
-
-## Step 5 — Test
-
-1. Open https://www.menja-fresh.com
-2. Create account → confirm email → sign in ✓
-
----
-
-## Files in this folder
-
-| File | Purpose |
-|------|---------|
-| `index.html` | The full Menja Fresh app |
-| `manifest.json` | PWA — makes it installable on phones |
-| `sw.js` | Service worker — offline support |
-| `vercel.json` | Vercel routing config |
-| `netlify.toml` | Netlify config (backup) |
-| `_redirects` | Cloudflare Pages routing (backup) |
-| `supabase_setup.sql` | Run in Supabase SQL Editor if needed |
-| `icons/` | App icons (192px and 512px) |
-| `.well-known/assetlinks.json` | For Play Store TWA (fill in later) |
+  // For same-origin requests: try network, fall back to cache
+  if (url.origin === location.origin) {
+    event.respondWith(
+      fetch(event.request)
+        .then(resp => {
+          const clone = resp.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, clone));
+          return resp;
+        })
+        .catch(() => caches.match(event.request))
+    );
+  }
+});

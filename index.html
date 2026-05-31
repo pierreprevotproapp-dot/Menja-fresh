@@ -13,7 +13,19 @@
 <meta name="apple-mobile-web-app-title" content="Menja Fresh">
 <link rel="apple-touch-icon" href="/icons/icon-192.png">
 <meta name="description" content="Seasonal meal planning for your family. Discover dishes, plan your week, generate smart shopping lists.">
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script>
+// Load Supabase with CDN fallback — if one CDN is slow, try another
+(function(){
+  var s=document.createElement('script');
+  s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+  s.onerror=function(){
+    var s2=document.createElement('script');
+    s2.src='https://unpkg.com/@supabase/supabase-js@2';
+    document.head.appendChild(s2);
+  };
+  document.head.appendChild(s);
+})();
+</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
@@ -53,10 +65,36 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .auth-success{background:var(--accent-l);color:var(--accent);border-radius:var(--rsm);padding:10px 14px;font-size:13px;margin-bottom:12px;display:none}
 .auth-guest{text-align:center;margin-top:20px;font-size:13px;color:var(--text3)}
 .auth-guest a{color:var(--accent);cursor:pointer;font-weight:500}
-.plan-chips{display:flex;gap:8px;margin-bottom:16px}
-.plan-chip{flex:1;padding:8px 4px;border-radius:var(--rsm);border:1.5px solid var(--border2);text-align:center;cursor:pointer;font-size:11px;font-weight:600;color:var(--text2);transition:all .15s;background:var(--surface)}
-.plan-chip.active{border-color:var(--accent);background:var(--accent-l);color:var(--accent)}
-.plan-chip .pc-icon{font-size:18px;display:block;margin-bottom:3px}
+/* ── PAYWALL ────────────────────────────────────── */
+.paywall-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;align-items:flex-end;justify-content:center}
+.paywall-bg.open{display:flex}
+.paywall-sheet{background:var(--surface);border-radius:24px 24px 0 0;width:100%;max-width:480px;padding:0 0 36px;animation:su .25s ease;max-height:92vh;overflow-y:auto}
+.paywall-handle{width:36px;height:4px;background:var(--border2);border-radius:99px;margin:12px auto 0}
+.paywall-hero{text-align:center;padding:20px 24px 0}
+.paywall-emoji{font-size:44px;margin-bottom:8px;display:block}
+.paywall-title{font-family:var(--fd);font-size:22px;font-weight:500;color:var(--text);margin-bottom:6px}
+.paywall-sub{font-size:13px;color:var(--text2);line-height:1.5;margin-bottom:20px}
+.paywall-tiers{display:flex;gap:10px;padding:0 18px;margin-bottom:20px}
+.paywall-tier{flex:1;border-radius:var(--r);border:2px solid var(--border2);padding:14px 10px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:var(--surface)}
+.paywall-tier.selected{border-color:var(--accent);background:var(--accent-l)}
+.paywall-tier-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent2);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap}
+.paywall-tier-price{font-family:var(--fd);font-size:22px;font-weight:500;color:var(--text);line-height:1}
+.paywall-tier-period{font-size:10px;color:var(--text3);margin-top:2px}
+.paywall-tier-save{font-size:10px;font-weight:600;color:var(--accent);margin-top:3px}
+.paywall-features{padding:0 18px;margin-bottom:20px}
+.paywall-feature{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:.5px solid var(--border)}
+.paywall-feature:last-child{border-bottom:none}
+.paywall-feature-icon{font-size:18px;flex-shrink:0;width:24px;text-align:center}
+.paywall-feature-text{font-size:13px;color:var(--text);line-height:1.4;flex:1}
+.paywall-feature-text strong{color:var(--accent)}
+.paywall-cta{margin:0 18px;width:calc(100% - 36px);padding:16px;background:var(--nav);color:var(--nav-a);font-size:15px;font-weight:600;border:none;border-radius:99px;cursor:pointer;font-family:var(--fb);transition:all .2s}
+.paywall-cta:hover{transform:translateY(-1px);box-shadow:var(--shl)}
+.paywall-terms{text-align:center;font-size:10px;color:var(--text3);margin-top:10px;padding:0 18px;line-height:1.5}
+.paywall-close{display:block;text-align:center;padding:12px 18px 0;font-size:13px;color:var(--text3);cursor:pointer}
+/* ── LOCK BADGES ────────────────────────────────── */
+.tier-lock{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:3px 8px;border-radius:99px;cursor:pointer}
+.tier-lock.registered{background:#E8F5E9;color:#2E7D32}
+.tier-lock.premium{background:#FFF8E1;color:#F57F17}
 #app{display:none}
 .app-lang-bar{display:flex;align-items:center;gap:5px;padding:5px 16px 3px;background:var(--nav);justify-content:flex-end}
 .app-lang-btn{background:none;border:1.5px solid transparent;border-radius:6px;font-size:17px;cursor:pointer;padding:2px 4px;opacity:.6;transition:all .12s}
@@ -392,6 +430,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 #ghost img{width:100%;height:58px;object-fit:cover}
 #ghost .chip-name{padding:4px 5px 5px;font-size:10px;font-weight:500}
 .loading-screen{position:fixed;inset:0;background:var(--nav);display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:999;transition:opacity .4s}
+/* Hard fallback — if loading screen is still showing after 8s, hide it */
+@keyframes loadingTimeout{0%,87.5%{opacity:1;pointer-events:all}100%{opacity:0;pointer-events:none}}
+.loading-screen{animation:loadingTimeout 8s forwards}
 .loading-screen.hide{opacity:0;pointer-events:none}
 .loading-leaf{font-size:52px;margin-bottom:16px;animation:float 2s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
@@ -405,24 +446,61 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <div class="auth-hero"><span class="auth-hero-leaf">🌿</span><h1>Menja Fresh</h1><p id="auth-tagline">Seasonal · Whole foods · Plant-forward</p></div>
   <div class="auth-body">
     <div class="lang-row" id="auth-lang-row"></div>
-    <div class="auth-tabs"><div class="auth-tab active" id="tab-signin" onclick="switchAuthTab('signin')" data-t="signin">Sign in</div><div class="auth-tab" id="tab-signup" onclick="switchAuthTab('signup')" data-t="signup">Create account</div></div>
-    <div id="auth-error" class="auth-error"></div><div id="auth-success" class="auth-success"></div>
+    <div class="auth-tabs">
+      <div class="auth-tab active" id="tab-signin" onclick="switchAuthTab('signin')" data-t="signin">Sign in</div>
+      <div class="auth-tab" id="tab-signup" onclick="switchAuthTab('signup')" data-t="signup">Create account</div>
+    </div>
+    <div id="auth-error" class="auth-error"></div>
+    <div id="auth-success" class="auth-success"></div>
+
+    <!-- SIGN IN -->
     <div id="form-signin">
       <div class="field"><label data-t="email">Email</label><input type="email" id="si-email" autocomplete="email"></div>
       <div class="field"><label data-t="password">Password</label><input type="password" id="si-pass" autocomplete="current-password"></div>
       <button class="auth-submit" id="si-btn" onclick="signIn()" data-t="signinBtn">Sign in →</button>
-      <div class="social-btn" onclick="signInWithGoogle()"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg><span data-t="googleBtn">Continue with Google</span></div>
-      <div class="auth-guest"><span data-t="noAccount">No account?</span> <a onclick="continueAsGuest()" data-t="guestLink">Continue as guest →</a></div>
+      <div style="display:flex;align-items:center;gap:10px;margin:14px 0 10px"><div style="flex:1;height:1px;background:var(--border2)"></div><span style="font-size:11px;color:var(--text3)">or</span><div style="flex:1;height:1px;background:var(--border2)"></div></div>
+      <div class="social-btn" onclick="signInWithGoogle()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span data-t="googleBtn">Continue with Google</span>
+      </div>
+      <div class="social-btn" onclick="signInWithApple()" style="margin-top:8px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span data-t="appleBtn">Continue with Apple</span>
+      </div>
+      <div class="social-btn" onclick="signInWithFacebook()" style="margin-top:8px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        <span>Continue with Facebook</span>
+      </div>
+      <div class="auth-guest" style="margin-top:18px">
+        <a onclick="continueAsGuest()" style="display:block;text-align:center;padding:10px;border-radius:99px;border:1.5px solid var(--border2);font-size:13px;font-weight:500;color:var(--text2)">👤 <span data-t="guestLink">Continue as guest</span></a>
+        <div style="font-size:11px;color:var(--text3);text-align:center;margin-top:7px" data-t="guestLimits">Guest access: 4 dishes · 3-day planner</div>
+      </div>
     </div>
+
+    <!-- SIGN UP -->
     <div id="form-signup" style="display:none">
-      <div style="margin-bottom:14px"><div style="font-size:11px;font-weight:600;color:var(--text2);margin-bottom:6px;text-transform:uppercase;letter-spacing:.06em" data-t="choosePlan">Choose your plan</div>
-      <div class="plan-chips"><div class="plan-chip active" id="chip-guest" onclick="selectPlan('guest')"><span class="pc-icon">👤</span><span data-t="planGuest">Guest</span><br><span style="font-weight:400;color:var(--text3)" data-t="free">Free</span></div><div class="plan-chip" id="chip-member" onclick="selectPlan('member')"><span class="pc-icon">🌿</span><span data-t="planMember">Member</span><br><span style="font-weight:400;color:var(--text3)">€3.99/mo</span></div><div class="plan-chip" id="chip-premium" onclick="selectPlan('premium')"><span class="pc-icon">⭐</span><span data-t="planPremium">Premium</span><br><span style="font-weight:400;color:var(--text3)">€6.99/mo</span></div></div></div>
-      <div class="field-row"><div class="field"><label data-t="firstName">First name</label><input type="text" id="su-fname" autocomplete="given-name"></div><div class="field"><label data-t="lastName">Last name</label><input type="text" id="su-lname" autocomplete="family-name"></div></div>
+      <div style="background:var(--accent-l);border-radius:var(--rsm);padding:10px 13px;margin-bottom:16px;font-size:12px;color:var(--accent);line-height:1.5">
+        🎉 <strong data-t="freeAccountTitle">Free account</strong> — <span data-t="freeAccountDesc">10 dishes, full week planner, sync across devices</span>
+      </div>
+      <div class="field-row">
+        <div class="field"><label data-t="firstName">First name</label><input type="text" id="su-fname" autocomplete="given-name"></div>
+        <div class="field"><label data-t="lastName">Last name</label><input type="text" id="su-lname" autocomplete="family-name"></div>
+      </div>
       <div class="field"><label data-t="email">Email</label><input type="email" id="su-email" autocomplete="email"></div>
-      <div class="field"><label data-t="password">Password</label><input type="password" id="su-pass" autocomplete="new-password"></div>
-      <button class="auth-submit" id="su-btn" onclick="signUp()" data-t="createAccountBtn">Create account →</button>
-      <div class="social-btn" onclick="signInWithGoogle()"><svg viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg><span data-t="googleBtn">Continue with Google</span></div>
-      <div class="auth-guest"><span data-t="haveAccount">Already have an account?</span> <a onclick="switchAuthTab('signin')" data-t="signinLink">Sign in →</a></div>
+      <div class="field"><label data-t="password">Password</label><input type="password" id="su-pass" autocomplete="new-password" placeholder="Min. 8 characters"></div>
+      <button class="auth-submit" id="su-btn" onclick="signUp()" data-t="createAccountBtn">Create free account →</button>
+      <div style="display:flex;align-items:center;gap:10px;margin:14px 0 10px"><div style="flex:1;height:1px;background:var(--border2)"></div><span style="font-size:11px;color:var(--text3)">or</span><div style="flex:1;height:1px;background:var(--border2)"></div></div>
+      <div class="social-btn" onclick="signInWithGoogle()">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+        <span data-t="googleBtn">Sign up with Google</span>
+      </div>
+      <div class="social-btn" onclick="signInWithApple()" style="margin-top:8px">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
+        <span data-t="appleBtn">Sign up with Apple</span>
+      </div>
+      <div class="auth-guest" style="margin-top:14px;text-align:center;font-size:13px;color:var(--text3)">
+        <span data-t="haveAccount">Already have an account?</span> <a onclick="switchAuthTab('signin')" data-t="signinLink" style="color:var(--accent);font-weight:500">Sign in →</a>
+      </div>
     </div>
   </div>
 </div>
@@ -503,6 +581,41 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-hdr"><h1 data-t="recipes">Recipes</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
   <div class="screen" id="screen-today"><div class="th"><div class="th-date" id="th-date"></div><h1 id="th-greet"></h1></div><div class="tm" id="tm"></div></div>
 </div>
+<!-- PAYWALL MODAL -->
+<div class="paywall-bg" id="paywall-bg" onclick="event.target===this&&closePaywall()">
+  <div class="paywall-sheet">
+    <div class="paywall-handle"></div>
+    <div class="paywall-hero">
+      <span class="paywall-emoji">⭐</span>
+      <div class="paywall-title">Unlock Premium</div>
+      <div class="paywall-sub">Everything you need for stress-free, healthy family meals — every week.</div>
+    </div>
+    <div class="paywall-tiers">
+      <div class="paywall-tier selected" id="ptier-monthly" onclick="selectPaywallTier('monthly')">
+        <div class="paywall-tier-price">€4.99</div>
+        <div class="paywall-tier-period">per month</div>
+      </div>
+      <div class="paywall-tier" id="ptier-yearly" onclick="selectPaywallTier('yearly')">
+        <div class="paywall-tier-badge">BEST VALUE</div>
+        <div class="paywall-tier-price">€44</div>
+        <div class="paywall-tier-period">per year</div>
+        <div class="paywall-tier-save">Save 27%</div>
+      </div>
+    </div>
+    <div class="paywall-features">
+      <div class="paywall-feature"><span class="paywall-feature-icon">🍽️</span><div class="paywall-feature-text"><strong>All 12+ recipes</strong> — new dishes added every month</div></div>
+      <div class="paywall-feature"><span class="paywall-feature-icon">📅</span><div class="paywall-feature-text"><strong>Multi-week planner</strong> — plan up to 4 weeks ahead</div></div>
+      <div class="paywall-feature"><span class="paywall-feature-icon">🛒</span><div class="paywall-feature-text"><strong>Smart shopping list</strong> — auto-generated from your plan</div></div>
+      <div class="paywall-feature"><span class="paywall-feature-icon">📷</span><div class="paywall-feature-text"><strong>Fridge Scanner</strong> — AI identifies ingredients from a photo</div></div>
+      <div class="paywall-feature"><span class="paywall-feature-icon">☁️</span><div class="paywall-feature-text"><strong>Sync across all devices</strong> — family members share the plan</div></div>
+      <div class="paywall-feature"><span class="paywall-feature-icon">🌍</span><div class="paywall-feature-text"><strong>5 languages</strong> — EN, FR, ES, PT, DE</div></div>
+    </div>
+    <button class="paywall-cta" id="paywall-cta-btn" onclick="startCheckout()">Start Premium — €4.99/month</button>
+    <div class="paywall-terms">Cancel anytime. Secure payment. No hidden fees.</div>
+    <div class="paywall-close" onclick="closePaywall()">Maybe later</div>
+  </div>
+</div>
+
 <div id="ghost"><div id="ghost-img"></div><div class="chip-name" id="ghost-name"></div></div>
 <div class="picker-bg" id="picker-bg"><div class="picker-modal"><div class="p-handle"></div><div class="p-preview" id="p-preview"></div><div class="p-q" id="p-q"></div><div class="p-opts" id="p-opts"></div><div class="p-cancel" onclick="closePicker()" data-t="cancel">Cancel</div></div></div>
 <div class="picker-bg" id="rate-bg"><div class="rate-modal"><div class="p-handle"></div><div class="rate-preview" id="rate-preview"></div><div class="rate-body"><p data-t="rateQ">How did you enjoy this meal?</p><div class="rate-stars" id="rate-stars"></div><button class="rate-submit" onclick="submitRating()" data-t="saveRating">Save rating</button></div><div class="rate-skip" onclick="closeRating()" data-t="skip">Skip</div></div></div>
@@ -513,7 +626,17 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 // ═══════════════════════════════════════════════════
 const SUPA_URL='https://ekuynkjtcvpiueollznp.supabase.co';
 const SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrdXlua2p0Y3ZwaXVlb2xsem5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4ODExNTUsImV4cCI6MjA5NTQ1NzE1NX0.rOdHlfIyu6tjzhmexXs25maNVkckCmck-UEhSgM0rEY';
-const sb=supabase.createClient(SUPA_URL,SUPA_KEY);
+// Wait for supabase library to load before creating client
+let sb;
+function initSupabase(){
+  if(typeof supabase==='undefined'){
+    setTimeout(initSupabase,50);
+    return;
+  }
+  sb=supabase.createClient(SUPA_URL,SUPA_KEY);
+  init(); // Start app once Supabase is ready
+}
+// Don't call init() at bottom — initSupabase handles it
 
 // ── Anthropic API key (stored locally, never sent to our servers) ──
 function getApiKey(){try{return localStorage.getItem('menja_api_key')||'';}catch(e){return '';}}
@@ -537,7 +660,7 @@ en:{
   signinBtn:'Sign in →',createAccountBtn:'Create account →',googleBtn:'Continue with Google',
   noAccount:'No account?',guestLink:'Continue as guest →',
   haveAccount:'Already have an account?',signinLink:'Sign in →',
-  choosePlan:'Choose your plan',planGuest:'Guest',planMember:'Member',planPremium:'Premium',free:'Free',
+  choosePlan:'Choose your plan',
   firstName:'First name',lastName:'Last name',
   navFamily:'Family',navDiscover:'Discover',navPlanner:'Planner',navShop:'Shop',
   navFridge:'Fridge',navRecipes:'Recipes',navToday:'Today',
@@ -575,13 +698,14 @@ en:{
   allRecipes:'All recipes',loadingKitchen:'Loading your kitchen...',
   fridgeTitle:'📷 Fridge Scanner',fridgeSub:'Photo your fridge — AI spots ingredients and suggests recipes',fridgeUploadTitle:'Tap to take or upload a photo',fridgeUploadSub:'Fridge, pantry or any food photo works',fridgeScanBtn:'Find recipes from my fridge',fridgeScanning:'Scanning your fridge...',fridgeAnalysing:'Analysing ingredients...',fridgeGenerating:'Finding matching recipes...',fridgeFoundTitle:'Found in your fridge',fridgeMatchTitle:'Recipes you can make',fridgeAiTitle:'AI recipe idea',fridgeNeedAlso:'Also need:',fridgeCanMake:'You have all ingredients!',fridgeTryAnother:'Scan another photo',
   genericIntro:'Tap items to add to your list',inPantry:'In pantry',
+  appleBtn:'Continue with Apple',guestLimits:'Guest: 4 dishes · 3-day planner',freeAccountTitle:'Free account',freeAccountDesc:'10 dishes, full week planner, sync across devices',premiumCTA:"Unlock Premium",
 },
 fr:{
   signin:'Se connecter',signup:'Créer un compte',email:'E-mail',password:'Mot de passe',
   signinBtn:'Se connecter →',createAccountBtn:'Créer un compte →',googleBtn:'Continuer avec Google',
   noAccount:'Pas de compte ?',guestLink:'Continuer en invité →',
   haveAccount:'Déjà un compte ?',signinLink:'Se connecter →',
-  choosePlan:'Choisissez votre formule',planGuest:'Invité',planMember:'Membre',planPremium:'Premium',free:'Gratuit',
+  choosePlan:'Choisissez votre formule',
   firstName:'Prénom',lastName:'Nom',
   navFamily:'Famille',navDiscover:'Découvrir',navPlanner:'Planifier',navShop:'Courses',
   navFridge:'Frigo',navRecipes:'Recettes',navToday:"Aujourd'hui",
@@ -619,13 +743,14 @@ fr:{
   allRecipes:'Toutes les recettes',loadingKitchen:'Chargement de votre cuisine...',
   fridgeTitle:'📷 Scanner Frigo',fridgeSub:"Photo de votre frigo — l'IA détecte les ingrédients",fridgeUploadTitle:'Appuyez pour prendre ou télécharger une photo',fridgeUploadSub:'Photo de frigo ou placard',fridgeScanBtn:'Trouver des recettes depuis mon frigo',fridgeScanning:'Analyse du frigo...',fridgeAnalysing:'Identification des ingrédients...',fridgeGenerating:'Recherche de recettes...',fridgeFoundTitle:'Trouvé dans votre frigo',fridgeMatchTitle:'Recettes réalisables',fridgeAiTitle:'Idée IA',fridgeNeedAlso:'Il manque :',fridgeCanMake:'Vous avez tout !',fridgeTryAnother:'Scanner une autre photo',
   genericIntro:'Tapez pour ajouter à votre liste',inPantry:'En garde-manger',
+  appleBtn:'Continuer avec Apple',guestLimits:'Invité : 4 plats · Planificateur 3 jours',freeAccountTitle:'Compte gratuit',freeAccountDesc:'10 plats, planificateur semaine complète, synchronisation',premiumCTA:'Débloquer Premium',
 },
 es:{
   signin:'Iniciar sesión',signup:'Crear cuenta',email:'Correo',password:'Contraseña',
   signinBtn:'Iniciar sesión →',createAccountBtn:'Crear cuenta →',googleBtn:'Continuar con Google',
   noAccount:'¿Sin cuenta?',guestLink:'Continuar como invitado →',
   haveAccount:'¿Ya tienes cuenta?',signinLink:'Iniciar sesión →',
-  choosePlan:'Elige tu plan',planGuest:'Invitado',planMember:'Miembro',planPremium:'Premium',free:'Gratis',
+  choosePlan:'Elige tu plan',
   firstName:'Nombre',lastName:'Apellido',
   navFamily:'Familia',navDiscover:'Descubrir',navPlanner:'Planificar',navShop:'Compras',
   navFridge:'Nevera',navRecipes:'Recetas',navToday:'Hoy',
@@ -663,13 +788,14 @@ es:{
   allRecipes:'Todas las recetas',loadingKitchen:'Cargando tu cocina...',
   fridgeTitle:'📷 Escáner de Nevera',fridgeSub:'Foto de tu nevera — la IA detecta ingredientes y sugiere recetas',fridgeUploadTitle:'Toca para tomar o subir una foto',fridgeUploadSub:'Vale cualquier foto de nevera',fridgeScanBtn:'Encontrar recetas desde mi nevera',fridgeScanning:'Escaneando la nevera...',fridgeAnalysing:'Analizando ingredientes...',fridgeGenerating:'Buscando recetas...',fridgeFoundTitle:'Encontrado en tu nevera',fridgeMatchTitle:'Recetas que puedes hacer',fridgeAiTitle:'Receta IA',fridgeNeedAlso:'También necesitas:',fridgeCanMake:'¡Tienes todo!',fridgeTryAnother:'Escanear otra foto',
   genericIntro:'Toca para añadir a tu lista',inPantry:'En despensa',
+  appleBtn:'Continuar con Apple',guestLimits:'Invitado: 4 platos · Planificador 3 días',freeAccountTitle:'Cuenta gratuita',freeAccountDesc:'10 platos, planificador semana completa, sincronización',premiumCTA:'Desbloquear Premium',
 },
 pt:{
   signin:'Entrar',signup:'Criar conta',email:'E-mail',password:'Senha',
   signinBtn:'Entrar →',createAccountBtn:'Criar conta →',googleBtn:'Continuar com Google',
   noAccount:'Sem conta?',guestLink:'Continuar como convidado →',
   haveAccount:'Já tem conta?',signinLink:'Entrar →',
-  choosePlan:'Escolha seu plano',planGuest:'Convidado',planMember:'Membro',planPremium:'Premium',free:'Grátis',
+  choosePlan:'Escolha seu plano',
   firstName:'Nome',lastName:'Sobrenome',
   navFamily:'Família',navDiscover:'Descobrir',navPlanner:'Planejar',navShop:'Compras',
   navFridge:'Frigorífico',navRecipes:'Receitas',navToday:'Hoje',
@@ -707,13 +833,14 @@ pt:{
   allRecipes:'Todas as receitas',loadingKitchen:'Carregando sua cozinha...',
   fridgeTitle:'📷 Scanner do Frigorífico',fridgeSub:'Foto do seu frigorífico — IA deteta ingredientes e sugere receitas',fridgeUploadTitle:'Toque para tirar ou carregar foto',fridgeUploadSub:'Qualquer foto de frigorífico',fridgeScanBtn:'Encontrar receitas do meu frigorífico',fridgeScanning:'A analisar...',fridgeAnalysing:'A identificar ingredientes...',fridgeGenerating:'A procurar receitas...',fridgeFoundTitle:'Encontrado no seu frigorífico',fridgeMatchTitle:'Receitas que pode fazer',fridgeAiTitle:'Receita IA',fridgeNeedAlso:'Também precisa:',fridgeCanMake:'Tem tudo!',fridgeTryAnother:'Escanear outra foto',
   genericIntro:'Toque para adicionar à sua lista',inPantry:'Na despensa',
+  appleBtn:'Continuar com Apple',guestLimits:'Convidado: 4 pratos · Planificador 3 dias',freeAccountTitle:'Conta gratuita',freeAccountDesc:'10 pratos, planificador semana completa, sincronização',premiumCTA:'Desbloquear Premium',
 },
 de:{
   signin:'Anmelden',signup:'Konto erstellen',email:'E-Mail',password:'Passwort',
   signinBtn:'Anmelden →',createAccountBtn:'Konto erstellen →',googleBtn:'Mit Google fortfahren',
   noAccount:'Kein Konto?',guestLink:'Als Gast fortfahren →',
   haveAccount:'Bereits ein Konto?',signinLink:'Anmelden →',
-  choosePlan:'Plan wählen',planGuest:'Gast',planMember:'Mitglied',planPremium:'Premium',free:'Kostenlos',
+  choosePlan:'Plan wählen',
   firstName:'Vorname',lastName:'Nachname',
   navFamily:'Familie',navDiscover:'Entdecken',navPlanner:'Planer',navShop:'Einkauf',
   navFridge:'Kühlschrank',navRecipes:'Rezepte',navToday:'Heute',
@@ -751,6 +878,7 @@ de:{
   allRecipes:'Alle Rezepte',loadingKitchen:'Ihre Küche wird geladen...',
   fridgeTitle:'📷 Kühlschrank-Scanner',fridgeSub:'Foto des Kühlschranks — KI erkennt Zutaten und schlägt Rezepte vor',fridgeUploadTitle:'Tippen zum Aufnehmen oder Hochladen',fridgeUploadSub:'Kühlschrank- oder Speisekammerfotos',fridgeScanBtn:'Rezepte aus meinem Kühlschrank finden',fridgeScanning:'Wird gescannt...',fridgeAnalysing:'Zutaten werden erkannt...',fridgeGenerating:'Rezepte werden gesucht...',fridgeFoundTitle:'Im Kühlschrank gefunden',fridgeMatchTitle:'Mögliche Rezepte',fridgeAiTitle:'KI-Rezeptidee',fridgeNeedAlso:'Fehlt noch:',fridgeCanMake:'Sie haben alles!',fridgeTryAnother:'Anderes Foto scannen',
   genericIntro:'Tippen um zur Liste hinzuzufügen',inPantry:'In Speisekammer',
+  appleBtn:'Mit Apple fortfahren',guestLimits:'Gast: 4 Gerichte · 3-Tage-Planer',freeAccountTitle:'Kostenloses Konto',freeAccountDesc:'10 Gerichte, Wochenplaner, geräteübergreifende Sync',premiumCTA:'Premium freischalten',
 },
 };
 
@@ -1382,7 +1510,12 @@ function guestServings(slot){const a=slot.adults??state.family.adults;const c=sl
 function guestLabel(slot){const a=slot.adults??state.family.adults;const c=slot.children??state.family.children;const tot=a+c;return`${tot} ${tot===1?t('person'):t('people')}`;}
 function defaultGuests(){return{adults:state.family.adults,children:state.family.children};}
 function dateKey(d){return d.toISOString().slice(0,10);}
-function getDateRange(){const days=[];const today=new Date();today.setHours(0,0,0,0);for(let i=0;i<7;i++){const d=new Date(today);d.setDate(today.getDate()+i);days.push(d);}return days;}
+function getDateRange(){
+  const days=[];const today=new Date();today.setHours(0,0,0,0);
+  const count=plannerDays(); // 3 guest, 7 registered, 28 premium
+  for(let i=0;i<count;i++){const d=new Date(today);d.setDate(today.getDate()+i);days.push(d);}
+  return days;
+}
 function avgRating(id){const r=state.ratings[id];if(!r||!r.count)return 0;return r.score/r.count;}
 function starHTML(rating,size=14){return[1,2,3,4,5].map(i=>`<span style="font-size:${size}px;color:${i<=Math.round(rating)?'var(--gold)':'#ddd'}">★</span>`).join('');}
 
@@ -1394,6 +1527,47 @@ function loadLocal(){
   try{const s=localStorage.getItem('menja_state');if(s)Object.assign(state,JSON.parse(s));}catch(e){}
 }
 // ─── AUTH ────────────────────────────────────────
+// ══════════════════════════════════════════════
+// TIER SYSTEM
+// ══════════════════════════════════════════════
+// guest    → 4 dishes, 3-day planner
+// registered → 10 dishes, 7-day planner (free)
+// premium  → all dishes, multi-week planner, all features
+
+function getUserTier(){
+  if(isGuest)return'guest';
+  if(!currentUser||currentUser.id==='guest')return'guest';
+  const plan=currentUser.user_metadata?.plan||'registered';
+  return plan; // 'registered' or 'premium'
+}
+function canAccessDish(idx){
+  // idx is 0-based index in DISHES array
+  const tier=getUserTier();
+  if(tier==='premium')return true;
+  if(tier==='registered')return idx<10;
+  return idx<4; // guest
+}
+function plannerDays(){
+  const tier=getUserTier();
+  if(tier==='premium')return 28;
+  if(tier==='registered')return 7;
+  return 3; // guest
+}
+function requiresTier(needed){
+  // needed: 'registered' or 'premium'
+  const tier=getUserTier();
+  if(needed==='registered'&&tier==='guest')return true;
+  if(needed==='premium'&&tier!=='premium')return true;
+  return false;
+}
+function gateAction(needed,action){
+  if(requiresTier(needed)){openPaywall(needed);return false;}
+  action();return true;
+}
+
+// ══════════════════════════════════════════════
+// AUTH FUNCTIONS
+// ══════════════════════════════════════════════
 function switchAuthTab(tab){
   document.getElementById('tab-signin').classList.toggle('active',tab==='signin');
   document.getElementById('tab-signup').classList.toggle('active',tab==='signup');
@@ -1401,7 +1575,6 @@ function switchAuthTab(tab){
   document.getElementById('form-signup').style.display=tab==='signup'?'':'none';
   clearAuthMsg();
 }
-function selectPlan(plan){selectedPlan=plan;['guest','member','premium'].forEach(p=>document.getElementById('chip-'+p).classList.toggle('active',p===plan));}
 function showAuthError(msg){const el=document.getElementById('auth-error');el.textContent=msg;el.style.display='block';el.style.whiteSpace='pre-line';document.getElementById('auth-success').style.display='none';}
 function showAuthSuccess(msg){const el=document.getElementById('auth-success');el.textContent=msg;el.style.display='block';document.getElementById('auth-error').style.display='none';}
 function clearAuthMsg(){document.getElementById('auth-error').style.display='none';document.getElementById('auth-success').style.display='none';}
@@ -1410,7 +1583,7 @@ function isFileProt(){return location.protocol==='file:';}
 function fileProtMsg(){return'⚠️ Open via a server, not file://\n\nRun in terminal:\n  npx serve .\nThen open: http://localhost:3000\n\nOr use "Continue as guest" to test the app without sign-in.';}
 
 async function signIn(){
-  if(isFileProt()){showAuthError('Cannot sign in from file://. Run: npx serve . → open http://localhost:3000. Or use "Continue as guest" below.');return;}
+  if(isFileProt()){showAuthError('Cannot sign in from file://\nRun: npx serve . → http://localhost:3000\nOr use "Continue as guest" below.');return;}
   const email=document.getElementById('si-email').value.trim();
   const pass=document.getElementById('si-pass').value;
   if(!email||!pass){showAuthError('Please fill in all fields.');return;}
@@ -1419,13 +1592,10 @@ async function signIn(){
     const{error}=await sb.auth.signInWithPassword({email,password:pass});
     btn.disabled=false;btn.textContent=t('signinBtn');
     if(error)showAuthError(error.message);
-  }catch(e){
-    btn.disabled=false;btn.textContent=t('signinBtn');
-    showAuthError('Network error — run: npx serve . then open http://localhost:3000');
-  }
+  }catch(e){btn.disabled=false;btn.textContent=t('signinBtn');showAuthError('Network error. Check your connection.');}
 }
 async function signUp(){
-  if(isFileProt()){showAuthError('Cannot sign up from file://. Run: npx serve . → open http://localhost:3000. Or use "Continue as guest" below.');return;}
+  if(isFileProt()){showAuthError('Cannot sign up from file://\nRun: npx serve . → http://localhost:3000');return;}
   const fname=document.getElementById('su-fname').value.trim();
   const email=document.getElementById('su-email').value.trim();
   const pass=document.getElementById('su-pass').value;
@@ -1433,33 +1603,36 @@ async function signUp(){
   if(pass.length<8){showAuthError('Password must be at least 8 characters.');return;}
   const btn=document.getElementById('su-btn');btn.disabled=true;btn.textContent='...';
   try{
-    const origin=window.location.origin; // e.g. https://www.menja-fresh.com
     const{error}=await sb.auth.signUp({email,password:pass,options:{
-      emailRedirectTo: origin,
-      data:{first_name:fname,plan:selectedPlan,avatar:'🌿'}
+      emailRedirectTo:window.location.origin,
+      data:{first_name:fname,last_name:document.getElementById('su-lname').value.trim(),plan:'registered',avatar:'🌿'}
     }});
     btn.disabled=false;btn.textContent=t('createAccountBtn');
-    if(error){
-      const msg=error.message||'';
-      if(msg==='Failed to fetch'||msg.includes('fetch'))showAuthError('Network error — run: npx serve . then open http://localhost:3000');
-      else showAuthError(msg);
-    }else showAuthSuccess('Account created! Check your email to confirm, then sign in.');
-  }catch(e){
-    btn.disabled=false;btn.textContent=t('createAccountBtn');
-    showAuthError('Network error — run: npx serve . then open http://localhost:3000');
-  }
+    if(error)showAuthError(error.message==='Failed to fetch'?'Network error. Check your connection.':error.message);
+    else showAuthSuccess('✅ Account created! Check your email to confirm, then sign in.');
+  }catch(e){btn.disabled=false;btn.textContent=t('createAccountBtn');showAuthError('Network error. Check your connection.');}
 }
 async function signInWithGoogle(){
-  if(isFileProt()){showAuthError('Cannot use Google sign-in from file://. Run: npx serve . → open http://localhost:3000.');return;}
-  const redirectTo=window.location.href.split('?')[0].split('#')[0];
-  try{
-    const{error}=await sb.auth.signInWithOAuth({provider:'google',options:{redirectTo}});
-    if(error)showAuthError(error.message);
-  }catch(e){showAuthError('Network error — run: npx serve . then open http://localhost:3000');}
+  if(isFileProt()){showAuthError('Google sign-in needs a web server.\nRun: npx serve . → http://localhost:3000');return;}
+  const redirectTo=window.location.origin;
+  try{const{error}=await sb.auth.signInWithOAuth({provider:'google',options:{redirectTo,queryParams:{access_type:'offline',prompt:'consent'}}});if(error)showAuthError(error.message);}
+  catch(e){showAuthError('Network error.');}
+}
+async function signInWithApple(){
+  if(isFileProt()){showAuthError('Apple sign-in needs a web server.');return;}
+  const redirectTo=window.location.origin;
+  try{const{error}=await sb.auth.signInWithOAuth({provider:'apple',options:{redirectTo}});if(error)showAuthError(error.message);}
+  catch(e){showAuthError('Apple sign-in not configured yet. Set up in Supabase → Auth → Providers → Apple.');}
+}
+async function signInWithFacebook(){
+  if(isFileProt()){showAuthError('Facebook sign-in needs a web server.');return;}
+  const redirectTo=window.location.origin;
+  try{const{error}=await sb.auth.signInWithOAuth({provider:'facebook',options:{redirectTo}});if(error)showAuthError(error.message);}
+  catch(e){showAuthError('Facebook sign-in not configured yet. Set up in Supabase → Auth → Providers → Facebook.');}
 }
 function continueAsGuest(){
   isGuest=true;loadLocal();hideLoading();
-  showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤'}});
+  showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤',plan:'guest'}});
 }
 async function signOut(){
   isGuest=false;
@@ -1467,6 +1640,60 @@ async function signOut(){
   if(currentUser&&currentUser.id!=='guest')await sb.auth.signOut();
   state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{}};
   showAuth();
+}
+
+// ══════════════════════════════════════════════
+// PAYWALL FUNCTIONS
+// ══════════════════════════════════════════════
+let paywallTier='monthly';
+function openPaywall(reason){
+  paywallTier='monthly';
+  document.getElementById('ptier-monthly').classList.add('selected');
+  document.getElementById('ptier-yearly').classList.remove('selected');
+  document.getElementById('paywall-cta-btn').textContent='Start Premium — €4.99/month';
+  // Customise message based on what triggered it
+  const titles={
+    'registered':"Create a Free Account",
+    'premium':"Unlock Premium",
+    'dish':"You've reached the dish limit",
+    'planner':"Extend your planner",
+  };
+  const hero=document.querySelector('.paywall-hero .paywall-title');
+  if(hero&&titles[reason])hero.textContent=titles[reason]||"Unlock Premium";
+  document.getElementById('paywall-bg').classList.add('open');
+}
+function closePaywall(){document.getElementById('paywall-bg').classList.remove('open');}
+function selectPaywallTier(tier){
+  paywallTier=tier;
+  document.getElementById('ptier-monthly').classList.toggle('selected',tier==='monthly');
+  document.getElementById('ptier-yearly').classList.toggle('selected',tier==='yearly');
+  const btn=document.getElementById('paywall-cta-btn');
+  btn.textContent=tier==='yearly'?'Start Premium — €44/year':'Start Premium — €4.99/month';
+}
+function startCheckout(){
+  // Redirect to Stripe payment page — replace URL with your actual Stripe link
+  const urls={
+    monthly:'https://buy.stripe.com/YOUR_MONTHLY_LINK',
+    yearly:'https://buy.stripe.com/YOUR_YEARLY_LINK',
+  };
+  const url=urls[paywallTier];
+  if(url.includes('YOUR_')){
+    // Not set up yet — show instructions
+    showPaywallSetupInfo();
+    return;
+  }
+  window.open(url,'_blank');
+}
+function showPaywallSetupInfo(){
+  const sheet=document.querySelector('.paywall-sheet');
+  const existing=document.getElementById('paywall-setup-note');
+  if(existing)return;
+  const note=document.createElement('div');
+  note.id='paywall-setup-note';
+  note.style.cssText='margin:0 18px;background:#FFF8E1;border-radius:var(--rsm);padding:12px 14px;font-size:12px;color:#856404;line-height:1.6;border:.5px solid #F0E68C';
+  note.innerHTML='<strong>Payment not set up yet.</strong><br>To accept payments, create a <a href="https://stripe.com" target="_blank" style="color:var(--accent)">Stripe account</a>, create two payment links (monthly €4.99 and yearly €44), and replace the URLs in the <code>startCheckout()</code> function in the app code.';
+  const cta=document.getElementById('paywall-cta-btn');
+  cta.parentNode.insertBefore(note,cta);
 }
 
 // ─── SUPABASE LOAD/SAVE ──────────────────────────
@@ -1970,7 +2197,24 @@ function continueSwiping(){state.discoverPaused=false;save();document.getElement
 function dStart(e){drag=true;const p=e.touches?e.touches[0]:e;sx=p.clientX;sy=p.clientY;cx=0;document.getElementById('dish-card').classList.add('swiping');}
 function dMove(e){if(!drag)return;const p=e.touches?e.touches[0]:e;cx=p.clientX-sx;const cy=p.clientY-sy;const c=document.getElementById('dish-card');c.style.transform=`translateX(${cx}px) translateY(${cy*.2}px) rotate(${cx*.08}deg)`;const ratio=Math.abs(cx)/THRESH;if(cx<0){document.getElementById('lbl-no').style.opacity=Math.min(ratio,1);document.getElementById('lbl-yes').style.opacity=0;}else{document.getElementById('lbl-yes').style.opacity=Math.min(ratio,1);document.getElementById('lbl-no').style.opacity=0;}}
 function dEnd(){if(!drag)return;drag=false;const c=document.getElementById('dish-card');c.classList.remove('swiping');if(Math.abs(cx)>THRESH)swipeCard(cx>0?'right':'left');else{c.style.transform='';document.getElementById('lbl-no').style.opacity=0;document.getElementById('lbl-yes').style.opacity=0;}}
-function swipeCard(dir){const rem=remaining();if(!rem.length)return;const dish=rem[0];document.getElementById('dish-card').classList.add(dir==='left'?'fly-l':'fly-r');if(dir==='right')state.liked.push(dish.id);else state.disliked.push(dish.id);save();rebuildShopping();updateBadge();setTimeout(renderDish,340);}
+function swipeCard(dir){
+  const rem=remaining();if(!rem.length)return;
+  const dish=rem[0];
+  // Check if liking this dish would exceed the tier limit
+  if(dir==='right'){
+    const tier=getUserTier();
+    const limit=tier==='guest'?4:tier==='registered'?10:999;
+    if(state.liked.length>=limit){
+      document.getElementById('dish-card').style.transform='';
+      if(tier==='guest')openPaywall('registered');
+      else openPaywall('premium');
+      return;
+    }
+  }
+  document.getElementById('dish-card').classList.add(dir==='left'?'fly-l':'fly-r');
+  if(dir==='right')state.liked.push(dish.id);else state.disliked.push(dish.id);
+  save();rebuildShopping();updateBadge();setTimeout(renderDish,340);
+}
 
 // ═══════════════════════════════════════════════════
 // PLANNER
@@ -2206,7 +2450,13 @@ function openRecipeFromToday(dishId){
 // ═══════════════════════════════════════════════════
 // CORE APP
 // ═══════════════════════════════════════════════════
-function hideLoading(){const el=document.getElementById('loading');if(!el)return;el.classList.add('hide');setTimeout(()=>el.style.display='none',500);}
+function hideLoading(){
+  const el=document.getElementById('loading');
+  if(!el)return;
+  el.style.animation='none'; // cancel CSS timeout
+  el.classList.add('hide');
+  setTimeout(()=>{el.style.display='none';},500);
+}
 function showAuth(){document.getElementById('auth-screen').classList.add('active');document.getElementById('app').style.display='none';}
 function showApp(user){
   document.getElementById('auth-screen').classList.remove('active');
@@ -2215,7 +2465,14 @@ function showApp(user){
   const meta=user.user_metadata||{};
   document.getElementById('user-avatar').textContent=meta.avatar||'🌿';
   document.getElementById('user-name').textContent=meta.first_name||user.email?.split('@')[0]||'Friend';
-  document.getElementById('user-plan').textContent=isGuest?'Guest mode':`${((meta.plan||'guest').charAt(0).toUpperCase()+(meta.plan||'guest').slice(1))} plan`;
+  const tier=getUserTier();
+  const tierLabels={guest:'Guest · 4 dishes',registered:'Free account · 10 dishes',premium:'⭐ Premium'};
+  document.getElementById('user-plan').textContent=tierLabels[tier]||tier;
+  // Show upgrade prompt for non-premium
+  if(tier!=='premium'&&!isGuest){
+    document.getElementById('user-plan').style.cursor='pointer';
+    document.getElementById('user-plan').onclick=()=>openPaywall('premium');
+  }
   applyLang();renderLangBars();renderFamily();initDiscover();rebuildShopping();updateBadge();
 }
 
@@ -2223,46 +2480,77 @@ function showApp(user){
 // INIT
 // ═══════════════════════════════════════════════════
 async function init(){
-  // Load language preference
+  // ── Load language ──────────────────────────────────────────
   try{const saved=localStorage.getItem('menja_lang');if(saved&&TR[saved])lang=saved;}catch(e){}
   applyLang();
   renderLangBars();
   document.getElementById('loading-sub').textContent=t('loadingKitchen');
 
-  // Detect file:// protocol — Supabase cannot work, show clear guidance
+  // ── Register auth listener FIRST (before any async calls) ──
+  // This ensures OAuth callbacks and email confirmations always work
+  sb.auth.onAuthStateChange(async(event,session)=>{
+    if(event==='SIGNED_IN'&&session){
+      clearTimeout(window._safetyTimer);
+      await loadUserData(session.user);
+      hideLoading();
+      showApp(session.user);
+    }else if(event==='SIGNED_OUT'){
+      state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{}};
+      showAuth();
+    }
+  });
+
+  // ── file:// fallback ───────────────────────────────────────
   if(isFileProt()){
     hideLoading();showAuth();
-    showAuthError('Opening as a local file — sign-in needs a web server.\n\nIn your terminal run:\n  npx serve .\nThen open: http://localhost:3000\n\nOr tap "Continue as guest" below to use the app now.');
+    showAuthError('Opening as a local file.\nSign-in needs a web server: npx serve . → http://localhost:3000\n\nOr tap "Continue as guest" below.');
     return;
   }
 
-  // If URL contains #access_token (email confirmation callback),
-  // give Supabase JS time to exchange the token before we check session.
-  // onAuthStateChange will fire with SIGNED_IN once exchange completes.
-  const hasAuthHash=window.location.hash&&window.location.hash.includes('access_token');
-  const safetyTimer=setTimeout(()=>{hideLoading();showAuth();},hasAuthHash?6000:3000);
+  // ── Safety timer — never hang forever ──────────────────────
+  // If Supabase doesn't respond in 4s, show auth screen anyway
+  window._safetyTimer=setTimeout(()=>{
+    console.warn('Supabase timeout — showing auth screen');
+    hideLoading();
+    showAuth();
+  },4000);
+
+  // ── Check existing session ─────────────────────────────────
   try{
     const{data:{session},error}=await sb.auth.getSession();
-    clearTimeout(safetyTimer);
-    if(error||!session){
-      if(hasAuthHash){
-        // Token in URL — onAuthStateChange will handle sign-in, just show loading
+    clearTimeout(window._safetyTimer);
+
+    if(session&&session.user){
+      // Valid session found — load data and show app
+      await loadUserData(session.user);
+      hideLoading();
+      showApp(session.user);
+      return;
+    }
+
+    // No session — check for saved guest
+    try{
+      const g=localStorage.getItem('menja_guest');
+      if(g&&JSON.parse(g).isGuest){
+        isGuest=true;loadLocal();hideLoading();
+        showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤',plan:'guest'}});
         return;
       }
-      // Check for saved guest session
-      try{const g=localStorage.getItem('menja_guest');if(g&&JSON.parse(g).isGuest){isGuest=true;loadLocal();hideLoading();showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤'}});return;}}catch(e){}
-      hideLoading();showAuth();return;
-    }
-    await loadUserData(session.user);hideLoading();showApp(session.user);
-  }catch(e){clearTimeout(safetyTimer);hideLoading();showAuth();}
+    }catch(e){}
 
-  sb.auth.onAuthStateChange(async(event,session)=>{
-    if(event==='SIGNED_IN'&&session){await loadUserData(session.user);showApp(session.user);}
-    else if(event==='SIGNED_OUT'){state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{}};showAuth();}
-  });
+    // No session, no guest — show auth
+    hideLoading();showAuth();
+
+  }catch(e){
+    // Network error or Supabase unreachable
+    clearTimeout(window._safetyTimer);
+    console.warn('Supabase getSession error:',e);
+    hideLoading();showAuth();
+  }
 }
 
-init();
+// init() is called by initSupabase() once the library loads
+initSupabase();
 </script>
 
 <script>
