@@ -65,33 +65,81 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .auth-success{background:var(--accent-l);color:var(--accent);border-radius:var(--rsm);padding:10px 14px;font-size:13px;margin-bottom:12px;display:none}
 .auth-guest{text-align:center;margin-top:20px;font-size:13px;color:var(--text3)}
 .auth-guest a{color:var(--accent);cursor:pointer;font-weight:500}
-/* ── PAYWALL ────────────────────────────────────── */
-.paywall-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;align-items:flex-end;justify-content:center}
-.paywall-bg.open{display:flex}
-.paywall-sheet{background:var(--surface);border-radius:24px 24px 0 0;width:100%;max-width:480px;padding:0 0 36px;animation:su .25s ease;max-height:92vh;overflow-y:auto}
-.paywall-handle{width:36px;height:4px;background:var(--border2);border-radius:99px;margin:12px auto 0}
-.paywall-hero{text-align:center;padding:20px 24px 0}
-.paywall-emoji{font-size:44px;margin-bottom:8px;display:block}
-.paywall-title{font-family:var(--fd);font-size:22px;font-weight:500;color:var(--text);margin-bottom:6px}
-.paywall-sub{font-size:13px;color:var(--text2);line-height:1.5;margin-bottom:20px}
-.paywall-tiers{display:flex;gap:10px;padding:0 18px;margin-bottom:20px}
-.paywall-tier{flex:1;border-radius:var(--r);border:2px solid var(--border2);padding:14px 10px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:var(--surface)}
-.paywall-tier.selected{border-color:var(--accent);background:var(--accent-l)}
-.paywall-tier-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent2);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap}
-.paywall-tier-price{font-family:var(--fd);font-size:22px;font-weight:500;color:var(--text);line-height:1}
-.paywall-tier-period{font-size:10px;color:var(--text3);margin-top:2px}
-.paywall-tier-save{font-size:10px;font-weight:600;color:var(--accent);margin-top:3px}
-.paywall-features{padding:0 18px;margin-bottom:20px}
-.paywall-feature{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:.5px solid var(--border)}
-.paywall-feature:last-child{border-bottom:none}
-.paywall-feature-icon{font-size:18px;flex-shrink:0;width:24px;text-align:center}
-.paywall-feature-text{font-size:13px;color:var(--text);line-height:1.4;flex:1}
-.paywall-feature-text strong{color:var(--accent)}
-.paywall-cta{margin:0 18px;width:calc(100% - 36px);padding:16px;background:var(--nav);color:var(--nav-a);font-size:15px;font-weight:600;border:none;border-radius:99px;cursor:pointer;font-family:var(--fb);transition:all .2s}
-.paywall-cta:hover{transform:translateY(-1px);box-shadow:var(--shl)}
-.paywall-terms{text-align:center;font-size:10px;color:var(--text3);margin-top:10px;padding:0 18px;line-height:1.5}
-.paywall-close{display:block;text-align:center;padding:12px 18px 0;font-size:13px;color:var(--text3);cursor:pointer}
-/* ── LOCK BADGES ────────────────────────────────── */
+/* ── UPGRADE BUTTON IN HEADER ───────────────────── */
+.upgrade-btn{background:var(--nav-a);color:var(--nav);font-size:10px;font-weight:700;padding:5px 11px;border-radius:99px;border:none;cursor:pointer;letter-spacing:.02em;transition:all .15s;flex-shrink:0}
+.upgrade-btn:hover{background:#fff}
+/* ── LIMIT POPUP (bottom sheet) ──────────────────── */
+.limit-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:600;align-items:flex-end;justify-content:center}
+.limit-bg.open{display:flex}
+.limit-sheet{background:var(--nav);border-radius:24px 24px 0 0;width:100%;max-width:480px;padding:0 0 28px;animation:su .25s ease}
+.limit-handle{width:36px;height:4px;background:rgba(255,255,255,.15);border-radius:99px;margin:12px auto 0}
+.limit-icon{text-align:center;padding:16px 16px 6px;font-size:32px}
+.limit-title{font-family:var(--fd);font-size:17px;font-weight:500;color:#fff;text-align:center;padding:0 16px 4px}
+.limit-reason{font-size:12px;color:var(--nav-t);text-align:center;padding:0 20px 14px;line-height:1.5}
+.limit-cards{display:flex;flex-direction:column;gap:8px;padding:0 14px}
+.limit-card{border-radius:12px;padding:11px 13px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:10px;cursor:pointer;transition:background .15s}
+.limit-card:hover{background:rgba(255,255,255,.05)}
+.limit-card.hl{border-color:rgba(126,200,122,.45);background:rgba(126,200,122,.07)}
+.limit-card-icon{font-size:20px;flex-shrink:0}
+.limit-card-body{flex:1;min-width:0}
+.limit-card-name{font-size:12px;font-weight:500;color:#fff;margin-bottom:2px}
+.limit-card-desc{font-size:10px;color:var(--nav-t);line-height:1.3}
+.limit-card-action{font-size:10px;font-weight:600;padding:5px 11px;border-radius:99px;border:none;cursor:pointer;flex-shrink:0}
+.limit-card-action.free{background:rgba(255,255,255,.12);color:#fff}
+.limit-card-action.prem{background:var(--nav-a);color:var(--nav)}
+.limit-stay{display:block;text-align:center;padding:12px 14px 0;font-size:11px;color:rgba(255,255,255,.35);cursor:pointer}
+/* ── FULL PAYWALL SCREEN ─────────────────────────── */
+.paywall-bg{display:none;position:fixed;inset:0;background:var(--nav);z-index:500;overflow-y:auto}
+.paywall-bg.open{display:block}
+.paywall-inner{min-height:100vh;display:flex;flex-direction:column;max-width:480px;margin:0 auto}
+.paywall-topbar{display:flex;align-items:center;gap:10px;padding:14px 16px 0}
+.paywall-back{background:rgba(255,255,255,.1);border:none;color:var(--nav-a);border-radius:99px;padding:6px 14px;font-size:12px;cursor:pointer;font-family:var(--fb)}
+.paywall-topbar-title{font-family:var(--fd);font-size:16px;font-weight:500;color:#fff;flex:1;text-align:center}
+.paywall-hero{text-align:center;padding:14px 20px 6px}
+.paywall-title{font-family:var(--fd);font-size:22px;font-weight:500;color:#fff;margin-bottom:4px}
+.paywall-sub{font-size:13px;color:var(--nav-t);line-height:1.4}
+.paywall-cards{display:flex;flex-direction:column;gap:9px;padding:16px 14px 0}
+.pw-card{border-radius:14px;padding:13px 15px;border:1px solid rgba(255,255,255,.1)}
+.pw-card.hl{border-color:rgba(126,200,122,.45);background:rgba(126,200,122,.07)}
+.pw-card-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.pw-card-name{font-size:14px;font-weight:500;color:#fff}
+.pw-card-price{font-size:12px;color:var(--nav-a);font-weight:500}
+.pw-card-price.muted{color:var(--nav-t)}
+.pw-card-tag{font-size:9px;font-weight:700;background:var(--accent2);color:#fff;padding:2px 7px;border-radius:99px}
+.pw-dots{display:flex;flex-direction:column;gap:4px}
+.pw-dot{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--nav-t)}
+.pw-dot::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--nav-a);flex-shrink:0}
+.pw-dot.dim{color:rgba(168,200,160,.45)}
+.pw-dot.dim::before{background:rgba(126,200,122,.3)}
+.pw-compare-btn{margin:14px 14px 0;width:calc(100% - 28px);padding:10px;border-radius:99px;border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--nav-t);font-size:12px;cursor:pointer;font-family:var(--fb)}
+.pw-billing{display:flex;gap:8px;padding:12px 14px 0}
+.pw-bill-opt{flex:1;border-radius:10px;border:1.5px solid rgba(255,255,255,.12);padding:10px;text-align:center;cursor:pointer;transition:all .15s}
+.pw-bill-opt.sel{border-color:var(--nav-a);background:rgba(126,200,122,.08)}
+.pw-bill-price{font-family:var(--fd);font-size:18px;font-weight:500;color:#fff}
+.pw-bill-period{font-size:10px;color:var(--nav-t);margin-top:2px}
+.pw-bill-save{font-size:10px;font-weight:600;color:var(--nav-a);margin-top:2px}
+.pw-cta{margin:12px 14px 4px;width:calc(100% - 28px);background:var(--nav-a);color:var(--nav);border:none;border-radius:99px;padding:15px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb)}
+.pw-terms{text-align:center;font-size:10px;color:rgba(168,200,160,.5);padding:0 14px;line-height:1.5}
+.pw-skip{display:block;text-align:center;padding:10px 14px 20px;font-size:12px;color:rgba(168,200,160,.45);cursor:pointer}
+/* ── COMPARE TABLE ───────────────────────────────── */
+.cmp-section{padding:0 14px 8px}
+.cmp-section-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:rgba(168,200,160,.5);padding:14px 0 8px}
+.cmp-header{display:grid;grid-template-columns:repeat(3,1fr);margin-bottom:4px}
+.cmp-th{text-align:center;padding:6px 4px}
+.cmp-th-name{font-size:11px;font-weight:500;color:#fff}
+.cmp-th-price{font-size:10px;color:var(--nav-t)}
+.cmp-th.active-col .cmp-th-price{color:var(--nav-a);font-weight:600}
+.cmp-th.active-col{background:rgba(126,200,122,.08);border-radius:10px 10px 0 0;border:1px solid rgba(126,200,122,.3);border-bottom:none}
+.cmp-group{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(168,200,160,.4);padding:8px 0 4px;grid-column:1/-1}
+.cmp-row{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:.5px solid rgba(255,255,255,.06)}
+.cmp-cell{display:flex;align-items:center;justify-content:center;padding:7px 4px;font-size:11px;color:var(--nav-t)}
+.cmp-cell.ac{background:rgba(126,200,122,.05);border-left:1px solid rgba(126,200,122,.25);border-right:1px solid rgba(126,200,122,.25)}
+.cmp-cell.ac.last-row{border-bottom:1px solid rgba(126,200,122,.25)}
+.cmp-ck{color:var(--nav-a);font-size:14px;font-weight:500}
+.cmp-x{color:rgba(255,255,255,.15);font-size:14px}
+.cmp-val{font-size:11px;color:var(--nav-t)}
+.cmp-val.hi{color:var(--nav-a);font-weight:600}
+/* ── TIER LOCK BADGE ─────────────────────────────── */
 .tier-lock{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:3px 8px;border-radius:99px;cursor:pointer}
 .tier-lock.registered{background:#E8F5E9;color:#2E7D32}
 .tier-lock.premium{background:#FFF8E1;color:#F57F17}
@@ -505,7 +553,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   </div>
 </div>
 <div id="app">
-  <div class="user-bar"><div class="user-bar-left"><div class="user-avatar" id="user-avatar">🌿</div><div><div class="user-name" id="user-name">Loading...</div><div class="user-plan" id="user-plan">guest</div></div></div><button class="signout-btn" onclick="signOut()" data-t="signOut">Sign out</button></div>
+  <div class="user-bar"><div class="user-bar-left"><div class="user-avatar" id="user-avatar">🌿</div><div><div class="user-name" id="user-name">Loading...</div><div class="user-plan" id="user-plan" style="cursor:pointer"></div></div></div><div style="display:flex;align-items:center;gap:8px"><button class="upgrade-btn" id="upgrade-btn" onclick="openPaywall('header')" style="display:none">⭐ Upgrade</button><button class="signout-btn" onclick="signOut()" data-t="signOut">Sign out</button></div></div>
   <div class="sync-bar" id="sync-bar"><div class="sync-dot"></div><span data-t="syncing">Syncing...</span></div>
   <div class="app-lang-bar" id="app-lang-bar"></div>
   <nav class="nav"><div class="nav-tabs">
@@ -581,38 +629,121 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-hdr"><h1 data-t="recipes">Recipes</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
   <div class="screen" id="screen-today"><div class="th"><div class="th-date" id="th-date"></div><h1 id="th-greet"></h1></div><div class="tm" id="tm"></div></div>
 </div>
-<!-- PAYWALL MODAL -->
-<div class="paywall-bg" id="paywall-bg" onclick="event.target===this&&closePaywall()">
-  <div class="paywall-sheet">
-    <div class="paywall-handle"></div>
+<!-- LIMIT POPUP (bottom sheet, triggered on hitting tier wall) -->
+<div class="limit-bg" id="limit-bg" onclick="event.target===this&&closeLimitPopup()">
+  <div class="limit-sheet">
+    <div class="limit-handle"></div>
+    <div class="limit-icon" id="limit-icon">🔒</div>
+    <div class="limit-title" id="limit-title">Unlock more</div>
+    <div class="limit-reason" id="limit-reason">Upgrade to access this feature.</div>
+    <div class="limit-cards">
+      <div class="limit-card" id="lc-member" onclick="closeLimitPopup();switchAuthTab('signup');showAuth()">
+        <span class="limit-card-icon">🌿</span>
+        <div class="limit-card-body">
+          <div class="limit-card-name">Member — free account</div>
+          <div class="limit-card-desc" id="lc-member-desc">10 dishes · 7-day planner · cloud sync</div>
+        </div>
+        <button class="limit-card-action free">Sign up free</button>
+      </div>
+      <div class="limit-card hl" onclick="closeLimitPopup();openPaywall('premium')">
+        <span class="limit-card-icon">⭐</span>
+        <div class="limit-card-body">
+          <div class="limit-card-name">Premium</div>
+          <div class="limit-card-desc">All recipes · 4-week planner · AI fridge scanner</div>
+        </div>
+        <button class="limit-card-action prem">€4.99/mo</button>
+      </div>
+    </div>
+    <span class="limit-stay" id="limit-stay-btn" onclick="closeLimitPopup()">Stay as Explorer</span>
+  </div>
+</div>
+
+<!-- FULL PAYWALL SCREEN (opened from header or limit popup) -->
+<div class="paywall-bg" id="paywall-bg">
+  <div class="paywall-inner">
+    <div class="paywall-topbar">
+      <button class="paywall-back" onclick="closePaywall()">← Back</button>
+      <div class="paywall-topbar-title">Plans & pricing</div>
+      <div style="width:60px"></div>
+    </div>
     <div class="paywall-hero">
-      <span class="paywall-emoji">⭐</span>
-      <div class="paywall-title">Unlock Premium</div>
-      <div class="paywall-sub">Everything you need for stress-free, healthy family meals — every week.</div>
+      <div class="paywall-title">Unlock more with Menja</div>
+      <div class="paywall-sub">Pick the plan that fits your family</div>
     </div>
-    <div class="paywall-tiers">
-      <div class="paywall-tier selected" id="ptier-monthly" onclick="selectPaywallTier('monthly')">
-        <div class="paywall-tier-price">€4.99</div>
-        <div class="paywall-tier-period">per month</div>
+    <div class="paywall-cards">
+      <div class="pw-card">
+        <div class="pw-card-row">
+          <span class="pw-card-name">🌱 Explorer</span>
+          <span class="pw-card-price muted">Free, no account</span>
+        </div>
+        <div class="pw-dots">
+          <div class="pw-dot dim">4 dishes to discover</div>
+          <div class="pw-dot dim">3-day meal planner</div>
+          <div class="pw-dot dim">Basic shopping list</div>
+        </div>
       </div>
-      <div class="paywall-tier" id="ptier-yearly" onclick="selectPaywallTier('yearly')">
-        <div class="paywall-tier-badge">BEST VALUE</div>
-        <div class="paywall-tier-price">€44</div>
-        <div class="paywall-tier-period">per year</div>
-        <div class="paywall-tier-save">Save 27%</div>
+      <div class="pw-card">
+        <div class="pw-card-row">
+          <span class="pw-card-name">🌿 Member</span>
+          <span class="pw-card-price muted">Free · account required</span>
+        </div>
+        <div class="pw-dots">
+          <div class="pw-dot">10 dishes, updated monthly</div>
+          <div class="pw-dot">Full 7-day planner</div>
+          <div class="pw-dot">Cloud sync across devices</div>
+        </div>
+      </div>
+      <div class="pw-card hl">
+        <div class="pw-card-row">
+          <span class="pw-card-name">⭐ Premium</span>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="pw-card-price" id="pw-price-label">€4.99/mo</span>
+            <span class="pw-card-tag">BEST</span>
+          </div>
+        </div>
+        <div class="pw-dots">
+          <div class="pw-dot">All 12+ recipes, new monthly</div>
+          <div class="pw-dot">4-week meal planner</div>
+          <div class="pw-dot">AI fridge scanner</div>
+          <div class="pw-dot">Smart shopping list</div>
+          <div class="pw-dot">Family sync across devices</div>
+        </div>
       </div>
     </div>
-    <div class="paywall-features">
-      <div class="paywall-feature"><span class="paywall-feature-icon">🍽️</span><div class="paywall-feature-text"><strong>All 12+ recipes</strong> — new dishes added every month</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">📅</span><div class="paywall-feature-text"><strong>Multi-week planner</strong> — plan up to 4 weeks ahead</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">🛒</span><div class="paywall-feature-text"><strong>Smart shopping list</strong> — auto-generated from your plan</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">📷</span><div class="paywall-feature-text"><strong>Fridge Scanner</strong> — AI identifies ingredients from a photo</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">☁️</span><div class="paywall-feature-text"><strong>Sync across all devices</strong> — family members share the plan</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">🌍</span><div class="paywall-feature-text"><strong>5 languages</strong> — EN, FR, ES, PT, DE</div></div>
+    <div class="pw-billing">
+      <div class="pw-bill-opt sel" id="pbill-monthly" onclick="selectBilling('monthly')">
+        <div class="pw-bill-price">€4.99</div>
+        <div class="pw-bill-period">per month</div>
+      </div>
+      <div class="pw-bill-opt" id="pbill-yearly" onclick="selectBilling('yearly')">
+        <div class="pw-bill-price">€44</div>
+        <div class="pw-bill-period">per year</div>
+        <div class="pw-bill-save">Save 27%</div>
+      </div>
     </div>
-    <button class="paywall-cta" id="paywall-cta-btn" onclick="startCheckout()">Start Premium — €4.99/month</button>
-    <div class="paywall-terms">Cancel anytime. Secure payment. No hidden fees.</div>
-    <div class="paywall-close" onclick="closePaywall()">Maybe later</div>
+    <button class="pw-compare-btn" onclick="toggleCompare()">Compare all features ↓</button>
+    <div id="compare-section" style="display:none">
+      <div class="cmp-section">
+        <div class="cmp-section-title">Full comparison</div>
+        <div class="cmp-header">
+          <div class="cmp-th"><div class="cmp-th-name">Explorer</div><div class="cmp-th-price">Free</div></div>
+          <div class="cmp-th"><div class="cmp-th-name">Member</div><div class="cmp-th-price">Free</div></div>
+          <div class="cmp-th active-col"><div class="cmp-th-name">Premium</div><div class="cmp-th-price">€4.99/mo</div></div>
+        </div>
+        <div class="cmp-row"><div class="cmp-group">Recipes</div></div>
+        <div class="cmp-row"><div class="cmp-cell"><span class="cmp-val">4 dishes</span></div><div class="cmp-cell"><span class="cmp-val">10 dishes</span></div><div class="cmp-cell ac"><span class="cmp-val hi">All 12+</span></div></div>
+        <div class="cmp-row"><div class="cmp-group">Meal planner</div></div>
+        <div class="cmp-row"><div class="cmp-cell"><span class="cmp-val">3 days</span></div><div class="cmp-cell"><span class="cmp-val">7 days</span></div><div class="cmp-cell ac"><span class="cmp-val hi">4 weeks</span></div></div>
+        <div class="cmp-row"><div class="cmp-group">Features</div></div>
+        <div class="cmp-row"><div class="cmp-cell"><span class="cmp-x">✕</span></div><div class="cmp-cell"><span class="cmp-ck">✓</span></div><div class="cmp-cell ac"><span class="cmp-ck">✓</span></div></div>
+        <div class="cmp-row"><div class="cmp-cell" style="font-size:10px;color:rgba(255,255,255,.2)">Cloud sync</div><div class="cmp-cell" style="font-size:10px;color:rgba(168,200,160,.5)">Cloud sync</div><div class="cmp-cell ac" style="font-size:10px;color:var(--nav-a);font-weight:500">Cloud sync</div></div>
+        <div class="cmp-row"><div class="cmp-cell"><span class="cmp-x">✕</span></div><div class="cmp-cell"><span class="cmp-x">✕</span></div><div class="cmp-cell ac"><span class="cmp-ck">✓</span></div></div>
+        <div class="cmp-row"><div class="cmp-cell" style="font-size:10px;color:rgba(255,255,255,.2)">AI fridge</div><div class="cmp-cell" style="font-size:10px;color:rgba(255,255,255,.2)">AI fridge</div><div class="cmp-cell ac last-row" style="font-size:10px;color:var(--nav-a);font-weight:500">AI fridge ✓</div></div>
+      </div>
+    </div>
+    <button class="pw-cta" id="pw-cta-btn" onclick="startCheckout()">Get Premium — €4.99/month</button>
+    <div class="pw-terms">Cancel anytime · Secure payment · No hidden fees</div>
+    <div class="pw-skip" id="pw-skip-btn" onclick="closePaywall()">Continue as Member (free)</div>
   </div>
 </div>
 
@@ -660,7 +791,7 @@ en:{
   signinBtn:'Sign in →',createAccountBtn:'Create account →',googleBtn:'Continue with Google',
   noAccount:'No account?',guestLink:'Continue as guest →',
   haveAccount:'Already have an account?',signinLink:'Sign in →',
-  choosePlan:'Choose your plan',
+
   firstName:'First name',lastName:'Last name',
   navFamily:'Family',navDiscover:'Discover',navPlanner:'Planner',navShop:'Shop',
   navFridge:'Fridge',navRecipes:'Recipes',navToday:'Today',
@@ -705,7 +836,7 @@ fr:{
   signinBtn:'Se connecter →',createAccountBtn:'Créer un compte →',googleBtn:'Continuer avec Google',
   noAccount:'Pas de compte ?',guestLink:'Continuer en invité →',
   haveAccount:'Déjà un compte ?',signinLink:'Se connecter →',
-  choosePlan:'Choisissez votre formule',
+
   firstName:'Prénom',lastName:'Nom',
   navFamily:'Famille',navDiscover:'Découvrir',navPlanner:'Planifier',navShop:'Courses',
   navFridge:'Frigo',navRecipes:'Recettes',navToday:"Aujourd'hui",
@@ -750,7 +881,7 @@ es:{
   signinBtn:'Iniciar sesión →',createAccountBtn:'Crear cuenta →',googleBtn:'Continuar con Google',
   noAccount:'¿Sin cuenta?',guestLink:'Continuar como invitado →',
   haveAccount:'¿Ya tienes cuenta?',signinLink:'Iniciar sesión →',
-  choosePlan:'Elige tu plan',
+
   firstName:'Nombre',lastName:'Apellido',
   navFamily:'Familia',navDiscover:'Descubrir',navPlanner:'Planificar',navShop:'Compras',
   navFridge:'Nevera',navRecipes:'Recetas',navToday:'Hoy',
@@ -795,7 +926,7 @@ pt:{
   signinBtn:'Entrar →',createAccountBtn:'Criar conta →',googleBtn:'Continuar com Google',
   noAccount:'Sem conta?',guestLink:'Continuar como convidado →',
   haveAccount:'Já tem conta?',signinLink:'Entrar →',
-  choosePlan:'Escolha seu plano',
+
   firstName:'Nome',lastName:'Sobrenome',
   navFamily:'Família',navDiscover:'Descobrir',navPlanner:'Planejar',navShop:'Compras',
   navFridge:'Frigorífico',navRecipes:'Receitas',navToday:'Hoje',
@@ -840,7 +971,7 @@ de:{
   signinBtn:'Anmelden →',createAccountBtn:'Konto erstellen →',googleBtn:'Mit Google fortfahren',
   noAccount:'Kein Konto?',guestLink:'Als Gast fortfahren →',
   haveAccount:'Bereits ein Konto?',signinLink:'Anmelden →',
-  choosePlan:'Plan wählen',
+
   firstName:'Vorname',lastName:'Nachname',
   navFamily:'Familie',navDiscover:'Entdecken',navPlanner:'Planer',navShop:'Einkauf',
   navFridge:'Kühlschrank',navRecipes:'Rezepte',navToday:'Heute',
@@ -1643,59 +1774,75 @@ async function signOut(){
 }
 
 // ══════════════════════════════════════════════
-// PAYWALL FUNCTIONS
+// LIMIT POPUP
 // ══════════════════════════════════════════════
-let paywallTier='monthly';
+const LIMIT_MESSAGES={
+  dishes_explorer:{icon:'🍽️',title:'Unlock more dishes',reason:'As an Explorer you can save up to 4 dishes. Create a free Member account to get 10, or go Premium for all recipes.',memberDesc:'10 dishes · 7-day planner · cloud sync',stay:'Stay as Explorer'},
+  planner_explorer:{icon:'📅',title:'Extend your planner',reason:'Explorers can plan 3 days ahead. Create a free Member account for a full 7-day planner, or go Premium for 4 weeks.',memberDesc:'7-day planner · 10 dishes · cloud sync',stay:'Stay as Explorer'},
+  dishes_member:{icon:'🍽️',title:'Unlock all recipes',reason:'Members get 10 dishes. Upgrade to Premium for all 12+ recipes updated monthly.',memberDesc:'You already have a Member account',stay:'Stay as Member'},
+  planner_member:{icon:'📅',title:'Plan further ahead',reason:'Members get a 7-day planner. Upgrade to Premium to plan up to 4 weeks at once.',memberDesc:'You already have a Member account',stay:'Stay as Member'},
+  fridge:{icon:'📷',title:'AI Fridge Scanner',reason:'The fridge scanner is a Premium feature. Scan your fridge and get instant recipe ideas.',memberDesc:'You already have a Member account',stay:'Stay as Member'},
+};
+function openLimitPopup(type){
+  const msg=LIMIT_MESSAGES[type]||LIMIT_MESSAGES.dishes_explorer;
+  document.getElementById('limit-icon').textContent=msg.icon;
+  document.getElementById('limit-title').textContent=msg.title;
+  document.getElementById('limit-reason').textContent=msg.reason;
+  document.getElementById('lc-member-desc').textContent=msg.memberDesc;
+  document.getElementById('limit-stay-btn').textContent=msg.stay;
+  const tier=getUserTier();
+  document.getElementById('lc-member').style.display=(tier==='guest')?'flex':'none';
+  document.getElementById('limit-bg').classList.add('open');
+}
+function closeLimitPopup(){document.getElementById('limit-bg').classList.remove('open');}
+
+// ══════════════════════════════════════════════
+// FULL PAYWALL SCREEN
+// ══════════════════════════════════════════════
+let billingCycle='monthly';
+let compareOpen=false;
 function openPaywall(reason){
-  paywallTier='monthly';
-  document.getElementById('ptier-monthly').classList.add('selected');
-  document.getElementById('ptier-yearly').classList.remove('selected');
-  document.getElementById('paywall-cta-btn').textContent='Start Premium — €4.99/month';
-  // Customise message based on what triggered it
-  const titles={
-    'registered':"Create a Free Account",
-    'premium':"Unlock Premium",
-    'dish':"You've reached the dish limit",
-    'planner':"Extend your planner",
-  };
-  const hero=document.querySelector('.paywall-hero .paywall-title');
-  if(hero&&titles[reason])hero.textContent=titles[reason]||"Unlock Premium";
+  billingCycle='monthly';selectBilling('monthly');
+  compareOpen=false;const cs=document.getElementById('compare-section');if(cs)cs.style.display='none';
+  const tier=getUserTier();
+  const skipBtn=document.getElementById('pw-skip-btn');
+  if(skipBtn)skipBtn.textContent=tier==='guest'?'Continue as Explorer (free)':'Stay as Member';
   document.getElementById('paywall-bg').classList.add('open');
+  document.getElementById('paywall-bg').scrollTop=0;
 }
 function closePaywall(){document.getElementById('paywall-bg').classList.remove('open');}
-function selectPaywallTier(tier){
-  paywallTier=tier;
-  document.getElementById('ptier-monthly').classList.toggle('selected',tier==='monthly');
-  document.getElementById('ptier-yearly').classList.toggle('selected',tier==='yearly');
-  const btn=document.getElementById('paywall-cta-btn');
-  btn.textContent=tier==='yearly'?'Start Premium — €44/year':'Start Premium — €4.99/month';
+function selectBilling(cycle){
+  billingCycle=cycle;
+  document.getElementById('pbill-monthly').classList.toggle('sel',cycle==='monthly');
+  document.getElementById('pbill-yearly').classList.toggle('sel',cycle==='yearly');
+  const pl=document.getElementById('pw-price-label');
+  const cb=document.getElementById('pw-cta-btn');
+  if(pl)pl.textContent=cycle==='yearly'?'€44/year':'€4.99/mo';
+  if(cb)cb.textContent=cycle==='yearly'?'Get Premium — €44/year':'Get Premium — €4.99/month';
+}
+function toggleCompare(){
+  compareOpen=!compareOpen;
+  const cs=document.getElementById('compare-section');
+  const btn=document.querySelector('.pw-compare-btn');
+  if(cs)cs.style.display=compareOpen?'block':'none';
+  if(btn)btn.textContent=compareOpen?'Hide comparison ↑':'Compare all features ↓';
 }
 function startCheckout(){
-  // Redirect to Stripe payment page — replace URL with your actual Stripe link
-  const urls={
-    monthly:'https://buy.stripe.com/YOUR_MONTHLY_LINK',
-    yearly:'https://buy.stripe.com/YOUR_YEARLY_LINK',
-  };
-  const url=urls[paywallTier];
+  const urls={monthly:'https://buy.stripe.com/YOUR_MONTHLY_LINK',yearly:'https://buy.stripe.com/YOUR_YEARLY_LINK'};
+  const url=urls[billingCycle];
   if(url.includes('YOUR_')){
-    // Not set up yet — show instructions
-    showPaywallSetupInfo();
+    const existing=document.getElementById('paywall-setup-note');
+    if(existing){existing.remove();return;}
+    const note=document.createElement('div');
+    note.id='paywall-setup-note';
+    note.style.cssText='margin:8px 14px;background:rgba(255,248,225,.08);border-radius:var(--rsm);padding:12px 14px;font-size:12px;color:var(--nav-t);line-height:1.6;border:.5px solid rgba(245,158,11,.3)';
+    note.innerHTML='<strong style="color:var(--nav-a)">Payment not set up yet.</strong><br>Create a <a href="https://stripe.com" target="_blank" style="color:var(--nav-a)">Stripe account</a>, generate two payment links (€4.99/mo and €44/yr) and replace YOUR_MONTHLY_LINK / YOUR_YEARLY_LINK in <code>startCheckout()</code>.';
+    const cb=document.getElementById('pw-cta-btn');
+    if(cb)cb.parentNode.insertBefore(note,cb);
     return;
   }
   window.open(url,'_blank');
 }
-function showPaywallSetupInfo(){
-  const sheet=document.querySelector('.paywall-sheet');
-  const existing=document.getElementById('paywall-setup-note');
-  if(existing)return;
-  const note=document.createElement('div');
-  note.id='paywall-setup-note';
-  note.style.cssText='margin:0 18px;background:#FFF8E1;border-radius:var(--rsm);padding:12px 14px;font-size:12px;color:#856404;line-height:1.6;border:.5px solid #F0E68C';
-  note.innerHTML='<strong>Payment not set up yet.</strong><br>To accept payments, create a <a href="https://stripe.com" target="_blank" style="color:var(--accent)">Stripe account</a>, create two payment links (monthly €4.99 and yearly €44), and replace the URLs in the <code>startCheckout()</code> function in the app code.';
-  const cta=document.getElementById('paywall-cta-btn');
-  cta.parentNode.insertBefore(note,cta);
-}
-
 // ─── SUPABASE LOAD/SAVE ──────────────────────────
 async function loadUserData(user){
   if(!user||user.id==='guest'){loadLocal();return;}
@@ -1920,6 +2067,7 @@ function clearFridgeImage(){
 }
 
 async function scanFridge(){
+  if(getUserTier()!=='premium'){openLimitPopup('fridge');return;}
   if(!fridgeImageBase64)return;
   const btn=document.getElementById('fridge-scan-btn');
   const scanning=document.getElementById('fridge-scanning');
@@ -2206,8 +2354,10 @@ function swipeCard(dir){
     const limit=tier==='guest'?4:tier==='registered'?10:999;
     if(state.liked.length>=limit){
       document.getElementById('dish-card').style.transform='';
-      if(tier==='guest')openPaywall('registered');
-      else openPaywall('premium');
+      document.getElementById('lbl-no').style.opacity=0;
+      document.getElementById('lbl-yes').style.opacity=0;
+      if(tier==='guest')openLimitPopup('dishes_explorer');
+      else openLimitPopup('dishes_member');
       return;
     }
   }
@@ -2253,7 +2403,26 @@ function renderCal(){
   }).join('');
 }
 function adjG(e,key,type,delta){e.stopPropagation();if(!state.plan[key])state.plan[key]={};const slot=state.plan[key][type];if(!slot||!slot.dishId)return;slot.adults=Math.max(0,(slot.adults||state.family.adults)+delta);if(slot.adults===0&&(slot.children||0)===0)slot.adults=1;save();rebuildShopping();updateBadge();renderPlan();}
-function toggleDay(key){state.openDays[key]=!state.openDays[key];save();const s=document.getElementById('slots-'+key);const ch=document.querySelector(`#calday-${key} .cal-chev`);if(s)s.classList.toggle('open',state.openDays[key]);if(ch)ch.classList.toggle('open',state.openDays[key]);}
+function toggleDay(key){
+  // Check if this day is beyond the user's tier limit
+  const dates=getDateRange();
+  const todayKey=dateKey(new Date());
+  const today=new Date();today.setHours(0,0,0,0);
+  const targetDate=new Date(key+'T00:00:00');
+  const diffDays=Math.round((targetDate-today)/(1000*60*60*24));
+  const tier=getUserTier();
+  const limit=tier==='guest'?3:tier==='registered'?7:28;
+  if(diffDays>=limit){
+    if(tier==='guest')openLimitPopup('planner_explorer');
+    else if(tier==='registered')openLimitPopup('planner_member');
+    return;
+  }
+  state.openDays[key]=!state.openDays[key];save();
+  const s=document.getElementById('slots-'+key);
+  const ch=document.querySelector(`#calday-${key} .cal-chev`);
+  if(s)s.classList.toggle('open',state.openDays[key]);
+  if(ch)ch.classList.toggle('open',state.openDays[key]);
+}
 function rmMeal(key,type){if(state.plan[key])state.plan[key][type]=null;save();rebuildShopping();updateBadge();renderPlan();}
 
 let activeDrag=null;const ghost=document.getElementById('ghost');
@@ -2466,13 +2635,15 @@ function showApp(user){
   document.getElementById('user-avatar').textContent=meta.avatar||'🌿';
   document.getElementById('user-name').textContent=meta.first_name||user.email?.split('@')[0]||'Friend';
   const tier=getUserTier();
-  const tierLabels={guest:'Guest · 4 dishes',registered:'Free account · 10 dishes',premium:'⭐ Premium'};
+  const tierLabels={guest:'🌱 Explorer',registered:'🌿 Member (free)',premium:'⭐ Premium'};
   document.getElementById('user-plan').textContent=tierLabels[tier]||tier;
-  // Show upgrade prompt for non-premium
-  if(tier!=='premium'&&!isGuest){
-    document.getElementById('user-plan').style.cursor='pointer';
-    document.getElementById('user-plan').onclick=()=>openPaywall('premium');
+  // Show/hide upgrade button
+  const upgradeBtn=document.getElementById('upgrade-btn');
+  if(upgradeBtn){
+    upgradeBtn.style.display=tier==='premium'?'none':'block';
+    upgradeBtn.textContent=tier==='guest'?'Upgrade':'⭐ Upgrade';
   }
+  document.getElementById('user-plan').onclick=tier!=='premium'?()=>openPaywall('header'):null;
   applyLang();renderLangBars();renderFamily();initDiscover();rebuildShopping();updateBadge();
 }
 
