@@ -11,7 +11,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Menja Fresh">
-<link rel="apple-touch-icon" href="/icons/icon-192.png">
+<link rel="apple-touch-icon" href="/icon-192.png">
 <meta name="description" content="Seasonal meal planning for your family. Discover dishes, plan your week, generate smart shopping lists.">
 <script>
 // Load Supabase with CDN fallback — if one CDN is slow, try another
@@ -65,33 +65,81 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .auth-success{background:var(--accent-l);color:var(--accent);border-radius:var(--rsm);padding:10px 14px;font-size:13px;margin-bottom:12px;display:none}
 .auth-guest{text-align:center;margin-top:20px;font-size:13px;color:var(--text3)}
 .auth-guest a{color:var(--accent);cursor:pointer;font-weight:500}
-/* ── PAYWALL ────────────────────────────────────── */
-.paywall-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:500;align-items:flex-end;justify-content:center}
-.paywall-bg.open{display:flex}
-.paywall-sheet{background:var(--surface);border-radius:24px 24px 0 0;width:100%;max-width:480px;padding:0 0 36px;animation:su .25s ease;max-height:92vh;overflow-y:auto}
-.paywall-handle{width:36px;height:4px;background:var(--border2);border-radius:99px;margin:12px auto 0}
-.paywall-hero{text-align:center;padding:20px 24px 0}
-.paywall-emoji{font-size:44px;margin-bottom:8px;display:block}
-.paywall-title{font-family:var(--fd);font-size:22px;font-weight:500;color:var(--text);margin-bottom:6px}
-.paywall-sub{font-size:13px;color:var(--text2);line-height:1.5;margin-bottom:20px}
-.paywall-tiers{display:flex;gap:10px;padding:0 18px;margin-bottom:20px}
-.paywall-tier{flex:1;border-radius:var(--r);border:2px solid var(--border2);padding:14px 10px;text-align:center;cursor:pointer;transition:all .2s;position:relative;background:var(--surface)}
-.paywall-tier.selected{border-color:var(--accent);background:var(--accent-l)}
-.paywall-tier-badge{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:var(--accent2);color:#fff;font-size:9px;font-weight:700;padding:2px 8px;border-radius:99px;white-space:nowrap}
-.paywall-tier-price{font-family:var(--fd);font-size:22px;font-weight:500;color:var(--text);line-height:1}
-.paywall-tier-period{font-size:10px;color:var(--text3);margin-top:2px}
-.paywall-tier-save{font-size:10px;font-weight:600;color:var(--accent);margin-top:3px}
-.paywall-features{padding:0 18px;margin-bottom:20px}
-.paywall-feature{display:flex;align-items:flex-start;gap:10px;padding:8px 0;border-bottom:.5px solid var(--border)}
-.paywall-feature:last-child{border-bottom:none}
-.paywall-feature-icon{font-size:18px;flex-shrink:0;width:24px;text-align:center}
-.paywall-feature-text{font-size:13px;color:var(--text);line-height:1.4;flex:1}
-.paywall-feature-text strong{color:var(--accent)}
-.paywall-cta{margin:0 18px;width:calc(100% - 36px);padding:16px;background:var(--nav);color:var(--nav-a);font-size:15px;font-weight:600;border:none;border-radius:99px;cursor:pointer;font-family:var(--fb);transition:all .2s}
-.paywall-cta:hover{transform:translateY(-1px);box-shadow:var(--shl)}
-.paywall-terms{text-align:center;font-size:10px;color:var(--text3);margin-top:10px;padding:0 18px;line-height:1.5}
-.paywall-close{display:block;text-align:center;padding:12px 18px 0;font-size:13px;color:var(--text3);cursor:pointer}
-/* ── LOCK BADGES ────────────────────────────────── */
+/* ── UPGRADE BUTTON IN HEADER ───────────────────── */
+.upgrade-btn{background:var(--nav-a);color:var(--nav);font-size:10px;font-weight:700;padding:5px 11px;border-radius:99px;border:none;cursor:pointer;letter-spacing:.02em;transition:all .15s;flex-shrink:0}
+.upgrade-btn:hover{background:#fff}
+/* ── LIMIT POPUP (bottom sheet) ──────────────────── */
+.limit-bg{display:none;position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:600;align-items:flex-end;justify-content:center}
+.limit-bg.open{display:flex}
+.limit-sheet{background:var(--nav);border-radius:24px 24px 0 0;width:100%;max-width:480px;padding:0 0 28px;animation:su .25s ease}
+.limit-handle{width:36px;height:4px;background:rgba(255,255,255,.15);border-radius:99px;margin:12px auto 0}
+.limit-icon{text-align:center;padding:16px 16px 6px;font-size:32px}
+.limit-title{font-family:var(--fd);font-size:17px;font-weight:500;color:#fff;text-align:center;padding:0 16px 4px}
+.limit-reason{font-size:12px;color:var(--nav-t);text-align:center;padding:0 20px 14px;line-height:1.5}
+.limit-cards{display:flex;flex-direction:column;gap:8px;padding:0 14px}
+.limit-card{border-radius:12px;padding:11px 13px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:10px;cursor:pointer;transition:background .15s}
+.limit-card:hover{background:rgba(255,255,255,.05)}
+.limit-card.hl{border-color:rgba(126,200,122,.45);background:rgba(126,200,122,.07)}
+.limit-card-icon{font-size:20px;flex-shrink:0}
+.limit-card-body{flex:1;min-width:0}
+.limit-card-name{font-size:12px;font-weight:500;color:#fff;margin-bottom:2px}
+.limit-card-desc{font-size:10px;color:var(--nav-t);line-height:1.3}
+.limit-card-action{font-size:10px;font-weight:600;padding:5px 11px;border-radius:99px;border:none;cursor:pointer;flex-shrink:0}
+.limit-card-action.free{background:rgba(255,255,255,.12);color:#fff}
+.limit-card-action.prem{background:var(--nav-a);color:var(--nav)}
+.limit-stay{display:block;text-align:center;padding:12px 14px 0;font-size:11px;color:rgba(255,255,255,.35);cursor:pointer}
+/* ── FULL PAYWALL SCREEN ─────────────────────────── */
+.paywall-bg{display:none;position:fixed;inset:0;background:var(--nav);z-index:500;overflow-y:auto}
+.paywall-bg.open{display:block}
+.paywall-inner{min-height:100vh;display:flex;flex-direction:column;max-width:480px;margin:0 auto}
+.paywall-topbar{display:flex;align-items:center;gap:10px;padding:14px 16px 0}
+.paywall-back{background:rgba(255,255,255,.1);border:none;color:var(--nav-a);border-radius:99px;padding:6px 14px;font-size:12px;cursor:pointer;font-family:var(--fb)}
+.paywall-topbar-title{font-family:var(--fd);font-size:16px;font-weight:500;color:#fff;flex:1;text-align:center}
+.paywall-hero{text-align:center;padding:14px 20px 6px}
+.paywall-title{font-family:var(--fd);font-size:22px;font-weight:500;color:#fff;margin-bottom:4px}
+.paywall-sub{font-size:13px;color:var(--nav-t);line-height:1.4}
+.paywall-cards{display:flex;flex-direction:column;gap:9px;padding:16px 14px 0}
+.pw-card{border-radius:14px;padding:13px 15px;border:1px solid rgba(255,255,255,.1)}
+.pw-card.hl{border-color:rgba(126,200,122,.45);background:rgba(126,200,122,.07)}
+.pw-card-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:6px}
+.pw-card-name{font-size:14px;font-weight:500;color:#fff}
+.pw-card-price{font-size:12px;color:var(--nav-a);font-weight:500}
+.pw-card-price.muted{color:var(--nav-t)}
+.pw-card-tag{font-size:9px;font-weight:700;background:var(--accent2);color:#fff;padding:2px 7px;border-radius:99px}
+.pw-dots{display:flex;flex-direction:column;gap:4px}
+.pw-dot{display:flex;align-items:center;gap:7px;font-size:11px;color:var(--nav-t)}
+.pw-dot::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--nav-a);flex-shrink:0}
+.pw-dot.dim{color:rgba(168,200,160,.45)}
+.pw-dot.dim::before{background:rgba(126,200,122,.3)}
+.pw-compare-btn{margin:14px 14px 0;width:calc(100% - 28px);padding:10px;border-radius:99px;border:1px solid rgba(255,255,255,.15);background:transparent;color:var(--nav-t);font-size:12px;cursor:pointer;font-family:var(--fb)}
+.pw-billing{display:flex;gap:8px;padding:12px 14px 0}
+.pw-bill-opt{flex:1;border-radius:10px;border:1.5px solid rgba(255,255,255,.12);padding:10px;text-align:center;cursor:pointer;transition:all .15s}
+.pw-bill-opt.sel{border-color:var(--nav-a);background:rgba(126,200,122,.08)}
+.pw-bill-price{font-family:var(--fd);font-size:18px;font-weight:500;color:#fff}
+.pw-bill-period{font-size:10px;color:var(--nav-t);margin-top:2px}
+.pw-bill-save{font-size:10px;font-weight:600;color:var(--nav-a);margin-top:2px}
+.pw-cta{margin:12px 14px 4px;width:calc(100% - 28px);background:var(--nav-a);color:var(--nav);border:none;border-radius:99px;padding:15px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--fb)}
+.pw-terms{text-align:center;font-size:10px;color:rgba(168,200,160,.5);padding:0 14px;line-height:1.5}
+.pw-skip{display:block;text-align:center;padding:10px 14px 20px;font-size:12px;color:rgba(168,200,160,.45);cursor:pointer}
+/* ── COMPARE TABLE ───────────────────────────────── */
+.cmp-section{padding:0 14px 8px}
+.cmp-section-title{font-size:11px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:rgba(168,200,160,.5);padding:14px 0 8px}
+.cmp-header{display:grid;grid-template-columns:repeat(3,1fr);margin-bottom:4px}
+.cmp-th{text-align:center;padding:6px 4px}
+.cmp-th-name{font-size:11px;font-weight:500;color:#fff}
+.cmp-th-price{font-size:10px;color:var(--nav-t)}
+.cmp-th.active-col .cmp-th-price{color:var(--nav-a);font-weight:600}
+.cmp-th.active-col{background:rgba(126,200,122,.08);border-radius:10px 10px 0 0;border:1px solid rgba(126,200,122,.3);border-bottom:none}
+.cmp-group{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:rgba(168,200,160,.4);padding:8px 0 4px;grid-column:1/-1}
+.cmp-row{display:grid;grid-template-columns:repeat(3,1fr);border-bottom:.5px solid rgba(255,255,255,.06)}
+.cmp-cell{display:flex;align-items:center;justify-content:center;padding:7px 4px;font-size:11px;color:var(--nav-t)}
+.cmp-cell.ac{background:rgba(126,200,122,.05);border-left:1px solid rgba(126,200,122,.25);border-right:1px solid rgba(126,200,122,.25)}
+.cmp-cell.ac.last-row{border-bottom:1px solid rgba(126,200,122,.25)}
+.cmp-ck{color:var(--nav-a);font-size:14px;font-weight:500}
+.cmp-x{color:rgba(255,255,255,.15);font-size:14px}
+.cmp-val{font-size:11px;color:var(--nav-t)}
+.cmp-val.hi{color:var(--nav-a);font-weight:600}
+/* ── TIER LOCK BADGE ─────────────────────────────── */
 .tier-lock{display:inline-flex;align-items:center;gap:5px;font-size:10px;font-weight:600;padding:3px 8px;border-radius:99px;cursor:pointer}
 .tier-lock.registered{background:#E8F5E9;color:#2E7D32}
 .tier-lock.premium{background:#FFF8E1;color:#F57F17}
@@ -505,7 +553,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   </div>
 </div>
 <div id="app">
-  <div class="user-bar"><div class="user-bar-left"><div class="user-avatar" id="user-avatar">🌿</div><div><div class="user-name" id="user-name">Loading...</div><div class="user-plan" id="user-plan">guest</div></div></div><button class="signout-btn" onclick="signOut()" data-t="signOut">Sign out</button></div>
+  <div class="user-bar"><div class="user-bar-left"><div class="user-avatar" id="user-avatar">🌿</div><div><div class="user-name" id="user-name">Loading...</div><div class="user-plan" id="user-plan" style="cursor:pointer"></div></div></div><div style="display:flex;align-items:center;gap:8px"><button class="upgrade-btn" id="upgrade-btn" onclick="openPaywall('header')" style="display:none">⭐ Upgrade</button><button class="signout-btn" onclick="signOut()" data-t="signOut">Sign out</button></div></div>
   <div class="sync-bar" id="sync-bar"><div class="sync-dot"></div><span data-t="syncing">Syncing...</span></div>
   <div class="app-lang-bar" id="app-lang-bar"></div>
   <nav class="nav"><div class="nav-tabs">
@@ -531,7 +579,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div class="tag-wrap" id="tag-filters"></div>
     <div class="swipe-hints"><div class="hint hint-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span data-t="skip">Skip</span></div><button class="done-btn" onclick="showDonePanel()" data-t="doneForNow">Done for now ✓</button><div class="hint hint-yes"><span data-t="addIt">Add it</span> <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div>
     <div class="swipe-area"><div class="dish-card" id="dish-card"><div class="swo"><div class="swl no" id="lbl-no">SKIP</div><div class="swl yes" id="lbl-yes">ADD!</div></div><div id="dish-img-wrap"></div><div class="di"><div class="dtags" id="dish-tags"></div><div class="dn" id="dish-name"></div><div class="dd" id="dish-desc"></div><div class="di-badges" id="dish-badges"></div></div></div><div style="display:none" id="done-panel" class="done-panel"><div class="em" id="done-em">✅</div><h2 id="done-title"></h2><p id="done-body"></p><div class="done-btns"><button class="btn-p" onclick="showTab('plan')" data-t="planMyWeek">Plan my week →</button><button class="btn-s" onclick="continueSwiping()" data-t="keepBrowsing">Keep browsing</button></div></div></div>
-    <div class="swipe-btns" id="swipe-btns"><button class="abtn no" onclick="swipeCard('left')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><button class="abtn yes" onclick="swipeCard('right')"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></button></div>
+    <div class="swipe-btns" id="swipe-btns"><button class="abtn no" onclick="swipeCard('left')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><button class="abtn yes" onclick="swipeCard('right')"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></button></div><div id="enough-wrap" style="text-align:center;padding:4px 0 2px"><button onclick="showDonePanel()" style="background:none;border:1px solid var(--border2);border-radius:99px;padding:5px 16px;font-size:12px;color:var(--text3);cursor:pointer;font-family:inherit">✋ Enough for now</button></div>
     <div class="dpb"><div class="dpf" id="dpf" style="width:0%"></div></div>
   </div>
   <div class="screen" id="screen-plan"><div class="plan-layout"><div class="tray-hdr"><h2 data-t="yourMeals">Your meals</h2><span data-t="dragHint">Drag onto a day</span></div><div class="tray" id="tray"></div><div class="af-bar"><span id="plan-status"></span><button class="af-btn" onclick="autoFill()" data-t="autoFill">Auto-fill</button><button class="cl-btn" onclick="clearPlan()" data-t="clearAll">Clear</button></div><div class="cal-scroll" id="cal-scroll"></div></div></div>
@@ -579,40 +627,136 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div class="fridge-results" id="fridge-results" style="display:none"></div>
   </div>
   <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-hdr"><h1 data-t="recipes">Recipes</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
-  <div class="screen" id="screen-today"><div class="th"><div class="th-date" id="th-date"></div><h1 id="th-greet"></h1></div><div class="tm" id="tm"></div></div>
+  <div class="screen" id="screen-today">
+    <div class="th">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px">
+        <button onclick="todayNavDay(-1)" style="background:none;border:none;font-size:22px;color:var(--text2);cursor:pointer;padding:4px 8px;border-radius:8px">‹</button>
+        <div style="text-align:center">
+          <div class="th-date" id="th-date"></div>
+          <h1 id="th-greet" style="margin:0;font-size:20px"></h1>
+        </div>
+        <button onclick="todayNavDay(1)" style="background:none;border:none;font-size:22px;color:var(--text2);cursor:pointer;padding:4px 8px;border-radius:8px">›</button>
+      </div>
+      <div style="text-align:center;padding:2px 16px 8px"><button id="today-jump-btn" onclick="todayNavReset()" style="display:none;background:var(--accent-l);color:var(--accent);border:none;border-radius:99px;padding:3px 12px;font-size:11px;cursor:pointer;font-family:inherit">↩ Back to today</button></div>
+    </div>
+    <div class="tm" id="tm"></div>
+  </div>
 </div>
-<!-- PAYWALL MODAL -->
-<div class="paywall-bg" id="paywall-bg" onclick="event.target===this&&closePaywall()">
-  <div class="paywall-sheet">
-    <div class="paywall-handle"></div>
+<!-- LIMIT POPUP (bottom sheet, triggered on hitting tier wall) -->
+<div class="limit-bg" id="limit-bg" onclick="event.target===this&&closeLimitPopup()">
+  <div class="limit-sheet">
+    <div class="limit-handle"></div>
+    <div class="limit-icon" id="limit-icon">🔒</div>
+    <div class="limit-title" id="limit-title">Unlock more</div>
+    <div class="limit-reason" id="limit-reason">Upgrade to access this feature.</div>
+    <div class="limit-cards">
+      <div class="limit-card" id="lc-member" onclick="closeLimitPopup();switchAuthTab('signup');showAuth()">
+        <span class="limit-card-icon">🌿</span>
+        <div class="limit-card-body">
+          <div class="limit-card-name">Member — free account</div>
+          <div class="limit-card-desc" id="lc-member-desc">10 dishes · 7-day planner · cloud sync</div>
+        </div>
+        <button class="limit-card-action free">Sign up free</button>
+      </div>
+      <div class="limit-card hl" onclick="closeLimitPopup();openPaywall('premium')">
+        <span class="limit-card-icon">⭐</span>
+        <div class="limit-card-body">
+          <div class="limit-card-name">Premium</div>
+          <div class="limit-card-desc">All recipes · 4-week planner · AI fridge scanner</div>
+        </div>
+        <button class="limit-card-action prem">€4.99/mo</button>
+      </div>
+    </div>
+    <span class="limit-stay" id="limit-stay-btn" onclick="closeLimitPopup()">Stay as Explorer</span>
+  </div>
+</div>
+
+<!-- FULL PAYWALL SCREEN (opened from header or limit popup) -->
+<div class="paywall-bg" id="paywall-bg">
+  <div class="paywall-inner">
+    <div class="paywall-topbar">
+      <button class="paywall-back" onclick="closePaywall()">← Back</button>
+      <div class="paywall-topbar-title">Plans & pricing</div>
+      <div style="width:60px"></div>
+    </div>
     <div class="paywall-hero">
-      <span class="paywall-emoji">⭐</span>
-      <div class="paywall-title">Unlock Premium</div>
-      <div class="paywall-sub">Everything you need for stress-free, healthy family meals — every week.</div>
+      <div class="paywall-title">Unlock more with Menja</div>
+      <div class="paywall-sub">Pick the plan that fits your family</div>
     </div>
-    <div class="paywall-tiers">
-      <div class="paywall-tier selected" id="ptier-monthly" onclick="selectPaywallTier('monthly')">
-        <div class="paywall-tier-price">€4.99</div>
-        <div class="paywall-tier-period">per month</div>
+    <div class="paywall-cards">
+      <div class="pw-card">
+        <div class="pw-card-row">
+          <span class="pw-card-name">🌱 Explorer</span>
+          <span class="pw-card-price muted">Free, no account</span>
+        </div>
+        <div class="pw-dots">
+          <div class="pw-dot dim">4 dishes to discover</div>
+          <div class="pw-dot dim">3-day meal planner</div>
+          <div class="pw-dot dim">Basic shopping list</div>
+        </div>
       </div>
-      <div class="paywall-tier" id="ptier-yearly" onclick="selectPaywallTier('yearly')">
-        <div class="paywall-tier-badge">BEST VALUE</div>
-        <div class="paywall-tier-price">€44</div>
-        <div class="paywall-tier-period">per year</div>
-        <div class="paywall-tier-save">Save 27%</div>
+      <div class="pw-card">
+        <div class="pw-card-row">
+          <span class="pw-card-name">🌿 Member</span>
+          <span class="pw-card-price muted">Free · account required</span>
+        </div>
+        <div class="pw-dots">
+          <div class="pw-dot">10 dishes, updated monthly</div>
+          <div class="pw-dot">Full 7-day planner</div>
+          <div class="pw-dot">Cloud sync across devices</div>
+        </div>
+      </div>
+      <div class="pw-card hl">
+        <div class="pw-card-row">
+          <span class="pw-card-name">⭐ Premium</span>
+          <div style="display:flex;align-items:center;gap:6px">
+            <span class="pw-card-price" id="pw-price-label">€4.99/mo</span>
+            <span class="pw-card-tag">BEST</span>
+          </div>
+        </div>
+        <div class="pw-dots">
+          <div class="pw-dot">All 12+ recipes, new monthly</div>
+          <div class="pw-dot">4-week meal planner</div>
+          <div class="pw-dot">AI fridge scanner</div>
+          <div class="pw-dot">Smart shopping list</div>
+          <div class="pw-dot">Family sync across devices</div>
+        </div>
       </div>
     </div>
-    <div class="paywall-features">
-      <div class="paywall-feature"><span class="paywall-feature-icon">🍽️</span><div class="paywall-feature-text"><strong>All 12+ recipes</strong> — new dishes added every month</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">📅</span><div class="paywall-feature-text"><strong>Multi-week planner</strong> — plan up to 4 weeks ahead</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">🛒</span><div class="paywall-feature-text"><strong>Smart shopping list</strong> — auto-generated from your plan</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">📷</span><div class="paywall-feature-text"><strong>Fridge Scanner</strong> — AI identifies ingredients from a photo</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">☁️</span><div class="paywall-feature-text"><strong>Sync across all devices</strong> — family members share the plan</div></div>
-      <div class="paywall-feature"><span class="paywall-feature-icon">🌍</span><div class="paywall-feature-text"><strong>5 languages</strong> — EN, FR, ES, PT, DE</div></div>
+    <div class="pw-billing">
+      <div class="pw-bill-opt sel" id="pbill-monthly" onclick="selectBilling('monthly')">
+        <div class="pw-bill-price">€4.99</div>
+        <div class="pw-bill-period">per month</div>
+      </div>
+      <div class="pw-bill-opt" id="pbill-yearly" onclick="selectBilling('yearly')">
+        <div class="pw-bill-price">€44</div>
+        <div class="pw-bill-period">per year</div>
+        <div class="pw-bill-save">Save 27%</div>
+      </div>
     </div>
-    <button class="paywall-cta" id="paywall-cta-btn" onclick="startCheckout()">Start Premium — €4.99/month</button>
-    <div class="paywall-terms">Cancel anytime. Secure payment. No hidden fees.</div>
-    <div class="paywall-close" onclick="closePaywall()">Maybe later</div>
+    <button class="pw-compare-btn" onclick="toggleCompare()">Compare all features ↓</button>
+    <div id="compare-section" style="display:none">
+      <div class="cmp-section">
+        <div class="cmp-section-title">Full comparison</div>
+        <div class="cmp-header">
+          <div class="cmp-th"><div class="cmp-th-name">Explorer</div><div class="cmp-th-price">Free</div></div>
+          <div class="cmp-th"><div class="cmp-th-name">Member</div><div class="cmp-th-price">Free</div></div>
+          <div class="cmp-th active-col"><div class="cmp-th-name">Premium</div><div class="cmp-th-price">€4.99/mo</div></div>
+        </div>
+        <div class="cmp-row"><div class="cmp-group">Recipes</div></div>
+        <div class="cmp-row"><div class="cmp-cell"><span class="cmp-val">4 dishes</span></div><div class="cmp-cell"><span class="cmp-val">10 dishes</span></div><div class="cmp-cell ac"><span class="cmp-val hi">All 12+</span></div></div>
+        <div class="cmp-row"><div class="cmp-group">Meal planner</div></div>
+        <div class="cmp-row"><div class="cmp-cell"><span class="cmp-val">3 days</span></div><div class="cmp-cell"><span class="cmp-val">7 days</span></div><div class="cmp-cell ac"><span class="cmp-val hi">4 weeks</span></div></div>
+        <div class="cmp-row"><div class="cmp-group">Features</div></div>
+        <div class="cmp-row"><div class="cmp-cell"><span class="cmp-x">✕</span></div><div class="cmp-cell"><span class="cmp-ck">✓</span></div><div class="cmp-cell ac"><span class="cmp-ck">✓</span></div></div>
+        <div class="cmp-row"><div class="cmp-cell" style="font-size:10px;color:rgba(255,255,255,.2)">Cloud sync</div><div class="cmp-cell" style="font-size:10px;color:rgba(168,200,160,.5)">Cloud sync</div><div class="cmp-cell ac" style="font-size:10px;color:var(--nav-a);font-weight:500">Cloud sync</div></div>
+        <div class="cmp-row"><div class="cmp-cell"><span class="cmp-x">✕</span></div><div class="cmp-cell"><span class="cmp-x">✕</span></div><div class="cmp-cell ac"><span class="cmp-ck">✓</span></div></div>
+        <div class="cmp-row"><div class="cmp-cell" style="font-size:10px;color:rgba(255,255,255,.2)">AI fridge</div><div class="cmp-cell" style="font-size:10px;color:rgba(255,255,255,.2)">AI fridge</div><div class="cmp-cell ac last-row" style="font-size:10px;color:var(--nav-a);font-weight:500">AI fridge ✓</div></div>
+      </div>
+    </div>
+    <button class="pw-cta" id="pw-cta-btn" onclick="startCheckout()">Get Premium — €4.99/month</button>
+    <div class="pw-terms">Cancel anytime · Secure payment · No hidden fees</div>
+    <div class="pw-skip" id="pw-skip-btn" onclick="closePaywall()">Continue as Member (free)</div>
   </div>
 </div>
 
@@ -1076,398 +1220,43 @@ function pantryIcon(n){return PANTRY_ICONS_MAP[n.toLowerCase()]||'🥄';}
 // ═══════════════════════════════════════════════════
 // DISHES  (metric European quantities throughout)
 // ═══════════════════════════════════════════════════
-const DISHES=[
-{id:1,emoji:'🥚',photo:'https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=600&q=80',
- tags:['Vegetarian','Mediterranean','GlutenFree'],badges:['veg','gf'],
- prep:10,cook:20,
- name:{en:'Shakshuka with Feta',fr:'Shakshuka au Feta',es:'Shakshuka con Feta',pt:'Shakshuka com Feta',de:'Shakshuka mit Feta'},
- subtitle:{en:'Spiced, warming & easy one-pan',fr:'Épicé, réconfortant & un seul poêle',es:'Especiado, reconfortante & en una sola sartén',pt:'Apimentado, reconfortante & numa só frigideira',de:'Würzig, wärmend & in einer Pfanne'},
- desc:{en:'Eggs poached in spiced tomato and pepper sauce, finished with crumbled feta and parsley.',fr:'Œufs pochés dans une sauce tomate épicée, terminés avec de la feta émiettée.',es:'Huevos escalfados en salsa de tomate especiada con feta desmenuzado.',pt:'Ovos pochê em molho de tomate temperado com feta esfarelado.',de:'Eier in würziger Tomatensauce pochiert, mit Feta und Petersilie.'},
- ingredients:[
-   {emoji:'🥚',name:{en:'Eggs',fr:'Œufs',es:'Huevos',pt:'Ovos',de:'Eier'},qty:2,unit:''},
-   {emoji:'🍅',name:{en:'Chopped tomatoes',fr:'Tomates concassées',es:'Tomates troceados',pt:'Tomates picados',de:'Gehackte Tomaten'},qty:400,unit:'g'},
-   {emoji:'🧀',name:{en:'Feta cheese',fr:'Fromage feta',es:'Queso feta',pt:'Queijo feta',de:'Fetakäse'},qty:80,unit:'g'},
-   {emoji:'🫑',name:{en:'Red pepper',fr:'Poivron rouge',es:'Pimiento rojo',pt:'Pimento vermelho',de:'Rote Paprika'},qty:1,unit:''},
-   {emoji:'🧅',name:{en:'Onion',fr:'Oignon',es:'Cebolla',pt:'Cebola',de:'Zwiebel'},qty:1,unit:''},
-   {emoji:'🧄',name:{en:'Garlic',fr:'Ail',es:'Ajo',pt:'Alho',de:'Knoblauch'},qty:2,unit:'cloves'},
-   {emoji:'🌶️',name:{en:'Chilli flakes',fr:'Flocons de piment',es:'Copos de chile',pt:'Flocos de pimenta',de:'Chiliflocken'},qty:0.5,unit:'tsp'},
-   {emoji:'🌿',name:{en:'Fresh parsley',fr:'Persil frais',es:'Perejil fresco',pt:'Salsa fresca',de:'Frische Petersilie'},qty:15,unit:'g'},
- ],
- base:{en:['Olive oil','Cumin','Smoked paprika','Salt & pepper'],fr:['Huile d\'olive','Cumin','Paprika fumé','Sel & poivre'],es:['Aceite de oliva','Comino','Pimentón ahumado','Sal y pimienta'],pt:['Azeite','Cominhos','Páprica fumada','Sal e pimenta'],de:['Olivenöl','Kreuzkümmel','Geräucherter Paprika','Salz & Pfeffer']},
- steps:{
-   en:[
-     {num:1,title:'Sauté vegetables',text:'Dice onion and red pepper. Cook in olive oil over medium heat for 5–6 minutes until soft.',ings:['🧅 Onion · 1','🫑 Red pepper · 1','🧄 Garlic · 2 cloves'],tip:null,kids:null},
-     {num:2,title:'Add spices & tomatoes',text:'Add garlic and cook 1 minute. Stir in cumin, smoked paprika and chilli flakes, then add chopped tomatoes.',ings:['🍅 Chopped tomatoes · 400g'],tip:null,kids:null},
-     {num:3,title:'Simmer',text:'Simmer for 10 minutes until the sauce thickens nicely.',ings:[],tip:'The sauce should be thick enough that a spoon leaves a trail.',kids:null},
-     {num:4,title:'Poach the eggs',text:'Make 4 wells in the sauce. Crack one egg into each. Cover and cook over low heat for 5–7 minutes until whites are set but yolks still runny.',ings:['🥚 Eggs · 2–4'],tip:'Keep the lid on — this steams the top of the eggs gently.',kids:null},
-     {num:5,title:'Finish & serve',text:'Crumble feta over the top, scatter fresh parsley and a drizzle of olive oil. Serve from the pan with crusty bread.',ings:['🧀 Feta · 80g','🌿 Parsley · 15g'],tip:null,kids:null},
-   ],
-   fr:[
-     {num:1,title:'Faire revenir les légumes',text:'Couper l\'oignon et le poivron. Faire revenir dans l\'huile d\'olive à feu moyen 5–6 min.',ings:['🧅 Oignon · 1','🫑 Poivron · 1'],tip:null,kids:null},
-     {num:2,title:'Ajouter les épices et les tomates',text:'Ajouter l\'ail, cuire 1 min. Incorporer le cumin, le paprika, les flocons de piment puis les tomates.',ings:['🍅 Tomates · 400g'],tip:null,kids:null},
-     {num:3,title:'Mijoter',text:'Mijoter 10 minutes jusqu\'à ce que la sauce épaississe.',ings:[],tip:'La sauce doit être assez épaisse pour que la cuillère laisse une trace.',kids:null},
-     {num:4,title:'Pocher les œufs',text:'Faire 4 puits dans la sauce. Casser un œuf dans chaque puits. Couvrir et cuire 5–7 min à feu doux.',ings:['🥚 Œufs · 2–4'],tip:'Garder le couvercle — cela cuit le dessus des œufs doucement.',kids:null},
-     {num:5,title:'Finir et servir',text:'Émietter la feta, parsemer de persil et arroser d\'huile d\'olive. Servir dans la poêle avec du pain.',ings:['🧀 Feta · 80g','🌿 Persil · 15g'],tip:null,kids:null},
-   ],
-   es:[
-     {num:1,title:'Sofreír las verduras',text:'Cortar la cebolla y el pimiento. Cocinar en aceite de oliva a fuego medio 5–6 min.',ings:['🧅 Cebolla · 1','🫑 Pimiento · 1'],tip:null,kids:null},
-     {num:2,title:'Añadir especias y tomates',text:'Añadir ajo, cocinar 1 min. Añadir comino, pimentón, chile y los tomates troceados.',ings:['🍅 Tomates · 400g'],tip:null,kids:null},
-     {num:3,title:'Hervir a fuego lento',text:'Hervir 10 minutos hasta que la salsa espese.',ings:[],tip:null,kids:null},
-     {num:4,title:'Escalfar los huevos',text:'Hacer 4 huecos en la salsa. Romper un huevo en cada hueco. Tapar y cocinar 5–7 min.',ings:['🥚 Huevos · 2–4'],tip:'Mantener la tapa puesta para cocinar suavemente la parte superior.',kids:null},
-     {num:5,title:'Terminar y servir',text:'Desmenuzar el feta, añadir perejil y aceite de oliva. Servir en la sartén con pan.',ings:['🧀 Feta · 80g','🌿 Perejil · 15g'],tip:null,kids:null},
-   ],
-   pt:[{num:1,title:'Refogar os legumes',text:'Cortar a cebola e o pimento. Cozinhar em azeite a fogo médio 5–6 min.',ings:['🧅 Cebola · 1'],tip:null,kids:null},{num:2,title:'Adicionar especiarias e tomates',text:'Adicionar alho, cozinhar 1 min. Juntar cominhos, páprica, pimenta e os tomates.',ings:['🍅 Tomates · 400g'],tip:null,kids:null},{num:3,title:'Ferver em lume brando',text:'Ferver 10 minutos até o molho engrossar.',ings:[],tip:null,kids:null},{num:4,title:'Pochar os ovos',text:'Fazer 4 buracos no molho. Quebrar um ovo em cada. Tapar e cozinhar 5–7 min.',ings:['🥚 Ovos · 2–4'],tip:null,kids:null},{num:5,title:'Finalizar e servir',text:'Esmigalhar feta, salpicar salsa e azeite. Servir na frigideira com pão.',ings:['🧀 Feta · 80g'],tip:null,kids:null}],
-   de:[{num:1,title:'Gemüse anbraten',text:'Zwiebel und Paprika würfeln. In Olivenöl bei mittlerer Hitze 5–6 Min. weich braten.',ings:['🧅 Zwiebel · 1'],tip:null,kids:null},{num:2,title:'Gewürze und Tomaten',text:'Knoblauch hinzufügen, 1 Min. kochen. Kreuzkümmel, Paprika, Chili und Tomaten einrühren.',ings:['🍅 Tomaten · 400g'],tip:null,kids:null},{num:3,title:'Köcheln',text:'10 Minuten köcheln bis die Sauce eindickt.',ings:[],tip:null,kids:null},{num:4,title:'Eier pochieren',text:'4 Mulden in die Sauce drücken. Je ein Ei hineinschlagen. Abdecken und 5–7 Min. köcheln.',ings:['🥚 Eier · 2–4'],tip:'Deckel drauflassen — das dampft die Oberseite der Eier sanft gar.',kids:null},{num:5,title:'Fertigstellen & servieren',text:'Feta darüber bröseln, Petersilie und Olivenöl darüber. Aus der Pfanne mit Brot servieren.',ings:['🧀 Feta · 80g'],tip:null,kids:null}],
- },
- nutrition:{kcal:360,protein:20,carbs:28,fat:18,fiber:7}},
+let DISHES = []; // loaded from Supabase
 
-{id:2,emoji:'🥕',photo:'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80',
- tags:['Vegetarian','Quick','Breakfast'],badges:['veg'],
- prep:10,cook:15,
- name:{en:'Carrot Cake Pancakes',fr:'Pancakes Carrot Cake',es:'Tortitas de Zanahoria',pt:'Panquecas de Cenoura',de:'Karottenkuchen-Pancakes'},
- subtitle:{en:'Fluffy, spiced & naturally sweet',fr:'Moelleux, épicés & naturellement sucrés',es:'Esponjosas, especiadas y naturalmente dulces',pt:'Fofas, temperadas e naturalmente doces',de:'Fluffig, gewürzt & natürlich süß'},
- desc:{en:'Wholesome oat and carrot pancakes topped with Greek yogurt, fresh berries and maple syrup.',fr:'Pancakes sains à l\'avoine et la carotte avec yaourt grec et fruits rouges.',es:'Tortitas saludables de avena y zanahoria con yogur griego y frutos rojos.',pt:'Panquecas saudáveis de aveia e cenoura com iogurte grego e frutos vermelhos.',de:'Gesunde Hafer-Karotten-Pancakes mit griechischem Joghurt und frischen Beeren.'},
- ingredients:[
-   {emoji:'🌾',name:{en:'Rolled oats',fr:'Flocons d\'avoine',es:'Copos de avena',pt:'Aveia em flocos',de:'Haferflocken'},qty:100,unit:'g'},
-   {emoji:'🍚',name:{en:'Whole wheat flour',fr:'Farine complète',es:'Harina integral',pt:'Farinha integral',de:'Vollkornmehl'},qty:80,unit:'g'},
-   {emoji:'🥕',name:{en:'Carrot, finely grated',fr:'Carotte râpée finement',es:'Zanahoria rallada fina',pt:'Cenoura ralada fina',de:'Karotte, fein gerieben'},qty:2,unit:'medium'},
-   {emoji:'🥚',name:{en:'Eggs',fr:'Œufs',es:'Huevos',pt:'Ovos',de:'Eier'},qty:2,unit:''},
-   {emoji:'🥛',name:{en:'Milk or oat milk',fr:'Lait ou lait d\'avoine',es:'Leche o leche de avena',pt:'Leite ou leite de aveia',de:'Milch oder Hafermilch'},qty:180,unit:'ml'},
-   {emoji:'🍎',name:{en:'Unsweetened applesauce',fr:'Compote de pommes',es:'Puré de manzana',pt:'Puré de maçã',de:'Ungesüßtes Apfelmus'},qty:3,unit:'tbsp'},
-   {emoji:'🍓',name:{en:'Fresh strawberries',fr:'Fraises fraîches',es:'Fresas frescas',pt:'Morangos frescos',de:'Frische Erdbeeren'},qty:80,unit:'g'},
-   {emoji:'🫐',name:{en:'Blueberries',fr:'Myrtilles',es:'Arándanos',pt:'Mirtilos',de:'Blaubeeren'},qty:50,unit:'g'},
- ],
- base:{en:['Cinnamon','Ground ginger','Baking powder','Pinch of salt','Butter or coconut oil'],fr:['Cannelle','Gingembre moulu','Levure chimique','Pincée de sel','Beurre'],es:['Canela','Jengibre molido','Levadura en polvo','Pizca de sal','Mantequilla'],pt:['Canela','Gengibre moído','Fermento em pó','Pitada de sal','Manteiga'],de:['Zimt','Gemahlener Ingwer','Backpulver','Prise Salz','Butter']},
- steps:{
-   en:[
-     {num:1,title:'Grate the carrots',text:'Finely grate carrots using the small holes of a box grater for seamless batter texture.',ings:['🥕 Carrot · 2 medium'],tip:'Use fresh carrots — pre-grated ones are too thick and dry.',kids:'Kids can help with the grater with supervision! 🧒'},
-     {num:2,title:'Mix dry ingredients',text:'Combine oats, flour, 1 tsp cinnamon, ½ tsp ginger, 1 tsp baking powder and a pinch of salt in a large bowl.',ings:['🌾 Rolled oats · 100g','🍚 Flour · 80g'],tip:null,kids:'Kids can do the stirring! 🧒'},
-     {num:3,title:'Mix wet & combine',text:'Whisk eggs, milk and applesauce together. Pour into dry ingredients and fold gently — don\'t overmix.',ings:['🥚 Eggs · 2','🥛 Milk · 180ml','🍎 Applesauce · 3 tbsp'],tip:'A few lumps are fine — overmixing makes them dense.',kids:null},
-     {num:4,title:'Fold in carrot',text:'Fold in the grated carrot. If batter feels too thick, add 2–3 tbsp extra milk.',ings:[],tip:'Oats absorb a lot of liquid — the batter should slowly fall from a spoon.',kids:null},
-     {num:5,title:'Cook the pancakes',text:'Heat a non-stick pan with a little butter over medium heat. Pour 8cm rounds and cook 2–3 minutes until bubbles form, then flip and cook 1–2 minutes more.',ings:[],tip:null,kids:null},
-     {num:6,title:'Serve with yogurt & berries',text:'Stack pancakes and top with Greek yogurt, sliced strawberries, blueberries and a drizzle of maple syrup.',ings:['🍓 Strawberries · 80g','🫐 Blueberries · 50g'],tip:'Stores in the fridge 3 days or freeze for 3 months.',kids:'Let kids add the fruit and yogurt! 🧒'},
-   ],
-   fr:[{num:1,title:'Râper les carottes',text:'Râper finement les carottes.',ings:['🥕 Carotte · 2'],tip:null,kids:'Les enfants peuvent aider ! 🧒'},{num:2,title:'Mélanger les ingrédients secs',text:'Mélanger l\'avoine, la farine, 1 c.c. cannelle, ½ c.c. gingembre, 1 c.c. levure et sel.',ings:['🌾 Avoine · 100g'],tip:null,kids:null},{num:3,title:'Mélanger humide & combiner',text:'Fouetter les œufs, le lait et la compote. Incorporer dans le mélange sec.',ings:['🥚 Œufs · 2','🥛 Lait · 180ml'],tip:'Quelques grumeaux sont bien.',kids:null},{num:4,title:'Incorporer la carotte',text:'Incorporer délicatement la carotte râpée.',ings:[],tip:null,kids:null},{num:5,title:'Cuire les pancakes',text:'Chauffer une poêle avec du beurre. Verser des ronds de 8cm et cuire 2–3 min, retourner et cuire 1–2 min.',ings:[],tip:null,kids:null},{num:6,title:'Servir',text:'Disposer avec le yaourt grec, les fraises, les myrtilles et le sirop d\'érable.',ings:['🍓 Fraises · 80g'],tip:null,kids:'Les enfants peuvent garnir ! 🧒'}],
-   es:[{num:1,title:'Rallar las zanahorias',text:'Rallar finamente las zanahorias.',ings:['🥕 Zanahoria · 2'],tip:null,kids:'¡Los niños pueden ayudar con supervisión! 🧒'},{num:2,title:'Mezclar ingredientes secos',text:'Combinar avena, harina, canela, jengibre, levadura y sal.',ings:['🌾 Avena · 100g'],tip:null,kids:null},{num:3,title:'Mezclar húmedos y combinar',text:'Batir huevos, leche y puré de manzana. Incorporar a los secos.',ings:['🥚 Huevos · 2'],tip:null,kids:null},{num:4,title:'Añadir zanahoria',text:'Incorporar la zanahoria rallada con cuidado.',ings:[],tip:null,kids:null},{num:5,title:'Cocinar las tortitas',text:'Calentar sartén con mantequilla. Verter círculos de 8cm y cocinar 2–3 min, voltear.',ings:[],tip:null,kids:null},{num:6,title:'Servir',text:'Con yogur griego, fresas, arándanos y jarabe de arce.',ings:['🍓 Fresas · 80g'],tip:null,kids:'¡Los niños pueden decorar! 🧒'}],
-   pt:[{num:1,title:'Ralar as cenouras',text:'Ralar finamente as cenouras.',ings:['🥕 Cenoura · 2'],tip:null,kids:'As crianças podem ajudar! 🧒'},{num:2,title:'Misturar secos',text:'Combinar aveia, farinha, canela, gengibre, fermento e sal.',ings:[],tip:null,kids:null},{num:3,title:'Misturar húmidos e combinar',text:'Bater ovos, leite e puré de maçã. Incorporar nos secos.',ings:['🥚 Ovos · 2'],tip:null,kids:null},{num:4,title:'Adicionar cenoura',text:'Incorporar a cenoura ralada.',ings:[],tip:null,kids:null},{num:5,title:'Cozinhar as panquecas',text:'Aquecer frigideira com manteiga. Verter círculos de 8cm e cozinhar 2–3 min.',ings:[],tip:null,kids:null},{num:6,title:'Servir',text:'Com iogurte grego, morangos, mirtilos e xarope de bordo.',ings:[],tip:null,kids:'As crianças podem decorar! 🧒'}],
-   de:[{num:1,title:'Karotten reiben',text:'Karotten fein reiben.',ings:['🥕 Karotte · 2'],tip:'Frische Karotten nehmen — vorgeraspelte sind zu trocken.',kids:'Kinder können beim Reiben helfen! 🧒'},{num:2,title:'Trockene Zutaten mischen',text:'Haferflocken, Mehl, 1 TL Zimt, ½ TL Ingwer, 1 TL Backpulver und Salz mischen.',ings:['🌾 Haferflocken · 100g'],tip:null,kids:'Kinder können rühren! 🧒'},{num:3,title:'Nasse mischen & kombinieren',text:'Eier, Milch und Apfelmus verquirlen. In trockene Zutaten einfalten.',ings:['🥚 Eier · 2'],tip:'Ein paar Klumpen sind gut.',kids:null},{num:4,title:'Karotte einfalten',text:'Geriebene Karotte vorsichtig einfalten.',ings:[],tip:null,kids:null},{num:5,title:'Pancakes backen',text:'Pfanne mit Butter erhitzen. 8cm-Runden einschütten, 2–3 Min. backen, wenden.',ings:[],tip:null,kids:null},{num:6,title:'Servieren',text:'Mit griechischem Joghurt, Erdbeeren, Blaubeeren und Ahornsirup.',ings:[],tip:null,kids:'Kinder können garnieren! 🧒'}],
- },
- dressing:{en:['Maple syrup · 2 tbsp','Greek yogurt · 4 tbsp'],fr:['Sirop d\'érable · 2 c.s.','Yaourt grec · 4 c.s.'],es:['Jarabe de arce · 2 c.s.','Yogur griego · 4 c.s.'],pt:['Xarope de bordo · 2 c.s.','Iogurte grego · 4 c.s.'],de:['Ahornsirup · 2 EL','Griechischer Joghurt · 4 EL']},
- nutrition:{kcal:310,protein:9,carbs:42,fat:10,fiber:4}},
+// Normalise a DB recipe row into the format the app expects
+function normaliseRecipe(r) {
+  return {
+    id: r.id,                          // string slug, e.g. "sweet-potato-black-bean-rice-bowl"
+    photo: r.image_url || null,
+    emoji: r.emoji || '🍽️',
+    tags: r.tags || [],
+    meal: r.meal || [],
+    categories: r.categories || [],
+    diet: r.diet || [],
+    isKids: r.is_kids || false,
+    prep: r.prep_minutes || 0,
+    cook: r.cook_minutes || 0,
+    servings: r.servings || 2,
+    nutrition: r.nutrition || null,
+    ingredients: r.ingredients || [],
+    dressing: r.dressing || [],
+    base: r.base_ingredients || [],
+    steps: r.steps || [],
+    badges: [],
+    // Flat text fields used directly
+    _title: r.title || '',
+    _subtitle: r.subtitle || '',
+    _desc: r.subtitle || '',
+  };
+}
 
-{id:3,emoji:'🥗',photo:'https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80',
- tags:['Vegan','GrainBowl','GlutenFree'],badges:['vegan','gf','protein'],
- prep:15,cook:25,
- name:{en:'Quinoa Buddha Bowl',fr:'Buddha Bowl Quinoa',es:'Buddha Bowl de Quinoa',pt:'Buddha Bowl de Quinoa',de:'Quinoa Buddha Bowl'},
- subtitle:{en:'Nourishing, colourful & fully loaded',fr:'Nourrissant, coloré & complet',es:'Nutritivo, colorido y completo',pt:'Nutritivo, colorido e completo',de:'Nährend, bunt & vollgepackt'},
- desc:{en:'Roasted sweet potato and chickpeas over fluffy quinoa with creamy tahini dressing.',fr:'Patate douce et pois chiches rôtis sur quinoa avec vinaigrette tahini.',es:'Boniato y garbanzos asados sobre quinoa con aliño de tahini.',pt:'Batata-doce e grão-de-bico assados sobre quinoa com molho de tahini.',de:'Geröstete Süßkartoffel und Kichererbsen auf Quinoa mit Tahini-Dressing.'},
- ingredients:[
-   {emoji:'🌾',name:{en:'Quinoa',fr:'Quinoa',es:'Quinoa',pt:'Quinoa',de:'Quinoa'},qty:100,unit:'g'},
-   {emoji:'🍠',name:{en:'Sweet potato',fr:'Patate douce',es:'Boniato',pt:'Batata-doce',de:'Süßkartoffel'},qty:200,unit:'g'},
-   {emoji:'🫘',name:{en:'Chickpeas (tin)',fr:'Pois chiches (boîte)',es:'Garbanzos (lata)',pt:'Grão-de-bico (lata)',de:'Kichererbsen (Dose)'},qty:200,unit:'g'},
-   {emoji:'🥬',name:{en:'Kale',fr:'Chou kale',es:'Col kale',pt:'Couve kale',de:'Grünkohl'},qty:60,unit:'g'},
-   {emoji:'🥑',name:{en:'Avocado',fr:'Avocat',es:'Aguacate',pt:'Abacate',de:'Avocado'},qty:1,unit:''},
-   {emoji:'🍋',name:{en:'Lemon',fr:'Citron',es:'Limón',pt:'Limão',de:'Zitrone'},qty:1,unit:''},
-   {emoji:'🧄',name:{en:'Garlic',fr:'Ail',es:'Ajo',pt:'Alho',de:'Knoblauch'},qty:1,unit:'clove'},
- ],
- base:{en:['Olive oil','Tahini · 2 tbsp','Cumin','Salt'],fr:['Huile d\'olive','Tahini · 2 c.s.','Cumin','Sel'],es:['Aceite de oliva','Tahini · 2 c.s.','Comino','Sal'],pt:['Azeite','Tahini · 2 c.s.','Cominhos','Sal'],de:['Olivenöl','Tahini · 2 EL','Kreuzkümmel','Salz']},
- steps:{
-   en:[
-     {num:1,title:'Cook the quinoa',text:'Rinse quinoa. Cook in 200ml salted water for 15 minutes. Fluff with a fork and set aside.',ings:['🌾 Quinoa · 100g'],tip:null,kids:null},
-     {num:2,title:'Roast the veg',text:'Dice sweet potato and drain chickpeas. Toss with olive oil, cumin and salt on a baking tray. Roast at 200°C for 25 minutes until golden.',ings:['🍠 Sweet potato · 200g','🫘 Chickpeas · 200g'],tip:'Don\'t overcrowd the tray — spread in a single layer for crispiness.',kids:null},
-     {num:3,title:'Prep the kale',text:'Massage kale with a pinch of salt and a drizzle of olive oil for 1 minute until softened.',ings:['🥬 Kale · 60g'],tip:null,kids:null},
-     {num:4,title:'Make the dressing',text:'Whisk tahini with lemon juice, 1 crushed garlic clove and 3 tbsp water until smooth and creamy.',ings:['🍋 Lemon · 1'],tip:'Add more water if too thick — it should pour easily.',kids:null},
-     {num:5,title:'Assemble & serve',text:'Divide quinoa between bowls. Arrange roasted veg, kale and sliced avocado on top. Drizzle generously with tahini dressing.',ings:['🥑 Avocado · 1'],tip:'Great for meal prep — keep components separate and assemble fresh.',kids:null},
-   ],
-   fr:[{num:1,title:'Cuire le quinoa',text:'Rincer le quinoa. Cuire dans 200ml d\'eau salée 15 min.',ings:['🌾 Quinoa · 100g'],tip:null,kids:null},{num:2,title:'Rôtir les légumes',text:'Couper la patate douce, égoutter les pois chiches. Mélanger avec huile, cumin, sel. Rôtir à 200°C 25 min.',ings:['🍠 Patate douce · 200g'],tip:null,kids:null},{num:3,title:'Préparer le kale',text:'Masser le chou kale avec sel et huile d\'olive.',ings:[],tip:null,kids:null},{num:4,title:'Vinaigrette tahini',text:'Fouetter le tahini avec jus de citron, ail écrasé et 3 c.s. d\'eau.',ings:[],tip:null,kids:null},{num:5,title:'Assembler',text:'Quinoa dans les bols, légumes, kale et avocat dessus. Arroser de vinaigrette.',ings:['🥑 Avocat · 1'],tip:null,kids:null}],
-   es:[{num:1,title:'Cocinar la quinoa',text:'Enjuagar la quinoa. Cocinar en 200ml de agua salada 15 min.',ings:[],tip:null,kids:null},{num:2,title:'Asar las verduras',text:'Cortar el boniato, escurrir los garbanzos. Mezclar con aceite, comino, sal. Asar a 200°C 25 min.',ings:[],tip:null,kids:null},{num:3,title:'Preparar el kale',text:'Masajear el kale con sal y aceite.',ings:[],tip:null,kids:null},{num:4,title:'Aliño tahini',text:'Batir tahini con zumo de limón, ajo y 3 c.s. de agua.',ings:[],tip:null,kids:null},{num:5,title:'Montar',text:'Quinoa en los boles, verduras asadas, kale y aguacate. Regar con aliño.',ings:[],tip:null,kids:null}],
-   pt:[{num:1,title:'Cozinhar a quinoa',text:'Lavar a quinoa. Cozinhar em 200ml de água salgada 15 min.',ings:[],tip:null,kids:null},{num:2,title:'Assar os legumes',text:'Cortar a batata-doce, escorrer o grão. Misturar com azeite, cominhos, sal. Assar a 200°C 25 min.',ings:[],tip:null,kids:null},{num:3,title:'Preparar a couve',text:'Massajar a couve com sal e azeite.',ings:[],tip:null,kids:null},{num:4,title:'Molho tahini',text:'Bater tahini com sumo de limão, alho e 3 c.s. de água.',ings:[],tip:null,kids:null},{num:5,title:'Montar',text:'Quinoa nas tigelas, legumes, couve e abacate. Regar com molho.',ings:[],tip:null,kids:null}],
-   de:[{num:1,title:'Quinoa kochen',text:'Quinoa spülen. In 200ml gesalzenem Wasser 15 Min. kochen.',ings:[],tip:null,kids:null},{num:2,title:'Gemüse rösten',text:'Süßkartoffel würfeln, Kichererbsen abtropfen. Mit Öl, Kreuzkümmel, Salz mischen. Bei 200°C 25 Min. rösten.',ings:[],tip:null,kids:null},{num:3,title:'Grünkohl vorbereiten',text:'Grünkohl mit Salz und Olivenöl 1 Min. massieren.',ings:[],tip:null,kids:null},{num:4,title:'Tahini-Dressing',text:'Tahini mit Zitronensaft, Knoblauch und 3 EL Wasser verrühren.',ings:[],tip:null,kids:null},{num:5,title:'Anrichten',text:'Quinoa in Schüsseln, Gemüse, Grünkohl und Avocado darauf. Mit Dressing beträufeln.',ings:[],tip:null,kids:null}],
- },
- nutrition:{kcal:520,protein:18,carbs:62,fat:22,fiber:12}},
 
-{id:4,emoji:'🍝',photo:'https://images.unsplash.com/photo-1621996346565-e3dbc646d9a9?w=600&q=80',
- tags:['Vegetarian','Mediterranean','ComfortFood'],badges:['veg'],
- prep:10,cook:30,
- name:{en:'Pasta e Fagioli',fr:'Pasta e Fagioli',es:'Pasta e Fagioli',pt:'Pasta e Fagioli',de:'Pasta e Fagioli'},
- subtitle:{en:'Hearty Italian white bean soup',fr:'Soupe italienne copieuse aux haricots blancs',es:'Contundente sopa italiana de alubias blancas',pt:'Reconfortante sopa italiana de feijão branco',de:'Herzhafter italienischer Weißbohneneintopf'},
- desc:{en:'A classic Italian peasant dish — creamy white beans and pasta in a rich tomato broth.',fr:'Un classique paysan italien — haricots blancs et pâtes dans un bouillon de tomates.',es:'Un clásico italiano — alubias blancas y pasta en un caldo de tomate.',pt:'Um clássico italiano — feijão branco e massa num caldo de tomate rico.',de:'Ein klassisches italienisches Gericht — cremige Bohnen und Pasta in Tomatenbrühe.'},
- ingredients:[
-   {emoji:'🍝',name:{en:'Pasta (small)',fr:'Pâtes (petites)',es:'Pasta (pequeña)',pt:'Massa (pequena)',de:'Pasta (kleine)'},qty:200,unit:'g'},
-   {emoji:'🫘',name:{en:'White beans (tin)',fr:'Haricots blancs (boîte)',es:'Alubias blancas (lata)',pt:'Feijão branco (lata)',de:'Weiße Bohnen (Dose)'},qty:400,unit:'g'},
-   {emoji:'🍅',name:{en:'Chopped tomatoes',fr:'Tomates concassées',es:'Tomates troceados',pt:'Tomates picados',de:'Gehackte Tomaten'},qty:200,unit:'g'},
-   {emoji:'🥕',name:{en:'Celery sticks',fr:'Branches de céleri',es:'Ramas de apio',pt:'Talos de aipo',de:'Stangensellerie'},qty:2,unit:''},
-   {emoji:'🥕',name:{en:'Carrot',fr:'Carotte',es:'Zanahoria',pt:'Cenoura',de:'Karotte'},qty:1,unit:''},
-   {emoji:'🧅',name:{en:'Onion',fr:'Oignon',es:'Cebolla',pt:'Cebola',de:'Zwiebel'},qty:1,unit:''},
-   {emoji:'🧄',name:{en:'Garlic',fr:'Ail',es:'Ajo',pt:'Alho',de:'Knoblauch'},qty:3,unit:'cloves'},
-   {emoji:'🧀',name:{en:'Parmesan',fr:'Parmesan',es:'Parmesano',pt:'Parmesão',de:'Parmesan'},qty:30,unit:'g'},
- ],
- base:{en:['Olive oil · 45ml','Rosemary sprig','Stock · 500ml','Salt & pepper'],fr:['Huile d\'olive · 45ml','Brin de romarin','Bouillon · 500ml'],es:['Aceite de oliva · 45ml','Rama de romero','Caldo · 500ml'],pt:['Azeite · 45ml','Ramo de alecrim','Caldo · 500ml'],de:['Olivenöl · 45ml','Rosmarinzweig','Brühe · 500ml']},
- steps:{
-   en:[
-     {num:1,title:'Build the soffritto',text:'Gently fry onion, carrot and celery in olive oil over low heat for 10 minutes until very soft. Don\'t rush this — it\'s the flavour base.',ings:['🧅 Onion · 1','🥕 Carrot · 1','🥕 Celery · 2 sticks'],tip:'Low and slow is key here. The vegetables should melt, not brown.',kids:null},
-     {num:2,title:'Add garlic & rosemary',text:'Add garlic and rosemary sprig, cook 1 more minute until fragrant.',ings:['🧄 Garlic · 3 cloves'],tip:null,kids:null},
-     {num:3,title:'Tomatoes & stock',text:'Add chopped tomatoes and stock. Stir well and simmer for 10 minutes.',ings:['🍅 Tomatoes · 200g'],tip:null,kids:null},
-     {num:4,title:'Beans — mash some',text:'Add beans. Use the back of a spoon or fork to mash about a quarter of them directly in the pot — this thickens the soup beautifully.',ings:['🫘 White beans · 400g'],tip:'This is what makes the broth creamy without any cream.',kids:null},
-     {num:5,title:'Add pasta & finish',text:'Add pasta and cook until al dente (check packet). Remove rosemary. Season well. Serve with parmesan and a drizzle of good olive oil.',ings:['🍝 Pasta · 200g','🧀 Parmesan · 30g'],tip:'Even better the next day — the pasta absorbs the broth overnight.',kids:null},
-   ],
-   fr:[{num:1,title:'Soffritto',text:'Faire revenir doucement oignon, carotte et céleri dans l\'huile 10 min à feu doux.',ings:[],tip:'Lentement est la clé — les légumes doivent fondre.',kids:null},{num:2,title:'Ail & romarin',text:'Ajouter l\'ail et le romarin, cuire 1 min.',ings:[],tip:null,kids:null},{num:3,title:'Tomates & bouillon',text:'Ajouter tomates et bouillon. Mijoter 10 min.',ings:[],tip:null,kids:null},{num:4,title:'Haricots — écraser certains',text:'Ajouter les haricots. Écraser ¼ directement dans la casserole.',ings:[],tip:null,kids:null},{num:5,title:'Pâtes & finition',text:'Ajouter les pâtes, cuire al dente. Retirer le romarin. Servir avec parmesan.',ings:[],tip:null,kids:null}],
-   es:[{num:1,title:'Sofrito',text:'Sofreír suavemente cebolla, zanahoria y apio en aceite 10 min a fuego lento.',ings:[],tip:null,kids:null},{num:2,title:'Ajo y romero',text:'Añadir ajo y romero, cocinar 1 min.',ings:[],tip:null,kids:null},{num:3,title:'Tomates y caldo',text:'Añadir tomates y caldo. Hervir 10 min.',ings:[],tip:null,kids:null},{num:4,title:'Alubias — aplastar algunas',text:'Añadir alubias. Aplastar ¼ directamente en la olla.',ings:[],tip:null,kids:null},{num:5,title:'Pasta y acabado',text:'Añadir pasta, cocinar al dente. Retirar romero. Servir con parmesano.',ings:[],tip:null,kids:null}],
-   pt:[{num:1,title:'Sofrito',text:'Refogar suavemente cebola, cenoura e aipo em azeite 10 min a fogo lento.',ings:[],tip:null,kids:null},{num:2,title:'Alho e alecrim',text:'Adicionar alho e alecrim, cozinhar 1 min.',ings:[],tip:null,kids:null},{num:3,title:'Tomates e caldo',text:'Adicionar tomates e caldo. Ferver 10 min.',ings:[],tip:null,kids:null},{num:4,title:'Feijão — esmagar alguns',text:'Adicionar feijão. Esmagar ¼ diretamente na panela.',ings:[],tip:null,kids:null},{num:5,title:'Massa e acabamento',text:'Adicionar massa, cozinhar al dente. Retirar alecrim. Servir com parmesão.',ings:[],tip:null,kids:null}],
-   de:[{num:1,title:'Soffritto',text:'Zwiebel, Karotte und Sellerie in Olivenöl bei niedriger Hitze 10 Min. sanft anbraten.',ings:[],tip:'Langsam und sanft — das Gemüse soll schmelzen, nicht bräunen.',kids:null},{num:2,title:'Knoblauch & Rosmarin',text:'Knoblauch und Rosmarin hinzufügen, 1 Min. köcheln.',ings:[],tip:null,kids:null},{num:3,title:'Tomaten & Brühe',text:'Tomaten und Brühe hinzufügen. 10 Min. köcheln.',ings:[],tip:null,kids:null},{num:4,title:'Bohnen — einige zerdrücken',text:'Bohnen hinzufügen. ¼ direkt im Topf zerdrücken.',ings:[],tip:null,kids:null},{num:5,title:'Pasta & fertigstellen',text:'Pasta hinzufügen, al dente kochen. Rosmarin entfernen. Mit Parmesan servieren.',ings:[],tip:null,kids:null}],
- },
- nutrition:{kcal:410,protein:18,carbs:65,fat:8,fiber:11}},
-
-{id:5,emoji:'🫘',photo:'https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=600&q=80',
- tags:['Vegan','Asian','Quick','GlutenFree'],badges:['vegan','gf','protein'],
- prep:5,cook:25,
- name:{en:'Green Lentil Dal',fr:'Dal de Lentilles Vertes',es:'Dal de Lentejas Verdes',pt:'Dal de Lentilhas Verdes',de:'Grünes Linsen Dal'},
- subtitle:{en:'Warming, spiced & ready in 30 min',fr:'Réconfortant, épicé et prêt en 30 min',es:'Reconfortante, especiado y listo en 30 min',pt:'Reconfortante, temperado e pronto em 30 min',de:'Wärmend, würzig & in 30 Min. fertig'},
- desc:{en:'Creamy spiced lentils with coconut milk and wilted spinach. A weeknight staple.',fr:'Lentilles épicées crémeuses au lait de coco et épinards flétris.',es:'Lentejas especiadas cremosas con leche de coco y espinacas.',pt:'Lentilhas temperadas cremosas com leite de coco e espinafres.',de:'Cremige gewürzte Linsen mit Kokosmilch und Spinat.'},
- ingredients:[
-   {emoji:'🫘',name:{en:'Green lentils',fr:'Lentilles vertes',es:'Lentejas verdes',pt:'Lentilhas verdes',de:'Grüne Linsen'},qty:200,unit:'g'},
-   {emoji:'🥛',name:{en:'Coconut milk',fr:'Lait de coco',es:'Leche de coco',pt:'Leite de coco',de:'Kokosmilch'},qty:400,unit:'ml'},
-   {emoji:'🍅',name:{en:'Chopped tomatoes',fr:'Tomates concassées',es:'Tomates troceados',pt:'Tomates picados',de:'Gehackte Tomaten'},qty:200,unit:'g'},
-   {emoji:'🥬',name:{en:'Spinach',fr:'Épinards',es:'Espinacas',pt:'Espinafres',de:'Spinat'},qty:60,unit:'g'},
-   {emoji:'🧅',name:{en:'Onion',fr:'Oignon',es:'Cebolla',pt:'Cebola',de:'Zwiebel'},qty:1,unit:''},
-   {emoji:'🧄',name:{en:'Garlic',fr:'Ail',es:'Ajo',pt:'Alho',de:'Knoblauch'},qty:3,unit:'cloves'},
-   {emoji:'🌿',name:{en:'Fresh coriander',fr:'Coriandre fraîche',es:'Cilantro fresco',pt:'Coentro fresco',de:'Frischer Koriander'},qty:15,unit:'g'},
-   {emoji:'🌾',name:{en:'Basmati rice',fr:'Riz basmati',es:'Arroz basmati',pt:'Arroz basmati',de:'Basmatireis'},qty:160,unit:'g'},
- ],
- base:{en:['Turmeric · 1 tsp','Cumin · 1 tsp','Salt','Oil'],fr:['Curcuma · 1 c.c.','Cumin · 1 c.c.','Sel'],es:['Cúrcuma · 1 c.c.','Comino · 1 c.c.','Sal'],pt:['Curcuma · 1 c.c.','Cominhos · 1 c.c.','Sal'],de:['Kurkuma · 1 TL','Kreuzkümmel · 1 TL','Salz']},
- steps:{
-   en:[
-     {num:1,title:'Start the rice',text:'Cook basmati rice according to packet. Keep warm.',ings:['🌾 Rice · 160g'],tip:null,kids:null},
-     {num:2,title:'Fry onion & spices',text:'Sauté diced onion in oil until golden, about 6 minutes. Add garlic, turmeric and cumin — cook 1 more minute until fragrant.',ings:['🧅 Onion · 1','🧄 Garlic · 3 cloves'],tip:'The spices should sizzle in the oil — this blooms the flavour.',kids:null},
-     {num:3,title:'Add lentils & liquids',text:'Add rinsed lentils, chopped tomatoes and coconut milk. Stir well. Bring to a boil.',ings:['🫘 Lentils · 200g','🍅 Tomatoes · 200g','🥛 Coconut milk · 400ml'],tip:null,kids:null},
-     {num:4,title:'Simmer until creamy',text:'Reduce heat and simmer for 20 minutes, stirring occasionally, until lentils are completely soft and the dal is thick and creamy.',ings:[],tip:'If too thick, add a splash of water. If too thin, simmer a few more minutes.',kids:null},
-     {num:5,title:'Finish with spinach',text:'Stir in spinach until wilted, about 1 minute. Season with salt. Serve over rice topped with fresh coriander.',ings:['🥬 Spinach · 60g','🌿 Coriander · 15g'],tip:null,kids:null},
-   ],
-   fr:[{num:1,title:'Cuire le riz',text:'Cuire le riz basmati selon les instructions.',ings:[],tip:null,kids:null},{num:2,title:'Oignon & épices',text:'Faire revenir l\'oignon jusqu\'à dorure. Ajouter ail, curcuma, cumin — 1 min.',ings:[],tip:null,kids:null},{num:3,title:'Lentilles & liquides',text:'Ajouter lentilles rincées, tomates et lait de coco. Porter à ébullition.',ings:[],tip:null,kids:null},{num:4,title:'Mijoter',text:'Réduire le feu, mijoter 20 min jusqu\'à ce que les lentilles soient tendres.',ings:[],tip:null,kids:null},{num:5,title:'Épinards & service',text:'Incorporer les épinards. Servir sur riz avec coriandre fraîche.',ings:[],tip:null,kids:null}],
-   es:[{num:1,title:'Cocer el arroz',text:'Cocer el arroz basmati según instrucciones.',ings:[],tip:null,kids:null},{num:2,title:'Cebolla y especias',text:'Sofreír la cebolla hasta dorar. Añadir ajo, cúrcuma, comino — 1 min.',ings:[],tip:null,kids:null},{num:3,title:'Lentejas y líquidos',text:'Añadir lentejas enjuagadas, tomates y leche de coco. Llevar a ebullición.',ings:[],tip:null,kids:null},{num:4,title:'Hervir a fuego lento',text:'Reducir fuego, hervir 20 min hasta que las lentejas estén tiernas.',ings:[],tip:null,kids:null},{num:5,title:'Espinacas y servicio',text:'Incorporar espinacas. Servir sobre arroz con cilantro.',ings:[],tip:null,kids:null}],
-   pt:[{num:1,title:'Cozinhar o arroz',text:'Cozinhar o arroz basmati conforme instruções.',ings:[],tip:null,kids:null},{num:2,title:'Cebola e especiarias',text:'Refogar a cebola até dourar. Adicionar alho, curcuma, cominhos — 1 min.',ings:[],tip:null,kids:null},{num:3,title:'Lentilhas e líquidos',text:'Adicionar lentilhas lavadas, tomates e leite de coco. Ferver.',ings:[],tip:null,kids:null},{num:4,title:'Ferver em lume brando',text:'Reduzir lume, ferver 20 min até as lentilhas ficarem macias.',ings:[],tip:null,kids:null},{num:5,title:'Espinafres e serviço',text:'Incorporar espinafres. Servir sobre arroz com coentro.',ings:[],tip:null,kids:null}],
-   de:[{num:1,title:'Reis kochen',text:'Basmatireis nach Packungsanweisung kochen.',ings:[],tip:null,kids:null},{num:2,title:'Zwiebel & Gewürze',text:'Zwiebel goldbraun anbraten. Knoblauch, Kurkuma, Kreuzkümmel hinzufügen — 1 Min.',ings:[],tip:null,kids:null},{num:3,title:'Linsen & Flüssigkeiten',text:'Gespülte Linsen, Tomaten und Kokosmilch hinzufügen. Aufkochen.',ings:[],tip:null,kids:null},{num:4,title:'Köcheln',text:'Hitze reduzieren, 20 Min. köcheln bis Linsen weich sind.',ings:[],tip:null,kids:null},{num:5,title:'Spinat & servieren',text:'Spinat einrühren. Auf Reis mit Koriander servieren.',ings:[],tip:null,kids:null}],
- },
- nutrition:{kcal:480,protein:22,carbs:72,fat:12,fiber:14}},
-
-{id:6,emoji:'🥗',photo:'https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80',
- tags:['Vegetarian','Mediterranean','Salad','Quick','GlutenFree'],badges:['veg','gf'],
- prep:10,cook:0,
- name:{en:'Greek Salad',fr:'Salade Grecque',es:'Ensalada Griega',pt:'Salada Grega',de:'Griechischer Salat'},
- subtitle:{en:'Classic Horiatiki — bright & satisfying',fr:'Horiatiki classique — vif et rassasiant',es:'Horiatiki clásico — vibrante y saciante',pt:'Horiatiki clássico — vivo e saciante',de:'Klassischer Horiatiki — frisch & sättigend'},
- desc:{en:'Sun-ripened tomatoes, cucumber, olives and feta — the real Greek way.',fr:'Tomates mûres, concombre, olives et feta — à la vraie façon grecque.',es:'Tomates maduros al sol, pepino, aceitunas y feta — a la manera griega.',pt:'Tomates maduros ao sol, pepino, azeitonas e feta — à maneira grega.',de:'Sonnengereifte Tomaten, Gurke, Oliven und Feta — auf echte griechische Art.'},
- ingredients:[
-   {emoji:'🍅',name:{en:'Ripe tomatoes',fr:'Tomates mûres',es:'Tomates maduros',pt:'Tomates maduros',de:'Reife Tomaten'},qty:300,unit:'g'},
-   {emoji:'🥒',name:{en:'Cucumber',fr:'Concombre',es:'Pepino',pt:'Pepino',de:'Gurke'},qty:1,unit:''},
-   {emoji:'🧅',name:{en:'Red onion',fr:'Oignon rouge',es:'Cebolla roja',pt:'Cebola roxa',de:'Rote Zwiebel'},qty:0.5,unit:''},
-   {emoji:'🧀',name:{en:'Feta (block)',fr:'Feta (bloc)',es:'Feta (bloque)',pt:'Feta (bloco)',de:'Feta (Block)'},qty:100,unit:'g'},
-   {emoji:'🫒',name:{en:'Kalamata olives',fr:'Olives Kalamata',es:'Aceitunas Kalamata',pt:'Azeitonas Kalamata',de:'Kalamata-Oliven'},qty:80,unit:'g'},
-   {emoji:'🍋',name:{en:'Lemon',fr:'Citron',es:'Limón',pt:'Limão',de:'Zitrone'},qty:0.5,unit:''},
- ],
- base:{en:['Olive oil · 45ml','Dried oregano · 1 tsp','Salt & pepper'],fr:['Huile d\'olive · 45ml','Origan séché · 1 c.c.','Sel'],es:['Aceite de oliva · 45ml','Orégano seco · 1 c.c.','Sal'],pt:['Azeite · 45ml','Orégão seco · 1 c.c.','Sal'],de:['Olivenöl · 45ml','Getrockneter Oregano · 1 TL','Salz']},
- steps:{
-   en:[
-     {num:1,title:'Chop the veg',text:'Cut tomatoes into large wedges. Slice cucumber into half-moons. Thinly slice red onion.',ings:['🍅 Tomatoes · 300g','🥒 Cucumber · 1','🧅 Red onion · ½'],tip:'Use the ripest tomatoes you can find — this salad lives or dies by them.',kids:null},
-     {num:2,title:'Combine',text:'Put all vegetables in a wide bowl. Add olives and toss gently.',ings:['🫒 Olives · 80g'],tip:null,kids:null},
-     {num:3,title:'Dress & finish',text:'Place the feta block whole on top (don\'t crumble it yet). Drizzle with olive oil, a squeeze of lemon and a generous pinch of dried oregano. Season with salt.',ings:['🧀 Feta · 100g','🍋 Lemon · ½'],tip:'Letting the feta sit whole keeps it moist. Break it as you serve.',kids:null},
-     {num:4,title:'Rest & serve',text:'Let the salad sit for 5 minutes before serving — the tomatoes will release their juices into the dressing.',ings:[],tip:null,kids:null},
-   ],
-   fr:[{num:1,title:'Couper les légumes',text:'Couper les tomates en grosses tranches. Trancher le concombre. Émincer l\'oignon rouge.',ings:[],tip:null,kids:null},{num:2,title:'Combiner',text:'Mettre tous les légumes dans un bol. Ajouter les olives.',ings:[],tip:null,kids:null},{num:3,title:'Assaisonner',text:'Poser le bloc de feta entier dessus. Arroser d\'huile d\'olive, jus de citron et origan.',ings:[],tip:null,kids:null},{num:4,title:'Reposer et servir',text:'Laisser reposer 5 minutes.',ings:[],tip:null,kids:null}],
-   es:[{num:1,title:'Cortar las verduras',text:'Cortar los tomates en gajos. El pepino en medias lunas. La cebolla roja fina.',ings:[],tip:null,kids:null},{num:2,title:'Combinar',text:'Poner todo en un bol. Añadir aceitunas.',ings:[],tip:null,kids:null},{num:3,title:'Aliñar',text:'Colocar el bloque de feta entero encima. Aceite de oliva, limón y orégano.',ings:[],tip:null,kids:null},{num:4,title:'Reposar y servir',text:'Dejar reposar 5 minutos.',ings:[],tip:null,kids:null}],
-   pt:[{num:1,title:'Cortar os legumes',text:'Cortar os tomates em gomos. Pepino em meias-luas. Cebola roxa fina.',ings:[],tip:null,kids:null},{num:2,title:'Combinar',text:'Colocar tudo numa tigela. Adicionar azeitonas.',ings:[],tip:null,kids:null},{num:3,title:'Temperar',text:'Colocar o bloco de feta inteiro por cima. Azeite, limão e orégão.',ings:[],tip:null,kids:null},{num:4,title:'Repousar e servir',text:'Deixar repousar 5 minutos.',ings:[],tip:null,kids:null}],
-   de:[{num:1,title:'Gemüse schneiden',text:'Tomaten in große Spalten schneiden. Gurke in Halbmonde. Rote Zwiebel dünn schneiden.',ings:[],tip:null,kids:null},{num:2,title:'Kombinieren',text:'Alles in eine Schüssel. Oliven dazugeben.',ings:[],tip:null,kids:null},{num:3,title:'Anmachen',text:'Feta-Block ganz darauflegen. Mit Olivenöl, Zitrone und Oregano beträufeln.',ings:[],tip:null,kids:null},{num:4,title:'Ruhen lassen & servieren',text:'5 Minuten ruhen lassen.',ings:[],tip:null,kids:null}],
- },
- nutrition:{kcal:260,protein:9,carbs:12,fat:19,fiber:3}},
-
-{id:7,emoji:'🍜',photo:'https://images.unsplash.com/photo-1547592166-23ac45744acd?w=600&q=80',
- tags:['Vegan','Asian','Quick','GlutenFree'],badges:['vegan','gf'],
- prep:5,cook:15,
- name:{en:'Miso Noodle Soup',fr:'Soupe de Nouilles Miso',es:'Sopa de Fideos Miso',pt:'Sopa de Noodles Miso',de:'Miso-Nudelsuppe'},
- subtitle:{en:'Light, umami-rich & deeply comforting',fr:'Légère, riche en umami et réconfortante',es:'Ligera, rica en umami y reconfortante',pt:'Leve, rica em umami e reconfortante',de:'Leicht, umami-reich & tief tröstlich'},
- desc:{en:'A nourishing Japanese-inspired bowl with silken tofu, mushrooms and noodles in a miso broth.',fr:'Un bol nourrissant à la japonaise avec tofu soyeux, champignons et nouilles dans un bouillon miso.',es:'Un bol nutritivo de inspiración japonesa con tofu, setas y fideos en caldo miso.',pt:'Uma tigela nutritiva de inspiração japonesa com tofu, cogumelos e noodles em caldo miso.',de:'Eine nährende japanisch inspirierte Schüssel mit Seidentofu, Pilzen und Nudeln in Misobrühe.'},
- ingredients:[
-   {emoji:'🧱',name:{en:'Silken tofu',fr:'Tofu soyeux',es:'Tofu sedoso',pt:'Tofu sedoso',de:'Seidentofu'},qty:200,unit:'g'},
-   {emoji:'🫙',name:{en:'White miso paste',fr:'Pâte miso blanche',es:'Pasta miso blanca',pt:'Pasta miso branca',de:'Weiße Misopaste'},qty:45,unit:'g'},
-   {emoji:'🍄',name:{en:'Mushrooms',fr:'Champignons',es:'Setas',pt:'Cogumelos',de:'Pilze'},qty:100,unit:'g'},
-   {emoji:'🥬',name:{en:'Spinach',fr:'Épinards',es:'Espinacas',pt:'Espinafres',de:'Spinat'},qty:30,unit:'g'},
-   {emoji:'🍜',name:{en:'Noodles',fr:'Nouilles',es:'Fideos',pt:'Noodles',de:'Nudeln'},qty:80,unit:'g'},
-   {emoji:'🧄',name:{en:'Garlic',fr:'Ail',es:'Ajo',pt:'Alho',de:'Knoblauch'},qty:1,unit:'clove'},
- ],
- base:{en:['Soy sauce · 15ml','Sesame oil · 1 tsp','Spring onion to serve'],fr:['Sauce soja · 15ml','Huile de sésame · 1 c.c.'],es:['Salsa de soja · 15ml','Aceite de sésamo · 1 c.c.'],pt:['Molho de soja · 15ml','Óleo de sésamo · 1 c.c.'],de:['Sojasoße · 15ml','Sesamöl · 1 TL']},
- steps:{
-   en:[
-     {num:1,title:'Heat the broth',text:'Bring 800ml water to a gentle simmer — never a rolling boil. Add sliced mushrooms and garlic. Simmer 3 minutes.',ings:['🍄 Mushrooms · 100g'],tip:'Boiling destroys miso\'s beneficial enzymes — always simmer gently.',kids:null},
-     {num:2,title:'Cook the noodles',text:'Add noodles and cook per packet instructions (usually 3–4 minutes).',ings:['🍜 Noodles · 80g'],tip:null,kids:null},
-     {num:3,title:'Add tofu',text:'Cube the tofu and add to the pot. Simmer 2 minutes to heat through.',ings:['🧱 Tofu · 200g'],tip:'Silken tofu breaks apart easily — add gently.',kids:null},
-     {num:4,title:'Dissolve the miso',text:'Turn off the heat. Scoop miso into a small bowl, add 2 tbsp of the hot broth, whisk until smooth, then stir back into the pot.',ings:['🫙 Miso · 45g'],tip:'Never boil after adding miso — the flavour and probiotics are heat-sensitive.',kids:null},
-     {num:5,title:'Finish & serve',text:'Add spinach until wilted. Add a few drops of sesame oil. Serve immediately in deep bowls with soy sauce on the side.',ings:['🥬 Spinach · 30g'],tip:null,kids:null},
-   ],
-   fr:[{num:1,title:'Chauffer le bouillon',text:'Porter 800ml d\'eau à frémissement. Ajouter champignons et ail. Mijoter 3 min.',ings:[],tip:'Ne jamais bouillir — cela détruit les enzymes du miso.',kids:null},{num:2,title:'Cuire les nouilles',text:'Ajouter les nouilles et cuire selon les instructions.',ings:[],tip:null,kids:null},{num:3,title:'Ajouter le tofu',text:'Couper le tofu en cubes et ajouter. Mijoter 2 min.',ings:[],tip:null,kids:null},{num:4,title:'Dissoudre le miso',text:'Éteindre le feu. Diluer le miso dans du bouillon chaud, puis incorporer.',ings:[],tip:null,kids:null},{num:5,title:'Finir et servir',text:'Ajouter les épinards. Quelques gouttes d\'huile de sésame. Servir immédiatement.',ings:[],tip:null,kids:null}],
-   es:[{num:1,title:'Calentar el caldo',text:'Llevar 800ml de agua a ebullición suave. Añadir setas y ajo. Hervir 3 min.',ings:[],tip:null,kids:null},{num:2,title:'Cocer los fideos',text:'Añadir los fideos y cocer según las instrucciones.',ings:[],tip:null,kids:null},{num:3,title:'Añadir el tofu',text:'Cortar el tofu en cubos y añadir. Hervir 2 min.',ings:[],tip:null,kids:null},{num:4,title:'Disolver el miso',text:'Apagar el fuego. Disolver el miso en caldo caliente, luego incorporar.',ings:[],tip:null,kids:null},{num:5,title:'Terminar y servir',text:'Añadir espinacas. Unas gotas de aceite de sésamo. Servir inmediatamente.',ings:[],tip:null,kids:null}],
-   pt:[{num:1,title:'Aquecer o caldo',text:'Ferver 800ml de água suavemente. Adicionar cogumelos e alho. Ferver 3 min.',ings:[],tip:null,kids:null},{num:2,title:'Cozinhar os noodles',text:'Adicionar noodles e cozinhar conforme instruções.',ings:[],tip:null,kids:null},{num:3,title:'Adicionar o tofu',text:'Cortar o tofu em cubos e adicionar. Ferver 2 min.',ings:[],tip:null,kids:null},{num:4,title:'Dissolver o miso',text:'Apagar o lume. Dissolver o miso em caldo quente, depois incorporar.',ings:[],tip:null,kids:null},{num:5,title:'Finalizar e servir',text:'Adicionar espinafres. Gotas de óleo de sésamo. Servir imediatamente.',ings:[],tip:null,kids:null}],
-   de:[{num:1,title:'Brühe erhitzen',text:'800ml Wasser zum sanften Köcheln bringen. Pilze und Knoblauch hinzufügen. 3 Min. köcheln.',ings:[],tip:'Nie kochen — zerstört Misos Enzyme.',kids:null},{num:2,title:'Nudeln kochen',text:'Nudeln nach Packungsanweisung kochen.',ings:[],tip:null,kids:null},{num:3,title:'Tofu hinzufügen',text:'Tofu würfeln und hinzufügen. 2 Min. köcheln.',ings:[],tip:null,kids:null},{num:4,title:'Miso auflösen',text:'Feuer ausschalten. Miso in heißer Brühe auflösen, dann einrühren.',ings:[],tip:null,kids:null},{num:5,title:'Fertigstellen & servieren',text:'Spinat einrühren. Sesamöl-Tropfen. Sofort servieren.',ings:[],tip:null,kids:null}],
- },
- nutrition:{kcal:290,protein:15,carbs:34,fat:10,fiber:4}},
-
-{id:8,emoji:'🌮',photo:'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80',
- tags:['Vegan','Quick','ComfortFood'],badges:['vegan'],
- prep:15,cook:10,
- name:{en:'Black Bean Tacos',fr:'Tacos aux Haricots Noirs',es:'Tacos de Frijoles Negros',pt:'Tacos de Feijão Preto',de:'Schwarze-Bohnen-Tacos'},
- subtitle:{en:'Smoky, fresh & weeknight-fast',fr:'Fumé, frais et rapide en semaine',es:'Ahumado, fresco y rápido entre semana',pt:'Defumado, fresco e rápido nos dias da semana',de:'Rauchig, frisch & schnell für die Woche'},
- desc:{en:'Smoky black beans, avocado crema and zingy tomato salsa in warm tortillas.',fr:'Haricots noirs fumés, crème d\'avocat et salsa tomate dans des tortillas chaudes.',es:'Frijoles negros ahumados, crema de aguacate y salsa de tomate en tortillas calientes.',pt:'Feijão preto defumado, creme de abacate e salsa de tomate em tortillas quentes.',de:'Rauchige schwarze Bohnen, Avocado-Crema und Tomatensalsa in warmen Tortillas.'},
- ingredients:[
-   {emoji:'🫘',name:{en:'Black beans (tin)',fr:'Haricots noirs (boîte)',es:'Frijoles negros (lata)',pt:'Feijão preto (lata)',de:'Schwarze Bohnen (Dose)'},qty:400,unit:'g'},
-   {emoji:'🌮',name:{en:'Small tortillas',fr:'Petites tortillas',es:'Tortillas pequeñas',pt:'Tortillas pequenas',de:'Kleine Tortillas'},qty:8,unit:''},
-   {emoji:'🥑',name:{en:'Avocados',fr:'Avocats',es:'Aguacates',pt:'Abacates',de:'Avocados'},qty:2,unit:''},
-   {emoji:'🍋',name:{en:'Limes',fr:'Citrons verts',es:'Limas',pt:'Limas',de:'Limetten'},qty:2,unit:''},
-   {emoji:'🍅',name:{en:'Cherry tomatoes',fr:'Tomates cerises',es:'Tomates cherry',pt:'Tomates cherry',de:'Kirschtomaten'},qty:150,unit:'g'},
-   {emoji:'🌿',name:{en:'Fresh coriander',fr:'Coriandre fraîche',es:'Cilantro fresco',pt:'Coentro fresco',de:'Frischer Koriander'},qty:15,unit:'g'},
-   {emoji:'🧄',name:{en:'Garlic',fr:'Ail',es:'Ajo',pt:'Alho',de:'Knoblauch'},qty:2,unit:'cloves'},
- ],
- base:{en:['Cumin · 1 tsp','Smoked paprika · 1 tsp','Olive oil','Salt & chilli'],fr:['Cumin · 1 c.c.','Paprika fumé · 1 c.c.','Huile d\'olive'],es:['Comino · 1 c.c.','Pimentón ahumado · 1 c.c.','Aceite de oliva'],pt:['Cominhos · 1 c.c.','Páprica fumada · 1 c.c.','Azeite'],de:['Kreuzkümmel · 1 TL','Geräucherter Paprika · 1 TL','Olivenöl']},
- steps:{
-   en:[
-     {num:1,title:'Make the guacamole',text:'Halve and scoop avocados. Mash with a fork with juice of 1 lime and a pinch of salt. Keep chunky.',ings:['🥑 Avocados · 2','🍋 Lime · 1'],tip:'Press cling film directly onto the surface to stop browning.',kids:'Kids love mashing the avocado! 🧒'},
-     {num:2,title:'Make the salsa',text:'Halve cherry tomatoes. Finely chop red onion and coriander. Mix together with juice of ½ lime and a pinch of salt.',ings:['🍅 Cherry tomatoes · 150g','🌿 Coriander · 15g'],tip:null,kids:null},
-     {num:3,title:'Cook the beans',text:'Heat oil in a pan. Fry garlic 1 minute. Add drained beans, cumin, smoked paprika and a splash of water. Cook 5 minutes, mashing slightly.',ings:['🫘 Black beans · 400g','🧄 Garlic · 2 cloves'],tip:'A few mashed beans helps the filling hold together in the taco.',kids:null},
-     {num:4,title:'Warm the tortillas',text:'Warm tortillas one at a time in a dry pan for 30 seconds per side, or wrap in a damp cloth and microwave 1 minute.',ings:['🌮 Tortillas · 8'],tip:null,kids:null},
-     {num:5,title:'Assemble',text:'Spread guacamole on each tortilla. Add beans, then salsa. Serve immediately with extra lime wedges.',ings:[],tip:null,kids:'Let kids build their own tacos! 🧒'},
-   ],
-   fr:[{num:1,title:'Guacamole',text:'Écraser les avocats avec le jus d\'un citron vert et sel.',ings:[],tip:null,kids:'Les enfants adorent écraser l\'avocat ! 🧒'},{num:2,title:'Salsa',text:'Couper les tomates en deux. Hacher l\'oignon rouge et la coriandre. Mélanger avec jus de citron vert.',ings:[],tip:null,kids:null},{num:3,title:'Cuire les haricots',text:'Chauffer huile, faire revenir l\'ail 1 min. Ajouter haricots égouttés, cumin, paprika fumé. Cuire 5 min.',ings:[],tip:null,kids:null},{num:4,title:'Chauffer les tortillas',text:'Chauffer les tortillas dans une poêle sèche 30 sec de chaque côté.',ings:[],tip:null,kids:null},{num:5,title:'Assembler',text:'Tartiner de guacamole, ajouter les haricots et la salsa.',ings:[],tip:null,kids:'Laissez les enfants assembler ! 🧒'}],
-   es:[{num:1,title:'Guacamole',text:'Aplastar los aguacates con zumo de lima y sal.',ings:[],tip:null,kids:'¡A los niños les encanta aplastar el aguacate! 🧒'},{num:2,title:'Salsa',text:'Partir los tomates cherry. Picar cebolla roja y cilantro. Mezclar con lima.',ings:[],tip:null,kids:null},{num:3,title:'Cocinar los frijoles',text:'Calentar aceite, sofreír ajo 1 min. Añadir frijoles escurridos, comino, pimentón. Cocinar 5 min.',ings:[],tip:null,kids:null},{num:4,title:'Calentar las tortillas',text:'Calentar las tortillas en sartén seca 30 seg por lado.',ings:[],tip:null,kids:null},{num:5,title:'Montar',text:'Untar con guacamole, añadir frijoles y salsa.',ings:[],tip:null,kids:'¡Deja que los niños monten sus tacos! 🧒'}],
-   pt:[{num:1,title:'Guacamole',text:'Esmagar os abacates com sumo de lima e sal.',ings:[],tip:null,kids:'As crianças adoram esmagar o abacate! 🧒'},{num:2,title:'Salsa',text:'Cortar os tomates cherry. Picar a cebola roxa e o coentro. Misturar com lima.',ings:[],tip:null,kids:null},{num:3,title:'Cozinhar o feijão',text:'Aquecer azeite, refogar alho 1 min. Adicionar feijão escorrido, cominhos, páprica. Cozinhar 5 min.',ings:[],tip:null,kids:null},{num:4,title:'Aquecer as tortillas',text:'Aquecer as tortillas numa frigideira seca 30 seg de cada lado.',ings:[],tip:null,kids:null},{num:5,title:'Montar',text:'Barrar com guacamole, adicionar feijão e salsa.',ings:[],tip:null,kids:'Deixe as crianças montar os seus tacos! 🧒'}],
-   de:[{num:1,title:'Guacamole',text:'Avocados mit Limettensaft und Salz zerdrücken.',ings:[],tip:null,kids:'Kinder lieben das Zerdrücken! 🧒'},{num:2,title:'Salsa',text:'Kirschtomaten halbieren. Rote Zwiebel und Koriander fein hacken. Mit Limettensaft mischen.',ings:[],tip:null,kids:null},{num:3,title:'Bohnen kochen',text:'Öl erhitzen, Knoblauch 1 Min. anbraten. Abgetropfte Bohnen, Kreuzkümmel, Paprika hinzufügen. 5 Min. kochen.',ings:[],tip:null,kids:null},{num:4,title:'Tortillas erwärmen',text:'Tortillas in trockener Pfanne 30 Sek. pro Seite erwärmen.',ings:[],tip:null,kids:null},{num:5,title:'Zusammenbauen',text:'Mit Guacamole bestreichen, Bohnen und Salsa drauf.',ings:[],tip:null,kids:'Kinder können ihre eigenen Tacos bauen! 🧒'}],
- },
- nutrition:{kcal:440,protein:16,carbs:68,fat:14,fiber:13}},
-
-{id:9,emoji:'🍝',photo:'https://images.unsplash.com/photo-1555949258-eb67b1ef0ceb?w=600&q=80',
- tags:['Vegetarian','Quick','Mediterranean'],badges:['veg'],
- prep:5,cook:20,
- name:{en:'Tomato Basil Pasta',fr:'Pâtes Tomate Basilic',es:'Pasta Tomate y Albahaca',pt:'Massa Tomate e Manjericão',de:'Tomaten-Basilikum-Pasta'},
- subtitle:{en:'Simple, vibrant & ready in 20 minutes',fr:'Simple, vif et prêt en 20 minutes',es:'Simple, vibrante y listo en 20 minutos',pt:'Simples, vibrante e pronto em 20 minutos',de:'Einfach, lebendig & in 20 Min. fertig'},
- desc:{en:'Al dente pasta with jammy cherry tomatoes, fragrant garlic and fresh basil.',fr:'Pâtes al dente avec tomates cerises confites, ail parfumé et basilic frais.',es:'Pasta al dente con tomates cherry confitados, ajo aromático y albahaca fresca.',pt:'Massa al dente com tomates cherry caramelizados, alho aromático e manjericão fresco.',de:'Al dente Pasta mit konfierten Kirschtomaten, aromatischem Knoblauch und frischem Basilikum.'},
- ingredients:[
-   {emoji:'🍝',name:{en:'Pasta (spaghetti or penne)',fr:'Pâtes (spaghetti ou penne)',es:'Pasta (espagueti o penne)',pt:'Massa (esparguete ou penne)',de:'Pasta (Spaghetti oder Penne)'},qty:320,unit:'g'},
-   {emoji:'🍅',name:{en:'Cherry tomatoes',fr:'Tomates cerises',es:'Tomates cherry',pt:'Tomates cherry',de:'Kirschtomaten'},qty:400,unit:'g'},
-   {emoji:'🧄',name:{en:'Garlic',fr:'Ail',es:'Ajo',pt:'Alho',de:'Knoblauch'},qty:4,unit:'cloves'},
-   {emoji:'🌿',name:{en:'Fresh basil',fr:'Basilic frais',es:'Albahaca fresca',pt:'Manjericão fresco',de:'Frisches Basilikum'},qty:20,unit:'g'},
-   {emoji:'🧀',name:{en:'Parmesan',fr:'Parmesan',es:'Parmesano',pt:'Parmesão',de:'Parmesan'},qty:40,unit:'g'},
- ],
- base:{en:['Olive oil · 60ml','Chilli flakes · ½ tsp','Salt & pepper'],fr:['Huile d\'olive · 60ml','Flocons de piment · ½ c.c.'],es:['Aceite de oliva · 60ml','Copos de chile · ½ c.c.'],pt:['Azeite · 60ml','Flocos de pimenta · ½ c.c.'],de:['Olivenöl · 60ml','Chiliflocken · ½ TL']},
- steps:{
-   en:[
-     {num:1,title:'Salt the pasta water',text:'Bring a large pot of generously salted water to a boil — it should taste like the sea. Cook pasta until al dente. Before draining, scoop out 1 cup of pasta water.',ings:['🍝 Pasta · 320g'],tip:'The pasta water is liquid gold — the starch thickens and binds the sauce.',kids:null},
-     {num:2,title:'Blister the tomatoes',text:'While pasta cooks, heat olive oil in a wide pan over medium heat. Add halved cherry tomatoes and cook without stirring for 3–4 minutes until they start to burst and caramelise.',ings:['🍅 Cherry tomatoes · 400g'],tip:'Don\'t rush them — the blistering creates deep, jammy flavour.',kids:null},
-     {num:3,title:'Add garlic & chilli',text:'Push tomatoes to the side. Add sliced garlic and chilli flakes to the centre of the pan. Cook 1 minute until golden — not brown.',ings:['🧄 Garlic · 4 cloves'],tip:null,kids:null},
-     {num:4,title:'Bring it together',text:'Add hot drained pasta directly to the pan. Add a splash of pasta water and toss vigorously for 1–2 minutes until the sauce emulsifies and coats every strand.',ings:[],tip:'Use tongs and keep tossing — the movement creates the silky sauce.',kids:null},
-     {num:5,title:'Finish with basil & parmesan',text:'Remove from heat. Tear in fresh basil and grate parmesan on top. Taste and season. Serve immediately.',ings:['🌿 Basil · 20g','🧀 Parmesan · 40g'],tip:null,kids:null},
-   ],
-   fr:[{num:1,title:'Eau à pâtes',text:'Porter à ébullition de l\'eau généreusement salée. Cuire les pâtes al dente. Réserver 1 tasse d\'eau.',ings:[],tip:'L\'eau de cuisson est de l\'or liquide.',kids:null},{num:2,title:'Brûler les tomates',text:'Chauffer l\'huile. Ajouter les tomates cerises coupées en deux, cuire 3–4 min sans remuer.',ings:[],tip:null,kids:null},{num:3,title:'Ail & piment',text:'Pousser les tomates de côté. Ajouter l\'ail émincé et les flocons de piment. Cuire 1 min.',ings:[],tip:null,kids:null},{num:4,title:'Assembler',text:'Ajouter les pâtes égouttées dans la poêle. Ajouter l\'eau de cuisson. Mélanger vigoureusement.',ings:[],tip:null,kids:null},{num:5,title:'Finir avec basilic & parmesan',text:'Retirer du feu. Déchirer le basilic et râper le parmesan.',ings:[],tip:null,kids:null}],
-   es:[{num:1,title:'Agua de pasta',text:'Llevar a ebullición agua con mucha sal. Cocer la pasta al dente. Reservar 1 taza del agua.',ings:[],tip:null,kids:null},{num:2,title:'Chamuscar los tomates',text:'Calentar aceite. Añadir los tomates cherry cortados por la mitad, cocinar 3–4 min sin remover.',ings:[],tip:null,kids:null},{num:3,title:'Ajo y chile',text:'Apartar los tomates. Añadir ajo laminado y copos de chile. Cocinar 1 min.',ings:[],tip:null,kids:null},{num:4,title:'Montar',text:'Añadir la pasta escurrida a la sartén. Añadir agua de cocción. Mezclar vigorosamente.',ings:[],tip:null,kids:null},{num:5,title:'Acabar con albahaca y parmesano',text:'Retirar del fuego. Romper la albahaca y rallar el parmesano.',ings:[],tip:null,kids:null}],
-   pt:[{num:1,title:'Água da massa',text:'Ferver água com muito sal. Cozinhar a massa al dente. Reservar 1 chávena da água.',ings:[],tip:null,kids:null},{num:2,title:'Tomates chamuscados',text:'Aquecer azeite. Adicionar os tomates cherry cortados ao meio, cozinhar 3–4 min sem mexer.',ings:[],tip:null,kids:null},{num:3,title:'Alho e pimenta',text:'Afastar os tomates. Adicionar alho laminado e flocos de pimenta. Cozinhar 1 min.',ings:[],tip:null,kids:null},{num:4,title:'Montar',text:'Adicionar a massa escorrida à frigideira. Adicionar água de cozedura. Misturar vigorosamente.',ings:[],tip:null,kids:null},{num:5,title:'Finalizar com manjericão e parmesão',text:'Retirar do lume. Rasgar o manjericão e ralar o parmesão.',ings:[],tip:null,kids:null}],
-   de:[{num:1,title:'Nudelwasser',text:'Großzügig gesalzenes Wasser zum Kochen bringen. Pasta al dente kochen. 1 Tasse Kochwasser aufheben.',ings:[],tip:'Das Kochwasser ist flüssiges Gold.',kids:null},{num:2,title:'Tomaten anrösten',text:'Öl erhitzen. Halbierte Kirschtomaten hinzufügen, 3–4 Min. ohne Rühren kochen.',ings:[],tip:null,kids:null},{num:3,title:'Knoblauch & Chili',text:'Tomaten zur Seite schieben. Geschnittenen Knoblauch und Chiliflocken hinzufügen. 1 Min. kochen.',ings:[],tip:null,kids:null},{num:4,title:'Zusammenführen',text:'Abgetropfte Pasta in die Pfanne geben. Kochwasser hinzufügen. Kräftig schwenken.',ings:[],tip:null,kids:null},{num:5,title:'Mit Basilikum & Parmesan fertigstellen',text:'Vom Feuer nehmen. Basilikum zerreißen und Parmesan reiben.',ings:[],tip:null,kids:null}],
- },
- nutrition:{kcal:490,protein:16,carbs:78,fat:14,fiber:5}},
-
-{id:10,emoji:'🍲',photo:'https://images.unsplash.com/photo-1547592180-85f173990554?w=600&q=80',
- tags:['Vegan','Soup','GlutenFree','ComfortFood'],badges:['vegan','gf','protein'],
- prep:10,cook:35,
- name:{en:'Golden Lentil Soup',fr:'Soupe de Lentilles Dorée',es:'Sopa de Lentejas Dorada',pt:'Sopa de Lentilhas Dourada',de:'Goldene Linsensuppe'},
- subtitle:{en:'Thick, spiced & deeply satisfying',fr:'Épaisse, épicée et profondément rassasiante',es:'Espesa, especiada y muy saciante',pt:'Espessa, temperada e muito saciante',de:'Dick, würzig & tiefgründig sättigend'},
- desc:{en:'A bowl of this golden, deeply spiced soup is all you need on a cold day.',fr:'Un bol de cette soupe dorée et épicée est tout ce dont vous avez besoin.',es:'Un tazón de esta sopa dorada y especiada es todo lo que necesitas.',pt:'Uma tigela desta sopa dourada e temperada é tudo que precisa.',de:'Eine Schüssel dieser goldenen, würzigen Suppe ist alles, was man an einem kalten Tag braucht.'},
- ingredients:[
-   {emoji:'🫘',name:{en:'Red lentils',fr:'Lentilles rouges',es:'Lentejas rojas',pt:'Lentilhas vermelhas',de:'Rote Linsen'},qty:250,unit:'g'},
-   {emoji:'🧅',name:{en:'Onions',fr:'Oignons',es:'Cebollas',pt:'Cebolas',de:'Zwiebeln'},qty:2,unit:''},
-   {emoji:'🧄',name:{en:'Garlic',fr:'Ail',es:'Ajo',pt:'Alho',de:'Knoblauch'},qty:4,unit:'cloves'},
-   {emoji:'🥕',name:{en:'Carrots',fr:'Carottes',es:'Zanahorias',pt:'Cenouras',de:'Karotten'},qty:2,unit:''},
-   {emoji:'🍅',name:{en:'Chopped tomatoes',fr:'Tomates concassées',es:'Tomates troceados',pt:'Tomates picados',de:'Gehackte Tomaten'},qty:200,unit:'g'},
-   {emoji:'🍋',name:{en:'Lemon',fr:'Citron',es:'Limón',pt:'Limão',de:'Zitrone'},qty:1,unit:''},
- ],
- base:{en:['Stock · 1L','Cumin · 2 tsp','Turmeric · 1 tsp','Smoked paprika · 1 tsp','Olive oil · 45ml'],fr:['Bouillon · 1L','Cumin · 2 c.c.','Curcuma · 1 c.c.'],es:['Caldo · 1L','Comino · 2 c.c.','Cúrcuma · 1 c.c.'],pt:['Caldo · 1L','Cominhos · 2 c.c.','Curcuma · 1 c.c.'],de:['Brühe · 1L','Kreuzkümmel · 2 TL','Kurkuma · 1 TL']},
- steps:{
-   en:[
-     {num:1,title:'Caramelise the onions',text:'Slice onions and cook in olive oil over medium heat for 15 minutes, stirring occasionally, until deeply golden and sweet.',ings:['🧅 Onions · 2'],tip:'This is the flavour foundation — don\'t rush it. Deep golden colour = deep flavour.',kids:null},
-     {num:2,title:'Add aromatics',text:'Add garlic, cumin, turmeric and smoked paprika. Stir and cook 1 minute until fragrant.',ings:['🧄 Garlic · 4 cloves'],tip:null,kids:null},
-     {num:3,title:'Add lentils & liquid',text:'Add carrots, rinsed lentils, chopped tomatoes and stock. Bring to a boil.',ings:['🫘 Lentils · 250g','🥕 Carrots · 2','🍅 Tomatoes · 200g'],tip:null,kids:null},
-     {num:4,title:'Simmer until soft',text:'Reduce heat and simmer for 25 minutes until lentils are completely soft and starting to dissolve.',ings:[],tip:null,kids:null},
-     {num:5,title:'Blend & finish',text:'Use a stick blender to blend about half the soup for a creamy-yet-chunky texture. Season with lemon juice and salt. Top with crispy fried onion if you like.',ings:['🍋 Lemon · 1'],tip:'The half-blend is the secret — you get body AND texture.',kids:null},
-   ],
-   fr:[{num:1,title:'Caraméliser les oignons',text:'Faire revenir les oignons émincés dans l\'huile 15 min jusqu\'à dorure profonde.',ings:[],tip:'Ne pas précipiter — couleur dorée = saveur profonde.',kids:null},{num:2,title:'Ajouter les aromates',text:'Ajouter ail, cumin, curcuma et paprika fumé. Remuer 1 min.',ings:[],tip:null,kids:null},{num:3,title:'Ajouter lentilles & liquide',text:'Ajouter carottes, lentilles rincées, tomates et bouillon. Porter à ébullition.',ings:[],tip:null,kids:null},{num:4,title:'Mijoter',text:'Mijoter 25 min jusqu\'à ce que les lentilles soient tendres.',ings:[],tip:null,kids:null},{num:5,title:'Mixer et finir',text:'Mixer la moitié de la soupe. Assaisonner avec jus de citron et sel.',ings:[],tip:null,kids:null}],
-   es:[{num:1,title:'Caramelizar las cebollas',text:'Sofreír las cebollas en rodajas en aceite 15 min hasta dorar profundamente.',ings:[],tip:null,kids:null},{num:2,title:'Añadir los aromáticos',text:'Añadir ajo, comino, cúrcuma y pimentón ahumado. Remover 1 min.',ings:[],tip:null,kids:null},{num:3,title:'Añadir lentejas y líquido',text:'Añadir zanahorias, lentejas enjuagadas, tomates y caldo. Llevar a ebullición.',ings:[],tip:null,kids:null},{num:4,title:'Hervir a fuego lento',text:'Hervir 25 min hasta que las lentejas estén tiernas.',ings:[],tip:null,kids:null},{num:5,title:'Triturar y terminar',text:'Triturar la mitad de la sopa. Sazonar con limón y sal.',ings:[],tip:null,kids:null}],
-   pt:[{num:1,title:'Caramelizar as cebolas',text:'Refogar as cebolas em fatias no azeite 15 min até dourar profundamente.',ings:[],tip:null,kids:null},{num:2,title:'Adicionar aromáticos',text:'Adicionar alho, cominhos, curcuma e páprica fumada. Mexer 1 min.',ings:[],tip:null,kids:null},{num:3,title:'Adicionar lentilhas e líquido',text:'Adicionar cenouras, lentilhas lavadas, tomates e caldo. Ferver.',ings:[],tip:null,kids:null},{num:4,title:'Ferver em lume brando',text:'Ferver 25 min até as lentilhas ficarem macias.',ings:[],tip:null,kids:null},{num:5,title:'Triturar e finalizar',text:'Triturar metade da sopa. Temperar com limão e sal.',ings:[],tip:null,kids:null}],
-   de:[{num:1,title:'Zwiebeln karamellisieren',text:'Geschnittene Zwiebeln in Öl 15 Min. bis zur tiefen Goldfarbe anbraten.',ings:[],tip:'Nicht hetzen — tiefe Farbe = tiefer Geschmack.',kids:null},{num:2,title:'Gewürze hinzufügen',text:'Knoblauch, Kreuzkümmel, Kurkuma und Paprika hinzufügen. 1 Min. rühren.',ings:[],tip:null,kids:null},{num:3,title:'Linsen & Flüssigkeit',text:'Karotten, gespülte Linsen, Tomaten und Brühe hinzufügen. Aufkochen.',ings:[],tip:null,kids:null},{num:4,title:'Köcheln',text:'25 Min. köcheln bis Linsen weich sind.',ings:[],tip:null,kids:null},{num:5,title:'Mixen & fertigstellen',text:'Hälfte der Suppe mixen. Mit Zitronensaft und Salz würzen.',ings:[],tip:null,kids:null}],
- },
- nutrition:{kcal:340,protein:18,carbs:52,fat:7,fiber:10}},
-
-{id:11,emoji:'🥕',photo:'https://images.unsplash.com/photo-1505253758473-96b7015fcd40?w=600&q=80',
- tags:['Vegetarian','Mediterranean','GlutenFree'],badges:['veg','gf'],
- prep:10,cook:35,
- name:{en:'Roasted Vegetable Tray Bake',fr:'Légumes Rôtis au Four',es:'Bandeja de Verduras Asadas',pt:'Assado de Legumes no Forno',de:'Ofengemüse Auflauf'},
- subtitle:{en:'Effortless, colourful & hands-off',fr:'Sans effort, coloré et sans surveillance',es:'Sin esfuerzo, colorido y sin vigilancia',pt:'Sem esforço, colorido e sem vigilância',de:'Mühelos, bunt & ohne Aufwand'},
- desc:{en:'Seasonal vegetables roasted to golden perfection with a creamy garlic yogurt sauce.',fr:'Légumes de saison rôtis à la perfection avec une sauce au yaourt à l\'ail.',es:'Verduras de temporada asadas a la perfección con una salsa de yogur y ajo.',pt:'Vegetais sazonais assados à perfeição com molho de iogurte e alho.',de:'Saisongemüse goldbraun geröstet mit cremiger Knoblauch-Joghurtsauce.'},
- ingredients:[
-   {emoji:'🍠',name:{en:'Sweet potato',fr:'Patate douce',es:'Boniato',pt:'Batata-doce',de:'Süßkartoffel'},qty:300,unit:'g'},
-   {emoji:'🫑',name:{en:'Bell peppers',fr:'Poivrons',es:'Pimientos',pt:'Pimentos',de:'Paprikaschoten'},qty:2,unit:''},
-   {emoji:'🥒',name:{en:'Courgette',fr:'Courgette',es:'Calabacín',pt:'Curgete',de:'Zucchini'},qty:200,unit:'g'},
-   {emoji:'🧅',name:{en:'Red onion',fr:'Oignon rouge',es:'Cebolla roja',pt:'Cebola roxa',de:'Rote Zwiebel'},qty:1,unit:''},
-   {emoji:'🍅',name:{en:'Cherry tomatoes',fr:'Tomates cerises',es:'Tomates cherry',pt:'Tomates cherry',de:'Kirschtomaten'},qty:200,unit:'g'},
-   {emoji:'🫘',name:{en:'Chickpeas (tin)',fr:'Pois chiches (boîte)',es:'Garbanzos (lata)',pt:'Grão-de-bico (lata)',de:'Kichererbsen (Dose)'},qty:200,unit:'g'},
-   {emoji:'🥛',name:{en:'Greek yogurt',fr:'Yaourt grec',es:'Yogur griego',pt:'Iogurte grego',de:'Griechischer Joghurt'},qty:100,unit:'g'},
-   {emoji:'🍋',name:{en:'Lemon',fr:'Citron',es:'Limón',pt:'Limão',de:'Zitrone'},qty:1,unit:''},
- ],
- base:{en:['Olive oil · 60ml','Cumin · 1 tsp','Smoked paprika · 1 tsp','Garlic · 2 cloves','Salt'],fr:['Huile d\'olive · 60ml','Cumin · 1 c.c.','Paprika fumé · 1 c.c.'],es:['Aceite de oliva · 60ml','Comino · 1 c.c.','Pimentón ahumado · 1 c.c.'],pt:['Azeite · 60ml','Cominhos · 1 c.c.','Páprica fumada · 1 c.c.'],de:['Olivenöl · 60ml','Kreuzkümmel · 1 TL','Geräucherter Paprika · 1 TL']},
- steps:{
-   en:[
-     {num:1,title:'Prep & season',text:'Preheat oven to 200°C. Chop all vegetables into similar-sized chunks — about 3cm. Drain chickpeas. Toss everything with olive oil, cumin, smoked paprika and salt.',ings:['🍠 Sweet potato','🫑 Peppers','🥒 Courgette','🧅 Red onion','🫘 Chickpeas'],tip:'Uniform size ensures even cooking. Smaller = crispier, larger = softer.',kids:null},
-     {num:2,title:'Roast',text:'Spread on one or two large baking trays in a single layer. Roast for 35 minutes, turning once at the halfway point, until golden and caramelised.',ings:['🍅 Cherry tomatoes · 200g'],tip:'Add the cherry tomatoes in the last 10 minutes — they burst and become intensely sweet.',kids:null},
-     {num:3,title:'Make the yogurt sauce',text:'Mix yogurt with crushed garlic, lemon juice and a pinch of salt.',ings:['🥛 Yogurt · 100g','🍋 Lemon · 1'],tip:null,kids:null},
-     {num:4,title:'Serve',text:'Spread yogurt sauce on a large plate or serving dish. Pile the roasted veg on top. Drizzle with olive oil and serve with flatbread or grains.',ings:[],tip:'Leftovers make an amazing wrap the next day.',kids:null},
-   ],
-   fr:[{num:1,title:'Préparer et assaisonner',text:'Préchauffer le four à 200°C. Couper tous les légumes en morceaux de 3cm. Égoutter les pois chiches. Mélanger avec huile, cumin, paprika, sel.',ings:[],tip:null,kids:null},{num:2,title:'Rôtir',text:'Étaler sur une ou deux plaques. Rôtir 35 min en retournant à mi-cuisson.',ings:[],tip:null,kids:null},{num:3,title:'Sauce yaourt',text:'Mélanger le yaourt avec ail écrasé, jus de citron et sel.',ings:[],tip:null,kids:null},{num:4,title:'Servir',text:'Étaler la sauce yaourt dans un plat. Empiler les légumes rôtis dessus.',ings:[],tip:null,kids:null}],
-   es:[{num:1,title:'Preparar y condimentar',text:'Precalentar el horno a 200°C. Cortar todos los vegetales en trozos de 3cm. Escurrir los garbanzos. Mezclar con aceite, comino, pimentón, sal.',ings:[],tip:null,kids:null},{num:2,title:'Asar',text:'Extender en una o dos bandejas. Asar 35 min dando la vuelta a mitad.',ings:[],tip:null,kids:null},{num:3,title:'Salsa de yogur',text:'Mezclar el yogur con ajo machacado, zumo de limón y sal.',ings:[],tip:null,kids:null},{num:4,title:'Servir',text:'Extender la salsa de yogur en un plato. Poner las verduras asadas encima.',ings:[],tip:null,kids:null}],
-   pt:[{num:1,title:'Preparar e temperar',text:'Preaquecer o forno a 200°C. Cortar todos os legumes em pedaços de 3cm. Escorrer o grão. Misturar com azeite, cominhos, páprica, sal.',ings:[],tip:null,kids:null},{num:2,title:'Assar',text:'Distribuir numa ou duas assadeiras. Assar 35 min virando a meio.',ings:[],tip:null,kids:null},{num:3,title:'Molho de iogurte',text:'Misturar o iogurte com alho esmagado, sumo de limão e sal.',ings:[],tip:null,kids:null},{num:4,title:'Servir',text:'Espalhar o molho de iogurte num prato. Colocar os legumes assados por cima.',ings:[],tip:null,kids:null}],
-   de:[{num:1,title:'Vorbereiten & würzen',text:'Ofen auf 200°C vorheizen. Alle Gemüse in 3cm-Stücke schneiden. Kichererbsen abtropfen. Mit Öl, Kreuzkümmel, Paprika, Salz mischen.',ings:[],tip:null,kids:null},{num:2,title:'Rösten',text:'Auf einem oder zwei großen Backblechen ausbreiten. 35 Min. rösten, bei Halbzeit wenden.',ings:[],tip:null,kids:null},{num:3,title:'Joghurtsauce',text:'Joghurt mit gehacktem Knoblauch, Zitronensaft und Salz mischen.',ings:[],tip:null,kids:null},{num:4,title:'Servieren',text:'Joghurtsauce auf einem großen Teller verteilen. Geröstetes Gemüse daraufhäufen.',ings:[],tip:null,kids:null}],
- },
- nutrition:{kcal:380,protein:12,carbs:52,fat:14,fiber:9}},
-
-{id:12,emoji:'🫘',photo:'https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80',
- tags:['Vegan','GlutenFree','Mediterranean','ComfortFood'],badges:['vegan','gf','protein'],
- prep:5,cook:20,
- name:{en:'Spanish Chickpea Stew',fr:'Ragoût Espagnol de Pois Chiches',es:'Potaje Español de Garbanzos',pt:'Ensopado Espanhol de Grão-de-bico',de:'Spanischer Kichererbsen-Eintopf'},
- subtitle:{en:'Bold, smoky & ready in 25 minutes',fr:'Audacieux, fumé et prêt en 25 minutes',es:'Intenso, ahumado y listo en 25 minutos',pt:'Intenso, defumado e pronto em 25 minutos',de:'Kräftig, rauchig & in 25 Min. fertig'},
- desc:{en:'Spanish-inspired chickpea and spinach stew with smoked paprika and a splash of vinegar.',fr:'Ragoût espagnol de pois chiches et épinards au paprika fumé.',es:'Guiso español de garbanzos y espinacas con pimentón ahumado.',pt:'Ensopado espanhol de grão-de-bico e espinafres com páprica fumada.',de:'Spanisch inspirierter Kichererbsen-Spinat-Eintopf mit geräuchertem Paprika.'},
- ingredients:[
-   {emoji:'🫘',name:{en:'Chickpeas (tin)',fr:'Pois chiches (boîte)',es:'Garbanzos (lata)',pt:'Grão-de-bico (lata)',de:'Kichererbsen (Dose)'},qty:400,unit:'g'},
-   {emoji:'🥬',name:{en:'Spinach',fr:'Épinards',es:'Espinacas',pt:'Espinafres',de:'Spinat'},qty:150,unit:'g'},
-   {emoji:'🧅',name:{en:'Onion',fr:'Oignon',es:'Cebolla',pt:'Cebola',de:'Zwiebel'},qty:1,unit:''},
-   {emoji:'🧄',name:{en:'Garlic',fr:'Ail',es:'Ajo',pt:'Alho',de:'Knoblauch'},qty:3,unit:'cloves'},
-   {emoji:'🍅',name:{en:'Chopped tomatoes',fr:'Tomates concassées',es:'Tomates troceados',pt:'Tomates picados',de:'Gehackte Tomaten'},qty:200,unit:'g'},
- ],
- base:{en:['Smoked paprika · 2 tsp','Cumin · 1 tsp','Sherry vinegar · 1 tbsp','Stock · 200ml','Olive oil · 30ml'],fr:['Paprika fumé · 2 c.c.','Cumin · 1 c.c.','Vinaigre de Xérès · 1 c.s.'],es:['Pimentón ahumado · 2 c.c.','Comino · 1 c.c.','Vinagre de Jerez · 1 c.s.'],pt:['Páprica fumada · 2 c.c.','Cominhos · 1 c.c.','Vinagre de xerez · 1 c.s.'],de:['Geräucherter Paprika · 2 TL','Kreuzkümmel · 1 TL','Sherryessig · 1 EL']},
- steps:{
-   en:[
-     {num:1,title:'Build the base',text:'Fry diced onion and garlic in olive oil over medium heat until soft, about 6 minutes.',ings:['🧅 Onion · 1','🧄 Garlic · 3 cloves'],tip:null,kids:null},
-     {num:2,title:'Bloom the spices',text:'Add smoked paprika and cumin. Stir constantly for 30 seconds — the spices should sizzle in the oil.',ings:[],tip:'This step transforms the dish — blooming spices in oil releases fat-soluble flavour compounds.',kids:null},
-     {num:3,title:'Add tomatoes & chickpeas',text:'Add chopped tomatoes, drained chickpeas and stock. Stir well. Simmer 15 minutes.',ings:['🍅 Tomatoes · 200g','🫘 Chickpeas · 400g'],tip:null,kids:null},
-     {num:4,title:'Wilt the spinach',text:'Add spinach in handfuls and stir until wilted — about 2 minutes.',ings:['🥬 Spinach · 150g'],tip:null,kids:null},
-     {num:5,title:'Finish with vinegar',text:'Add a splash of sherry vinegar — it lifts all the flavours. Season with salt. Serve with crusty bread.',ings:[],tip:'Sherry vinegar is the secret weapon. Red wine vinegar works too.',kids:null},
-   ],
-   fr:[{num:1,title:'Construire la base',text:'Faire revenir l\'oignon émincé et l\'ail dans l\'huile 6 min.',ings:[],tip:null,kids:null},{num:2,title:'Faire chauffer les épices',text:'Ajouter le paprika fumé et le cumin. Remuer 30 sec.',ings:[],tip:null,kids:null},{num:3,title:'Tomates et pois chiches',text:'Ajouter tomates, pois chiches égouttés et bouillon. Mijoter 15 min.',ings:[],tip:null,kids:null},{num:4,title:'Épinards',text:'Ajouter les épinards par poignées et remuer jusqu\'à ce qu\'ils s\'affaissent.',ings:[],tip:null,kids:null},{num:5,title:'Finir avec le vinaigre',text:'Ajouter une giclée de vinaigre de Xérès. Assaisonner. Servir avec du pain.',ings:[],tip:null,kids:null}],
-   es:[{num:1,title:'Construir la base',text:'Sofreír la cebolla picada y el ajo en aceite 6 min.',ings:[],tip:null,kids:null},{num:2,title:'Dorar las especias',text:'Añadir pimentón ahumado y comino. Remover 30 seg.',ings:[],tip:null,kids:null},{num:3,title:'Tomates y garbanzos',text:'Añadir tomates, garbanzos escurridos y caldo. Hervir 15 min.',ings:[],tip:null,kids:null},{num:4,title:'Espinacas',text:'Añadir espinacas por puñados y remover hasta que se marchiten.',ings:[],tip:null,kids:null},{num:5,title:'Acabar con vinagre',text:'Añadir un chorrito de vinagre de Jerez. Sazonar. Servir con pan.',ings:[],tip:null,kids:null}],
-   pt:[{num:1,title:'Construir a base',text:'Refogar a cebola picada e o alho em azeite 6 min.',ings:[],tip:null,kids:null},{num:2,title:'Ativar as especiarias',text:'Adicionar páprica fumada e cominhos. Mexer 30 seg.',ings:[],tip:null,kids:null},{num:3,title:'Tomates e grão',text:'Adicionar tomates, grão escorrido e caldo. Ferver 15 min.',ings:[],tip:null,kids:null},{num:4,title:'Espinafres',text:'Adicionar espinafres aos punhados e mexer até murcharem.',ings:[],tip:null,kids:null},{num:5,title:'Finalizar com vinagre',text:'Adicionar um fio de vinagre de xerez. Temperar. Servir com pão.',ings:[],tip:null,kids:null}],
-   de:[{num:1,title:'Basis aufbauen',text:'Gewürfelte Zwiebel und Knoblauch in Öl 6 Min. anbraten.',ings:[],tip:null,kids:null},{num:2,title:'Gewürze anrösten',text:'Paprika und Kreuzkümmel hinzufügen. 30 Sek. rühren.',ings:[],tip:null,kids:null},{num:3,title:'Tomaten & Kichererbsen',text:'Tomaten, abgetropfte Kichererbsen und Brühe hinzufügen. 15 Min. köcheln.',ings:[],tip:null,kids:null},{num:4,title:'Spinat',text:'Spinat handweise einrühren bis er zusammenfällt.',ings:[],tip:null,kids:null},{num:5,title:'Mit Essig fertigstellen',text:'Spritzer Sherryessig hinzufügen. Würzen. Mit Brot servieren.',ings:[],tip:null,kids:null}],
- },
- nutrition:{kcal:360,protein:16,carbs:48,fat:10,fiber:12}},
-];
-
-// ── Dish helpers ──────────────────────────────────────────────
-function getDish(id){return DISHES.find(d=>d.id===parseInt(id));}
-function dishName(d){return(d.name&&(d.name[lang]||d.name.en))||'';}
-function dishSubtitle(d){return(d.subtitle&&(d.subtitle[lang]||d.subtitle.en))||'';}
-function dishDesc(d){return(d.desc&&(d.desc[lang]||d.desc.en))||'';}
-function dishSteps(d){return(d.steps&&(d.steps[lang]||d.steps.en))||[];}
-function dishBase(d){return(d.base&&(d.base[lang]||d.base.en))||[];}
-function dishDressing(d){return(d.dressing&&(d.dressing[lang]||d.dressing.en))||[];}
+function getDish(id){const sid=String(id);return DISHES.find(d=>String(d.id)===sid);}
+function dishName(d){return d._title||d.title||'';}
+function dishSubtitle(d){return d._subtitle||'';}
+function dishDesc(d){return d._subtitle||'';}
+function dishSteps(d){return Array.isArray(d.steps)?d.steps:[];}
+function dishBase(d){return Array.isArray(d.base)?d.base:[];}
+function dishDressing(d){return Array.isArray(d.dressing)?d.dressing:[];}
 function ingName(ing){return(ing.name&&(ing.name[lang]||ing.name.en))||'';}
 
 // ═══════════════════════════════════════════════════
@@ -1601,15 +1390,28 @@ async function signUp(){
   const pass=document.getElementById('su-pass').value;
   if(!fname||!email||!pass){showAuthError('Please fill in all fields.');return;}
   if(pass.length<8){showAuthError('Password must be at least 8 characters.');return;}
-  const btn=document.getElementById('su-btn');btn.disabled=true;btn.textContent='...';
+  const btn=document.getElementById('su-btn');btn.disabled=true;btn.textContent='Creating account...';
   try{
-    const{error}=await sb.auth.signUp({email,password:pass,options:{
+    const{data,error}=await sb.auth.signUp({email,password:pass,options:{
       emailRedirectTo:window.location.origin,
       data:{first_name:fname,last_name:document.getElementById('su-lname').value.trim(),plan:'registered',avatar:'🌿'}
     }});
     btn.disabled=false;btn.textContent=t('createAccountBtn');
-    if(error)showAuthError(error.message==='Failed to fetch'?'Network error. Check your connection.':error.message);
-    else showAuthSuccess('✅ Account created! Check your email to confirm, then sign in.');
+    if(error){
+      if(error.message.includes('already registered')||error.message.includes('User already')){
+        showAuthError('An account with this email already exists.\nTry signing in instead.');
+        setTimeout(()=>switchAuthTab('signin'),2000);
+      }else if(error.message==='Failed to fetch'){
+        showAuthError('Network error. Check your connection.');
+      }else{
+        showAuthError(error.message);
+      }
+    }else if(data?.user?.identities?.length===0){
+      // User exists but not confirmed
+      showAuthError('This email is already registered. Please check your inbox for a confirmation email, or try signing in.');
+    }else{
+      showAuthSuccess('✅ Account created! Check your email for a confirmation link, then sign in here.');
+    }
   }catch(e){btn.disabled=false;btn.textContent=t('createAccountBtn');showAuthError('Network error. Check your connection.');}
 }
 async function signInWithGoogle(){
@@ -1630,8 +1432,10 @@ async function signInWithFacebook(){
   try{const{error}=await sb.auth.signInWithOAuth({provider:'facebook',options:{redirectTo}});if(error)showAuthError(error.message);}
   catch(e){showAuthError('Facebook sign-in not configured yet. Set up in Supabase → Auth → Providers → Facebook.');}
 }
-function continueAsGuest(){
-  isGuest=true;loadLocal();hideLoading();
+async function continueAsGuest(){
+  isGuest=true;loadLocal();
+  await loadRecipes();
+  hideLoading();
   showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤',plan:'guest'}});
 }
 async function signOut(){
@@ -1643,59 +1447,75 @@ async function signOut(){
 }
 
 // ══════════════════════════════════════════════
-// PAYWALL FUNCTIONS
+// LIMIT POPUP
 // ══════════════════════════════════════════════
-let paywallTier='monthly';
+const LIMIT_MESSAGES={
+  dishes_explorer:{icon:'🍽️',title:'Unlock more dishes',reason:'As an Explorer you can save up to 4 dishes. Create a free Member account to get 10, or go Premium for all recipes.',memberDesc:'10 dishes · 7-day planner · cloud sync',stay:'Stay as Explorer'},
+  planner_explorer:{icon:'📅',title:'Extend your planner',reason:'Explorers can plan 3 days ahead. Create a free Member account for a full 7-day planner, or go Premium for 4 weeks.',memberDesc:'7-day planner · 10 dishes · cloud sync',stay:'Stay as Explorer'},
+  dishes_member:{icon:'🍽️',title:'Unlock all recipes',reason:'Members get 10 dishes. Upgrade to Premium for all 12+ recipes updated monthly.',memberDesc:'You already have a Member account',stay:'Stay as Member'},
+  planner_member:{icon:'📅',title:'Plan further ahead',reason:'Members get a 7-day planner. Upgrade to Premium to plan up to 4 weeks at once.',memberDesc:'You already have a Member account',stay:'Stay as Member'},
+  fridge:{icon:'📷',title:'AI Fridge Scanner',reason:'The fridge scanner is a Premium feature. Scan your fridge and get instant recipe ideas.',memberDesc:'You already have a Member account',stay:'Stay as Member'},
+};
+function openLimitPopup(type){
+  const msg=LIMIT_MESSAGES[type]||LIMIT_MESSAGES.dishes_explorer;
+  document.getElementById('limit-icon').textContent=msg.icon;
+  document.getElementById('limit-title').textContent=msg.title;
+  document.getElementById('limit-reason').textContent=msg.reason;
+  document.getElementById('lc-member-desc').textContent=msg.memberDesc;
+  document.getElementById('limit-stay-btn').textContent=msg.stay;
+  const tier=getUserTier();
+  document.getElementById('lc-member').style.display=(tier==='guest')?'flex':'none';
+  document.getElementById('limit-bg').classList.add('open');
+}
+function closeLimitPopup(){document.getElementById('limit-bg').classList.remove('open');}
+
+// ══════════════════════════════════════════════
+// FULL PAYWALL SCREEN
+// ══════════════════════════════════════════════
+let billingCycle='monthly';
+let compareOpen=false;
 function openPaywall(reason){
-  paywallTier='monthly';
-  document.getElementById('ptier-monthly').classList.add('selected');
-  document.getElementById('ptier-yearly').classList.remove('selected');
-  document.getElementById('paywall-cta-btn').textContent='Start Premium — €4.99/month';
-  // Customise message based on what triggered it
-  const titles={
-    'registered':"Create a Free Account",
-    'premium':"Unlock Premium",
-    'dish':"You've reached the dish limit",
-    'planner':"Extend your planner",
-  };
-  const hero=document.querySelector('.paywall-hero .paywall-title');
-  if(hero&&titles[reason])hero.textContent=titles[reason]||"Unlock Premium";
+  billingCycle='monthly';selectBilling('monthly');
+  compareOpen=false;const cs=document.getElementById('compare-section');if(cs)cs.style.display='none';
+  const tier=getUserTier();
+  const skipBtn=document.getElementById('pw-skip-btn');
+  if(skipBtn)skipBtn.textContent=tier==='guest'?'Continue as Explorer (free)':'Stay as Member';
   document.getElementById('paywall-bg').classList.add('open');
+  document.getElementById('paywall-bg').scrollTop=0;
 }
 function closePaywall(){document.getElementById('paywall-bg').classList.remove('open');}
-function selectPaywallTier(tier){
-  paywallTier=tier;
-  document.getElementById('ptier-monthly').classList.toggle('selected',tier==='monthly');
-  document.getElementById('ptier-yearly').classList.toggle('selected',tier==='yearly');
-  const btn=document.getElementById('paywall-cta-btn');
-  btn.textContent=tier==='yearly'?'Start Premium — €44/year':'Start Premium — €4.99/month';
+function selectBilling(cycle){
+  billingCycle=cycle;
+  document.getElementById('pbill-monthly').classList.toggle('sel',cycle==='monthly');
+  document.getElementById('pbill-yearly').classList.toggle('sel',cycle==='yearly');
+  const pl=document.getElementById('pw-price-label');
+  const cb=document.getElementById('pw-cta-btn');
+  if(pl)pl.textContent=cycle==='yearly'?'€44/year':'€4.99/mo';
+  if(cb)cb.textContent=cycle==='yearly'?'Get Premium — €44/year':'Get Premium — €4.99/month';
+}
+function toggleCompare(){
+  compareOpen=!compareOpen;
+  const cs=document.getElementById('compare-section');
+  const btn=document.querySelector('.pw-compare-btn');
+  if(cs)cs.style.display=compareOpen?'block':'none';
+  if(btn)btn.textContent=compareOpen?'Hide comparison ↑':'Compare all features ↓';
 }
 function startCheckout(){
-  // Redirect to Stripe payment page — replace URL with your actual Stripe link
-  const urls={
-    monthly:'https://buy.stripe.com/YOUR_MONTHLY_LINK',
-    yearly:'https://buy.stripe.com/YOUR_YEARLY_LINK',
-  };
-  const url=urls[paywallTier];
+  const urls={monthly:'https://buy.stripe.com/YOUR_MONTHLY_LINK',yearly:'https://buy.stripe.com/YOUR_YEARLY_LINK'};
+  const url=urls[billingCycle];
   if(url.includes('YOUR_')){
-    // Not set up yet — show instructions
-    showPaywallSetupInfo();
+    const existing=document.getElementById('paywall-setup-note');
+    if(existing){existing.remove();return;}
+    const note=document.createElement('div');
+    note.id='paywall-setup-note';
+    note.style.cssText='margin:8px 14px;background:rgba(255,248,225,.08);border-radius:var(--rsm);padding:12px 14px;font-size:12px;color:var(--nav-t);line-height:1.6;border:.5px solid rgba(245,158,11,.3)';
+    note.innerHTML='<strong style="color:var(--nav-a)">Payment not set up yet.</strong><br>Create a <a href="https://stripe.com" target="_blank" style="color:var(--nav-a)">Stripe account</a>, generate two payment links (€4.99/mo and €44/yr) and replace YOUR_MONTHLY_LINK / YOUR_YEARLY_LINK in <code>startCheckout()</code>.';
+    const cb=document.getElementById('pw-cta-btn');
+    if(cb)cb.parentNode.insertBefore(note,cb);
     return;
   }
   window.open(url,'_blank');
 }
-function showPaywallSetupInfo(){
-  const sheet=document.querySelector('.paywall-sheet');
-  const existing=document.getElementById('paywall-setup-note');
-  if(existing)return;
-  const note=document.createElement('div');
-  note.id='paywall-setup-note';
-  note.style.cssText='margin:0 18px;background:#FFF8E1;border-radius:var(--rsm);padding:12px 14px;font-size:12px;color:#856404;line-height:1.6;border:.5px solid #F0E68C';
-  note.innerHTML='<strong>Payment not set up yet.</strong><br>To accept payments, create a <a href="https://stripe.com" target="_blank" style="color:var(--accent)">Stripe account</a>, create two payment links (monthly €4.99 and yearly €44), and replace the URLs in the <code>startCheckout()</code> function in the app code.';
-  const cta=document.getElementById('paywall-cta-btn');
-  cta.parentNode.insertBefore(note,cta);
-}
-
 // ─── SUPABASE LOAD/SAVE ──────────────────────────
 async function loadUserData(user){
   if(!user||user.id==='guest'){loadLocal();return;}
@@ -1920,6 +1740,7 @@ function clearFridgeImage(){
 }
 
 async function scanFridge(){
+  if(getUserTier()!=='premium'){openLimitPopup('fridge');return;}
   if(!fridgeImageBase64)return;
   const btn=document.getElementById('fridge-scan-btn');
   const scanning=document.getElementById('fridge-scanning');
@@ -2105,7 +1926,7 @@ function showTab(tab){
   document.getElementById('tab-'+tab).classList.add('active');
   if(tab==='plan')renderPlan();
   if(tab==='shopping')renderShopping();
-  if(tab==='today')renderToday();
+  if(tab==='today'){todayOffset=0;renderToday();}
   if(tab==='recipes')renderRecipes();
   if(tab==='fridge')initFridgeScreen();
 }
@@ -2169,6 +1990,7 @@ function initDiscover(){
   renderFilters();renderDish();
 }
 function renderDish(){
+  if(!DISHES.length){document.getElementById('dish-card').style.display='none';document.getElementById('swipe-btns').style.display='none';document.getElementById('done-panel').style.display='block';document.getElementById('done-em').textContent='⏳';document.getElementById('done-title').textContent='Loading recipes...';document.getElementById('done-body').textContent='';return;}
   const rem=remaining();const tot=filteredDishes().length;
   document.getElementById('dpf').style.width=tot?Math.round((tot-rem.length)/tot*100)+'%':'100%';
   const card=document.getElementById('dish-card'),done=document.getElementById('done-panel'),btns=document.getElementById('swipe-btns');
@@ -2185,14 +2007,21 @@ function renderDish(){
 }
 function showDonePanel(){
   state.discoverPaused=true;save();
-  document.getElementById('dish-card').style.display='none';document.getElementById('swipe-btns').style.display='none';
+  document.getElementById('dish-card').style.display='none';
+  document.getElementById('swipe-btns').style.display='none';
+  const ew=document.getElementById('enough-wrap');if(ew)ew.style.display='none';
   const p=document.getElementById('done-panel');p.style.display='block';
   const n=state.liked.length,r=remaining().length;
   document.getElementById('done-em').textContent=n>0?'✅':'🍽️';
   document.getElementById('done-title').textContent=n>0?`${n} ${n===1?t('dishSaved'):t('dishesSaved')}`:t('nothingSaved').split('—')[0].trim();
   document.getElementById('done-body').textContent=n>0?(r>0?`${r} ${t('moreToBrowse')} `:'')+(t('readyToPlan')):t('nothingSaved').split('—').slice(1).join('—').trim();
 }
-function continueSwiping(){state.discoverPaused=false;save();document.getElementById('done-panel').style.display='none';renderDish();}
+function continueSwiping(){
+  state.discoverPaused=false;save();
+  document.getElementById('done-panel').style.display='none';
+  const ew=document.getElementById('enough-wrap');if(ew)ew.style.display='block';
+  renderDish();
+}
 
 function dStart(e){drag=true;const p=e.touches?e.touches[0]:e;sx=p.clientX;sy=p.clientY;cx=0;document.getElementById('dish-card').classList.add('swiping');}
 function dMove(e){if(!drag)return;const p=e.touches?e.touches[0]:e;cx=p.clientX-sx;const cy=p.clientY-sy;const c=document.getElementById('dish-card');c.style.transform=`translateX(${cx}px) translateY(${cy*.2}px) rotate(${cx*.08}deg)`;const ratio=Math.abs(cx)/THRESH;if(cx<0){document.getElementById('lbl-no').style.opacity=Math.min(ratio,1);document.getElementById('lbl-yes').style.opacity=0;}else{document.getElementById('lbl-yes').style.opacity=Math.min(ratio,1);document.getElementById('lbl-no').style.opacity=0;}}
@@ -2206,8 +2035,10 @@ function swipeCard(dir){
     const limit=tier==='guest'?4:tier==='registered'?10:999;
     if(state.liked.length>=limit){
       document.getElementById('dish-card').style.transform='';
-      if(tier==='guest')openPaywall('registered');
-      else openPaywall('premium');
+      document.getElementById('lbl-no').style.opacity=0;
+      document.getElementById('lbl-yes').style.opacity=0;
+      if(tier==='guest')openLimitPopup('dishes_explorer');
+      else openLimitPopup('dishes_member');
       return;
     }
   }
@@ -2253,15 +2084,34 @@ function renderCal(){
   }).join('');
 }
 function adjG(e,key,type,delta){e.stopPropagation();if(!state.plan[key])state.plan[key]={};const slot=state.plan[key][type];if(!slot||!slot.dishId)return;slot.adults=Math.max(0,(slot.adults||state.family.adults)+delta);if(slot.adults===0&&(slot.children||0)===0)slot.adults=1;save();rebuildShopping();updateBadge();renderPlan();}
-function toggleDay(key){state.openDays[key]=!state.openDays[key];save();const s=document.getElementById('slots-'+key);const ch=document.querySelector(`#calday-${key} .cal-chev`);if(s)s.classList.toggle('open',state.openDays[key]);if(ch)ch.classList.toggle('open',state.openDays[key]);}
+function toggleDay(key){
+  // Check if this day is beyond the user's tier limit
+  const dates=getDateRange();
+  const todayKey=dateKey(new Date());
+  const today=new Date();today.setHours(0,0,0,0);
+  const targetDate=new Date(key+'T00:00:00');
+  const diffDays=Math.round((targetDate-today)/(1000*60*60*24));
+  const tier=getUserTier();
+  const limit=tier==='guest'?3:tier==='registered'?7:28;
+  if(diffDays>=limit){
+    if(tier==='guest')openLimitPopup('planner_explorer');
+    else if(tier==='registered')openLimitPopup('planner_member');
+    return;
+  }
+  state.openDays[key]=!state.openDays[key];save();
+  const s=document.getElementById('slots-'+key);
+  const ch=document.querySelector(`#calday-${key} .cal-chev`);
+  if(s)s.classList.toggle('open',state.openDays[key]);
+  if(ch)ch.classList.toggle('open',state.openDays[key]);
+}
 function rmMeal(key,type){if(state.plan[key])state.plan[key][type]=null;save();rebuildShopping();updateBadge();renderPlan();}
 
 let activeDrag=null;const ghost=document.getElementById('ghost');
-function chipStart(e){e.preventDefault();const chip=e.currentTarget;const id=parseInt(chip.dataset.id);const dish=getDish(id);if(!dish)return;const p=e.touches?e.touches[0]:e;activeDrag={dishId:id,chip};document.getElementById('ghost-img').innerHTML=dish.photo?`<img src="${dish.photo}" style="width:100%;height:58px;object-fit:cover">`:`<div class="chip-fb">${dish.emoji}</div>`;document.getElementById('ghost-name').textContent=dishName(dish);ghost.style.display='block';moveGhost(p.clientX,p.clientY);chip.classList.add('dragging');window.addEventListener('mousemove',chipMove);window.addEventListener('touchmove',chipMove,{passive:false});window.addEventListener('mouseup',chipEnd);window.addEventListener('touchend',chipEnd);}
+function chipStart(e){e.preventDefault();const chip=e.currentTarget;const id=parseInt(chip.dataset.id);const dish=getDish(id);if(!dish)return;const p=e.touches?e.touches[0]:e;activeDrag={dishId:id,chip};document.getElementById('ghost-img').innerHTML=dish.photo?`<img src="${dish.photo}" style="width:100%;height:58px;object-fit:cover">`:`<div class="chip-fb">${dish.emoji}</div>`;document.getElementById('ghost-name').textContent=dishName(dish);ghost.style.display='block';moveGhost(p.clientX,p.clientY);chip.classList.add('dragging');document.querySelectorAll('.cal-slots').forEach(s=>{s._wasClosed=!s.classList.contains('open');s.style.display='block';});window.addEventListener('mousemove',chipMove);window.addEventListener('touchmove',chipMove,{passive:false});window.addEventListener('mouseup',chipEnd);window.addEventListener('touchend',chipEnd);}
 function moveGhost(x,y){ghost.style.left=(x-43)+'px';ghost.style.top=(y-37)+'px';}
 function chipMove(e){if(!activeDrag)return;e.preventDefault();const p=e.touches?e.touches[0]:e;moveGhost(p.clientX,p.clientY);ghost.style.display='none';const el=document.elementFromPoint(p.clientX,p.clientY);ghost.style.display='block';document.querySelectorAll('.cal-slot.drop-target').forEach(s=>s.classList.remove('drop-target'));if(el){const slot=el.closest('.cal-slot');if(slot)slot.classList.add('drop-target');const dh=el.closest('.cal-hdr');if(dh){const cd=dh.closest('.cal-day');if(cd){const k=cd.id.replace('calday-','');if(!state.openDays[k]){state.openDays[k]=true;save();const ss=document.getElementById('slots-'+k);const cv=dh.querySelector('.cal-chev');if(ss)ss.classList.add('open');if(cv)cv.classList.add('open');}}}}}
-function chipEnd(e){if(!activeDrag){cleanupDrag();return;}const p=e.changedTouches?e.changedTouches[0]:e;ghost.style.display='none';const el=document.elementFromPoint(p.clientX,p.clientY);document.querySelectorAll('.cal-slot.drop-target').forEach(s=>s.classList.remove('drop-target'));if(activeDrag.chip)activeDrag.chip.classList.remove('dragging');if(el){const slot=el.closest('.cal-slot');if(slot&&slot.dataset.key&&slot.dataset.type){assignDirect(activeDrag.dishId,slot.dataset.key,slot.dataset.type);cleanupDrag();return;}const dh=el.closest('.cal-hdr');if(dh){const cd=dh.closest('.cal-day');if(cd){const k=cd.id.replace('calday-','');openPicker(activeDrag.dishId,k);}}}cleanupDrag();}
-function cleanupDrag(){activeDrag=null;ghost.style.display='none';window.removeEventListener('mousemove',chipMove);window.removeEventListener('touchmove',chipMove);window.removeEventListener('mouseup',chipEnd);window.removeEventListener('touchend',chipEnd);}
+function chipEnd(e){if(!activeDrag){cleanupDrag();return;}const p=e.changedTouches?e.changedTouches[0]:e;ghost.style.display='none';const el=document.elementFromPoint(p.clientX,p.clientY);document.querySelectorAll('.cal-slot.drop-target').forEach(s=>s.classList.remove('drop-target'));if(activeDrag.chip)activeDrag.chip.classList.remove('dragging');if(el){const slot=el.closest('.cal-slot');if(slot&&slot.dataset.key&&slot.dataset.type){const k=slot.dataset.key;state.openDays[k]=true;save();assignDirect(activeDrag.dishId,k,slot.dataset.type);cleanupDrag();return;}const dh=el.closest('.cal-hdr');if(dh){const cd=dh.closest('.cal-day');if(cd){const k=cd.id.replace('calday-','');openPicker(activeDrag.dishId,k);cleanupDrag();return;}}}cleanupDrag();}
+function cleanupDrag(){activeDrag=null;ghost.style.display='none';document.querySelectorAll('.cal-slots').forEach(s=>{if(s._wasClosed){s.style.display='';s._wasClosed=false;}});window.removeEventListener('mousemove',chipMove);window.removeEventListener('touchmove',chipMove);window.removeEventListener('mouseup',chipEnd);window.removeEventListener('touchend',chipEnd);}
 function assignDirect(dishId,key,type){if(!state.plan[key])state.plan[key]={};state.plan[key][type]={dishId,...defaultGuests()};save();rebuildShopping();updateBadge();renderPlan();}
 
 let pickerState=null;
@@ -2370,7 +2220,7 @@ function renderRecipeDetail(id){
   const stepsHtml=steps.map(step=>{
     const ingsHtml=step.ings&&step.ings.length?`<div class="rd-step-ings">${step.ings.map(i=>`<span class="rd-step-ing">${i}</span>`).join('')}</div>`:'';
     const tipHtml=step.tip?`<div class="rd-step-tip"><span class="rd-step-tip-icon">💡</span><div class="rd-step-tip-txt">${step.tip}</div></div>`:'';
-    const kidsHtml=step.kids?`<div class="rd-step-kids"><div class="rd-step-kids-txt">${step.kids}</div></div>`:'';
+    const kidsHtml=step.kidsHelp?`<div class="rd-step-kids"><div class="rd-step-kids-txt">${step.kidsHelp}</div></div>`:'';
     return`<div class="rd-step-card">
       <div class="rd-step-hdr">
         <div class="rd-step-num">${step.num}</div>
@@ -2448,6 +2298,73 @@ function openRecipeFromToday(dishId){
 }
 
 // ═══════════════════════════════════════════════════
+// TODAY
+// ═══════════════════════════════════════════════════
+let todayOffset=0;
+function todayNavDay(delta){todayOffset+=delta;renderToday();}
+function todayNavReset(){todayOffset=0;renderToday();}
+function renderToday(){
+  const base=new Date();base.setHours(0,0,0,0);
+  const target=new Date(base.getTime()+todayOffset*86400000);
+  const key=dateKey(target);
+  const todayKey=dateKey(base);
+  const isToday=key===todayKey;
+  // Date header
+  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('th-date').textContent=`${days[target.getDay()]}, ${months[target.getMonth()]} ${target.getDate()}`;
+  const hour=new Date().getHours();
+  let greet=isToday?(hour<12?'Good morning ☀️':hour<17?'Good afternoon 🌤':hour<21?'Good evening 🌙':'Good night 🌙'):(todayOffset===1?'Tomorrow':'In '+todayOffset+' days');
+  document.getElementById('th-greet').textContent=greet;
+  const jumpBtn=document.getElementById('today-jump-btn');
+  if(jumpBtn)jumpBtn.style.display=isToday?'none':'inline-block';
+  const dm=state.plan[key]||{};
+  const tm=document.getElementById('tm');
+  const meals=MEAL_TYPES.map(type=>{
+    const slot=dm[type];const dish=slot?.dishId?getDish(slot.dishId):null;
+    if(!dish)return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)"><div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">${MEAL_ICONS[type]} ${type}</div><div style="font-size:13px;color:var(--text3);font-style:italic">Nothing planned</div></div>`;
+    const img=dish.photo?`<img src="${dish.photo}" style="width:56px;height:56px;object-fit:cover;border-radius:10px;flex-shrink:0" onerror="this.style.display='none'">`:`<div style="width:56px;height:56px;border-radius:10px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">${dish.emoji}</div>`;
+    const sf=familyServings();const mult=sf/(dish.servings||2);
+    const ingList=dish.ingredients.slice(0,4).map(ing=>`${ing.emoji} ${fmtIngQty(ing,mult)}`).join(' · ');
+    const totalTime=(dish.prep||0)+(dish.cook||0);
+    return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)">
+      <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">${MEAL_ICONS[type]} ${type}</div>
+      <div style="display:flex;gap:12px;align-items:flex-start" onclick="openRecipeFromToday(${dish.id})" style="cursor:pointer">
+        ${img}
+        <div style="flex:1;min-width:0">
+          <div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px">${dishName(dish)}</div>
+          <div style="font-size:11px;color:var(--text3);margin-bottom:5px">${dishSubtitle(dish)||dishDesc(dish)}</div>
+          ${totalTime?`<span style="font-size:11px;background:var(--accent-l);color:var(--accent);border-radius:99px;padding:2px 8px">⏱ ${totalTime} min</span>`:''}
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px;line-height:1.6">${ingList}${dish.ingredients.length>4?` · +${dish.ingredients.length-4} more`:''}</div>
+      <button onclick="openRecipeFromToday(${dish.id})" style="margin-top:8px;background:var(--accent-l);color:var(--accent);border:none;border-radius:99px;padding:5px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit">View recipe →</button>
+    </div>`;
+  }).join('');
+  const hasMeals=MEAL_TYPES.some(t=>dm[t]?.dishId);
+  tm.innerHTML=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">📅</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">No meals planned ${isToday?'today':'for this day'}</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">Go to the Planner tab to add meals</div><button onclick="showTab('plan')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">Open Planner →</button></div>`;
+}
+
+
+// ═══════════════════════════════════════════════════
+// RECIPES FROM DB
+// ═══════════════════════════════════════════════════
+async function loadRecipes() {
+  try {
+    const { data, error } = await sb
+      .from('recipes')
+      .select('*')
+      .order('title');
+    if (error) throw error;
+    DISHES = (data || []).map(normaliseRecipe);
+    console.log(`✅ Loaded ${DISHES.length} recipes from Supabase`);
+  } catch (e) {
+    console.warn('Could not load recipes from DB:', e.message);
+    DISHES = []; // app still works, just empty
+  }
+}
+
+// ═══════════════════════════════════════════════════
 // CORE APP
 // ═══════════════════════════════════════════════════
 function hideLoading(){
@@ -2466,13 +2383,15 @@ function showApp(user){
   document.getElementById('user-avatar').textContent=meta.avatar||'🌿';
   document.getElementById('user-name').textContent=meta.first_name||user.email?.split('@')[0]||'Friend';
   const tier=getUserTier();
-  const tierLabels={guest:'Guest · 4 dishes',registered:'Free account · 10 dishes',premium:'⭐ Premium'};
+  const tierLabels={guest:'🌱 Explorer',registered:'🌿 Member (free)',premium:'⭐ Premium'};
   document.getElementById('user-plan').textContent=tierLabels[tier]||tier;
-  // Show upgrade prompt for non-premium
-  if(tier!=='premium'&&!isGuest){
-    document.getElementById('user-plan').style.cursor='pointer';
-    document.getElementById('user-plan').onclick=()=>openPaywall('premium');
+  // Show/hide upgrade button
+  const upgradeBtn=document.getElementById('upgrade-btn');
+  if(upgradeBtn){
+    upgradeBtn.style.display=tier==='premium'?'none':'block';
+    upgradeBtn.textContent=tier==='guest'?'Upgrade':'⭐ Upgrade';
   }
+  document.getElementById('user-plan').onclick=tier!=='premium'?()=>openPaywall('header'):null;
   applyLang();renderLangBars();renderFamily();initDiscover();rebuildShopping();updateBadge();
 }
 
@@ -2491,7 +2410,7 @@ async function init(){
   sb.auth.onAuthStateChange(async(event,session)=>{
     if(event==='SIGNED_IN'&&session){
       clearTimeout(window._safetyTimer);
-      await loadUserData(session.user);
+      await Promise.all([loadUserData(session.user), loadRecipes()]);
       hideLoading();
       showApp(session.user);
     }else if(event==='SIGNED_OUT'){
@@ -2522,7 +2441,7 @@ async function init(){
 
     if(session&&session.user){
       // Valid session found — load data and show app
-      await loadUserData(session.user);
+      await Promise.all([loadUserData(session.user), loadRecipes()]);
       hideLoading();
       showApp(session.user);
       return;
@@ -2532,7 +2451,9 @@ async function init(){
     try{
       const g=localStorage.getItem('menja_guest');
       if(g&&JSON.parse(g).isGuest){
-        isGuest=true;loadLocal();hideLoading();
+        isGuest=true;loadLocal();
+        await loadRecipes();
+        hideLoading();
         showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤',plan:'guest'}});
         return;
       }
