@@ -579,7 +579,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div class="tag-wrap" id="tag-filters"></div>
     <div class="swipe-hints"><div class="hint hint-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span data-t="skip">Skip</span></div><button class="done-btn" onclick="showDonePanel()" data-t="doneForNow">Done for now ✓</button><div class="hint hint-yes"><span data-t="addIt">Add it</span> <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div>
     <div class="swipe-area"><div class="dish-card" id="dish-card"><div class="swo"><div class="swl no" id="lbl-no">SKIP</div><div class="swl yes" id="lbl-yes">ADD!</div></div><div id="dish-img-wrap"></div><div class="di"><div class="dtags" id="dish-tags"></div><div class="dn" id="dish-name"></div><div class="dd" id="dish-desc"></div><div class="di-badges" id="dish-badges"></div></div></div><div style="display:none" id="done-panel" class="done-panel"><div class="em" id="done-em">✅</div><h2 id="done-title"></h2><p id="done-body"></p><div class="done-btns"><button class="btn-p" onclick="showTab('plan')" data-t="planMyWeek">Plan my week →</button><button class="btn-s" onclick="continueSwiping()" data-t="keepBrowsing">Keep browsing</button></div></div></div>
-    <div class="swipe-btns" id="swipe-btns"><button class="abtn no" onclick="swipeCard('left')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><button class="abtn yes" onclick="swipeCard('right')"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></button></div>
+    <div class="swipe-btns" id="swipe-btns"><button class="abtn no" onclick="swipeCard('left')"><svg viewBox="0 0 24 24"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button><button class="abtn yes" onclick="swipeCard('right')"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></button></div><div id="enough-wrap" style="text-align:center;padding:4px 0 2px"><button onclick="showDonePanel()" style="background:none;border:1px solid var(--border2);border-radius:99px;padding:5px 16px;font-size:12px;color:var(--text3);cursor:pointer;font-family:inherit">✋ Enough for now</button></div>
     <div class="dpb"><div class="dpf" id="dpf" style="width:0%"></div></div>
   </div>
   <div class="screen" id="screen-plan"><div class="plan-layout"><div class="tray-hdr"><h2 data-t="yourMeals">Your meals</h2><span data-t="dragHint">Drag onto a day</span></div><div class="tray" id="tray"></div><div class="af-bar"><span id="plan-status"></span><button class="af-btn" onclick="autoFill()" data-t="autoFill">Auto-fill</button><button class="cl-btn" onclick="clearPlan()" data-t="clearAll">Clear</button></div><div class="cal-scroll" id="cal-scroll"></div></div></div>
@@ -627,7 +627,20 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div class="fridge-results" id="fridge-results" style="display:none"></div>
   </div>
   <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-hdr"><h1 data-t="recipes">Recipes</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
-  <div class="screen" id="screen-today"><div class="th"><div class="th-date" id="th-date"></div><h1 id="th-greet"></h1></div><div class="tm" id="tm"></div></div>
+  <div class="screen" id="screen-today">
+    <div class="th">
+      <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px">
+        <button onclick="todayNavDay(-1)" style="background:none;border:none;font-size:22px;color:var(--text2);cursor:pointer;padding:4px 8px;border-radius:8px">‹</button>
+        <div style="text-align:center">
+          <div class="th-date" id="th-date"></div>
+          <h1 id="th-greet" style="margin:0;font-size:20px"></h1>
+        </div>
+        <button onclick="todayNavDay(1)" style="background:none;border:none;font-size:22px;color:var(--text2);cursor:pointer;padding:4px 8px;border-radius:8px">›</button>
+      </div>
+      <div style="text-align:center;padding:2px 16px 8px"><button id="today-jump-btn" onclick="todayNavReset()" style="display:none;background:var(--accent-l);color:var(--accent);border:none;border-radius:99px;padding:3px 12px;font-size:11px;cursor:pointer;font-family:inherit">↩ Back to today</button></div>
+    </div>
+    <div class="tm" id="tm"></div>
+  </div>
 </div>
 <!-- LIMIT POPUP (bottom sheet, triggered on hitting tier wall) -->
 <div class="limit-bg" id="limit-bg" onclick="event.target===this&&closeLimitPopup()">
@@ -1732,15 +1745,28 @@ async function signUp(){
   const pass=document.getElementById('su-pass').value;
   if(!fname||!email||!pass){showAuthError('Please fill in all fields.');return;}
   if(pass.length<8){showAuthError('Password must be at least 8 characters.');return;}
-  const btn=document.getElementById('su-btn');btn.disabled=true;btn.textContent='...';
+  const btn=document.getElementById('su-btn');btn.disabled=true;btn.textContent='Creating account...';
   try{
-    const{error}=await sb.auth.signUp({email,password:pass,options:{
+    const{data,error}=await sb.auth.signUp({email,password:pass,options:{
       emailRedirectTo:window.location.origin,
       data:{first_name:fname,last_name:document.getElementById('su-lname').value.trim(),plan:'registered',avatar:'🌿'}
     }});
     btn.disabled=false;btn.textContent=t('createAccountBtn');
-    if(error)showAuthError(error.message==='Failed to fetch'?'Network error. Check your connection.':error.message);
-    else showAuthSuccess('✅ Account created! Check your email to confirm, then sign in.');
+    if(error){
+      if(error.message.includes('already registered')||error.message.includes('User already')){
+        showAuthError('An account with this email already exists.\nTry signing in instead.');
+        setTimeout(()=>switchAuthTab('signin'),2000);
+      }else if(error.message==='Failed to fetch'){
+        showAuthError('Network error. Check your connection.');
+      }else{
+        showAuthError(error.message);
+      }
+    }else if(data?.user?.identities?.length===0){
+      // User exists but not confirmed
+      showAuthError('This email is already registered. Please check your inbox for a confirmation email, or try signing in.');
+    }else{
+      showAuthSuccess('✅ Account created! Check your email for a confirmation link, then sign in here.');
+    }
   }catch(e){btn.disabled=false;btn.textContent=t('createAccountBtn');showAuthError('Network error. Check your connection.');}
 }
 async function signInWithGoogle(){
@@ -2253,7 +2279,7 @@ function showTab(tab){
   document.getElementById('tab-'+tab).classList.add('active');
   if(tab==='plan')renderPlan();
   if(tab==='shopping')renderShopping();
-  if(tab==='today')renderToday();
+  if(tab==='today'){todayOffset=0;renderToday();}
   if(tab==='recipes')renderRecipes();
   if(tab==='fridge')initFridgeScreen();
 }
@@ -2333,14 +2359,21 @@ function renderDish(){
 }
 function showDonePanel(){
   state.discoverPaused=true;save();
-  document.getElementById('dish-card').style.display='none';document.getElementById('swipe-btns').style.display='none';
+  document.getElementById('dish-card').style.display='none';
+  document.getElementById('swipe-btns').style.display='none';
+  const ew=document.getElementById('enough-wrap');if(ew)ew.style.display='none';
   const p=document.getElementById('done-panel');p.style.display='block';
   const n=state.liked.length,r=remaining().length;
   document.getElementById('done-em').textContent=n>0?'✅':'🍽️';
   document.getElementById('done-title').textContent=n>0?`${n} ${n===1?t('dishSaved'):t('dishesSaved')}`:t('nothingSaved').split('—')[0].trim();
   document.getElementById('done-body').textContent=n>0?(r>0?`${r} ${t('moreToBrowse')} `:'')+(t('readyToPlan')):t('nothingSaved').split('—').slice(1).join('—').trim();
 }
-function continueSwiping(){state.discoverPaused=false;save();document.getElementById('done-panel').style.display='none';renderDish();}
+function continueSwiping(){
+  state.discoverPaused=false;save();
+  document.getElementById('done-panel').style.display='none';
+  const ew=document.getElementById('enough-wrap');if(ew)ew.style.display='block';
+  renderDish();
+}
 
 function dStart(e){drag=true;const p=e.touches?e.touches[0]:e;sx=p.clientX;sy=p.clientY;cx=0;document.getElementById('dish-card').classList.add('swiping');}
 function dMove(e){if(!drag)return;const p=e.touches?e.touches[0]:e;cx=p.clientX-sx;const cy=p.clientY-sy;const c=document.getElementById('dish-card');c.style.transform=`translateX(${cx}px) translateY(${cy*.2}px) rotate(${cx*.08}deg)`;const ratio=Math.abs(cx)/THRESH;if(cx<0){document.getElementById('lbl-no').style.opacity=Math.min(ratio,1);document.getElementById('lbl-yes').style.opacity=0;}else{document.getElementById('lbl-yes').style.opacity=Math.min(ratio,1);document.getElementById('lbl-no').style.opacity=0;}}
@@ -2426,11 +2459,11 @@ function toggleDay(key){
 function rmMeal(key,type){if(state.plan[key])state.plan[key][type]=null;save();rebuildShopping();updateBadge();renderPlan();}
 
 let activeDrag=null;const ghost=document.getElementById('ghost');
-function chipStart(e){e.preventDefault();const chip=e.currentTarget;const id=parseInt(chip.dataset.id);const dish=getDish(id);if(!dish)return;const p=e.touches?e.touches[0]:e;activeDrag={dishId:id,chip};document.getElementById('ghost-img').innerHTML=dish.photo?`<img src="${dish.photo}" style="width:100%;height:58px;object-fit:cover">`:`<div class="chip-fb">${dish.emoji}</div>`;document.getElementById('ghost-name').textContent=dishName(dish);ghost.style.display='block';moveGhost(p.clientX,p.clientY);chip.classList.add('dragging');window.addEventListener('mousemove',chipMove);window.addEventListener('touchmove',chipMove,{passive:false});window.addEventListener('mouseup',chipEnd);window.addEventListener('touchend',chipEnd);}
+function chipStart(e){e.preventDefault();const chip=e.currentTarget;const id=parseInt(chip.dataset.id);const dish=getDish(id);if(!dish)return;const p=e.touches?e.touches[0]:e;activeDrag={dishId:id,chip};document.getElementById('ghost-img').innerHTML=dish.photo?`<img src="${dish.photo}" style="width:100%;height:58px;object-fit:cover">`:`<div class="chip-fb">${dish.emoji}</div>`;document.getElementById('ghost-name').textContent=dishName(dish);ghost.style.display='block';moveGhost(p.clientX,p.clientY);chip.classList.add('dragging');document.querySelectorAll('.cal-slots').forEach(s=>{s._wasClosed=!s.classList.contains('open');s.style.display='block';});window.addEventListener('mousemove',chipMove);window.addEventListener('touchmove',chipMove,{passive:false});window.addEventListener('mouseup',chipEnd);window.addEventListener('touchend',chipEnd);}
 function moveGhost(x,y){ghost.style.left=(x-43)+'px';ghost.style.top=(y-37)+'px';}
 function chipMove(e){if(!activeDrag)return;e.preventDefault();const p=e.touches?e.touches[0]:e;moveGhost(p.clientX,p.clientY);ghost.style.display='none';const el=document.elementFromPoint(p.clientX,p.clientY);ghost.style.display='block';document.querySelectorAll('.cal-slot.drop-target').forEach(s=>s.classList.remove('drop-target'));if(el){const slot=el.closest('.cal-slot');if(slot)slot.classList.add('drop-target');const dh=el.closest('.cal-hdr');if(dh){const cd=dh.closest('.cal-day');if(cd){const k=cd.id.replace('calday-','');if(!state.openDays[k]){state.openDays[k]=true;save();const ss=document.getElementById('slots-'+k);const cv=dh.querySelector('.cal-chev');if(ss)ss.classList.add('open');if(cv)cv.classList.add('open');}}}}}
-function chipEnd(e){if(!activeDrag){cleanupDrag();return;}const p=e.changedTouches?e.changedTouches[0]:e;ghost.style.display='none';const el=document.elementFromPoint(p.clientX,p.clientY);document.querySelectorAll('.cal-slot.drop-target').forEach(s=>s.classList.remove('drop-target'));if(activeDrag.chip)activeDrag.chip.classList.remove('dragging');if(el){const slot=el.closest('.cal-slot');if(slot&&slot.dataset.key&&slot.dataset.type){assignDirect(activeDrag.dishId,slot.dataset.key,slot.dataset.type);cleanupDrag();return;}const dh=el.closest('.cal-hdr');if(dh){const cd=dh.closest('.cal-day');if(cd){const k=cd.id.replace('calday-','');openPicker(activeDrag.dishId,k);}}}cleanupDrag();}
-function cleanupDrag(){activeDrag=null;ghost.style.display='none';window.removeEventListener('mousemove',chipMove);window.removeEventListener('touchmove',chipMove);window.removeEventListener('mouseup',chipEnd);window.removeEventListener('touchend',chipEnd);}
+function chipEnd(e){if(!activeDrag){cleanupDrag();return;}const p=e.changedTouches?e.changedTouches[0]:e;ghost.style.display='none';const el=document.elementFromPoint(p.clientX,p.clientY);document.querySelectorAll('.cal-slot.drop-target').forEach(s=>s.classList.remove('drop-target'));if(activeDrag.chip)activeDrag.chip.classList.remove('dragging');if(el){const slot=el.closest('.cal-slot');if(slot&&slot.dataset.key&&slot.dataset.type){const k=slot.dataset.key;state.openDays[k]=true;save();assignDirect(activeDrag.dishId,k,slot.dataset.type);cleanupDrag();return;}const dh=el.closest('.cal-hdr');if(dh){const cd=dh.closest('.cal-day');if(cd){const k=cd.id.replace('calday-','');openPicker(activeDrag.dishId,k);cleanupDrag();return;}}}cleanupDrag();}
+function cleanupDrag(){activeDrag=null;ghost.style.display='none';document.querySelectorAll('.cal-slots').forEach(s=>{if(s._wasClosed){s.style.display='';s._wasClosed=false;}});window.removeEventListener('mousemove',chipMove);window.removeEventListener('touchmove',chipMove);window.removeEventListener('mouseup',chipEnd);window.removeEventListener('touchend',chipEnd);}
 function assignDirect(dishId,key,type){if(!state.plan[key])state.plan[key]={};state.plan[key][type]={dishId,...defaultGuests()};save();rebuildShopping();updateBadge();renderPlan();}
 
 let pickerState=null;
@@ -2614,6 +2647,54 @@ function openRecipeFromToday(dishId){
   document.getElementById('rec-list-view').style.display='none';
   recipeServings[dishId]=recipeServings[dishId]||familyServings();
   renderRecipeDetail(dishId);
+}
+
+// ═══════════════════════════════════════════════════
+// TODAY
+// ═══════════════════════════════════════════════════
+let todayOffset=0;
+function todayNavDay(delta){todayOffset+=delta;renderToday();}
+function todayNavReset(){todayOffset=0;renderToday();}
+function renderToday(){
+  const base=new Date();base.setHours(0,0,0,0);
+  const target=new Date(base.getTime()+todayOffset*86400000);
+  const key=dateKey(target);
+  const todayKey=dateKey(base);
+  const isToday=key===todayKey;
+  // Date header
+  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('th-date').textContent=`${days[target.getDay()]}, ${months[target.getMonth()]} ${target.getDate()}`;
+  const hour=new Date().getHours();
+  let greet=isToday?(hour<12?'Good morning ☀️':hour<17?'Good afternoon 🌤':hour<21?'Good evening 🌙':'Good night 🌙'):(todayOffset===1?'Tomorrow':'In '+todayOffset+' days');
+  document.getElementById('th-greet').textContent=greet;
+  const jumpBtn=document.getElementById('today-jump-btn');
+  if(jumpBtn)jumpBtn.style.display=isToday?'none':'inline-block';
+  const dm=state.plan[key]||{};
+  const tm=document.getElementById('tm');
+  const meals=MEAL_TYPES.map(type=>{
+    const slot=dm[type];const dish=slot?.dishId?getDish(slot.dishId):null;
+    if(!dish)return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)"><div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">${MEAL_ICONS[type]} ${type}</div><div style="font-size:13px;color:var(--text3);font-style:italic">Nothing planned</div></div>`;
+    const img=dish.photo?`<img src="${dish.photo}" style="width:56px;height:56px;object-fit:cover;border-radius:10px;flex-shrink:0" onerror="this.style.display='none'">`:`<div style="width:56px;height:56px;border-radius:10px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">${dish.emoji}</div>`;
+    const sf=familyServings();const mult=sf/(dish.servings||2);
+    const ingList=dish.ingredients.slice(0,4).map(ing=>`${ing.emoji} ${fmtIngQty(ing,mult)}`).join(' · ');
+    const totalTime=(dish.prep||0)+(dish.cook||0);
+    return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)">
+      <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">${MEAL_ICONS[type]} ${type}</div>
+      <div style="display:flex;gap:12px;align-items:flex-start" onclick="openRecipeFromToday(${dish.id})" style="cursor:pointer">
+        ${img}
+        <div style="flex:1;min-width:0">
+          <div style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px">${dishName(dish)}</div>
+          <div style="font-size:11px;color:var(--text3);margin-bottom:5px">${dishSubtitle(dish)||dishDesc(dish)}</div>
+          ${totalTime?`<span style="font-size:11px;background:var(--accent-l);color:var(--accent);border-radius:99px;padding:2px 8px">⏱ ${totalTime} min</span>`:''}
+        </div>
+      </div>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px;line-height:1.6">${ingList}${dish.ingredients.length>4?` · +${dish.ingredients.length-4} more`:''}</div>
+      <button onclick="openRecipeFromToday(${dish.id})" style="margin-top:8px;background:var(--accent-l);color:var(--accent);border:none;border-radius:99px;padding:5px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit">View recipe →</button>
+    </div>`;
+  }).join('');
+  const hasMeals=MEAL_TYPES.some(t=>dm[t]?.dishId);
+  tm.innerHTML=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">📅</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">No meals planned ${isToday?'today':'for this day'}</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">Go to the Planner tab to add meals</div><button onclick="showTab('plan')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">Open Planner →</button></div>`;
 }
 
 // ═══════════════════════════════════════════════════
