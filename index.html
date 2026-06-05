@@ -1592,7 +1592,7 @@ async function saveToSupabase(){
     if(prefRows.length)await tryUpsert('dish_preferences',prefRows,{onConflict:'user_id,dish_id'});
     const mealRows=[];Object.entries(state.plan).forEach(([date,meals])=>{Object.entries(meals).forEach(([type,slot])=>{if(slot&&slot.dishId)mealRows.push({user_id:uid,date,meal_type:type,dish_id:slot.dishId,adults:slot.adults||state.family.adults,children:slot.children||state.family.children,updated_at:new Date().toISOString()});});});
     if(mealRows.length)await tryUpsert('meal_plan',mealRows,{onConflict:'user_id,date,meal_type'});
-    const rRows=Object.entries(state.ratings).map(([dishId,r])=>({user_id:uid,dish_id:parseInt(dishId),score:Math.round(r.score/r.count),rated_at:new Date().toISOString()}));
+    const rRows=Object.entries(state.ratings).map(([dishId,r])=>({user_id:uid,dish_id:dishId,score:Math.round(r.score/r.count),rated_at:new Date().toISOString()}));
     if(rRows.length)await tryUpsert('dish_ratings',rRows,{onConflict:'user_id,dish_id'});
     await tryUpsert('app_preferences',{user_id:uid,active_tag:state.activeTag,rec_tag:state.recTag,open_days:state.openDays,cat_open:state.catOpen,discover_paused:state.discoverPaused,updated_at:new Date().toISOString()},{onConflict:'user_id'});
   }catch(e){console.warn('Supabase save error:',e);}
@@ -1869,7 +1869,7 @@ function renderFridgeResults(ingredients){
         ?`<img class="fridge-recipe-ph" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="fridge-recipe-ph-em" style="display:none">${dish.emoji}</div>`
         :`<div class="fridge-recipe-ph-em">${dish.emoji}</div>`;
       const missingHtml=missing.length?`<div class="fridge-recipe-missing">${t('fridgeNeedAlso')} ${missing.slice(0,3).join(', ')}${missing.length>3?'…':''}</div>`:'';
-      html+=`<div class="fridge-recipe-card" onclick="openRecipe(${dish.id})">
+      html+=`<div class="fridge-recipe-card" onclick="openRecipe('${dish.id}')">
         <div class="fridge-recipe-inner">${img}
           <div class="fridge-recipe-info">
             <div class="fridge-recipe-name">${dishName(dish)}</div>
@@ -2223,7 +2223,7 @@ function renderRecipes(){
     const img=d.photo
       ?`<img class="rec-card-img" src="${d.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="rec-card-img-em" style="display:none">${d.emoji}</div>`
       :`<div class="rec-card-img-em">${d.emoji}</div>`;
-    return`<div class="rec-card" onclick="openRecipe(${id})">
+    return`<div class="rec-card" onclick="openRecipe('${id}')">
       ${img}
       <div class="rec-card-body">
         <div class="rec-card-top">
@@ -2345,9 +2345,9 @@ function renderRecipeDetail(id){
       </div>
       <div class="rd-servings">
         <span class="rd-srv-label">${t('servingLabel')}</span>
-        <button class="rd-srv-btn" onclick="changeServings(${id},-1)">−</button>
+        <button class="rd-srv-btn" onclick="changeServings('${id}',-1)">−</button>
         <span class="rd-srv-count">${servings}</span>
-        <button class="rd-srv-btn" onclick="changeServings(${id},1)">+</button>
+        <button class="rd-srv-btn" onclick="changeServings('${id}',1)">+</button>
       </div>
       <div class="rd-section">
         <div class="rd-section-title">${t('ingredients')}</div>
@@ -2360,7 +2360,7 @@ function renderRecipeDetail(id){
         ${stepsHtml}
       </div>
       ${nut}
-      <button class="rd-rate-btn" onclick="openRating(${id})">
+      <button class="rd-rate-btn" onclick="openRating('${id}')">
         <span>${rating>0?t('updateRating'):t('rateRecipe')}</span>
         <div>${[1,2,3,4,5].map(i=>`<span class="mini-star ${i<=Math.round(rating)?'filled':''}">★</span>`).join('')}</div>
       </button>
@@ -2377,6 +2377,34 @@ function openRecipeFromToday(dishId){
   recipeServings[dishId]=recipeServings[dishId]||familyServings();
   renderRecipeDetail(dishId);
 }
+
+// ─── RATING ──────────────────────────────────────
+let ratingState={id:null,stars:0};
+function openRating(id){
+  const d=getDish(id);if(!d)return;
+  ratingState={id,stars:Math.round(avgRating(id))};
+  const img=d.photo
+    ?`<img class="rate-img" src="${d.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="rate-img-em" style="display:none">${d.emoji}</div>`
+    :`<div class="rate-img-em">${d.emoji}</div>`;
+  document.getElementById('rate-preview').innerHTML=`${img}<div><div class="rate-title">${dishName(d)}</div><div class="rate-sub">${dishSubtitle(d)||''}</div></div>`;
+  renderRateStars();
+  document.getElementById('rate-bg').classList.add('open');
+}
+function renderRateStars(){
+  document.getElementById('rate-stars').innerHTML=[1,2,3,4,5].map(i=>
+    `<span class="rate-star ${i<=ratingState.stars?'filled':''}" onclick="setRateStars(${i})">★</span>`
+  ).join('');
+}
+function setRateStars(n){ratingState.stars=n;renderRateStars();}
+function submitRating(){
+  if(!ratingState.id||!ratingState.stars){closeRating();return;}
+  state.ratings[ratingState.id]={score:ratingState.stars,count:1};
+  save();
+  const id=ratingState.id;
+  closeRating();
+  if(document.getElementById('rec-detail-view').style.display!=='none')renderRecipeDetail(id);
+}
+function closeRating(){document.getElementById('rate-bg').classList.remove('open');ratingState={id:null,stars:0};}
 
 // ═══════════════════════════════════════════════════
 // TODAY
