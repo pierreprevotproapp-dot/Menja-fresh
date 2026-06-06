@@ -2004,21 +2004,31 @@ function toggleCompare(){
   if(cs)cs.style.display=compareOpen?'block':'none';
   if(btn)btn.textContent=compareOpen?'Hide comparison ↑':'Compare all features ↓';
 }
+// Paste your Stripe Payment Link base URLs here (e.g. https://buy.stripe.com/abc123).
+const STRIPE_LINKS={monthly:'https://buy.stripe.com/YOUR_MONTHLY_LINK',yearly:'https://buy.stripe.com/YOUR_YEARLY_LINK'};
 function startCheckout(){
-  const urls={monthly:'https://buy.stripe.com/YOUR_MONTHLY_LINK',yearly:'https://buy.stripe.com/YOUR_YEARLY_LINK'};
-  const url=urls[billingCycle];
-  if(url.includes('YOUR_')){
+  let url=STRIPE_LINKS[billingCycle];
+  if(!url||url.includes('YOUR_')){
     const existing=document.getElementById('paywall-setup-note');
     if(existing){existing.remove();return;}
     const note=document.createElement('div');
     note.id='paywall-setup-note';
     note.style.cssText='margin:8px 14px;background:rgba(255,248,225,.08);border-radius:var(--rsm);padding:12px 14px;font-size:12px;color:var(--nav-t);line-height:1.6;border:.5px solid rgba(245,158,11,.3)';
-    note.innerHTML='<strong style="color:var(--nav-a)">Payment not set up yet.</strong><br>Create a <a href="https://stripe.com" target="_blank" style="color:var(--nav-a)">Stripe account</a>, generate two payment links (€4.99/mo and €44/yr) and replace YOUR_MONTHLY_LINK / YOUR_YEARLY_LINK in <code>startCheckout()</code>.';
+    note.innerHTML='<strong style="color:var(--nav-a)">Payment not set up yet.</strong><br>Create two <a href="https://dashboard.stripe.com/payment-links" target="_blank" style="color:var(--nav-a)">Stripe Payment Links</a> (€4.99/mo and €44/yr) and paste them into <code>STRIPE_LINKS</code> in the code.';
     const cb=document.getElementById('pw-cta-btn');
     if(cb)cb.parentNode.insertBefore(note,cb);
     return;
   }
-  window.open(url,'_blank');
+  // Pass who is paying so the webhook can flip THIS account to Premium
+  if(currentUser&&currentUser.id&&currentUser.id!=='guest'){
+    const sep=url.includes('?')?'&':'?';
+    url+=`${sep}client_reference_id=${encodeURIComponent(currentUser.id)}`;
+    if(currentUser.email)url+=`&prefilled_email=${encodeURIComponent(currentUser.email)}`;
+  }else{
+    // guests must have an account to subscribe (so we can grant Premium to it)
+    closePaywall();showAuth();switchAuthTab('signup');return;
+  }
+  window.location.href=url;   // go to Stripe-hosted checkout
 }
 // ─── SUPABASE LOAD/SAVE ──────────────────────────
 async function loadUserData(user){
