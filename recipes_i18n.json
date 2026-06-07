@@ -13648,5 +13648,1377 @@
         }
       ]
     }
+  },
+  "meatballs-tomato-sauce-pasta": {
+    "es": {
+      "title": "Albóndigas de pavo en salsa de tomate",
+      "subtitle": "Albóndigas más ligeras, llenas de sabor",
+      "ingredients": [
+        "Carne picada de pavo",
+        "Espaguetis",
+        "Tomate triturado (lata)",
+        "Cebolla",
+        "Ajo",
+        "Albahaca fresca",
+        "Parmesano"
+      ],
+      "base": [
+        "Pan rallado",
+        "Huevo",
+        "Aceite de oliva",
+        "Orégano seco",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Prepara las albóndigas",
+          "text": "Mezcla la carne de pavo con pan rallado, un huevo, la mitad del ajo picado, orégano, sal y pimienta.",
+          "tip": null,
+          "ings": [
+            "🍗 Carne de pavo · 400g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Forma bolitas",
+          "text": "Forma bolitas pequeñas.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": "¡A los niños les encanta hacer albóndigas! 🧒"
+        },
+        {
+          "title": "Dora las albóndigas",
+          "text": "Fríe las albóndigas en aceite de oliva a fuego medio-alto 5–6 minutos, girándolas hasta que se doren por todos lados.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Prepara la salsa",
+          "text": "En la misma sartén, sofríe la cebolla picada y el ajo restante 3 minutos.",
+          "tip": null,
+          "ings": [
+            "🍅 Tomate triturado · 400g",
+            "🧅 Cebolla · 1 ud"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade el tomate triturado",
+          "text": "Añade el tomate triturado.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuece 10 minutos",
+          "text": "Cuece a fuego lento 10 minutos.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Junta todo",
+          "text": "Devuelve las albóndigas a la salsa.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuece junto 10 minutos más",
+          "text": "Cuece todo junto 10 minutos más.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Sirve con la pasta",
+          "text": "Cuece los espaguetis al dente.",
+          "tip": null,
+          "ings": [
+            "🍝 Espaguetis · 200g",
+            "🌿 Albahaca · 15g",
+            "🧀 Parmesano · 30g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Sirve con albóndigas y salsa",
+          "text": "Sirve con las albóndigas, la salsa, albahaca fresca y parmesano rallado.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": "¡Los niños pueden rallar el queso! 🧒"
+        }
+      ]
+    },
+    "fr": {
+      "title": "Boulettes de dinde à la sauce tomate",
+      "subtitle": "Des boulettes plus légères, pleines de saveur",
+      "ingredients": [
+        "Viande hachée de dinde",
+        "Spaghetti",
+        "Tomates concassées (boîte)",
+        "Oignon",
+        "Ail",
+        "Basilic frais",
+        "Parmesan"
+      ],
+      "base": [
+        "Chapelure",
+        "Œuf",
+        "Huile d'olive",
+        "Origan séché",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Préparer les boulettes",
+          "text": "Mélanger la dinde hachée avec la chapelure, un œuf, la moitié de l'ail haché, l'origan, le sel et le poivre.",
+          "tip": null,
+          "ings": [
+            "🍗 Dinde hachée · 400g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Former des boulettes",
+          "text": "Former de petites boulettes.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": "Les enfants adorent rouler les boulettes ! 🧒"
+        },
+        {
+          "title": "Dorer les boulettes",
+          "text": "Faire dorer les boulettes à l'huile d'olive à feu moyen-vif 5–6 minutes, en les retournant.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer la sauce",
+          "text": "Dans la même poêle, faire revenir l'oignon en dés et le reste de l'ail 3 minutes.",
+          "tip": null,
+          "ings": [
+            "🍅 Tomates concassées · 400g",
+            "🧅 Oignon · 1 pc"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter les tomates",
+          "text": "Ajouter les tomates concassées.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mijoter 10 minutes",
+          "text": "Mijoter 10 minutes.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Réunir le tout",
+          "text": "Remettre les boulettes dans la sauce.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mijoter 10 minutes de plus",
+          "text": "Mijoter ensemble 10 minutes de plus.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Servir avec les pâtes",
+          "text": "Cuire les spaghetti al dente.",
+          "tip": null,
+          "ings": [
+            "🍝 Spaghetti · 200g",
+            "🌿 Basilic · 15g",
+            "🧀 Parmesan · 30g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Servir avec boulettes et sauce",
+          "text": "Servir avec les boulettes, la sauce, du basilic frais et du parmesan râpé.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": "Les enfants peuvent râper le fromage ! 🧒"
+        }
+      ]
+    },
+    "de": {
+      "title": "Putenhackbällchen in Tomatensoße",
+      "subtitle": "Leichtere Bällchen, voller Geschmack",
+      "ingredients": [
+        "Putenhackfleisch",
+        "Spaghetti",
+        "Gehackte Tomaten (Dose)",
+        "Zwiebel",
+        "Knoblauch",
+        "Frisches Basilikum",
+        "Parmesan"
+      ],
+      "base": [
+        "Semmelbrösel",
+        "Ei",
+        "Olivenöl",
+        "Getrockneter Oregano",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Hackbällchen zubereiten",
+          "text": "Putenhack mit Semmelbröseln, einem Ei, der Hälfte des gehackten Knoblauchs, Oregano, Salz und Pfeffer mischen.",
+          "tip": null,
+          "ings": [
+            "🍗 Putenhackfleisch · 400g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Bällchen formen",
+          "text": "Zu kleinen Bällchen formen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": "Kinder lieben es, Bällchen zu rollen! 🧒"
+        },
+        {
+          "title": "Bällchen anbraten",
+          "text": "Bällchen in Olivenöl bei mittlerer bis hoher Hitze 5–6 Minuten rundum anbraten.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Soße zubereiten",
+          "text": "In derselben Pfanne gewürfelte Zwiebel und restlichen Knoblauch 3 Minuten anbraten.",
+          "tip": null,
+          "ings": [
+            "🍅 Gehackte Tomaten · 400g",
+            "🧅 Zwiebel · 1 St."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Gehackte Tomaten zugeben",
+          "text": "Gehackte Tomaten zugeben.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "10 Minuten köcheln",
+          "text": "10 Minuten köcheln lassen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Alles zusammenführen",
+          "text": "Bällchen zurück in die Soße geben.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Weitere 10 Minuten köcheln",
+          "text": "Zusammen weitere 10 Minuten köcheln.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Pasta servieren",
+          "text": "Spaghetti al dente kochen.",
+          "tip": null,
+          "ings": [
+            "🍝 Spaghetti · 200g",
+            "🌿 Basilikum · 15g",
+            "🧀 Parmesan · 30g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Bällchen & Soße servieren",
+          "text": "Mit Bällchen, Soße, frischem Basilikum und geriebenem Parmesan servieren.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": "Kinder können den Käse reiben! 🧒"
+        }
+      ]
+    }
+  },
+  "berry-smoothie-bowl": {
+    "es": {
+      "title": "Bol de smoothie de frutos rojos",
+      "subtitle": "Espeso, vibrante y lleno de antioxidantes",
+      "ingredients": [
+        "Frutos rojos congelados",
+        "Plátano congelado",
+        "Bebida de avena",
+        "Kiwi",
+        "Fresas frescas",
+        "Granola",
+        "Copos de coco",
+        "Semillas de chía"
+      ],
+      "base": [],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Tritura la base",
+          "text": "Tritura los frutos rojos y el plátano congelados con la justa bebida de avena para que se mueva.",
+          "tip": null,
+          "ings": [
+            "🍓 Frutos rojos congelados · 250g",
+            "🍌 Plátano congelado · 1 ud",
+            "🥛 Bebida de avena · 80ml"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Que quede espeso",
+          "text": "Que quede espeso: casi sólido.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade la bebida poco a poco",
+          "text": "Añade la bebida poco a poco.",
+          "tip": "Cuanta menos bebida, más espeso el bol: añade una cucharada cada vez.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Prepara los toppings",
+          "text": "Corta el kiwi y las fresas.",
+          "tip": null,
+          "ings": [
+            "🥝 Kiwi · 1 ud",
+            "🍓 Fresas · 60g"
+          ],
+          "kidsHelp": "¡Los niños pueden colocar los toppings! 🧒"
+        },
+        {
+          "title": "Monta y sirve",
+          "text": "Vierte la base espesa en boles.",
+          "tip": null,
+          "ings": [
+            "🌾 Granola · 30g",
+            "⚫ Semillas de chía · 1 cda"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Corona con kiwi y fresas",
+          "text": "Corona con kiwi, fresas, granola, copos de coco y semillas de chía.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Bol smoothie aux fruits rouges",
+      "subtitle": "Épais, éclatant et riche en antioxydants",
+      "ingredients": [
+        "Fruits rouges surgelés",
+        "Banane surgelée",
+        "Boisson à l'avoine",
+        "Kiwi",
+        "Fraises fraîches",
+        "Granola",
+        "Flocons de coco",
+        "Graines de chia"
+      ],
+      "base": [],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Mixer la base",
+          "text": "Mixer les fruits rouges et la banane surgelés avec juste assez de boisson à l'avoine pour que ça tourne.",
+          "tip": null,
+          "ings": [
+            "🍓 Fruits rouges surgelés · 250g",
+            "🍌 Banane surgelée · 1 pc",
+            "🥛 Boisson à l'avoine · 80ml"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Garder épais",
+          "text": "Garder épais — presque solide.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter la boisson petit à petit",
+          "text": "Ajouter la boisson petit à petit.",
+          "tip": "Moins de boisson = bol plus épais — ajoutez une cuillère à la fois.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer les garnitures",
+          "text": "Couper le kiwi et les fraises.",
+          "tip": null,
+          "ings": [
+            "🥝 Kiwi · 1 pc",
+            "🍓 Fraises · 60g"
+          ],
+          "kidsHelp": "Les enfants peuvent disposer les garnitures ! 🧒"
+        },
+        {
+          "title": "Monter et servir",
+          "text": "Verser la base épaisse dans des bols.",
+          "tip": null,
+          "ings": [
+            "🌾 Granola · 30g",
+            "⚫ Graines de chia · 1 c. à s."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Garnir de kiwi et fraises",
+          "text": "Garnir de kiwi, fraises, granola, flocons de coco et graines de chia.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "de": {
+      "title": "Beeren-Smoothie-Bowl",
+      "subtitle": "Dick, lebendig und voller Antioxidantien",
+      "ingredients": [
+        "Gefrorene Beerenmischung",
+        "Gefrorene Banane",
+        "Haferdrink",
+        "Kiwi",
+        "Frische Erdbeeren",
+        "Granola",
+        "Kokoschips",
+        "Chiasamen"
+      ],
+      "base": [],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Basis mixen",
+          "text": "Gefrorene Beeren und gefrorene Banane mit gerade so viel Haferdrink mixen, dass es sich bewegt.",
+          "tip": null,
+          "ings": [
+            "🍓 Gefrorene Beeren · 250g",
+            "🍌 Gefrorene Banane · 1 St.",
+            "🥛 Haferdrink · 80ml"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Dick halten",
+          "text": "Dick halten – fast fest.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Drink nach und nach zugeben",
+          "text": "Drink nach und nach zugeben.",
+          "tip": "Weniger Drink = dickere Bowl – esslöffelweise zugeben.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Toppings vorbereiten",
+          "text": "Kiwi und Erdbeeren schneiden.",
+          "tip": null,
+          "ings": [
+            "🥝 Kiwi · 1 St.",
+            "🍓 Erdbeeren · 60g"
+          ],
+          "kidsHelp": "Kinder können die Toppings anordnen! 🧒"
+        },
+        {
+          "title": "Aufbauen & servieren",
+          "text": "Die dicke Basis in Schalen füllen.",
+          "tip": null,
+          "ings": [
+            "🌾 Granola · 30g",
+            "⚫ Chiasamen · 1 EL"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Kiwi & Erdbeeren belegen",
+          "text": "Mit Kiwi, Erdbeeren, Granola, Kokoschips und Chiasamen belegen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "roasted-pear-stracciatella-pistachio": {
+    "es": {
+      "title": "Pera asada con stracciatella y pistachos",
+      "subtitle": "Elegante, dulce y sorprendentemente sencilla",
+      "ingredients": [
+        "Peras",
+        "Stracciatella o burrata",
+        "Pistachos",
+        "Menta fresca"
+      ],
+      "base": [
+        "Mantequilla",
+        "Sal Maldon"
+      ],
+      "dressing": [
+        "Aceite de oliva",
+        "Miel"
+      ],
+      "steps": [
+        {
+          "title": "Asa las peras",
+          "text": "Parte las peras por la mitad y quítales el corazón.",
+          "tip": null,
+          "ings": [
+            "🍐 Peras · 2 ud",
+            "🍯 Miel · 1 cda"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Colócalas en una fuente",
+          "text": "Colócalas con el corte hacia arriba en una fuente con una nuez de mantequilla y 1 cda de miel.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Asa a 200°C",
+          "text": "Asa a 200°C 18–20 minutos hasta que se doren.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Prepara el aliño de pistacho",
+          "text": "Tritura o pica fino los pistachos con aceite de oliva, la miel restante y una pizca de sal hasta formar una pasta rústica.",
+          "tip": null,
+          "ings": [
+            "🌰 Pistachos · 30g",
+            "🫒 Aceite de oliva · 2 cdas"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Empláta y sirve",
+          "text": "Pon la stracciatella en los platos.",
+          "tip": null,
+          "ings": [
+            "🧀 Stracciatella · 150g",
+            "🌿 Menta · 10g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Corona con las peras templadas",
+          "text": "Corona con las peras asadas templadas.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Riega, reparte menta y sal",
+          "text": "Riega con el aceite de pistacho, reparte menta y termina con sal en escamas.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Poire rôtie, stracciatella & pistaches",
+      "subtitle": "Élégant, doux et étonnamment simple",
+      "ingredients": [
+        "Poires",
+        "Stracciatella ou burrata",
+        "Pistaches",
+        "Menthe fraîche"
+      ],
+      "base": [
+        "Beurre",
+        "Sel de Maldon"
+      ],
+      "dressing": [
+        "Huile d'olive",
+        "Miel"
+      ],
+      "steps": [
+        {
+          "title": "Rôtir les poires",
+          "text": "Couper les poires en deux et les épépiner.",
+          "tip": null,
+          "ings": [
+            "🍐 Poires · 2 pc",
+            "🍯 Miel · 1 c. à s."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Les placer dans un plat",
+          "text": "Les placer face coupée vers le haut dans un plat avec une noix de beurre et 1 c. à s. de miel.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Rôtir à 200°C",
+          "text": "Rôtir à 200°C 18–20 minutes jusqu'à ce qu'elles soient dorées.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer la sauce pistache",
+          "text": "Mixer ou hacher finement les pistaches avec l'huile d'olive, le reste du miel et une pincée de sel en une pâte grossière.",
+          "tip": null,
+          "ings": [
+            "🌰 Pistaches · 30g",
+            "🫒 Huile d'olive · 2 c. à s."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Dresser et servir",
+          "text": "Déposer la stracciatella sur les assiettes.",
+          "tip": null,
+          "ings": [
+            "🧀 Stracciatella · 150g",
+            "🌿 Menthe · 10g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Garnir des poires tièdes",
+          "text": "Garnir des poires rôties tièdes.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Arroser, parsemer menthe et sel",
+          "text": "Arroser d'huile de pistache, parsemer de menthe et finir au sel en flocons.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "de": {
+      "title": "Geröstete Birne mit Stracciatella & Pistazien",
+      "subtitle": "Elegant, süß und überraschend einfach",
+      "ingredients": [
+        "Birnen",
+        "Stracciatella oder Burrata",
+        "Pistazien",
+        "Frische Minze"
+      ],
+      "base": [
+        "Butter",
+        "Maldon-Meersalz"
+      ],
+      "dressing": [
+        "Olivenöl",
+        "Honig"
+      ],
+      "steps": [
+        {
+          "title": "Birnen rösten",
+          "text": "Birnen halbieren und entkernen.",
+          "tip": null,
+          "ings": [
+            "🍐 Birnen · 2 St.",
+            "🍯 Honig · 1 EL"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "In eine Form legen",
+          "text": "Mit der Schnittfläche nach oben in eine Form legen, mit einem Stück Butter und 1 EL Honig.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Bei 200°C rösten",
+          "text": "Bei 200°C 18–20 Minuten goldbraun rösten.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Pistazien-Dressing machen",
+          "text": "Pistazien mit Olivenöl, dem restlichen Honig und einer Prise Salz zu einer groben Paste mixen oder fein hacken.",
+          "tip": null,
+          "ings": [
+            "🌰 Pistazien · 30g",
+            "🫒 Olivenöl · 2 EL"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Anrichten & servieren",
+          "text": "Stracciatella auf die Teller geben.",
+          "tip": null,
+          "ings": [
+            "🧀 Stracciatella · 150g",
+            "🌿 Minze · 10g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit warmen Birnen belegen",
+          "text": "Mit den warmen gerösteten Birnen belegen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Beträufeln, Minze & Salz",
+          "text": "Mit Pistazienöl beträufeln, Minze darüber streuen und mit Meersalzflocken abschließen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "lentil-stuffed-peppers": {
+    "es": {
+      "title": "Pimientos rellenos de lentejas y feta",
+      "subtitle": "Coloridos, sustanciosos y perfectos para la familia",
+      "ingredients": [
+        "Pimientos (colores variados)",
+        "Lentejas verdes (lata)",
+        "Queso feta",
+        "Tomates cherry",
+        "Cebolla",
+        "Ajo",
+        "Perejil fresco"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Comino",
+        "Pimentón ahumado",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Prepara los pimientos",
+          "text": "Precalienta el horno a 200°C.",
+          "tip": null,
+          "ings": [
+            "🫑 Pimientos · 4 ud"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Pártelos por la mitad",
+          "text": "Parte los pimientos a lo largo por la mitad y retira las semillas.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Pincela y asa",
+          "text": "Pincela con aceite de oliva y asa 15 minutos.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Prepara el relleno",
+          "text": "Sofríe la cebolla picada y el ajo en aceite de oliva 5 minutos.",
+          "tip": null,
+          "ings": [
+            "🫘 Lentejas verdes · 400g",
+            "🧅 Cebolla · 1 ud",
+            "🍅 Tomates cherry · 150g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade lentejas y especias",
+          "text": "Añade las lentejas escurridas, el comino, el pimentón, sal y los tomates cherry partidos.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Cocina 5 minutos",
+          "text": "Cocina 5 minutos.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Rellena y hornea",
+          "text": "Reparte el relleno de lentejas en las mitades de pimiento.",
+          "tip": null,
+          "ings": [
+            "🧀 Feta · 100g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Desmenuza feta por encima",
+          "text": "Desmenuza el feta por encima.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea 20 minutos",
+          "text": "Hornea 20 minutos hasta que los pimientos estén tiernos y el feta dorado.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": "¡Los niños pueden ayudar a rellenar! 🧒"
+        },
+        {
+          "title": "Sirve",
+          "text": "Reparte perejil fresco por encima y sirve templado.",
+          "tip": null,
+          "ings": [
+            "🌿 Perejil · 15g"
+          ],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Poivrons farcis lentilles & feta",
+      "subtitle": "Colorés, nourrissants et parfaits en famille",
+      "ingredients": [
+        "Poivrons (couleurs variées)",
+        "Lentilles vertes (boîte)",
+        "Feta",
+        "Tomates cerises",
+        "Oignon",
+        "Ail",
+        "Persil frais"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Cumin",
+        "Paprika fumé",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Préparer les poivrons",
+          "text": "Préchauffer le four à 200°C.",
+          "tip": null,
+          "ings": [
+            "🫑 Poivrons · 4 pc"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Couper en deux",
+          "text": "Couper les poivrons en deux dans la longueur et retirer les graines.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Badigeonner et rôtir",
+          "text": "Badigeonner d'huile d'olive et rôtir 15 minutes.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer la farce",
+          "text": "Faire revenir l'oignon en dés et l'ail à l'huile d'olive 5 minutes.",
+          "tip": null,
+          "ings": [
+            "🫘 Lentilles vertes · 400g",
+            "🧅 Oignon · 1 pc",
+            "🍅 Tomates cerises · 150g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter lentilles et épices",
+          "text": "Ajouter les lentilles égouttées, le cumin, le paprika, le sel et les tomates cerises coupées en deux.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire 5 minutes",
+          "text": "Cuire 5 minutes.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Farcir et enfourner",
+          "text": "Répartir la farce de lentilles dans les demi-poivrons.",
+          "tip": null,
+          "ings": [
+            "🧀 Feta · 100g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Émietter la feta dessus",
+          "text": "Émietter la feta sur le dessus.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Enfourner 20 minutes",
+          "text": "Enfourner 20 minutes jusqu'à ce que les poivrons soient tendres et la feta dorée.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": "Les enfants peuvent aider à garnir ! 🧒"
+        },
+        {
+          "title": "Servir",
+          "text": "Parsemer de persil frais et servir tiède.",
+          "tip": null,
+          "ings": [
+            "🌿 Persil · 15g"
+          ],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "de": {
+      "title": "Gefüllte Paprika mit Linsen & Feta",
+      "subtitle": "Bunt, herzhaft und ideal für Familien",
+      "ingredients": [
+        "Paprika (gemischte Farben)",
+        "Grüne Linsen (Dose)",
+        "Feta",
+        "Kirschtomaten",
+        "Zwiebel",
+        "Knoblauch",
+        "Frische Petersilie"
+      ],
+      "base": [
+        "Olivenöl",
+        "Kreuzkümmel",
+        "Geräuchertes Paprikapulver",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Paprika vorbereiten",
+          "text": "Ofen auf 200°C vorheizen.",
+          "tip": null,
+          "ings": [
+            "🫑 Paprika · 4 St."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Halbieren",
+          "text": "Paprika längs halbieren und entkernen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Bestreichen und rösten",
+          "text": "Mit Olivenöl bestreichen und 15 Minuten rösten.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Füllung zubereiten",
+          "text": "Gewürfelte Zwiebel und Knoblauch in Olivenöl 5 Minuten anbraten.",
+          "tip": null,
+          "ings": [
+            "🫘 Grüne Linsen · 400g",
+            "🧅 Zwiebel · 1 St.",
+            "🍅 Kirschtomaten · 150g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Linsen & Gewürze zugeben",
+          "text": "Abgegossene Linsen, Kreuzkümmel, Paprika, Salz und halbierte Kirschtomaten zugeben.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "5 Minuten garen",
+          "text": "5 Minuten garen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Füllen & backen",
+          "text": "Die Linsenfüllung in die Paprikahälften füllen.",
+          "tip": null,
+          "ings": [
+            "🧀 Feta · 100g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Feta darüber zerbröseln",
+          "text": "Feta darüber zerbröseln.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "20 Minuten backen",
+          "text": "20 Minuten backen, bis die Paprika weich und der Feta goldbraun ist.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": "Kinder können beim Füllen helfen! 🧒"
+        },
+        {
+          "title": "Servieren",
+          "text": "Mit frischer Petersilie bestreuen und warm servieren.",
+          "tip": null,
+          "ings": [
+            "🌿 Petersilie · 15g"
+          ],
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "warm-roasted-cauliflower-caesar": {
+    "es": {
+      "title": "César templada de coliflor asada",
+      "subtitle": "No es una César cualquiera",
+      "ingredients": [
+        "Coliflor",
+        "Lechuga romana",
+        "Parmesano",
+        "Almendras",
+        "Limón",
+        "Ajo"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Salsa Worcestershire (opcional)",
+        "Sal y pimienta"
+      ],
+      "dressing": [
+        "Mostaza de Dijon"
+      ],
+      "steps": [
+        {
+          "title": "Asa la coliflor",
+          "text": "Separa la coliflor en ramilletes.",
+          "tip": null,
+          "ings": [
+            "🥦 Coliflor · ½ ud"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mezcla con aceite",
+          "text": "Mézclala con aceite de oliva y sal.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Asa a 210°C",
+          "text": "Asa a 210°C 22–25 minutos hasta que se dore.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Tuesta las almendras",
+          "text": "Tuesta las almendras en una sartén seca 3 minutos.",
+          "tip": null,
+          "ings": [
+            "🌰 Almendras · 30g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Pícalas en trozos",
+          "text": "Pícalas en trozos.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Prepara el aliño César",
+          "text": "Tritura zumo de limón, ajo, mostaza de Dijon, 3 cdas de aceite de oliva y una pizca de sal hasta que quede suave.",
+          "tip": null,
+          "ings": [
+            "🍋 Limón · 1 ud",
+            "🫙 Mostaza de Dijon · 1 cdta"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Monta",
+          "text": "Trocea la lechuga romana en trozos grandes.",
+          "tip": null,
+          "ings": [
+            "🥬 Lechuga romana · 1 ud",
+            "🧀 Parmesano · 30g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade la coliflor templada",
+          "text": "Añade la coliflor templada.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mezcla con el aliño",
+          "text": "Mezcla con el aliño.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Lasca parmesano y reparte almendras",
+          "text": "Lasca parmesano generosamente y reparte las almendras.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "César tiède de chou-fleur rôti",
+      "subtitle": "Pas une César comme les autres",
+      "ingredients": [
+        "Chou-fleur",
+        "Laitue romaine",
+        "Parmesan",
+        "Amandes",
+        "Citron",
+        "Ail"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Sauce Worcestershire (facultatif)",
+        "Sel & poivre"
+      ],
+      "dressing": [
+        "Moutarde de Dijon"
+      ],
+      "steps": [
+        {
+          "title": "Rôtir le chou-fleur",
+          "text": "Séparer le chou-fleur en fleurettes.",
+          "tip": null,
+          "ings": [
+            "🥦 Chou-fleur · ½ pièce"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mélanger avec l'huile",
+          "text": "Mélanger avec huile d'olive et sel.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Rôtir à 210°C",
+          "text": "Rôtir à 210°C 22–25 minutes jusqu'à ce que ce soit doré.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Torréfier les amandes",
+          "text": "Torréfier les amandes dans une poêle sèche 3 minutes.",
+          "tip": null,
+          "ings": [
+            "🌰 Amandes · 30g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Hacher grossièrement",
+          "text": "Hacher grossièrement.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer la sauce César",
+          "text": "Mixer jus de citron, ail, moutarde de Dijon, 3 c. à s. d'huile d'olive et une pincée de sel jusqu'à une sauce lisse.",
+          "tip": null,
+          "ings": [
+            "🍋 Citron · 1 pc",
+            "🫙 Moutarde de Dijon · 1 c. à c."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Assembler",
+          "text": "Déchirer la laitue romaine en gros morceaux.",
+          "tip": null,
+          "ings": [
+            "🥬 Laitue romaine · 1 pièce",
+            "🧀 Parmesan · 30g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter le chou-fleur tiède",
+          "text": "Ajouter le chou-fleur tiède.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mélanger avec la sauce",
+          "text": "Mélanger avec la sauce.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Copeaux de parmesan et amandes",
+          "text": "Faire de généreux copeaux de parmesan et parsemer les amandes.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "de": {
+      "title": "Warmer Caesar mit geröstetem Blumenkohl",
+      "subtitle": "Kein gewöhnlicher Caesar",
+      "ingredients": [
+        "Blumenkohl",
+        "Römersalat",
+        "Parmesan",
+        "Mandeln",
+        "Zitrone",
+        "Knoblauch"
+      ],
+      "base": [
+        "Olivenöl",
+        "Worcestershiresoße (optional)",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [
+        "Dijon-Senf"
+      ],
+      "steps": [
+        {
+          "title": "Blumenkohl rösten",
+          "text": "Blumenkohl in Röschen teilen.",
+          "tip": null,
+          "ings": [
+            "🥦 Blumenkohl · ½ Kopf"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Öl mischen",
+          "text": "Mit Olivenöl und Salz mischen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Bei 210°C rösten",
+          "text": "Bei 210°C 22–25 Minuten goldbraun rösten.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mandeln rösten",
+          "text": "Mandeln in einer trockenen Pfanne 3 Minuten rösten.",
+          "tip": null,
+          "ings": [
+            "🌰 Mandeln · 30g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Grob hacken",
+          "text": "Grob hacken.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Caesar-Dressing machen",
+          "text": "Zitronensaft, Knoblauch, Dijon-Senf, 3 EL Olivenöl und eine Prise Salz glatt mixen.",
+          "tip": null,
+          "ings": [
+            "🍋 Zitrone · 1 St.",
+            "🫙 Dijon-Senf · 1 TL"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Anrichten",
+          "text": "Römersalat in große Stücke zupfen.",
+          "tip": null,
+          "ings": [
+            "🥬 Römersalat · 1 Kopf",
+            "🧀 Parmesan · 30g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Warmen Blumenkohl zugeben",
+          "text": "Warmen Blumenkohl zugeben.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Dressing mischen",
+          "text": "Mit dem Dressing mischen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Parmesan hobeln & Mandeln streuen",
+          "text": "Großzügig Parmesan darüber hobeln und Mandeln darüber streuen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    }
   }
 }
