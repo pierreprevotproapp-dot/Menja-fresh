@@ -1,0 +1,30 @@
+{
+  "greek-lemon-rice-feta-olives": {
+    "ingredients": [
+      {"name": "Mixed brown & black rice", "emoji": "🍚", "amount": "160g"},
+      {"name": "Feta cheese", "emoji": "🧀", "amount": "100g"},
+      {"name": "Kalamata olives", "emoji": "🫒", "amount": "60g"},
+      {"name": "Semi-dried tomatoes", "emoji": "🍅", "amount": "60g"},
+      {"name": "Lemon", "emoji": "🍋", "amount": "1 pc"},
+      {"name": "Onion", "emoji": "🧅", "amount": "1 pc"},
+      {"name": "Fresh mint & parsley", "emoji": "🌿", "amount": "20g"},
+      {"name": "Pine nuts (optional)", "emoji": "🌰", "amount": "25g"}
+    ],
+    "base_ingredients": ["Olive oil", "Honey"],
+    "dressing": [
+      {"name": "Lemon", "emoji": "🍋", "amount": "juice & zest"},
+      {"name": "Olive oil", "emoji": "🫒", "amount": "3 tbsp"},
+      {"name": "Za'atar", "emoji": "🌿", "amount": "1 tsp"}
+    ],
+    "steps": [
+      {"num": 1, "title": "Cook the rice", "text": "Cook mixed rice according to packet instructions.", "tip": null, "ings": ["🍚 Mixed rice · 160g"], "kidsHelp": null},
+      {"num": 2, "title": "Mind the rice timing", "text": "Brown and black rice may need slightly different times — check the packet.", "tip": null, "ings": [], "kidsHelp": null},
+      {"num": 3, "title": "Caramelise the onion", "text": "Thinly slice onion and cook in olive oil over low heat for 10–12 minutes, stirring in 1 tsp honey halfway, until soft, golden and sweet.", "tip": null, "ings": ["🧅 Onion · 1 pc", "🍯 Honey · 1 tsp"], "kidsHelp": null},
+      {"num": 4, "title": "Make the lemon dressing", "text": "Whisk lemon juice and zest with 3 tbsp olive oil, a pinch of salt and za'atar.", "tip": null, "ings": ["🍋 Lemon · 1 pc", "🫒 Olive oil · 3 tbsp", "🧂 Salt · 1 pinch", "🌿 Za'atar · 1 tsp"], "kidsHelp": null},
+      {"num": 5, "title": "Toast the pine nuts (optional)", "text": "Toast the pine nuts in a dry pan over medium heat for 2–3 minutes until golden. Optional, but adds a lovely crunch — watch closely, they burn fast.", "tip": "Skip for a nut-free version, or swap for toasted pistachios or flaked almonds.", "ings": ["🌰 Pine nuts · 25g"], "kidsHelp": null},
+      {"num": 6, "title": "Combine & finish", "text": "Mix cooled rice with caramelised onion, olives, semi-dried tomatoes and dressing.", "tip": null, "ings": ["🧀 Feta · 100g", "🫒 Olives · 60g", "🌿 Mint & parsley · 20g"], "kidsHelp": null},
+      {"num": 7, "title": "Toss well", "text": "Toss well.", "tip": null, "ings": [], "kidsHelp": null},
+      {"num": 8, "title": "Top with crumbled feta", "text": "Top with crumbled feta, fresh mint, parsley and the toasted pine nuts (if using).", "tip": null, "ings": [], "kidsHelp": null}
+    ]
+  }
+}

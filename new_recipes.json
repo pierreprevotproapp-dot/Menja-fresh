@@ -1,0 +1,140 @@
+[
+  {
+    "id": "cinnamon-sweet-potato-pecan-bowl",
+    "title": "Cinnamon Sweet Potato & Maple Pecan Bowl",
+    "subtitle": "Sweet, earthy & caramelised",
+    "emoji": "🍠",
+    "is_kids": false,
+    "tags": ["Vegetarian", "Gluten-free"],
+    "meal": ["Main Course"],
+    "categories": ["Bowl"],
+    "diet": ["Vegetarian", "Gluten-free"],
+    "prep_minutes": 15,
+    "cook_minutes": 30,
+    "servings": 2,
+    "image_url": null,
+    "image_prompt": "A cosy autumn grain bowl of cinnamon-roasted sweet potato cubes and fluffy quinoa, topped with glossy maple-candied pecans, ruby pomegranate seeds, crumbled feta and fresh mint, drizzled with maple-tahini, natural light, top-down food photography",
+    "nutrition": {"kcal": 560, "protein": 15, "carbs": 60, "fat": 28, "fiber": 11},
+    "ingredients": [
+      {"name": "Sweet potato", "emoji": "🍠", "amount": "400g"},
+      {"name": "Quinoa", "emoji": "🌾", "amount": "120g"},
+      {"name": "Pecans", "emoji": "🌰", "amount": "40g"},
+      {"name": "Pomegranate seeds", "emoji": "🔴", "amount": "60g"},
+      {"name": "Feta cheese (optional)", "emoji": "🧀", "amount": "80g"},
+      {"name": "Fresh mint", "emoji": "🌿", "amount": "10g"}
+    ],
+    "base_ingredients": ["Olive oil", "Cinnamon", "Salt"],
+    "dressing": [
+      {"name": "Tahini", "emoji": "🫙", "amount": "2 tbsp"},
+      {"name": "Maple syrup", "emoji": "🍯", "amount": "1 tbsp"}
+    ],
+    "mise_en_place": [
+      {"name": "Sweet potato", "emoji": "🍠", "amount": "400g"},
+      {"name": "Quinoa", "emoji": "🌾", "amount": "120g"},
+      {"name": "Pecans", "emoji": "🌰", "amount": "40g"},
+      {"name": "Pomegranate seeds", "emoji": "🔴", "amount": "60g"},
+      {"name": "Feta cheese (optional)", "emoji": "🧀", "amount": "80g"},
+      {"name": "Fresh mint", "emoji": "🌿", "amount": "10g"}
+    ],
+    "steps": [
+      {"num": 1, "title": "Roast the sweet potato", "text": "Peel and cube the sweet potato.", "tip": null, "ings": ["🍠 Sweet potato · 400g"], "kidsHelp": null},
+      {"num": 2, "title": "Toss with cinnamon", "text": "Toss with olive oil, cinnamon and salt, then roast at 200°C for 25–30 minutes until caramelised at the edges.", "tip": "Cut even cubes so they roast at the same rate.", "ings": [], "kidsHelp": null},
+      {"num": 3, "title": "Cook the quinoa", "text": "Rinse the quinoa and cook in double the amount of water for 15 minutes, then fluff with a fork.", "tip": null, "ings": ["🌾 Quinoa · 120g"], "kidsHelp": null},
+      {"num": 4, "title": "Candy the pecans", "text": "Toast pecans in a dry pan for 2 minutes, add 1 tbsp maple syrup and a pinch of cinnamon, toss for 1 minute until glossy, then tip onto baking paper to cool.", "tip": "They turn from sticky to crisp as they cool — don't skip the cooling.", "ings": ["🌰 Pecans · 40g", "🍯 Maple syrup · 1 tbsp"], "kidsHelp": null},
+      {"num": 5, "title": "Make maple-tahini sauce", "text": "Whisk tahini and maple syrup with a splash of water until smooth and pourable.", "tip": null, "ings": ["🫙 Tahini · 2 tbsp", "🍯 Maple syrup · 1 tbsp"], "kidsHelp": null},
+      {"num": 6, "title": "Build the bowl", "text": "Layer the quinoa and roasted sweet potato in bowls.", "tip": null, "ings": [], "kidsHelp": null},
+      {"num": 7, "title": "Top & drizzle", "text": "Top with pomegranate, crumbled feta (if using), candied pecans and mint, then drizzle with maple-tahini.", "tip": null, "ings": ["🔴 Pomegranate seeds · 60g", "🧀 Feta · 80g", "🌿 Mint · 10g"], "kidsHelp": "Kids can scatter the pecans and pomegranate! 🧒"}
+    ]
+  },
+  {
+    "id": "cinnamon-roll-pecan-yogurt-bowl",
+    "title": "Cinnamon Roll Pecan Yogurt Bowl",
+    "subtitle": "Like a cinnamon roll, made wholesome",
+    "emoji": "🥣",
+    "is_kids": true,
+    "tags": ["Vegetarian", "Gluten-free"],
+    "meal": ["Frühstück"],
+    "categories": ["Frühstück", "Bowl"],
+    "diet": ["Vegetarian", "Gluten-free"],
+    "prep_minutes": 10,
+    "cook_minutes": 5,
+    "servings": 2,
+    "image_url": null,
+    "image_prompt": "A creamy Greek yogurt breakfast bowl swirled with cinnamon, topped with sliced banana, toasted chopped pecans and a glossy date-caramel drizzle and almond butter, bright natural light, top-down food photography",
+    "nutrition": {"kcal": 420, "protein": 18, "carbs": 45, "fat": 18, "fiber": 6},
+    "ingredients": [
+      {"name": "Greek yogurt", "emoji": "🥛", "amount": "300g"},
+      {"name": "Pecans", "emoji": "🌰", "amount": "40g"},
+      {"name": "Banana", "emoji": "🍌", "amount": "1 pc"},
+      {"name": "Medjool dates", "emoji": "🟤", "amount": "4 pcs"},
+      {"name": "Almond butter", "emoji": "🥜", "amount": "2 tbsp"},
+      {"name": "Maple syrup", "emoji": "🍯", "amount": "1 tbsp"}
+    ],
+    "base_ingredients": ["Cinnamon", "Pinch of salt"],
+    "dressing": [
+      {"name": "Date caramel (from dates)", "emoji": "🟤", "amount": "4 dates"},
+      {"name": "Almond butter", "emoji": "🥜", "amount": "2 tbsp"}
+    ],
+    "mise_en_place": [
+      {"name": "Greek yogurt", "emoji": "🥛", "amount": "300g"},
+      {"name": "Pecans", "emoji": "🌰", "amount": "40g"},
+      {"name": "Banana", "emoji": "🍌", "amount": "1 pc"},
+      {"name": "Medjool dates", "emoji": "🟤", "amount": "4 pcs"},
+      {"name": "Almond butter", "emoji": "🥜", "amount": "2 tbsp"},
+      {"name": "Maple syrup", "emoji": "🍯", "amount": "1 tbsp"}
+    ],
+    "steps": [
+      {"num": 1, "title": "Toast the pecans", "text": "Toast the pecans in a dry pan for 2–3 minutes until fragrant, then roughly chop.", "tip": "Watch closely — nuts go from golden to burnt fast.", "ings": ["🌰 Pecans · 40g"], "kidsHelp": null},
+      {"num": 2, "title": "Make the date caramel", "text": "Pit the dates, soak in 3 tbsp hot water for 5 minutes, then blend with a pinch of cinnamon and salt until smooth, loosening with water as needed.", "tip": "No blender? Mash soft dates with a fork into a paste.", "ings": ["🟤 Medjool dates · 4 pcs"], "kidsHelp": null},
+      {"num": 3, "title": "Spoon the yogurt", "text": "Spoon the Greek yogurt into bowls and swirl through a little cinnamon.", "tip": null, "ings": ["🥛 Greek yogurt · 300g"], "kidsHelp": null},
+      {"num": 4, "title": "Add the banana", "text": "Slice the banana over the yogurt.", "tip": null, "ings": ["🍌 Banana · 1 pc"], "kidsHelp": null},
+      {"num": 5, "title": "Drizzle & finish", "text": "Drizzle with date caramel and almond butter, top with toasted pecans and a little maple syrup.", "tip": null, "ings": ["🥜 Almond butter · 2 tbsp", "🍯 Maple syrup · 1 tbsp"], "kidsHelp": "Kids can drizzle the caramel and scatter the pecans! 🧒"}
+    ]
+  },
+  {
+    "id": "apple-pie-pecan-oat-bowl",
+    "title": "Apple Pie Pecan Oat Bowl",
+    "subtitle": "Warm, cosy & tastes like dessert",
+    "emoji": "🍎",
+    "is_kids": true,
+    "tags": ["Vegan", "Gluten-free"],
+    "meal": ["Frühstück"],
+    "categories": ["Frühstück", "Bowl"],
+    "diet": ["Vegan", "Gluten-free"],
+    "prep_minutes": 5,
+    "cook_minutes": 12,
+    "servings": 2,
+    "image_url": null,
+    "image_prompt": "A warm creamy oat porridge bowl topped with golden cinnamon-sautéed apple cubes, toasted pecans and raisins, drizzled with maple syrup and almond butter, steam rising, cosy natural light, top-down food photography",
+    "nutrition": {"kcal": 450, "protein": 11, "carbs": 62, "fat": 18, "fiber": 9},
+    "ingredients": [
+      {"name": "Rolled oats", "emoji": "🌾", "amount": "100g"},
+      {"name": "Oat milk", "emoji": "🥛", "amount": "400ml"},
+      {"name": "Apple", "emoji": "🍎", "amount": "2 pcs"},
+      {"name": "Pecans", "emoji": "🌰", "amount": "40g"},
+      {"name": "Raisins", "emoji": "🟤", "amount": "2 tbsp"},
+      {"name": "Maple syrup", "emoji": "🍯", "amount": "2 tbsp"},
+      {"name": "Almond butter", "emoji": "🥜", "amount": "2 tbsp"}
+    ],
+    "base_ingredients": ["Cinnamon", "Pinch of salt", "Butter or coconut oil"],
+    "dressing": [
+      {"name": "Maple syrup", "emoji": "🍯", "amount": "2 tbsp"},
+      {"name": "Almond butter", "emoji": "🥜", "amount": "2 tbsp"}
+    ],
+    "mise_en_place": [
+      {"name": "Rolled oats", "emoji": "🌾", "amount": "100g"},
+      {"name": "Oat milk", "emoji": "🥛", "amount": "400ml"},
+      {"name": "Apple", "emoji": "🍎", "amount": "2 pcs"},
+      {"name": "Pecans", "emoji": "🌰", "amount": "40g"},
+      {"name": "Raisins", "emoji": "🟤", "amount": "2 tbsp"},
+      {"name": "Maple syrup", "emoji": "🍯", "amount": "2 tbsp"},
+      {"name": "Almond butter", "emoji": "🥜", "amount": "2 tbsp"}
+    ],
+    "steps": [
+      {"num": 1, "title": "Cook the porridge", "text": "Simmer the oats with oat milk, a pinch of salt and ½ tsp cinnamon for 5–7 minutes, stirring, until creamy.", "tip": "A splash more oat milk at the end loosens it to your liking.", "ings": ["🌾 Rolled oats · 100g", "🥛 Oat milk · 400ml"], "kidsHelp": null},
+      {"num": 2, "title": "Sauté the cinnamon apples", "text": "Cube the apples and cook in a little butter or coconut oil with cinnamon and 1 tbsp maple syrup for 4–5 minutes until soft and golden.", "tip": null, "ings": ["🍎 Apple · 2 pcs"], "kidsHelp": "Kids can stir the cinnamon apples! 🧒"},
+      {"num": 3, "title": "Toast the pecans", "text": "Toast the pecans in a dry pan for 2–3 minutes, then roughly chop.", "tip": null, "ings": ["🌰 Pecans · 40g"], "kidsHelp": null},
+      {"num": 4, "title": "Build & serve", "text": "Spoon the porridge into bowls, top with the cinnamon apples, pecans and raisins, then drizzle with maple syrup and almond butter.", "tip": null, "ings": ["🟤 Raisins · 2 tbsp", "🍯 Maple syrup · 1 tbsp", "🥜 Almond butter · 2 tbsp"], "kidsHelp": null}
+    ]
+  }
+]
