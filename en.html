@@ -482,6 +482,10 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
     </div>
   </div>
 </footer>
-
+<script>
+/* Remove any stale service worker / caches from the previous single-page setup */
+if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{});}
+if(window.caches&&caches.keys){caches.keys().then(ks=>ks.forEach(k=>caches.delete(k))).catch(()=>{});}
+</script>
 </body>
 </html>

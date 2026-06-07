@@ -4460,13 +4460,12 @@ initSupabase();
 </script>
 
 <script>
+  // No service worker. Actively remove any previously installed one + clear caches
+  // so returning visitors are never served a stale page.
   if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(reg => console.log('SW registered:', reg.scope))
-        .catch(err => console.log('SW registration failed:', err));
-    });
+    navigator.serviceWorker.getRegistrations().then(rs => rs.forEach(r => r.unregister())).catch(()=>{});
   }
+  if (window.caches && caches.keys) { caches.keys().then(ks => ks.forEach(k => caches.delete(k))).catch(()=>{}); }
 </script>
 </body>
 </html>
