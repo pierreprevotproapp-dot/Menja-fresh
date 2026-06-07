@@ -118,6 +118,13 @@ section{padding:88px 0}
 .f-list li{display:flex;gap:10px;font-size:15px;align-items:flex-start}
 .f-list .dot{color:var(--accent-d);font-weight:800;margin-top:1px}
 .f-visual{background:linear-gradient(150deg,#fff,var(--cream-2));border:1px solid var(--border);border-radius:var(--r);padding:26px;box-shadow:var(--shadow);min-height:280px;display:flex;flex-direction:column;justify-content:center;gap:12px}
+/* FEATURE GRID (scannable) */
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feat-card{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:26px 24px;box-shadow:var(--shadow)}
+.feat-card .fi{font-size:32px;margin-bottom:10px}
+.feat-card h3{font-size:18px;margin-bottom:6px}
+.feat-card p{font-size:14.5px;color:var(--muted)}
+.feat-card .pro{font-size:10px;font-weight:700;color:#fff;background:var(--accent);padding:2px 8px;border-radius:999px;vertical-align:middle;margin-left:4px;letter-spacing:.03em}
 /* mini shopping list visual */
 .sl-row{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:12px 14px;box-shadow:0 3px 10px rgba(33,66,45,.05)}
 .sl-row .chk{width:22px;height:22px;border-radius:7px;border:2px solid var(--accent);flex-shrink:0;position:relative}
@@ -189,6 +196,7 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
   .feature{grid-template-columns:1fr;gap:26px}
   .feature.rev .f-text{order:0}
   .steps{grid-template-columns:1fr}
+  .feat-grid{grid-template-columns:1fr 1fr}
   .rec-grid{grid-template-columns:repeat(2,1fr)}
   .stats-in{grid-template-columns:repeat(2,1fr);gap:24px}
   .deliver{grid-template-columns:1fr;padding:34px}
@@ -197,6 +205,7 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 }
 @media(max-width:560px){
   section{padding:60px 0}
+  .feat-grid{grid-template-columns:1fr}
   .rec-grid{grid-template-columns:1fr 1fr}
   .foot-grid{grid-template-columns:1fr}
   .hero-ctas .btn{flex:1}
@@ -229,7 +238,7 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
     <div class="hero-text">
       <span class="eyebrow">🌿 Wochenplaner für Familien</span>
       <h1>„Was koche ich heute?" — <span class="hl">nie wieder diese Frage.</span></h1>
-      <p class="lead">Menja Fresh plant deine Woche in Minuten, lernt den Geschmack deiner Familie und erstellt die Einkaufsliste automatisch. Frische, saisonale Rezepte – und auf Wunsch direkt nach Hause geliefert.</p>
+      <p class="lead">In Minuten geplant. Einkaufsliste automatisch. Frische Familienrezepte – auf Wunsch direkt geliefert.</p>
       <div class="hero-ctas">
         <a class="btn btn-primary btn-lg" href="app.html">Kostenlos starten →</a>
         <a class="btn btn-ghost btn-lg" href="#how">So funktioniert's</a>
@@ -303,19 +312,19 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
         <div class="num">1</div>
         <div class="ico">🗓️</div>
         <h3>Sag uns, wann du kochst</h3>
-        <p>Wähle die Abende, an denen gekocht wird – und wer mitisst. Allergien & Vorlieben einmal einstellen, fertig.</p>
+        <p>Koch-Abende wählen, Allergien & Vorlieben einmal einstellen.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
         <div class="ico">✨</div>
         <h3>Wir planen die Woche</h3>
-        <p>Menja schlägt passende Gerichte vor und lernt mit jedem Tippen, was deiner Familie schmeckt. Tauschen mit einem Wisch.</p>
+        <p>Passende Gerichte als Vorschlag – tauschen mit einem Wisch.</p>
       </div>
       <div class="step">
         <div class="num">3</div>
         <div class="ico">🛒</div>
         <h3>Einkaufsliste & Lieferung</h3>
-        <p>Die Einkaufsliste entsteht automatisch – nach Gang sortiert. Auf Wunsch direkt beim Supermarkt bestellen und liefern lassen.</p>
+        <p>Liste entsteht automatisch, nach Gang sortiert. Auf Wunsch liefern lassen.</p>
       </div>
     </div>
   </div>
@@ -327,63 +336,15 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
     <div class="section-head center">
       <span class="eyebrow">Alles drin</span>
       <h2 style="margin-top:16px">Weniger Kopf-Last. Mehr gutes Essen.</h2>
-      <p>Menja übernimmt das Planen, Denken und Schreiben – du genießt nur noch.</p>
+      <p>Menja plant, denkt und schreibt – du genießt nur noch.</p>
     </div>
-
-    <div class="feature">
-      <div class="f-text">
-        <span class="eyebrow">🗓️ Wochenplan</span>
-        <h2>Deine Woche, in Minuten geplant</h2>
-        <p>Schluss mit dem abendlichen „Was gibt's heute?". Menja stellt eine ausgewogene Woche zusammen – du passt sie mit einem Tipp an.</p>
-        <ul class="f-list">
-          <li><span class="dot">•</span> Vorschläge, die zu Diät, Allergien & Abneigungen passen</li>
-          <li><span class="dot">•</span> Gericht tauschen oder Tag überspringen mit einem Wisch</li>
-          <li><span class="dot">•</span> Lernt still den Geschmack deiner Familie</li>
-        </ul>
-      </div>
-      <div class="f-visual">
-        <div class="ph-card" style="margin:0"><div class="ph-emoji">🍝</div><div class="ph-meal"><div class="tag">Vorschlag</div><div class="name">Pasta mit gerösteten Tomaten</div><div class="meta">⏱ 25 Min</div></div><div class="ph-check">✓</div></div>
-        <div class="ph-card" style="margin:0"><div class="ph-emoji">🥗</div><div class="ph-meal"><div class="tag">Vorschlag</div><div class="name">Mediterraner Halloumi-Salat</div><div class="meta">⏱ 20 Min</div></div><div class="ph-check">✓</div></div>
-        <div class="ph-card" style="margin:0"><div class="ph-emoji">🍲</div><div class="ph-meal"><div class="tag">Vorschlag</div><div class="name">Karotten-Ingwer-Linsensuppe</div><div class="meta">⏱ 30 Min</div></div><div class="ph-check">✓</div></div>
-      </div>
-    </div>
-
-    <div class="feature rev">
-      <div class="f-text">
-        <span class="eyebrow">🛒 Einkaufsliste</span>
-        <h2>Die Einkaufsliste schreibt sich selbst</h2>
-        <p>Aus deinen Mahlzeiten entsteht automatisch eine Liste – nach Supermarkt-Gang sortiert. Basics, die du eh zu Hause hast, hakst du einfach ab.</p>
-        <ul class="f-list">
-          <li><span class="dot">•</span> Mengen passen sich an deine Familiengröße an</li>
-          <li><span class="dot">•</span> Nach Abteilung sortiert – kein Zickzack im Markt</li>
-          <li><span class="dot">•</span> Teilen oder direkt liefern lassen</li>
-        </ul>
-      </div>
-      <div class="f-visual">
-        <div class="sl-row done"><div class="chk"></div><span class="em">🍠</span><span class="t">Süßkartoffel</span><span class="q">400 g</span></div>
-        <div class="sl-row"><div class="chk"></div><span class="em">🥬</span><span class="t">Grünkohl</span><span class="q">80 g</span></div>
-        <div class="sl-row done"><div class="chk"></div><span class="em">🧀</span><span class="t">Feta</span><span class="q">100 g</span></div>
-        <div class="sl-row"><div class="chk"></div><span class="em">🍋</span><span class="t">Zitrone</span><span class="q">2 St.</span></div>
-      </div>
-    </div>
-
-    <div class="feature">
-      <div class="f-text">
-        <span class="eyebrow">👩‍🍳 Kochmodus & Premium</span>
-        <h2>Vom Plan zum Teller – ganz entspannt</h2>
-        <p>Großer Koch-Modus mit Schritt-für-Schritt-Anleitung, Bildschirm bleibt an. Wer mag, behält mit Premium Makros & Budget im Blick.</p>
-        <ul class="f-list">
-          <li><span class="dot">•</span> Kochmodus: große Schritte, Antippen für weiter</li>
-          <li><span class="dot">•</span> Makro-Tracking – Kalorien & Eiweiß pro Tag (Premium)</li>
-          <li><span class="dot">•</span> Budget-Modus – Wochenkosten im Blick (Premium)</li>
-        </ul>
-      </div>
-      <div class="f-visual" style="align-items:center;text-align:center">
-        <div style="font-size:54px">👩‍🍳</div>
-        <div style="font-family:var(--fd);font-size:22px;color:var(--green-d)">Schritt 3 von 6</div>
-        <div style="font-size:15px;color:var(--muted);max-width:260px">„Süßkartoffel würfeln, mit Zimt & Olivenöl mischen und 25 Min. rösten."</div>
-        <div class="ph-cta" style="background:var(--green);width:auto;padding:10px 22px">Tippen für den nächsten Schritt →</div>
-      </div>
+    <div class="feat-grid">
+      <div class="feat-card"><div class="fi">🗓️</div><h3>Wochenplan in Minuten</h3><p>Eine ausgewogene Woche auf Knopfdruck.</p></div>
+      <div class="feat-card"><div class="fi">🔄</div><h3>Tauschen mit einem Wisch</h3><p>Gericht passt nicht? Einfach wegwischen.</p></div>
+      <div class="feat-card"><div class="fi">🛒</div><h3>Einkaufsliste automatisch</h3><p>Nach Gang sortiert, Mengen für deine Familie.</p></div>
+      <div class="feat-card"><div class="fi">🌱</div><h3>Lernt euren Geschmack</h3><p>Vorschläge werden mit jedem Tipp besser.</p></div>
+      <div class="feat-card"><div class="fi">👩‍🍳</div><h3>Kochmodus</h3><p>Große Schritte, Bildschirm bleibt an.</p></div>
+      <div class="feat-card"><div class="fi">📊</div><h3>Makros &amp; Budget <span class="pro">Premium</span></h3><p>Nährwerte &amp; Wochenkosten im Blick.</p></div>
     </div>
   </div>
 </section>
