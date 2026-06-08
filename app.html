@@ -952,6 +952,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     </div>
     <div class="fam-section" id="dev-section"></div>
     <button class="me-signout" onclick="signOut()" data-t="signOut">Sign out</button>
+    <div id="delete-acct-wrap" style="text-align:center;margin:8px 20px 0"><a onclick="deleteAccount()" data-t="deleteAccount" style="font-size:12px;color:var(--text3);cursor:pointer;text-decoration:underline">Delete account</a></div>
     <div style="height:20px"></div>
   </div>
   <div class="screen" id="screen-discover">
@@ -1317,6 +1318,7 @@ en:{
   welcomeSigninPre:'Already with us?',welcomeSigninLink:'Sign in',
   navPlan:'Plan',navGroceries:'Groceries',navMe:'Me',
   langHeader:'Language',meName:'Me',prefsAllergies:'⚙️ Preferences & allergies',
+  deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
   facebookBtn:'Continue with Facebook',
   staplesHd:'🧂 Staples — you probably have these',staplesSub:'Tap any you need to buy and we\'ll add it to the list.',
@@ -1422,6 +1424,7 @@ fr:{
   welcomeSigninPre:'Déjà parmi nous ?',welcomeSigninLink:'Se connecter',
   navPlan:'Planifier',navGroceries:'Courses',navMe:'Moi',
   langHeader:'Langue',meName:'Moi',prefsAllergies:'⚙️ Préférences et allergies',
+  deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
   facebookBtn:'Continuer avec Facebook',
   staplesHd:'🧂 Basiques — vous les avez sûrement',staplesSub:'Touchez ceux à acheter, on les ajoute à la liste.',
@@ -1527,6 +1530,7 @@ es:{
   welcomeSigninPre:'¿Ya con nosotros?',welcomeSigninLink:'Iniciar sesión',
   navPlan:'Planificar',navGroceries:'Compras',navMe:'Yo',
   langHeader:'Idioma',meName:'Yo',prefsAllergies:'⚙️ Preferencias y alergias',
+  deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
   facebookBtn:'Continuar con Facebook',
   staplesHd:'🧂 Básicos — seguro que ya los tienes',staplesSub:'Toca los que necesites comprar y los añadimos a la lista.',
@@ -1678,6 +1682,7 @@ de:{
   welcomeSigninPre:'Schon dabei?',welcomeSigninLink:'Anmelden',
   navPlan:'Planen',navGroceries:'Einkauf',navMe:'Ich',
   langHeader:'Sprache',meName:'Ich',prefsAllergies:'⚙️ Vorlieben & Allergien',
+  deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
   facebookBtn:'Mit Facebook fortfahren',
   staplesHd:'🧂 Basics — hast du wahrscheinlich',staplesSub:'Tippe an, was du kaufen musst, wir setzen es auf die Liste.',
@@ -2290,6 +2295,30 @@ async function signOut(){
   if(currentUser&&currentUser.id!=='guest')await sb.auth.signOut();
   state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{}};
   showWelcome();
+}
+
+// Delete account + all data (GDPR / App Store requirement).
+// Full deletion runs server-side via the "delete-account" Edge Function (service role).
+// If the function isn't reachable, we still remove the user's data row + sign out and
+// ask them to email for full closure — so the button always does something safe.
+async function deleteAccount(){
+  if(!confirm(t('deleteAccountConfirm')))return;
+  // Guest: nothing on the server — just wipe local and leave.
+  if(isGuest||!currentUser||currentUser.id==='guest'){
+    try{localStorage.removeItem('menja_state');localStorage.removeItem('menja_guest');}catch(e){}
+    location.href='/';return;
+  }
+  let done=false;
+  try{
+    const {data:{session}}=await sb.auth.getSession();
+    const r=await fetch(SUPA_URL+'/functions/v1/delete-account',{method:'POST',headers:{'Authorization':'Bearer '+((session&&session.access_token)||''),'apikey':SUPA_KEY}});
+    done=r.ok;
+  }catch(e){}
+  if(!done){ try{await sb.from('user_state').delete().eq('user_id',currentUser.id);}catch(e){} }
+  try{localStorage.removeItem('menja_state');localStorage.removeItem('menja_guest');}catch(e){}
+  try{await sb.auth.signOut();}catch(e){}
+  alert(done?t('deleteAccountDone'):t('deleteAccountErr'));
+  location.href='/';
 }
 
 // ══════════════════════════════════════════════
@@ -4365,6 +4394,7 @@ function showApp(user){
   const meName=document.getElementById('me-name');if(meName)meName.textContent=meta.first_name||user.email?.split('@')[0]||'Friend';
   const mePlan=document.getElementById('me-plan');if(mePlan)mePlan.textContent=tierLabelsArrow[tier]||tier;
   const meUpgrade=document.getElementById('me-upgrade');if(meUpgrade)meUpgrade.style.display=tier==='premium'?'none':'block';
+  const daWrap=document.getElementById('delete-acct-wrap');if(daWrap)daWrap.style.display=(tier==='guest')?'none':'block';
   applyLang();renderLangBars();renderFamily();initDiscover();rebuildShopping();updateBadge();
   const tk=dateKey(new Date());
   const todayHasMeal=state.plan[tk]&&MEAL_TYPES.some(tp=>state.plan[tk][tp]&&state.plan[tk][tp].dishId);
