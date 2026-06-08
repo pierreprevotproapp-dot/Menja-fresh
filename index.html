@@ -22,26 +22,28 @@ if(/(access_token|refresh_token|provider_token|type=recovery|error_description)/
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --green:#2D5A3D; --green-d:#21422D; --accent:#5BA85C; --accent-d:#3E8E41;
-  --cream:#FAF6EC; --cream-2:#F2ECDC; --card:#FFFFFF; --ink:#1E2A22; --muted:#5C6B61;
-  --orange:#C8622A; --gold:#E0A93B; --border:#E9E2D2;
-  --shadow:0 10px 30px rgba(33,66,45,.10); --shadow-lg:0 24px 60px rgba(33,66,45,.16);
+  /* food-forward palette: basil · tomato · espresso · mustard · warm cream */
+  --green:#2F5A39; --green-d:#213F27; --accent:#D6492F; --accent-d:#BC3A22;
+  --tomato:#D6492F; --tomato-d:#BC3A22; --espresso:#33271F;
+  --cream:#FBF5E9; --cream-2:#F3EAD6; --card:#FFFCF6; --ink:#2A211C; --muted:#6E6055;
+  --orange:#C8622A; --gold:#E6A92E; --border:#EADFC9;
+  --shadow:0 10px 30px rgba(74,55,40,.10); --shadow-lg:0 24px 60px rgba(74,55,40,.18);
   --fd:'Fraunces',Georgia,serif; --fb:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
   --r:22px;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--fb);color:var(--ink);background:var(--cream);line-height:1.5;-webkit-font-smoothing:antialiased}
+body{font-family:var(--fb);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased;background-color:var(--cream)}
 a{text-decoration:none;color:inherit}
 img{max-width:100%;display:block}
 .wrap{max-width:1140px;margin:0 auto;padding:0 22px}
 .btn{display:inline-flex;align-items:center;gap:8px;border:none;border-radius:999px;font-family:var(--fb);font-weight:600;font-size:15px;cursor:pointer;transition:transform .15s ease,box-shadow .15s ease;text-align:center}
-.btn-primary{background:var(--green);color:#fff;padding:14px 26px;box-shadow:0 8px 20px rgba(45,90,61,.25)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 26px rgba(45,90,61,.32)}
-.btn-ghost{background:#fff;color:var(--green);padding:14px 24px;border:1.5px solid var(--border)}
+.btn-primary{background:var(--tomato);color:#fff;padding:14px 26px;box-shadow:0 8px 20px rgba(188,58,34,.28)}
+.btn-primary:hover{transform:translateY(-2px) rotate(-.4deg);box-shadow:0 12px 28px rgba(188,58,34,.36)}
+.btn-ghost{background:var(--card);color:var(--green-d);padding:14px 24px;border:1.5px solid var(--green-d)}
 .btn-ghost:hover{transform:translateY(-2px)}
 .btn-lg{font-size:16px;padding:16px 32px}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-d);background:rgba(91,168,92,.12);padding:7px 14px;border-radius:999px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-d);background:rgba(214,73,47,.10);padding:7px 14px;border-radius:999px}
 h1,h2,h3{font-family:var(--fd);font-weight:600;line-height:1.1;color:var(--green-d);letter-spacing:-.01em}
 section{padding:88px 0}
 .center{text-align:center}
@@ -58,12 +60,18 @@ section{padding:88px 0}
 .nav-cta .signin{font-size:15px;font-weight:600;color:var(--green)}
 .lang-switch{font-size:14px;font-weight:700;color:var(--muted);border:1.5px solid var(--border);border-radius:999px;padding:5px 11px}
 .lang-switch:hover{color:var(--green);border-color:var(--green)}
+/* custom wordmark + editorial bits */
+.logo-mark{width:30px;height:30px;flex-shrink:0;display:block}
+.logo .wm em{font-style:normal;color:var(--accent-d)}
+.sticker{position:absolute;top:3%;right:-2px;z-index:4;width:98px;height:98px;border-radius:50%;background:var(--gold);color:#4a3408;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:var(--fd);font-weight:600;font-size:19px;line-height:1.05;transform:rotate(-9deg);box-shadow:var(--shadow-lg);border:3px solid var(--card)}
+.sticker small{font-family:var(--fb);font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;opacity:.75;margin-top:3px}
 
 /* HERO */
 .hero{padding:64px 0 56px;position:relative;overflow:hidden}
 .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:48px;align-items:center}
 .hero h1{font-size:clamp(38px,5vw,60px);margin:18px 0 18px}
-.hero h1 .hl{color:var(--accent-d);position:relative}
+.hero h1 .hl{color:var(--accent-d);position:relative;display:inline-block}
+.hero h1 .hl::after{content:'';position:absolute;left:-3px;right:-3px;bottom:-7px;height:13px;z-index:-1;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 14' preserveAspectRatio='none'%3E%3Cpath d='M3 9 C40 3 80 12 110 7 C140 2 175 11 197 6' stroke='%23E6A92E' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E") no-repeat center/100% 100%}
 .hero p.lead{font-size:19px;color:var(--muted);max-width:520px;margin-bottom:30px}
 .hero p.lead b{color:var(--green-d);font-weight:700}
 .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
@@ -85,7 +93,8 @@ section{padding:88px 0}
 .ph-day.on{background:#fff;color:var(--green);font-weight:700}
 .ph-body{padding:14px}
 .ph-card{display:flex;gap:11px;align-items:center;background:var(--cream);border-radius:16px;padding:11px;margin-bottom:11px;box-shadow:0 3px 10px rgba(33,66,45,.05)}
-.ph-emoji{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;background:#fff;flex-shrink:0}
+.ph-emoji{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:24px;background:#fff;flex-shrink:0;position:relative;overflow:hidden}
+.ph-emoji img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .ph-meal{flex:1;min-width:0}
 .ph-meal .tag{font-size:9px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-d)}
 .ph-meal .name{font-size:13px;font-weight:600;color:var(--ink);margin-top:1px}
@@ -105,8 +114,10 @@ section{padding:88px 0}
 .section-head p{font-size:17px;color:var(--muted)}
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
 .step{background:var(--card);border:1px solid var(--border);border-radius:var(--r);padding:30px 26px;box-shadow:var(--shadow);position:relative}
-.step .num{width:38px;height:38px;border-radius:50%;background:var(--green);color:#fff;font-family:var(--fd);font-weight:600;display:flex;align-items:center;justify-content:center;margin-bottom:16px}
-.step .ico{font-size:30px;margin-bottom:10px}
+.steps .step:nth-child(2){transform:translateY(24px) rotate(.5deg)}
+.steps .step:nth-child(3){transform:translateY(48px) rotate(-.5deg)}
+.step .num{font-family:var(--fd);font-weight:600;font-size:40px;line-height:1;color:var(--accent-d);margin-bottom:4px}
+.step .ico{font-size:30px;margin-bottom:8px}
 .step h3{font-size:20px;margin-bottom:8px}
 .step p{font-size:15px;color:var(--muted)}
 
@@ -139,25 +150,26 @@ section{padding:88px 0}
 .sl-row .q{font-size:12px;color:var(--muted)}
 
 /* DELIVERY (REWE spotlight) */
-.deliver{background:linear-gradient(135deg,#1f5fb8,#0E4DA4);color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;box-shadow:var(--shadow-lg)}
-.deliver .eyebrow{background:rgba(255,255,255,.16);color:#fff}
+.deliver{background:linear-gradient(140deg,#3A2D24,#241A13);color:#fff;border-radius:28px;padding:48px;display:grid;grid-template-columns:1.2fr .8fr;gap:36px;align-items:center;box-shadow:var(--shadow-lg)}
+.deliver .eyebrow{background:rgba(230,169,46,.18);color:var(--gold)}
 .deliver h2{color:#fff;font-size:clamp(26px,3vw,38px);margin:14px 0}
-.deliver p{font-size:16px;color:rgba(255,255,255,.9);margin-bottom:22px}
-.deliver .btn-primary{background:#fff;color:#0E4DA4}
-.deliver-card{background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);border-radius:18px;padding:20px}
-.deliver-card .dl{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.18);font-size:14px}
+.deliver p{font-size:16px;color:rgba(255,255,255,.85);margin-bottom:22px}
+.deliver .btn-primary{background:var(--gold);color:#3a2a06;box-shadow:0 8px 20px rgba(0,0,0,.25)}
+.deliver-card{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);border-radius:18px;padding:20px}
+.deliver-card .dl{display:flex;align-items:center;justify-content:space-between;padding:11px 0;border-bottom:1px solid rgba(255,255,255,.14);font-size:14px}
 .deliver-card .dl:last-child{border-bottom:none}
-.deliver-card .pill{background:#fff;color:#0E4DA4;font-weight:700;font-size:12px;padding:4px 12px;border-radius:999px}
+.deliver-card .pill{background:var(--gold);color:#3a2a06;font-weight:700;font-size:12px;padding:4px 12px;border-radius:999px}
 
 /* RECIPES */
 .rec-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .rec{background:var(--card);border:1px solid var(--border);border-radius:18px;overflow:hidden;box-shadow:var(--shadow);transition:transform .15s ease}
 .rec:hover{transform:translateY(-4px)}
-.rec .img{height:120px;display:flex;align-items:center;justify-content:center;font-size:48px}
+.rec .img{height:130px;display:flex;align-items:center;justify-content:center;font-size:48px;position:relative;overflow:hidden}
+.rec .img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .rec .b{padding:14px 15px 16px}
 .rec .name{font-size:15px;font-weight:600;color:var(--ink);line-height:1.25}
 .rec .meta{font-size:12.5px;color:var(--muted);margin-top:6px;display:flex;gap:10px}
-.tagpill{display:inline-block;font-size:11px;font-weight:600;color:var(--accent-d);background:rgba(91,168,92,.12);padding:3px 9px;border-radius:999px;margin-top:9px}
+.tagpill{display:inline-block;font-size:11px;font-weight:600;color:var(--green-d);background:rgba(47,90,57,.10);padding:3px 9px;border-radius:999px;margin-top:9px}
 
 /* PRICING */
 .plans{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:760px;margin:0 auto}
@@ -199,6 +211,7 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
   .feature{grid-template-columns:1fr;gap:26px}
   .feature.rev .f-text{order:0}
   .steps{grid-template-columns:1fr}
+  .steps .step{transform:none!important}
   .feat-grid{grid-template-columns:1fr 1fr}
   .rec-grid{grid-template-columns:repeat(2,1fr)}
   .stats-in{grid-template-columns:repeat(2,1fr);gap:24px}
@@ -220,7 +233,7 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 <!-- NAV -->
 <header class="nav">
   <div class="wrap nav-in">
-    <a href="#top" class="logo"><span class="leaf">🌿</span> Menja Fresh</a>
+    <a href="#top" class="logo"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2F5A39"/><path d="M6 16 h20 a10 10 0 0 1 -20 0 Z" fill="#FBF5E9"/><circle cx="16" cy="11" r="3.4" fill="#D6492F"/><path d="M19 9 q3.5 -3 5.5 -1.2" stroke="#E6A92E" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg> <span class="wm">Menja <em>Fresh</em></span></a>
     <nav class="nav-links">
       <a href="#how">So funktioniert's</a>
       <a href="#features">Funktionen</a>
@@ -255,6 +268,7 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
     </div>
     <div class="phone-stage">
       <div class="blob"></div>
+      <div class="sticker">~5&nbsp;Min<small>pro Woche</small></div>
       <div class="phone">
         <div class="notch"></div>
         <div class="ph-top">
@@ -272,17 +286,17 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
         </div>
         <div class="ph-body">
           <div class="ph-card">
-            <div class="ph-emoji">🍠</div>
+            <div class="ph-emoji">🍠<img src="https://v3b.fal.media/files/b/0a9cf80d/7zutElf_TjiowoI0eejH7_15c2f43eb8bb426794a154cab2c0dd86.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
             <div class="ph-meal"><div class="tag">🌙 Abendessen</div><div class="name">Süßkartoffel-Bohnen-Bowl</div><div class="meta">⏱ 35 Min · 🌱 Vegan</div></div>
             <div class="ph-check">✓</div>
           </div>
           <div class="ph-card">
-            <div class="ph-emoji">🐟</div>
+            <div class="ph-emoji">🐟<img src="https://v3b.fal.media/files/b/0a9cf810/YldT8fEaQSbEiwpPtAi9-_8650139d875948afa7f577d9948b5767.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
             <div class="ph-meal"><div class="tag">🌙 Abendessen</div><div class="name">Lachs mit Zitronensenf</div><div class="meta">⏱ 25 Min · Familie</div></div>
             <div class="ph-check">✓</div>
           </div>
           <div class="ph-card">
-            <div class="ph-emoji">🥣</div>
+            <div class="ph-emoji">🥣<img src="https://v3b.fal.media/files/b/0a9cf80e/WnMhvGHsQGJGf1TOrDqWU_1fa88565ef2348b389ebc30621d56e18.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
             <div class="ph-meal"><div class="tag">🌙 Abendessen</div><div class="name">Quinoa-Bowl mit Feta</div><div class="meta">⏱ 20 Min · Vegetarisch</div></div>
             <div class="ph-check">✓</div>
           </div>
@@ -313,19 +327,19 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
     </div>
     <div class="steps">
       <div class="step">
-        <div class="num">1</div>
+        <div class="num">01</div>
         <div class="ico">🗓️</div>
         <h3>Sag uns, wann du kochst</h3>
         <p>Koch-Abende wählen, Allergien & Vorlieben einmal einstellen.</p>
       </div>
       <div class="step">
-        <div class="num">2</div>
+        <div class="num">02</div>
         <div class="ico">✨</div>
         <h3>Wir planen die Woche</h3>
         <p>Passende Gerichte als Vorschlag – tauschen mit einem Wisch.</p>
       </div>
       <div class="step">
-        <div class="num">3</div>
+        <div class="num">03</div>
         <div class="ico">🛒</div>
         <h3>Einkaufsliste & Lieferung</h3>
         <p>Liste entsteht automatisch, nach Gang sortiert. Auf Wunsch liefern lassen.</p>
@@ -384,14 +398,14 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
       <p>Von schnellen Feierabend-Bowls bis zu gemütlichen Sonntagsessen – mit Mengen für deine Familie.</p>
     </div>
     <div class="rec-grid">
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FCEBD6,#F6D9B0)">🍠</div><div class="b"><div class="name">Süßkartoffel-Bohnen-Bowl</div><div class="meta"><span>⏱ 35 Min</span><span>★ 4.8</span></div><span class="tagpill">🌱 Vegan</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#DDEBD3,#C2DCB3)">🥣</div><div class="b"><div class="name">Quinoa-Bowl mit scharfem Feta</div><div class="meta"><span>⏱ 20 Min</span><span>★ 4.7</span></div><span class="tagpill">Vegetarisch</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FAD9D6,#F2B7B0)">🐟</div><div class="b"><div class="name">Lachs mit Zitronensenf & Reis</div><div class="meta"><span>⏱ 25 Min</span><span>★ 4.9</span></div><span class="tagpill">Familie</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#F6E7C9,#EAD09B)">🍳</div><div class="b"><div class="name">Shakshuka mit Feta</div><div class="meta"><span>⏱ 30 Min</span><span>★ 4.8</span></div><span class="tagpill">Vegetarisch</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#E7D9F2,#D2BCEA)">🥗</div><div class="b"><div class="name">Burrata mit Spargel & Erbsen</div><div class="meta"><span>⏱ 15 Min</span><span>★ 4.6</span></div><span class="tagpill">Schnell</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FCEBD6,#F6D9B0)">🍝</div><div class="b"><div class="name">Spinat-Ricotta-Pasta</div><div class="meta"><span>⏱ 20 Min</span><span>★ 4.7</span></div><span class="tagpill">Vegetarisch</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#DDEBD3,#C2DCB3)">🥦</div><div class="b"><div class="name">Gerösteter Brokkoli & Tahini</div><div class="meta"><span>⏱ 30 Min</span><span>★ 4.6</span></div><span class="tagpill">🌱 Vegan</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#F6E7C9,#EAD09B)">🥞</div><div class="b"><div class="name">Carrot-Cake-Pfannkuchen</div><div class="meta"><span>⏱ 25 Min</span><span>★ 4.9</span></div><span class="tagpill">🧒 Kinder</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FCEBD6,#F6D9B0)">🍠<img src="https://v3b.fal.media/files/b/0a9cf80d/7zutElf_TjiowoI0eejH7_15c2f43eb8bb426794a154cab2c0dd86.jpg" alt="Süßkartoffel-Bohnen-Bowl" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Süßkartoffel-Bohnen-Bowl</div><div class="meta"><span>⏱ 35 Min</span><span>★ 4.8</span></div><span class="tagpill">🌱 Vegan</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#DDEBD3,#C2DCB3)">🥣<img src="https://v3b.fal.media/files/b/0a9cf80e/WnMhvGHsQGJGf1TOrDqWU_1fa88565ef2348b389ebc30621d56e18.jpg" alt="Quinoa-Bowl mit scharfem Feta" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Quinoa-Bowl mit scharfem Feta</div><div class="meta"><span>⏱ 20 Min</span><span>★ 4.7</span></div><span class="tagpill">Vegetarisch</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FAD9D6,#F2B7B0)">🐟<img src="https://v3b.fal.media/files/b/0a9cf810/YldT8fEaQSbEiwpPtAi9-_8650139d875948afa7f577d9948b5767.jpg" alt="Lachs mit Zitronensenf & Reis" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Lachs mit Zitronensenf & Reis</div><div class="meta"><span>⏱ 25 Min</span><span>★ 4.9</span></div><span class="tagpill">Familie</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#F6E7C9,#EAD09B)">🍳<img src="https://v3b.fal.media/files/b/0a9cf81c/UFmFqJwMEaQs2bzroN4Cf_f8b59cb172704b13b3c0201045f583b3.jpg" alt="Shakshuka mit Feta" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Shakshuka mit Feta</div><div class="meta"><span>⏱ 30 Min</span><span>★ 4.8</span></div><span class="tagpill">Vegetarisch</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#E7D9F2,#D2BCEA)">🥗<img src="https://v3b.fal.media/files/b/0a9cf81b/ppwZQjGRNNGr0QfT4H9Vg_a7e083401e114462a718168a0a6970c9.jpg" alt="Burrata mit Spargel & Erbsen" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Burrata mit Spargel & Erbsen</div><div class="meta"><span>⏱ 15 Min</span><span>★ 4.6</span></div><span class="tagpill">Schnell</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FCEBD6,#F6D9B0)">🍝<img src="https://v3b.fal.media/files/b/0a9cf822/2MLb-hjHqQK9mWg7Z8Ur8_6b3b176ec6824a38827dccb7c442a2f8.jpg" alt="Spinat-Ricotta-Pasta" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Spinat-Ricotta-Pasta</div><div class="meta"><span>⏱ 20 Min</span><span>★ 4.7</span></div><span class="tagpill">Vegetarisch</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#DDEBD3,#C2DCB3)">🥦<img src="https://v3b.fal.media/files/b/0a9cf826/1iS7uLb0aBQe_BfGUZc-E_cf9311d4fa3d47f3801019bb7f0f1f99.jpg" alt="Gerösteter Brokkoli & Tahini" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Gerösteter Brokkoli & Tahini</div><div class="meta"><span>⏱ 30 Min</span><span>★ 4.6</span></div><span class="tagpill">🌱 Vegan</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#F6E7C9,#EAD09B)">🥞<img src="https://v3b.fal.media/files/b/0a9cf822/3_LU0Ck8ysbvvtQWZMIdu_90ec3e20f4dd4bb788db6159ca5a5015.jpg" alt="Carrot-Cake-Pfannkuchen" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Carrot-Cake-Pfannkuchen</div><div class="meta"><span>⏱ 25 Min</span><span>★ 4.9</span></div><span class="tagpill">🧒 Kinder</span></div></div>
     </div>
     <div class="center" style="margin-top:38px"><a class="btn btn-primary btn-lg" href="app.html">Alle Rezepte entdecken →</a></div>
   </div>
@@ -452,7 +466,7 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
   <div class="wrap">
     <div class="foot-grid">
       <div class="foot-brand">
-        <div class="logo"><span class="leaf">🌿</span> Menja Fresh</div>
+        <div class="logo"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2F5A39"/><path d="M6 16 h20 a10 10 0 0 1 -20 0 Z" fill="#FBF5E9"/><circle cx="16" cy="11" r="3.4" fill="#D6492F"/><path d="M19 9 q3.5 -3 5.5 -1.2" stroke="#E6A92E" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg> <span class="wm">Menja <em>Fresh</em></span></div>
         <p>Der entspannte Wochenplaner für Familien. Frische, saisonale Rezepte, automatische Einkaufsliste und Lieferung nach Hause.</p>
       </div>
       <div class="foot-col">
