@@ -15020,5 +15020,1221 @@
         }
       ]
     }
+  },
+  "salmon-avocado-rice-bowl": {
+    "es": {
+      "title": "Bol de salmón y aguacate con arroz",
+      "subtitle": "Fresco, limpio y nutritivo",
+      "ingredients": [
+        "Filete de salmón",
+        "Arroz de sushi o jazmín",
+        "Aguacate",
+        "Pepino",
+        "Edamame",
+        "Semillas de sésamo",
+        "Lima"
+      ],
+      "base": [
+        "Aceite de sésamo",
+        "Jengibre",
+        "Vinagre de arroz"
+      ],
+      "dressing": [
+        "Salsa de soja"
+      ],
+      "steps": [
+        {
+          "title": "Cuece el arroz",
+          "text": "Cuece el arroz y sazónalo con un chorrito de vinagre de arroz y una pizca de sal.",
+          "tip": null,
+          "ings": [
+            "🍚 Arroz · 160g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Cocina el salmón",
+          "text": "Sazona el salmón y cocínalo en aceite de sésamo, con la piel hacia abajo, 4 minutos.",
+          "tip": null,
+          "ings": [
+            "🐟 Filete de salmón · 300g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Dale la vuelta y cocina 3 min",
+          "text": "Dale la vuelta y cocina 3 minutos más.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Prepara el aliño",
+          "text": "Mezcla salsa de soja, zumo de lima, una gota de aceite de sésamo y jengibre rallado.",
+          "tip": null,
+          "ings": [
+            "🫙 Salsa de soja · 2 cdas",
+            "🍋 Lima · 1 ud"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Monta el bol",
+          "text": "Pon el arroz en los boles.",
+          "tip": null,
+          "ings": [
+            "🥑 Aguacate · 1 ud",
+            "⚪ Semillas de sésamo · 1 cda"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Corona con el salmón",
+          "text": "Corona con el salmón en láminas, aguacate, pepino y edamame.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Riega y reparte sésamo",
+          "text": "Riega con el aliño y reparte las semillas de sésamo.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Bol de saumon & avocat sur riz",
+      "subtitle": "Frais, net et nourrissant",
+      "ingredients": [
+        "Filet de saumon",
+        "Riz à sushi ou jasmin",
+        "Avocat",
+        "Concombre",
+        "Édamame",
+        "Graines de sésame",
+        "Citron vert"
+      ],
+      "base": [
+        "Huile de sésame",
+        "Gingembre",
+        "Vinaigre de riz"
+      ],
+      "dressing": [
+        "Sauce soja"
+      ],
+      "steps": [
+        {
+          "title": "Cuire le riz",
+          "text": "Cuire le riz et l'assaisonner d'un trait de vinaigre de riz et d'une pincée de sel.",
+          "tip": null,
+          "ings": [
+            "🍚 Riz · 160g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire le saumon",
+          "text": "Assaisonner le saumon et le cuire à l'huile de sésame, côté peau, 4 minutes.",
+          "tip": null,
+          "ings": [
+            "🐟 Filet de saumon · 300g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Retourner et cuire 3 min",
+          "text": "Retourner et cuire 3 minutes de plus.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer la sauce",
+          "text": "Mélanger sauce soja, jus de citron vert, une goutte d'huile de sésame et gingembre râpé.",
+          "tip": null,
+          "ings": [
+            "🫙 Sauce soja · 2 c. à s.",
+            "🍋 Citron vert · 1 pc"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Monter le bol",
+          "text": "Mettre le riz dans les bols.",
+          "tip": null,
+          "ings": [
+            "🥑 Avocat · 1 pc",
+            "⚪ Graines de sésame · 1 c. à s."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Garnir du saumon",
+          "text": "Garnir de saumon tranché, avocat, concombre et édamame.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Arroser et parsemer de sésame",
+          "text": "Arroser de sauce et parsemer de graines de sésame.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "de": {
+      "title": "Lachs-Avocado-Reis-Bowl",
+      "subtitle": "Frisch, klar und nahrhaft",
+      "ingredients": [
+        "Lachsfilet",
+        "Sushireis oder Jasminreis",
+        "Avocado",
+        "Gurke",
+        "Edamame",
+        "Sesam",
+        "Limette"
+      ],
+      "base": [
+        "Sesamöl",
+        "Ingwer",
+        "Reisessig"
+      ],
+      "dressing": [
+        "Sojasoße"
+      ],
+      "steps": [
+        {
+          "title": "Reis kochen",
+          "text": "Reis kochen und mit einem Schuss Reisessig und einer Prise Salz würzen.",
+          "tip": null,
+          "ings": [
+            "🍚 Reis · 160g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Lachs braten",
+          "text": "Lachs würzen und in Sesamöl mit der Hautseite nach unten 4 Minuten braten.",
+          "tip": null,
+          "ings": [
+            "🐟 Lachsfilet · 300g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Wenden und 3 Min. braten",
+          "text": "Wenden und 3 Minuten weiterbraten.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Dressing machen",
+          "text": "Sojasoße, Limettensaft, einen Tropfen Sesamöl und geriebenen Ingwer mischen.",
+          "tip": null,
+          "ings": [
+            "🫙 Sojasoße · 2 EL",
+            "🍋 Limette · 1 St."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Bowl aufbauen",
+          "text": "Reis in die Schalen geben.",
+          "tip": null,
+          "ings": [
+            "🥑 Avocado · 1 St.",
+            "⚪ Sesam · 1 EL"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Lachs belegen",
+          "text": "Mit geschnittenem Lachs, Avocado, Gurke und Edamame belegen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Beträufeln & Sesam streuen",
+          "text": "Mit Dressing beträufeln und Sesam darüber streuen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "spring-green-pea-soup": {
+    "es": {
+      "title": "Sopa primaveral de guisantes y menta",
+      "subtitle": "Vibrante, ligera y lista en 15 minutos",
+      "ingredients": [
+        "Guisantes congelados",
+        "Menta fresca",
+        "Cebolla",
+        "Ajo",
+        "Caldo de verduras",
+        "Limón"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Sofríe los aromáticos",
+          "text": "Cocina la cebolla picada y el ajo en aceite de oliva 4 minutos hasta que estén blandos.",
+          "tip": null,
+          "ings": [
+            "🧅 Cebolla · 1 ud",
+            "🧄 Ajo · 1 diente"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade guisantes y caldo",
+          "text": "Añade los guisantes y el caldo.",
+          "tip": null,
+          "ings": [
+            "🫘 Guisantes congelados · 500g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Lleva a ebullición",
+          "text": "Lleva a ebullición y cuece 3–4 minutos, no más, para mantener el color brillante.",
+          "tip": "No cuezas de más: el verde vibrante se pierde rápido.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Tritura con la menta",
+          "text": "Añade la menta fresca y tritura hasta que quede fina.",
+          "tip": null,
+          "ings": [
+            "🌿 Menta fresca · 20g",
+            "🍋 Limón · ½ ud"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Sazona con limón",
+          "text": "Sazona con zumo de limón, sal y pimienta.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Soupe printanière de petits pois & menthe",
+      "subtitle": "Éclatante, légère et prête en 15 minutes",
+      "ingredients": [
+        "Petits pois surgelés",
+        "Menthe fraîche",
+        "Oignon",
+        "Ail",
+        "Bouillon de légumes",
+        "Citron"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Faire revenir les aromates",
+          "text": "Cuire l'oignon en dés et l'ail à l'huile d'olive 4 minutes jusqu'à ce qu'ils soient tendres.",
+          "tip": null,
+          "ings": [
+            "🧅 Oignon · 1 pc",
+            "🧄 Ail · 1 gousse"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter pois et bouillon",
+          "text": "Ajouter les petits pois et le bouillon.",
+          "tip": null,
+          "ings": [
+            "🫘 Petits pois surgelés · 500g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Porter à ébullition",
+          "text": "Porter à ébullition et cuire 3–4 minutes — pas plus, pour garder la couleur vive.",
+          "tip": "Ne pas trop cuire — le vert éclatant s'estompe vite.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mixer avec la menthe",
+          "text": "Ajouter la menthe fraîche et mixer jusqu'à ce que ce soit lisse.",
+          "tip": null,
+          "ings": [
+            "🌿 Menthe fraîche · 20g",
+            "🍋 Citron · ½ pc"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Assaisonner au citron",
+          "text": "Assaisonner de jus de citron, sel et poivre.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "de": {
+      "title": "Frühlings-Erbsensuppe mit Minze",
+      "subtitle": "Lebendig, leicht und in 15 Minuten fertig",
+      "ingredients": [
+        "TK-Erbsen",
+        "Frische Minze",
+        "Zwiebel",
+        "Knoblauch",
+        "Gemüsebrühe",
+        "Zitrone"
+      ],
+      "base": [
+        "Olivenöl",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Aromaten anbraten",
+          "text": "Gewürfelte Zwiebel und Knoblauch in Olivenöl 4 Minuten weich braten.",
+          "tip": null,
+          "ings": [
+            "🧅 Zwiebel · 1 St.",
+            "🧄 Knoblauch · 1 Zehe"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Erbsen & Brühe zugeben",
+          "text": "Erbsen und Brühe zugeben.",
+          "tip": null,
+          "ings": [
+            "🫘 TK-Erbsen · 500g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Aufkochen",
+          "text": "Aufkochen und 3–4 Minuten garen – nicht länger, damit die Farbe leuchtend bleibt.",
+          "tip": "Nicht übergaren – das leuchtende Grün verblasst schnell.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Minze pürieren",
+          "text": "Frische Minze zugeben und glatt pürieren.",
+          "tip": null,
+          "ings": [
+            "🌿 Frische Minze · 20g",
+            "🍋 Zitrone · ½ St."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Zitrone abschmecken",
+          "text": "Mit Zitronensaft, Salz und Pfeffer abschmecken.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "creamy-roasted-cauliflower-soup": {
+    "es": {
+      "title": "Crema de coliflor asada",
+      "subtitle": "Sedosa, dorada y muy reconfortante",
+      "ingredients": [
+        "Coliflor",
+        "Cebolla",
+        "Ajo",
+        "Caldo de verduras",
+        "Nata o crema de coco",
+        "Piñones",
+        "Tomillo fresco"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Nuez moscada",
+        "Sal y pimienta"
+      ],
+      "dressing": [
+        "Limón"
+      ],
+      "steps": [
+        {
+          "title": "Asa la coliflor",
+          "text": "Separa la coliflor en ramilletes.",
+          "tip": null,
+          "ings": [
+            "🥦 Coliflor · 1 ud"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mezcla con aceite",
+          "text": "Mézclala con aceite de oliva, sal y pimienta en una bandeja grande: déjale espacio.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Asa a 200°C",
+          "text": "Asa a 200°C 25–30 minutos hasta que esté muy dorada en los bordes.",
+          "tip": "El asado le da a esta crema su increíble profundidad de sabor: no te lo saltes.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Sofríe cebolla y ajo",
+          "text": "Cocina la cebolla picada en aceite de oliva 5 minutos.",
+          "tip": null,
+          "ings": [
+            "🧅 Cebolla · 1 ud",
+            "🧄 Ajo · 4 dientes"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade ajo y tomillo",
+          "text": "Añade el ajo y el tomillo y cocina 2 minutos más.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Tritura",
+          "text": "Añade la coliflor asada y el caldo a la olla de la cebolla.",
+          "tip": null,
+          "ings": [
+            "🫘 Caldo de verduras · 900ml",
+            "🥛 Nata · 100ml"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Lleva a fuego lento",
+          "text": "Cuece a fuego lento 5 minutos y tritura hasta que quede completamente fina.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade nata y nuez moscada",
+          "text": "Añade la nata y una pizca de nuez moscada.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Termina y sirve",
+          "text": "Tuesta los piñones en una sartén seca 2–3 minutos.",
+          "tip": null,
+          "ings": [
+            "🌰 Piñones · 2 cdas",
+            "🍋 Limón · ½ ud"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Sazona con limón",
+          "text": "Sazona la crema con zumo de limón y sal.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Sirve con piñones",
+          "text": "Sirve con los piñones tostados y un hilo de buen aceite de oliva.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Velouté de chou-fleur rôti",
+      "subtitle": "Onctueux, doré et profondément réconfortant",
+      "ingredients": [
+        "Chou-fleur",
+        "Oignon",
+        "Ail",
+        "Bouillon de légumes",
+        "Crème liquide ou crème de coco",
+        "Pignons de pin",
+        "Thym frais"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Muscade",
+        "Sel & poivre"
+      ],
+      "dressing": [
+        "Citron"
+      ],
+      "steps": [
+        {
+          "title": "Rôtir le chou-fleur",
+          "text": "Séparer le chou-fleur en fleurettes.",
+          "tip": null,
+          "ings": [
+            "🥦 Chou-fleur · 1 pièce"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mélanger avec l'huile",
+          "text": "Mélanger avec huile d'olive, sel et poivre sur une grande plaque — leur laisser de l'espace.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Rôtir à 200°C",
+          "text": "Rôtir à 200°C 25–30 minutes jusqu'à ce que les bords soient bien dorés.",
+          "tip": "La cuisson au four donne à ce velouté toute sa profondeur — ne pas sauter cette étape.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Faire revenir oignon & ail",
+          "text": "Cuire l'oignon en dés à l'huile d'olive 5 minutes.",
+          "tip": null,
+          "ings": [
+            "🧅 Oignon · 1 pc",
+            "🧄 Ail · 4 gousses"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter ail et thym",
+          "text": "Ajouter l'ail et le thym, cuire 2 minutes de plus.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mixer",
+          "text": "Ajouter le chou-fleur rôti et le bouillon dans la casserole de l'oignon.",
+          "tip": null,
+          "ings": [
+            "🫘 Bouillon de légumes · 900ml",
+            "🥛 Crème · 100ml"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Porter à frémissement",
+          "text": "Laisser frémir 5 minutes puis mixer jusqu'à ce que ce soit parfaitement lisse.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter crème et muscade",
+          "text": "Ajouter la crème et une pincée de muscade.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Finir et servir",
+          "text": "Torréfier les pignons dans une poêle sèche 2–3 minutes.",
+          "tip": null,
+          "ings": [
+            "🌰 Pignons · 2 c. à s.",
+            "🍋 Citron · ½ pc"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Assaisonner au citron",
+          "text": "Assaisonner le velouté de jus de citron et de sel.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Servir avec les pignons",
+          "text": "Servir avec les pignons torréfiés et un filet de bonne huile d'olive.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "de": {
+      "title": "Cremige Suppe von geröstetem Blumenkohl",
+      "subtitle": "Seidig, goldgelb und tief wohltuend",
+      "ingredients": [
+        "Blumenkohl",
+        "Zwiebel",
+        "Knoblauch",
+        "Gemüsebrühe",
+        "Sahne oder Kokoscreme",
+        "Pinienkerne",
+        "Frischer Thymian"
+      ],
+      "base": [
+        "Olivenöl",
+        "Muskatnuss",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [
+        "Zitrone"
+      ],
+      "steps": [
+        {
+          "title": "Blumenkohl rösten",
+          "text": "Blumenkohl in Röschen teilen.",
+          "tip": null,
+          "ings": [
+            "🥦 Blumenkohl · 1 Kopf"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Öl mischen",
+          "text": "Auf einem großen Blech mit Olivenöl, Salz und Pfeffer mischen – Platz lassen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Bei 200°C rösten",
+          "text": "Bei 200°C 25–30 Minuten rösten, bis die Ränder tief goldbraun sind.",
+          "tip": "Das Rösten gibt dieser Suppe ihre unglaubliche Geschmackstiefe – nicht überspringen.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Zwiebel & Knoblauch anbraten",
+          "text": "Gewürfelte Zwiebel in Olivenöl 5 Minuten anbraten.",
+          "tip": null,
+          "ings": [
+            "🧅 Zwiebel · 1 St.",
+            "🧄 Knoblauch · 4 Zehen"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Knoblauch & Thymian zugeben",
+          "text": "Knoblauch und Thymian zugeben, 2 weitere Minuten braten.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Pürieren",
+          "text": "Gerösteten Blumenkohl und Brühe in den Zwiebeltopf geben.",
+          "tip": null,
+          "ings": [
+            "🫘 Gemüsebrühe · 900ml",
+            "🥛 Sahne · 100ml"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Aufköcheln lassen",
+          "text": "5 Minuten köcheln und dann vollständig glatt pürieren.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Sahne & Muskat zugeben",
+          "text": "Sahne und eine Prise Muskatnuss zugeben.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Abschließen & servieren",
+          "text": "Pinienkerne in einer trockenen Pfanne 2–3 Minuten rösten.",
+          "tip": null,
+          "ings": [
+            "🌰 Pinienkerne · 2 EL",
+            "🍋 Zitrone · ½ St."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Zitrone abschmecken",
+          "text": "Suppe mit Zitronensaft und Salz abschmecken.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Pinienkernen servieren",
+          "text": "Mit gerösteten Pinienkernen und einem Schuss gutem Olivenöl servieren.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "roasted-sweet-potato-feta-chickpea-salad": {
+    "es": {
+      "title": "Ensalada de boniato asado, feta y garbanzos",
+      "subtitle": "Templada, saciante y muy sabrosa",
+      "ingredients": [
+        "Boniato",
+        "Garbanzos (lata)",
+        "Queso feta",
+        "Rúcula",
+        "Granos de granada",
+        "Limón"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Pimentón ahumado",
+        "Sal y pimienta"
+      ],
+      "dressing": [
+        "Tahini"
+      ],
+      "steps": [
+        {
+          "title": "Asa boniato y garbanzos",
+          "text": "Corta el boniato en dados y escurre los garbanzos.",
+          "tip": null,
+          "ings": [
+            "🍠 Boniato · 300g",
+            "🫘 Garbanzos · 400g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mézclalos con aceite",
+          "text": "Mezcla ambos con aceite de oliva, pimentón ahumado y sal en una bandeja.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Asa a 200°C",
+          "text": "Asa a 200°C 22–25 minutos.",
+          "tip": "Repártelos: necesitan espacio para asarse y no cocerse al vapor.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Prepara el aliño de tahini",
+          "text": "Bate tahini, zumo de limón y 2–3 cdas de agua hasta que quede suave.",
+          "tip": null,
+          "ings": [
+            "🫙 Tahini · 2 cdas",
+            "🍋 Limón · 1 ud"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Monta",
+          "text": "Coloca capas de rúcula, boniato templado y garbanzos.",
+          "tip": null,
+          "ings": [
+            "🥬 Rúcula · 60g",
+            "🧀 Feta · 100g",
+            "🫐 Granada · 2 cdas"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Desmenuza feta y reparte granada",
+          "text": "Desmenuza el feta, reparte la granada y riega con el aliño de tahini.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Salade de patate douce rôtie, feta & pois chiches",
+      "subtitle": "Tiède, rassasiante et pleine de saveur",
+      "ingredients": [
+        "Patate douce",
+        "Pois chiches (boîte)",
+        "Feta",
+        "Roquette",
+        "Grains de grenade",
+        "Citron"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Paprika fumé",
+        "Sel & poivre"
+      ],
+      "dressing": [
+        "Tahini"
+      ],
+      "steps": [
+        {
+          "title": "Rôtir patate douce & pois chiches",
+          "text": "Couper la patate douce en dés et égoutter les pois chiches.",
+          "tip": null,
+          "ings": [
+            "🍠 Patate douce · 300g",
+            "🫘 Pois chiches · 400g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mélanger avec l'huile",
+          "text": "Mélanger les deux avec huile d'olive, paprika fumé et sel sur une plaque.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Rôtir à 200°C",
+          "text": "Rôtir à 200°C 22–25 minutes.",
+          "tip": "Bien les étaler — ils ont besoin d'espace pour rôtir et non cuire à la vapeur.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer la sauce tahini",
+          "text": "Fouetter tahini, jus de citron et 2–3 c. à s. d'eau jusqu'à une sauce lisse.",
+          "tip": null,
+          "ings": [
+            "🫙 Tahini · 2 c. à s.",
+            "🍋 Citron · 1 pc"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Assembler",
+          "text": "Disposer en couches la roquette, la patate douce tiède et les pois chiches.",
+          "tip": null,
+          "ings": [
+            "🥬 Roquette · 60g",
+            "🧀 Feta · 100g",
+            "🫐 Grenade · 2 c. à s."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Émietter la feta, parsemer la grenade",
+          "text": "Émietter la feta, parsemer de grenade et arroser de sauce tahini.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    },
+    "de": {
+      "title": "Salat mit gerösteter Süßkartoffel, Feta & Kichererbsen",
+      "subtitle": "Warm, sättigend und voller Geschmack",
+      "ingredients": [
+        "Süßkartoffel",
+        "Kichererbsen (Dose)",
+        "Feta",
+        "Rucola",
+        "Granatapfelkerne",
+        "Zitrone"
+      ],
+      "base": [
+        "Olivenöl",
+        "Geräuchertes Paprikapulver",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [
+        "Tahini"
+      ],
+      "steps": [
+        {
+          "title": "Süßkartoffel & Kichererbsen rösten",
+          "text": "Süßkartoffel würfeln und Kichererbsen abgießen.",
+          "tip": null,
+          "ings": [
+            "🍠 Süßkartoffel · 300g",
+            "🫘 Kichererbsen · 400g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Öl mischen",
+          "text": "Beides mit Olivenöl, geräuchertem Paprika und Salz auf einem Blech mischen.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Bei 200°C rösten",
+          "text": "Bei 200°C 22–25 Minuten rösten.",
+          "tip": "Gut verteilen – sie brauchen Platz zum Rösten statt zum Dämpfen.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Tahini-Dressing machen",
+          "text": "Tahini, Zitronensaft und 2–3 EL Wasser glatt verrühren.",
+          "tip": null,
+          "ings": [
+            "🫙 Tahini · 2 EL",
+            "🍋 Zitrone · 1 St."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Anrichten",
+          "text": "Rucola, warme Süßkartoffel und Kichererbsen schichten.",
+          "tip": null,
+          "ings": [
+            "🥬 Rucola · 60g",
+            "🧀 Feta · 100g",
+            "🫐 Granatapfel · 2 EL"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Feta zerbröseln, Granatapfel streuen",
+          "text": "Feta zerbröseln, Granatapfel darüber streuen und mit Tahini-Dressing beträufeln.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "chocolate-avocado-mousse": {
+    "es": {
+      "title": "Mousse de chocolate y aguacate",
+      "subtitle": "Rica, cremosa y saludable en secreto",
+      "ingredients": [
+        "Aguacates maduros",
+        "Cacao en polvo",
+        "Sirope de arce",
+        "Leche de coco",
+        "Frambuesas frescas",
+        "Extracto de vainilla"
+      ],
+      "base": [
+        "Una pizca de sal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Tritura todo",
+          "text": "Pon la pulpa de aguacate en una batidora.",
+          "tip": null,
+          "ings": [
+            "🥑 Aguacates · 2 ud",
+            "🍫 Cacao en polvo · 3 cdas",
+            "🍯 Sirope de arce · 3 cdas"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade cacao y sirope",
+          "text": "Añade cacao, sirope de arce, leche de coco, vainilla y una pizca de sal.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Tritura hasta que quede fino",
+          "text": "Tritura hasta que quede completamente fino y brillante.",
+          "tip": "Tritura al menos 1 minuto entero para una textura sedosa.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Prueba y ajusta",
+          "text": "Prueba de dulzor e intensidad.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade más sirope o cacao",
+          "text": "Añade más sirope de arce o cacao si hace falta.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Enfría y sirve",
+          "text": "Reparte en vasitos y refrigera al menos 30 minutos.",
+          "tip": null,
+          "ings": [
+            "🍓 Frambuesas · 80g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Corona con frambuesas",
+          "text": "Corona con frambuesas frescas antes de servir.",
+          "tip": "Se conserva hasta 2 días en la nevera.",
+          "ings": [],
+          "kidsHelp": "¡Los niños pueden poner las frambuesas encima! 🧒"
+        }
+      ]
+    },
+    "fr": {
+      "title": "Mousse chocolat-avocat",
+      "subtitle": "Riche, crémeuse et secrètement saine",
+      "ingredients": [
+        "Avocats mûrs",
+        "Cacao en poudre",
+        "Sirop d'érable",
+        "Lait de coco",
+        "Framboises fraîches",
+        "Extrait de vanille"
+      ],
+      "base": [
+        "Une pincée de sel"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Tout mixer",
+          "text": "Mettre la chair d'avocat dans un blender.",
+          "tip": null,
+          "ings": [
+            "🥑 Avocats · 2 pc",
+            "🍫 Cacao en poudre · 3 c. à s.",
+            "🍯 Sirop d'érable · 3 c. à s."
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter cacao et sirop",
+          "text": "Ajouter cacao, sirop d'érable, lait de coco, vanille et une pincée de sel.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mixer jusqu'à lisse",
+          "text": "Mixer jusqu'à ce que ce soit parfaitement lisse et brillant.",
+          "tip": "Mixer au moins 1 minute entière pour une texture soyeuse.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Goûter et ajuster",
+          "text": "Goûter le sucré et la richesse.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter sirop ou cacao",
+          "text": "Ajouter plus de sirop d'érable ou de cacao si besoin.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Réfrigérer et servir",
+          "text": "Répartir dans des verrines et réfrigérer au moins 30 minutes.",
+          "tip": null,
+          "ings": [
+            "🍓 Framboises · 80g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Garnir de framboises",
+          "text": "Garnir de framboises fraîches avant de servir.",
+          "tip": "Se garde jusqu'à 2 jours au frigo.",
+          "ings": [],
+          "kidsHelp": "Les enfants peuvent ajouter les framboises dessus ! 🧒"
+        }
+      ]
+    },
+    "de": {
+      "title": "Schoko-Avocado-Mousse",
+      "subtitle": "Reichhaltig, cremig und heimlich gesund",
+      "ingredients": [
+        "Reife Avocados",
+        "Kakaopulver",
+        "Ahornsirup",
+        "Kokosmilch",
+        "Frische Himbeeren",
+        "Vanilleextrakt"
+      ],
+      "base": [
+        "Eine Prise Salz"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Alles mixen",
+          "text": "Avocadofleisch in einen Mixer geben.",
+          "tip": null,
+          "ings": [
+            "🥑 Avocados · 2 St.",
+            "🍫 Kakaopulver · 3 EL",
+            "🍯 Ahornsirup · 3 EL"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Kakao & Sirup zugeben",
+          "text": "Kakao, Ahornsirup, Kokosmilch, Vanille und eine Prise Salz zugeben.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Glatt mixen",
+          "text": "Mixen, bis es vollständig glatt und glänzend ist.",
+          "tip": "Mindestens 1 ganze Minute mixen für eine seidige Mousse.",
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Abschmecken & anpassen",
+          "text": "Auf Süße und Intensität abschmecken.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mehr Sirup oder Kakao",
+          "text": "Bei Bedarf mehr Ahornsirup oder Kakao zugeben.",
+          "tip": null,
+          "ings": [],
+          "kidsHelp": null
+        },
+        {
+          "title": "Kühlen & servieren",
+          "text": "In Gläser füllen und mindestens 30 Minuten kühlen.",
+          "tip": null,
+          "ings": [
+            "🍓 Himbeeren · 80g"
+          ],
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Himbeeren belegen",
+          "text": "Vor dem Servieren mit frischen Himbeeren belegen.",
+          "tip": "Hält bis zu 2 Tage im Kühlschrank.",
+          "ings": [],
+          "kidsHelp": "Kinder können die Himbeeren obendrauf geben! 🧒"
+        }
+      ]
+    }
   }
 }
