@@ -58,8 +58,10 @@ section{padding:88px 0}
 .nav-links a:hover{color:var(--green)}
 .nav-cta{display:flex;align-items:center;gap:14px}
 .nav-cta .signin{font-size:15px;font-weight:600;color:var(--green)}
-.lang-switch{font-size:14px;font-weight:700;color:var(--muted);border:1.5px solid var(--border);border-radius:999px;padding:5px 11px}
-.lang-switch:hover{color:var(--green);border-color:var(--green)}
+.lang-switch{display:inline-flex;gap:6px;align-items:center;font-size:13px;font-weight:600;color:var(--muted);border:1.5px solid var(--border);border-radius:999px;padding:5px 11px}
+.lang-switch a{color:var(--muted)}
+.lang-switch a:hover{color:var(--green)}
+.lang-switch b{color:var(--green-d)}
 /* custom wordmark + editorial bits */
 .logo-mark{width:30px;height:30px;flex-shrink:0;display:block}
 .logo .wm em{font-style:normal;color:var(--accent-d)}
@@ -241,7 +243,7 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
       <a href="#preise">Preise</a>
     </nav>
     <div class="nav-cta">
-      <a class="lang-switch" href="en.html" title="English">EN</a>
+      <span class="lang-switch"><b>DE</b><a href="en.html">EN</a><a href="es.html">ES</a><a href="fr.html">FR</a></span>
       <a class="signin" href="app.html">Anmelden</a>
       <a class="btn btn-primary" href="app.html">Kostenlos starten</a>
     </div>
@@ -329,14 +331,14 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
       <div class="step">
         <div class="num">01</div>
         <div class="ico">🗓️</div>
-        <h3>Sag uns, wann du kochst</h3>
-        <p>Koch-Abende wählen, Allergien & Vorlieben einmal einstellen.</p>
+        <h3>Sag uns, wer mitisst</h3>
+        <p>Koch-Abende, Portionen, Allergien & Vorlieben – einmal eingestellt. Den Rest übernehmen wir.</p>
       </div>
       <div class="step">
         <div class="num">02</div>
-        <div class="ico">✨</div>
-        <h3>Wir planen die Woche</h3>
-        <p>Passende Gerichte als Vorschlag – tauschen mit einem Wisch.</p>
+        <div class="ico">👆</div>
+        <h3>Wir wählen die Gerichte aus</h3>
+        <p>Du wischst durch unsere Vorschläge – zweimal getippt, Abendessen steht. Kein Ausdenken nötig.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
@@ -427,6 +429,7 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
           <li><span class="dot">✓</span> Ganze Woche in Minuten planen</li>
           <li><span class="dot">✓</span> Gerichte tauschen & Tage überspringen</li>
           <li><span class="dot">✓</span> Automatische Einkaufsliste + Basics</li>
+          <li><span class="dot">✓</span> Direkter Kauf & Lieferung nach Hause</li>
           <li><span class="dot">✓</span> Dein Favoriten-Kochbuch</li>
           <li><span class="dot">✓</span> Lernt den Geschmack deiner Familie</li>
         </ul>

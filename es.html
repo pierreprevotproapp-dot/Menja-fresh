@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Menja Fresh — Your weekly meal planner for relaxed family cooking</title>
-<meta name="description" content="Menja Fresh plans your week, learns your family's taste and builds the shopping list automatically — fresh, seasonal recipes. Start free, right in your browser.">
+<title>Menja Fresh — Tu planificador semanal de comidas para cocinar en familia sin estrés</title>
+<meta name="description" content="Menja Fresh planifica tu semana, aprende el gusto de tu familia y crea la lista de la compra automáticamente — recetas frescas y de temporada. Empieza gratis, directo en el navegador.">
 <meta name="theme-color" content="#2D5A3D">
 <!-- Auth-Weiche: Supabase-Login-/E-Mail-Rücksprünge nahtlos zur App weiterleiten -->
 <script>
@@ -13,8 +13,8 @@ if(/(access_token|refresh_token|provider_token|type=recovery|error_description)/
   location.replace('/app.html'+s+h);}})();
 </script>
 <!-- Open Graph -->
-<meta property="og:title" content="Menja Fresh — Your weekly meal planner for relaxed family cooking">
-<meta property="og:description" content="Weekly plan, shopping list & home delivery — in minutes. Fresh, seasonal family recipes.">
+<meta property="og:title" content="Menja Fresh — Tu planificador semanal de comidas para cocinar en familia sin estrés">
+<meta property="og:description" content="Plan semanal, lista de la compra y entrega a domicilio — en minutos. Recetas familiares frescas y de temporada.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.menja-fresh.com">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -237,15 +237,15 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
   <div class="wrap nav-in">
     <a href="#top" class="logo"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2F5A39"/><path d="M6 16 h20 a10 10 0 0 1 -20 0 Z" fill="#FBF5E9"/><circle cx="16" cy="11" r="3.4" fill="#D6492F"/><path d="M19 9 q3.5 -3 5.5 -1.2" stroke="#E6A92E" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg> <span class="wm">Menja <em>Fresh</em></span></a>
     <nav class="nav-links">
-      <a href="#how">How it works</a>
-      <a href="#features">Features</a>
-      <a href="#rezepte">Recipes</a>
-      <a href="#preise">Pricing</a>
+      <a href="#how">Cómo funciona</a>
+      <a href="#features">Funciones</a>
+      <a href="#rezepte">Recetas</a>
+      <a href="#preise">Precios</a>
     </nav>
     <div class="nav-cta">
-      <span class="lang-switch"><a href="index.html">DE</a><a href="en.html"><b>EN</b></a><a href="es.html">ES</a><a href="fr.html">FR</a></span>
-      <a class="signin" href="app.html">Sign in</a>
-      <a class="btn btn-primary" href="app.html">Get started free</a>
+      <span class="lang-switch"><a href="index.html">DE</a><a href="en.html">EN</a><b>ES</b><a href="fr.html">FR</a></span>
+      <a class="signin" href="app.html">Iniciar sesión</a>
+      <a class="btn btn-primary" href="app.html">Empieza gratis</a>
     </div>
   </div>
 </header>
@@ -255,54 +255,54 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <span class="eyebrow">🌿 Weekly planner for families</span>
-      <h1>Dinner? <span class="hl">Already sorted.</span></h1>
-      <p class="lead">The <b>weekly meal planner for families</b>: plan dinners in minutes, get the shopping list automatically, cook fresh recipes — delivered if you like.</p>
+      <span class="eyebrow">🌿 Planificador semanal para familias</span>
+      <h1>"¿Qué cocino hoy?" — <span class="hl">nunca más esa duda.</span></h1>
+      <p class="lead">El <b>planificador semanal de comidas para familias</b>: planifica las cenas en minutos, lista de la compra automática, recetas frescas — entregadas a domicilio si quieres.</p>
       <div class="hero-ctas">
-        <a class="btn btn-primary btn-lg" href="app.html">Get started free →</a>
-        <a class="btn btn-ghost btn-lg" href="#how">How it works</a>
+        <a class="btn btn-primary btn-lg" href="app.html">Empieza gratis →</a>
+        <a class="btn btn-ghost btn-lg" href="#how">Cómo funciona</a>
       </div>
       <div class="hero-trust">
-        <span><span class="tick">✓</span> <b>Free</b> to start</span>
-        <span><span class="tick">✓</span> No credit card</span>
-        <span><span class="tick">✓</span> Right in your browser</span>
+        <span><span class="tick">✓</span> Empieza <b>gratis</b></span>
+        <span><span class="tick">✓</span> Sin tarjeta</span>
+        <span><span class="tick">✓</span> En el navegador</span>
       </div>
     </div>
     <div class="phone-stage">
       <div class="blob"></div>
-      <div class="sticker">~5&nbsp;min<small>per week</small></div>
+      <div class="sticker">~5&nbsp;min<small>por semana</small></div>
       <div class="phone">
         <div class="notch"></div>
         <div class="ph-top">
-          <div class="greet">Good morning ☀️</div>
-          <div class="date">This week</div>
+          <div class="greet">Buenos días ☀️</div>
+          <div class="date">Esta semana</div>
           <div class="ph-week">
-            <div class="ph-day">Mon</div>
-            <div class="ph-day on">Tue</div>
-            <div class="ph-day">Wed</div>
-            <div class="ph-day on">Thu</div>
-            <div class="ph-day">Fri</div>
-            <div class="ph-day on">Sat</div>
-            <div class="ph-day">Sun</div>
+            <div class="ph-day">Lun</div>
+            <div class="ph-day on">Mar</div>
+            <div class="ph-day">Mié</div>
+            <div class="ph-day on">Jue</div>
+            <div class="ph-day">Vie</div>
+            <div class="ph-day on">Sáb</div>
+            <div class="ph-day">Dom</div>
           </div>
         </div>
         <div class="ph-body">
           <div class="ph-card">
             <div class="ph-emoji">🍠<img src="https://v3b.fal.media/files/b/0a9cf80d/7zutElf_TjiowoI0eejH7_15c2f43eb8bb426794a154cab2c0dd86.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-            <div class="ph-meal"><div class="tag">🌙 Dinner</div><div class="name">Sweet Potato & Black Bean Bowl</div><div class="meta">⏱ 35 min · 🌱 Vegan</div></div>
+            <div class="ph-meal"><div class="tag">🌙 Cena</div><div class="name">Bol de boniato y frijoles</div><div class="meta">⏱ 35 min · 🌱 Vegano</div></div>
             <div class="ph-check">✓</div>
           </div>
           <div class="ph-card">
             <div class="ph-emoji">🐟<img src="https://v3b.fal.media/files/b/0a9cf810/YldT8fEaQSbEiwpPtAi9-_8650139d875948afa7f577d9948b5767.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-            <div class="ph-meal"><div class="tag">🌙 Dinner</div><div class="name">Salmon with Lemon Mustard</div><div class="meta">⏱ 25 min · Family</div></div>
+            <div class="ph-meal"><div class="tag">🌙 Cena</div><div class="name">Salmón con mostaza al limón</div><div class="meta">⏱ 25 min · Familia</div></div>
             <div class="ph-check">✓</div>
           </div>
           <div class="ph-card">
             <div class="ph-emoji">🥣<img src="https://v3b.fal.media/files/b/0a9cf80e/WnMhvGHsQGJGf1TOrDqWU_1fa88565ef2348b389ebc30621d56e18.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
-            <div class="ph-meal"><div class="tag">🌙 Dinner</div><div class="name">Quinoa Bowl with Feta</div><div class="meta">⏱ 20 min · Vegetarian</div></div>
+            <div class="ph-meal"><div class="tag">🌙 Cena</div><div class="name">Bol de quinoa con feta</div><div class="meta">⏱ 20 min · Vegetariano</div></div>
             <div class="ph-check">✓</div>
           </div>
-          <div class="ph-cta">🛒 To shopping list →</div>
+          <div class="ph-cta">🛒 A la lista de la compra →</div>
         </div>
       </div>
     </div>
@@ -312,10 +312,10 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 <!-- STATS -->
 <div class="stats">
   <div class="wrap stats-in">
-    <div class="stat"><div class="n">~5 min</div><div class="l">for the whole week</div></div>
-    <div class="stat"><div class="n">70+</div><div class="l">fresh recipes</div></div>
-    <div class="stat"><div class="n">4</div><div class="l">languages</div></div>
-    <div class="stat"><div class="n">100%</div><div class="l">fresh & balanced</div></div>
+    <div class="stat"><div class="n">~5 min</div><div class="l">para toda la semana</div></div>
+    <div class="stat"><div class="n">70+</div><div class="l">recetas frescas</div></div>
+    <div class="stat"><div class="n">4</div><div class="l">idiomas</div></div>
+    <div class="stat"><div class="n">100%</div><div class="l">fresco y equilibrado</div></div>
   </div>
 </div>
 
@@ -323,28 +323,28 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 <section id="how">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">It's this easy</span>
-      <h2 style="margin-top:16px">Three steps to a relaxed week</h2>
-      <p>No stress, no scribbled notes. You tap, Menja plans.</p>
+      <span class="eyebrow">Así de fácil</span>
+      <h2 style="margin-top:16px">Tu semana resuelta en tres pasos</h2>
+      <p>Sin estrés ni notas sueltas. Tú tocas, Menja planifica.</p>
     </div>
     <div class="steps">
       <div class="step">
         <div class="num">01</div>
         <div class="ico">🗓️</div>
-        <h3>Tell us who's eating</h3>
-        <p>Cooking nights, portions, allergies & preferences — set once. We handle the rest.</p>
+        <h3>Dinos quién come</h3>
+        <p>Noches de cocina, raciones, alergias y preferencias — se configuran una vez. Del resto nos encargamos nosotros.</p>
       </div>
       <div class="step">
         <div class="num">02</div>
         <div class="ico">👆</div>
-        <h3>We pick the dishes</h3>
-        <p>Swipe through our suggestions — two taps and dinner's decided. No deciding what to cook.</p>
+        <h3>Elegimos los platos</h3>
+        <p>Deslizas por nuestras sugerencias — dos toques y la cena está decidida. Sin pensar qué cocinar.</p>
       </div>
       <div class="step">
         <div class="num">03</div>
         <div class="ico">🛒</div>
-        <h3>Shopping list & delivery</h3>
-        <p>The list builds itself, sorted by aisle. Get it delivered if you like.</p>
+        <h3>Lista de la compra y entrega</h3>
+        <p>La lista se crea sola, ordenada por pasillo. Pídela a domicilio si quieres.</p>
       </div>
     </div>
   </div>
@@ -354,17 +354,17 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 <section id="features" style="background:var(--cream-2)">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">All-in-one</span>
-      <h2 style="margin-top:16px">Less mental load. More good food.</h2>
-      <p>Menja plans, thinks and writes — you just enjoy.</p>
+      <span class="eyebrow">Todo incluido</span>
+      <h2 style="margin-top:16px">Menos carga mental. Más buena comida.</h2>
+      <p>Menja planifica, piensa y escribe — tú solo disfrutas.</p>
     </div>
     <div class="feat-grid">
-      <div class="feat-card"><div class="fi">🗓️</div><h3>Weekly plan in minutes</h3><p>A balanced week at the tap of a button.</p></div>
-      <div class="feat-card"><div class="fi">🔄</div><h3>Swap with a swipe</h3><p>Meal not right? Just swipe it away.</p></div>
-      <div class="feat-card"><div class="fi">🛒</div><h3>Shopping list, automatic</h3><p>Sorted by aisle, quantities for your family.</p></div>
-      <div class="feat-card"><div class="fi">🌱</div><h3>Learns your taste</h3><p>Suggestions get better with every tap.</p></div>
-      <div class="feat-card"><div class="fi">👩‍🍳</div><h3>Cook mode</h3><p>Big steps, screen stays awake.</p></div>
-      <div class="feat-card"><div class="fi">📊</div><h3>Macros &amp; budget <span class="pro">Premium</span></h3><p>Nutrition &amp; weekly cost at a glance.</p></div>
+      <div class="feat-card"><div class="fi">🗓️</div><h3>Plan semanal en minutos</h3><p>Una semana equilibrada con un toque.</p></div>
+      <div class="feat-card"><div class="fi">🔄</div><h3>Cambia con un gesto</h3><p>¿No te convence un plato? Deslízalo y fuera.</p></div>
+      <div class="feat-card"><div class="fi">🛒</div><h3>Lista de la compra automática</h3><p>Ordenada por pasillo, cantidades para tu familia.</p></div>
+      <div class="feat-card"><div class="fi">🌱</div><h3>Aprende vuestro gusto</h3><p>Las sugerencias mejoran con cada toque.</p></div>
+      <div class="feat-card"><div class="fi">👩‍🍳</div><h3>Modo cocina</h3><p>Pasos grandes, la pantalla no se apaga.</p></div>
+      <div class="feat-card"><div class="fi">📊</div><h3>Macros y presupuesto <span class="pro">Premium</span></h3><p>Nutrientes y coste semanal a la vista.</p></div>
     </div>
   </div>
 </section>
@@ -374,18 +374,18 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
   <div class="wrap">
     <div class="deliver">
       <div>
-        <span class="eyebrow">🚚 Straight to your door</span>
-        <h2>No time to shop? Get it delivered.</h2>
-        <p>With one tap, Menja turns your weekly list into a ready basket at your supermarket. No queues, no heavy bags — everything to your door.</p>
-        <a class="btn btn-primary btn-lg" href="app.html">Build list & get it delivered →</a>
+        <span class="eyebrow">🚚 Directo a casa</span>
+        <h2>¿Sin tiempo para comprar? Pídelo a domicilio.</h2>
+        <p>Con un toque, Menja convierte tu lista semanal en una cesta lista en tu supermercado. Sin colas, sin bolsas pesadas — todo hasta tu puerta.</p>
+        <a class="btn btn-primary btn-lg" href="app.html">Crear lista y pedir a domicilio →</a>
       </div>
       <div class="deliver-card">
-        <div class="dl"><span>🛒 Your weekly list</span><span class="pill">31 items</span></div>
-        <div class="dl"><span>🥦 Fruit & veg</span><span>12</span></div>
-        <div class="dl"><span>🧀 Chilled</span><span>7</span></div>
-        <div class="dl"><span>🍚 Pantry</span><span>9</span></div>
-        <div class="dl"><span>🧴 Household</span><span>3</span></div>
-        <div class="dl" style="font-weight:700;color:#fff"><span>Deliver ↗</span><span class="pill">to basket</span></div>
+        <div class="dl"><span>🛒 Tu lista semanal</span><span class="pill">31 artículos</span></div>
+        <div class="dl"><span>🥦 Frutas y verduras</span><span>12</span></div>
+        <div class="dl"><span>🧀 Refrigerados</span><span>7</span></div>
+        <div class="dl"><span>🍚 Despensa</span><span>9</span></div>
+        <div class="dl"><span>🧴 Hogar</span><span>3</span></div>
+        <div class="dl" style="font-weight:700;color:#fff"><span>Pedir ↗</span><span class="pill">a la cesta</span></div>
       </div>
     </div>
   </div>
@@ -395,21 +395,21 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 <section id="rezepte" style="background:var(--cream-2)">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">70+ recipes</span>
-      <h2 style="margin-top:16px">Fresh, seasonal, family-approved</h2>
-      <p>From quick weeknight bowls to cosy Sunday dinners — with quantities for your family.</p>
+      <span class="eyebrow">70+ recetas</span>
+      <h2 style="margin-top:16px">Frescas, de temporada, probadas en familia</h2>
+      <p>Desde bols rápidos entre semana hasta comidas tranquilas de domingo — con cantidades para tu familia.</p>
     </div>
     <div class="rec-grid">
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FCEBD6,#F6D9B0)">🍠<img src="https://v3b.fal.media/files/b/0a9cf80d/7zutElf_TjiowoI0eejH7_15c2f43eb8bb426794a154cab2c0dd86.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Sweet Potato & Black Bean Bowl</div><div class="meta"><span>⏱ 35 min</span><span>★ 4.8</span></div><span class="tagpill">🌱 Vegan</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#DDEBD3,#C2DCB3)">🥣<img src="https://v3b.fal.media/files/b/0a9cf80e/WnMhvGHsQGJGf1TOrDqWU_1fa88565ef2348b389ebc30621d56e18.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Quinoa Bowl with Spicy Feta</div><div class="meta"><span>⏱ 20 min</span><span>★ 4.7</span></div><span class="tagpill">Vegetarian</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FAD9D6,#F2B7B0)">🐟<img src="https://v3b.fal.media/files/b/0a9cf810/YldT8fEaQSbEiwpPtAi9-_8650139d875948afa7f577d9948b5767.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Salmon with Lemon Mustard & Rice</div><div class="meta"><span>⏱ 25 min</span><span>★ 4.9</span></div><span class="tagpill">Family</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#F6E7C9,#EAD09B)">🍳<img src="https://v3b.fal.media/files/b/0a9cf81c/UFmFqJwMEaQs2bzroN4Cf_f8b59cb172704b13b3c0201045f583b3.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Shakshuka with Feta</div><div class="meta"><span>⏱ 30 min</span><span>★ 4.8</span></div><span class="tagpill">Vegetarian</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#E7D9F2,#D2BCEA)">🥗<img src="https://v3b.fal.media/files/b/0a9cf81b/ppwZQjGRNNGr0QfT4H9Vg_a7e083401e114462a718168a0a6970c9.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Burrata with Asparagus & Peas</div><div class="meta"><span>⏱ 15 min</span><span>★ 4.6</span></div><span class="tagpill">Quick</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FCEBD6,#F6D9B0)">🍝<img src="https://v3b.fal.media/files/b/0a9cf822/2MLb-hjHqQK9mWg7Z8Ur8_6b3b176ec6824a38827dccb7c442a2f8.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Spinach & Ricotta Pasta</div><div class="meta"><span>⏱ 20 min</span><span>★ 4.7</span></div><span class="tagpill">Vegetarian</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#DDEBD3,#C2DCB3)">🥦<img src="https://v3b.fal.media/files/b/0a9cf826/1iS7uLb0aBQe_BfGUZc-E_cf9311d4fa3d47f3801019bb7f0f1f99.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Roasted Broccoli & Tahini</div><div class="meta"><span>⏱ 30 min</span><span>★ 4.6</span></div><span class="tagpill">🌱 Vegan</span></div></div>
-      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#F6E7C9,#EAD09B)">🥞<img src="https://v3b.fal.media/files/b/0a9cf822/3_LU0Ck8ysbvvtQWZMIdu_90ec3e20f4dd4bb788db6159ca5a5015.jpg" alt="" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Carrot Cake Pancakes</div><div class="meta"><span>⏱ 25 min</span><span>★ 4.9</span></div><span class="tagpill">🧒 Kids</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FCEBD6,#F6D9B0)">🍠<img src="https://v3b.fal.media/files/b/0a9cf80d/7zutElf_TjiowoI0eejH7_15c2f43eb8bb426794a154cab2c0dd86.jpg" alt="Bol de boniato y frijoles" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Bol de boniato y frijoles</div><div class="meta"><span>⏱ 35 min</span><span>★ 4.8</span></div><span class="tagpill">🌱 Vegan</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#DDEBD3,#C2DCB3)">🥣<img src="https://v3b.fal.media/files/b/0a9cf80e/WnMhvGHsQGJGf1TOrDqWU_1fa88565ef2348b389ebc30621d56e18.jpg" alt="Bol de quinoa con feta picante" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Bol de quinoa con feta picante</div><div class="meta"><span>⏱ 20 min</span><span>★ 4.7</span></div><span class="tagpill">Vegetariano</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FAD9D6,#F2B7B0)">🐟<img src="https://v3b.fal.media/files/b/0a9cf810/YldT8fEaQSbEiwpPtAi9-_8650139d875948afa7f577d9948b5767.jpg" alt="Salmón con mostaza al limón y arroz" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Salmón con mostaza al limón y arroz</div><div class="meta"><span>⏱ 25 min</span><span>★ 4.9</span></div><span class="tagpill">Familia</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#F6E7C9,#EAD09B)">🍳<img src="https://v3b.fal.media/files/b/0a9cf81c/UFmFqJwMEaQs2bzroN4Cf_f8b59cb172704b13b3c0201045f583b3.jpg" alt="Shakshuka con feta" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Shakshuka con feta</div><div class="meta"><span>⏱ 30 min</span><span>★ 4.8</span></div><span class="tagpill">Vegetariano</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#E7D9F2,#D2BCEA)">🥗<img src="https://v3b.fal.media/files/b/0a9cf81b/ppwZQjGRNNGr0QfT4H9Vg_a7e083401e114462a718168a0a6970c9.jpg" alt="Burrata con espárragos y guisantes" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Burrata con espárragos y guisantes</div><div class="meta"><span>⏱ 15 min</span><span>★ 4.6</span></div><span class="tagpill">Rápido</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#FCEBD6,#F6D9B0)">🍝<img src="https://v3b.fal.media/files/b/0a9cf822/2MLb-hjHqQK9mWg7Z8Ur8_6b3b176ec6824a38827dccb7c442a2f8.jpg" alt="Pasta de espinacas y ricotta" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Pasta de espinacas y ricotta</div><div class="meta"><span>⏱ 20 min</span><span>★ 4.7</span></div><span class="tagpill">Vegetariano</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#DDEBD3,#C2DCB3)">🥦<img src="https://v3b.fal.media/files/b/0a9cf826/1iS7uLb0aBQe_BfGUZc-E_cf9311d4fa3d47f3801019bb7f0f1f99.jpg" alt="Brócoli asado y tahini" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Brócoli asado y tahini</div><div class="meta"><span>⏱ 30 min</span><span>★ 4.6</span></div><span class="tagpill">🌱 Vegan</span></div></div>
+      <div class="rec"><div class="img" style="background:linear-gradient(135deg,#F6E7C9,#EAD09B)">🥞<img src="https://v3b.fal.media/files/b/0a9cf822/3_LU0Ck8ysbvvtQWZMIdu_90ec3e20f4dd4bb788db6159ca5a5015.jpg" alt="Tortitas de tarta de zanahoria" loading="lazy" onerror="this.remove()"></div><div class="b"><div class="name">Tortitas de tarta de zanahoria</div><div class="meta"><span>⏱ 25 min</span><span>★ 4.9</span></div><span class="tagpill">🧒 Niños</span></div></div>
     </div>
-    <div class="center" style="margin-top:38px"><a class="btn btn-primary btn-lg" href="app.html">Discover all recipes →</a></div>
+    <div class="center" style="margin-top:38px"><a class="btn btn-primary btn-lg" href="app.html">Descubre todas las recetas →</a></div>
   </div>
 </section>
 
@@ -417,36 +417,36 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 <section id="preise">
   <div class="wrap">
     <div class="section-head center">
-      <span class="eyebrow">Pricing</span>
-      <h2 style="margin-top:16px">Start free. Premium when you want more.</h2>
-      <p>Planning, recipes and the shopping list are and stay free.</p>
+      <span class="eyebrow">Precios</span>
+      <h2 style="margin-top:16px">Empieza gratis. Premium cuando quieras más.</h2>
+      <p>Planificar, las recetas y la lista de la compra son y seguirán siendo gratis.</p>
     </div>
     <div class="plans">
       <div class="plan">
-        <h3>🌿 Free</h3>
-        <div class="price">0 €<small> / forever</small></div>
+        <h3>🌿 Gratis</h3>
+        <div class="price">0 €<small> / para siempre</small></div>
         <ul>
-          <li><span class="dot">✓</span> Plan the whole week in minutes</li>
-          <li><span class="dot">✓</span> Swap meals & skip days</li>
-          <li><span class="dot">✓</span> Automatic shopping list + basics</li>
-          <li><span class="dot">✓</span> Direct purchase & home delivery</li>
-          <li><span class="dot">✓</span> Your favourites cookbook</li>
-          <li><span class="dot">✓</span> Learns your family's taste</li>
+          <li><span class="dot">✓</span> Planifica toda la semana en minutos</li>
+          <li><span class="dot">✓</span> Cambia platos y salta días</li>
+          <li><span class="dot">✓</span> Lista de la compra automática + básicos</li>
+          <li><span class="dot">✓</span> Compra directa y entrega a domicilio</li>
+          <li><span class="dot">✓</span> Tu recetario de favoritos</li>
+          <li><span class="dot">✓</span> Aprende el gusto de tu familia</li>
         </ul>
-        <a class="btn btn-ghost" href="app.html">Get started free</a>
+        <a class="btn btn-ghost" href="app.html">Empieza gratis</a>
       </div>
       <div class="plan hl">
         <span class="badge">Popular</span>
         <h3>⭐ Premium</h3>
-        <div class="price">€4.99<small> / month</small></div>
+        <div class="price">4,99 €<small> / mes</small></div>
         <ul>
-          <li><span class="dot">✓</span> Everything in Free</li>
-          <li><span class="dot">✓</span> 📊 Macro tracking – calories & protein</li>
-          <li><span class="dot">✓</span> 💶 Budget mode – weekly cost</li>
-          <li><span class="dot">✓</span> 🗓️ Plan up to 4 weeks ahead</li>
-          <li><span class="dot">✓</span> ☁️ Sync across all devices</li>
+          <li><span class="dot">✓</span> Todo lo de Gratis</li>
+          <li><span class="dot">✓</span> 📊 Seguimiento de macros – calorías y proteínas</li>
+          <li><span class="dot">✓</span> 💶 Modo presupuesto – coste semanal</li>
+          <li><span class="dot">✓</span> 🗓️ Planifica hasta 4 semanas</li>
+          <li><span class="dot">✓</span> ☁️ Sincronizado en todos tus dispositivos</li>
         </ul>
-        <a class="btn btn-primary" href="app.html">Try 7 days free</a>
+        <a class="btn btn-primary" href="app.html">Prueba 7 días gratis</a>
       </div>
     </div>
   </div>
@@ -456,10 +456,10 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 <section>
   <div class="wrap">
     <div class="final">
-      <h2>Tonight's dinner is already sorted.</h2>
-      <p>Join families who've left the nightly "what do I cook?" behind.</p>
-      <a class="btn btn-primary btn-lg" href="app.html">Start free now →</a>
-      <div class="sub">No download needed · Right in your browser · Add to home screen</div>
+      <h2>La cena de hoy ya está resuelta.</h2>
+      <p>Únete a las familias que han dejado atrás el "¿qué cocino?" de cada noche.</p>
+      <a class="btn btn-primary btn-lg" href="app.html">Empieza gratis ahora →</a>
+      <div class="sub">Kein Download nötig · En el navegador · Zum Startbildschirm hinzufügbar</div>
     </div>
   </div>
 </section>
@@ -470,32 +470,32 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
     <div class="foot-grid">
       <div class="foot-brand">
         <div class="logo"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2F5A39"/><path d="M6 16 h20 a10 10 0 0 1 -20 0 Z" fill="#FBF5E9"/><circle cx="16" cy="11" r="3.4" fill="#D6492F"/><path d="M19 9 q3.5 -3 5.5 -1.2" stroke="#E6A92E" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg> <span class="wm">Menja <em>Fresh</em></span></div>
-        <p>The relaxed weekly meal planner for families. Fresh, seasonal recipes, automatic shopping list and home delivery.</p>
+        <p>El planificador semanal relajado para familias. Recetas frescas y de temporada, lista de la compra automática y entrega a domicilio.</p>
       </div>
       <div class="foot-col">
-        <h4>Product</h4>
-        <a href="#how">How it works</a>
-        <a href="#features">Features</a>
-        <a href="#rezepte">Recipes</a>
-        <a href="#preise">Pricing</a>
+        <h4>Producto</h4>
+        <a href="#how">Cómo funciona</a>
+        <a href="#features">Funciones</a>
+        <a href="#rezepte">Recetas</a>
+        <a href="#preise">Precios</a>
       </div>
       <div class="foot-col">
         <h4>App</h4>
-        <a href="app.html">Sign in</a>
-        <a href="app.html">Get started free</a>
-        <a href="#liefern">Delivery</a>
+        <a href="app.html">Iniciar sesión</a>
+        <a href="app.html">Empieza gratis</a>
+        <a href="#liefern">Entrega</a>
       </div>
       <div class="foot-col">
         <h4>Legal</h4>
-        <a href="legal-notice.html">Legal Notice</a>
-        <a href="privacy.html">Privacy</a>
-        <a href="terms.html">Terms of Use</a>
-        <a href="mailto:info@menja-fresh.com">Contact</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="condiciones.html">Condiciones</a>
+        <a href="mailto:info@menja-fresh.com">Contacto</a>
       </div>
     </div>
     <div class="foot-bottom">
       <div>© 2026 Menja Fresh · menja-fresh.com</div>
-      <div><a href="legal-notice.html">Legal Notice</a> · <a href="privacy.html">Privacy</a> · <a href="terms.html">Terms of Use</a></div>
+      <div><a href="aviso-legal.html">Aviso legal</a> · <a href="privacidad.html">Privacidad</a> · <a href="condiciones.html">Condiciones</a></div>
     </div>
   </div>
 </footer>
