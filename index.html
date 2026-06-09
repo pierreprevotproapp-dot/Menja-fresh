@@ -458,6 +458,18 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .rate-star.filled{color:var(--gold)}.rate-star:hover{transform:scale(1.2)}
 .rate-submit{width:100%;padding:13px;background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;font-size:14px;font-weight:500;cursor:pointer;margin-top:4px}
 .rate-skip{display:block;text-align:center;padding:12px 20px 0;font-size:13px;color:var(--text3);cursor:pointer}
+/* ── CHIP DETAIL SHEET ─────────────────────────── */
+.cd-sheet{padding:16px 20px 6px}
+.cd-img{width:100%;height:150px;object-fit:cover;border-radius:var(--r);display:block;margin-bottom:12px}
+.cd-img-em{width:100%;height:150px;display:flex;align-items:center;justify-content:center;font-size:60px;background:var(--surface2);border-radius:var(--r);margin-bottom:12px}
+.cd-name{font-family:var(--fd);font-size:18px;font-weight:500;margin-bottom:4px}
+.cd-sub{font-size:12px;color:var(--text2);margin-bottom:4px;line-height:1.5}
+.cd-btns{display:flex;flex-direction:column;gap:8px;padding:8px 20px 24px}
+.cd-add-btn{background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:13px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--fb);width:100%}
+.cd-close-btn{background:none;border:1.5px solid var(--border2);border-radius:99px;padding:11px;font-size:13px;font-weight:500;cursor:pointer;font-family:var(--fb);color:var(--text2);width:100%}
+/* ── HEART LIKE BUTTON ─────────────────────────── */
+.rec-heart-btn{background:none;border:none;font-size:22px;cursor:pointer;color:#ccc;flex-shrink:0;padding:2px 0 2px 6px;line-height:1;transition:color .15s;-webkit-tap-highlight-color:transparent}
+.rec-heart-btn.liked{color:#e05a5a}
 .th{padding:20px 20px 12px;background:var(--nav);border-radius:0 0 22px 22px;margin-bottom:4px}
 .th-date{font-size:11px;opacity:.6;margin-bottom:3px;text-transform:uppercase;letter-spacing:.08em;color:var(--nav-t)}
 .th h1{font-family:var(--fd);font-size:25px;font-weight:500;line-height:1.1;color:#fff}
@@ -763,6 +775,16 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 <div id="ghost"><div id="ghost-img"></div><div class="chip-name" id="ghost-name"></div></div>
 <div class="picker-bg" id="picker-bg"><div class="picker-modal"><div class="p-handle"></div><div class="p-preview" id="p-preview"></div><div class="p-q" id="p-q"></div><div class="p-opts" id="p-opts"></div><div class="p-cancel" onclick="closePicker()" data-t="cancel">Cancel</div></div></div>
 <div class="picker-bg" id="rate-bg"><div class="rate-modal"><div class="p-handle"></div><div class="rate-preview" id="rate-preview"></div><div class="rate-body"><p data-t="rateQ">How did you enjoy this meal?</p><div class="rate-stars" id="rate-stars"></div><button class="rate-submit" onclick="submitRating()" data-t="saveRating">Save rating</button></div><div class="rate-skip" onclick="closeRating()" data-t="skip">Skip</div></div></div>
+<div class="picker-bg" id="chip-detail-bg" onclick="event.target===this&&closeChipDetail()">
+  <div class="picker-modal">
+    <div class="p-handle"></div>
+    <div class="cd-sheet" id="chip-detail-content"></div>
+    <div class="cd-btns">
+      <button class="cd-add-btn" id="chip-detail-add-btn" onclick="chipDetailAddToWeek()"></button>
+      <button class="cd-close-btn" id="chip-detail-close-btn" onclick="closeChipDetail()"></button>
+    </div>
+  </div>
+</div>
 <script>
 
 // ═══════════════════════════════════════════════════
@@ -843,6 +865,14 @@ en:{
   fridgeTitle:'📷 Fridge Scanner',fridgeSub:'Photo your fridge — AI spots ingredients and suggests recipes',fridgeUploadTitle:'Tap to take or upload a photo',fridgeUploadSub:'Fridge, pantry or any food photo works',fridgeScanBtn:'Find recipes from my fridge',fridgeScanning:'Scanning your fridge...',fridgeAnalysing:'Analysing ingredients...',fridgeGenerating:'Finding matching recipes...',fridgeFoundTitle:'Found in your fridge',fridgeMatchTitle:'Recipes you can make',fridgeAiTitle:'AI recipe idea',fridgeNeedAlso:'Also need:',fridgeCanMake:'You have all ingredients!',fridgeTryAnother:'Scan another photo',
   genericIntro:'Tap items to add to your list',inPantry:'In pantry',
   appleBtn:'Continue with Apple',guestLimits:'Guest: 4 dishes · 3-day planner',freeAccountTitle:'Free account',freeAccountDesc:'10 dishes, full week planner, sync across devices',premiumCTA:"Unlock Premium",
+  prep:'Prep',cook:'Cook',total:'Total',fiber:'Fiber',sauceAndDressing:'Sauce & Dressing',
+  viewRecipe:'View recipe →',nothingPlanned:'Nothing planned',
+  mealBreakfast:'Breakfast',mealLunch:'Lunch',mealDinner:'Dinner',
+  replacesSlot:'Replaces',emptySlot:'Empty slot',
+  addToMyWeek:'+ Add to my week',closeBtn:'Close',
+  tomorrow:'Tomorrow',goodNight:'Good night 🌙',moreIngredients:'more',
+  noMealsToday:'No meals planned today',noMealsThisDay:'No meals planned for this day',
+  goToPlannerMsg:'Go to the Planner tab to add meals',openPlannerBtn:'Open Planner →',
 },
 fr:{
   signin:'Se connecter',signup:'Créer un compte',email:'E-mail',password:'Mot de passe',
@@ -888,6 +918,14 @@ fr:{
   fridgeTitle:'📷 Scanner Frigo',fridgeSub:"Photo de votre frigo — l'IA détecte les ingrédients",fridgeUploadTitle:'Appuyez pour prendre ou télécharger une photo',fridgeUploadSub:'Photo de frigo ou placard',fridgeScanBtn:'Trouver des recettes depuis mon frigo',fridgeScanning:'Analyse du frigo...',fridgeAnalysing:'Identification des ingrédients...',fridgeGenerating:'Recherche de recettes...',fridgeFoundTitle:'Trouvé dans votre frigo',fridgeMatchTitle:'Recettes réalisables',fridgeAiTitle:'Idée IA',fridgeNeedAlso:'Il manque :',fridgeCanMake:'Vous avez tout !',fridgeTryAnother:'Scanner une autre photo',
   genericIntro:'Tapez pour ajouter à votre liste',inPantry:'En garde-manger',
   appleBtn:'Continuer avec Apple',guestLimits:'Invité : 4 plats · Planificateur 3 jours',freeAccountTitle:'Compte gratuit',freeAccountDesc:'10 plats, planificateur semaine complète, synchronisation',premiumCTA:'Débloquer Premium',
+  prep:'Prép.',cook:'Cuisson',total:'Total',fiber:'Fibres',sauceAndDressing:'Sauce & Vinaigrette',
+  viewRecipe:'Voir la recette →',nothingPlanned:'Rien de planifié',
+  mealBreakfast:'Petit-déjeuner',mealLunch:'Déjeuner',mealDinner:'Dîner',
+  replacesSlot:'Remplace',emptySlot:'Créneau vide',
+  addToMyWeek:'+ Ajouter à ma semaine',closeBtn:'Fermer',
+  tomorrow:'Demain',goodNight:'Bonne nuit 🌙',moreIngredients:'autres',
+  noMealsToday:"Pas de repas prévu aujourd'hui",noMealsThisDay:'Pas de repas prévu ce jour',
+  goToPlannerMsg:"Allez dans l'onglet Planificateur",openPlannerBtn:'Ouvrir le Planificateur →',
 },
 es:{
   signin:'Iniciar sesión',signup:'Crear cuenta',email:'Correo',password:'Contraseña',
@@ -933,6 +971,14 @@ es:{
   fridgeTitle:'📷 Escáner de Nevera',fridgeSub:'Foto de tu nevera — la IA detecta ingredientes y sugiere recetas',fridgeUploadTitle:'Toca para tomar o subir una foto',fridgeUploadSub:'Vale cualquier foto de nevera',fridgeScanBtn:'Encontrar recetas desde mi nevera',fridgeScanning:'Escaneando la nevera...',fridgeAnalysing:'Analizando ingredientes...',fridgeGenerating:'Buscando recetas...',fridgeFoundTitle:'Encontrado en tu nevera',fridgeMatchTitle:'Recetas que puedes hacer',fridgeAiTitle:'Receta IA',fridgeNeedAlso:'También necesitas:',fridgeCanMake:'¡Tienes todo!',fridgeTryAnother:'Escanear otra foto',
   genericIntro:'Toca para añadir a tu lista',inPantry:'En despensa',
   appleBtn:'Continuar con Apple',guestLimits:'Invitado: 4 platos · Planificador 3 días',freeAccountTitle:'Cuenta gratuita',freeAccountDesc:'10 platos, planificador semana completa, sincronización',premiumCTA:'Desbloquear Premium',
+  prep:'Prep.',cook:'Cocción',total:'Total',fiber:'Fibra',sauceAndDressing:'Salsa y Aliño',
+  viewRecipe:'Ver receta →',nothingPlanned:'Nada planificado',
+  mealBreakfast:'Desayuno',mealLunch:'Almuerzo',mealDinner:'Cena',
+  replacesSlot:'Reemplaza',emptySlot:'Ranura vacía',
+  addToMyWeek:'+ Añadir a mi semana',closeBtn:'Cerrar',
+  tomorrow:'Mañana',goodNight:'Buenas noches 🌙',moreIngredients:'más',
+  noMealsToday:'Sin comidas planificadas hoy',noMealsThisDay:'Sin comidas planificadas',
+  goToPlannerMsg:'Ve a la pestaña Planificador',openPlannerBtn:'Abrir Planificador →',
 },
 pt:{
   signin:'Entrar',signup:'Criar conta',email:'E-mail',password:'Senha',
@@ -978,6 +1024,14 @@ pt:{
   fridgeTitle:'📷 Scanner do Frigorífico',fridgeSub:'Foto do seu frigorífico — IA deteta ingredientes e sugere receitas',fridgeUploadTitle:'Toque para tirar ou carregar foto',fridgeUploadSub:'Qualquer foto de frigorífico',fridgeScanBtn:'Encontrar receitas do meu frigorífico',fridgeScanning:'A analisar...',fridgeAnalysing:'A identificar ingredientes...',fridgeGenerating:'A procurar receitas...',fridgeFoundTitle:'Encontrado no seu frigorífico',fridgeMatchTitle:'Receitas que pode fazer',fridgeAiTitle:'Receita IA',fridgeNeedAlso:'Também precisa:',fridgeCanMake:'Tem tudo!',fridgeTryAnother:'Escanear outra foto',
   genericIntro:'Toque para adicionar à sua lista',inPantry:'Na despensa',
   appleBtn:'Continuar com Apple',guestLimits:'Convidado: 4 pratos · Planificador 3 dias',freeAccountTitle:'Conta gratuita',freeAccountDesc:'10 pratos, planificador semana completa, sincronização',premiumCTA:'Desbloquear Premium',
+  prep:'Prep.',cook:'Cozedura',total:'Total',fiber:'Fibra',sauceAndDressing:'Molho e Tempero',
+  viewRecipe:'Ver receita →',nothingPlanned:'Nada planejado',
+  mealBreakfast:'Café da manhã',mealLunch:'Almoço',mealDinner:'Jantar',
+  replacesSlot:'Substitui',emptySlot:'Slot vazio',
+  addToMyWeek:'+ Adicionar à minha semana',closeBtn:'Fechar',
+  tomorrow:'Amanhã',goodNight:'Boa noite 🌙',moreIngredients:'mais',
+  noMealsToday:'Sem refeições planejadas hoje',noMealsThisDay:'Sem refeições planejadas',
+  goToPlannerMsg:'Vá para a aba Planejador',openPlannerBtn:'Abrir Planejador →',
 },
 de:{
   signin:'Anmelden',signup:'Konto erstellen',email:'E-Mail',password:'Passwort',
@@ -1023,6 +1077,14 @@ de:{
   fridgeTitle:'📷 Kühlschrank-Scanner',fridgeSub:'Foto des Kühlschranks — KI erkennt Zutaten und schlägt Rezepte vor',fridgeUploadTitle:'Tippen zum Aufnehmen oder Hochladen',fridgeUploadSub:'Kühlschrank- oder Speisekammerfotos',fridgeScanBtn:'Rezepte aus meinem Kühlschrank finden',fridgeScanning:'Wird gescannt...',fridgeAnalysing:'Zutaten werden erkannt...',fridgeGenerating:'Rezepte werden gesucht...',fridgeFoundTitle:'Im Kühlschrank gefunden',fridgeMatchTitle:'Mögliche Rezepte',fridgeAiTitle:'KI-Rezeptidee',fridgeNeedAlso:'Fehlt noch:',fridgeCanMake:'Sie haben alles!',fridgeTryAnother:'Anderes Foto scannen',
   genericIntro:'Tippen um zur Liste hinzuzufügen',inPantry:'In Speisekammer',
   appleBtn:'Mit Apple fortfahren',guestLimits:'Gast: 4 Gerichte · 3-Tage-Planer',freeAccountTitle:'Kostenloses Konto',freeAccountDesc:'10 Gerichte, Wochenplaner, geräteübergreifende Sync',premiumCTA:'Premium freischalten',
+  prep:'Vorb.',cook:'Kochen',total:'Gesamt',fiber:'Ballaststoffe',sauceAndDressing:'Sauce & Dressing',
+  viewRecipe:'Rezept ansehen →',nothingPlanned:'Nichts geplant',
+  mealBreakfast:'Frühstück',mealLunch:'Mittagessen',mealDinner:'Abendessen',
+  replacesSlot:'Ersetzt',emptySlot:'Leerer Slot',
+  addToMyWeek:'+ Zur Woche hinzufügen',closeBtn:'Schließen',
+  tomorrow:'Morgen',goodNight:'Gute Nacht 🌙',moreIngredients:'weitere',
+  noMealsToday:'Keine Mahlzeiten heute geplant',noMealsThisDay:'Keine Mahlzeiten geplant',
+  goToPlannerMsg:'Gehen Sie zum Planer-Tab',openPlannerBtn:'Planer öffnen →',
 },
 };
 
@@ -1077,6 +1139,19 @@ const MON_PT=['Jan','Fev','Mar','Abr','Mai','Jun','Jul','Ago','Set','Out','Nov',
 const MON_DE=['Jan','Feb','Mär','Apr','Mai','Jun','Jul','Aug','Sep','Okt','Nov','Dez'];
 function dow(d){return({en:DOW_EN,fr:DOW_FR,es:DOW_ES,pt:DOW_PT,de:DOW_DE}[lang]||DOW_EN)[d.getDay()];}
 function mon(d){return({en:MON_EN,fr:MON_FR,es:MON_ES,pt:MON_PT,de:MON_DE}[lang]||MON_EN)[d.getMonth()];}
+
+const DAY_EN=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+const DAY_FR=['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
+const DAY_ES=['Domingo','Lunes','Martes','Miércoles','Jueves','Viernes','Sábado'];
+const DAY_PT=['Domingo','Segunda-feira','Terça-feira','Quarta-feira','Quinta-feira','Sexta-feira','Sábado'];
+const DAY_DE=['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'];
+const MONTH_EN=['January','February','March','April','May','June','July','August','September','October','November','December'];
+const MONTH_FR=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const MONTH_ES=['Enero','Febrero','Marzo','Abril','Mayo','Junio','Julio','Agosto','Septiembre','Octubre','Noviembre','Diciembre'];
+const MONTH_PT=['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+const MONTH_DE=['Januar','Februar','März','April','Mai','Juni','Juli','August','September','Oktober','November','Dezember'];
+function dayFull(d){return({en:DAY_EN,fr:DAY_FR,es:DAY_ES,pt:DAY_PT,de:DAY_DE}[lang]||DAY_EN)[d.getDay()];}
+function monFull(d){return({en:MONTH_EN,fr:MONTH_FR,es:MONTH_ES,pt:MONTH_PT,de:MONTH_DE}[lang]||MONTH_EN)[d.getMonth()];}
 
 const TAG_KEYS_ALL=['All','Vegetarian','Vegan','GlutenFree','Quick','Mediterranean','Asian','Salad','Soup','Pasta','GrainBowl','ComfortFood'];
 const TAG_TR={
@@ -2430,7 +2505,7 @@ function renderCal(){
       const hasExp=dish&&dish.ingredients.some(ing=>{const days=effDays(ingName(ing));return days!==null&&days<=3;});
       const thumb=dish?(dish.photo?`<img class="slot-thumb" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="slot-thumb-em" style="display:none">${dish.emoji}</div>`:`<div class="slot-thumb-em">${dish.emoji}</div>`):'';
       const gc=dish?`<div class="guest-counter"><button class="gc-btn" onclick="adjG(event,'${key}','${type}',-1)">−</button><span class="gc-label">${guestLabel(slot)}</span><button class="gc-btn" onclick="adjG(event,'${key}','${type}',1)">+</button></div>`:'';
-      return`<div class="cal-slot" data-key="${key}" data-type="${type}"><div class="slot-type">${MEAL_ICONS[type]} ${type}</div><div class="slot-content">${thumb}${dish?`<span class="slot-name">${dishName(dish)}</span>`:`<span class="slot-empty">—</span>`}${hasExp?`<span class="slot-warn">⚠</span>`:''}</div><div class="slot-right">${gc}${dish?`<div class="slot-rm" onclick="rmMeal('${key}','${type}')">×</div>`:''}</div></div>`;
+      return`<div class="cal-slot" data-key="${key}" data-type="${type}"><div class="slot-type">${MEAL_ICONS[type]} ${t('meal'+type)}</div><div class="slot-content">${thumb}${dish?`<span class="slot-name">${dishName(dish)}</span>`:`<span class="slot-empty">—</span>`}${hasExp?`<span class="slot-warn">⚠</span>`:''}</div><div class="slot-right">${gc}${dish?`<div class="slot-rm" onclick="rmMeal('${key}','${type}')">×</div>`:''}</div></div>`;
     }).join('');
     return`<div class="cal-day" id="calday-${key}"><div class="cal-hdr ${isToday?'today':''}" onclick="toggleDay('${key}')"><div class="cal-date"><span class="cal-dow">${dow(d)}</span><span class="cal-num">${d.getDate()}</span></div><div class="cal-summary"><div class="cal-pills">${pills||`<span class="cal-hint">${t('dragHint')}</span>`}</div></div>${expired?`<div class="exp-dot"></div>`:''}<div class="cal-chev ${isOpen?'open':''}">›</div></div><div class="cal-slots ${isOpen?'open':''}" id="slots-${key}">${slots}</div></div>`;
   }).join('');
@@ -2459,15 +2534,67 @@ function toggleDay(key){
 function rmMeal(key,type){if(state.plan[key])state.plan[key][type]=null;save();rebuildShopping();updateBadge();renderPlan();}
 
 let activeDrag=null;const ghost=document.getElementById('ghost');
-function chipStart(e){e.preventDefault();const chip=e.currentTarget;const id=parseInt(chip.dataset.id);const dish=getDish(id);if(!dish)return;const p=e.touches?e.touches[0]:e;activeDrag={dishId:id,chip};document.getElementById('ghost-img').innerHTML=dish.photo?`<img src="${dish.photo}" style="width:100%;height:58px;object-fit:cover">`:`<div class="chip-fb">${dish.emoji}</div>`;document.getElementById('ghost-name').textContent=dishName(dish);ghost.style.display='block';moveGhost(p.clientX,p.clientY);chip.classList.add('dragging');document.querySelectorAll('.cal-slots').forEach(s=>{s._wasClosed=!s.classList.contains('open');s.style.display='block';});window.addEventListener('mousemove',chipMove);window.addEventListener('touchmove',chipMove,{passive:false});window.addEventListener('mouseup',chipEnd);window.addEventListener('touchend',chipEnd);}
+function chipStart(e){e.preventDefault();const chip=e.currentTarget;const id=parseInt(chip.dataset.id);const dish=getDish(id);if(!dish)return;const p=e.touches?e.touches[0]:e;activeDrag={dishId:id,chip,startX:p.clientX,startY:p.clientY,startTime:Date.now()};document.getElementById('ghost-img').innerHTML=dish.photo?`<img src="${dish.photo}" style="width:100%;height:58px;object-fit:cover">`:`<div class="chip-fb">${dish.emoji}</div>`;document.getElementById('ghost-name').textContent=dishName(dish);ghost.style.display='block';moveGhost(p.clientX,p.clientY);chip.classList.add('dragging');document.querySelectorAll('.cal-slots').forEach(s=>{s._wasClosed=!s.classList.contains('open');s.style.display='block';});window.addEventListener('mousemove',chipMove);window.addEventListener('touchmove',chipMove,{passive:false});window.addEventListener('mouseup',chipEnd);window.addEventListener('touchend',chipEnd);}
 function moveGhost(x,y){ghost.style.left=(x-43)+'px';ghost.style.top=(y-37)+'px';}
 function chipMove(e){if(!activeDrag)return;e.preventDefault();const p=e.touches?e.touches[0]:e;moveGhost(p.clientX,p.clientY);ghost.style.display='none';const el=document.elementFromPoint(p.clientX,p.clientY);ghost.style.display='block';document.querySelectorAll('.cal-slot.drop-target').forEach(s=>s.classList.remove('drop-target'));if(el){const slot=el.closest('.cal-slot');if(slot)slot.classList.add('drop-target');const dh=el.closest('.cal-hdr');if(dh){const cd=dh.closest('.cal-day');if(cd){const k=cd.id.replace('calday-','');if(!state.openDays[k]){state.openDays[k]=true;save();const ss=document.getElementById('slots-'+k);const cv=dh.querySelector('.cal-chev');if(ss)ss.classList.add('open');if(cv)cv.classList.add('open');}}}}}
-function chipEnd(e){if(!activeDrag){cleanupDrag();return;}const p=e.changedTouches?e.changedTouches[0]:e;ghost.style.display='none';const el=document.elementFromPoint(p.clientX,p.clientY);document.querySelectorAll('.cal-slot.drop-target').forEach(s=>s.classList.remove('drop-target'));if(activeDrag.chip)activeDrag.chip.classList.remove('dragging');if(el){const slot=el.closest('.cal-slot');if(slot&&slot.dataset.key&&slot.dataset.type){const k=slot.dataset.key;state.openDays[k]=true;save();assignDirect(activeDrag.dishId,k,slot.dataset.type);cleanupDrag();return;}const dh=el.closest('.cal-hdr');if(dh){const cd=dh.closest('.cal-day');if(cd){const k=cd.id.replace('calday-','');openPicker(activeDrag.dishId,k);cleanupDrag();return;}}}cleanupDrag();}
+function chipEnd(e){if(!activeDrag){cleanupDrag();return;}const p=e.changedTouches?e.changedTouches[0]:e;ghost.style.display='none';const el=document.elementFromPoint(p.clientX,p.clientY);document.querySelectorAll('.cal-slot.drop-target').forEach(s=>s.classList.remove('drop-target'));if(activeDrag.chip)activeDrag.chip.classList.remove('dragging');if(el){const slot=el.closest('.cal-slot');if(slot&&slot.dataset.key&&slot.dataset.type){const k=slot.dataset.key;state.openDays[k]=true;save();assignDirect(activeDrag.dishId,k,slot.dataset.type);cleanupDrag();return;}const dh=el.closest('.cal-hdr');if(dh){const cd=dh.closest('.cal-day');if(cd){const k=cd.id.replace('calday-','');openPicker(activeDrag.dishId,k);cleanupDrag();return;}}}
+// Tap detection: small movement + short time = open chip detail (NOT the picker)
+const dist=Math.hypot(p.clientX-(activeDrag.startX||p.clientX),p.clientY-(activeDrag.startY||p.clientY));
+const dur=Date.now()-(activeDrag.startTime||0);
+if(dist<10&&dur<350){const tapId=activeDrag.dishId;cleanupDrag();openChipDetail(tapId);return;}
+cleanupDrag();}
 function cleanupDrag(){activeDrag=null;ghost.style.display='none';document.querySelectorAll('.cal-slots').forEach(s=>{if(s._wasClosed){s.style.display='';s._wasClosed=false;}});window.removeEventListener('mousemove',chipMove);window.removeEventListener('touchmove',chipMove);window.removeEventListener('mouseup',chipEnd);window.removeEventListener('touchend',chipEnd);}
+
+// ── CHIP DETAIL SHEET ──────────────────────────────
+let chipDetailId=null;
+function openChipDetail(id){
+  const d=getDish(id);if(!d)return;
+  chipDetailId=id;
+  const img=d.photo
+    ?`<img class="cd-img" src="${d.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="cd-img-em" style="display:none">${d.emoji}</div>`
+    :`<div class="cd-img-em">${d.emoji}</div>`;
+  document.getElementById('chip-detail-content').innerHTML=`${img}<div class="cd-name">${dishName(d)}</div><div class="cd-sub">${dishSubtitle(d)||dishDesc(d)}</div>`;
+  document.getElementById('chip-detail-add-btn').textContent=t('addToMyWeek');
+  document.getElementById('chip-detail-close-btn').textContent=t('closeBtn');
+  document.getElementById('chip-detail-bg').classList.add('open');
+}
+function closeChipDetail(){
+  document.getElementById('chip-detail-bg').classList.remove('open');
+  chipDetailId=null;
+}
+function chipDetailAddToWeek(){
+  if(!chipDetailId)return;
+  const id=chipDetailId;
+  closeChipDetail();
+  // Find the next date that has at least one free meal slot
+  const dates=getDateRange();
+  let key=dateKey(new Date());
+  for(const d of dates){
+    const k=dateKey(d);
+    const dm=state.plan[k]||{};
+    if(MEAL_TYPES.some(tp=>!dm[tp]?.dishId)){key=k;break;}
+  }
+  openPicker(id,key);
+}
+
+// ── HEART LIKE TOGGLE ─────────────────────────────
+function toggleLike(id){
+  const idx=state.liked.indexOf(id);
+  if(idx>=0){
+    state.liked.splice(idx,1);
+  } else {
+    state.liked.push(id);
+    state.disliked=state.disliked.filter(d=>d!==id);
+  }
+  save();rebuildShopping();updateBadge();
+  if(document.getElementById('screen-recipes').classList.contains('active'))renderRecipes();
+  if(document.getElementById('screen-discover').classList.contains('active'))renderDish();
+}
+
 function assignDirect(dishId,key,type){if(!state.plan[key])state.plan[key]={};state.plan[key][type]={dishId,...defaultGuests()};save();rebuildShopping();updateBadge();renderPlan();}
 
 let pickerState=null;
-function openPicker(dishId,key){const dish=getDish(dishId);if(!dish)return;pickerState={dishId,key};const dm=state.plan[key]||{};const imgH=dish.photo?`<img class="p-img" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="p-img-em" style="display:none">${dish.emoji}</div>`:`<div class="p-img-em">${dish.emoji}</div>`;document.getElementById('p-preview').innerHTML=`${imgH}<div><div class="p-name">${dishName(dish)}</div><div class="p-sub">${dish.tags.map(tk=>tTag(tk)).join(' · ')}</div></div>`;const d=new Date(key+'T00:00:00');document.getElementById('p-q').textContent=`${t('assignMeal')} — ${dow(d)} ${d.getDate()} ${mon(d)}`;document.getElementById('p-opts').innerHTML=MEAL_TYPES.map(type=>{const exist=dm[type]?.dishId?getDish(dm[type].dishId):null;return`<div class="p-opt" onclick="pickerSel('${type}')"><div class="p-ico ${type.toLowerCase()}">${MEAL_ICONS[type]}</div><div><div class="p-lbl">${type}</div><div class="p-sl">${exist?`Replaces ${dishName(exist)}`:'Empty slot'}</div></div></div>`;}).join('');document.getElementById('picker-bg').classList.add('open');}
+function openPicker(dishId,key){const dish=getDish(dishId);if(!dish)return;pickerState={dishId,key};const dm=state.plan[key]||{};const imgH=dish.photo?`<img class="p-img" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="p-img-em" style="display:none">${dish.emoji}</div>`:`<div class="p-img-em">${dish.emoji}</div>`;document.getElementById('p-preview').innerHTML=`${imgH}<div><div class="p-name">${dishName(dish)}</div><div class="p-sub">${dish.tags.map(tk=>tTag(tk)).join(' · ')}</div></div>`;const d=new Date(key+'T00:00:00');document.getElementById('p-q').textContent=`${t('assignMeal')} — ${dow(d)} ${d.getDate()} ${mon(d)}`;document.getElementById('p-opts').innerHTML=MEAL_TYPES.map(type=>{const exist=dm[type]?.dishId?getDish(dm[type].dishId):null;const mealLabel=t('meal'+type);return`<div class="p-opt" onclick="pickerSel('${type}')"><div class="p-ico ${type.toLowerCase()}">${MEAL_ICONS[type]}</div><div><div class="p-lbl">${mealLabel}</div><div class="p-sl">${exist?`${t('replacesSlot')} ${dishName(exist)}`:t('emptySlot')}</div></div></div>`;}).join('');document.getElementById('picker-bg').classList.add('open');}
 function pickerSel(type){if(!pickerState)return;assignDirect(pickerState.dishId,pickerState.key,type);closePicker();}
 function closePicker(){document.getElementById('picker-bg').classList.remove('open');pickerState=null;}
 function autoFill(){if(!state.liked.length){alert(t('saveFirst'));return;}const dates=getDateRange();let idx=0;dates.forEach(d=>{const key=dateKey(d);if(!state.plan[key])state.plan[key]={};MEAL_TYPES.forEach(type=>{if(!state.plan[key][type]||!state.plan[key][type].dishId){state.plan[key][type]={dishId:state.liked[idx%state.liked.length],...defaultGuests()};idx++;}});});save();rebuildShopping();updateBadge();renderPlan();}
@@ -2499,6 +2626,7 @@ function renderRecipes(){
       <div class="rec-card-body">
         <div class="rec-card-top">
           <div class="rec-card-name">${dishName(d)}</div>
+          <button class="rec-heart-btn ${state.liked.includes(id)?'liked':''}" onclick="event.stopPropagation();toggleLike(${id})" aria-label="Like">♥</button>
         </div>
         <div class="rec-card-sub">${dishSubtitle(d)||dishDesc(d)}</div>
         <div class="rec-card-footer">
@@ -2544,10 +2672,10 @@ function renderRecipeDetail(id){
 
   // Meta strip
   const metaStrip=`<div class="rd-meta-strip">
-    ${d.prep?`<div class="rd-meta-item"><div class="rd-meta-val">${d.prep}'</div><div class="rd-meta-lbl">Prep</div></div>`:''}
-    ${d.cook?`<div class="rd-meta-item"><div class="rd-meta-val">${d.cook}'</div><div class="rd-meta-lbl">Cook</div></div>`:''}
-    <div class="rd-meta-item"><div class="rd-meta-val">${totalTime}'</div><div class="rd-meta-lbl">Total</div></div>
-    <div class="rd-meta-item"><div class="rd-meta-val">${d.nutrition?.kcal||'—'}</div><div class="rd-meta-lbl">kcal</div></div>
+    ${d.prep?`<div class="rd-meta-item"><div class="rd-meta-val">${d.prep}'</div><div class="rd-meta-lbl">${t('prep')}</div></div>`:''}
+    ${d.cook?`<div class="rd-meta-item"><div class="rd-meta-val">${d.cook}'</div><div class="rd-meta-lbl">${t('cook')}</div></div>`:''}
+    <div class="rd-meta-item"><div class="rd-meta-val">${totalTime}'</div><div class="rd-meta-lbl">${t('total')}</div></div>
+    <div class="rd-meta-item"><div class="rd-meta-val">${d.nutrition?.kcal||'—'}</div><div class="rd-meta-lbl">${t('kcal')}</div></div>
   </div>`;
 
   // Ingredient grid
@@ -2566,7 +2694,7 @@ function renderRecipeDetail(id){
   const baseHtml=base.length?`<div class="rd-base">${base.map(b=>`<span class="rd-base-chip">${b}</span>`).join('')}</div>`:'';
 
   // Dressing
-  const dressingHtml=dressing.length?`<div class="rd-section" style="margin-top:14px"><div class="rd-section-title">Sauce & Dressing</div><div class="rd-base">${dressing.map(b=>`<span class="rd-base-chip">${b}</span>`).join('')}</div></div>`:'';
+  const dressingHtml=dressing.length?`<div class="rd-section" style="margin-top:14px"><div class="rd-section-title">${t('sauceAndDressing')}</div><div class="rd-base">${dressing.map(b=>`<span class="rd-base-chip">${b}</span>`).join('')}</div></div>`:'';
 
   // Steps
   const stepsHtml=steps.map(step=>{
@@ -2593,7 +2721,7 @@ function renderRecipeDetail(id){
       <div class="rd-nitem"><div class="rd-nval">${d.nutrition.protein}g</div><div class="rd-nlbl">${t('protein')}</div></div>
       <div class="rd-nitem"><div class="rd-nval">${d.nutrition.carbs}g</div><div class="rd-nlbl">${t('carbs')}</div></div>
       <div class="rd-nitem"><div class="rd-nval">${d.nutrition.fat}g</div><div class="rd-nlbl">${t('fat')}</div></div>
-      ${d.nutrition.fiber?`<div class="rd-nitem"><div class="rd-nval">${d.nutrition.fiber}g</div><div class="rd-nlbl">Fiber</div></div>`:''}
+      ${d.nutrition.fiber?`<div class="rd-nitem"><div class="rd-nval">${d.nutrition.fiber}g</div><div class="rd-nlbl">${t('fiber')}</div></div>`:''}
     </div></div>`:'';
 
   dv.innerHTML=`
@@ -2662,11 +2790,9 @@ function renderToday(){
   const todayKey=dateKey(base);
   const isToday=key===todayKey;
   // Date header
-  const days=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
-  const months=['January','February','March','April','May','June','July','August','September','October','November','December'];
-  document.getElementById('th-date').textContent=`${days[target.getDay()]}, ${months[target.getMonth()]} ${target.getDate()}`;
+  document.getElementById('th-date').textContent=`${dayFull(target)}, ${monFull(target)} ${target.getDate()}`;
   const hour=new Date().getHours();
-  let greet=isToday?(hour<12?'Good morning ☀️':hour<17?'Good afternoon 🌤':hour<21?'Good evening 🌙':'Good night 🌙'):(todayOffset===1?'Tomorrow':'In '+todayOffset+' days');
+  let greet=isToday?(hour<12?t('goodMorning'):hour<17?t('goodAfternoon'):hour<21?t('goodEvening'):t('goodNight')):(todayOffset===1?t('tomorrow'):`${monFull(target)} ${target.getDate()}`);
   document.getElementById('th-greet').textContent=greet;
   const jumpBtn=document.getElementById('today-jump-btn');
   if(jumpBtn)jumpBtn.style.display=isToday?'none':'inline-block';
@@ -2674,13 +2800,13 @@ function renderToday(){
   const tm=document.getElementById('tm');
   const meals=MEAL_TYPES.map(type=>{
     const slot=dm[type];const dish=slot?.dishId?getDish(slot.dishId):null;
-    if(!dish)return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)"><div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">${MEAL_ICONS[type]} ${type}</div><div style="font-size:13px;color:var(--text3);font-style:italic">Nothing planned</div></div>`;
+    if(!dish)return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)"><div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px">${MEAL_ICONS[type]} ${t('meal'+type)}</div><div style="font-size:13px;color:var(--text3);font-style:italic">${t('nothingPlanned')}</div></div>`;
     const img=dish.photo?`<img src="${dish.photo}" style="width:56px;height:56px;object-fit:cover;border-radius:10px;flex-shrink:0" onerror="this.style.display='none'">`:`<div style="width:56px;height:56px;border-radius:10px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">${dish.emoji}</div>`;
     const sf=familyServings();const mult=sf/(dish.servings||2);
     const ingList=dish.ingredients.slice(0,4).map(ing=>`${ing.emoji} ${fmtIngQty(ing,mult)}`).join(' · ');
     const totalTime=(dish.prep||0)+(dish.cook||0);
     return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)">
-      <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">${MEAL_ICONS[type]} ${type}</div>
+      <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">${MEAL_ICONS[type]} ${t('meal'+type)}</div>
       <div style="display:flex;gap:12px;align-items:flex-start" onclick="openRecipeFromToday(${dish.id})" style="cursor:pointer">
         ${img}
         <div style="flex:1;min-width:0">
@@ -2689,12 +2815,12 @@ function renderToday(){
           ${totalTime?`<span style="font-size:11px;background:var(--accent-l);color:var(--accent);border-radius:99px;padding:2px 8px">⏱ ${totalTime} min</span>`:''}
         </div>
       </div>
-      <div style="font-size:11px;color:var(--text3);margin-top:8px;line-height:1.6">${ingList}${dish.ingredients.length>4?` · +${dish.ingredients.length-4} more`:''}</div>
-      <button onclick="openRecipeFromToday(${dish.id})" style="margin-top:8px;background:var(--accent-l);color:var(--accent);border:none;border-radius:99px;padding:5px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit">View recipe →</button>
+      <div style="font-size:11px;color:var(--text3);margin-top:8px;line-height:1.6">${ingList}${dish.ingredients.length>4?` · +${dish.ingredients.length-4} ${t('moreIngredients')}`:''}</div>
+      <button onclick="openRecipeFromToday(${dish.id})" style="margin-top:8px;background:var(--accent-l);color:var(--accent);border:none;border-radius:99px;padding:5px 14px;font-size:12px;font-weight:500;cursor:pointer;font-family:inherit">${t('viewRecipe')}</button>
     </div>`;
   }).join('');
-  const hasMeals=MEAL_TYPES.some(t=>dm[t]?.dishId);
-  tm.innerHTML=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">📅</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">No meals planned ${isToday?'today':'for this day'}</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">Go to the Planner tab to add meals</div><button onclick="showTab('plan')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">Open Planner →</button></div>`;
+  const hasMeals=MEAL_TYPES.some(tp=>dm[tp]?.dishId);
+  tm.innerHTML=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">📅</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('noMealsToday'):t('noMealsThisDay')}</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${t('goToPlannerMsg')}</div><button onclick="showTab('plan')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('openPlannerBtn')}</button></div>`;
 }
 
 // ═══════════════════════════════════════════════════
