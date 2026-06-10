@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2732" height="2732" viewBox="0 0 2732 2732">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#37704A"/>
+      <stop offset="1" stop-color="#20402A"/>
+    </linearGradient>
+    <linearGradient id="bowl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFDF7"/>
+      <stop offset="1" stop-color="#F2E8D2"/>
+    </linearGradient>
+    <clipPath id="tile"><rect x="1086" y="1086" width="560" height="560" rx="124"/></clipPath>
+  </defs>
+  <rect width="2732" height="2732" fill="#FBF5E9"/>
+  <!-- centered app-icon tile -->
+  <g clip-path="url(#tile)">
+    <rect x="1086" y="1086" width="560" height="560" fill="url(#bg)"/>
+    <!-- motif scaled into the tile (icon viewBox 1024 mapped to 560 at offset 1086) -->
+    <g transform="translate(1086,1086) scale(0.546875)">
+      <circle cx="512" cy="406" r="66" fill="#E6A92E"/>
+      <circle cx="416" cy="452" r="84" fill="#D6492F"/>
+      <circle cx="610" cy="444" r="74" fill="#83B26A"/>
+      <path d="M612 384 q48 -46 104 -24 q-20 54 -76 54 q-24 -12 -28 -30 Z" fill="#5E9B49"/>
+      <path d="M196 520 Q512 900 828 520 Z" fill="url(#bowl)"/>
+      <ellipse cx="512" cy="520" rx="316" ry="50" fill="#FFFDF7"/>
+      <ellipse cx="512" cy="520" rx="316" ry="50" fill="none" stroke="#E7DCC4" stroke-width="6"/>
+    </g>
+  </g>
+</svg>
