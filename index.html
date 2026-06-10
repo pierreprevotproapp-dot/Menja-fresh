@@ -18,19 +18,7 @@
 <meta name="apple-mobile-web-app-title" content="Menja Fresh">
 <link rel="apple-touch-icon" href="/icon-192.png">
 <meta name="description" content="Seasonal meal planning for your family. Discover dishes, plan your week, generate smart shopping lists.">
-<script>
-// Load Supabase with CDN fallback — if one CDN is slow, try another
-(function(){
-  var s=document.createElement('script');
-  s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';s.async=true;
-  s.onerror=function(){
-    var s2=document.createElement('script');
-    s2.src='https://unpkg.com/@supabase/supabase-js@2';s2.async=true;
-    document.head.appendChild(s2);
-  };
-  document.head.appendChild(s);
-})();
-</script>
+<script src="/supabase-client.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
@@ -819,7 +807,7 @@ function setApiKey(k){try{localStorage.setItem('menja_api_key',k.trim());}catch(
 const LANGS=[
   {code:'en',flag:'🇬🇧'},
   {code:'fr',flag:'🇫🇷'},
-  {code:'es',flag:'🇪🇸'},
+  {code:'es',flag:'🇪🇸'},
   {code:'de',flag:'🇩🇪'},
 ];
 let lang='en';

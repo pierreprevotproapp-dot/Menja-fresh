@@ -1,11 +1,12 @@
 // Menja Fresh — Service Worker
 // Caches the app shell for offline use
 
-const CACHE_NAME = 'menja-v4';
+const CACHE_NAME = 'menja-v5';
 const SHELL = [
   '/',
   '/index.html',
   '/manifest.json',
+  '/supabase-client.js',
 ];
 
 // Install: cache app shell
