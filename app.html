@@ -678,6 +678,26 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .macro-goal-inputs{display:flex;gap:10px}
 .macro-goal-inputs label{flex:1;font-size:11px;color:var(--text3);display:flex;flex-direction:column;gap:4px}
 .macro-goal-inputs input{padding:10px 12px;border-radius:var(--rsm);border:1.5px solid var(--border2);background:var(--surface);font-size:15px;font-family:var(--fb);outline:none}
+/* ── CALORIE / PROTEIN CALCULATOR ────────────── */
+.calc-head{padding:6px 22px 0;text-align:center}
+.calc-body{padding:14px 22px 0;max-height:62vh;overflow-y:auto}
+.calc-row{margin-bottom:14px}
+.calc-row>label{display:block;font-size:12px;font-weight:600;color:var(--text3);margin-bottom:7px}
+.calc-chips{display:flex;gap:7px;flex-wrap:wrap}
+.calc-chip{font-size:13px;font-weight:500;padding:9px 14px;border-radius:99px;background:var(--surface);color:var(--text2);border:1.5px solid var(--border2);cursor:pointer;transition:all .15s;flex:1;text-align:center;white-space:nowrap}
+.calc-chip.on{background:var(--nav);color:var(--nav-a);border-color:var(--nav)}
+.calc-nums{display:flex;gap:10px}
+.calc-nums label{flex:1;font-size:11px;color:var(--text3);display:flex;flex-direction:column;gap:4px;font-weight:600}
+.calc-nums input{padding:11px 12px;border-radius:var(--rsm);border:1.5px solid var(--border2);background:var(--surface);font-size:16px;font-family:var(--fb);outline:none;width:100%}
+.calc-go{display:block;width:100%;background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb);margin-top:4px}
+.calc-result{background:var(--surface2,#f3f1ec);border:1.5px solid var(--border2);border-radius:var(--rmd,14px);padding:16px;margin-top:14px;text-align:center}
+.calc-result-row{display:flex;justify-content:center;gap:26px;margin-bottom:8px}
+.calc-result-row .v{font-family:var(--fd);font-size:30px;font-weight:600;color:var(--text)}
+.calc-result-row .l{font-size:11px;color:var(--text3);text-transform:uppercase;letter-spacing:.04em}
+.calc-note{font-size:12px;color:var(--text2);line-height:1.5;margin-top:4px}
+.calc-disc{font-size:11px;color:var(--text3);line-height:1.45;margin-top:10px}
+.calc-apply{display:block;width:100%;background:var(--accent,#D6492F);color:#fff;border:none;border-radius:99px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb);margin-top:12px}
+.calc-open-btn{display:flex;align-items:center;justify-content:space-between;width:100%;text-align:left}
 /* ── IN-TAB RECIPE OVERLAY ───────────────────── */
 .recipe-ov{display:none;position:fixed;inset:0;background:var(--bg);z-index:760;overflow-y:auto}
 .recipe-ov.open{display:block}
@@ -1165,6 +1185,19 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   </div>
 </div>
 
+<!-- CALORIE & PROTEIN CALCULATOR -->
+<div class="picker-bg" id="calc-bg" onclick="event.target===this&&closeCalc()">
+  <div class="picker-modal calc-modal">
+    <div class="p-handle"></div>
+    <div class="calc-head">
+      <div class="weekdone-title" data-t="calcTitle">Calorie &amp; protein calculator</div>
+      <div class="weekdone-sub" data-t="calcSub">A quick estimate of your daily needs.</div>
+    </div>
+    <div class="calc-body" id="calc-body"></div>
+    <div class="p-cancel" onclick="closeCalc()" data-t="calcClose">Close</div>
+  </div>
+</div>
+
 <!-- FIRST-RUN SETUP -->
 <div class="setup-bg" id="setup-bg">
   <div class="setup-inner">
@@ -1362,7 +1395,16 @@ en:{
   weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",
   setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupDietQ:'Any diet?',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
   cookBack:'‹ Back',cookNext:'Next ›',chooseDinner:'Choose dinner',
-  opt_vegetarian:'Vegetarian',opt_vegan:'Vegan',opt_glutenfree:'Gluten-free',
+  opt_vegetarian:'Vegetarian',opt_pescatarian:'Pescatarian',opt_vegan:'Vegan',opt_glutenfree:'Gluten-free',
+  nutritionGoals:'Daily nutrition goals',perPerson:'per person',macroCalories:'Calories',macroProtein:'Protein (g)',macroGoalsLocked:'Daily macro goals — Premium',
+  calcOpen:'🧮 Calculate calorie & protein needs',calcTitle:'Calorie & protein calculator',calcSub:'A quick estimate of your daily needs.',calcClose:'Close',
+  calcSex:'Sex',calcFemale:'Female',calcMale:'Male',calcAge:'Age',calcHeight:'Height (cm)',calcWeight:'Weight (kg)',
+  calcActivity:'Activity level',calcAct1:'Low',calcAct2:'Light',calcAct3:'Moderate',calcAct4:'Active',
+  calcGoal:'Goal',calcLose:'Lose',calcMaintain:'Maintain',calcGain:'Gain',calcBtn:'Calculate',
+  calcResKcal:'Calories / day',calcResProtein:'Protein / day',
+  calcNote:'Estimated with the Mifflin–St Jeor formula. A good starting point — adjust to how you feel.',
+  calcDisc:'Guidance only, not medical or dietary advice. Talk to a professional for individual needs.',
+  calcApply:'Use these values as my goal',calcInvalid:'Please enter a realistic age, height and weight.',
   opt_peanuts:'Peanuts',opt_treenuts:'Tree nuts',opt_shellfish:'Shellfish',opt_fish:'Fish',opt_dairy:'Dairy',opt_eggs:'Eggs',opt_gluten:'Gluten',opt_soy:'Soy',
   opt_mushroom:'Mushrooms',opt_olives:'Olives',opt_coriander:'Coriander',opt_aubergine:'Aubergine',opt_bellpepper:'Bell pepper',opt_spicy:'Spicy',
   rcat_all:'All',rcat_saved:'❤️ Favourites',rcat_quick:'⚡ Quick',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Gluten-free',rcat_kids:'🧒 Kids',
@@ -1468,7 +1510,16 @@ fr:{
   weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',
   setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupDietQ:'Un régime ?',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
   cookBack:'‹ Retour',cookNext:'Suivant ›',chooseDinner:'Choisir le dîner',
-  opt_vegetarian:'Végétarien',opt_vegan:'Végétalien',opt_glutenfree:'Sans gluten',
+  opt_vegetarian:'Végétarien',opt_pescatarian:'Pescétarien',opt_vegan:'Végétalien',opt_glutenfree:'Sans gluten',
+  nutritionGoals:'Objectifs nutritionnels quotidiens',perPerson:'par personne',macroCalories:'Calories',macroProtein:'Protéines (g)',macroGoalsLocked:'Objectifs de macros — Premium',
+  calcOpen:'🧮 Calculer mes besoins en calories & protéines',calcTitle:'Calculateur calories & protéines',calcSub:'Une estimation rapide de tes besoins quotidiens.',calcClose:'Fermer',
+  calcSex:'Sexe',calcFemale:'Femme',calcMale:'Homme',calcAge:'Âge',calcHeight:'Taille (cm)',calcWeight:'Poids (kg)',
+  calcActivity:'Niveau d\'activité',calcAct1:'Faible',calcAct2:'Légère',calcAct3:'Modérée',calcAct4:'Active',
+  calcGoal:'Objectif',calcLose:'Perdre',calcMaintain:'Maintenir',calcGain:'Prendre',calcBtn:'Calculer',
+  calcResKcal:'Calories / jour',calcResProtein:'Protéines / jour',
+  calcNote:'Estimé avec la formule de Mifflin-St Jeor. Un bon point de départ — ajuste selon ton ressenti.',
+  calcDisc:'Indicatif seulement, pas un avis médical ou nutritionnel. Consulte un professionnel pour des besoins individuels.',
+  calcApply:'Utiliser ces valeurs comme objectif',calcInvalid:'Saisis un âge, une taille et un poids réalistes.',
   opt_peanuts:'Arachides',opt_treenuts:'Fruits à coque',opt_shellfish:'Crustacés',opt_fish:'Poisson',opt_dairy:'Produits laitiers',opt_eggs:'Œufs',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Champignons',opt_olives:'Olives',opt_coriander:'Coriandre',opt_aubergine:'Aubergine',opt_bellpepper:'Poivron',opt_spicy:'Épicé',
   rcat_all:'Tout',rcat_saved:'❤️ Favoris',rcat_quick:'⚡ Rapide',rcat_vegetarian:'🥦 Végé',rcat_vegan:'🌱 Végétalien',rcat_glutenfree:'🌾 Sans gluten',rcat_kids:'🧒 Enfants',
@@ -1574,7 +1625,16 @@ es:{
   weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',
   setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupDietQ:'¿Alguna dieta?',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
   cookBack:'‹ Atrás',cookNext:'Siguiente ›',chooseDinner:'Elegir cena',
-  opt_vegetarian:'Vegetariano',opt_vegan:'Vegano',opt_glutenfree:'Sin gluten',
+  opt_vegetarian:'Vegetariano',opt_pescatarian:'Pescetariano',opt_vegan:'Vegano',opt_glutenfree:'Sin gluten',
+  nutritionGoals:'Objetivos nutricionales diarios',perPerson:'por persona',macroCalories:'Calorías',macroProtein:'Proteína (g)',macroGoalsLocked:'Objetivos de macros — Premium',
+  calcOpen:'🧮 Calcular calorías y proteína',calcTitle:'Calculadora de calorías y proteína',calcSub:'Una estimación rápida de tus necesidades diarias.',calcClose:'Cerrar',
+  calcSex:'Sexo',calcFemale:'Mujer',calcMale:'Hombre',calcAge:'Edad',calcHeight:'Altura (cm)',calcWeight:'Peso (kg)',
+  calcActivity:'Nivel de actividad',calcAct1:'Bajo',calcAct2:'Ligero',calcAct3:'Moderado',calcAct4:'Activo',
+  calcGoal:'Objetivo',calcLose:'Adelgazar',calcMaintain:'Mantener',calcGain:'Ganar',calcBtn:'Calcular',
+  calcResKcal:'Calorías / día',calcResProtein:'Proteína / día',
+  calcNote:'Estimado con la fórmula Mifflin-St Jeor. Un buen punto de partida; ajústalo a cómo te sientes.',
+  calcDisc:'Solo orientativo, no es consejo médico ni nutricional. Consulta a un profesional para necesidades individuales.',
+  calcApply:'Usar estos valores como objetivo',calcInvalid:'Introduce una edad, altura y peso realistas.',
   opt_peanuts:'Cacahuetes',opt_treenuts:'Frutos secos',opt_shellfish:'Marisco',opt_fish:'Pescado',opt_dairy:'Lácteos',opt_eggs:'Huevos',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Setas',opt_olives:'Aceitunas',opt_coriander:'Cilantro',opt_aubergine:'Berenjena',opt_bellpepper:'Pimiento',opt_spicy:'Picante',
   rcat_all:'Todo',rcat_saved:'❤️ Favoritos',rcat_quick:'⚡ Rápido',rcat_vegetarian:'🥦 Vegetariano',rcat_vegan:'🌱 Vegano',rcat_glutenfree:'🌾 Sin gluten',rcat_kids:'🧒 Niños',
@@ -1726,7 +1786,16 @@ de:{
   weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',
   setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupDietQ:'Eine Ernährungsweise?',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
   cookBack:'‹ Zurück',cookNext:'Weiter ›',chooseDinner:'Abendessen wählen',
-  opt_vegetarian:'Vegetarisch',opt_vegan:'Vegan',opt_glutenfree:'Glutenfrei',
+  opt_vegetarian:'Vegetarisch',opt_pescatarian:'Pescetarisch',opt_vegan:'Vegan',opt_glutenfree:'Glutenfrei',
+  nutritionGoals:'Tägliche Nährwertziele',perPerson:'pro Person',macroCalories:'Kalorien',macroProtein:'Protein (g)',macroGoalsLocked:'Tägliche Makro-Ziele — Premium',
+  calcOpen:'🧮 Kalorien- & Proteinbedarf berechnen',calcTitle:'Kalorien- & Protein-Rechner',calcSub:'Eine schnelle Schätzung deines Tagesbedarfs.',calcClose:'Schließen',
+  calcSex:'Geschlecht',calcFemale:'Weiblich',calcMale:'Männlich',calcAge:'Alter',calcHeight:'Größe (cm)',calcWeight:'Gewicht (kg)',
+  calcActivity:'Aktivitätslevel',calcAct1:'Wenig',calcAct2:'Leicht',calcAct3:'Mäßig',calcAct4:'Aktiv',
+  calcGoal:'Ziel',calcLose:'Abnehmen',calcMaintain:'Halten',calcGain:'Zunehmen',calcBtn:'Berechnen',
+  calcResKcal:'Kalorien / Tag',calcResProtein:'Protein / Tag',
+  calcNote:'Geschätzt mit der Mifflin-St-Jeor-Formel. Ein guter Startwert – passe ihn an dein Gefühl an.',
+  calcDisc:'Nur ein Richtwert, keine medizinische oder ernährungswissenschaftliche Beratung. Bei individuellem Bedarf bitte Fachpersonal fragen.',
+  calcApply:'Diese Werte als Ziel übernehmen',calcInvalid:'Bitte realistisches Alter, Größe und Gewicht eingeben.',
   opt_peanuts:'Erdnüsse',opt_treenuts:'Schalenfrüchte',opt_shellfish:'Schalentiere',opt_fish:'Fisch',opt_dairy:'Milchprodukte',opt_eggs:'Eier',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Pilze',opt_olives:'Oliven',opt_coriander:'Koriander',opt_aubergine:'Aubergine',opt_bellpepper:'Paprika',opt_spicy:'Scharf',
   rcat_all:'Alle',rcat_saved:'❤️ Favoriten',rcat_quick:'⚡ Schnell',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Glutenfrei',rcat_kids:'🧒 Kinder',
@@ -3051,6 +3120,7 @@ function renderFamily(){
 // ─── Dietary preferences ────────────────────────
 const DIET_OPTIONS=[
   {id:'vegetarian',label:'🥦 Vegetarian'},
+  {id:'pescatarian',label:'🐟 Pescatarian'},
   {id:'vegan',label:'🌱 Vegan'},
   {id:'glutenfree',label:'🌾 Gluten-free'},
 ];
@@ -3070,18 +3140,79 @@ function toggleDietPref(id){
 }
 function renderMacroGoals(){
   const el=document.getElementById('macro-goals-section');if(!el)return;
+  const calcBtn=`<button class="me-link calc-open-btn" onclick="openCalc()"><span>${t('calcOpen')}</span><span class="chev">›</span></button>`;
   if(!isPremium()){
-    el.innerHTML=`<h3>Nutrition goals</h3><button class="me-link" onclick="openPaywall('premium')"><span>🔒 Daily macro goals — Premium</span><span class="chev">›</span></button>`;
+    el.innerHTML=`<h3>${t('nutritionGoals')}</h3>${calcBtn}<button class="me-link" onclick="openPaywall('premium')"><span>🔒 ${t('macroGoalsLocked')}</span><span class="chev">›</span></button>`;
     return;
   }
   const g=state.macroGoals||{};
-  el.innerHTML=`<h3>Daily nutrition goals <span style="font-size:11px;color:var(--text3);font-weight:400">per person</span></h3>
+  el.innerHTML=`<h3>${t('nutritionGoals')} <span style="font-size:11px;color:var(--text3);font-weight:400">${t('perPerson')}</span></h3>
+    ${calcBtn}
     <div class="macro-goal-inputs">
-      <label>Calories<input type="number" inputmode="numeric" value="${g.kcal||''}" placeholder="e.g. 2000" oninput="setMacroGoal('kcal',this.value)"></label>
-      <label>Protein (g)<input type="number" inputmode="numeric" value="${g.protein||''}" placeholder="e.g. 90" oninput="setMacroGoal('protein',this.value)"></label>
+      <label>${t('macroCalories')}<input type="number" inputmode="numeric" value="${g.kcal||''}" placeholder="2000" oninput="setMacroGoal('kcal',this.value)"></label>
+      <label>${t('macroProtein')}<input type="number" inputmode="numeric" value="${g.protein||''}" placeholder="90" oninput="setMacroGoal('protein',this.value)"></label>
     </div>`;
 }
 function setMacroGoal(k,v){if(!state.macroGoals)state.macroGoals={kcal:0,protein:0};state.macroGoals[k]=parseInt(v)||0;save();}
+
+// ─── Calorie & protein calculator (Mifflin–St Jeor) ───
+let calcDraft={sex:'female',age:'',height:'',weight:'',activity:1.55,goal:1.0,result:null};
+const CALC_ACT=[{v:1.2,k:'calcAct1'},{v:1.375,k:'calcAct2'},{v:1.55,k:'calcAct3'},{v:1.725,k:'calcAct4'}];
+const CALC_GOAL=[{v:0.85,k:'calcLose',p:2.0},{v:1.0,k:'calcMaintain',p:1.6},{v:1.10,k:'calcGain',p:1.8}];
+function openCalc(){renderCalc();document.getElementById('calc-bg').classList.add('open');}
+function closeCalc(){document.getElementById('calc-bg').classList.remove('open');}
+function calcSet(k,v){calcDraft[k]=v;renderCalc();}
+function calcSetNum(k,v){calcDraft[k]=v;} // no re-render while typing
+function renderCalc(){
+  const el=document.getElementById('calc-body');if(!el)return;
+  const d=calcDraft;
+  const chip=(on,onclick,label)=>`<div class="calc-chip ${on?'on':''}" onclick="${onclick}">${label}</div>`;
+  const actChips=CALC_ACT.map(a=>chip(d.activity===a.v,`calcSet('activity',${a.v})`,t(a.k))).join('');
+  const goalChips=CALC_GOAL.map(g=>chip(d.goal===g.v,`calcSet('goal',${g.v})`,t(g.k))).join('');
+  let html=`
+    <div class="calc-row"><label>${t('calcSex')}</label><div class="calc-chips">
+      ${chip(d.sex==='female',"calcSet('sex','female')",t('calcFemale'))}
+      ${chip(d.sex==='male',"calcSet('sex','male')",t('calcMale'))}
+    </div></div>
+    <div class="calc-row"><div class="calc-nums">
+      <label>${t('calcAge')}<input type="number" inputmode="numeric" value="${d.age}" oninput="calcSetNum('age',this.value)" placeholder="30"></label>
+      <label>${t('calcHeight')}<input type="number" inputmode="numeric" value="${d.height}" oninput="calcSetNum('height',this.value)" placeholder="170"></label>
+      <label>${t('calcWeight')}<input type="number" inputmode="numeric" value="${d.weight}" oninput="calcSetNum('weight',this.value)" placeholder="70"></label>
+    </div></div>
+    <div class="calc-row"><label>${t('calcActivity')}</label><div class="calc-chips">${actChips}</div></div>
+    <div class="calc-row"><label>${t('calcGoal')}</label><div class="calc-chips">${goalChips}</div></div>
+    <button class="calc-go" onclick="calcCompute()">${t('calcBtn')}</button>`;
+  if(d.result){
+    html+=`<div class="calc-result">
+      <div class="calc-result-row">
+        <div><div class="v">${d.result.kcal}</div><div class="l">${t('calcResKcal')}</div></div>
+        <div><div class="v">${d.result.protein} g</div><div class="l">${t('calcResProtein')}</div></div>
+      </div>
+      <div class="calc-note">${t('calcNote')}</div>
+      <button class="calc-apply" onclick="calcApply()">${t('calcApply')}</button>
+    </div>
+    <div class="calc-disc">${t('calcDisc')}</div>`;
+  }
+  el.innerHTML=html;
+}
+function calcCompute(){
+  const age=parseInt(calcDraft.age),h=parseInt(calcDraft.height),w=parseInt(calcDraft.weight);
+  if(!age||!h||!w||age<10||age>100||h<100||h>230||w<30||w>250){alert(t('calcInvalid'));return;}
+  const bmr=10*w+6.25*h-5*age+(calcDraft.sex==='male'?5:-161);
+  const goal=CALC_GOAL.find(g=>g.v===calcDraft.goal)||CALC_GOAL[1];
+  const kcal=Math.round(bmr*calcDraft.activity*calcDraft.goal/10)*10;
+  const protein=Math.round(w*goal.p/5)*5;
+  calcDraft.result={kcal,protein};
+  renderCalc();
+  const b=document.getElementById('calc-body');if(b)b.scrollTop=b.scrollHeight;
+}
+function calcApply(){
+  if(!calcDraft.result)return;
+  if(!state.macroGoals)state.macroGoals={kcal:0,protein:0};
+  state.macroGoals.kcal=calcDraft.result.kcal;
+  state.macroGoals.protein=calcDraft.result.protein;
+  save();renderMacroGoals();closeCalc();
+}
 function renderBudget(){
   const el=document.getElementById('budget-section');if(!el)return;
   if(!isPremium()){el.innerHTML=`<h3>Weekly budget</h3><button class="me-link" onclick="openPaywall('premium')"><span>🔒 Weekly grocery budget — Premium</span><span class="chev">›</span></button>`;return;}
@@ -3334,10 +3465,16 @@ function violatesDislike(d){
   return DISLIKES.some(x=>di.includes(x.id)&&x.kw.some(k=>txt.includes(k)));
 }
 function matchesDiet(d){
-  const prefs=state.dietaryPrefs||[];const has=k=>(d.diet||[]).includes(k);const tag=k=>(d.tags||[]).includes(k);
-  if(prefs.includes('vegan')&&!(has('vegan')||tag('Vegan')))return false;
-  if(prefs.includes('vegetarian')&&!(has('vegan')||has('vegetarian')||tag('Vegan')||tag('Vegetarian')))return false;
-  if(prefs.includes('glutenfree')&&!(has('gf')||tag('GlutenFree')))return false;
+  const prefs=state.dietaryPrefs||[];
+  // Normalise diet + tags to lowercase so capitalisation in the DB ("Vegan",
+  // "Gluten-free", "Pescatarian") matches regardless of source.
+  const all=[...(d.diet||[]),...(d.tags||[])].map(x=>String(x).toLowerCase());
+  const any=(...ks)=>ks.some(k=>all.includes(k));
+  if(prefs.includes('vegan')&&!any('vegan'))return false;
+  if(prefs.includes('vegetarian')&&!any('vegan','vegetarian'))return false;
+  // Pescatarian = no meat: vegetarian/vegan dishes plus fish dishes are all fine.
+  if(prefs.includes('pescatarian')&&!any('vegan','vegetarian','pescatarian'))return false;
+  if(prefs.includes('glutenfree')&&!any('gf','glutenfree','gluten-free'))return false;
   return true;
 }
 // Backward-compat helper used by the dish chooser.
