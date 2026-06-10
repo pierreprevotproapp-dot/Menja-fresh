@@ -13,7 +13,7 @@ const slides = [
   { theme:'green', h:['Was koche','ich heute?'], accentLine:1,
     sub:'Diese Frage stellst du dir nie wieder.',
     photo:'https://v3b.fal.media/files/b/0a9cf81c/K6Ye8kFA33SPrOvE8CQyu_1d21f191f05e4044bce5aaf4174f776d.jpg',
-    pill:'Mediterraner Hähnchen-Halloumi-Salat' },
+    pill:'Hähnchen-Halloumi-Salat' },
   { theme:'cream', h:['Wir wählen.','Du swipest.'], accentLine:1,
     sub:'Dein Wochenplan in unter 2 Minuten.',
     photo:'https://v3b.fal.media/files/b/0a9cf82c/GDeOJLLX6p3aBE4571c-h_d46de74fb57f464d8847ba27c2781b02.jpg',
@@ -25,11 +25,11 @@ const slides = [
   { theme:'cream', h:['70+ frische','Rezepte.'], accentLine:1,
     sub:'Viele in unter 30 Minuten.',
     photo:'https://v3b.fal.media/files/b/0a9cf838/Hylc0Fz7I815A41Ktq9HM_6017c84f81b644cf868e0e1e62689ae9.jpg',
-    pill:'Gefüllte Paprika mit Feta & Pistazien' },
+    pill:'Gefüllte Paprika mit Feta' },
   { theme:'green', h:['Kaufen &','liefern lassen.'], accentLine:1,
     sub:'Von der Idee bis vor die Tür.',
     photo:'https://v3b.fal.media/files/b/0a9cf81b/EFctP0hmqINYvfwRjkEYu_3d3233de7ca24aa0b1a5714ad3530a27.jpg',
-    pill:'Süßkartoffel mit Tahini & Kichererbsen' },
+    pill:'Süßkartoffel mit Tahini' },
 ];
 
 const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
@@ -78,7 +78,7 @@ function overlaySvg(s){
       <rect x="${CX}" y="${CY+CH-420}" width="${CW}" height="420" fill="url(#shade)"/>
     </g>
     <rect x="${CX}" y="${CY}" width="${CW}" height="${CH}" rx="${CR}" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
-    <text x="${CX+56}" y="${CY+CH-150}" font-family="Georgia, serif" font-size="52" font-weight="700" fill="#FFFFFF">${esc(s.pill)}</text>
+    <text x="${CX+56}" y="${CY+CH-150}" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#FFFFFF">${esc(s.pill)}</text>
     <g>
       <rect x="${CX+56}" y="${CY+CH-110}" width="300" height="64" rx="32" fill="#D6492F"/>
       <text x="${CX+56+150}" y="${CY+CH-66}" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">Schritt für Schritt</text>
