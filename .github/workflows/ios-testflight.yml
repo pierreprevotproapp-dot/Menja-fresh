@@ -39,7 +39,7 @@ jobs:
           echo "$PROVISIONING_PROFILE_BASE64" | base64 -d > $PP_PATH
           echo "Profile size: $(wc -c < $PP_PATH) bytes"
           mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
-          PROFILE_UUID=$(security cms -D -i "$PP_PATH" | /usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin)
+          PROFILE_UUID=$(grep -a -A1 'UUID' "$PP_PATH" | grep -E '[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}' -o | head -1)
           echo "Profile UUID: $PROFILE_UUID"
           cp "$PP_PATH" ~/Library/MobileDevice/Provisioning\ Profiles/"$PROFILE_UUID".mobileprovision
           echo "PROFILE_UUID=$PROFILE_UUID" >> $GITHUB_ENV
