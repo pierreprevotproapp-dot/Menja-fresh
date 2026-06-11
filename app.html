@@ -1397,7 +1397,7 @@ en:{
   calcOpen:'🧮 Calculate calorie & protein needs',calcTitle:'Calorie & protein calculator',calcSub:'A quick estimate of your daily needs.',calcClose:'Close',
   calcSex:'Sex',calcFemale:'Female',calcMale:'Male',calcAge:'Age',calcHeight:'Height (cm)',calcWeight:'Weight (kg)',
   calcActivity:'Activity level',calcAct1:'Low',calcAct2:'Light',calcAct3:'Moderate',calcAct4:'Active',
-  calcGoal:'Goal',calcLose:'Lose',calcMaintain:'Maintain',calcGain:'Gain',calcBtn:'Calculate',
+  calcGoal:'Goal',calcLose:'Lose',calcMaintain:'Maintain',calcMuscle:'Build muscle',calcGain:'Gain',calcBtn:'Calculate',
   calcResKcal:'Calories / day',calcResProtein:'Protein / day',
   calcNote:'Estimated with the Mifflin–St Jeor formula. A good starting point — adjust to how you feel.',
   calcDisc:'Guidance only, not medical or dietary advice. Talk to a professional for individual needs.',
@@ -1516,7 +1516,7 @@ fr:{
   calcOpen:'🧮 Calculer mes besoins en calories & protéines',calcTitle:'Calculateur calories & protéines',calcSub:'Une estimation rapide de tes besoins quotidiens.',calcClose:'Fermer',
   calcSex:'Sexe',calcFemale:'Femme',calcMale:'Homme',calcAge:'Âge',calcHeight:'Taille (cm)',calcWeight:'Poids (kg)',
   calcActivity:'Niveau d\'activité',calcAct1:'Faible',calcAct2:'Légère',calcAct3:'Modérée',calcAct4:'Active',
-  calcGoal:'Objectif',calcLose:'Perdre',calcMaintain:'Maintenir',calcGain:'Prendre',calcBtn:'Calculer',
+  calcGoal:'Objectif',calcLose:'Perdre',calcMaintain:'Maintenir',calcMuscle:'Prise de muscle',calcGain:'Prendre',calcBtn:'Calculer',
   calcResKcal:'Calories / jour',calcResProtein:'Protéines / jour',
   calcNote:'Estimé avec la formule de Mifflin-St Jeor. Un bon point de départ — ajuste selon ton ressenti.',
   calcDisc:'Indicatif seulement, pas un avis médical ou nutritionnel. Consulte un professionnel pour des besoins individuels.',
@@ -1635,7 +1635,7 @@ es:{
   calcOpen:'🧮 Calcular calorías y proteína',calcTitle:'Calculadora de calorías y proteína',calcSub:'Una estimación rápida de tus necesidades diarias.',calcClose:'Cerrar',
   calcSex:'Sexo',calcFemale:'Mujer',calcMale:'Hombre',calcAge:'Edad',calcHeight:'Altura (cm)',calcWeight:'Peso (kg)',
   calcActivity:'Nivel de actividad',calcAct1:'Bajo',calcAct2:'Ligero',calcAct3:'Moderado',calcAct4:'Activo',
-  calcGoal:'Objetivo',calcLose:'Adelgazar',calcMaintain:'Mantener',calcGain:'Ganar',calcBtn:'Calcular',
+  calcGoal:'Objetivo',calcLose:'Adelgazar',calcMaintain:'Mantener',calcMuscle:'Ganar músculo',calcGain:'Ganar',calcBtn:'Calcular',
   calcResKcal:'Calorías / día',calcResProtein:'Proteína / día',
   calcNote:'Estimado con la fórmula Mifflin-St Jeor. Un buen punto de partida; ajústalo a cómo te sientes.',
   calcDisc:'Solo orientativo, no es consejo médico ni nutricional. Consulta a un profesional para necesidades individuales.',
@@ -1800,7 +1800,7 @@ de:{
   calcOpen:'🧮 Kalorien- & Proteinbedarf berechnen',calcTitle:'Kalorien- & Protein-Rechner',calcSub:'Eine schnelle Schätzung deines Tagesbedarfs.',calcClose:'Schließen',
   calcSex:'Geschlecht',calcFemale:'Weiblich',calcMale:'Männlich',calcAge:'Alter',calcHeight:'Größe (cm)',calcWeight:'Gewicht (kg)',
   calcActivity:'Aktivitätslevel',calcAct1:'Wenig',calcAct2:'Leicht',calcAct3:'Mäßig',calcAct4:'Aktiv',
-  calcGoal:'Ziel',calcLose:'Abnehmen',calcMaintain:'Halten',calcGain:'Zunehmen',calcBtn:'Berechnen',
+  calcGoal:'Ziel',calcLose:'Abnehmen',calcMaintain:'Halten',calcMuscle:'Muskelaufbau',calcGain:'Zunehmen',calcBtn:'Berechnen',
   calcResKcal:'Kalorien / Tag',calcResProtein:'Protein / Tag',
   calcNote:'Geschätzt mit der Mifflin-St-Jeor-Formel. Ein guter Startwert – passe ihn an dein Gefühl an.',
   calcDisc:'Nur ein Richtwert, keine medizinische oder ernährungswissenschaftliche Beratung. Bei individuellem Bedarf bitte Fachpersonal fragen.',
@@ -3189,7 +3189,7 @@ function setMacroGoal(k,v){if(!state.macroGoals)state.macroGoals={kcal:0,protein
 // ─── Calorie & protein calculator (Mifflin–St Jeor) ───
 let calcDraft={sex:'female',age:'',height:'',weight:'',activity:1.55,goal:1.0,result:null};
 const CALC_ACT=[{v:1.2,k:'calcAct1'},{v:1.375,k:'calcAct2'},{v:1.55,k:'calcAct3'},{v:1.725,k:'calcAct4'}];
-const CALC_GOAL=[{v:0.85,k:'calcLose',p:2.0},{v:1.0,k:'calcMaintain',p:1.6},{v:1.10,k:'calcGain',p:1.8}];
+const CALC_GOAL=[{v:0.85,k:'calcLose',p:2.0},{v:1.0,k:'calcMaintain',p:1.6},{v:1.15,k:'calcMuscle',p:2.0},{v:1.10,k:'calcGain',p:1.8}];
 function openCalc(){renderCalc();document.getElementById('calc-bg').classList.add('open');}
 function closeCalc(){document.getElementById('calc-bg').classList.remove('open');}
 function calcSet(k,v){calcDraft[k]=v;renderCalc();}
