@@ -686,6 +686,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .calc-disc{font-size:11px;color:var(--text3);line-height:1.45;margin-top:10px}
 .calc-apply{display:block;width:100%;background:var(--accent,#D6492F);color:#fff;border:none;border-radius:99px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb);margin-top:12px}
 .calc-open-btn{display:flex;align-items:center;justify-content:space-between;width:100%;text-align:left}
+/* ── WEEK STREAK (habit loop) ────────────────── */
+.streak-chip{text-align:center;padding:0 16px 10px}
+.streak-pill{display:inline-block;background:var(--accent-l);color:var(--accent);font-size:12px;font-weight:700;padding:5px 13px;border-radius:99px;letter-spacing:.01em}
+.streak-pill.soft{background:var(--surface2,#f1efe9);color:var(--text2);font-weight:600}
+.weekdone-streak{font-size:14px;font-weight:700;color:var(--accent);margin:-4px 0 14px}
 /* ── IN-TAB RECIPE OVERLAY ───────────────────── */
 .recipe-ov{display:none;position:fixed;inset:0;background:var(--bg);z-index:760;overflow-y:auto}
 .recipe-ov.open{display:block}
@@ -1040,7 +1045,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         </div>
         <button onclick="todayNavDay(1)" style="background:none;border:none;font-size:22px;color:var(--text2);cursor:pointer;padding:4px 8px;border-radius:8px">›</button>
       </div>
-      <div style="text-align:center;padding:2px 16px 8px"><button id="today-jump-btn" onclick="todayNavReset()" style="display:none;background:var(--accent-l);color:var(--accent);border:none;border-radius:99px;padding:3px 12px;font-size:11px;cursor:pointer;font-family:inherit">↩ Back to today</button></div>
+      <div style="text-align:center;padding:2px 16px 8px"><button id="today-jump-btn" onclick="todayNavReset()" style="display:none;background:var(--accent-l);color:var(--accent);border:none;border-radius:99px;padding:3px 12px;font-size:11px;cursor:pointer;font-family:inherit" data-t="backToToday">↩ Back to today</button></div>
+      <div class="streak-chip" id="streak-chip" style="display:none"></div>
     </div>
     <div class="tm" id="tm"></div>
   </div>
@@ -1168,6 +1174,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div class="weekdone-emoji">🎉</div>
     <div class="weekdone-title" data-t="weekPlannedTitle">Your week is planned 🎉</div>
     <div class="weekdone-sub" data-t="weekPlannedSub">Dinner is one less thing to think about.</div>
+    <div class="weekdone-streak" id="weekdone-streak" style="display:none"></div>
     <button class="weekdone-go" onclick="closeWeekDone();showTab('shopping')" data-t="toGroceryList">🛒 Take me to my grocery list →</button>
     <div class="p-cancel" onclick="closeWeekDone()" data-t="stayOnPlan">Stay on this page</div>
   </div>
@@ -1402,6 +1409,7 @@ en:{
   addWeekShort:'＋ Week',addToMyWeek:'＋ Add to my week',saveFav:'Save to favourites',
   prepLbl:'Prep',cookLbl:'Cook',totalLbl:'Total',perServingSlash:'/ serving',fiberLbl:'Fiber',sauceDressing:'Sauce & Dressing',closeWordShort:'Close',
   weekPlannedTitle:'Your week is planned 🎉',weekPlannedSub:'Dinner is one less thing to think about.',toGroceryList:'🛒 Take me to my grocery list →',stayOnPlan:'Stay on this page',
+  streakChip:'🔥 {n}-week streak',weeksPlanned1:'🌱 First week planned',weeksPlannedN:'✓ {n} weeks planned',backToToday:'↩ Back to today',
   tabPrep:'Preparation',tabMacros:'Macros',
 },
 fr:{
@@ -1519,6 +1527,7 @@ fr:{
   addWeekShort:'＋ Semaine',addToMyWeek:'＋ Ajouter à ma semaine',saveFav:'Ajouter aux favoris',
   prepLbl:'Prépa',cookLbl:'Cuisson',totalLbl:'Total',perServingSlash:'/ portion',fiberLbl:'Fibres',sauceDressing:'Sauce & Vinaigrette',closeWordShort:'Fermer',
   weekPlannedTitle:'Votre semaine est planifiée 🎉',weekPlannedSub:'Le dîner, une chose de moins à gérer.',toGroceryList:'🛒 Voir ma liste de courses →',stayOnPlan:'Rester sur cette page',
+  streakChip:'🔥 {n} semaines de suite',weeksPlanned1:'🌱 Première semaine planifiée',weeksPlannedN:'✓ {n} semaines planifiées',backToToday:'↩ Retour à aujourd’hui',
   tabPrep:'Préparation',tabMacros:'Macros',
 },
 es:{
@@ -1636,6 +1645,7 @@ es:{
   addWeekShort:'＋ Semana',addToMyWeek:'＋ Añadir a mi semana',saveFav:'Guardar en favoritos',
   prepLbl:'Prep.',cookLbl:'Cocción',totalLbl:'Total',perServingSlash:'/ ración',fiberLbl:'Fibra',sauceDressing:'Salsa y aliño',closeWordShort:'Cerrar',
   weekPlannedTitle:'¡Tu semana está planificada! 🎉',weekPlannedSub:'La cena, una cosa menos en que pensar.',toGroceryList:'🛒 Ir a mi lista de la compra →',stayOnPlan:'Quedarme en esta página',
+  streakChip:'🔥 {n} semanas seguidas',weeksPlanned1:'🌱 Primera semana planificada',weeksPlannedN:'✓ {n} semanas planificadas',backToToday:'↩ Volver a hoy',
   tabPrep:'Preparación',tabMacros:'Macros',
 },
 pt:{
@@ -1799,6 +1809,7 @@ de:{
   addWeekShort:'＋ Woche',addToMyWeek:'＋ Zu meiner Woche',saveFav:'Zu Favoriten',
   prepLbl:'Vorber.',cookLbl:'Kochen',totalLbl:'Gesamt',perServingSlash:'/ Portion',fiberLbl:'Ballaststoffe',sauceDressing:'Soße & Dressing',closeWordShort:'Schließen',
   weekPlannedTitle:'Deine Woche ist geplant 🎉',weekPlannedSub:'Das Abendessen – eine Sorge weniger.',toGroceryList:'🛒 Zu meiner Einkaufsliste →',stayOnPlan:'Auf dieser Seite bleiben',
+  streakChip:'🔥 {n} Wochen in Folge',weeksPlanned1:'🌱 Erste Woche geplant',weeksPlannedN:'✓ {n} Wochen geplant',backToToday:'↩ Zurück zu heute',
   tabPrep:'Zubereitung',tabMacros:'Makros',
 },
 };
@@ -2174,6 +2185,26 @@ function guestServings(slot){const a=slot.adults??state.family.adults;const c=sl
 function guestLabel(slot){const a=slot.adults??state.family.adults;const c=slot.children??state.family.children;const tot=a+c;return`${tot} ${tot===1?t('person'):t('people')}`;}
 function defaultGuests(){return{adults:state.family.adults,children:state.family.children};}
 function dateKey(d){const x=new Date(d);x.setMinutes(x.getMinutes()-x.getTimezoneOffset());return x.toISOString().slice(0,10);}
+// ── Week streak (habit loop): track which weeks the user fully planned ──
+function _mondayKeyOf(d){const x=new Date(d);x.setHours(0,0,0,0);const dowMon=(x.getDay()+6)%7;x.setDate(x.getDate()-dowMon);return dateKey(x);}
+function _shiftWeekKey(key,weeks){const x=new Date(key+'T00:00:00');x.setDate(x.getDate()+weeks*7);return dateKey(x);}
+function weeksPlannedCount(){return Object.keys(state.plannedWeeks||{}).length;}
+function weekStreakCount(){
+  const set=state.plannedWeeks||{};
+  const curMon=_mondayKeyOf(new Date());
+  let anchor=curMon;
+  if(!set[anchor]){const prev=_shiftWeekKey(curMon,-1);if(set[prev])anchor=prev;else return 0;}
+  let n=0,m=anchor;
+  while(set[m]){n++;m=_shiftWeekKey(m,-1);}
+  return n;
+}
+function renderStreakChip(){
+  const el=document.getElementById('streak-chip');if(!el)return;
+  const streak=weekStreakCount(),total=weeksPlannedCount();
+  if(streak>=2){el.innerHTML=`<span class="streak-pill">${tf('streakChip',{n:streak})}</span>`;el.style.display='block';}
+  else if(total>=1){el.innerHTML=`<span class="streak-pill soft">${total===1?t('weeksPlanned1'):tf('weeksPlannedN',{n:total})}</span>`;el.style.display='block';}
+  else{el.style.display='none';}
+}
 // Which week is being planned. 0 = current week, 1 = next, ...
 let weekOffset=0;
 const MAX_WEEK_OFFSET=3; // plan up to 4 weeks ahead
@@ -3840,11 +3871,22 @@ function weekDecided(){
 }
 // Celebratory popup the moment the whole week becomes decided (shows once per week per session).
 let _weekDoneShownFor=null;
-function openWeekDone(){const el=document.getElementById('weekdone-bg');if(el){applyLang();el.classList.add('open');}}
+function openWeekDone(){
+  const el=document.getElementById('weekdone-bg');if(!el)return;
+  applyLang();
+  const s=document.getElementById('weekdone-streak');
+  if(s){const streak=weekStreakCount();if(streak>=2){s.textContent=tf('streakChip',{n:streak});s.style.display='block';}else{s.style.display='none';}}
+  el.classList.add('open');
+}
 function closeWeekDone(){const el=document.getElementById('weekdone-bg');if(el)el.classList.remove('open');}
 function checkWeekDone(){
   const wk=dateKey(weekStartDate());
-  if(weekDecided()){ if(_weekDoneShownFor!==wk){ _weekDoneShownFor=wk; setTimeout(openWeekDone,180); } }
+  if(weekDecided()){
+    // Record this week as planned (lifetime count + streak). Never un-recorded.
+    if(!state.plannedWeeks)state.plannedWeeks={};
+    if(!state.plannedWeeks[wk]){state.plannedWeeks[wk]=Date.now();save();renderStreakChip();}
+    if(_weekDoneShownFor!==wk){ _weekDoneShownFor=wk; setTimeout(openWeekDone,180); }
+  }
   else if(_weekDoneShownFor===wk){ _weekDoneShownFor=null; }   // re-arm if they change something
 }
 
@@ -4274,6 +4316,7 @@ function renderToday(){
   document.getElementById('th-greet').textContent=greet;
   const jumpBtn=document.getElementById('today-jump-btn');
   if(jumpBtn)jumpBtn.style.display=isToday?'none':'inline-block';
+  renderStreakChip();
   const dm=state.plan[key]||{};
   const tm=document.getElementById('tm');
   const plannedTypes=MEAL_TYPES.filter(type=>dm[type]&&dm[type].dishId);   // only meals that were planned
