@@ -1,10 +1,12 @@
 {
+  "id": "com.menjafresh.app",
   "name": "Menja Fresh",
   "short_name": "Menja",
   "description": "The weekly meal planner for families — plan dinners, get an automatic shopping list, cook fresh recipes.",
   "start_url": "/app.html",
   "scope": "/",
   "display": "standalone",
+  "orientation": "natural",
   "background_color": "#FBF5E9",
   "theme_color": "#2F5A39",
   "lang": "de",
