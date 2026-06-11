@@ -15,19 +15,7 @@
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <meta name="description" content="Seasonal meal planning for your family. Discover dishes, plan your week, generate smart shopping lists.">
-<script>
-// Load Supabase with CDN fallback — if one CDN is slow, try another
-(function(){
-  var s=document.createElement('script');
-  s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
-  s.onerror=function(){
-    var s2=document.createElement('script');
-    s2.src='https://unpkg.com/@supabase/supabase-js@2';
-    document.head.appendChild(s2);
-  };
-  document.head.appendChild(s);
-})();
-</script>
+<script src="/supabase-client.js"></script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
 :root{
