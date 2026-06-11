@@ -45,11 +45,13 @@ jobs:
             -scheme Menja \
             -configuration Release \
             -archivePath $RUNNER_TEMP/Menja.xcarchive \
+            -destination "generic/platform=iOS" \
             archive \
             CODE_SIGN_STYLE=Manual \
             DEVELOPMENT_TEAM="${{ secrets.APPLE_TEAM_ID }}" \
             CODE_SIGN_IDENTITY="Apple Distribution" \
-            PROVISIONING_PROFILE_SPECIFIER="${{ secrets.IOS_PROVISIONING_PROFILE_NAME }}"
+            PROVISIONING_PROFILE_SPECIFIER="${{ secrets.IOS_PROVISIONING_PROFILE_NAME }}" \
+            CODE_SIGNING_ALLOWED_FOR_APPS=YES
 
       - name: Export IPA
         run: |
