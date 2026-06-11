@@ -981,7 +981,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <button class="week-nav-btn" id="wk-next" onclick="changeWeek(1)">›</button>
       </div>
       <button class="plan-generate" id="plan-generate-btn" onclick="openWeekPick()">✨ Plan my week</button>
-      <div style="text-align:center;margin-top:8px"><button class="plan-clear" id="plan-clear-btn" onclick="clearPlan()" style="display:none">Clear this week</button></div>
+      <div style="text-align:center;margin-top:8px"><button class="plan-clear" id="plan-clear-btn" onclick="clearPlan()" style="display:none" data-t="clearWeek">Clear this week</button></div>
     </div>
     <div class="cal-scroll" id="cal-scroll"></div>
   </div></div>
@@ -1360,6 +1360,8 @@ en:{
   pickOneNight:'Pick at least one night',planWholeWeek:'Plan the whole week →',planNights:'Plan these {n} nights →',
   mealBreakfast:'Breakfast',mealLunch:'Lunch',mealDinner:'Dinner',
   planned:'✓ Planned · Change',choose:'✓ Choose',minShort:'min',swipeHintTxt:'⇆ swipe',removeWord:'Remove',noRecipesHere:'No recipes here',cancelWord:'cancel',
+  clearWeek:'Clear this week',addToWeekSub:'Add to your week',addAs:'Add as…',todayWord:'Today',replacesWord:'Replaces',emptySlot:'Empty',nowWord:'Now:',chooseDishToAdd:'Choose a dish to add',swapMeal:'Swap this meal',pickDish:'Pick a dish',
+  noPoolMatch:'No recipes match your allergies and diet right now. Try removing one in Me → Preferences.',pwPrompt:'Set a new password (at least 8 characters):',pwUpdated:'✅ Password updated — you can sign in with it now.',pwUpdateFail:'Could not update password.',pwTooShort:'Password must be at least 8 characters.',
   greetMorning:'Good morning ☀️',greetAfternoon:'Good afternoon 🌤',greetEvening:'Good evening 🌙',greetNight:'Good night 🌙',tomorrow:'Tomorrow',inDays:'In {n} days',
   cookNow:'🍳 Cook now',recipeWord:'Recipe',cooked:'Cooked',cookedDone:'✓ Cooked',moreWord:'more',
   planNextTitle:'Plan next week?',planNextSub:'A calm few taps now = a sorted week ahead.',planNextBtn:'Plan next week →',
@@ -1475,6 +1477,8 @@ fr:{
   pickOneNight:'Choisissez au moins un soir',planWholeWeek:'Planifier toute la semaine →',planNights:'Planifier ces {n} soirs →',
   mealBreakfast:'Petit-déjeuner',mealLunch:'Déjeuner',mealDinner:'Dîner',
   planned:'✓ Planifié · Modifier',choose:'✓ Choisir',minShort:'min',swipeHintTxt:'⇆ glisser',removeWord:'Retirer',noRecipesHere:'Aucune recette ici',cancelWord:'annuler',
+  clearWeek:'Vider la semaine',addToWeekSub:'Ajouter à ta semaine',addAs:'Ajouter comme…',todayWord:"Aujourd'hui",replacesWord:'Remplace',emptySlot:'Libre',nowWord:'Actuel :',chooseDishToAdd:'Choisis un plat à ajouter',swapMeal:'Changer ce repas',pickDish:'Choisir un plat',
+  noPoolMatch:'Aucune recette ne correspond à tes allergies et à ton régime pour le moment. Retire une restriction dans Moi → Préférences.',pwPrompt:'Définis un nouveau mot de passe (au moins 8 caractères) :',pwUpdated:'✅ Mot de passe mis à jour — tu peux maintenant te connecter avec.',pwUpdateFail:'Impossible de mettre à jour le mot de passe.',pwTooShort:'Le mot de passe doit comporter au moins 8 caractères.',
   greetMorning:'Bonjour ☀️',greetAfternoon:'Bon après-midi 🌤',greetEvening:'Bonsoir 🌙',greetNight:'Bonne nuit 🌙',tomorrow:'Demain',inDays:'Dans {n} jours',
   cookNow:'🍳 Cuisiner',recipeWord:'Recette',cooked:'Cuisiné',cookedDone:'✓ Cuisiné',moreWord:'de plus',
   planNextTitle:'Planifier la semaine prochaine ?',planNextSub:'Quelques touches maintenant = une semaine réglée.',planNextBtn:'Planifier la semaine prochaine →',
@@ -1590,6 +1594,8 @@ es:{
   pickOneNight:'Elige al menos una noche',planWholeWeek:'Planificar toda la semana →',planNights:'Planificar estas {n} noches →',
   mealBreakfast:'Desayuno',mealLunch:'Almuerzo',mealDinner:'Cena',
   planned:'✓ Planificado · Cambiar',choose:'✓ Elegir',minShort:'min',swipeHintTxt:'⇆ desliza',removeWord:'Quitar',noRecipesHere:'No hay recetas aquí',cancelWord:'cancelar',
+  clearWeek:'Vaciar la semana',addToWeekSub:'Añadir a tu semana',addAs:'Añadir como…',todayWord:'Hoy',replacesWord:'Sustituye',emptySlot:'Libre',nowWord:'Ahora:',chooseDishToAdd:'Elige un plato para añadir',swapMeal:'Cambiar esta comida',pickDish:'Elegir un plato',
+  noPoolMatch:'Ahora mismo no hay recetas que encajen con tus alergias y tu dieta. Quita alguna restricción en Yo → Preferencias.',pwPrompt:'Establece una nueva contraseña (mínimo 8 caracteres):',pwUpdated:'✅ Contraseña actualizada: ya puedes iniciar sesión con ella.',pwUpdateFail:'No se pudo actualizar la contraseña.',pwTooShort:'La contraseña debe tener al menos 8 caracteres.',
   greetMorning:'¡Buenos días! ☀️',greetAfternoon:'¡Buenas tardes! 🌤',greetEvening:'¡Buenas noches! 🌙',greetNight:'¡Buenas noches! 🌙',tomorrow:'Mañana',inDays:'En {n} días',
   cookNow:'🍳 Cocinar',recipeWord:'Receta',cooked:'Cocinado',cookedDone:'✓ Cocinado',moreWord:'más',
   planNextTitle:'¿Planificar la próxima semana?',planNextSub:'Unos toques ahora = una semana resuelta.',planNextBtn:'Planificar la próxima semana →',
@@ -1751,6 +1757,8 @@ de:{
   pickOneNight:'Wähle mindestens einen Abend',planWholeWeek:'Ganze Woche planen →',planNights:'Diese {n} Abende planen →',
   mealBreakfast:'Frühstück',mealLunch:'Mittagessen',mealDinner:'Abendessen',
   planned:'✓ Geplant · Ändern',choose:'✓ Wählen',minShort:'Min.',swipeHintTxt:'⇆ wischen',removeWord:'Entfernen',noRecipesHere:'Keine Rezepte hier',cancelWord:'abbrechen',
+  clearWeek:'Woche leeren',addToWeekSub:'Zu deiner Woche hinzufügen',addAs:'Hinzufügen als…',todayWord:'Heute',replacesWord:'Ersetzt',emptySlot:'Frei',nowWord:'Aktuell:',chooseDishToAdd:'Gericht zum Hinzufügen wählen',swapMeal:'Mahlzeit tauschen',pickDish:'Gericht wählen',
+  noPoolMatch:'Zurzeit passen keine Rezepte zu deinen Allergien und deiner Ernährungsweise. Entferne eine Einschränkung unter Ich → Vorlieben.',pwPrompt:'Neues Passwort festlegen (mindestens 8 Zeichen):',pwUpdated:'✅ Passwort aktualisiert – du kannst dich jetzt damit anmelden.',pwUpdateFail:'Passwort konnte nicht aktualisiert werden.',pwTooShort:'Das Passwort muss mindestens 8 Zeichen haben.',
   greetMorning:'Guten Morgen ☀️',greetAfternoon:'Guten Tag 🌤',greetEvening:'Guten Abend 🌙',greetNight:'Gute Nacht 🌙',tomorrow:'Morgen',inDays:'In {n} Tagen',
   cookNow:'🍳 Jetzt kochen',recipeWord:'Rezept',cooked:'Gekocht',cookedDone:'✓ Gekocht',moreWord:'weitere',
   planNextTitle:'Nächste Woche planen?',planNextSub:'Ein paar ruhige Tipps jetzt = eine geregelte Woche.',planNextBtn:'Nächste Woche planen →',
@@ -3533,7 +3541,7 @@ function generateWeek(cookSet){
   if(!DISHES.length){alert(t('loadingKitchen'));return;}
   if(!cookSet){const cd=(state.cookDays&&state.cookDays.length)?state.cookDays:[0,1,2,3,4,5,6];cookSet=new Set(cd);}
   const pool=tasteOrderedPool(dinnerPool());  // taste-weighted + exploration, avoids last week
-  if(!pool.length){alert('No recipes match your allergies and diet right now. Try removing one in Me → Preferences.');return;}
+  if(!pool.length){alert(t('noPoolMatch'));return;}
   const dates=getDateRange();
   let i=0;
   dates.forEach((d,di)=>{
@@ -3856,7 +3864,7 @@ function openDishChooser(key,type){
   const cur=state.plan[key]&&state.plan[key][type]&&state.plan[key][type].dishId;
   if(cur){const i=chooserDishes().findIndex(d=>String(d.id)===String(cur));if(i>=0)chooserState.idx=i;}
   const d=new Date(key+'T00:00:00');
-  document.getElementById('chooser-title').textContent=`Choose ${type.toLowerCase()} · ${dow(d)} ${d.getDate()} ${mon(d)}`;
+  document.getElementById('chooser-title').textContent=`${mealName(type)} · ${dow(d)} ${d.getDate()} ${mon(d)}`;
   renderDishChooser();
   document.getElementById('chooser-bg').classList.add('open');
 }
@@ -3928,11 +3936,11 @@ function setAddToWeekType(tp){addToWeekType=tp;renderAddToWeek();}
 function renderAddToWeek(){
   const dish=getDish(addToWeekDish);if(!dish)return;
   const imgH=dish.photo?`<img class="p-img" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="p-img-em" style="display:none">${dish.emoji}</div>`:`<div class="p-img-em">${dish.emoji}</div>`;
-  document.getElementById('p-preview').innerHTML=`${imgH}<div><div class="p-name">${dishName(dish)}</div><div class="p-sub">Add to your week</div></div>`;
-  document.getElementById('p-q').innerHTML=`<div style="margin-bottom:6px">Add as…</div><div class="atw-types">${MEAL_TYPES.map(tp=>`<button class="atw-type ${addToWeekType===tp?'on':''}" onclick="setAddToWeekType('${tp}')">${MEAL_ICONS[tp]} ${tp}</button>`).join('')}</div>`;
+  document.getElementById('p-preview').innerHTML=`${imgH}<div><div class="p-name">${dishName(dish)}</div><div class="p-sub">${t('addToWeekSub')}</div></div>`;
+  document.getElementById('p-q').innerHTML=`<div style="margin-bottom:6px">${t('addAs')}</div><div class="atw-types">${MEAL_TYPES.map(tp=>`<button class="atw-type ${addToWeekType===tp?'on':''}" onclick="setAddToWeekType('${tp}')">${MEAL_ICONS[tp]} ${mealName(tp)}</button>`).join('')}</div>`;
   document.getElementById('p-opts').innerHTML=getDateRange().map(d=>{
     const key=dateKey(d);const dm=state.plan[key]||{};const cur=dm[addToWeekType]&&dm[addToWeekType].dishId?getDish(dm[addToWeekType].dishId):null;const isToday=key===dateKey(new Date());
-    return`<div class="p-opt" onclick="addToWeekPick('${key}')"><div class="p-ico ${addToWeekType.toLowerCase()}">${MEAL_ICONS[addToWeekType]}</div><div><div class="p-lbl">${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · Today':''}</div><div class="p-sl">${cur?`Replaces ${dishName(cur)}`:'Empty'}</div></div></div>`;
+    return`<div class="p-opt" onclick="addToWeekPick('${key}')"><div class="p-ico ${addToWeekType.toLowerCase()}">${MEAL_ICONS[addToWeekType]}</div><div><div class="p-lbl">${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}</div><div class="p-sl">${cur?t('replacesWord')+' '+dishName(cur):t('emptySlot')}</div></div></div>`;
   }).join('');
 }
 function addToWeekPick(key){
@@ -3950,7 +3958,7 @@ function cleanupDrag(){activeDrag=null;ghost.style.display='none';document.query
 function assignDirect(dishId,key,type){if(!state.plan[key])state.plan[key]={};state.plan[key][type]={dishId,...defaultGuests()};save();rebuildShopping();updateBadge();renderPlan();}
 
 let pickerState=null;
-function openPicker(dishId,key){const dish=getDish(dishId);if(!dish)return;pickerState={dishId,key};const dm=state.plan[key]||{};const imgH=dish.photo?`<img class="p-img" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="p-img-em" style="display:none">${dish.emoji}</div>`:`<div class="p-img-em">${dish.emoji}</div>`;document.getElementById('p-preview').innerHTML=`${imgH}<div><div class="p-name">${dishName(dish)}</div><div class="p-sub">${dish.tags.map(tk=>tTag(tk)).join(' · ')}</div></div>`;const d=new Date(key+'T00:00:00');document.getElementById('p-q').textContent=`${t('assignMeal')} — ${dow(d)} ${d.getDate()} ${mon(d)}`;document.getElementById('p-opts').innerHTML=MEAL_TYPES.map(type=>{const exist=dm[type]?.dishId?getDish(dm[type].dishId):null;return`<div class="p-opt" onclick="pickerSel('${type}')"><div class="p-ico ${type.toLowerCase()}">${MEAL_ICONS[type]}</div><div><div class="p-lbl">${type}</div><div class="p-sl">${exist?`Replaces ${dishName(exist)}`:'Empty slot'}</div></div></div>`;}).join('');document.getElementById('picker-bg').classList.add('open');}
+function openPicker(dishId,key){const dish=getDish(dishId);if(!dish)return;pickerState={dishId,key};const dm=state.plan[key]||{};const imgH=dish.photo?`<img class="p-img" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="p-img-em" style="display:none">${dish.emoji}</div>`:`<div class="p-img-em">${dish.emoji}</div>`;document.getElementById('p-preview').innerHTML=`${imgH}<div><div class="p-name">${dishName(dish)}</div><div class="p-sub">${dish.tags.map(tk=>tTag(tk)).join(' · ')}</div></div>`;const d=new Date(key+'T00:00:00');document.getElementById('p-q').textContent=`${t('assignMeal')} — ${dow(d)} ${d.getDate()} ${mon(d)}`;document.getElementById('p-opts').innerHTML=MEAL_TYPES.map(type=>{const exist=dm[type]?.dishId?getDish(dm[type].dishId):null;return`<div class="p-opt" onclick="pickerSel('${type}')"><div class="p-ico ${type.toLowerCase()}">${MEAL_ICONS[type]}</div><div><div class="p-lbl">${mealName(type)}</div><div class="p-sl">${exist?t('replacesWord')+' '+dishName(exist):t('emptySlot')}</div></div></div>`;}).join('');document.getElementById('picker-bg').classList.add('open');}
 function pickerSel(type){if(!pickerState)return;assignDirect(pickerState.dishId,pickerState.key,type);closePicker();}
 function closePicker(){document.getElementById('picker-bg').classList.remove('open');pickerState=null;}
 
@@ -3959,8 +3967,8 @@ function openSlotPicker(key,type){
   const d=new Date(key+'T00:00:00');
   const dm=state.plan[key]||{};
   const current=dm[type]?.dishId?getDish(dm[type].dishId):null;
-  document.getElementById('p-preview').innerHTML=`<div class="p-img-em">${MEAL_ICONS[type]}</div><div><div class="p-name">${type} · ${dow(d)} ${d.getDate()} ${mon(d)}</div><div class="p-sub">${current?`Now: ${dishName(current)}`:'Choose a dish to add'}</div></div>`;
-  document.getElementById('p-q').textContent=current?'Swap this meal':'Pick a dish';
+  document.getElementById('p-preview').innerHTML=`<div class="p-img-em">${MEAL_ICONS[type]}</div><div><div class="p-name">${mealName(type)} · ${dow(d)} ${d.getDate()} ${mon(d)}</div><div class="p-sub">${current?t('nowWord')+' '+dishName(current):t('chooseDishToAdd')}</div></div>`;
+  document.getElementById('p-q').textContent=current?t('swapMeal'):t('pickDish');
   const liked=sortedLiked();
   let opts;
   if(!liked.length){
@@ -4543,9 +4551,9 @@ async function init(){
   // This ensures OAuth callbacks and email confirmations always work
   sb.auth.onAuthStateChange(async(event,session)=>{
     if(event==='PASSWORD_RECOVERY'){
-      const np=prompt('Set a new password (at least 8 characters):');
-      if(np&&np.length>=8){try{const{error}=await sb.auth.updateUser({password:np});alert(error?error.message:'✅ Password updated — you can sign in with it now.');}catch(e){alert('Could not update password.');}}
-      else if(np!==null){alert('Password must be at least 8 characters.');}
+      const np=prompt(t('pwPrompt'));
+      if(np&&np.length>=8){try{const{error}=await sb.auth.updateUser({password:np});alert(error?error.message:t('pwUpdated'));}catch(e){alert(t('pwUpdateFail'));}}
+      else if(np!==null){alert(t('pwTooShort'));}
       return;
     }
     if(event==='SIGNED_IN'&&session){
