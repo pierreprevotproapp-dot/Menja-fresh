@@ -10,24 +10,34 @@ const GREEN = '#234227', GREEN2 = '#37704A', CREAM = '#FBF5E9', CREAM_TX = '#FBF
       INK = '#213F27', MUT_ON_GREEN = '#CFE0D0', MUT_ON_CREAM = '#6E6055', ACCENT = '#E07A4E';
 
 const slides = [
-  { theme:'green', h:['Was koche','ich heute?'], accentLine:1,
-    sub:'Diese Frage stellst du dir nie wieder.',
+  // 1 — PAIN: the nightly decision fatigue → OUTCOME: the whole week, decided, in minutes
+  { theme:'green', h:['Schluss mit der','Abend-Frage.'], accentLine:1,
+    sub:'In 2 Minuten steht das Essen für die ganze Woche.',
+    badge:'2 Minuten pro Woche',
     photo:'https://v3b.fal.media/files/b/0a9cf81c/K6Ye8kFA33SPrOvE8CQyu_1d21f191f05e4044bce5aaf4174f776d.jpg',
     pill:'Hähnchen-Halloumi-Salat' },
-  { theme:'cream', h:['Wir wählen.','Du swipest.'], accentLine:1,
-    sub:'Dein Wochenplan in unter 2 Minuten.',
+  // 2 — PAIN: mental load / who decides → OUTCOME: we decide, you just approve
+  { theme:'cream', h:['Du musst nichts','mehr aussuchen.'], accentLine:1,
+    sub:'Wir wählen passende Gerichte – du swipest nur noch.',
+    badge:'3× swipen – fertig',
     photo:'https://v3b.fal.media/files/b/0a9cf82c/GDeOJLLX6p3aBE4571c-h_d46de74fb57f464d8847ba27c2781b02.jpg',
     pill:'Beeren-Smoothie-Bowl' },
-  { theme:'green', h:['Einkaufsliste?','Automatisch.'], accentLine:1,
-    sub:'Sortiert. Nichts vergessen.',
+  // 3 — PAIN: writing lists, forgetting items, extra trips → OUTCOME: list writes itself
+  { theme:'green', h:['Nie wieder eine','Liste schreiben.'], accentLine:1,
+    sub:'Die Einkaufsliste entsteht automatisch – nichts vergessen.',
+    badge:'0 vergessene Zutaten',
     photo:'https://v3b.fal.media/files/b/0a9cf812/dRcuFh5yMT_Ca263MrKXs_f36bca24600442d29df917bd24351a4a.jpg',
     pill:'Beef Chimichurri & Reis' },
-  { theme:'cream', h:['70+ frische','Rezepte.'], accentLine:1,
-    sub:'Viele in unter 30 Minuten.',
+  // 4 — PAIN: same boring meals / unhealthy under time pressure → OUTCOME: fresh & varied
+  { theme:'cream', h:['Jeden Abend frisch.','Nie langweilig.'], accentLine:1,
+    sub:'70+ ausgewogene Rezepte – viele in unter 30 Minuten.',
+    badge:'70+ frische Rezepte',
     photo:'https://v3b.fal.media/files/b/0a9cf838/Hylc0Fz7I815A41Ktq9HM_6017c84f81b644cf868e0e1e62689ae9.jpg',
     pill:'Gefüllte Paprika mit Feta' },
-  { theme:'green', h:['Kaufen &','liefern lassen.'], accentLine:1,
-    sub:'Von der Idee bis vor die Tür.',
+  // 5 — PAIN: shopping logistics → OUTCOME: from plan to your front door
+  { theme:'green', h:['Vom Plan direkt','vor die Haustür.'], accentLine:1,
+    sub:'Zutaten online kaufen und nach Hause liefern lassen.',
+    badge:'Liefern lassen statt schleppen',
     photo:'https://v3b.fal.media/files/b/0a9cf81b/EFctP0hmqINYvfwRjkEYu_3d3233de7ca24aa0b1a5714ad3530a27.jpg',
     pill:'Süßkartoffel mit Tahini' },
 ];
@@ -49,16 +59,30 @@ async function buildBase(s){
   const bgFill = onGreen ? 'url(#bg)' : CREAM;
   const txt = onGreen ? CREAM_TX : INK;
   const mut = onGreen ? MUT_ON_GREEN : MUT_ON_CREAM;
+  const FS=86, LH=100, hy0=300;
   const hl = s.h.map((line,i)=>{
     const fill = i===s.accentLine ? ACCENT : txt;
-    return `<text x="${CX}" y="${330+i*108}" font-family="Georgia, 'Times New Roman', serif" font-size="100" font-weight="700" fill="${fill}">${esc(line)}</text>`;
+    return `<text x="${CX}" y="${hy0+i*LH}" font-family="Georgia, 'Times New Roman', serif" font-size="${FS}" font-weight="700" fill="${fill}">${esc(line)}</text>`;
   }).join('');
+  const subY = hy0 + s.h.length*LH + 18;
+  // outcome badge — solid accent pill, no emoji (renders reliably server-side)
+  let badge='';
+  if(s.badge){
+    const bw = Math.round(s.badge.length*16.5 + 64);
+    const by = subY + 34;
+    badge = `<g>
+      <rect x="${CX}" y="${by}" width="${bw}" height="56" rx="28" fill="${ACCENT}"/>
+      <circle cx="${CX+30}" cy="${by+28}" r="7" fill="#FFFFFF"/>
+      <text x="${CX+50}" y="${by+38}" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#FFFFFF">${esc(s.badge)}</text>
+    </g>`;
+  }
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
     <defs>${bg}</defs>
     <rect width="${W}" height="${H}" fill="${bgFill}"/>
     ${bowl(CX-6,150,84)}
     ${hl}
-    <text x="${CX}" y="${330+s.h.length*108+24}" font-family="Arial, Helvetica, sans-serif" font-size="46" fill="${mut}">${esc(s.sub)}</text>
+    <text x="${CX}" y="${subY}" font-family="Arial, Helvetica, sans-serif" font-size="44" fill="${mut}">${esc(s.sub)}</text>
+    ${badge}
     <text x="${W/2}" y="${H-90}" text-anchor="middle" font-family="Georgia, serif" font-size="40" font-weight="700" fill="${txt}" opacity="0.85">Menja Fresh</text>
   </svg>`;
   return sharp(Buffer.from(svg)).png().toBuffer();
