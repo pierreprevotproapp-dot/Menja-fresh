@@ -42,6 +42,36 @@ const slides = [
     pill:'Süßkartoffel mit Tahini' },
 ];
 
+const slidesEN = [
+  { theme:'green', h:['End the','dinner question.'], accentLine:1,
+    sub:'Your whole week, planned in 2 minutes.',
+    badge:'2 minutes a week',
+    photo:'https://v3b.fal.media/files/b/0a9cf81c/K6Ye8kFA33SPrOvE8CQyu_1d21f191f05e4044bce5aaf4174f776d.jpg',
+    pill:'Chicken & Halloumi Salad' },
+  { theme:'cream', h:["You don't pick","a thing."], accentLine:1,
+    sub:'We choose the meals — you just swipe.',
+    badge:'3 swipes, done',
+    photo:'https://v3b.fal.media/files/b/0a9cf82c/GDeOJLLX6p3aBE4571c-h_d46de74fb57f464d8847ba27c2781b02.jpg',
+    pill:'Berry Smoothie Bowl' },
+  { theme:'green', h:['Never write a','list again.'], accentLine:1,
+    sub:'Your shopping list builds itself — nothing forgotten.',
+    badge:'0 forgotten items',
+    photo:'https://v3b.fal.media/files/b/0a9cf812/dRcuFh5yMT_Ca263MrKXs_f36bca24600442d29df917bd24351a4a.jpg',
+    pill:'Beef Chimichurri & Rice' },
+  { theme:'cream', h:['Fresh every night.','Never boring.'], accentLine:1,
+    sub:'70+ balanced recipes — many under 30 minutes.',
+    badge:'70+ recipes',
+    photo:'https://v3b.fal.media/files/b/0a9cf838/Hylc0Fz7I815A41Ktq9HM_6017c84f81b644cf868e0e1e62689ae9.jpg',
+    pill:'Stuffed Peppers with Feta' },
+  { theme:'green', h:['From plan','to your door.'], accentLine:1,
+    sub:'Buy the ingredients online and have them delivered.',
+    badge:'Delivered, not lugged',
+    photo:'https://v3b.fal.media/files/b/0a9cf81b/EFctP0hmqINYvfwRjkEYu_3d3233de7ca24aa0b1a5714ad3530a27.jpg',
+    pill:'Sweet Potato with Tahini' },
+];
+
+const SETS = { de: { slides, step: 'Schritt für Schritt' }, en: { slides: slidesEN, step: 'Step by step' } };
+
 const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 const bowl = (x,y,s)=>`<g transform="translate(${x},${y}) scale(${s/1024})">
   <circle cx="512" cy="406" r="66" fill="#E6A92E"/><circle cx="416" cy="452" r="84" fill="#D6492F"/>
@@ -88,7 +118,7 @@ async function buildBase(s){
   return sharp(Buffer.from(svg)).png().toBuffer();
 }
 
-function overlaySvg(s){
+function overlaySvg(s, stepLabel){
   // bottom gradient on the photo card + recipe pill
   return Buffer.from(`<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
     <defs>
@@ -104,8 +134,8 @@ function overlaySvg(s){
     <rect x="${CX}" y="${CY}" width="${CW}" height="${CH}" rx="${CR}" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
     <text x="${CX+56}" y="${CY+CH-150}" font-family="Georgia, serif" font-size="46" font-weight="700" fill="#FFFFFF">${esc(s.pill)}</text>
     <g>
-      <rect x="${CX+56}" y="${CY+CH-110}" width="300" height="64" rx="32" fill="#D6492F"/>
-      <text x="${CX+56+150}" y="${CY+CH-66}" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">Schritt für Schritt</text>
+      <rect x="${CX+56}" y="${CY+CH-110}" width="${Math.round(stepLabel.length*17+60)}" height="64" rx="32" fill="#D6492F"/>
+      <text x="${CX+56+Math.round((stepLabel.length*17+60)/2)}" y="${CY+CH-66}" text-anchor="middle" font-family="Arial, sans-serif" font-size="32" font-weight="700" fill="#FFFFFF">${esc(stepLabel)}</text>
     </g>
   </svg>`);
 }
@@ -122,16 +152,23 @@ async function fetchPhoto(url){
 (async () => {
   const outDir = path.join(__dirname,'..','store','screenshots');
   fs.mkdirSync(outDir,{recursive:true});
-  for(let i=0;i<slides.length;i++){
-    const s = slides[i];
-    const base = await buildBase(s);
-    const photo = await fetchPhoto(s.photo);
-    const out = path.join(outDir, `de-67-${i+1}.png`);
-    await sharp(base)
-      .composite([{ input: photo, left: CX, top: CY }, { input: overlaySvg(s), left:0, top:0 }])
-      .png({ compressionLevel:9 })
-      .toFile(out);
-    console.log('  ✓ store/screenshots/'+path.basename(out));
+  // Render only the language(s) passed as args (e.g. `node generate-screenshots.js en`),
+  // or all of them by default.
+  const want = process.argv.slice(2);
+  const langs = want.length ? want : Object.keys(SETS);
+  for(const lang of langs){
+    const set = SETS[lang]; if(!set){ console.log('  ! unknown lang', lang); continue; }
+    for(let i=0;i<set.slides.length;i++){
+      const s = set.slides[i];
+      const base = await buildBase(s);
+      const photo = await fetchPhoto(s.photo);
+      const out = path.join(outDir, `${lang}-67-${i+1}.png`);
+      await sharp(base)
+        .composite([{ input: photo, left: CX, top: CY }, { input: overlaySvg(s, set.step), left:0, top:0 }])
+        .png({ compressionLevel:9 })
+        .toFile(out);
+      console.log('  ✓ store/screenshots/'+path.basename(out));
+    }
   }
-  console.log('Done — '+slides.length+' screenshots (1290×2796).');
+  console.log('Done — '+langs.join(', ')+' (1290×2796).');
 })();
