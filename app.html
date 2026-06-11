@@ -810,7 +810,6 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .dchoose-name{font-family:var(--fd);font-size:22px;font-weight:500;color:#fff;line-height:1.2}
 .dchoose-meta{font-size:12px;color:rgba(255,255,255,.85);margin-top:4px;margin-bottom:12px}
 .dchoose-select{width:100%;background:var(--nav-a);color:var(--nav);border:none;border-radius:99px;padding:13px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
-.dchoose-hint{font-size:11px;color:var(--text3);text-align:center;margin-top:14px}
 /* ── ME LINK ROWS ────────────────────────────── */
 .me-link{display:flex;align-items:center;justify-content:space-between;width:100%;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:14px 16px;margin-bottom:10px;box-shadow:var(--sh);cursor:pointer;font-family:var(--fb);font-size:14px;font-weight:500;color:var(--text)}
 .me-link:hover{background:var(--surface2)}
@@ -1411,6 +1410,7 @@ en:{
   prepLbl:'Prep',cookLbl:'Cook',totalLbl:'Total',perServingSlash:'/ serving',fiberLbl:'Fiber',sauceDressing:'Sauce & Dressing',closeWordShort:'Close',
   weekPlannedTitle:'Your week is planned 🎉',weekPlannedSub:'Dinner is one less thing to think about.',toGroceryList:'🛒 Take me to my grocery list →',stayOnPlan:'Stay on this page',
   streakChip:'🔥 {n}-week streak',weeksPlanned1:'🌱 First week planned',weeksPlannedN:'✓ {n} weeks planned',backToToday:'↩ Back to today',
+  planCoachHint:'👆 <b>Tap a meal</b> to see the recipe · <b>swipe / ‹ ›</b> to change it · <b>✓ Choose</b> to lock it in · <b>🗑 Skip day</b> to drop one',gotItWord:'Got it',
   tabPrep:'Preparation',tabMacros:'Macros',
 },
 fr:{
@@ -1530,6 +1530,7 @@ fr:{
   prepLbl:'Prépa',cookLbl:'Cuisson',totalLbl:'Total',perServingSlash:'/ portion',fiberLbl:'Fibres',sauceDressing:'Sauce & Vinaigrette',closeWordShort:'Fermer',
   weekPlannedTitle:'Votre semaine est planifiée 🎉',weekPlannedSub:'Le dîner, une chose de moins à gérer.',toGroceryList:'🛒 Voir ma liste de courses →',stayOnPlan:'Rester sur cette page',
   streakChip:'🔥 {n} semaines de suite',weeksPlanned1:'🌱 Première semaine planifiée',weeksPlannedN:'✓ {n} semaines planifiées',backToToday:'↩ Retour à aujourd’hui',
+  planCoachHint:'👆 <b>Touche</b> un repas pour voir la recette · <b>glisse / ‹ ›</b> pour changer · <b>✓ Choisir</b> pour valider · <b>🗑 Passer le jour</b> pour en retirer un',gotItWord:'Compris',
   tabPrep:'Préparation',tabMacros:'Macros',
 },
 es:{
@@ -1649,6 +1650,7 @@ es:{
   prepLbl:'Prep.',cookLbl:'Cocción',totalLbl:'Total',perServingSlash:'/ ración',fiberLbl:'Fibra',sauceDressing:'Salsa y aliño',closeWordShort:'Cerrar',
   weekPlannedTitle:'¡Tu semana está planificada! 🎉',weekPlannedSub:'La cena, una cosa menos en que pensar.',toGroceryList:'🛒 Ir a mi lista de la compra →',stayOnPlan:'Quedarme en esta página',
   streakChip:'🔥 {n} semanas seguidas',weeksPlanned1:'🌱 Primera semana planificada',weeksPlannedN:'✓ {n} semanas planificadas',backToToday:'↩ Volver a hoy',
+  planCoachHint:'👆 <b>Toca</b> una comida para ver la receta · <b>desliza / ‹ ›</b> para cambiar · <b>✓ Elegir</b> para fijar · <b>🗑 Saltar día</b> para quitar uno',gotItWord:'Entendido',
   tabPrep:'Preparación',tabMacros:'Macros',
 },
 pt:{
@@ -1814,6 +1816,7 @@ de:{
   prepLbl:'Vorber.',cookLbl:'Kochen',totalLbl:'Gesamt',perServingSlash:'/ Portion',fiberLbl:'Ballaststoffe',sauceDressing:'Soße & Dressing',closeWordShort:'Schließen',
   weekPlannedTitle:'Deine Woche ist geplant 🎉',weekPlannedSub:'Das Abendessen – eine Sorge weniger.',toGroceryList:'🛒 Zu meiner Einkaufsliste →',stayOnPlan:'Auf dieser Seite bleiben',
   streakChip:'🔥 {n} Wochen in Folge',weeksPlanned1:'🌱 Erste Woche geplant',weeksPlannedN:'✓ {n} Wochen geplant',backToToday:'↩ Zurück zu heute',
+  planCoachHint:'👆 <b>Tippe</b> auf eine Mahlzeit für das Rezept · <b>wischen / ‹ ›</b> zum Wechseln · <b>✓ Wählen</b> zum Festlegen · <b>🗑 Tag überspringen</b> zum Streichen',gotItWord:'Verstanden',
   tabPrep:'Zubereitung',tabMacros:'Makros',
 },
 };
@@ -3770,7 +3773,7 @@ function renderCal(){
       <div class="plan-cta-sub">${t('weekPlannedSub')}</div>
       <button class="plan-cta-btn" onclick="showTab('shopping')">${t('toGroceryList')}</button>
     </div>`:'';
-  const hint=(!hintSeen('plan')&&weekPlacedCount()>0)?`<div class="plan-hint"><span>👆 <b>Tap a meal</b> to see the recipe · <b>swipe / ‹ ›</b> to change it · <b>✓ Choose</b> to lock it in · <b>🗑 Skip day</b> to drop one</span><button class="plan-hint-x" onclick="dismissHint('plan')">Got it</button></div>`:'';
+  const hint=(!hintSeen('plan')&&weekPlacedCount()>0)?`<div class="plan-hint"><span>${t('planCoachHint')}</span><button class="plan-hint-x" onclick="dismissHint('plan')">${t('gotItWord')}</button></div>`:'';
   const budget=weekPlacedCount()>0?budgetCardHTML():'';
   cal.innerHTML=hint+banner+budget+cal.innerHTML;
   bindPdaySwipe();bindInlineBrowse();
@@ -3940,10 +3943,9 @@ function renderDishChooser(){
       <button class="dchoose-arrow left" onclick="chooserNav(-1)">‹</button>
       <button class="dchoose-arrow right" onclick="chooserNav(1)">›</button>
       <div class="dchoose-info"><div class="dchoose-name">${dishName(d)}</div><div class="dchoose-meta">${time?`⏱ ${time} min`:''}${tags?` · ${tags}`:''}</div>
-        <button class="dchoose-select" onclick="event.stopPropagation();chooserSelect()">✓ ${t('choose')} · ${mealName(type)}</button>
+        <button class="dchoose-select" onclick="event.stopPropagation();chooserSelect()">${t('choose')} · ${mealName(type)}</button>
       </div>
     </div>
-    <div class="dchoose-hint">‹ › or swipe to browse · tap the photo to choose</div>
   `;
   bindChooserSwipe();
 }
