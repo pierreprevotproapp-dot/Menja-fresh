@@ -1,8 +1,13 @@
-[{
-      "relation": ["delegate_permission/common.handle_all_urls"],
-      "target": {
-        "namespace": "android_app",
-        "package_name": "com.menjafresh1.app",
-        "sha256_cert_fingerprints": ["CA:B8:63:D1:8E:0B:55:7D:9B:97:6E:D4:43:23:AC:70:11:F0:78:E5:C5:20:68:3C:F3:A3:D5:35:2E:D7:74:DA"]
-      }
-    }]
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.menjafresh1.app",
+      "sha256_cert_fingerprints": [
+        "02:71:1B:5A:33:A1:F4:87:6B:88:4A:83:F8:98:A7:DF:08:6E:39:75:D9:D7:14:9C:12:5D:AF:FA:E8:A0:9D:B0",
+        "CA:B8:63:D1:8E:0B:55:7D:9B:97:6E:D4:43:23:AC:70:11:F0:78:E5:C5:20:68:3C:F3:A3:D5:35:2E:D7:74:DA"
+      ]
+    }
+  }
+]
