@@ -35,7 +35,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .welcome-screen.open{display:block}
 .welcome-inner{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding:0 26px calc(28px + env(safe-area-inset-bottom))}
 .welcome-hero{text-align:center;padding:52px 10px 26px}
-.welcome-leaf{font-size:52px;display:block;margin-bottom:14px}
+.welcome-leaf{width:66px;height:66px;display:block;margin:0 auto 14px}
+.brand-mark{display:block;margin:0 auto}
 .welcome-hero h1{font-family:var(--fd);font-size:34px;font-weight:500;color:#fff;margin-bottom:8px}
 .welcome-tag{font-size:15px;color:var(--nav-t);line-height:1.5}
 .welcome-points{display:flex;flex-direction:column;gap:16px;flex:1;justify-content:center;padding:6px 0 10px}
@@ -49,7 +50,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .welcome-signin{text-align:center;font-size:13px;color:var(--nav-t);margin-top:16px}
 .welcome-signin a{color:var(--nav-a);font-weight:600;cursor:pointer}
 .auth-hero{background:var(--nav);padding:56px 28px 40px;text-align:center;border-radius:0 0 40px 40px}
-.auth-hero-leaf{font-size:56px;margin-bottom:16px;display:block}
+.auth-hero-leaf{width:66px;height:66px;margin:0 auto 16px;display:block}
 .auth-hero h1{font-family:var(--fd);font-size:32px;font-weight:500;color:#fff;margin-bottom:6px}
 .auth-hero p{font-size:14px;color:var(--nav-t);line-height:1.5}
 .auth-body{padding:28px 24px;flex:1}
@@ -490,7 +491,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 @keyframes loadingTimeout{0%,87.5%{opacity:1;pointer-events:all}100%{opacity:0;pointer-events:none}}
 .loading-screen{animation:loadingTimeout 8s forwards}
 .loading-screen.hide{opacity:0;pointer-events:none}
-.loading-leaf{font-size:52px;margin-bottom:16px;animation:float 2s ease-in-out infinite}
+.loading-leaf{width:64px;height:64px;margin:0 auto 16px;animation:float 2s ease-in-out infinite}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
 .loading-text{font-family:var(--fd);font-size:24px;color:#fff;margin-bottom:8px}
 .loading-sub{font-size:13px;color:var(--nav-t)}
@@ -748,7 +749,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .setup-bg.open{display:block}
 .setup-inner{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column}
 .setup-hero{background:var(--nav);padding:40px 24px 26px;text-align:center;border-radius:0 0 28px 28px}
-.setup-leaf{font-size:44px;display:block;margin-bottom:10px}
+.setup-leaf{width:56px;height:56px;display:block;margin:0 auto 10px}
 .setup-hero h1{font-family:var(--fd);font-size:23px;font-weight:500;color:#fff;margin-bottom:6px}
 .setup-hero p{font-size:13px;color:var(--nav-t);line-height:1.5}
 .setup-body{padding:20px 20px 8px;flex:1}
@@ -840,11 +841,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 </style>
 </head>
 <body>
-<div class="loading-screen" id="loading"><div class="loading-leaf">🌿</div><div class="loading-text">Menja Fresh</div><div class="loading-sub" id="loading-sub">Loading...</div></div>
+<div class="loading-screen" id="loading"><svg class="loading-leaf" viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg><div class="loading-text">Menja Fresh</div><div class="loading-sub" id="loading-sub">Loading...</div></div>
 <div class="welcome-screen" id="welcome-screen">
   <div class="welcome-inner">
     <div class="welcome-hero">
-      <span class="welcome-leaf">🌿</span>
+      <svg class="welcome-leaf" viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
       <h1>Menja Fresh</h1>
       <p class="welcome-tag" data-t="welcomeTag">Dinner, sorted — for busy families.</p>
     </div>
@@ -862,7 +863,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   </div>
 </div>
 <div class="auth-screen" id="auth-screen">
-  <div class="auth-hero"><span class="auth-hero-leaf">🌿</span><h1>Menja Fresh</h1><p id="auth-tagline">Seasonal · Whole foods · Plant-forward</p></div>
+  <div class="auth-hero"><svg class="auth-hero-leaf" viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg><h1>Menja Fresh</h1><p id="auth-tagline">Seasonal · Whole foods · Plant-forward</p></div>
   <div class="auth-body">
     <div class="lang-row" id="auth-lang-row"></div>
     <div class="auth-tabs">
@@ -925,7 +926,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   </div>
 </div>
 <div id="app">
-  <div class="user-bar"><div class="user-bar-left"><div class="user-avatar" id="user-avatar">🌿</div><div><div class="user-name" id="user-name">Loading...</div><div class="user-plan" id="user-plan" style="cursor:pointer"></div></div></div><div style="display:flex;align-items:center;gap:8px"><button class="upgrade-btn" id="upgrade-btn" onclick="openPaywall('header')" style="display:none" data-t="upgrade">⭐ Upgrade</button><button class="signout-btn" onclick="signOut()" data-t="signOut">Sign out</button></div></div>
+  <div class="user-bar"><div class="user-bar-left"><div class="user-avatar" id="user-avatar">🥗</div><div><div class="user-name" id="user-name">Loading...</div><div class="user-plan" id="user-plan" style="cursor:pointer"></div></div></div><div style="display:flex;align-items:center;gap:8px"><button class="upgrade-btn" id="upgrade-btn" onclick="openPaywall('header')" style="display:none" data-t="upgrade">⭐ Upgrade</button><button class="signout-btn" onclick="signOut()" data-t="signOut">Sign out</button></div></div>
   <div class="sync-bar" id="sync-bar"><div class="sync-dot"></div><span data-t="syncing">Syncing...</span></div>
   <div class="app-lang-bar" id="app-lang-bar"></div>
   <nav class="nav"><div class="nav-tabs">
@@ -938,7 +939,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <div class="screen" id="screen-family">
     <div class="fam-hero">
       <div class="me-acct">
-        <div class="user-avatar" id="me-avatar">🌿</div>
+        <div class="user-avatar" id="me-avatar">🥗</div>
         <div class="me-acct-info">
           <div class="me-acct-name" id="me-name">Me</div>
           <div class="me-acct-plan" id="me-plan" onclick="openPaywall('me')"></div>
@@ -970,7 +971,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div style="height:20px"></div>
   </div>
   <div class="screen" id="screen-discover">
-    <div class="hero"><h1>🌿 Menja Fresh</h1><p data-t="discoverSub">Seasonal · Whole foods · Plant-forward</p></div>
+    <div class="hero"><h1><svg viewBox="0 0 64 64" style="height:0.9em;width:0.9em;vertical-align:-0.12em" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg> Menja Fresh</h1><p data-t="discoverSub">Seasonal · Whole foods · Plant-forward</p></div>
     <div class="tag-wrap" id="tag-filters"></div>
     <div class="swipe-hints"><div class="hint hint-no"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg><span data-t="skip">Skip</span></div><button class="done-btn" onclick="showDonePanel()" data-t="doneForNow">Done for now ✓</button><div class="hint hint-yes"><span data-t="addIt">Add it</span> <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div></div>
     <div class="swipe-area"><div class="dish-card" id="dish-card"><div class="swo"><div class="swl no" id="lbl-no">SKIP</div><div class="swl yes" id="lbl-yes">ADD!</div></div><div id="dish-img-wrap"></div><div class="di"><div class="dtags" id="dish-tags"></div><div class="dn" id="dish-name"></div><div class="dd" id="dish-desc"></div><div class="di-badges" id="dish-badges"></div></div></div><div style="display:none" id="done-panel" class="done-panel"><div class="em" id="done-em">✅</div><h2 id="done-title"></h2><p id="done-body"></p><div class="done-btns"><button class="btn-p" onclick="showTab('plan')" data-t="planMyWeek">Plan my week →</button><button class="btn-s" onclick="continueSwiping()" data-t="keepBrowsing">Keep browsing</button></div></div></div>
@@ -1196,7 +1197,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 <div class="setup-bg" id="setup-bg">
   <div class="setup-inner">
     <div class="setup-hero">
-      <span class="setup-leaf">🌿</span>
+      <svg class="setup-leaf" viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
       <h1 id="setup-title">Let's set up your kitchen</h1>
       <p id="setup-subtitle">A few quick things so your weekly plan fits your family.</p>
     </div>
@@ -2354,7 +2355,7 @@ async function signUp(){
   try{
     const{data,error}=await sb.auth.signUp({email,password:pass,options:{
       emailRedirectTo:window.location.origin,
-      data:{first_name:fname,last_name:document.getElementById('su-lname').value.trim(),plan:'registered',avatar:'🌿'}
+      data:{first_name:fname,last_name:document.getElementById('su-lname').value.trim(),plan:'registered',avatar:'🥗'}
     }});
     btn.disabled=false;btn.textContent=t('createAccountBtn');
     if(error){
@@ -4564,7 +4565,7 @@ function showApp(user){
   document.getElementById('app').style.display='block';
   currentUser=user;
   const meta=user.user_metadata||{};
-  document.getElementById('user-avatar').textContent=meta.avatar||'🌿';
+  document.getElementById('user-avatar').textContent=meta.avatar||'🥗';
   document.getElementById('user-name').textContent=meta.first_name||user.email?.split('@')[0]||'Friend';
   const tier=getUserTier();
   const tierLabels={guest:'🌱 Explorer',registered:'🌿 Member (free)',premium:'⭐ Premium'};
@@ -4578,7 +4579,7 @@ function showApp(user){
   document.getElementById('user-plan').onclick=tier!=='premium'?()=>openPaywall('header'):null;
   // Me-tab account header (the visible one after header declutter)
   const tierLabelsArrow={guest:'🌱 Explorer — get a free account ›',registered:'🌿 Member (free) — go Premium ›',premium:'⭐ Premium'};
-  const meAvatar=document.getElementById('me-avatar');if(meAvatar)meAvatar.textContent=meta.avatar||'🌿';
+  const meAvatar=document.getElementById('me-avatar');if(meAvatar)meAvatar.textContent=meta.avatar||'🥗';
   const meName=document.getElementById('me-name');if(meName)meName.textContent=meta.first_name||user.email?.split('@')[0]||'Friend';
   const mePlan=document.getElementById('me-plan');if(mePlan)mePlan.textContent=tierLabelsArrow[tier]||tier;
   const meUpgrade=document.getElementById('me-upgrade');if(meUpgrade)meUpgrade.style.display=tier==='premium'?'none':'block';
