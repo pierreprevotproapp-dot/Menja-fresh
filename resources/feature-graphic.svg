@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="500" viewBox="0 0 1024 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#37704A"/>
+      <stop offset="1" stop-color="#20402A"/>
+    </linearGradient>
+    <linearGradient id="bowl" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#FFFDF7"/>
+      <stop offset="1" stop-color="#F2E8D2"/>
+    </linearGradient>
+  </defs>
+  <rect width="1024" height="500" fill="url(#bg)"/>
+  <!-- text block -->
+  <text x="72" y="210" font-family="Georgia, 'Times New Roman', serif" font-size="74" font-weight="700" fill="#FFFDF7">Menja Fresh</text>
+  <text x="74" y="270" font-family="Arial, Helvetica, sans-serif" font-size="33" fill="#CFE0D0">Weniger Kopf-Last. Mehr gutes Essen.</text>
+  <g>
+    <rect x="74" y="300" width="430" height="56" rx="28" fill="#E07A4E"/>
+    <circle cx="104" cy="328" r="7" fill="#FFFFFF"/>
+    <text x="124" y="338" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="700" fill="#FFFFFF">Wochenplan in 2 Minuten</text>
+  </g>
+  <!-- bowl motif on the right -->
+  <g transform="translate(720,90) scale(0.30)">
+    <circle cx="512" cy="406" r="66" fill="#E6A92E"/>
+    <circle cx="416" cy="452" r="84" fill="#D6492F"/>
+    <circle cx="610" cy="444" r="74" fill="#83B26A"/>
+    <path d="M612 384 q48 -46 104 -24 q-20 54 -76 54 q-24 -12 -28 -30 Z" fill="#5E9B49"/>
+    <path d="M196 520 Q512 900 828 520 Z" fill="url(#bowl)"/>
+    <ellipse cx="512" cy="520" rx="316" ry="50" fill="#FFFDF7"/>
+    <ellipse cx="512" cy="520" rx="316" ry="50" fill="none" stroke="#E7DCC4" stroke-width="6"/>
+  </g>
+</svg>
