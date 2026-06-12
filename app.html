@@ -188,9 +188,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .fam-count{font-family:var(--fd);font-size:22px;font-weight:500;min-width:26px;text-align:center}
 .fam-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid var(--border2);background:var(--surface2);display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:18px;color:var(--text2);transition:all .15s}
 .fam-btn:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
-.fam-summary{margin:14px 20px;background:var(--nav);border-radius:var(--r);padding:13px 16px}
-.fam-summary p{font-size:13px;color:var(--nav-t);line-height:1.6}
-.fam-summary strong{color:var(--nav-a)}
+.fam-summary{margin:10px 20px 2px}
+.fam-summary p{font-size:13px;color:var(--text2);line-height:1.55}
+.fam-summary strong{color:var(--text);font-weight:600}
+.fam-summary-tip{margin-top:5px!important;font-size:12px;color:var(--text3)}
 .hero{background:var(--nav);padding:14px 20px 10px;border-bottom:1px solid rgba(126,200,122,.2)}
 .hero h1{font-family:var(--fd);font-size:21px;font-weight:500;color:#fff;margin-bottom:2px}
 .hero p{font-size:12px;color:var(--nav-t)}
@@ -952,7 +953,6 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <div class="fam-row"><div class="fam-row-left"><div class="fam-avatar child">👧</div><div><div class="fam-label" data-t="children">Children</div><div class="fam-sublabel" data-t="threeQuarter">¾ adult portion</div></div></div><div class="fam-counter"><div class="fam-btn" onclick="adjFamily('children',-1)">−</div><div class="fam-count" id="children-count">0</div><div class="fam-btn" onclick="adjFamily('children',1)">+</div></div></div>
     </div>
     <div class="fam-summary" id="fam-summary"></div>
-    <div style="margin:0 20px;background:var(--accent-l);border-radius:var(--rsm);padding:12px 14px;font-size:12px;color:var(--text2);line-height:1.5" data-t="famTip">💡 You can adjust guests per meal in the Planner.</div>
     <div class="fam-section"><h3 data-t="dietaryPrefs">Dietary preferences</h3>
       <div class="diet-tags-row" id="prof-diet-tags"></div>
     </div>
@@ -3152,7 +3152,7 @@ function renderFamily(){
   let txt=`${t('cookingFor')} <strong>${total} ${total===1?t('person'):t('people')}</strong>`;
   if(state.family.adults&&state.family.children)txt+=` — ${state.family.adults} ${state.family.adults>1?t('adults2'):t('adult')} ${t('and')} ${state.family.children} ${state.family.children>1?t('children2'):t('child')}`;
   txt+=`.<br>${t('recipesFor')} <strong>${sf} ${t('servings')}</strong>.`;
-  document.getElementById('fam-summary').innerHTML=`<p>${txt}</p>`;
+  document.getElementById('fam-summary').innerHTML=`<p>${txt}</p><p class="fam-summary-tip">${t('famTip')}</p>`;
   renderDietPrefs();renderMacroGoals();renderBudget();renderDevTier();
 }
 
