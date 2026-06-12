@@ -1411,6 +1411,7 @@ en:{
   weekPlannedTitle:'Your week is planned 🎉',weekPlannedSub:'Dinner is one less thing to think about.',toGroceryList:'🛒 Take me to my grocery list →',stayOnPlan:'Stay on this page',
   streakChip:'🔥 {n}-week streak',weeksPlanned1:'🌱 First week planned',weeksPlannedN:'✓ {n} weeks planned',backToToday:'↩ Back to today',
   planCoachHint:'👆 <b>Tap a meal</b> to see the recipe · <b>swipe / ‹ ›</b> to change it · <b>✓ Choose</b> to lock it in · <b>🗑 Skip day</b> to drop one',gotItWord:'Got it',
+  notPlanningLabel:'Not planning',planThisDay:'Plan this day',pickADinner:'Pick a dinner',skipDay:'Skip day',skipDayTitle:'Skip this whole day',
   tabPrep:'Preparation',tabMacros:'Macros',
 },
 fr:{
@@ -1531,6 +1532,7 @@ fr:{
   weekPlannedTitle:'Votre semaine est planifiée 🎉',weekPlannedSub:'Le dîner, une chose de moins à gérer.',toGroceryList:'🛒 Voir ma liste de courses →',stayOnPlan:'Rester sur cette page',
   streakChip:'🔥 {n} semaines de suite',weeksPlanned1:'🌱 Première semaine planifiée',weeksPlannedN:'✓ {n} semaines planifiées',backToToday:'↩ Retour à aujourd’hui',
   planCoachHint:'👆 <b>Touche</b> un repas pour voir la recette · <b>glisse / ‹ ›</b> pour changer · <b>✓ Choisir</b> pour valider · <b>🗑 Passer le jour</b> pour en retirer un',gotItWord:'Compris',
+  notPlanningLabel:'Non planifié',planThisDay:'Planifier ce jour',pickADinner:'Choisir un dîner',skipDay:'Passer le jour',skipDayTitle:'Passer toute la journée',
   tabPrep:'Préparation',tabMacros:'Macros',
 },
 es:{
@@ -1651,6 +1653,7 @@ es:{
   weekPlannedTitle:'¡Tu semana está planificada! 🎉',weekPlannedSub:'La cena, una cosa menos en que pensar.',toGroceryList:'🛒 Ir a mi lista de la compra →',stayOnPlan:'Quedarme en esta página',
   streakChip:'🔥 {n} semanas seguidas',weeksPlanned1:'🌱 Primera semana planificada',weeksPlannedN:'✓ {n} semanas planificadas',backToToday:'↩ Volver a hoy',
   planCoachHint:'👆 <b>Toca</b> una comida para ver la receta · <b>desliza / ‹ ›</b> para cambiar · <b>✓ Elegir</b> para fijar · <b>🗑 Saltar día</b> para quitar uno',gotItWord:'Entendido',
+  notPlanningLabel:'Sin planificar',planThisDay:'Planificar este día',pickADinner:'Elegir una cena',skipDay:'Saltar día',skipDayTitle:'Saltar todo el día',
   tabPrep:'Preparación',tabMacros:'Macros',
 },
 pt:{
@@ -1817,6 +1820,7 @@ de:{
   weekPlannedTitle:'Deine Woche ist geplant 🎉',weekPlannedSub:'Das Abendessen – eine Sorge weniger.',toGroceryList:'🛒 Zu meiner Einkaufsliste →',stayOnPlan:'Auf dieser Seite bleiben',
   streakChip:'🔥 {n} Wochen in Folge',weeksPlanned1:'🌱 Erste Woche geplant',weeksPlannedN:'✓ {n} Wochen geplant',backToToday:'↩ Zurück zu heute',
   planCoachHint:'👆 <b>Tippe</b> auf eine Mahlzeit für das Rezept · <b>wischen / ‹ ›</b> zum Wechseln · <b>✓ Wählen</b> zum Festlegen · <b>🗑 Tag überspringen</b> zum Streichen',gotItWord:'Verstanden',
+  notPlanningLabel:'Nicht geplant',planThisDay:'Tag planen',pickADinner:'Abendessen wählen',skipDay:'Tag überspringen',skipDayTitle:'Ganzen Tag überspringen',
   tabPrep:'Zubereitung',tabMacros:'Makros',
 },
 };
@@ -3744,9 +3748,9 @@ function renderCal(){
   const cal=document.getElementById('cal-scroll');const dates=getDateRange();const todayKey=dateKey(new Date());
   cal.innerHTML=dates.map(d=>{
     const key=dateKey(d);const isToday=key===todayKey;
-    const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · Today':''}`;
+    const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
     if(isSkipped(key)){
-      return`<div class="pday"><div class="pday-skip-row"><span class="pday-skip-label">${labelTxt} · Not planning</span><button class="pday-replan" onclick="planDay('${key}')">＋ Plan this day</button></div></div>`;
+      return`<div class="pday"><div class="pday-skip-row"><span class="pday-skip-label">${labelTxt} · ${t('notPlanningLabel')}</span><button class="pday-replan" onclick="planDay('${key}')">＋ ${t('planThisDay')}</button></div></div>`;
     }
     const dm=state.plan[key]||{};
     let cards='';
@@ -3757,13 +3761,13 @@ function renderCal(){
     if(isBrowsing(key,'Dinner'))cards+=inlineBrowseCard(key,'Dinner');
     else{
       const dinner=dm.Dinner&&dm.Dinner.dishId?getDish(dm.Dinner.dishId):null;
-      cards+=dinner?mealCard(key,'Dinner',dinner):`<div class="pday-empty" onclick="startBrowse('${key}','Dinner')">＋ Pick a dinner</div>`;
+      cards+=dinner?mealCard(key,'Dinner',dinner):`<div class="pday-empty" onclick="startBrowse('${key}','Dinner')">＋ ${t('pickADinner')}</div>`;
     }
-    const adds=['Breakfast','Lunch'].filter(tp=>!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${tp}</button>`).join('');
+    const adds=['Breakfast','Lunch'].filter(tp=>!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
     const dCost=isPremium()?dayCostEstimate(key):0;
     const dCostHtml=dCost>0?`<span class="pday-cost">≈ ${money(dCost)}</span>`:'';
     return`<div class="pday ${isToday?'today':''}">
-      <div class="pday-label-row"><span class="pday-label">${labelTxt}${dCostHtml}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="Skip this whole day">🗑 Skip day</button></div>
+      <div class="pday-label-row"><span class="pday-label">${labelTxt}${dCostHtml}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑 ${t('skipDay')}</button></div>
       ${cards}
       ${adds?`<div class="pday-extra">${adds}</div>`:''}
     </div>`;
