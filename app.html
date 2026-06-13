@@ -4145,6 +4145,10 @@ function openRecipe(id){
   document.getElementById('rec-list-view').style.display='none';
   recipeServings[id]=recipeServings[id]||Math.round(familyServings());
   renderRecipeDetail(id);
+  // The document/window is the scroll container — reset it so the hero (with the
+  // back button) is at the top, not left scrolled where the recipe list was.
+  window.scrollTo(0,0);
+  document.documentElement.scrollTop=0;document.body.scrollTop=0;
   document.getElementById('screen-recipes').scrollTop=0;
 }
 
@@ -4293,6 +4297,8 @@ function openRecipeFromToday(dishId){
   _rdTab='ing';
   recipeServings[dishId]=recipeServings[dishId]||familyServings();
   renderRecipeDetail(dishId);
+  window.scrollTo(0,0);
+  document.documentElement.scrollTop=0;document.body.scrollTop=0;
 }
 
 // ─── RATING ──────────────────────────────────────
