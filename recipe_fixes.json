@@ -208,5 +208,3125 @@
         "kidsHelp": null
       }
     ]
+  },
+  "sweet-potato-black-bean-rice-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍚 Brown rice · 160g"
+        ],
+        "text": "Cook brown rice according to packet instructions. Fluff with a fork and set aside.",
+        "title": "Cook the rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Cut into even cubes so everything roasts at the same time.",
+        "ings": [
+          "🍠 Sweet potato · 300g"
+        ],
+        "text": "Preheat oven to 200°C. Peel and cube sweet potato, toss with olive oil, smoked paprika, cumin, salt and pepper. Roast 20–25 min until golden.",
+        "title": "Roast the sweet potato",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🧅 Red onion · ½ pc"
+        ],
+        "text": "Thinly slice red onion and soak in red wine vinegar with a pinch of salt for 10 minutes. This takes the edge off and adds brightness.",
+        "title": "Quick pickle the onion",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🫘 Black beans · 400g",
+          "🌽 Corn · 100g"
+        ],
+        "text": "Drain and rinse black beans. Add to a pan with corn and a pinch of cumin, warm through for 3 minutes.",
+        "title": "Warm the beans & corn",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🥑 Avocado · 1 pc",
+          "🌿 Coriander · 15g",
+          "🍋 Lime · 1 pc"
+        ],
+        "text": "Layer rice, sweet potato, beans and corn. Top with sliced avocado, pickled onion and fresh coriander. Squeeze lime over everything.",
+        "title": "Build the bowl",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "spicy-feta-kale-quinoa-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🌾 Quinoa · 150g"
+        ],
+        "text": "Rinse quinoa well and cook in double the amount of water for 15 minutes. Drain and fluff.",
+        "title": "Cook the quinoa",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Massaging kale makes it tender and much easier to eat.",
+        "ings": [
+          "🥬 Kale · 80g"
+        ],
+        "text": "Remove tough stems, tear kale into pieces. Drizzle with olive oil and a pinch of salt and massage with your hands for 2 minutes until softened.",
+        "title": "Massage the kale",
+        "kidsHelp": "Kids can help massaging the kale! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍯 Honey · 1 tbsp"
+        ],
+        "text": "Warm honey in a small pan with a pinch of chilli flakes for 1 minute. Remove from heat.",
+        "title": "Make hot honey",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🍏 Green apple · ½ pc",
+          "🥒 Cucumber · ½ pc",
+          "🫘 Edamame · 80g"
+        ],
+        "text": "Thinly slice green apple and cucumber. Blanch edamame in salted water for 3 minutes, then drain.",
+        "title": "Prep the toppings",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🫙 Hummus · 4 tbsp",
+          "🧀 Feta · 100g"
+        ],
+        "text": "Spread hummus as the base. Add quinoa and kale. Layer apple, cucumber, edamame on top. Crumble feta and drizzle with hot honey.",
+        "title": "Build the bowl",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "avocado-greens-beetroot-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍄 Mushrooms · 100g"
+        ],
+        "text": "Slice mushrooms and cook in olive oil over medium-high heat for 5–6 minutes until golden. Season with salt and pepper.",
+        "title": "Sauté the mushrooms",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫚 Beetroot · 150g",
+          "🍎 Apple · ½ pc",
+          "🥕 Carrot · 1 pc"
+        ],
+        "text": "Slice beetroot and apple thinly. Grate carrot. Halve cherry tomatoes.",
+        "title": "Prep the vegetables",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🌰 Pistachios · 2 tbsp"
+        ],
+        "text": "Roughly crush pistachios with the back of a knife or in a bag with a rolling pin.",
+        "title": "Crush the pistachios",
+        "kidsHelp": "Kids can smash the pistachios in a bag! 🧒"
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥑 Avocado · 1 pc",
+          "🥬 Mixed greens · 80g"
+        ],
+        "text": "Toss greens with olive oil and lemon juice. Layer everything in the bowl. Finish with sliced avocado and pistachio crunch.",
+        "title": "Dress & build",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "goat-cheese-roasted-pear-arugula-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍠 Sweet potato · 200g"
+        ],
+        "text": "Cube sweet potato, toss with olive oil and salt, roast at 200°C for 20 minutes until golden.",
+        "title": "Roast the sweet potato",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍐 Pear · 1 pc"
+        ],
+        "text": "Halve and core the pear. Cook cut-side down in a pan with a little butter and 1 tbsp honey over medium heat for 3–4 minutes until golden.",
+        "title": "Caramelise the pear",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🌰 Walnuts · 30g"
+        ],
+        "text": "Add walnuts to a dry pan over medium heat for 3 minutes, tossing often. Watch carefully — they burn fast.",
+        "title": "Toast the walnuts",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🍯 Honey · 1 tbsp",
+          "🫚 Ginger · 1 tsp"
+        ],
+        "text": "Whisk remaining honey with grated ginger, a splash of apple cider vinegar and 2 tbsp olive oil.",
+        "title": "Make ginger honey dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🧀 Goat cheese · 80g",
+          "🫐 Cranberries · 2 tbsp"
+        ],
+        "text": "Layer arugula, sweet potato and pear. Crumble goat cheese on top. Scatter walnuts and cranberries. Drizzle dressing over everything.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "piri-piri-chicken-rice-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Marinate overnight in the fridge for even deeper flavour.",
+        "ings": [
+          "🍗 Chicken thighs · 300g",
+          "🌶️ Red chilli · 1 pc"
+        ],
+        "text": "Mix olive oil, smoked paprika, minced garlic, chopped chilli, oregano, salt and lime juice. Coat chicken thighs and marinate for at least 10 minutes.",
+        "title": "Marinate the chicken",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍚 Brown rice · 160g"
+        ],
+        "text": "Cook brown rice according to packet instructions.",
+        "title": "Cook the rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Let it rest 3 minutes before slicing so the juices stay in.",
+        "ings": [
+          "🍗 Chicken thighs · 300g"
+        ],
+        "text": "Cook chicken in a hot griddle pan or frying pan for 6–7 minutes per side until cooked through and nicely charred.",
+        "title": "Grill the chicken",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌽 Corn · 100g"
+        ],
+        "text": "Add corn to the same pan for 2–3 minutes until slightly charred.",
+        "title": "Toast the corn",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🍅 Cherry tomatoes · 100g",
+          "🌿 Coriander · 15g"
+        ],
+        "text": "Layer rice, sliced chicken and corn. Add halved cherry tomatoes and fresh coriander. Squeeze lime over the top.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "salmon-lemon-mustard-rice": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍚 Brown rice · 160g"
+        ],
+        "text": "Cook brown rice according to packet instructions.",
+        "title": "Cook the rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫙 Dijon mustard · 2 tbsp",
+          "🍋 Lemon · 1 pc",
+          "🍯 Honey · 1 tsp"
+        ],
+        "text": "Mix Dijon mustard, lemon juice, honey, minced garlic and a drizzle of olive oil into a smooth glaze.",
+        "title": "Make the glaze",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Don't move the salmon while the skin is cooking — let it crisp up.",
+        "ings": [
+          "🐟 Salmon fillet · 300g"
+        ],
+        "text": "Season salmon with salt and pepper. Cook in olive oil skin-side down for 4 minutes, flip, brush generously with glaze and cook 3 more minutes.",
+        "title": "Cook the salmon",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🫘 Green beans · 150g"
+        ],
+        "text": "Cook green beans in boiling salted water for 3–4 minutes until just tender. Drain and season.",
+        "title": "Steam the green beans",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🌿 Fresh dill · 10g"
+        ],
+        "text": "Layer rice and green beans. Place salmon on top, spoon over any remaining glaze and finish with fresh dill.",
+        "title": "Plate up",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "falafel-tahini-flatbread": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "The drier the chickpeas, the crispier the falafel.",
+        "ings": [
+          "🫘 Chickpeas · 400g",
+          "🌿 Parsley · 20g"
+        ],
+        "text": "Drain chickpeas well and pat dry. Blend with parsley, garlic, cumin, coriander, a pinch of salt and 2 tbsp flour until a rough paste forms. Don't over-blend — it should have some texture.",
+        "title": "Make the falafel mix",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫘 Falafel mix · all"
+        ],
+        "text": "Roll the mixture into small balls or patties. Refrigerate for 15 minutes — this helps them hold together.",
+        "title": "Shape & rest",
+        "kidsHelp": "Kids can shape the falafel balls! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫘 Falafel · all"
+        ],
+        "text": "Heat olive oil in a frying pan over medium heat. Cook falafel for 3–4 minutes per side until deep golden and crispy.",
+        "title": "Fry the falafel",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🫙 Tahini · 3 tbsp",
+          "🍋 Lemon · 1 pc"
+        ],
+        "text": "Mix tahini with lemon juice, a clove of garlic and 2–3 tbsp water until smooth and pourable.",
+        "title": "Make tahini sauce",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🫓 Flatbread · 2 pcs",
+          "🍅 Tomatoes · 2 pcs"
+        ],
+        "text": "Warm flatbreads. Top with sliced tomato, cucumber, falafel and a generous drizzle of tahini sauce.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "herb-tofu-smashed-potatoes": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🟨 Firm tofu · 300g",
+          "🫙 Soy sauce · 2 tbsp"
+        ],
+        "text": "Press tofu for 15 minutes between kitchen paper. Cube and marinate in soy sauce, lemon juice and chilli flakes for 10 minutes.",
+        "title": "Press & marinate the tofu",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥔 Baby potatoes · 400g"
+        ],
+        "text": "Boil baby potatoes in salted water for 15 minutes until just tender. Drain well.",
+        "title": "Boil the potatoes",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "The smashing is what makes them extra crispy!",
+        "ings": [
+          "🥔 Baby potatoes · 400g"
+        ],
+        "text": "Place potatoes on a baking tray. Smash each one with the bottom of a glass. Drizzle with olive oil and roast at 220°C for 20 minutes until golden and crispy.",
+        "title": "Smash & roast",
+        "kidsHelp": "Kids love smashing the potatoes! 🧒"
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🟨 Firm tofu · 300g"
+        ],
+        "text": "Cook tofu in olive oil over high heat for 3–4 minutes per side until crispy and golden.",
+        "title": "Fry the tofu",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🥬 Spinach · 60g",
+          "🌿 Fresh herbs · 20g"
+        ],
+        "text": "Wilt spinach in the same pan for 1 minute. Serve potatoes and tofu with spinach. Top with fresh herbs and a squeeze of lemon.",
+        "title": "Finish & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "beef-chimichurri-rice": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Make double — chimichurri keeps for 3 days and goes with everything.",
+        "ings": [
+          "🌿 Parsley · 30g",
+          "🧄 Garlic · 3 cloves",
+          "🌶️ Chilli · ½ pc"
+        ],
+        "text": "Finely chop parsley, garlic and chilli. Mix with olive oil, red wine vinegar, oregano and a pinch of salt. Let rest for at least 10 minutes.",
+        "title": "Make the chimichurri",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍚 Brown rice · 160g"
+        ],
+        "text": "Cook brown rice according to packet instructions.",
+        "title": "Cook the rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Let the steak rest for 5 minutes before slicing — this keeps it juicy.",
+        "ings": [
+          "🥩 Sirloin steak · 300g"
+        ],
+        "text": "Season steak generously with salt and pepper. Cook in a very hot pan or griddle for 3 minutes per side for medium-rare. Adjust time to your preference.",
+        "title": "Grill the steak",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥬 Arugula · 50g"
+        ],
+        "text": "Slice steak against the grain. Layer rice and arugula, add steak slices and spoon chimichurri generously over the top.",
+        "title": "Slice & assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "tuna-tataki-saffron-rice": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍚 White rice · 160g",
+          "🌼 Saffron · 1 pinch"
+        ],
+        "text": "Add saffron to warm water and leave for 5 minutes. Cook rice with this saffron water for a golden, fragrant result.",
+        "title": "Cook saffron rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫙 Soy sauce · 3 tbsp",
+          "🍋 Lime · 1 pc"
+        ],
+        "text": "Mix soy sauce, lime juice and a pinch of ginger. Set aside.",
+        "title": "Make the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Use the freshest tuna you can find for this recipe.",
+        "ings": [
+          "🐟 Tuna steak · 300g",
+          "⚪ Sesame seeds · 2 tbsp"
+        ],
+        "text": "Coat tuna in sesame seeds. Sear in a very hot pan with olive oil for 1 minute per side — the centre should remain rare.",
+        "title": "Sear the tuna",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥒 Cucumber · ½ pc",
+          "🌿 Coriander · 10g"
+        ],
+        "text": "Slice tuna thinly. Arrange over rice with thin cucumber slices. Spoon dressing over and finish with coriander.",
+        "title": "Slice & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "loaded-avocado-toast-eggs": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🧅 Red onion · ½ pc"
+        ],
+        "text": "Thinly slice red onion and cook in olive oil over low heat for 8–10 minutes, stirring occasionally until soft and golden.",
+        "title": "Caramelise the onion",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥑 Avocado · 1 pc",
+          "🍋 Lemon · ½ pc"
+        ],
+        "text": "Halve and scoop avocado into a bowl. Smash with a fork, add lemon juice, salt and chilli flakes.",
+        "title": "Smash the avocado",
+        "kidsHelp": "Kids can smash the avocado! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": "The fresher the egg, the better it holds together when poaching.",
+        "ings": [
+          "🥚 Eggs · 2 pcs"
+        ],
+        "text": "Bring a deep pan of water to a gentle simmer with a splash of white vinegar. Create a gentle swirl, drop in the egg and cook for 3 minutes. Repeat for second egg.",
+        "title": "Poach the eggs",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🍞 Sourdough bread · 2 slices",
+          "🌰 Dukkah · 1 tbsp"
+        ],
+        "text": "Toast sourdough. Spread avocado generously, add caramelised onion and the poached egg. Top with dukkah, chives and a drizzle of olive oil.",
+        "title": "Toast & assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "acai-bowl-granola-berries": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Keep the bowl in the freezer for 5 minutes before filling to stay cold longer.",
+        "ings": [
+          "🫐 Açaí purée · 200g",
+          "🍌 Banana · ½ pc",
+          "🥛 Oat milk · 100ml"
+        ],
+        "text": "Break up frozen açaí and blend with oat milk and half the banana until thick and smooth. It should be spoonable, not drinkable — add less milk for a thicker result.",
+        "title": "Blend the açaí base",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍌 Banana · ½ pc",
+          "🍓 Strawberries · 80g"
+        ],
+        "text": "Slice remaining banana and strawberries.",
+        "title": "Prepare the toppings",
+        "kidsHelp": "Kids can arrange the toppings however they like! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🌾 Granola · 50g",
+          "🥜 Almond butter · 2 tbsp",
+          "🫐 Blueberries · 80g"
+        ],
+        "text": "Pour açaí base into chilled bowls. Arrange banana, berries, granola and coconut flakes on top. Drizzle with almond butter and a touch of honey if desired.",
+        "title": "Build & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "blueberry-chia-overnight-oats": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🌾 Rolled oats · 100g",
+          "⚫ Chia seeds · 2 tbsp",
+          "🥛 Oat milk · 300ml"
+        ],
+        "text": "Combine oats, chia seeds, oat milk, maple syrup, lemon zest and a pinch of salt in a jar or bowl. Stir well.",
+        "title": "Mix the oats",
+        "kidsHelp": "Kids can do the mixing! 🧒"
+      },
+      {
+        "num": 2,
+        "tip": "Make 5 jars on Sunday evening for the whole week.",
+        "ings": [],
+        "text": "Cover and refrigerate for at least 6 hours or overnight. The oats will absorb the liquid and become thick and creamy.",
+        "title": "Refrigerate overnight",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫐 Blueberries · 100g",
+          "🥜 Almond butter · 2 tbsp"
+        ],
+        "text": "In the morning, stir the oats and add a splash more milk if too thick. Top with blueberries, almond butter drizzle and coconut flakes.",
+        "title": "Top & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "roasted-cauliflower-tahini-harissa": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🥦 Cauliflower · 1 head"
+        ],
+        "text": "Remove outer leaves, keeping the cauliflower whole. Rub all over with olive oil, garlic, cumin, salt and pepper.",
+        "title": "Prep the cauliflower",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Cover with foil for the first 20 minutes then uncover to brown.",
+        "ings": [
+          "🥦 Cauliflower · 1 head"
+        ],
+        "text": "Place on a baking tray and roast at 200°C for 30–35 minutes, until deeply golden and tender when pierced with a knife.",
+        "title": "Roast",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫙 Tahini · 3 tbsp",
+          "🍋 Lemon · 1 pc"
+        ],
+        "text": "Mix tahini, lemon juice and 2–3 tbsp water until smooth and pourable. Season with salt.",
+        "title": "Make the tahini sauce",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌰 Hazelnuts · 30g"
+        ],
+        "text": "Toast hazelnuts in a dry pan for 3 minutes. Roughly chop.",
+        "title": "Toast the hazelnuts",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🌶️ Harissa paste · 2 tbsp",
+          "🌿 Coriander · 15g"
+        ],
+        "text": "Place roasted cauliflower on a platter. Drizzle tahini and harissa over the top. Scatter hazelnuts and coriander.",
+        "title": "Plate & finish",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "smashed-potatoes-truffle-mayo": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🥔 Baby potatoes · 500g"
+        ],
+        "text": "Cook baby potatoes in salted water for 15–18 minutes until tender.",
+        "title": "Boil the potatoes",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🧄 Garlic · 2 cloves",
+          "🌿 Rosemary · 2 sprigs"
+        ],
+        "text": "Drain and place on a baking tray. Smash each one flat with a glass. Drizzle with olive oil, add crushed garlic, rosemary, salt and pepper.",
+        "title": "Smash & season",
+        "kidsHelp": "Kids love smashing the potatoes! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": "The key is a very hot oven and not overcrowding the tray.",
+        "ings": [
+          "🥔 Smashed potatoes · all"
+        ],
+        "text": "Roast at 220°C for 20–25 minutes until the edges are deeply golden and crispy.",
+        "title": "Roast until crispy",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥚 Vegan mayo · 4 tbsp"
+        ],
+        "text": "Mix vegan mayo with a few drops of truffle oil (start small — it's strong). Taste and adjust.",
+        "title": "Make truffle mayo",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🌿 Chives · 10g",
+          "🧂 Sea salt · 1 tsp"
+        ],
+        "text": "Scatter potatoes with flaky sea salt and fresh chives. Serve with truffle mayo on the side.",
+        "title": "Serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "roasted-pumpkin-sage-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🎃 Pumpkin · 400g"
+        ],
+        "text": "Peel and cube pumpkin. Toss with olive oil, cinnamon, salt and pepper. Roast at 200°C for 25–30 minutes until caramelised.",
+        "title": "Roast the pumpkin",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🌾 Quinoa · 150g"
+        ],
+        "text": "Rinse and cook quinoa in double the amount of water for 15 minutes.",
+        "title": "Cook the quinoa",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "They crisp up very quickly — watch carefully.",
+        "ings": [
+          "🌿 Sage · 10 leaves"
+        ],
+        "text": "Heat olive oil in a small pan over medium-high heat. Add sage leaves and fry for 30–60 seconds until crispy. Drain on paper towels.",
+        "title": "Crisp the sage",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🎃 Pumpkin seeds · 2 tbsp"
+        ],
+        "text": "Toast pumpkin seeds in a dry pan for 2–3 minutes until they start to pop.",
+        "title": "Toast the seeds",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🫙 Tahini · 2 tbsp",
+          "🍯 Maple syrup · 1 tbsp"
+        ],
+        "text": "Whisk tahini, maple syrup and lime juice with 2 tbsp water. Layer quinoa and pumpkin in bowls. Drizzle sauce and top with crispy sage and toasted seeds.",
+        "title": "Make maple tahini & assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "lemon-chicken-green-beans": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍗 Chicken breast · 300g",
+          "🍋 Lemon · 1 pc"
+        ],
+        "text": "Mix lemon zest, lemon juice, minced garlic, chopped herbs, olive oil, salt and pepper. Coat chicken and leave for 10 minutes.",
+        "title": "Marinate the chicken",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍅 Cherry tomatoes · 150g"
+        ],
+        "text": "Place cherry tomatoes on a tray with olive oil and salt. Roast at 200°C for 15 minutes until burst and juicy.",
+        "title": "Roast the tomatoes",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Rest the chicken before slicing to keep it juicy.",
+        "ings": [
+          "🍗 Chicken breast · 300g"
+        ],
+        "text": "Pan-fry chicken over medium heat for 6–7 minutes per side until golden and cooked through. Rest 3 minutes before slicing.",
+        "title": "Cook the chicken",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🫘 Green beans · 200g"
+        ],
+        "text": "Cook green beans in boiling salted water for 3–4 minutes. Drain and toss with a drizzle of olive oil.",
+        "title": "Steam the green beans",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🍗 Sliced chicken · all"
+        ],
+        "text": "Slice chicken and serve alongside green beans and roasted tomatoes.",
+        "title": "Plate up",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "pasta-roasted-tomato-basil": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍅 Cherry tomatoes · 300g",
+          "🧄 Garlic · 3 cloves"
+        ],
+        "text": "Halve tomatoes and place on a tray with whole garlic cloves, olive oil, chilli flakes, salt and pepper. Roast at 200°C for 20 minutes until burst and slightly caramelised.",
+        "title": "Roast the tomatoes",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Salty pasta water is the secret to a good sauce.",
+        "ings": [
+          "🍝 Pasta · 200g"
+        ],
+        "text": "Cook pasta in well-salted boiling water until al dente. Reserve a cup of pasta water before draining.",
+        "title": "Cook the pasta",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍝 Pasta · all"
+        ],
+        "text": "Squeeze roasted garlic out of the skins and mash into the tomatoes. Toss with drained pasta, adding pasta water a splash at a time to loosen.",
+        "title": "Combine",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌿 Basil · 20g",
+          "🧀 Parmesan · 30g"
+        ],
+        "text": "Tear fresh basil over the top and grate parmesan generously. Drizzle with extra olive oil.",
+        "title": "Finish & serve",
+        "kidsHelp": "Kids can tear the basil leaves! 🧒"
+      }
+    ]
+  },
+  "shakshuka-feta": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🫑 Red pepper · 1 pc",
+          "🧄 Garlic · 2 cloves"
+        ],
+        "text": "Dice onion and pepper. Cook in olive oil over medium heat for 5–6 minutes until soft. Add garlic and cook 1 more minute.",
+        "title": "Sauté the vegetables",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍅 Chopped tomatoes · 400g"
+        ],
+        "text": "Stir in cumin, smoked paprika and chilli flakes. Cook 1 minute, then add chopped tomatoes. Simmer for 10 minutes until thickened.",
+        "title": "Add the spices & tomatoes",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Keep the lid on — this steams the top of the eggs gently.",
+        "ings": [
+          "🥚 Eggs · 4 pcs"
+        ],
+        "text": "Make 4 wells in the sauce. Crack one egg into each well. Cover and cook over low heat for 5–7 minutes until whites are set but yolks still runny.",
+        "title": "Poach the eggs",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🧀 Feta · 80g",
+          "🌿 Parsley · 15g"
+        ],
+        "text": "Crumble feta over the top, scatter fresh parsley and drizzle with olive oil. Serve directly from the pan with bread.",
+        "title": "Finish & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "white-bean-roasted-pepper-soup": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 3 cloves"
+        ],
+        "text": "Dice onion and cook in olive oil over medium heat for 5 minutes. Add garlic and thyme, cook 2 more minutes.",
+        "title": "Sauté aromatics",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫘 White beans · 800g",
+          "🫑 Roasted peppers · 200g"
+        ],
+        "text": "Drain and rinse white beans. Add to the pan with roasted peppers, smoked paprika and vegetable stock.",
+        "title": "Add beans & peppers",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫘 Vegetable stock · 700ml"
+        ],
+        "text": "Bring to a boil and simmer for 15 minutes.",
+        "title": "Simmer",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": "Blend in batches if your blender is small.",
+        "ings": [
+          "🍋 Lemon · 1 pc"
+        ],
+        "text": "Blend the soup until smooth. Add lemon juice, adjust seasoning. Serve with a drizzle of olive oil.",
+        "title": "Blend & finish",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "carrot-ginger-lentil-soup": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🫚 Ginger · 3cm"
+        ],
+        "text": "Dice onion and cook in olive oil for 5 minutes. Add garlic, grated ginger, cumin and turmeric. Cook 2 minutes.",
+        "title": "Sauté the aromatics",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥕 Carrots · 4 medium",
+          "🫘 Red lentils · 150g"
+        ],
+        "text": "Peel and chop carrots into chunks. Add to the pan with rinsed red lentils and vegetable stock.",
+        "title": "Add carrots & lentils",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [],
+        "text": "Bring to a boil, then simmer for 20 minutes until carrots and lentils are completely soft.",
+        "title": "Simmer",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥥 Coconut milk · 200ml",
+          "🌿 Coriander · 15g"
+        ],
+        "text": "Blend smooth. Stir in coconut milk and warm through. Season and serve with fresh coriander.",
+        "title": "Blend & finish",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "roasted-beetroot-walnut-goat-cheese-salad": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Wear gloves when peeling!",
+        "ings": [
+          "🫚 Beetroot · 3 medium"
+        ],
+        "text": "Wrap whole beetroot in foil and roast at 200°C for 35–40 minutes until tender. Cool, peel and cut into wedges.",
+        "title": "Roast the beetroot",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🌰 Walnuts · 40g",
+          "🍯 Honey · 1 tbsp"
+        ],
+        "text": "Toss walnuts with honey in a pan over medium heat for 2 minutes until glazed. Spread on parchment to cool.",
+        "title": "Candy the walnuts",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍋 Lemon · ½ pc"
+        ],
+        "text": "Whisk olive oil, balsamic, lemon juice, salt and pepper.",
+        "title": "Make the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥬 Arugula · 60g",
+          "🧀 Goat cheese · 100g",
+          "🍊 Orange · 1 pc"
+        ],
+        "text": "Arrange arugula and beetroot. Segment orange over the top. Crumble goat cheese and scatter candied walnuts. Drizzle with dressing.",
+        "title": "Plate & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "mushroom-spinach-frittata": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍄 Mushrooms · 200g",
+          "🧅 Onion · 1 pc"
+        ],
+        "text": "Preheat oven to 180°C. Slice onion, mushrooms and garlic. Cook in olive oil in an oven-safe frying pan for 5–6 minutes.",
+        "title": "Preheat & sauté",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥬 Spinach · 80g"
+        ],
+        "text": "Add spinach to the pan and stir until wilted, about 1 minute.",
+        "title": "Wilt the spinach",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🥚 Eggs · 6 pcs",
+          "🌿 Thyme · 5g"
+        ],
+        "text": "Whisk eggs with salt, pepper and thyme. Pour over the vegetables in the pan.",
+        "title": "Beat the eggs",
+        "kidsHelp": "Kids can crack and whisk the eggs! 🧒"
+      },
+      {
+        "num": 4,
+        "tip": "The frittata keeps for 3 days in the fridge — great for meal prep.",
+        "ings": [
+          "🧀 Feta · 80g"
+        ],
+        "text": "Crumble feta on top. Bake in the oven for 12–15 minutes until just set in the centre.",
+        "title": "Bake",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "burrata-asparagus-peas": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🌿 Asparagus · 150g",
+          "🫘 Peas · 80g"
+        ],
+        "text": "Cook asparagus and peas in boiling salted water for 2–3 minutes until just tender and bright green. Drain and run under cold water.",
+        "title": "Blanch the vegetables",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍋 Lemon · ½ pc"
+        ],
+        "text": "Whisk olive oil, lemon juice and a splash of balsamic. Season well.",
+        "title": "Make the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🌰 Pistachios · 20g"
+        ],
+        "text": "Roughly crush pistachios.",
+        "title": "Crush the pistachios",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🧀 Burrata · 2 pcs",
+          "🌰 Pistachios · 20g"
+        ],
+        "text": "Arrange vegetables on a plate. Tear burrata open and place in the centre. Drizzle dressing over everything. Scatter pistachios and a pinch of Maldon salt.",
+        "title": "Plate & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "baked-sweet-potato-tahini-chickpeas": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍠 Sweet potatoes · 2 large"
+        ],
+        "text": "Pierce sweet potatoes all over with a fork. Rub with olive oil and bake at 200°C for 40–45 minutes until completely soft.",
+        "title": "Bake the sweet potatoes",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "The drier the chickpeas, the crispier they get.",
+        "ings": [
+          "🫘 Chickpeas · 400g"
+        ],
+        "text": "Drain and dry chickpeas very well. Toss with olive oil, cumin and salt. Roast on a tray at 200°C for 25–30 minutes until crispy.",
+        "title": "Crisp the chickpeas",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫙 Tahini · 3 tbsp",
+          "🍋 Lemon · 1 pc"
+        ],
+        "text": "Mix tahini with lemon juice and 2–3 tbsp water until smooth and pourable.",
+        "title": "Make tahini sauce",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🫐 Pomegranate seeds · 2 tbsp",
+          "🌿 Parsley · 15g"
+        ],
+        "text": "Split sweet potatoes open. Fill with crispy chickpeas, drizzle tahini, scatter pomegranate seeds, parsley and chilli flakes.",
+        "title": "Load & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "chicken-halloumi-mediterranean-salad": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍗 Chicken breast · 250g"
+        ],
+        "text": "Season chicken with oregano, salt and pepper. Pan-fry in olive oil for 6–7 minutes per side. Rest and slice.",
+        "title": "Cook the chicken",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Eat halloumi straight away — it gets rubbery as it cools.",
+        "ings": [
+          "🧀 Halloumi · 150g"
+        ],
+        "text": "Slice halloumi and cook in a dry pan over high heat for 1–2 minutes per side until golden.",
+        "title": "Grill the halloumi",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍅 Cherry tomatoes · 100g",
+          "🥒 Cucumber · ½ pc"
+        ],
+        "text": "Halve cherry tomatoes, slice cucumber and chop herbs. Make a simple dressing with lemon juice, olive oil, salt and pepper.",
+        "title": "Prepare the salad",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥬 Salad greens · 80g",
+          "🫒 Olives · 40g",
+          "🌿 Herbs · 15g"
+        ],
+        "text": "Toss greens with dressing. Top with chicken, halloumi, olives and fresh herbs.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "veggie-plate-roasted-seasonal": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🥦 Broccoli · 200g",
+          "🥕 Carrots · 2 pcs"
+        ],
+        "text": "Cut all vegetables into similar-sized pieces so they roast evenly.",
+        "title": "Prep the vegetables",
+        "kidsHelp": "Kids can help washing and sorting the vegetables! 🧒"
+      },
+      {
+        "num": 2,
+        "tip": "Don't overcrowd — space means roasting not steaming.",
+        "ings": [
+          "🥒 Courgette · 1 pc",
+          "🫑 Red pepper · 1 pc"
+        ],
+        "text": "Toss everything with olive oil, salt, pepper and thyme. Spread on a large baking tray — give everything space. Roast at 200°C for 25–30 minutes.",
+        "title": "Season & roast",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫙 Wholegrain mustard · 2 tbsp"
+        ],
+        "text": "Whisk wholegrain mustard, lemon juice and olive oil together.",
+        "title": "Make the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🧅 Red onion · 1 pc"
+        ],
+        "text": "Arrange vegetables on a plate and drizzle with mustard dressing.",
+        "title": "Serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "protein-overnight-oats-matcha": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Dissolve the matcha first to avoid lumps.",
+        "ings": [
+          "🌾 Rolled oats · 100g",
+          "🍵 Matcha · 1 tsp",
+          "🥛 Oat milk · 300ml"
+        ],
+        "text": "Whisk matcha into a small amount of warm oat milk until dissolved. Add oats, remaining oat milk, yogurt, honey and a pinch of salt. Stir well.",
+        "title": "Mix the base",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [],
+        "text": "Cover and chill for at least 6 hours.",
+        "title": "Refrigerate overnight",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍌 Banana · 1 pc",
+          "🌾 Granola · 30g"
+        ],
+        "text": "In the morning stir and top with banana slices, granola and hemp seeds. Dust with a pinch of matcha.",
+        "title": "Top & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "turkish-style-eggs-yogurt": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🥛 Greek yogurt · 200g",
+          "🧄 Garlic · 1 clove"
+        ],
+        "text": "Mix Greek yogurt with grated garlic and a pinch of salt. Spread over plates and bring to room temperature.",
+        "title": "Make the garlic yogurt",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥚 Eggs · 4 pcs"
+        ],
+        "text": "Bring a deep pan of water to a gentle simmer with a splash of vinegar. Swirl and carefully drop in the eggs. Cook 3 minutes for runny yolks.",
+        "title": "Poach the eggs",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Use good chilli flakes — they make all the difference here.",
+        "ings": [
+          "🧈 Butter · 2 tbsp",
+          "🌶️ Chilli flakes · 1 tsp"
+        ],
+        "text": "Melt butter in a small pan. Add chilli flakes and cook 30 seconds until sizzling and fragrant.",
+        "title": "Make chilli butter",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌿 Dill · 10g",
+          "🍞 Sourdough · 2 slices"
+        ],
+        "text": "Place poached eggs on the yogurt. Drizzle hot chilli butter immediately over the top. Scatter fresh dill. Serve with toasted sourdough.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "labneh-beetroot-berries": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Wear gloves — beetroot stains!",
+        "ings": [
+          "🫚 Beetroot · 200g"
+        ],
+        "text": "Slice cooked beetroot thinly or into wedges. Dress with a splash of balsamic, olive oil and lemon juice.",
+        "title": "Slice the beetroot",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🌰 Hazelnuts · 30g"
+        ],
+        "text": "Toast hazelnuts in a dry pan for 3 minutes. Roughly crush.",
+        "title": "Toast the hazelnuts",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🧀 Labneh · 200g",
+          "🫐 Blackberries · 80g",
+          "🍅 Cherry tomatoes · 80g"
+        ],
+        "text": "Spread labneh over a plate or board. Arrange beetroot, berries and tomatoes on top. Scatter hazelnuts and fresh dill. Drizzle with olive oil.",
+        "title": "Plate",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "grilled-aubergine-harissa-chickpeas": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Salt aubergine first and leave 10 minutes to draw out moisture for better texture.",
+        "ings": [
+          "🍆 Aubergine · 2 medium"
+        ],
+        "text": "Slice aubergine into 1cm rounds. Brush with olive oil and salt. Grill or griddle for 3–4 minutes per side until charred and tender.",
+        "title": "Grill the aubergine",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫘 Chickpeas · 400g",
+          "🌶️ Harissa · 2 tbsp"
+        ],
+        "text": "Drain and dry chickpeas. Toss with harissa and olive oil. Roast at 200°C for 20 minutes.",
+        "title": "Roast the chickpeas",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫙 Tahini · 2 tbsp"
+        ],
+        "text": "Mix tahini with lemon juice and water until pourable.",
+        "title": "Make tahini sauce",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🫐 Pomegranate seeds · 2 tbsp",
+          "🌿 Coriander · 15g"
+        ],
+        "text": "Arrange aubergine on a plate. Spoon over harissa chickpeas. Drizzle tahini, scatter pomegranate and coriander.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "spinach-ricotta-pasta": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍝 Pasta · 200g"
+        ],
+        "text": "Cook pasta in well-salted boiling water until al dente. Reserve a cup of pasta water before draining.",
+        "title": "Cook the pasta",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🌰 Pine nuts · 2 tbsp"
+        ],
+        "text": "Toast pine nuts in a dry pan for 2–3 minutes until golden. Watch carefully — they burn fast.",
+        "title": "Toast the pine nuts",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🥬 Spinach · 150g",
+          "🧄 Garlic · 2 cloves"
+        ],
+        "text": "Cook garlic in olive oil for 1 minute. Add spinach and cook until wilted, about 2 minutes.",
+        "title": "Wilt the spinach",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🧀 Ricotta · 150g",
+          "🍋 Lemon · ½ pc"
+        ],
+        "text": "Add drained pasta to the pan. Stir in ricotta, lemon juice and zest, and a splash of pasta water to loosen. Toss well.",
+        "title": "Combine",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🧀 Parmesan · 30g",
+          "🌰 Pine nuts · 2 tbsp"
+        ],
+        "text": "Divide into bowls. Grate parmesan generously on top and scatter pine nuts.",
+        "title": "Serve",
+        "kidsHelp": "Kids can grate the parmesan! 🧒"
+      }
+    ]
+  },
+  "miso-salmon-bok-choy": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🫙 Miso paste · 2 tbsp",
+          "🍯 Honey · 1 tbsp"
+        ],
+        "text": "Whisk miso, honey, soy sauce and a splash of sesame oil together.",
+        "title": "Make the miso glaze",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍚 Jasmine rice · 160g"
+        ],
+        "text": "Cook jasmine rice according to packet instructions.",
+        "title": "Cook the rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🐟 Salmon fillets · 300g"
+        ],
+        "text": "Brush salmon with miso glaze. Cook in a pan over medium heat for 4 minutes skin-side down, then flip, brush again and cook 3 more minutes.",
+        "title": "Glaze & cook the salmon",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥬 Bok choy · 200g"
+        ],
+        "text": "Cook bok choy in the same pan with a splash of sesame oil and soy sauce for 2 minutes until just wilted.",
+        "title": "Wilt the bok choy",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "⚪ Sesame seeds · 1 tbsp",
+          "🍋 Lime · 1 pc"
+        ],
+        "text": "Layer rice, bok choy and salmon. Scatter sesame seeds and squeeze lime over the top.",
+        "title": "Plate & finish",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "hummus-bowl-roasted-veg": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🥒 Courgette · 1 pc",
+          "🫑 Red pepper · 1 pc",
+          "🫘 Chickpeas · 200g"
+        ],
+        "text": "Chop courgette, pepper and tomatoes. Toss with drained chickpeas, olive oil, smoked paprika and salt. Roast at 200°C for 20–25 minutes.",
+        "title": "Roast the vegetables",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫓 Flatbread · 2 pcs"
+        ],
+        "text": "Toast flatbreads in a dry pan or directly over a gas flame for 30 seconds per side.",
+        "title": "Warm the flatbread",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫙 Hummus · 200g",
+          "🌿 Parsley · 15g"
+        ],
+        "text": "Spread hummus generously in bowls. Pile the warm roasted veg on top. Drizzle with olive oil, scatter parsley and a pinch of paprika.",
+        "title": "Assemble",
+        "kidsHelp": "Kids can spread the hummus! 🧒"
+      }
+    ]
+  },
+  "banana-bread-walnut": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "The riper the banana, the sweeter the bread — use very spotty black bananas for best results.",
+        "ings": [
+          "🍌 Ripe bananas · 3 large"
+        ],
+        "text": "Preheat oven to 175°C. Mash bananas in a large bowl until smooth.",
+        "title": "Preheat & mash",
+        "kidsHelp": "Kids can mash the bananas! 🧒"
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥚 Eggs · 2 pcs",
+          "🫚 Coconut oil · 60ml"
+        ],
+        "text": "Whisk eggs, melted coconut oil, oat milk, 5–6 tbsp maple syrup and vanilla into the mashed banana.",
+        "title": "Mix wet ingredients",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🌾 Whole wheat flour · 200g",
+          "🌰 Walnuts · 60g"
+        ],
+        "text": "Add flour, baking soda, cinnamon and salt. Stir gently until just combined — don't overmix. Fold in most of the walnuts.",
+        "title": "Fold in dry ingredients",
+        "kidsHelp": "Kids can fold in the walnuts! 🧒"
+      },
+      {
+        "num": 4,
+        "tip": "Cover with foil after 30 minutes if the top browns too quickly.",
+        "ings": [],
+        "text": "Pour into a lined loaf tin. Scatter remaining walnuts on top. Bake for 50–55 minutes until a skewer comes out clean.",
+        "title": "Bake",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "prawn-mango-salad": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Don't overcook prawns — they turn rubbery quickly.",
+        "ings": [
+          "🦐 King prawns · 250g"
+        ],
+        "text": "Season prawns with salt and pepper. Cook in olive oil over high heat for 1–2 minutes per side until pink and just cooked.",
+        "title": "Cook the prawns",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥭 Mango · 1 pc",
+          "🥑 Avocado · 1 pc"
+        ],
+        "text": "Dice mango, slice avocado and cucumber. Finely chop chilli.",
+        "title": "Prepare the fruit & veg",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍋 Lime · 2 pcs"
+        ],
+        "text": "Whisk lime juice, olive oil, a pinch of salt and a drop of fish sauce (optional) together.",
+        "title": "Make the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥬 Mixed greens · 80g",
+          "🌿 Coriander · 15g"
+        ],
+        "text": "Combine greens, mango, avocado, cucumber and chilli. Add prawns and drizzle dressing. Top with coriander.",
+        "title": "Toss & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "black-bean-sweet-potato-tacos": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍠 Sweet potato · 300g"
+        ],
+        "text": "Cube sweet potato, toss with olive oil, smoked paprika, cumin and salt. Roast at 200°C for 20 minutes.",
+        "title": "Roast the sweet potato",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🧅 Red onion · ½ pc"
+        ],
+        "text": "Thinly slice red onion and soak in red wine vinegar and a pinch of salt for 10 minutes.",
+        "title": "Quick pickle the onion",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🥑 Avocado · 1 pc",
+          "🍋 Lime · 1 pc"
+        ],
+        "text": "Mash avocado with lime juice and salt until smooth.",
+        "title": "Make avocado crema",
+        "kidsHelp": "Kids can smash the avocado! 🧒"
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🫘 Black beans · 400g"
+        ],
+        "text": "Drain and rinse black beans. Warm in a pan with cumin, salt and a splash of water.",
+        "title": "Warm the beans",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🌮 Corn tortillas · 6 pcs",
+          "🌿 Coriander · 15g"
+        ],
+        "text": "Warm tortillas. Spread avocado crema, add beans and sweet potato, top with cabbage, pickled onion and coriander. Squeeze lime over everything.",
+        "title": "Assemble the tacos",
+        "kidsHelp": "Kids can build their own tacos! 🧒"
+      }
+    ]
+  },
+  "carrot-cake-pancakes": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Use fresh carrots — pre-grated ones are too thick and dry.",
+        "ings": [
+          "🥕 Carrot · 2 medium"
+        ],
+        "text": "Finely grate carrots using the small holes of a box grater for seamless batter texture.",
+        "title": "Grate the carrots",
+        "kidsHelp": "Kids can help with the grater with supervision! 🧒"
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🌾 Rolled oats · 100g",
+          "🍚 Whole wheat flour · 80g"
+        ],
+        "text": "Combine oats, flour, 1 tsp cinnamon, ½ tsp ginger, 1 tsp baking powder, ½ tsp nutmeg and a pinch of salt.",
+        "title": "Mix dry ingredients",
+        "kidsHelp": "Kids can do the stirring! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": "A few lumps are fine — overmixing makes them dense.",
+        "ings": [
+          "🥚 Eggs · 2 pcs",
+          "🍎 Applesauce · 3 tbsp"
+        ],
+        "text": "Whisk eggs, milk, applesauce and maple syrup together. Fold into dry ingredients. Don't overmix. Fold in grated carrot.",
+        "title": "Mix wet & combine",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": "If batter feels too thick, add 2–3 tbsp extra milk — oats absorb a lot of liquid.",
+        "ings": [],
+        "text": "Heat a non-stick pan with a little butter over medium heat. Pour 8cm rounds and cook 2–3 minutes until bubbles form, then flip and cook 1–2 minutes more.",
+        "title": "Cook the pancakes",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": "Stores in the fridge for 3 days or freeze for 3 months.",
+        "ings": [
+          "🥛 Greek yogurt · 4 tbsp",
+          "🍓 Strawberries · 80g",
+          "🫐 Blueberries · 50g"
+        ],
+        "text": "Stack pancakes and top with Greek yogurt, sliced strawberries, blueberries and a drizzle of maple syrup.",
+        "title": "Serve with yogurt & berries",
+        "kidsHelp": "Let kids add the fruit and yogurt! 🧒"
+      }
+    ]
+  },
+  "roasted-tomato-lentil-soup": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Roasting concentrates all the tomato flavour.",
+        "ings": [
+          "🍅 Tomatoes · 600g",
+          "🧄 Garlic · 4 cloves"
+        ],
+        "text": "Halve tomatoes and place cut-side up on a baking tray with whole garlic cloves, olive oil, salt and a pinch of sugar. Roast at 200°C for 25 minutes.",
+        "title": "Roast the tomatoes",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫘 Red lentils · 150g",
+          "🧅 Onion · 1 pc"
+        ],
+        "text": "Sauté diced onion in olive oil for 5 minutes. Add rinsed lentils and stock. Simmer 20 minutes.",
+        "title": "Cook the lentils",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [],
+        "text": "Add roasted tomatoes and garlic to the lentils. Blend smooth. Season and warm through.",
+        "title": "Blend together",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌿 Basil · 15g"
+        ],
+        "text": "Ladle into bowls. Drizzle olive oil and scatter fresh basil.",
+        "title": "Serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "cod-vegetables-one-tray": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍅 Cherry tomatoes · 200g",
+          "🥒 Courgette · 1 pc",
+          "🫒 Olives · 40g"
+        ],
+        "text": "Halve tomatoes, slice courgette. Arrange on a baking tray with sliced garlic and olives. Drizzle with olive oil and season.",
+        "title": "Prep the vegetables",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [],
+        "text": "Roast at 200°C for 15 minutes.",
+        "title": "Roast the veg first",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🐟 Cod fillets · 300g",
+          "🍋 Lemon · 1 pc"
+        ],
+        "text": "Nestle cod fillets on top of the vegetables. Season with salt, pepper and lemon slices. Return to the oven for 10–12 minutes until cod flakes easily.",
+        "title": "Add the cod",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌿 Fresh thyme · 5g"
+        ],
+        "text": "Scatter fresh thyme and serve directly from the tray.",
+        "title": "Finish & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "green-detox-salad-hemp": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🥦 Broccoli · 150g",
+          "🫘 Edamame · 80g"
+        ],
+        "text": "Cook broccoli and edamame in boiling salted water for 3 minutes. Drain and rinse with cold water to keep them bright green.",
+        "title": "Blanch the broccoli & edamame",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥬 Kale · 80g"
+        ],
+        "text": "Remove tough stems. Tear kale and massage with olive oil and a pinch of salt for 2 minutes until softened.",
+        "title": "Massage the kale",
+        "kidsHelp": "Kids can help massaging! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍋 Lemon · 1 pc",
+          "🫚 Ginger · 1 tsp"
+        ],
+        "text": "Whisk lemon juice, grated ginger, apple cider vinegar and olive oil together.",
+        "title": "Make the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥑 Avocado · 1 pc",
+          "⚫ Hemp seeds · 2 tbsp"
+        ],
+        "text": "Combine kale, sliced cucumber, broccoli and edamame. Top with sliced avocado. Drizzle dressing and scatter hemp seeds.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "chicken-sweet-potato-fries": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Thin, even strips mean crispy fries.",
+        "ings": [
+          "🍠 Sweet potato · 400g"
+        ],
+        "text": "Cut sweet potato into thin strips. Toss with olive oil, smoked paprika and salt. Roast at 220°C for 25–30 minutes, flipping halfway.",
+        "title": "Make sweet potato fries",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍗 Chicken breast · 300g"
+        ],
+        "text": "Slice chicken into strips. Toss with olive oil, garlic powder, paprika, salt and pepper.",
+        "title": "Season the chicken",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍗 Chicken strips · all"
+        ],
+        "text": "Cook in a hot pan for 3–4 minutes per side until golden and cooked through.",
+        "title": "Cook the chicken",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥛 Greek yogurt · 100g",
+          "🧄 Garlic · 1 clove"
+        ],
+        "text": "Mix Greek yogurt with grated garlic, lemon juice and chopped parsley.",
+        "title": "Make the dipping sauce",
+        "kidsHelp": "Kids can mix the dipping sauce! 🧒"
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🌿 Parsley · 10g"
+        ],
+        "text": "Plate chicken and sweet potato fries. Serve with yogurt dip and fresh parsley.",
+        "title": "Serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "roasted-broccoli-tahini-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍚 Brown rice · 160g"
+        ],
+        "text": "Cook brown rice in double the water for 20 minutes. Rest 5 minutes with the lid on.",
+        "title": "Cook the rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Give the florets space on the tray — they roast not steam.",
+        "ings": [
+          "🥦 Broccoli · 200g"
+        ],
+        "text": "Preheat oven to 200°C. Toss broccoli florets with olive oil, salt and pepper. Roast 15–18 minutes until edges are golden.",
+        "title": "Roast the broccoli",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫙 Tahini · 3 tbsp",
+          "🌿 Parsley · 20g",
+          "🫘 Edamame · 100g"
+        ],
+        "text": "Blend tahini, lemon juice, garlic and parsley with 3 tbsp water until creamy. Blanch edamame 3 minutes in salted water, then rinse cold.",
+        "title": "Blend the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥑 Avocado · 1 pc",
+          "🌻 Sunflower seeds · 2 tbsp"
+        ],
+        "text": "Layer rice, broccoli, edamame. Add avocado slices and cucumber ribbons. Drizzle dressing and finish with sunflower seeds.",
+        "title": "Build the bowl",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "tuna-nicoise-salad": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "7 minutes gives a perfectly jammy yolk.",
+        "ings": [
+          "🥚 Eggs · 2 pcs"
+        ],
+        "text": "Bring water to a boil. Lower eggs in and cook exactly 7 minutes. Transfer to ice water, then peel.",
+        "title": "Soft boil the eggs",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫘 Green beans · 150g"
+        ],
+        "text": "Cook green beans in boiling salted water for 3 minutes. Drain and rinse cold.",
+        "title": "Blanch the green beans",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🐟 Tuna steak · 250g"
+        ],
+        "text": "Season tuna with salt and pepper. Sear in a very hot pan for 1 minute per side. If using tinned, simply drain.",
+        "title": "Sear the tuna (if fresh)",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🍋 Lemon · 1 pc",
+          "🫙 Dijon mustard · 1 tsp"
+        ],
+        "text": "Whisk olive oil, lemon juice, Dijon mustard, salt and pepper together.",
+        "title": "Make the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🥬 Salad greens · 60g",
+          "🫒 Olives · 40g"
+        ],
+        "text": "Arrange greens, tomatoes, beans and olives. Place tuna and halved eggs on top. Drizzle with dressing.",
+        "title": "Plate",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "meatballs-tomato-sauce-pasta": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍗 Turkey mince · 400g"
+        ],
+        "text": "Mix turkey mince with breadcrumbs, one egg, half the garlic (minced), oregano, salt and pepper. Roll into small balls.",
+        "title": "Make the meatballs",
+        "kidsHelp": "Kids love rolling meatballs! 🧒"
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [],
+        "text": "Fry meatballs in olive oil over medium-high heat for 5–6 minutes, turning until browned all over.",
+        "title": "Brown the meatballs",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍅 Chopped tomatoes · 400g",
+          "🧅 Onion · 1 pc"
+        ],
+        "text": "In the same pan, sauté diced onion and remaining garlic for 3 minutes. Add chopped tomatoes. Simmer 10 minutes.",
+        "title": "Make the sauce",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [],
+        "text": "Return meatballs to the sauce. Simmer together for 10 more minutes.",
+        "title": "Simmer together",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🍝 Spaghetti · 200g",
+          "🌿 Basil · 15g",
+          "🧀 Parmesan · 30g"
+        ],
+        "text": "Cook spaghetti until al dente. Serve with meatballs, sauce, fresh basil and grated parmesan.",
+        "title": "Serve with pasta",
+        "kidsHelp": "Kids can grate the cheese! 🧒"
+      }
+    ]
+  },
+  "berry-smoothie-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "The less milk, the thicker the bowl — add a tablespoon at a time.",
+        "ings": [
+          "🍓 Frozen berries · 250g",
+          "🍌 Frozen banana · 1 pc",
+          "🥛 Oat milk · 80ml"
+        ],
+        "text": "Blend frozen berries and frozen banana with just enough oat milk to get it moving. Keep it thick — it should be almost solid. Add milk gradually.",
+        "title": "Blend the base",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥝 Kiwi · 1 pc",
+          "🍓 Strawberries · 60g"
+        ],
+        "text": "Slice kiwi and strawberries.",
+        "title": "Prepare the toppings",
+        "kidsHelp": "Kids can arrange the toppings! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🌾 Granola · 30g",
+          "⚫ Chia seeds · 1 tbsp"
+        ],
+        "text": "Pour thick base into bowls. Top with kiwi, strawberries, granola, coconut flakes and chia seeds.",
+        "title": "Build & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "roasted-pear-stracciatella-pistachio": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍐 Pears · 2 pcs",
+          "🍯 Honey · 1 tbsp"
+        ],
+        "text": "Halve and core pears. Place cut-side up in a baking dish with a knob of butter and 1 tbsp honey. Roast at 200°C for 18–20 minutes until golden.",
+        "title": "Roast the pears",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🌰 Pistachios · 30g",
+          "🫒 Olive oil · 2 tbsp"
+        ],
+        "text": "Blend or finely chop pistachios with olive oil, remaining honey and a pinch of salt to a rough paste.",
+        "title": "Make pistachio dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🧀 Stracciatella · 150g",
+          "🌿 Mint · 10g"
+        ],
+        "text": "Spoon stracciatella onto plates. Top with warm roasted pears. Drizzle pistachio oil, scatter mint and finish with flaky sea salt.",
+        "title": "Plate & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "lentil-stuffed-peppers": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🫑 Bell peppers · 4 pcs"
+        ],
+        "text": "Preheat oven to 200°C. Slice peppers in half lengthways and remove seeds. Brush with olive oil and roast for 15 minutes.",
+        "title": "Prep the peppers",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫘 Green lentils · 400g",
+          "🧅 Onion · 1 pc",
+          "🍅 Cherry tomatoes · 150g"
+        ],
+        "text": "Sauté diced onion and garlic in olive oil for 5 minutes. Add drained lentils, cumin, paprika, salt and halved cherry tomatoes. Cook 5 minutes.",
+        "title": "Make the filling",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🧀 Feta · 100g"
+        ],
+        "text": "Spoon lentil filling into pepper halves. Crumble feta on top. Bake 20 minutes until peppers are tender and feta is golden.",
+        "title": "Stuff & bake",
+        "kidsHelp": "Kids can help spooning the filling! 🧒"
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌿 Parsley · 15g"
+        ],
+        "text": "Scatter fresh parsley over the top and serve warm.",
+        "title": "Serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "warm-roasted-cauliflower-caesar": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🥦 Cauliflower · ½ head"
+        ],
+        "text": "Break cauliflower into florets. Toss with olive oil and salt. Roast at 210°C for 22–25 minutes until golden.",
+        "title": "Roast the cauliflower",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🌰 Almonds · 30g"
+        ],
+        "text": "Toast almonds in a dry pan for 3 minutes. Roughly chop.",
+        "title": "Toast the almonds",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍋 Lemon · 1 pc",
+          "🫙 Dijon mustard · 1 tsp"
+        ],
+        "text": "Blend lemon juice, garlic, Dijon mustard, 3 tbsp olive oil and a pinch of salt until smooth.",
+        "title": "Make the Caesar dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥬 Romaine lettuce · 1 head",
+          "🧀 Parmesan · 30g"
+        ],
+        "text": "Tear romaine into large pieces. Add warm cauliflower. Toss with dressing. Shave parmesan generously and scatter almonds.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "salmon-avocado-rice-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍚 Rice · 160g"
+        ],
+        "text": "Cook rice and season with a splash of rice vinegar and a pinch of salt.",
+        "title": "Cook the rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🐟 Salmon fillet · 300g"
+        ],
+        "text": "Season salmon and cook in sesame oil, skin-side down, for 4 minutes. Flip and cook 3 more minutes.",
+        "title": "Cook the salmon",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫙 Soy sauce · 2 tbsp",
+          "🍋 Lime · 1 pc"
+        ],
+        "text": "Mix soy sauce, lime juice, a drop of sesame oil and grated ginger.",
+        "title": "Make the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥑 Avocado · 1 pc",
+          "⚪ Sesame seeds · 1 tbsp"
+        ],
+        "text": "Add rice to bowls. Top with sliced salmon, avocado, cucumber and edamame. Spoon dressing and scatter sesame seeds.",
+        "title": "Build the bowl",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "spring-green-pea-soup": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 1 clove"
+        ],
+        "text": "Cook diced onion and garlic in olive oil for 4 minutes until soft.",
+        "title": "Sauté aromatics",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Don't overcook — the vibrant green colour fades quickly.",
+        "ings": [
+          "🫘 Frozen peas · 500g"
+        ],
+        "text": "Add peas and stock. Bring to a boil and cook for 3–4 minutes — no more, to keep the colour bright.",
+        "title": "Add peas & stock",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🌿 Fresh mint · 20g",
+          "🍋 Lemon · ½ pc"
+        ],
+        "text": "Add fresh mint and blend smooth. Season with lemon juice, salt and pepper.",
+        "title": "Blend with mint",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "creamy-roasted-cauliflower-soup": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Roasting is what gives this soup its incredible depth of flavour — don't skip it.",
+        "ings": [
+          "🥦 Cauliflower · 1 head"
+        ],
+        "text": "Break cauliflower into florets. Toss with olive oil, salt and pepper on a large tray — give them space. Roast at 200°C for 25–30 minutes until deeply golden on the edges.",
+        "title": "Roast the cauliflower",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 4 cloves"
+        ],
+        "text": "Cook diced onion in olive oil for 5 minutes. Add garlic and thyme, cook 2 more minutes.",
+        "title": "Sauté onion & garlic",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🫘 Vegetable stock · 900ml",
+          "🥛 Cream · 100ml"
+        ],
+        "text": "Add roasted cauliflower and stock to the onion pan. Bring to a simmer for 5 minutes then blend until completely smooth. Add cream and a pinch of nutmeg.",
+        "title": "Blend",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌰 Pine nuts · 2 tbsp",
+          "🍋 Lemon · ½ pc"
+        ],
+        "text": "Toast pine nuts in a dry pan 2–3 minutes. Season soup with lemon juice and salt. Serve with toasted pine nuts and a drizzle of good olive oil.",
+        "title": "Finish & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "roasted-sweet-potato-feta-chickpea-salad": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Spread them out — they need space to roast not steam.",
+        "ings": [
+          "🍠 Sweet potato · 300g",
+          "🫘 Chickpeas · 400g"
+        ],
+        "text": "Cube sweet potato and drain chickpeas. Toss both with olive oil, smoked paprika and salt on a baking tray. Roast at 200°C for 22–25 minutes.",
+        "title": "Roast sweet potato & chickpeas",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫙 Tahini · 2 tbsp",
+          "🍋 Lemon · 1 pc"
+        ],
+        "text": "Whisk tahini, lemon juice and 2–3 tbsp water until smooth.",
+        "title": "Make tahini dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🥬 Arugula · 60g",
+          "🧀 Feta · 100g",
+          "🫐 Pomegranate · 2 tbsp"
+        ],
+        "text": "Layer arugula, warm sweet potato and chickpeas. Crumble feta, scatter pomegranate and drizzle with tahini dressing.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "chocolate-avocado-mousse": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Blend for at least 1 full minute for a silky mousse texture.",
+        "ings": [
+          "🥑 Avocados · 2 pcs",
+          "🍫 Cacao powder · 3 tbsp",
+          "🍯 Maple syrup · 3 tbsp"
+        ],
+        "text": "Scoop avocado flesh into a blender. Add cacao, maple syrup, coconut milk, vanilla and a pinch of salt. Blend until completely smooth and glossy.",
+        "title": "Blend everything",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [],
+        "text": "Taste for sweetness and richness. Add more maple syrup or cacao as needed.",
+        "title": "Taste & adjust",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Keeps in the fridge for up to 2 days.",
+        "ings": [
+          "🍓 Raspberries · 80g"
+        ],
+        "text": "Spoon into glasses and refrigerate for at least 30 minutes. Top with fresh raspberries before serving.",
+        "title": "Chill & serve",
+        "kidsHelp": "Kids can add the raspberries on top! 🧒"
+      }
+    ]
+  },
+  "mediterranean-eggs-benedict": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍅 Cherry tomatoes · 100g"
+        ],
+        "text": "Halve tomatoes, drizzle with olive oil and salt. Roast at 200°C for 12 minutes.",
+        "title": "Roast the tomatoes",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥬 Spinach · 80g"
+        ],
+        "text": "Cook spinach in a pan with olive oil for 1–2 minutes until just wilted. Season.",
+        "title": "Wilt the spinach",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🥚 Eggs · 4 pcs"
+        ],
+        "text": "Bring a deep pan of water to a gentle simmer with a splash of white vinegar. Poach eggs for 3 minutes for runny yolks.",
+        "title": "Poach the eggs",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🍞 Sourdough · 2 slices",
+          "🧀 Feta · 60g",
+          "🌿 Basil · 10g"
+        ],
+        "text": "Toast sourdough. Layer with spinach, roasted tomatoes and olives. Top with poached eggs. Crumble feta and finish with fresh basil and olive oil.",
+        "title": "Assemble",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "chicken-vegetable-stir-fry": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍚 Brown rice · 160g"
+        ],
+        "text": "Cook brown rice according to packet instructions.",
+        "title": "Cook the rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Thin slices cook faster and more evenly.",
+        "ings": [
+          "🍗 Chicken breast · 300g"
+        ],
+        "text": "Slice chicken into thin strips. Chop broccoli and pepper. Mince garlic and grate ginger. Have everything ready before you start — stir-fries move fast.",
+        "title": "Prep everything first",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍗 Chicken strips · all"
+        ],
+        "text": "Heat sesame oil in a wok or large pan over very high heat. Add chicken and cook 3–4 minutes until golden. Remove and set aside.",
+        "title": "Cook the chicken",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🥦 Broccoli · 150g",
+          "🫑 Red pepper · 1 pc"
+        ],
+        "text": "In the same pan, cook garlic and ginger for 30 seconds. Add broccoli, pepper and snap peas. Stir-fry 3–4 minutes on high heat.",
+        "title": "Stir-fry the veg",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": null,
+        "ings": [
+          "🫙 Soy sauce · 3 tbsp"
+        ],
+        "text": "Return chicken to the pan. Add soy sauce and toss everything together. Serve over brown rice.",
+        "title": "Bring it together",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "black-rice-stuffed-peppers-feta-pistachios": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Black rice takes longer than white — start it first.",
+        "ings": [
+          "🍚 Black rice · 160g"
+        ],
+        "text": "Rinse black rice and cook in double the amount of salted water for 30–35 minutes until tender. Drain well.",
+        "title": "Cook the black rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫑 Bell peppers · 4 large"
+        ],
+        "text": "Slice peppers in half lengthways, remove seeds. Brush with olive oil, season and roast at 200°C for 15–20 minutes until just softened.",
+        "title": "Roast the peppers",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "The sweet raisins and salty feta together are the magic of this dish.",
+        "ings": [
+          "🧀 Feta · 120g",
+          "🌰 Pistachios · 40g",
+          "🍇 Raisins · 2 tbsp"
+        ],
+        "text": "Mix warm black rice with crumbled feta, roughly crushed pistachios, raisins, sliced spring onion, cinnamon, cumin and lemon juice. Toss with olive oil. Taste and season.",
+        "title": "Make the filling",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌿 Mint & parsley · 20g"
+        ],
+        "text": "Fill pepper halves generously with the rice mixture. Return to the oven for 5 minutes. Scatter fresh mint and parsley over the top before serving.",
+        "title": "Stuff & finish",
+        "kidsHelp": "Kids can help spooning in the filling! 🧒"
+      }
+    ]
+  },
+  "fig-honey-ricotta-toast": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍞 Sourdough · 2 slices"
+        ],
+        "text": "Toast sourdough until golden and crispy.",
+        "title": "Toast the bread",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🧀 Ricotta · 100g"
+        ],
+        "text": "Season ricotta with a tiny pinch of salt. Spread generously over toast.",
+        "title": "Spread the ricotta",
+        "kidsHelp": "Kids can spread the ricotta! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": "Eat immediately — toast softens quickly with the ricotta.",
+        "ings": [
+          "🫐 Fresh figs · 3 pcs",
+          "🍯 Honey · 2 tbsp",
+          "🌰 Pistachios · 20g"
+        ],
+        "text": "Slice figs and arrange on top. Crush pistachios and scatter over. Drizzle honey generously and finish with fresh thyme leaves.",
+        "title": "Top & drizzle",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "quinoa-chickpea-salad-lemon": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Cooling the quinoa before dressing prevents it from going mushy.",
+        "ings": [
+          "🌾 Quinoa · 200g"
+        ],
+        "text": "Rinse quinoa in a fine mesh sieve. Cook in double the amount of water with a pinch of salt for 15 minutes. Drain any excess water and fluff with a fork. Spread on a tray to cool — this keeps the grains separate.",
+        "title": "Cook the quinoa",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫑 Red bell pepper · 1 pc",
+          "🥒 Cucumber · 1 pc",
+          "🫘 Chickpeas · 400g"
+        ],
+        "text": "Dice red pepper and cucumber. Thinly slice red onion. Drain and rinse chickpeas.",
+        "title": "Prep the vegetables",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍋 Lemon · 2 pcs",
+          "🧄 Garlic · 1 clove"
+        ],
+        "text": "Whisk lemon juice, lemon zest, minced garlic, olive oil, salt and pepper together. Taste — it should be bright and quite sharp, it will mellow when tossed.",
+        "title": "Make the dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": "Add dressing just before serving if prepping ahead.",
+        "ings": [
+          "🌿 Parsley · 30g"
+        ],
+        "text": "In a large bowl combine cooled quinoa, chickpeas, vegetables and most of the parsley. Pour over dressing and toss well. Top with remaining parsley. Keeps well for 3 days in the fridge.",
+        "title": "Combine & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "mujadara-lentils-caramelised-onions": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Low and slow is the only way. High heat burns instead of caramelises.",
+        "ings": [
+          "🧅 Onions · 3 large"
+        ],
+        "text": "This is the heart of mujadara — don't rush it. Thinly slice onions and cook in olive oil over medium-low heat for 30–35 minutes, stirring every few minutes, until deeply golden and jammy. Season with salt halfway through.",
+        "title": "Caramelise the onions",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🫘 Green lentils · 200g"
+        ],
+        "text": "Rinse lentils and cook in salted water for 15 minutes until just tender. Drain and set aside.",
+        "title": "Cook the lentils",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🍚 Rice · 160g"
+        ],
+        "text": "In a pot, toast cumin, cinnamon and allspice in olive oil for 1 minute. Add rinsed rice and cooked lentils. Add water to cover by 2cm. Bring to a boil then simmer covered for 15 minutes.",
+        "title": "Cook the spiced rice",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌿 Parsley · 15g",
+          "🍋 Lemon · 1 pc"
+        ],
+        "text": "Fluff the lentil rice and layer in bowls. Top generously with caramelised onions. Squeeze lemon over and scatter fresh parsley. Serve with plain yogurt on the side.",
+        "title": "Combine & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "thai-peanut-quinoa-salad": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🌾 Quinoa · 200g"
+        ],
+        "text": "Rinse and cook quinoa in double the water for 15 minutes. Spread out to cool.",
+        "title": "Cook the quinoa",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🟣 Red cabbage · 150g",
+          "🥕 Carrots · 2 medium"
+        ],
+        "text": "Finely shred red cabbage. Grate or julienne carrots. Blanch edamame 3 minutes and drain. Thinly slice spring onions.",
+        "title": "Prep the vegetables",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "The dressing should be creamy but pourable. Keep adding water gradually.",
+        "ings": [
+          "🥜 Peanut butter · 3 tbsp",
+          "🍋 Lime · 2 pcs"
+        ],
+        "text": "Whisk peanut butter, lime juice, soy sauce, sesame oil, a little maple syrup, minced garlic and grated ginger. Add warm water, 1 tbsp at a time, until pourable and smooth.",
+        "title": "Make the peanut dressing",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌿 Coriander · 20g",
+          "🫘 Edamame · 100g"
+        ],
+        "text": "Combine quinoa, all vegetables and half the coriander. Pour over dressing and toss well. Top with remaining coriander and crushed roasted peanuts.",
+        "title": "Toss & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "spinach-sweet-potato-muffins": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Grate raw sweet potato — no need to cook it first.",
+        "ings": [
+          "🍠 Sweet potato · 1 medium"
+        ],
+        "text": "Preheat oven to 200°C. Grease a 12-hole muffin tin or line with paper cups. Grate sweet potato using the coarse side of a box grater.",
+        "title": "Preheat & prep",
+        "kidsHelp": "Kids can help filling the muffin tin! 🧒"
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🌾 Buckwheat flour · 150g",
+          "🌾 Oat flour · 80g"
+        ],
+        "text": "In a large bowl whisk together buckwheat flour, oat flour, 2 tsp baking powder, 1 tsp ground ginger and ½ tsp sea salt.",
+        "title": "Mix dry ingredients",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "The dates sweeten naturally — no sugar needed.",
+        "ings": [
+          "🥚 Eggs · 3 pcs",
+          "🥬 Baby spinach · 2 handfuls",
+          "🫐 Dates · 3 pcs",
+          "🥛 Yogurt · 150g"
+        ],
+        "text": "In a blender, combine eggs, spinach, pitted dates, yogurt, olive oil and lemon zest. Blend until completely smooth and bright green.",
+        "title": "Blend wet ingredients",
+        "kidsHelp": "Kids love watching it turn green! 🧒"
+      },
+      {
+        "num": 4,
+        "tip": "A few lumps are fine. Overmixing makes them dense.",
+        "ings": [
+          "🍠 Grated sweet potato · all"
+        ],
+        "text": "Pour the green wet mixture into the dry ingredients. Stir until just combined — don't overmix. Fold in the grated sweet potato.",
+        "title": "Combine & fold in sweet potato",
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "tip": "Keeps 3 days in an airtight container or freeze for up to 3 months.",
+        "ings": [
+          "🎃 Pumpkin seeds · 2 tbsp"
+        ],
+        "text": "Divide batter evenly into the muffin tin. Top each with a few pumpkin seeds. Bake for 22–25 minutes until a skewer comes out clean and the tops are golden.",
+        "title": "Bake",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "warm-farro-salad-roasted-veg-feta": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "Farro should be al dente — slightly chewy is perfect.",
+        "ings": [
+          "🌾 Farro · 160g"
+        ],
+        "text": "Cook farro in plenty of salted boiling water for 25–30 minutes until tender but still chewy. Drain well.",
+        "title": "Cook the farro",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🥒 Courgette · 1 pc",
+          "🍆 Aubergine · 1 small",
+          "🍅 Cherry tomatoes · 150g"
+        ],
+        "text": "Cube courgette and aubergine. Toss with cherry tomatoes, olive oil, oregano, salt and pepper on a baking tray. Roast at 200°C for 20–25 minutes.",
+        "title": "Roast the vegetables",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🌰 Pine nuts · 2 tbsp"
+        ],
+        "text": "Toast pine nuts or walnuts in a dry pan for 2–3 minutes until golden.",
+        "title": "Toast the nuts",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🧀 Feta · 100g",
+          "🌿 Basil · 15g"
+        ],
+        "text": "Whisk lemon juice, a splash of balsamic and olive oil. Toss warm farro with roasted vegetables and dressing. Crumble feta and scatter basil and nuts on top.",
+        "title": "Make the dressing & combine",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "buckwheat-porridge-berries": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🌾 Buckwheat groats · 160g"
+        ],
+        "text": "Rinse buckwheat groats well under cold water — this removes any bitterness.",
+        "title": "Rinse the buckwheat",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Add extra milk if it thickens too much — consistency should be like creamy oat porridge.",
+        "ings": [
+          "🥛 Oat milk · 400ml"
+        ],
+        "text": "Add rinsed buckwheat to a pan with oat milk, cinnamon, vanilla and a pinch of salt. Bring to a gentle simmer and cook for 12–15 minutes, stirring regularly, until creamy and the groats are tender.",
+        "title": "Cook the porridge",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Swap the fruit with whatever is in season — stewed pear in winter, mango in summer.",
+        "ings": [
+          "🍓 Raspberries · 80g",
+          "🍌 Banana · 1 pc",
+          "⚫ Mixed seeds · 2 tbsp"
+        ],
+        "text": "Spoon into bowls. Top with fresh raspberries, sliced banana, mixed seeds and a drizzle of maple syrup.",
+        "title": "Top & serve",
+        "kidsHelp": "Kids can arrange their own toppings! 🧒"
+      }
+    ]
+  },
+  "harissa-tomato-lemon-yogurt-pasta": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": null,
+        "ings": [
+          "🍝 Rigatoni · 200g"
+        ],
+        "text": "Cook pasta in well-salted boiling water until al dente. Reserve a cup of pasta water before draining.",
+        "title": "Cook the pasta",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": "Adjust harissa to taste — add more for heat, less for kids.",
+        "ings": [
+          "🌶️ Harissa paste · 2 tbsp",
+          "🍅 Chopped tomatoes · 400g",
+          "🧄 Garlic · 2 cloves"
+        ],
+        "text": "Cook minced garlic in olive oil for 1 minute. Add harissa paste and cook 1 more minute. Add chopped tomatoes and simmer for 10 minutes until thickened.",
+        "title": "Make the harissa tomato sauce",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "tip": "Room temperature yogurt won't split when it hits the hot pasta.",
+        "ings": [
+          "🥛 Greek yogurt · 4 tbsp",
+          "🍋 Lemon · 1 pc"
+        ],
+        "text": "Mix Greek yogurt with lemon juice, lemon zest and a pinch of salt. Keep at room temperature.",
+        "title": "Make the lemon yogurt",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "tip": null,
+        "ings": [
+          "🌿 Parsley · 15g",
+          "🧀 Parmesan · 20g"
+        ],
+        "text": "Toss drained pasta into the tomato sauce, adding pasta water to loosen. Serve in bowls with a generous spoonful of lemon yogurt swirled on top. Scatter fresh parsley and grate cheese over.",
+        "title": "Combine & serve",
+        "kidsHelp": null
+      }
+    ]
+  },
+  "apple-pie-pecan-oat-bowl": {
+    "steps": [
+      {
+        "num": 1,
+        "tip": "A splash more oat milk at the end loosens it to your liking.",
+        "ings": [
+          "🌾 Rolled oats · 100g",
+          "🥛 Oat milk · 400ml"
+        ],
+        "text": "Simmer the oats with oat milk, a pinch of salt and ½ tsp cinnamon for 5–7 minutes, stirring, until creamy.",
+        "title": "Cook the porridge",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "tip": null,
+        "ings": [
+          "🍎 Apple · 2 pcs",
+          "🌰 Pecans · 40g"
+        ],
+        "text": "Cube the apples and cook in a little butter or coconut oil with cinnamon and 1 tbsp maple syrup for 4–5 minutes until soft and golden. Toast the pecans in a dry pan for 2–3 minutes, then roughly chop.",
+        "title": "Sauté the cinnamon apples",
+        "kidsHelp": "Kids can stir the cinnamon apples! 🧒"
+      },
+      {
+        "num": 3,
+        "tip": null,
+        "ings": [
+          "🟤 Raisins · 2 tbsp",
+          "🍯 Maple syrup · 1 tbsp",
+          "🥜 Almond butter · 2 tbsp"
+        ],
+        "text": "Spoon the porridge into bowls, top with the cinnamon apples, pecans and raisins, then drizzle with maple syrup and almond butter.",
+        "title": "Build & serve",
+        "kidsHelp": null
+      }
+    ]
   }
 }
