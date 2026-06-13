@@ -788,6 +788,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .rd-hero{position:relative}
 .rd-fav{position:absolute;top:12px;right:12px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.9);border:none;cursor:pointer;font-size:21px;line-height:1;color:var(--text3);display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.25)}
 .rd-fav.on{color:var(--danger)}
+.rd-back-btn{position:absolute;top:12px;left:12px;width:42px;height:42px;border-radius:50%;background:rgba(255,255,255,.92);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.25)}
+.rd-back-btn svg{width:20px;height:20px;stroke:var(--text2);fill:none;stroke-width:2.5}
+.rd-back-btn:active{transform:scale(.92)}
 .rd-addweek{display:block;width:calc(100% - 32px);margin:14px 16px 4px;background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
 /* ── FULL-SCREEN VISUAL DISH CHOOSER ─────────── */
 .chooser-bg{display:none;position:fixed;inset:0;background:var(--bg);z-index:700}
@@ -4231,6 +4234,7 @@ function renderRecipeDetail(id,targetId){
     </div>
     <div class="rd-hero">
       ${img}
+      <button class="rd-back-btn" onclick="${overlay?'closeRecipeOverlay()':'renderRecipes()'}" title="${overlay?t('closeWordShort'):t('allRecipes')}" aria-label="${overlay?t('closeWordShort'):t('allRecipes')}"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
       <button class="rd-fav ${isFav(id)?'on':''}" onclick="toggleFav(event,'${id}');renderRecipeDetail('${id}')" title="${t('saveFav')}">${isFav(id)?'♥':'♡'}</button>
       <div class="rd-hero-overlay">
         <div class="rd-hero-title">${dishName(d)}</div>

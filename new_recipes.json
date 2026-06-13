@@ -339,5 +339,1335 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "greek-yogurt-berry-bark",
+    "title": "Frozen Greek Yogurt Berry Bark",
+    "subtitle": "A crunchy frozen treat that tastes like dessert, not diet food",
+    "emoji": "🍫",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Frozen Greek yogurt bark broken into shards on a marble board, topped with raspberries, blueberries and dark chocolate shavings, bright airy food photography",
+    "nutrition": {
+      "fat": 6,
+      "kcal": 150,
+      "carbs": 16,
+      "fiber": 2,
+      "protein": 8
+    },
+    "ingredients": [
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "400g"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Mixed berries",
+        "emoji": "🫐",
+        "amount": "150g"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "400g"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Mixed berries",
+        "emoji": "🫐",
+        "amount": "150g"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Sweeten the yogurt",
+        "text": "Stir the Greek yogurt with the honey and a little vanilla until smooth and creamy.",
+        "ings": [
+          "🥛 Greek yogurt · 400g",
+          "🍯 Honey · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Spread & top",
+        "text": "Spread the yogurt onto a lined tray in a ~1 cm layer. Scatter the berries and chopped dark chocolate over the top.",
+        "ings": [
+          "🫐 Mixed berries · 150g",
+          "🍫 Dark chocolate · 30g"
+        ],
+        "tip": "Press the berries in lightly so they freeze into the bark.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Freeze & break",
+        "text": "Freeze for at least 3 hours until solid, then break into shards. Keep in the freezer until serving.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "frozen-banana-nice-cream",
+    "title": "Chocolate-Peanut Banana Nice Cream",
+    "subtitle": "Two-minute soft-serve from frozen bananas — no ice-cream machine",
+    "emoji": "🍌",
+    "is_kids": true,
+    "tags": [
+      "Vegan",
+      "Gluten-free",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "prep_minutes": 5,
+    "cook_minutes": 0,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Creamy chocolate banana nice cream swirled in a bowl, dusted with cocoa and a swirl of peanut butter, soft natural light",
+    "nutrition": {
+      "fat": 7,
+      "kcal": 230,
+      "carbs": 38,
+      "fiber": 5,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Frozen ripe bananas",
+        "emoji": "🍌",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Plant milk",
+        "emoji": "🥛",
+        "amount": "2 tbsp"
+      }
+    ],
+    "base_ingredients": [
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Frozen ripe bananas",
+        "emoji": "🍌",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Plant milk",
+        "emoji": "🥛",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Freeze ahead",
+        "text": "Slice ripe bananas and freeze for at least 3 hours (best done the night before).",
+        "ings": [
+          "🍌 Frozen ripe bananas · 3 pcs"
+        ],
+        "tip": "The riper the bananas, the sweeter the nice cream — no added sugar needed.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Blend smooth",
+        "text": "Blend the frozen banana with peanut butter, cocoa, plant milk and a pinch of salt until thick and creamy like soft-serve.",
+        "ings": [
+          "🥜 Peanut butter · 1 tbsp",
+          "🍫 Cocoa powder · 1 tbsp",
+          "🥛 Plant milk · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Serve",
+        "text": "Eat straight away as soft-serve, or freeze for 1 hour for a scoopable texture.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "berry-chia-pudding-parfait",
+    "title": "Berry Chia Pudding Parfait",
+    "subtitle": "Make-ahead pudding that sets overnight — creamy, fruity, no cooking",
+    "emoji": "🫐",
+    "is_kids": false,
+    "tags": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Chia pudding parfait layered with fresh berries in a glass, topped with mint, bright clean food photography",
+    "nutrition": {
+      "fat": 9,
+      "kcal": 210,
+      "carbs": 24,
+      "fiber": 11,
+      "protein": 6
+    },
+    "ingredients": [
+      {
+        "name": "Chia seeds",
+        "emoji": "⚫",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Coconut or almond milk",
+        "emoji": "🥥",
+        "amount": "250ml"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Mixed berries",
+        "emoji": "🫐",
+        "amount": "120g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Chia seeds",
+        "emoji": "⚫",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Coconut or almond milk",
+        "emoji": "🥥",
+        "amount": "250ml"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Mixed berries",
+        "emoji": "🫐",
+        "amount": "120g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Mix the pudding",
+        "text": "Whisk the chia seeds with the milk, maple syrup and a little vanilla. Let it rest 5 minutes, then whisk again to break up any clumps.",
+        "ings": [
+          "⚫ Chia seeds · 4 tbsp",
+          "🥥 Coconut or almond milk · 250ml",
+          "🍁 Maple syrup · 1 tbsp"
+        ],
+        "tip": "The second whisk is the trick to a smooth, lump-free pudding.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Chill to set",
+        "text": "Cover and chill for at least 4 hours, or overnight, until thick and spoonable.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Layer & serve",
+        "text": "Layer the chia pudding with the berries in glasses and serve cold.",
+        "ings": [
+          "🫐 Mixed berries · 120g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "no-bake-chocolate-peanut-oat-bars",
+    "title": "No-Bake Chocolate Peanut Oat Bars",
+    "subtitle": "Chewy oat bars with a dark-chocolate top — no oven needed",
+    "emoji": "🍫",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 0,
+    "servings": 8,
+    "image_url": "",
+    "image_prompt": "No-bake oat bars with a glossy dark chocolate top, cut into squares on parchment, cozy food photography",
+    "nutrition": {
+      "fat": 11,
+      "kcal": 230,
+      "carbs": 24,
+      "fiber": 3,
+      "protein": 6
+    },
+    "ingredients": [
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "150g"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "120g"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "60ml"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "60g"
+      }
+    ],
+    "base_ingredients": [
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "150g"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "120g"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "60ml"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "60g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Mix the base",
+        "text": "Gently warm the peanut butter with the maple syrup until runny, then stir into the oats with a pinch of salt until evenly coated.",
+        "ings": [
+          "🌾 Rolled oats · 150g",
+          "🥜 Peanut butter · 120g",
+          "🍁 Maple syrup · 60ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Press & chill",
+        "text": "Press the mixture firmly into a lined tin and chill for 30 minutes until set.",
+        "ings": [],
+        "tip": "Press hard — well-compacted bars hold together when you cut them.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Chocolate top",
+        "text": "Melt the dark chocolate, spread over the top, chill until set, then cut into bars.",
+        "ings": [
+          "🍫 Dark chocolate · 60g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "banana-oat-choc-chip-cookies",
+    "title": "Banana Oat Chocolate-Chip Cookies",
+    "subtitle": "Soft cookies sweetened mostly by ripe banana",
+    "emoji": "🍪",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 15,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Soft banana oat cookies with melting dark chocolate chips on a cooling rack, warm homely light",
+    "nutrition": {
+      "fat": 6,
+      "kcal": 200,
+      "carbs": 30,
+      "fiber": 4,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Ripe bananas",
+        "emoji": "🍌",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "120g"
+      },
+      {
+        "name": "Dark chocolate chips",
+        "emoji": "🍫",
+        "amount": "50g"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "2 tbsp"
+      }
+    ],
+    "base_ingredients": [
+      "Cinnamon"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Ripe bananas",
+        "emoji": "🍌",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "120g"
+      },
+      {
+        "name": "Dark chocolate chips",
+        "emoji": "🍫",
+        "amount": "50g"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Mash & mix",
+        "text": "Mash the bananas well, then stir in the oats, peanut butter, a little cinnamon and the chocolate chips into a thick dough.",
+        "ings": [
+          "🍌 Ripe bananas · 2 pcs",
+          "🌾 Rolled oats · 120g",
+          "🥜 Peanut butter · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Shape",
+        "text": "Spoon mounds onto a lined tray and flatten gently into cookies — they don't spread much.",
+        "ings": [
+          "🍫 Dark chocolate chips · 50g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Bake at 180°C for 12–15 minutes until golden at the edges. Cool on a rack to firm up.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "baked-cinnamon-apples-oat-crumble",
+    "title": "Baked Cinnamon Apples with Oat Crumble",
+    "subtitle": "All the apple-crumble cosiness, in single portions",
+    "emoji": "🍎",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 30,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Baked whole apples stuffed with golden oat-walnut crumble in a rustic dish, steam rising, warm cosy light",
+    "nutrition": {
+      "fat": 9,
+      "kcal": 240,
+      "carbs": 34,
+      "fiber": 5,
+      "protein": 3
+    },
+    "ingredients": [
+      {
+        "name": "Apples",
+        "emoji": "🍎",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "60g"
+      },
+      {
+        "name": "Walnuts",
+        "emoji": "🌰",
+        "amount": "40g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "30g"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "2 tbsp"
+      }
+    ],
+    "base_ingredients": [
+      "Cinnamon"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Apples",
+        "emoji": "🍎",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "60g"
+      },
+      {
+        "name": "Walnuts",
+        "emoji": "🌰",
+        "amount": "40g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "30g"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Prep the apples",
+        "text": "Core the apples and set them upright in a baking dish.",
+        "ings": [
+          "🍎 Apples · 4 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the crumble",
+        "text": "Mix the oats, chopped walnuts, soft butter, maple syrup and plenty of cinnamon into a crumble, then spoon it into and over the apples.",
+        "ings": [
+          "🌾 Rolled oats · 60g",
+          "🌰 Walnuts · 40g",
+          "🧈 Butter · 30g",
+          "🍁 Maple syrup · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Bake at 180°C for 25–30 minutes until the apples are soft and the topping is golden. Serve warm.",
+        "ings": [],
+        "tip": "Lovely with a spoon of Greek yogurt on top.",
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "stuffed-medjool-dates",
+    "title": "Peanut-Butter Stuffed Dates",
+    "subtitle": "Three ingredients, \"snickers\" energy — the famous viral treat",
+    "emoji": "🍫",
+    "is_kids": true,
+    "tags": [
+      "Vegan",
+      "Gluten-free",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 0,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Medjool dates filled with peanut butter and coated in dark chocolate, sprinkled with sea salt flakes on parchment",
+    "nutrition": {
+      "fat": 9,
+      "kcal": 200,
+      "carbs": 28,
+      "fiber": 4,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Medjool dates",
+        "emoji": "🌴",
+        "amount": "8 pcs"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "50g"
+      }
+    ],
+    "base_ingredients": [
+      "Sea salt flakes"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Medjool dates",
+        "emoji": "🌴",
+        "amount": "8 pcs"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "50g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Fill the dates",
+        "text": "Slit each date down one side, remove the pit and fill the cavity with peanut butter.",
+        "ings": [
+          "🌴 Medjool dates · 8 pcs",
+          "🥜 Peanut butter · 4 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Coat in chocolate",
+        "text": "Melt the dark chocolate and dip or drizzle each date until coated.",
+        "ings": [
+          "🍫 Dark chocolate · 50g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Set & serve",
+        "text": "Sprinkle with sea-salt flakes and chill until the chocolate sets.",
+        "ings": [],
+        "tip": "The salt is what makes them taste like a candy bar — don't skip it.",
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "dark-chocolate-almond-bark",
+    "title": "Dark Chocolate Almond & Cranberry Bark",
+    "subtitle": "A 3-ingredient chocolate bark you make in ten minutes",
+    "emoji": "🍫",
+    "is_kids": false,
+    "tags": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "servings": 8,
+    "image_url": "",
+    "image_prompt": "Dark chocolate bark studded with whole almonds and dried cranberries, broken into shards on baking paper",
+    "nutrition": {
+      "fat": 13,
+      "kcal": 190,
+      "carbs": 16,
+      "fiber": 3,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Almonds",
+        "emoji": "🌰",
+        "amount": "60g"
+      },
+      {
+        "name": "Dried cranberries",
+        "emoji": "🫐",
+        "amount": "40g"
+      }
+    ],
+    "base_ingredients": [
+      "Sea salt flakes"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Almonds",
+        "emoji": "🌰",
+        "amount": "60g"
+      },
+      {
+        "name": "Dried cranberries",
+        "emoji": "🫐",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Melt the chocolate",
+        "text": "Melt the dark chocolate gently over a water bath or in short bursts in the microwave, stirring until smooth.",
+        "ings": [
+          "🍫 Dark chocolate · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Spread & top",
+        "text": "Spread the chocolate onto a lined tray and scatter over the toasted almonds, cranberries and a few sea-salt flakes.",
+        "ings": [
+          "🌰 Almonds · 60g",
+          "🫐 Dried cranberries · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Set & break",
+        "text": "Chill until fully set, then break into rough pieces.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "roasted-honey-peaches-yogurt",
+    "title": "Roasted Honey Peaches with Yogurt",
+    "subtitle": "Warm caramelised peaches over cool yogurt — summer in a bowl",
+    "emoji": "🍑",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 20,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Roasted peach halves caramelised with honey, served over Greek yogurt and topped with crushed pistachios, bright summer light",
+    "nutrition": {
+      "fat": 6,
+      "kcal": 180,
+      "carbs": 24,
+      "fiber": 3,
+      "protein": 7
+    },
+    "ingredients": [
+      {
+        "name": "Peaches",
+        "emoji": "🍑",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "200g"
+      },
+      {
+        "name": "Pistachios",
+        "emoji": "🌰",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Cinnamon"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Peaches",
+        "emoji": "🍑",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "200g"
+      },
+      {
+        "name": "Pistachios",
+        "emoji": "🌰",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Prep the peaches",
+        "text": "Halve and pit the peaches and place them cut-side up in a baking dish. Drizzle with the honey and a little cinnamon.",
+        "ings": [
+          "🍑 Peaches · 4 pcs",
+          "🍯 Honey · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Roast",
+        "text": "Roast at 200°C for about 20 minutes until soft and caramelised at the edges.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Serve",
+        "text": "Spoon over the Greek yogurt, set the warm peaches on top and finish with crushed pistachios.",
+        "ings": [
+          "🥛 Greek yogurt · 200g",
+          "🌰 Pistachios · 30g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "flourless-chocolate-almond-cake",
+    "title": "Flourless Chocolate Almond Cake",
+    "subtitle": "Dense, fudgy and naturally gluten-free — a real celebration cake",
+    "emoji": "🎂",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 30,
+    "servings": 8,
+    "image_url": "",
+    "image_prompt": "Dense flourless chocolate almond cake dusted with cocoa, one slice removed showing fudgy interior, moody food photography",
+    "nutrition": {
+      "fat": 22,
+      "kcal": 320,
+      "carbs": 22,
+      "fiber": 3,
+      "protein": 7
+    },
+    "ingredients": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "150g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "100g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Ground almonds",
+        "emoji": "🌰",
+        "amount": "100g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "80g"
+      }
+    ],
+    "base_ingredients": [
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "150g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "100g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Ground almonds",
+        "emoji": "🌰",
+        "amount": "100g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "80g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Melt the chocolate",
+        "text": "Melt the dark chocolate with the butter until smooth, then let it cool slightly.",
+        "ings": [
+          "🍫 Dark chocolate · 150g",
+          "🧈 Butter · 100g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Mix the batter",
+        "text": "Whisk the eggs with the sugar until pale, then fold in the melted chocolate, ground almonds and a pinch of salt.",
+        "ings": [
+          "🥚 Eggs · 3 pcs",
+          "🍬 Sugar · 80g",
+          "🌰 Ground almonds · 100g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Pour into a lined tin and bake at 170°C for 25–30 minutes until just set with a slight wobble. Cool before slicing.",
+        "ings": [],
+        "tip": "A little wobble in the centre = a fudgy cake. Don't overbake.",
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "classic-carrot-cake-cream-cheese",
+    "title": "Classic Carrot Cake with Cream-Cheese Frosting",
+    "subtitle": "The crowd-favourite bake — moist, spiced and generously frosted",
+    "emoji": "🥕",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 40,
+    "servings": 12,
+    "image_url": "",
+    "image_prompt": "Classic two-layer carrot cake with thick cream cheese frosting and chopped pecans on top, one slice cut to show the moist spiced crumb, soft natural light, editorial food photography",
+    "nutrition": {
+      "fat": 24,
+      "kcal": 420,
+      "carbs": 46,
+      "fiber": 2,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Grated carrots",
+        "emoji": "🥕",
+        "amount": "300g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "260g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Vegetable oil",
+        "emoji": "🫗",
+        "amount": "295ml"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "200g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "190g"
+      },
+      {
+        "name": "Pecans",
+        "emoji": "🌰",
+        "amount": "120g"
+      },
+      {
+        "name": "Raisins",
+        "emoji": "🍇",
+        "amount": "70g"
+      }
+    ],
+    "base_ingredients": [
+      "Baking soda",
+      "Cinnamon",
+      "Vanilla extract",
+      "Sea salt"
+    ],
+    "dressing": [
+      {
+        "name": "Cream cheese",
+        "emoji": "🧀",
+        "amount": "225g"
+      },
+      {
+        "name": "Powdered sugar",
+        "emoji": "🍚",
+        "amount": "140g"
+      },
+      {
+        "name": "Heavy cream",
+        "emoji": "🥛",
+        "amount": "80ml"
+      }
+    ],
+    "mise_en_place": [
+      {
+        "name": "Grated carrots",
+        "emoji": "🥕",
+        "amount": "300g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "260g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Vegetable oil",
+        "emoji": "🫗",
+        "amount": "295ml"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "200g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "190g"
+      },
+      {
+        "name": "Pecans",
+        "emoji": "🌰",
+        "amount": "120g"
+      },
+      {
+        "name": "Raisins",
+        "emoji": "🍇",
+        "amount": "70g"
+      },
+      {
+        "name": "Cream cheese",
+        "emoji": "🧀",
+        "amount": "225g"
+      },
+      {
+        "name": "Powdered sugar",
+        "emoji": "🍚",
+        "amount": "140g"
+      },
+      {
+        "name": "Heavy cream",
+        "emoji": "🥛",
+        "amount": "80ml"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Mix the batter",
+        "text": "Whisk the flour, baking soda, cinnamon and salt. In a second bowl whisk the oil, both sugars and vanilla, then beat in the eggs one at a time. Stir the dry mix into the wet in three parts, then fold in the carrots, pecans and raisins.",
+        "ings": [
+          "🌾 Plain flour · 260g",
+          "🥕 Grated carrots · 300g",
+          "🥚 Eggs · 4 pcs"
+        ],
+        "tip": "Don't overmix once the flour goes in — fold just until combined for a tender crumb.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Bake",
+        "text": "Divide the batter between two lined 23 cm (9-inch) tins and bake at 180°C for 35–45 minutes, until the tops spring back when pressed. Cool completely before frosting.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Make the frosting",
+        "text": "Beat the cream cheese until smooth, beat in the powdered sugar, then whip in the cold heavy cream until thick and spreadable.",
+        "ings": [],
+        "tip": "Use cold cream and a block cream cheese (not spreadable tub) so the frosting holds its shape.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Frost & serve",
+        "text": "Spread the frosting between and over the cooled layers, then finish with the remaining chopped pecans.",
+        "ings": [
+          "🌰 Pecans · 120g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
   }
 ]

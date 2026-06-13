@@ -434,10 +434,18 @@
         "amount": "2 tbsp"
       }
     ],
-    "dressing": [],
+    "dressing": [
+      {
+        "name": "Tahini",
+        "emoji": "🥜",
+        "amount": "2 tbsp"
+      }
+    ],
     "base_ingredients": [
-      "Olive oil",
       "Lemon juice",
+      "Olive oil",
+      "Garlic",
+      "Maple syrup",
       "Salt & pepper"
     ],
     "mise_en_place": [
@@ -517,13 +525,14 @@
       },
       {
         "num": 4,
-        "tip": null,
+        "tip": "Cold water plus a touch of maple keeps the tahini from tasting bitter — add water slowly until it ribbons off the spoon.",
         "ings": [
+          "🥜 Tahini · 2 tbsp",
           "🥑 Avocado · 1 pc",
           "🥬 Mixed greens · 80g"
         ],
-        "text": "Toss greens with olive oil and lemon juice. Layer everything in the bowl. Finish with sliced avocado and pistachio crunch.",
-        "title": "Dress & build",
+        "text": "Whisk the tahini with the lemon juice, olive oil, grated garlic and a little maple syrup, then loosen with cold water a tablespoon at a time until creamy and pourable. Toss the greens with half, layer everything in the bowl, finish with sliced avocado and the pistachio crunch, then drizzle over the rest.",
+        "title": "Make the dressing & build",
         "kidsHelp": null
       }
     ],
@@ -8818,47 +8827,55 @@
     "image_url": "https://v3b.fal.media/files/b/0a9cf82c/brMrzKlfbtXw1x6iDtDq-_ea7c7de9a1454bc9aed18ed355eee789.jpg",
     "image_prompt": "Dark chocolate avocado mousse in small glass jars topped with fresh raspberries, cocoa powder dusting and a mint leaf, overhead elegant dark surface editorial food photography",
     "nutrition": {
-      "fat": 18,
-      "kcal": 240,
-      "carbs": 22,
-      "fiber": 6,
-      "protein": 4
+      "fat": 20,
+      "kcal": 275,
+      "carbs": 26,
+      "fiber": 7,
+      "protein": 5
     },
     "ingredients": [
       {
-        "name": "Ripe avocados",
         "emoji": "🥑",
+        "name": "Ripe avocados",
         "amount": "2 pcs"
       },
       {
-        "name": "Cacao powder",
         "emoji": "🍫",
-        "amount": "3 tbsp"
+        "name": "Raw cacao powder",
+        "amount": "4 tbsp"
       },
       {
-        "name": "Maple syrup",
         "emoji": "🍯",
-        "amount": "3 tbsp"
+        "name": "Maple syrup",
+        "amount": "4 tbsp"
       },
       {
-        "name": "Coconut milk",
         "emoji": "🥥",
+        "name": "Coconut milk",
         "amount": "60ml"
       },
       {
-        "name": "Fresh raspberries",
         "emoji": "🍓",
+        "name": "Fresh raspberries",
         "amount": "80g"
       },
       {
-        "name": "Vanilla extract",
-        "emoji": "🌿",
-        "amount": "1 tsp"
+        "emoji": "🌰",
+        "name": "Pistachios",
+        "amount": "20g"
+      },
+      {
+        "emoji": "🟤",
+        "name": "Cacao nibs",
+        "amount": "1 tbsp"
       }
     ],
     "dressing": [],
     "base_ingredients": [
-      "Pinch of salt"
+      "Vanilla extract",
+      "Espresso powder",
+      "Sea salt flakes",
+      "Orange zest"
     ],
     "mise_en_place": [
       {
@@ -8894,34 +8911,29 @@
     ],
     "steps": [
       {
-        "num": 1,
-        "tip": "Blend for at least 1 full minute for a silky mousse texture.",
+        "title": "Blend the mousse",
+        "text": "Scoop the avocado flesh into a blender. Add the raw cacao, maple syrup, coconut milk, vanilla, espresso powder and a pinch of sea-salt flakes. Blend for about 2 minutes until completely smooth and glossy.",
         "ings": [
           "🥑 Avocados · 2 pcs",
-          "🍫 Cacao powder · 3 tbsp",
-          "🍯 Maple syrup · 3 tbsp"
+          "🍫 Raw cacao powder · 4 tbsp",
+          "🍯 Maple syrup · 4 tbsp",
+          "🥥 Coconut milk · 60ml"
         ],
-        "text": "Scoop avocado flesh into a blender. Add cacao, maple syrup, coconut milk, vanilla and a pinch of salt. Blend until completely smooth and glossy.",
-        "title": "Blend everything",
-        "kidsHelp": null
+        "tip": "The espresso powder deepens the chocolate flavour and hides any avocado taste."
       },
       {
-        "num": 2,
-        "tip": null,
-        "ings": [],
-        "text": "Taste for sweetness and richness. Add more maple syrup or cacao as needed.",
-        "title": "Taste & adjust",
-        "kidsHelp": null
+        "title": "Chill to set",
+        "text": "Spoon into glasses and chill for at least 2 hours, so the mousse firms up and the flavour deepens.",
+        "ings": []
       },
       {
-        "num": 3,
-        "tip": "Keeps in the fridge for up to 2 days.",
+        "title": "Top & serve",
+        "text": "Top with raspberries, crushed pistachios and cacao nibs, then finish with a little orange zest and a few sea-salt flakes.",
         "ings": [
-          "🍓 Raspberries · 80g"
-        ],
-        "text": "Spoon into glasses and refrigerate for at least 30 minutes. Top with fresh raspberries before serving.",
-        "title": "Chill & serve",
-        "kidsHelp": "Kids can add the raspberries on top! 🧒"
+          "🍓 Raspberries · 80g",
+          "🌰 Pistachios · 20g",
+          "🟤 Cacao nibs · 1 tbsp"
+        ]
       }
     ],
     "created_at": "2026-06-04T20:29:59.469007+00:00"
