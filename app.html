@@ -2147,6 +2147,27 @@ function fmtIngQty(ing,mult){
   if(Math.abs(mult-1)<0.01)return ing.amount||fmtQty(p.qty,p.unit); // unscaled → keep original text
   return fmtQty(p.qty*mult,p.unit);
 }
+// Scale the amount inside a step/dressing chip string ("🫐 Açaí · 200g" → ×mult).
+// Keeps everything before the "·" and only scales a parseable amount; leaves
+// chips like "… · to taste" or amount-less strings untouched.
+function scaleChip(chip,mult){
+  if(!chip||typeof chip!=='string'||Math.abs(mult-1)<0.01)return chip;
+  const ci=chip.lastIndexOf('·');if(ci<0)return chip;
+  const head=chip.slice(0,ci+1),amt=chip.slice(ci+1);
+  // leading space + number(+optional fraction) + rest (unit text, original casing)
+  let lead,num,unit,m=amt.match(/^(\s*)(\d+(?:[.,]\d+)?)\s*([¼½¾⅓⅔⅛]?)(.*)$/);
+  if(m){lead=m[1];num=parseFloat(m[2].replace(',','.'))+(m[3]?FRAC[m[3]]:0);unit=m[4];}
+  else{m=amt.match(/^(\s*)([¼½¾⅓⅔⅛])(.*)$/);if(!m)return chip;lead=m[1];num=FRAC[m[2]];unit=m[3];}
+  unit=unit.replace(/^\s+/,'');               // normalise: sep below re-adds spacing
+  if(/\d/.test(unit))return chip;            // ranges like "150–200g" → leave untouched
+  const scaled=num*mult,u=unit.trim().toLowerCase();
+  let numStr;
+  if(['g','ml','kg','l'].includes(u))numStr=String(Math.round(scaled));
+  else if(scaled%1===0)numStr=String(scaled);
+  else numStr=({0.25:'¼',0.5:'½',0.75:'¾'})[scaled]||(Math.round(scaled*10)/10).toString();
+  const sep=(unit===''||['g','ml','kg','l'].includes(u))?'':' '; // g/ml attached, other units spaced
+  return head+lead+numStr+sep+unit;
+}
 // Round a shopping quantity to something you'd actually buy ("87 g" → "100 g", "1.5 pc" → "2").
 const WHOLE_UNITS=['pc','pcs','piece','pieces','medium','large','small','clove','cloves','can','cans','tin','tins','bunch','bunches','head','heads','handful','handfuls','sprig','sprigs','slice','slices','fillet','fillets','egg','eggs','jar','jars','pack','packs'];
 function niceQty(qty,unit){
@@ -4173,11 +4194,11 @@ function renderRecipeDetail(id,targetId){
   const baseHtml=base.length?`<div class="rd-base">${base.map(b=>`<span class="rd-base-chip">${fmtChip(b)}</span>`).join('')}</div>`:'';
 
   // Dressing
-  const dressingHtml=dressing.length?`<div class="rd-section" style="margin-top:14px"><div class="rd-section-title">${t('sauceDressing')}</div><div class="rd-base">${dressing.map(b=>`<span class="rd-base-chip">${fmtChip(b)}</span>`).join('')}</div></div>`:'';
+  const dressingHtml=dressing.length?`<div class="rd-section" style="margin-top:14px"><div class="rd-section-title">${t('sauceDressing')}</div><div class="rd-base">${dressing.map(b=>`<span class="rd-base-chip">${scaleChip(fmtChip(b),mult)}</span>`).join('')}</div></div>`:'';
 
   // Steps
   const stepsHtml=steps.map(step=>{
-    const ingsHtml=step.ings&&step.ings.length?`<div class="rd-step-ings">${step.ings.map(i=>`<span class="rd-step-ing">${i}</span>`).join('')}</div>`:'';
+    const ingsHtml=step.ings&&step.ings.length?`<div class="rd-step-ings">${step.ings.map(i=>`<span class="rd-step-ing">${scaleChip(i,mult)}</span>`).join('')}</div>`:'';
     const tipHtml=step.tip?`<div class="rd-step-tip"><span class="rd-step-tip-icon">💡</span><div class="rd-step-tip-txt">${step.tip}</div></div>`:'';
     const kidsHtml=step.kidsHelp?`<div class="rd-step-kids"><div class="rd-step-kids-txt">${step.kidsHelp}</div></div>`:'';
     return`<div class="rd-step-card">
@@ -4497,13 +4518,15 @@ async function openCookMode(key,type){
 }
 function renderCookStep(){
   if(!cookState)return;const dish=getDish(cookState.dishId);const steps=cookState.steps||[];const i=cookState.idx;const total=steps.length;const last=i>=total-1||total===0;const step=steps[i]||{};
+  const _slot=state.plan[cookState.key]&&state.plan[cookState.key][cookState.type];
+  const _mult=(_slot?guestServings(_slot):familyServings())/((dish&&dish.servings)||2);
   document.getElementById('cook-title').textContent=dishName(dish);
   document.getElementById('cook-step-count').textContent=total?tf('stepXofY',{i:i+1,n:total}):'';
   document.getElementById('cook-body').innerHTML=`
     <div class="cook-num">${step.num||(i+1)}</div>
     ${step.title?`<div class="cook-step-title">${step.title}</div>`:''}
     <div class="cook-text">${step.text||t('cookAllDone')}</div>
-    ${step.ings&&step.ings.length?`<div class="cook-ings">${step.ings.map(x=>`<span>${x}</span>`).join('')}</div>`:''}
+    ${step.ings&&step.ings.length?`<div class="cook-ings">${step.ings.map(x=>`<span>${scaleChip(x,_mult)}</span>`).join('')}</div>`:''}
     ${step.tip?`<div class="cook-tip">💡 ${step.tip}</div>`:''}
     <div class="cook-hint">${last?t('cookTapReady'):t('cookTapNext')}</div>`;
   document.getElementById('cook-prev').style.visibility=i>0?'visible':'hidden';
