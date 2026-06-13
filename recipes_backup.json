@@ -11874,101 +11874,61 @@
     "steps": [
       {
         "num": 1,
-        "tip": null,
+        "title": "Sauté the aromatics",
+        "text": "Warm a generous glug of olive oil in a large pot over medium heat. Add the diced onion and carrots and cook for 5–7 minutes, stirring occasionally, until soft and translucent.",
         "ings": [
           "🧅 Onion · 1 large",
           "🥕 Carrots · 3 medium"
         ],
-        "text": "Warm a generous glug of olive oil in a large pot over medium heat.",
-        "title": "Sauté the aromatics",
+        "tip": "Don't rush this step — softening the vegetables builds the flavour base.",
         "kidsHelp": null
       },
       {
         "num": 2,
-        "tip": "Don't rush this step — softening the vegetables builds the flavour base.",
-        "ings": [],
-        "text": "Add diced onion and carrots and cook for 5–7 minutes, stirring occasionally, until the onion is soft and translucent.",
-        "title": "Add diced onion and",
+        "title": "Add garlic & spices",
+        "text": "Add the minced garlic, cumin, coriander, smoked paprika and turmeric and cook for 2 minutes until fragrant.",
+        "ings": [
+          "🧄 Garlic · 4 cloves"
+        ],
+        "tip": null,
         "kidsHelp": null
       },
       {
         "num": 3,
-        "tip": null,
-        "ings": [
-          "🧄 Garlic · 4 cloves"
-        ],
-        "text": "Add minced garlic, cumin, coriander, smoked paprika and turmeric.",
-        "title": "Add garlic & spices",
-        "kidsHelp": null
-      },
-      {
-        "num": 4,
-        "tip": null,
-        "ings": [],
-        "text": "Cook for 2 minutes until fragrant.",
-        "title": "Cook for 2 minutes",
-        "kidsHelp": null
-      },
-      {
-        "num": 5,
-        "tip": null,
+        "title": "Add lentils, tomatoes & stock",
+        "text": "Rinse the lentils well, then add them to the pot with the chopped tomatoes and vegetable stock.",
         "ings": [
           "🫘 Lentils · 300g",
           "🍅 Chopped tomatoes · 400g"
         ],
-        "text": "Rinse lentils well.",
-        "title": "Add lentils & stock",
-        "kidsHelp": null
-      },
-      {
-        "num": 6,
         "tip": null,
-        "ings": [],
-        "text": "Add to the pot along with chopped tomatoes and vegetable stock.",
-        "title": "Add to the pot",
         "kidsHelp": null
       },
       {
-        "num": 7,
-        "tip": null,
-        "ings": [],
-        "text": "Bring to a boil then reduce to a steady simmer.",
-        "title": "Bring to a boil",
-        "kidsHelp": null
-      },
-      {
-        "num": 8,
-        "tip": "Red lentils dissolve for a creamy soup. Green lentils hold their shape for a chunkier version.",
-        "ings": [],
-        "text": "Simmer for 20–25 minutes until lentils are completely tender.",
+        "num": 4,
         "title": "Simmer",
+        "text": "Bring to a boil, then reduce to a steady simmer and cook for 20–25 minutes until the lentils are completely tender.",
+        "ings": [],
+        "tip": "Red lentils dissolve for a creamy soup. Green lentils hold their shape for a chunkier version.",
         "kidsHelp": null
       },
       {
-        "num": 9,
-        "tip": null,
+        "num": 5,
+        "title": "Finish with greens & lemon",
+        "text": "Stir in the kale or spinach and cook for 2 minutes until wilted, then add a generous squeeze of lemon juice.",
         "ings": [
           "🥬 Kale or spinach · 80g",
           "🍋 Lemon · 1 pc"
         ],
-        "text": "Stir in kale or spinach and cook 2 minutes until wilted.",
-        "title": "Add greens & lemon",
+        "tip": null,
         "kidsHelp": null
       },
       {
-        "num": 10,
-        "tip": null,
+        "num": 6,
+        "title": "Taste & serve",
+        "text": "Taste and adjust the seasoning — the lemon is essential, don't skip it.",
         "ings": [],
-        "text": "Add a generous squeeze of lemon juice.",
-        "title": "Add a generous squeeze",
-        "kidsHelp": null
-      },
-      {
-        "num": 11,
         "tip": null,
-        "ings": [],
-        "text": "Taste and adjust seasoning — the lemon is essential, don't skip it.",
-        "title": "Taste and adjust seasoning",
         "kidsHelp": null
       }
     ],
