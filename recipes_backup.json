@@ -11409,5 +11409,165 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "classic-greek-salad-horiatiki",
+    "title": "Classic Greek Salad (Horiatiki)",
+    "subtitle": "Few, top-quality ingredients — just like in Greece",
+    "emoji": "🥗",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course",
+      "Kleine Mahlzeit"
+    ],
+    "categories": [
+      "Salat"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Authentic Greek village salad (Horiatiki) in a rustic bowl: chunky ripe tomatoes, thick cucumber slices, green pepper rings, red onion, kalamata olives, topped with a whole block of feta drizzled with olive oil and dried oregano, bright Mediterranean daylight, overhead editorial food photography",
+    "nutrition": {
+      "fat": 22,
+      "kcal": 260,
+      "carbs": 11,
+      "fiber": 3,
+      "protein": 7
+    },
+    "ingredients": [
+      {
+        "name": "Ripe tomatoes",
+        "emoji": "🍅",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Cucumber",
+        "emoji": "🥒",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Red onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Green pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Feta cheese (block)",
+        "emoji": "🧀",
+        "amount": "150–200g"
+      },
+      {
+        "name": "Kalamata olives",
+        "emoji": "🫒",
+        "amount": "80g"
+      }
+    ],
+    "base_ingredients": [
+      "Dried oregano",
+      "Sea salt",
+      "Red wine vinegar (optional)"
+    ],
+    "dressing": [
+      {
+        "name": "Extra virgin olive oil",
+        "emoji": "🫒",
+        "amount": "4 tbsp"
+      }
+    ],
+    "mise_en_place": [
+      {
+        "name": "Ripe tomatoes",
+        "emoji": "🍅",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Cucumber",
+        "emoji": "🥒",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Red onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Green pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Feta cheese (block)",
+        "emoji": "🧀",
+        "amount": "150–200g"
+      },
+      {
+        "name": "Kalamata olives",
+        "emoji": "🫒",
+        "amount": "80g"
+      },
+      {
+        "name": "Extra virgin olive oil",
+        "emoji": "🫒",
+        "amount": "4 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Chop the vegetables",
+        "text": "Roughly chop the tomatoes, cut the cucumber into thick slices, slice the green pepper into rings and the red onion into thin rings. Add everything to a large bowl.",
+        "ings": [
+          "🍅 Ripe tomatoes · 4 pcs",
+          "🥒 Cucumber · 1 pc",
+          "🫑 Green pepper · 1 pc",
+          "🧅 Red onion · 1 pc"
+        ],
+        "tip": "Tomatoes must be at room temperature — never straight from the fridge. It makes a huge difference in flavour.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Salt, rest & add olives",
+        "text": "Season lightly with sea salt and let it sit for 5 minutes, then scatter over the kalamata olives.",
+        "ings": [
+          "🫒 Kalamata olives · 80g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Top with feta",
+        "text": "Lay the feta on top as one large block — don't crumble it.",
+        "ings": [
+          "🧀 Feta cheese · 150–200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Dress & serve",
+        "text": "Drizzle generously with extra virgin olive oil, sprinkle oregano over the feta and salad, add an optional splash of red wine vinegar, and serve immediately.",
+        "ings": [
+          "🫒 Olive oil · 4 tbsp"
+        ],
+        "tip": "A real Horiatiki has no lettuce and no dressing other than good olive oil, oregano and salt.",
+        "kidsHelp": null
+      }
+    ]
   }
 ]

@@ -13242,5 +13242,190 @@
     }
    ]
   }
+ },
+ "classic-greek-salad-horiatiki": {
+  "de": {
+   "title": "Klassischer griechischer Bauernsalat (Horiatiki)",
+   "subtitle": "Wenige, hochwertige Zutaten — wie in Griechenland",
+   "ingredients": [
+    "Reife Tomaten",
+    "Gurke",
+    "Rote Zwiebel",
+    "Grüne Paprika",
+    "Feta (am Stück)",
+    "Kalamata-Oliven"
+   ],
+   "base": [
+    "Getrockneter Oregano",
+    "Meersalz",
+    "Rotweinessig (optional)"
+   ],
+   "dressing": [
+    "Natives Olivenöl extra"
+   ],
+   "steps": [
+    {
+     "title": "Gemüse schneiden",
+     "text": "Tomaten grob schneiden, Gurke in dicke Scheiben, grüne Paprika in Ringe und rote Zwiebel in feine Ringe. Alles in eine große Schüssel geben.",
+     "ings": [
+      "🍅 Reife Tomaten · 4 St.",
+      "🥒 Gurke · 1 St.",
+      "🫑 Grüne Paprika · 1 St.",
+      "🧅 Rote Zwiebel · 1 St."
+     ],
+     "tip": "Die Tomaten müssen Zimmertemperatur haben – niemals direkt aus dem Kühlschrank. Das macht geschmacklich einen riesigen Unterschied.",
+     "kidsHelp": null
+    },
+    {
+     "title": "Salzen, ziehen lassen & Oliven zugeben",
+     "text": "Leicht mit Meersalz salzen und 5 Minuten ziehen lassen, dann die Kalamata-Oliven darüberstreuen.",
+     "ings": [
+      "🫒 Kalamata-Oliven · 80g"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Mit Feta belegen",
+     "text": "Den Feta als großes Stück oben auflegen – nicht zerbröseln.",
+     "ings": [
+      "🧀 Feta · 150–200g"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Anmachen & servieren",
+     "text": "Großzügig mit nativem Olivenöl extra beträufeln, Oregano über Feta und Salat streuen, optional einen Spritzer Rotweinessig zugeben und sofort servieren.",
+     "ings": [
+      "🫒 Olivenöl · 4 EL"
+     ],
+     "tip": "Ein echter Horiatiki hat keinen Blattsalat und kein Dressing außer gutem Olivenöl, Oregano und Salz.",
+     "kidsHelp": null
+    }
+   ]
+  },
+  "es": {
+   "title": "Ensalada griega clásica (Horiatiki)",
+   "subtitle": "Pocos ingredientes de máxima calidad — como en Grecia",
+   "ingredients": [
+    "Tomates maduros",
+    "Pepino",
+    "Cebolla roja",
+    "Pimiento verde",
+    "Feta (en bloque)",
+    "Aceitunas kalamata"
+   ],
+   "base": [
+    "Orégano seco",
+    "Sal marina",
+    "Vinagre de vino tinto (opcional)"
+   ],
+   "dressing": [
+    "Aceite de oliva virgen extra"
+   ],
+   "steps": [
+    {
+     "title": "Corta las verduras",
+     "text": "Corta los tomates en trozos grandes, el pepino en rodajas gruesas, el pimiento verde en aros y la cebolla roja en aros finos. Pon todo en un bol grande.",
+     "ings": [
+      "🍅 Tomates maduros · 4 uds",
+      "🥒 Pepino · 1 ud",
+      "🫑 Pimiento verde · 1 ud",
+      "🧅 Cebolla roja · 1 ud"
+     ],
+     "tip": "Los tomates deben estar a temperatura ambiente, nunca directos de la nevera. Cambia muchísimo el sabor.",
+     "kidsHelp": null
+    },
+    {
+     "title": "Sala, reposa y añade las aceitunas",
+     "text": "Sala ligeramente con sal marina y deja reposar 5 minutos, luego esparce las aceitunas kalamata.",
+     "ings": [
+      "🫒 Aceitunas kalamata · 80g"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Corona con el feta",
+     "text": "Coloca el feta encima en un bloque grande, sin desmenuzar.",
+     "ings": [
+      "🧀 Feta · 150–200g"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Aliña y sirve",
+     "text": "Rocía generosamente con aceite de oliva virgen extra, espolvorea orégano sobre el feta y la ensalada, añade un chorrito opcional de vinagre de vino tinto y sirve enseguida.",
+     "ings": [
+      "🫒 Aceite de oliva · 4 cdas"
+     ],
+     "tip": "Un Horiatiki de verdad no lleva lechuga ni más aliño que buen aceite de oliva, orégano y sal.",
+     "kidsHelp": null
+    }
+   ]
+  },
+  "fr": {
+   "title": "Salade grecque classique (Horiatiki)",
+   "subtitle": "Peu d'ingrédients, de grande qualité — comme en Grèce",
+   "ingredients": [
+    "Tomates mûres",
+    "Concombre",
+    "Oignon rouge",
+    "Poivron vert",
+    "Feta (en bloc)",
+    "Olives kalamata"
+   ],
+   "base": [
+    "Origan séché",
+    "Sel de mer",
+    "Vinaigre de vin rouge (facultatif)"
+   ],
+   "dressing": [
+    "Huile d'olive vierge extra"
+   ],
+   "steps": [
+    {
+     "title": "Coupe les légumes",
+     "text": "Coupe grossièrement les tomates, le concombre en tranches épaisses, le poivron vert en rondelles et l'oignon rouge en fines rondelles. Mets le tout dans un grand saladier.",
+     "ings": [
+      "🍅 Tomates mûres · 4 pc",
+      "🥒 Concombre · 1 pc",
+      "🫑 Poivron vert · 1 pc",
+      "🧅 Oignon rouge · 1 pc"
+     ],
+     "tip": "Les tomates doivent être à température ambiante — jamais sorties du frigo. Ça change énormément le goût.",
+     "kidsHelp": null
+    },
+    {
+     "title": "Sale, laisse reposer & ajoute les olives",
+     "text": "Sale légèrement au sel de mer et laisse reposer 5 minutes, puis parsème les olives kalamata.",
+     "ings": [
+      "🫒 Olives kalamata · 80g"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Pose la feta",
+     "text": "Pose la feta en un grand bloc sur le dessus — ne l'émiette pas.",
+     "ings": [
+      "🧀 Feta · 150–200g"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Assaisonne & sers",
+     "text": "Arrose généreusement d'huile d'olive vierge extra, parsème d'origan sur la feta et la salade, ajoute un trait facultatif de vinaigre de vin rouge et sers aussitôt.",
+     "ings": [
+      "🫒 Huile d'olive · 4 c. à s."
+     ],
+     "tip": "Un vrai Horiatiki n'a ni laitue ni autre assaisonnement que de la bonne huile d'olive, de l'origan et du sel.",
+     "kidsHelp": null
+    }
+   ]
+  }
  }
 }
