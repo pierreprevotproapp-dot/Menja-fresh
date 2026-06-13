@@ -13427,5 +13427,223 @@
     }
    ]
   }
+ },
+ "spanish-tortilla-herbed-yogurt-greens": {
+  "de": {
+   "title": "Spanische Tortilla mit Kräuter-Joghurt & Greens",
+   "subtitle": "Klassische Tortilla + moderne, frische, mediterrane Elemente",
+   "ingredients": [
+    "Festkochende Kartoffeln",
+    "Süße Zwiebel",
+    "Eier (Bio)",
+    "Griechischer Joghurt",
+    "Feta",
+    "Frische Kräuter (Dill, Petersilie, Minze)",
+    "Microgreens oder Rucola"
+   ],
+   "base": [
+    "Olivenöl",
+    "Meersalz",
+    "Knoblauch",
+    "Sumach",
+    "Chiliflocken"
+   ],
+   "dressing": [
+    "Zitrone"
+   ],
+   "steps": [
+    {
+     "title": "Kartoffeln & Zwiebel garen",
+     "text": "Kartoffeln und süße Zwiebel schälen und dünn schneiden. Olivenöl in einer Pfanne erhitzen und bei mittlerer bis niedriger Hitze etwa 20 Minuten weich garen, ohne sie zu bräunen. Abgießen, etwas Öl auffangen.",
+     "ings": [
+      "🥔 Festkochende Kartoffeln · 700g",
+      "🧅 Süße Zwiebel · 1 große"
+     ],
+     "tip": "Niedrig und langsam wie confit – so bleiben die Kartoffeln seidig statt frittiert.",
+     "kidsHelp": null
+    },
+    {
+     "title": "Mit den Eiern mischen",
+     "text": "Eier mit einer guten Prise Meersalz verquirlen. Die warmen Kartoffeln und Zwiebeln unterheben und 5 Minuten ziehen lassen.",
+     "ings": [
+      "🥚 Eier · 8 St."
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Tortilla stocken lassen",
+     "text": "Wenig Öl in einer beschichteten Pfanne erhitzen, die Masse eingießen und bei mittlerer bis niedriger Hitze 4–5 Minuten garen, bis die Ränder fest sind. Mit einem Teller wenden und weitere 3–4 Minuten garen, die Mitte saftig lassen.",
+     "ings": [],
+     "tip": "Eine saftige, leicht weiche Mitte ist das Zeichen einer echten Tortilla.",
+     "kidsHelp": null
+    },
+    {
+     "title": "Kräuter-Joghurt anrühren",
+     "text": "Griechischen Joghurt mit Zitronensaft, geriebenem Knoblauch und dem gehackten Dill, Petersilie und Minze verrühren. Abschmecken.",
+     "ings": [
+      "🥛 Griechischer Joghurt · 100g",
+      "🌿 Frische Kräuter · 3 Handvoll",
+      "🍋 Zitrone · 1 EL"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Mit frischen Toppings servieren",
+     "text": "Tortilla in Stücke schneiden, Kräuter-Joghurt darauf geben, Feta darüberbröseln, mit Sumach und Chiliflocken bestäuben und mit Microgreens oder Rucola vollenden.",
+     "ings": [
+      "🧀 Feta · 50g",
+      "🌱 Microgreens oder Rucola · 1 Handvoll"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    }
+   ]
+  },
+  "es": {
+   "title": "Tortilla española con yogur de hierbas y verdes",
+   "subtitle": "El clásico, más ligero y fresco con toppings mediterráneos",
+   "ingredients": [
+    "Patatas para cocer",
+    "Cebolla dulce",
+    "Huevos (bio)",
+    "Yogur griego",
+    "Feta",
+    "Hierbas frescas (eneldo, perejil, menta)",
+    "Microgreens o rúcula"
+   ],
+   "base": [
+    "Aceite de oliva",
+    "Sal marina",
+    "Ajo",
+    "Zumaque",
+    "Copos de chile"
+   ],
+   "dressing": [
+    "Limón"
+   ],
+   "steps": [
+    {
+     "title": "Cocina las patatas y la cebolla",
+     "text": "Pela y corta finas las patatas y la cebolla dulce. Calienta el aceite de oliva en una sartén y cocínalas a fuego medio-bajo unos 20 minutos hasta que estén tiernas, sin dorar. Escurre reservando un poco de aceite.",
+     "ings": [
+      "🥔 Patatas · 700g",
+      "🧅 Cebolla dulce · 1 grande"
+     ],
+     "tip": "A fuego bajo y lento como un confit: las patatas quedan sedosas, no fritas.",
+     "kidsHelp": null
+    },
+    {
+     "title": "Mezcla con los huevos",
+     "text": "Bate los huevos con una buena pizca de sal marina. Incorpora las patatas y la cebolla templadas y deja reposar 5 minutos.",
+     "ings": [
+      "🥚 Huevos · 8 uds"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Cuaja la tortilla",
+     "text": "Calienta un poco de aceite en una sartén antiadherente, vierte la mezcla y cocina a fuego medio-bajo 4–5 minutos hasta que cuajen los bordes. Dale la vuelta con un plato y cocina otros 3–4 minutos, dejando el centro jugoso.",
+     "ings": [],
+     "tip": "Un centro jugoso y poco cuajado es la señal de una buena tortilla.",
+     "kidsHelp": null
+    },
+    {
+     "title": "Prepara el yogur de hierbas",
+     "text": "Mezcla el yogur griego con zumo de limón, ajo rallado y el eneldo, perejil y menta picados. Salpimienta al gusto.",
+     "ings": [
+      "🥛 Yogur griego · 100g",
+      "🌿 Hierbas frescas · 3 puñados",
+      "🍋 Limón · 1 cda"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Sirve con toppings frescos",
+     "text": "Corta la tortilla, pon encima el yogur de hierbas, desmenuza el feta, espolvorea zumaque y copos de chile y termina con microgreens o rúcula.",
+     "ings": [
+      "🧀 Feta · 50g",
+      "🌱 Microgreens o rúcula · 1 puñado"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    }
+   ]
+  },
+  "fr": {
+   "title": "Tortilla espagnole, yaourt aux herbes & jeunes pousses",
+   "subtitle": "Le classique, plus léger et frais avec des toppings méditerranéens",
+   "ingredients": [
+    "Pommes de terre à chair ferme",
+    "Oignon doux",
+    "Œufs (bio)",
+    "Yaourt grec",
+    "Feta",
+    "Herbes fraîches (aneth, persil, menthe)",
+    "Jeunes pousses ou roquette"
+   ],
+   "base": [
+    "Huile d'olive",
+    "Sel de mer",
+    "Ail",
+    "Sumac",
+    "Flocons de piment"
+   ],
+   "dressing": [
+    "Citron"
+   ],
+   "steps": [
+    {
+     "title": "Cuis les pommes de terre & l'oignon",
+     "text": "Épluche et émince finement les pommes de terre et l'oignon doux. Chauffe l'huile d'olive dans une poêle et fais-les cuire à feu moyen-doux environ 20 minutes jusqu'à ce qu'ils soient tendres, sans colorer. Égoutte en gardant un peu d'huile.",
+     "ings": [
+      "🥔 Pommes de terre · 700g",
+      "🧅 Oignon doux · 1 gros"
+     ],
+     "tip": "Doux et lent comme un confit : les pommes de terre restent soyeuses, pas frites.",
+     "kidsHelp": null
+    },
+    {
+     "title": "Mélange avec les œufs",
+     "text": "Bats les œufs avec une bonne pincée de sel de mer. Incorpore les pommes de terre et l'oignon tièdes et laisse reposer 5 minutes.",
+     "ings": [
+      "🥚 Œufs · 8 pc"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Fais prendre la tortilla",
+     "text": "Chauffe un peu d'huile dans une poêle antiadhésive, verse le mélange et cuis à feu moyen-doux 4–5 minutes jusqu'à ce que les bords prennent. Retourne à l'aide d'une assiette et cuis encore 3–4 minutes en gardant le cœur moelleux.",
+     "ings": [],
+     "tip": "Un cœur moelleux et peu pris est la marque d'une vraie tortilla.",
+     "kidsHelp": null
+    },
+    {
+     "title": "Prépare le yaourt aux herbes",
+     "text": "Mélange le yaourt grec avec le jus de citron, l'ail râpé et l'aneth, le persil et la menthe ciselés. Assaisonne.",
+     "ings": [
+      "🥛 Yaourt grec · 100g",
+      "🌿 Herbes fraîches · 3 poignées",
+      "🍋 Citron · 1 c. à s."
+     ],
+     "tip": null,
+     "kidsHelp": null
+    },
+    {
+     "title": "Sers avec les toppings frais",
+     "text": "Coupe la tortilla, dépose le yaourt aux herbes, émiette la feta, saupoudre de sumac et de flocons de piment et termine avec les jeunes pousses ou la roquette.",
+     "ings": [
+      "🧀 Feta · 50g",
+      "🌱 Jeunes pousses ou roquette · 1 poignée"
+     ],
+     "tip": null,
+     "kidsHelp": null
+    }
+   ]
+  }
  }
 }

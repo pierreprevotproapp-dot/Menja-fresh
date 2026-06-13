@@ -11569,5 +11569,186 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "spanish-tortilla-herbed-yogurt-greens",
+    "title": "Spanish Tortilla with Herbed Yogurt & Greens",
+    "subtitle": "The classic, lighter and fresher with Mediterranean toppings",
+    "emoji": "🍳",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course",
+      "Kleine Mahlzeit"
+    ],
+    "categories": [
+      "Pfannengericht"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 30,
+    "servings": 5,
+    "image_url": "",
+    "image_prompt": "Modern Spanish tortilla wedge on a plate, golden and slightly juicy in the centre, topped with a dollop of herbed Greek yogurt, crumbled feta, sumac, chilli flakes and fresh microgreens, bright Mediterranean daylight, overhead editorial food photography",
+    "nutrition": {
+      "fat": 24,
+      "kcal": 400,
+      "carbs": 30,
+      "fiber": 3,
+      "protein": 16
+    },
+    "ingredients": [
+      {
+        "name": "Waxy potatoes",
+        "emoji": "🥔",
+        "amount": "700g"
+      },
+      {
+        "name": "Sweet onion",
+        "emoji": "🧅",
+        "amount": "1 large"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "8 pcs"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "100g"
+      },
+      {
+        "name": "Feta cheese",
+        "emoji": "🧀",
+        "amount": "50g"
+      },
+      {
+        "name": "Fresh herbs (dill, parsley, mint)",
+        "emoji": "🌿",
+        "amount": "3 handfuls"
+      },
+      {
+        "name": "Microgreens or rocket",
+        "emoji": "🌱",
+        "amount": "1 handful"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Sea salt",
+      "Garlic",
+      "Sumac",
+      "Chilli flakes"
+    ],
+    "dressing": [
+      {
+        "name": "Lemon",
+        "emoji": "🍋",
+        "amount": "1 tbsp juice"
+      }
+    ],
+    "mise_en_place": [
+      {
+        "name": "Waxy potatoes",
+        "emoji": "🥔",
+        "amount": "700g"
+      },
+      {
+        "name": "Sweet onion",
+        "emoji": "🧅",
+        "amount": "1 large"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "8 pcs"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "100g"
+      },
+      {
+        "name": "Feta cheese",
+        "emoji": "🧀",
+        "amount": "50g"
+      },
+      {
+        "name": "Fresh herbs (dill, parsley, mint)",
+        "emoji": "🌿",
+        "amount": "3 handfuls"
+      },
+      {
+        "name": "Microgreens or rocket",
+        "emoji": "🌱",
+        "amount": "1 handful"
+      },
+      {
+        "name": "Lemon",
+        "emoji": "🍋",
+        "amount": "1 tbsp juice"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the potatoes & onion",
+        "text": "Peel and thinly slice the potatoes and the sweet onion. Warm the olive oil in a pan and cook them gently over medium-low heat for about 20 minutes until soft but not browned. Drain, keeping a little oil.",
+        "ings": [
+          "🥔 Waxy potatoes · 700g",
+          "🧅 Sweet onion · 1 large"
+        ],
+        "tip": "Low and slow, confit-style — this keeps the potatoes silky rather than fried.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Mix with the eggs",
+        "text": "Beat the eggs with a good pinch of sea salt. Fold in the warm potatoes and onion and let it sit for 5 minutes.",
+        "ings": [
+          "🥚 Eggs · 8 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Set the tortilla",
+        "text": "Heat a little oil in a non-stick pan, pour in the mixture and cook over medium-low heat for 4–5 minutes until the edges set. Flip with a plate and cook another 3–4 minutes, keeping the centre slightly soft.",
+        "ings": [],
+        "tip": "A juicy, slightly soft centre is the sign of a proper tortilla.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Make the herbed yogurt",
+        "text": "Stir the Greek yogurt with the lemon juice, grated garlic and the chopped dill, parsley and mint. Season to taste.",
+        "ings": [
+          "🥛 Greek yogurt · 100g",
+          "🌿 Fresh herbs · 3 handfuls",
+          "🍋 Lemon · 1 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 5,
+        "title": "Serve with fresh toppings",
+        "text": "Slice the tortilla, spoon the herbed yogurt on top, crumble over the feta, dust with sumac and chilli flakes and finish with microgreens or rocket.",
+        "ings": [
+          "🧀 Feta · 50g",
+          "🌱 Microgreens or rocket · 1 handful"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
   }
 ]
