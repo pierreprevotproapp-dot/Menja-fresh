@@ -1669,5 +1669,243 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "strammer-max",
+    "title": "Strammer Max",
+    "subtitle": "Ham and fried egg on buttered bread — ready in 5 minutes",
+    "emoji": "🍳",
+    "is_kids": true,
+    "tags": [
+      "Basic",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course",
+      "Kleine Mahlzeit"
+    ],
+    "categories": [
+      "Basic"
+    ],
+    "diet": [],
+    "prep_minutes": 3,
+    "cook_minutes": 5,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Strammer Max — rye bread topped with ham and a sunny-side-up fried egg, chives, runny yolk, cosy German food photography",
+    "nutrition": {
+      "fat": 24,
+      "kcal": 420,
+      "carbs": 28,
+      "fiber": 2,
+      "protein": 24
+    },
+    "ingredients": [
+      {
+        "name": "Rye bread",
+        "emoji": "🍞",
+        "amount": "2 slices"
+      },
+      {
+        "name": "Cooked ham",
+        "emoji": "🥓",
+        "amount": "4 slices"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Chives",
+        "emoji": "🌿",
+        "amount": "5g"
+      }
+    ],
+    "base_ingredients": [
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Rye bread",
+        "emoji": "🍞",
+        "amount": "2 slices"
+      },
+      {
+        "name": "Cooked ham",
+        "emoji": "🥓",
+        "amount": "4 slices"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Chives",
+        "emoji": "🌿",
+        "amount": "5g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Butter the bread",
+        "text": "Lightly toast the rye bread and spread with butter.",
+        "ings": [
+          "🍞 Rye bread · 2 slices",
+          "🧈 Butter · 1 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Fry ham & eggs",
+        "text": "Warm the ham briefly in the pan, then fry the eggs sunny-side up.",
+        "ings": [
+          "🥓 Cooked ham · 4 slices",
+          "🥚 Eggs · 2 pcs"
+        ],
+        "tip": "Keep the yolks runny — they become the sauce.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Build & serve",
+        "text": "Top the bread with ham and a fried egg, season and scatter with chives.",
+        "ings": [
+          "🌿 Chives · 5g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "pasta-pesto-basic",
+    "title": "Pasta with Pesto",
+    "subtitle": "Three ingredients, ten minutes — the ultimate easy dinner",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Basic",
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Basic"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 3,
+    "cook_minutes": 10,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Bowl of pasta tossed with green basil pesto, grated parmesan and cherry tomatoes, simple bright food photography",
+    "nutrition": {
+      "fat": 22,
+      "kcal": 520,
+      "carbs": 64,
+      "fiber": 4,
+      "protein": 16
+    },
+    "ingredients": [
+      {
+        "name": "Pasta",
+        "emoji": "🍝",
+        "amount": "200g"
+      },
+      {
+        "name": "Pesto",
+        "emoji": "🌿",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      },
+      {
+        "name": "Cherry tomatoes",
+        "emoji": "🍅",
+        "amount": "100g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Pasta",
+        "emoji": "🍝",
+        "amount": "200g"
+      },
+      {
+        "name": "Pesto",
+        "emoji": "🌿",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      },
+      {
+        "name": "Cherry tomatoes",
+        "emoji": "🍅",
+        "amount": "100g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the pasta",
+        "text": "Boil the pasta in salted water until al dente, then drain — keep a splash of the cooking water.",
+        "ings": [
+          "🍝 Pasta · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Toss with pesto",
+        "text": "Stir the pesto through the warm pasta, loosening with a little pasta water until glossy.",
+        "ings": [
+          "🌿 Pesto · 4 tbsp"
+        ],
+        "tip": "A splash of pasta water makes the pesto cling and turns it silky.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Serve",
+        "text": "Top with grated parmesan and halved cherry tomatoes.",
+        "ings": [
+          "🧀 Parmesan · 20g",
+          "🍅 Cherry tomatoes · 100g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
   }
 ]

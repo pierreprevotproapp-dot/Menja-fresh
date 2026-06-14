@@ -15173,5 +15173,276 @@
         }
       ]
     }
+  },
+  "strammer-max": {
+    "de": {
+      "title": "Strammer Max",
+      "ingredients": [
+        "Roggenbrot",
+        "Gekochter Schinken",
+        "Eier",
+        "Butter",
+        "Schnittlauch"
+      ],
+      "base": [
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Brot buttern",
+          "text": "Roggenbrot leicht toasten und mit Butter bestreichen.",
+          "ings": [
+            "🍞 Roggenbrot · 2 slices",
+            "🧈 Butter · 1 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Schinken & Eier braten",
+          "text": "Schinken kurz in der Pfanne erwärmen, dann die Eier als Spiegeleier braten.",
+          "ings": [
+            "🥓 Gekochter Schinken · 4 slices",
+            "🥚 Eier · 2 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Anrichten & servieren",
+          "text": "Brot mit Schinken und einem Spiegelei belegen, würzen und mit Schnittlauch bestreuen.",
+          "ings": [
+            "🌿 Schnittlauch · 5g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Strammer Max (huevo y jamón sobre pan)",
+      "ingredients": [
+        "Pan de centeno",
+        "Jamón cocido",
+        "Huevos",
+        "Mantequilla",
+        "Cebollino"
+      ],
+      "base": [
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Unta el pan",
+          "text": "Tuesta ligeramente el pan de centeno y úntalo con mantequilla.",
+          "ings": [
+            "🍞 Pan de centeno · 2 slices",
+            "🧈 Mantequilla · 1 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Fríe jamón y huevos",
+          "text": "Calienta el jamón un momento en la sartén y fríe los huevos.",
+          "ings": [
+            "🥓 Jamón cocido · 4 slices",
+            "🥚 Huevos · 2 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monta y sirve",
+          "text": "Coloca el jamón y un huevo frito sobre el pan, salpimienta y espolvorea cebollino.",
+          "ings": [
+            "🌿 Cebollino · 5g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Strammer Max (œuf et jambon sur pain)",
+      "ingredients": [
+        "Pain de seigle",
+        "Jambon cuit",
+        "Œufs",
+        "Beurre",
+        "Ciboulette"
+      ],
+      "base": [
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Beurrer le pain",
+          "text": "Toaster légèrement le pain de seigle et le tartiner de beurre.",
+          "ings": [
+            "🍞 Pain de seigle · 2 slices",
+            "🧈 Beurre · 1 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire jambon et œufs",
+          "text": "Réchauffer le jambon à la poêle, puis cuire les œufs au plat.",
+          "ings": [
+            "🥓 Jambon cuit · 4 slices",
+            "🥚 Œufs · 2 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Dresser et servir",
+          "text": "Garnir le pain de jambon et d'un œuf au plat, assaisonner et parsemer de ciboulette.",
+          "ings": [
+            "🌿 Ciboulette · 5g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "pasta-pesto-basic": {
+    "de": {
+      "title": "Nudeln mit Pesto",
+      "ingredients": [
+        "Nudeln",
+        "Pesto",
+        "Parmesan",
+        "Kirschtomaten"
+      ],
+      "base": [
+        "Olivenöl",
+        "Salz"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Nudeln kochen",
+          "text": "Nudeln in Salzwasser al dente kochen, abgießen — etwas Kochwasser aufheben.",
+          "ings": [
+            "🍝 Nudeln · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Pesto schwenken",
+          "text": "Pesto unter die warmen Nudeln rühren, mit etwas Kochwasser geschmeidig machen.",
+          "ings": [
+            "🌿 Pesto · 4 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Servieren",
+          "text": "Mit geriebenem Parmesan und halbierten Kirschtomaten servieren.",
+          "ings": [
+            "🧀 Parmesan · 20g",
+            "🍅 Kirschtomaten · 100g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Pasta al pesto",
+      "ingredients": [
+        "Pasta",
+        "Pesto",
+        "Parmesano",
+        "Tomates cherry"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Sal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuece la pasta",
+          "text": "Cuece la pasta en agua con sal al dente y escurre — reserva un poco del agua.",
+          "ings": [
+            "🍝 Pasta · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mezcla con pesto",
+          "text": "Mezcla el pesto con la pasta caliente y aflójalo con un poco de agua de cocción.",
+          "ings": [
+            "🌿 Pesto · 4 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sirve",
+          "text": "Sirve con parmesano rallado y tomates cherry partidos.",
+          "ings": [
+            "🧀 Parmesano · 20g",
+            "🍅 Tomates cherry · 100g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Pâtes au pesto",
+      "ingredients": [
+        "Pâtes",
+        "Pesto",
+        "Parmesan",
+        "Tomates cerises"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Sel"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuire les pâtes",
+          "text": "Cuire les pâtes dans l'eau salée al dente et égoutter — garder un peu d'eau de cuisson.",
+          "ings": [
+            "🍝 Pâtes · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mélanger au pesto",
+          "text": "Mélanger le pesto aux pâtes chaudes, détendre avec un peu d'eau de cuisson.",
+          "ings": [
+            "🌿 Pesto · 4 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Servir",
+          "text": "Servir avec du parmesan râpé et des tomates cerises coupées.",
+          "ings": [
+            "🧀 Parmesan · 20g",
+            "🍅 Tomates cerises · 100g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
   }
 }
