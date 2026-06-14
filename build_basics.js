@@ -32,6 +32,21 @@ const R = [
   tr:{ de:{title:'Nudeln mit Pesto',names:['Nudeln','Pesto','Parmesan','Kirschtomaten'],base:['Olivenöl','Salz'],steps:[['Nudeln kochen','Nudeln in Salzwasser al dente kochen, abgießen — etwas Kochwasser aufheben.'],['Mit Pesto schwenken','Pesto unter die warmen Nudeln rühren, mit etwas Kochwasser geschmeidig machen.'],['Servieren','Mit geriebenem Parmesan und halbierten Kirschtomaten servieren.']]},
        es:{title:'Pasta al pesto',names:['Pasta','Pesto','Parmesano','Tomates cherry'],base:['Aceite de oliva','Sal'],steps:[['Cuece la pasta','Cuece la pasta en agua con sal al dente y escurre — reserva un poco del agua.'],['Mezcla con pesto','Mezcla el pesto con la pasta caliente y aflójalo con un poco de agua de cocción.'],['Sirve','Sirve con parmesano rallado y tomates cherry partidos.']]},
        fr:{title:'Pâtes au pesto',names:['Pâtes','Pesto','Parmesan','Tomates cerises'],base:['Huile d\'olive','Sel'],steps:[['Cuire les pâtes','Cuire les pâtes dans l\'eau salée al dente et égoutter — garder un peu d\'eau de cuisson.'],['Mélanger au pesto','Mélanger le pesto aux pâtes chaudes, détendre avec un peu d\'eau de cuisson.'],['Servir','Servir avec du parmesan râpé et des tomates cerises coupées.']]} } },
+
+{ id:'pasta-tomato-sauce-basic', emoji:'🍝', is_kids:true, title:'Pasta with Tomato Sauce',
+  subtitle:'The everyday classic — pantry to plate in 15 minutes',
+  tags:['Basic','Vegetarian','Kid-Friendly'], meal:['Main Course'], categories:['Basic'], diet:['Vegetarian'],
+  prep:3, cook:12, servings:2, nutrition:{fat:12,kcal:480,carbs:78,fiber:6,protein:15},
+  ings:[['🍝','Pasta','200g'],['🥫','Passata','300g'],['🧄','Garlic','1 clove'],['🧀','Parmesan','20g']],
+  base:['Olive oil','Dried oregano','Salt & pepper'], dress:null,
+  steps:[
+    ['Cook the pasta','Boil the pasta in salted water until al dente, then drain.',[0],null],
+    ['Quick tomato sauce','Soften the garlic in a little olive oil, add the passata and oregano and simmer 5 minutes, then season.',[2,1],null],
+    ['Combine & serve','Toss the pasta in the sauce and top with grated parmesan.',[3],null] ],
+  image_prompt:'Simple bowl of pasta in tomato sauce topped with grated parmesan and basil, homely food photography',
+  tr:{ de:{title:'Nudeln mit Tomatensauce',names:['Nudeln','Passata','Knoblauch','Parmesan'],base:['Olivenöl','Getrockneter Oregano','Salz & Pfeffer'],steps:[['Nudeln kochen','Nudeln in Salzwasser al dente kochen und abgießen.'],['Schnelle Tomatensauce','Knoblauch in etwas Olivenöl andünsten, Passata und Oregano zugeben, 5 Minuten köcheln und würzen.'],['Vermengen & servieren','Nudeln in der Sauce schwenken und mit geriebenem Parmesan toppen.']]},
+       es:{title:'Pasta con salsa de tomate',names:['Pasta','Passata','Ajo','Parmesano'],base:['Aceite de oliva','Orégano seco','Sal y pimienta'],steps:[['Cuece la pasta','Cuece la pasta en agua con sal al dente y escurre.'],['Salsa de tomate rápida','Sofríe el ajo en un poco de aceite, añade la passata y el orégano, cuece 5 minutos y salpimienta.'],['Mezcla y sirve','Mezcla la pasta con la salsa y corona con parmesano rallado.']]},
+       fr:{title:'Pâtes à la sauce tomate',names:['Pâtes','Passata','Ail','Parmesan'],base:['Huile d\'olive','Origan séché','Sel & poivre'],steps:[['Cuire les pâtes','Cuire les pâtes dans l\'eau salée al dente et égoutter.'],['Sauce tomate rapide','Faire suer l\'ail dans un peu d\'huile, ajouter la passata et l\'origan, mijoter 5 minutes et assaisonner.'],['Mélanger et servir','Mélanger les pâtes à la sauce et garnir de parmesan râpé.']]} } },
 ];
 
 const chip=(e,n,a)=>`${e} ${n} · ${a}`;

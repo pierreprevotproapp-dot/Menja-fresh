@@ -2809,81 +2809,86 @@
     "ingredients": [
       {
         "emoji": "🥑",
-        "name": "Ripe avocados",
-        "amount": "2 pcs"
+        "name": "Ripe avocado",
+        "amount": "1 pc"
       },
       {
-        "emoji": "🍫",
-        "name": "Raw cacao powder",
-        "amount": "4 tbsp"
+        "emoji": "🥜",
+        "name": "Peanut butter",
+        "amount": "2 tbsp"
       },
       {
-        "emoji": "🍯",
+        "emoji": "🍁",
         "name": "Maple syrup",
-        "amount": "4 tbsp"
-      },
-      {
-        "emoji": "🥥",
-        "name": "Coconut milk",
-        "amount": "60ml"
-      },
-      {
-        "emoji": "🍓",
-        "name": "Fresh raspberries",
-        "amount": "80g"
-      },
-      {
-        "emoji": "🌰",
-        "name": "Pistachios",
-        "amount": "20g"
+        "amount": "45ml"
       },
       {
         "emoji": "🟤",
-        "name": "Cacao nibs",
-        "amount": "1 tbsp"
+        "name": "Brown or coconut sugar",
+        "amount": "20g"
+      },
+      {
+        "emoji": "🍫",
+        "name": "Cocoa powder",
+        "amount": "25g"
+      },
+      {
+        "emoji": "🍫",
+        "name": "Dark chocolate (85%)",
+        "amount": "45g"
+      },
+      {
+        "emoji": "🥛",
+        "name": "Almond milk",
+        "amount": "2 tbsp"
       }
     ],
     "base_ingredients": [
       "Vanilla extract",
-      "Espresso powder",
-      "Sea salt flakes",
-      "Orange zest"
+      "Sea salt"
     ],
     "dressing": [],
     "steps": [
       {
-        "title": "Blend the mousse",
-        "text": "Scoop the avocado flesh into a blender. Add the raw cacao, maple syrup, coconut milk, vanilla, espresso powder and a pinch of sea-salt flakes. Blend for about 2 minutes until completely smooth and glossy.",
+        "num": 1,
+        "title": "Melt the chocolate",
+        "text": "Gently melt the 85% dark chocolate (water bath or short microwave bursts), then let it cool slightly.",
         "ings": [
-          "🥑 Avocados · 2 pcs",
-          "🍫 Raw cacao powder · 4 tbsp",
-          "🍯 Maple syrup · 4 tbsp",
-          "🥥 Coconut milk · 60ml"
+          "🍫 Dark chocolate · 45g"
         ],
-        "tip": "The espresso powder deepens the chocolate flavour and hides any avocado taste."
+        "tip": null,
+        "kidsHelp": null
       },
       {
-        "title": "Chill to set",
-        "text": "Spoon into glasses and chill for at least 2 hours, so the mousse firms up and the flavour deepens.",
-        "ings": []
-      },
-      {
-        "title": "Top & serve",
-        "text": "Top with raspberries, crushed pistachios and cacao nibs, then finish with a little orange zest and a few sea-salt flakes.",
+        "num": 2,
+        "title": "Blend smooth",
+        "text": "Blend the avocado, peanut butter, maple syrup, sugar, cocoa, almond milk, vanilla and a pinch of salt together with the melted chocolate until completely smooth and glossy.",
         "ings": [
-          "🍓 Raspberries · 80g",
-          "🌰 Pistachios · 20g",
-          "🟤 Cacao nibs · 1 tbsp"
-        ]
+          "🥑 Avocado · 1 pc",
+          "🥜 Peanut butter · 2 tbsp",
+          "🍁 Maple syrup · 45ml",
+          "🍫 Cocoa powder · 25g"
+        ],
+        "tip": "The melted 85% chocolate + peanut butter give it a deep, fudgy, grown-up richness.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Chill & serve",
+        "text": "Spoon into 2 glasses and chill for at least 2 hours until set and the flavour deepens.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
       }
     ],
     "nutrition": {
-      "fat": 20,
-      "kcal": 275,
-      "carbs": 26,
-      "fiber": 7,
-      "protein": 5
-    }
+      "fat": 28,
+      "kcal": 440,
+      "carbs": 38,
+      "fiber": 8,
+      "protein": 8
+    },
+    "servings": 2
   },
   "mediterranean-eggs-benedict": {
     "steps": [

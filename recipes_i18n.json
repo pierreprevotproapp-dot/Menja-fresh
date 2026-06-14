@@ -10875,138 +10875,141 @@
     "de": {
       "title": "Schoko-Avocado-Mousse",
       "ingredients": [
-        "Reife Avocados",
-        "Rohes Kakaopulver",
+        "Reife Avocado",
+        "Erdnussbutter",
         "Ahornsirup",
-        "Kokosmilch",
-        "Frische Himbeeren",
-        "Pistazien",
-        "Kakaonibs"
+        "Brauner oder Kokoszucker",
+        "Kakaopulver",
+        "Zartbitterschokolade (85%)",
+        "Mandelmilch"
       ],
       "base": [
         "Vanilleextrakt",
-        "Espressopulver",
-        "Salzflocken",
-        "Orangenzeste"
+        "Meersalz"
       ],
       "dressing": [],
       "steps": [
         {
-          "title": "Mousse mixen",
-          "text": "Avocadofleisch in einen Mixer geben. Rohen Kakao, Ahornsirup, Kokosmilch, Vanille, Espressopulver und eine Prise Salzflocken zugeben. Etwa 2 Minuten mixen, bis alles vollständig glatt und glänzend ist.",
+          "title": "Schokolade schmelzen",
+          "text": "85%ige Zartbitterschokolade sanft schmelzen (Wasserbad oder kurze Mikrowellen-Intervalle), dann leicht abkühlen lassen.",
           "ings": [
-            "🥑 Avocados · 2 St.",
-            "🍫 Rohes Kakaopulver · 4 EL",
-            "🍯 Ahornsirup · 4 EL",
-            "🥥 Kokosmilch · 60ml"
+            "🍫 Zartbitterschokolade · 45g"
           ],
-          "tip": "Das Espressopulver vertieft den Schokogeschmack und überdeckt jeden Avocado-Ton."
+          "tip": null,
+          "kidsHelp": null
         },
         {
-          "title": "Kühlen & fest werden lassen",
-          "text": "In Gläser füllen und mindestens 2 Stunden kühlen, damit die Mousse fest wird und der Geschmack reift.",
-          "ings": []
-        },
-        {
-          "title": "Belegen & servieren",
-          "text": "Mit Himbeeren, gehackten Pistazien und Kakaonibs belegen, dann mit etwas Orangenzeste und ein paar Salzflocken abschließen.",
+          "title": "Glatt mixen",
+          "text": "Avocado, Erdnussbutter, Ahornsirup, Zucker, Kakao, Mandelmilch, Vanille und eine Prise Salz zusammen mit der geschmolzenen Schokolade vollständig glatt und glänzend mixen.",
           "ings": [
-            "🍓 Himbeeren · 80g",
-            "🌰 Pistazien · 20g",
-            "🟤 Kakaonibs · 1 EL"
-          ]
+            "🥑 Avocado · 1 St.",
+            "🥜 Erdnussbutter · 2 EL",
+            "🍁 Ahornsirup · 45ml",
+            "🍫 Kakaopulver · 25g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Kühlen & servieren",
+          "text": "In 2 Gläser füllen und mindestens 2 Stunden kühlen, bis fest.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
         }
       ]
     },
     "es": {
       "title": "Mousse de chocolate y aguacate",
       "ingredients": [
-        "Aguacates maduros",
-        "Cacao puro en polvo",
+        "Aguacate maduro",
+        "Crema de cacahuete",
         "Sirope de arce",
-        "Leche de coco",
-        "Frambuesas frescas",
-        "Pistachos",
-        "Nibs de cacao"
+        "Azúcar moreno o de coco",
+        "Cacao en polvo",
+        "Chocolate negro (85%)",
+        "Leche de almendras"
       ],
       "base": [
         "Extracto de vainilla",
-        "Café espresso en polvo",
-        "Escamas de sal",
-        "Ralladura de naranja"
+        "Sal marina"
       ],
       "dressing": [],
       "steps": [
         {
-          "title": "Tritura la mousse",
-          "text": "Pon la pulpa de aguacate en una batidora. Añade el cacao puro, el sirope de arce, la leche de coco, la vainilla, el café en polvo y una pizca de escamas de sal. Tritura unos 2 minutos hasta que quede completamente fino y brillante.",
+          "title": "Funde el chocolate",
+          "text": "Funde suavemente el chocolate negro 85% (al baño maría o en intervalos cortos en el microondas) y deja enfriar un poco.",
           "ings": [
-            "🥑 Aguacates · 2 ud",
-            "🍫 Cacao puro en polvo · 4 cdas",
-            "🍯 Sirope de arce · 4 cdas",
-            "🥥 Leche de coco · 60ml"
+            "🍫 Chocolate negro · 45g"
           ],
-          "tip": "El café en polvo intensifica el sabor a chocolate y disimula el aguacate."
+          "tip": null,
+          "kidsHelp": null
         },
         {
-          "title": "Enfría para que cuaje",
-          "text": "Reparte en vasitos y refrigera al menos 2 horas, para que la mousse cuaje y el sabor se asiente.",
-          "ings": []
-        },
-        {
-          "title": "Corona y sirve",
-          "text": "Corona con frambuesas, pistachos picados y nibs de cacao, y termina con un poco de ralladura de naranja y unas escamas de sal.",
+          "title": "Tritura fino",
+          "text": "Tritura el aguacate, la crema de cacahuete, el sirope, el azúcar, el cacao, la leche de almendras, la vainilla y una pizca de sal junto con el chocolate fundido hasta que quede fino y brillante.",
           "ings": [
-            "🍓 Frambuesas · 80g",
-            "🌰 Pistachos · 20g",
-            "🟤 Nibs de cacao · 1 cda"
-          ]
+            "🥑 Aguacate · 1 ud",
+            "🥜 Crema de cacahuete · 2 cdas",
+            "🍁 Sirope de arce · 45ml",
+            "🍫 Cacao en polvo · 25g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Enfría y sirve",
+          "text": "Reparte en 2 vasitos y refrigera al menos 2 horas hasta que cuaje.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
         }
       ]
     },
     "fr": {
       "title": "Mousse chocolat-avocat",
       "ingredients": [
-        "Avocats mûrs",
-        "Cacao cru en poudre",
+        "Avocat mûr",
+        "Beurre de cacahuète",
         "Sirop d'érable",
-        "Lait de coco",
-        "Framboises fraîches",
-        "Pistaches",
-        "Éclats de cacao"
+        "Sucre roux ou de coco",
+        "Cacao en poudre",
+        "Chocolat noir (85%)",
+        "Lait d'amande"
       ],
       "base": [
         "Extrait de vanille",
-        "Café espresso en poudre",
-        "Fleur de sel",
-        "Zeste d'orange"
+        "Sel marin"
       ],
       "dressing": [],
       "steps": [
         {
-          "title": "Mixer la mousse",
-          "text": "Mettre la chair d'avocat dans un blender. Ajouter le cacao cru, le sirop d'érable, le lait de coco, la vanille, le café en poudre et une pincée de fleur de sel. Mixer environ 2 minutes jusqu'à ce que ce soit parfaitement lisse et brillant.",
+          "title": "Faire fondre le chocolat",
+          "text": "Faire fondre doucement le chocolat noir 85% (bain-marie ou courtes impulsions au micro-ondes), puis laisser tiédir.",
           "ings": [
-            "🥑 Avocats · 2 pc",
-            "🍫 Cacao cru en poudre · 4 c. à s.",
-            "🍯 Sirop d'érable · 4 c. à s.",
-            "🥥 Lait de coco · 60ml"
+            "🍫 Chocolat noir · 45g"
           ],
-          "tip": "Le café en poudre intensifie le goût de chocolat et masque celui de l'avocat."
+          "tip": null,
+          "kidsHelp": null
         },
         {
-          "title": "Réfrigérer pour figer",
-          "text": "Répartir dans des verrines et réfrigérer au moins 2 heures, pour que la mousse prenne et que le goût se développe.",
-          "ings": []
-        },
-        {
-          "title": "Garnir et servir",
-          "text": "Garnir de framboises, de pistaches concassées et d'éclats de cacao, puis finir avec un peu de zeste d'orange et quelques cristaux de fleur de sel.",
+          "title": "Mixer onctueux",
+          "text": "Mixer l'avocat, le beurre de cacahuète, le sirop d'érable, le sucre, le cacao, le lait d'amande, la vanille et une pincée de sel avec le chocolat fondu jusqu'à une texture lisse et brillante.",
           "ings": [
-            "🍓 Framboises · 80g",
-            "🌰 Pistaches · 20g",
-            "🟤 Éclats de cacao · 1 c. à s."
-          ]
+            "🥑 Avocat · 1 pc",
+            "🥜 Beurre de cacahuète · 2 c. à s.",
+            "🍁 Sirop d'érable · 45ml",
+            "🍫 Cacao en poudre · 25g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Réfrigérer et servir",
+          "text": "Répartir dans 2 verrines et réfrigérer au moins 2 heures jusqu'à prise.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
         }
       ]
     }
@@ -15438,6 +15441,143 @@
           "ings": [
             "🧀 Parmesan · 20g",
             "🍅 Tomates cerises · 100g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "pasta-tomato-sauce-basic": {
+    "de": {
+      "title": "Nudeln mit Tomatensauce",
+      "ingredients": [
+        "Nudeln",
+        "Passata",
+        "Knoblauch",
+        "Parmesan"
+      ],
+      "base": [
+        "Olivenöl",
+        "Getrockneter Oregano",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Nudeln kochen",
+          "text": "Nudeln in Salzwasser al dente kochen und abgießen.",
+          "ings": [
+            "🍝 Nudeln · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Schnelle Tomatensauce",
+          "text": "Knoblauch in etwas Olivenöl andünsten, Passata und Oregano zugeben, 5 Minuten köcheln und würzen.",
+          "ings": [
+            "🧄 Knoblauch · 1 clove",
+            "🥫 Passata · 300g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Vermengen & servieren",
+          "text": "Nudeln in der Sauce schwenken und mit geriebenem Parmesan toppen.",
+          "ings": [
+            "🧀 Parmesan · 20g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Pasta con salsa de tomate",
+      "ingredients": [
+        "Pasta",
+        "Passata",
+        "Ajo",
+        "Parmesano"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Orégano seco",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuece la pasta",
+          "text": "Cuece la pasta en agua con sal al dente y escurre.",
+          "ings": [
+            "🍝 Pasta · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Salsa de tomate rápida",
+          "text": "Sofríe el ajo en un poco de aceite, añade la passata y el orégano, cuece 5 minutos y salpimienta.",
+          "ings": [
+            "🧄 Ajo · 1 clove",
+            "🥫 Passata · 300g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mezcla y sirve",
+          "text": "Mezcla la pasta con la salsa y corona con parmesano rallado.",
+          "ings": [
+            "🧀 Parmesano · 20g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Pâtes à la sauce tomate",
+      "ingredients": [
+        "Pâtes",
+        "Passata",
+        "Ail",
+        "Parmesan"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Origan séché",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuire les pâtes",
+          "text": "Cuire les pâtes dans l'eau salée al dente et égoutter.",
+          "ings": [
+            "🍝 Pâtes · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sauce tomate rapide",
+          "text": "Faire suer l'ail dans un peu d'huile, ajouter la passata et l'origan, mijoter 5 minutes et assaisonner.",
+          "ings": [
+            "🧄 Ail · 1 clove",
+            "🥫 Passata · 300g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mélanger et servir",
+          "text": "Mélanger les pâtes à la sauce et garnir de parmesan râpé.",
+          "ings": [
+            "🧀 Parmesan · 20g"
           ],
           "tip": null,
           "kidsHelp": null

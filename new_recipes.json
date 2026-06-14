@@ -1907,5 +1907,121 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "pasta-tomato-sauce-basic",
+    "title": "Pasta with Tomato Sauce",
+    "subtitle": "The everyday classic — pantry to plate in 15 minutes",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Basic",
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Basic"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 3,
+    "cook_minutes": 12,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Simple bowl of pasta in tomato sauce topped with grated parmesan and basil, homely food photography",
+    "nutrition": {
+      "fat": 12,
+      "kcal": 480,
+      "carbs": 78,
+      "fiber": 6,
+      "protein": 15
+    },
+    "ingredients": [
+      {
+        "name": "Pasta",
+        "emoji": "🍝",
+        "amount": "200g"
+      },
+      {
+        "name": "Passata",
+        "emoji": "🥫",
+        "amount": "300g"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "1 clove"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Dried oregano",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Pasta",
+        "emoji": "🍝",
+        "amount": "200g"
+      },
+      {
+        "name": "Passata",
+        "emoji": "🥫",
+        "amount": "300g"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "1 clove"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the pasta",
+        "text": "Boil the pasta in salted water until al dente, then drain.",
+        "ings": [
+          "🍝 Pasta · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Quick tomato sauce",
+        "text": "Soften the garlic in a little olive oil, add the passata and oregano and simmer 5 minutes, then season.",
+        "ings": [
+          "🧄 Garlic · 1 clove",
+          "🥫 Passata · 300g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Combine & serve",
+        "text": "Toss the pasta in the sauce and top with grated parmesan.",
+        "ings": [
+          "🧀 Parmesan · 20g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
   }
 ]
