@@ -14867,140 +14867,6 @@
       ]
     }
   },
-  "flourless-chocolate-almond-cake": {
-    "de": {
-      "title": "Mehlloser Schoko-Mandel-Kuchen",
-      "ingredients": [
-        "Zartbitterschokolade",
-        "Butter",
-        "Eier",
-        "Gemahlene Mandeln",
-        "Zucker"
-      ],
-      "base": [
-        "Eine Prise Salz"
-      ],
-      "dressing": [],
-      "steps": [
-        {
-          "title": "Schokolade schmelzen",
-          "text": "Zartbitterschokolade mit der Butter glatt schmelzen, dann leicht abkühlen lassen.",
-          "ings": [
-            "🍫 Zartbitterschokolade · 150g",
-            "🧈 Butter · 100g"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Teig anrühren",
-          "text": "Eier mit dem Zucker hell aufschlagen, dann geschmolzene Schokolade, gemahlene Mandeln und eine Prise Salz unterheben.",
-          "ings": [
-            "🥚 Eier · 3 pcs",
-            "🍬 Zucker · 80g",
-            "🌰 Gemahlene Mandeln · 100g"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Backen",
-          "text": "In eine ausgelegte Form gießen und bei 170 °C 25–30 Minuten backen, bis er gerade fest ist, aber noch leicht wackelt. Vor dem Schneiden abkühlen lassen.",
-          "ings": [],
-          "tip": null,
-          "kidsHelp": null
-        }
-      ]
-    },
-    "es": {
-      "title": "Tarta de chocolate y almendra sin harina",
-      "ingredients": [
-        "Chocolate negro",
-        "Mantequilla",
-        "Huevos",
-        "Almendra molida",
-        "Azúcar"
-      ],
-      "base": [
-        "Una pizca de sal"
-      ],
-      "dressing": [],
-      "steps": [
-        {
-          "title": "Funde el chocolate",
-          "text": "Funde el chocolate negro con la mantequilla hasta que quede liso, luego deja enfriar un poco.",
-          "ings": [
-            "🍫 Chocolate negro · 150g",
-            "🧈 Mantequilla · 100g"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Prepara la masa",
-          "text": "Bate los huevos con el azúcar hasta que blanqueen, luego incorpora el chocolate fundido, la almendra molida y una pizca de sal.",
-          "ings": [
-            "🥚 Huevos · 3 pcs",
-            "🍬 Azúcar · 80g",
-            "🌰 Almendra molida · 100g"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Hornea",
-          "text": "Vierte en un molde forrado y hornea a 170 °C durante 25–30 minutos hasta que esté justo cuajada pero algo temblorosa. Deja enfriar antes de cortar.",
-          "ings": [],
-          "tip": null,
-          "kidsHelp": null
-        }
-      ]
-    },
-    "fr": {
-      "title": "Gâteau chocolat-amande sans farine",
-      "ingredients": [
-        "Chocolat noir",
-        "Beurre",
-        "Œufs",
-        "Poudre d'amande",
-        "Sucre"
-      ],
-      "base": [
-        "Une pincée de sel"
-      ],
-      "dressing": [],
-      "steps": [
-        {
-          "title": "Faire fondre le chocolat",
-          "text": "Faire fondre le chocolat noir avec le beurre jusqu'à ce que ce soit lisse, puis laisser tiédir.",
-          "ings": [
-            "🍫 Chocolat noir · 150g",
-            "🧈 Beurre · 100g"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Préparer la pâte",
-          "text": "Fouetter les œufs avec le sucre jusqu'à ce que le mélange blanchisse, puis incorporer le chocolat fondu, la poudre d'amande et une pincée de sel.",
-          "ings": [
-            "🥚 Œufs · 3 pcs",
-            "🍬 Sucre · 80g",
-            "🌰 Poudre d'amande · 100g"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Cuire",
-          "text": "Verser dans un moule chemisé et cuire à 170 °C pendant 25 à 30 minutes jusqu'à ce que ce soit juste pris mais encore légèrement tremblotant au centre. Laisser refroidir avant de trancher.",
-          "ings": [],
-          "tip": null,
-          "kidsHelp": null
-        }
-      ]
-    }
-  },
   "classic-carrot-cake-cream-cheese": {
     "de": {
       "title": "Klassischer Carrot Cake mit Frischkäse-Frosting",
@@ -15812,6 +15678,2151 @@
             "🌰 Pignons de pin · 30g",
             "🧀 Burrata · 250g"
           ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "spaghetti-bolognese": {
+    "de": {
+      "title": "Spaghetti Bolognese",
+      "ingredients": [
+        "Spaghetti",
+        "Rinderhack",
+        "Zwiebel",
+        "Karotte",
+        "Knoblauch",
+        "Gehackte Tomaten",
+        "Tomatenmark",
+        "Parmesan"
+      ],
+      "base": [
+        "Olivenöl",
+        "Getrockneter Oregano",
+        "Lorbeerblatt",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Soffritto",
+          "text": "Zwiebel, Karotte und Knoblauch fein hacken und in Olivenöl ca. 8 Minuten sanft andünsten.",
+          "ings": [
+            "🧅 Zwiebel · 1 pc",
+            "🥕 Karotte · 1 pc",
+            "🧄 Knoblauch · 2 cloves"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hack anbraten",
+          "text": "Hitze erhöhen, Rinderhack zugeben und krümelig anbraten.",
+          "ings": [
+            "🥩 Rinderhack · 500g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sauce köcheln",
+          "text": "Gehackte Tomaten, Tomatenmark, Oregano und Lorbeer zugeben. Mindestens 30 Minuten leise köcheln.",
+          "ings": [
+            "🥫 Gehackte Tomaten · 800g",
+            "🍅 Tomatenmark · 2 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Kochen & vermengen",
+          "text": "Spaghetti al dente kochen, abgießen, mit der Sauce vermengen und mit geriebenem Parmesan servieren.",
+          "ings": [
+            "🍝 Spaghetti · 400g",
+            "🧀 Parmesan · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Espaguetis a la boloñesa",
+      "ingredients": [
+        "Espaguetis",
+        "Carne picada de ternera",
+        "Cebolla",
+        "Zanahoria",
+        "Ajo",
+        "Tomate triturado",
+        "Concentrado de tomate",
+        "Parmesano"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Orégano seco",
+        "Hoja de laurel",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Soffritto",
+          "text": "Pica fino la cebolla, la zanahoria y el ajo y sofríe suavemente en aceite unos 8 minutos.",
+          "ings": [
+            "🧅 Cebolla · 1 pc",
+            "🥕 Zanahoria · 1 pc",
+            "🧄 Ajo · 2 cloves"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Dora la carne",
+          "text": "Sube el fuego, añade la carne picada y dórala bien, desmenuzándola.",
+          "ings": [
+            "🥩 Carne picada de ternera · 500g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuece la salsa",
+          "text": "Añade el tomate triturado, el concentrado, el orégano y el laurel. Cuece a fuego lento al menos 30 minutos.",
+          "ings": [
+            "🥫 Tomate triturado · 800g",
+            "🍅 Concentrado de tomate · 2 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuece y mezcla",
+          "text": "Cuece los espaguetis al dente, escurre, mezcla con la salsa y sirve con parmesano rallado.",
+          "ings": [
+            "🍝 Espaguetis · 400g",
+            "🧀 Parmesano · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Spaghetti bolognaise",
+      "ingredients": [
+        "Spaghetti",
+        "Bœuf haché",
+        "Oignon",
+        "Carotte",
+        "Ail",
+        "Tomates concassées",
+        "Concentré de tomate",
+        "Parmesan"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Origan séché",
+        "Feuille de laurier",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Soffritto",
+          "text": "Hacher finement l'oignon, la carotte et l'ail et faire suer doucement dans l'huile environ 8 minutes.",
+          "ings": [
+            "🧅 Oignon · 1 pc",
+            "🥕 Carotte · 1 pc",
+            "🧄 Ail · 2 cloves"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Saisir la viande",
+          "text": "Monter le feu, ajouter le bœuf haché et bien le colorer en l'émiettant.",
+          "ings": [
+            "🥩 Bœuf haché · 500g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mijoter la sauce",
+          "text": "Ajouter les tomates concassées, le concentré, l'origan et le laurier. Laisser mijoter au moins 30 minutes.",
+          "ings": [
+            "🥫 Tomates concassées · 800g",
+            "🍅 Concentré de tomate · 2 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire et mélanger",
+          "text": "Cuire les spaghetti al dente, égoutter, mélanger à la sauce et servir avec du parmesan râpé.",
+          "ings": [
+            "🍝 Spaghetti · 400g",
+            "🧀 Parmesan · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "thai-green-chicken-curry": {
+    "de": {
+      "title": "Grünes Thai-Hähnchen-Curry",
+      "ingredients": [
+        "Hähnchenbrust",
+        "Grüne Currypaste",
+        "Kokosmilch",
+        "Jasminreis",
+        "Grüne Bohnen",
+        "Rote Paprika",
+        "Limette"
+      ],
+      "base": [
+        "Pflanzenöl",
+        "Fischsauce",
+        "Brauner Zucker",
+        "Thai-Basilikum"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Reis kochen",
+          "text": "Jasminreis abspülen und nach Packung kochen.",
+          "ings": [
+            "🍚 Jasminreis · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Paste anbraten",
+          "text": "Grüne Currypaste in etwas Öl 1 Minute aromatisch anbraten.",
+          "ings": [
+            "🟢 Grüne Currypaste · 3 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Curry köcheln",
+          "text": "Geschnetzeltes Hähnchen und Kokosmilch mit einem Schuss Fischsauce und Zucker zugeben. 10 Minuten köcheln, dann Bohnen und Paprika 5 Minuten mitgaren.",
+          "ings": [
+            "🍗 Hähnchenbrust · 500g",
+            "🥥 Kokosmilch · 400ml",
+            "🫛 Grüne Bohnen · 150g",
+            "🫑 Rote Paprika · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Abschließen",
+          "text": "Limette ausdrücken, Thai-Basilikum darüber und über dem Reis servieren.",
+          "ings": [
+            "🍋 Limette · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Curry verde de pollo tailandés",
+      "ingredients": [
+        "Pechuga de pollo",
+        "Pasta de curry verde",
+        "Leche de coco",
+        "Arroz jazmín",
+        "Judías verdes",
+        "Pimiento rojo",
+        "Lima"
+      ],
+      "base": [
+        "Aceite vegetal",
+        "Salsa de pescado",
+        "Azúcar moreno",
+        "Albahaca tailandesa"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuece el arroz",
+          "text": "Enjuaga y cuece el arroz jazmín según el paquete.",
+          "ings": [
+            "🍚 Arroz jazmín · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sofríe la pasta",
+          "text": "Sofríe la pasta de curry verde en un poco de aceite 1 minuto hasta que sea aromática.",
+          "ings": [
+            "🟢 Pasta de curry verde · 3 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuece el curry",
+          "text": "Añade el pollo en tiras y la leche de coco con un chorro de salsa de pescado y azúcar. Cuece 10 minutos, añade las judías y el pimiento 5 minutos más.",
+          "ings": [
+            "🍗 Pechuga de pollo · 500g",
+            "🥥 Leche de coco · 400ml",
+            "🫛 Judías verdes · 150g",
+            "🫑 Pimiento rojo · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Termina",
+          "text": "Exprime la lima, esparce albahaca y sirve sobre el arroz.",
+          "ings": [
+            "🍋 Lima · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Curry vert de poulet thaï",
+      "ingredients": [
+        "Blanc de poulet",
+        "Pâte de curry vert",
+        "Lait de coco",
+        "Riz jasmin",
+        "Haricots verts",
+        "Poivron rouge",
+        "Citron vert"
+      ],
+      "base": [
+        "Huile végétale",
+        "Sauce poisson",
+        "Sucre roux",
+        "Basilic thaï"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuire le riz",
+          "text": "Rincer et cuire le riz jasmin selon le paquet.",
+          "ings": [
+            "🍚 Riz jasmin · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Faire revenir la pâte",
+          "text": "Faire revenir la pâte de curry vert dans un peu d'huile 1 minute jusqu'à ce qu'elle embaume.",
+          "ings": [
+            "🟢 Pâte de curry vert · 3 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mijoter le curry",
+          "text": "Ajouter le poulet émincé et le lait de coco avec un trait de sauce poisson et le sucre. Mijoter 10 minutes, ajouter les haricots et le poivron 5 minutes de plus.",
+          "ings": [
+            "🍗 Blanc de poulet · 500g",
+            "🥥 Lait de coco · 400ml",
+            "🫛 Haricots verts · 150g",
+            "🫑 Poivron rouge · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Finir",
+          "text": "Presser le citron vert, parsemer de basilic thaï et servir sur le riz.",
+          "ings": [
+            "🍋 Citron vert · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "margherita-pizza": {
+    "de": {
+      "title": "Pizza Margherita",
+      "ingredients": [
+        "Pizzateig",
+        "Passata",
+        "Mozzarella",
+        "Frisches Basilikum",
+        "Parmesan"
+      ],
+      "base": [
+        "Olivenöl",
+        "Knoblauch",
+        "Getrockneter Oregano",
+        "Salz"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Ofen vorheizen",
+          "text": "Ofen so heiß wie möglich (250°C) mit Blech oder Stein darin vorheizen.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sauce machen",
+          "text": "Passata mit etwas gepresstem Knoblauch, Oregano, Olivenöl und Salz verrühren.",
+          "ings": [
+            "🥫 Passata · 150g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Belegen",
+          "text": "Teig dünn ausziehen, dünn mit Sauce bestreichen und Mozzarella darüber zupfen.",
+          "ings": [
+            "🫓 Pizzateig · 300g",
+            "🧀 Mozzarella · 125g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Backen & abschließen",
+          "text": "8–12 Minuten backen, bis Blasen werfen. Mit Basilikum, Parmesan und etwas Olivenöl abschließen.",
+          "ings": [
+            "🌿 Frisches Basilikum · 1 handful",
+            "🧀 Parmesan · 20g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Pizza margarita",
+      "ingredients": [
+        "Masa de pizza",
+        "Passata",
+        "Mozzarella",
+        "Albahaca fresca",
+        "Parmesano"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Ajo",
+        "Orégano seco",
+        "Sal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Calienta el horno",
+          "text": "Calienta el horno al máximo (250°C) con una bandeja o piedra dentro.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Haz la salsa",
+          "text": "Mezcla la passata con un poco de ajo majado, orégano, aceite y sal.",
+          "ings": [
+            "🥫 Passata · 150g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cubre la base",
+          "text": "Estira la masa fina, extiende una capa fina de salsa y reparte la mozzarella.",
+          "ings": [
+            "🫓 Masa de pizza · 300g",
+            "🧀 Mozzarella · 125g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea y termina",
+          "text": "Hornea 8–12 minutos hasta que burbujee. Termina con albahaca, parmesano y un chorrito de aceite.",
+          "ings": [
+            "🌿 Albahaca fresca · 1 handful",
+            "🧀 Parmesano · 20g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Pizza margherita",
+      "ingredients": [
+        "Pâte à pizza",
+        "Passata",
+        "Mozzarella",
+        "Basilic frais",
+        "Parmesan"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Ail",
+        "Origan séché",
+        "Sel"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Préchauffer le four",
+          "text": "Préchauffer le four au maximum (250°C) avec une plaque ou pierre à l'intérieur.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Faire la sauce",
+          "text": "Mélanger la passata avec un peu d'ail écrasé, l'origan, l'huile et le sel.",
+          "ings": [
+            "🥫 Passata · 150g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Garnir la base",
+          "text": "Étirer la pâte finement, étaler une fine couche de sauce et répartir la mozzarella.",
+          "ings": [
+            "🫓 Pâte à pizza · 300g",
+            "🧀 Mozzarella · 125g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire et finir",
+          "text": "Cuire 8–12 minutes jusqu'à ce que ça cloque. Finir avec basilic, parmesan et un filet d'huile.",
+          "ings": [
+            "🌿 Basilic frais · 1 handful",
+            "🧀 Parmesan · 20g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "classic-beef-lasagna": {
+    "de": {
+      "title": "Klassische Rinder-Lasagne",
+      "ingredients": [
+        "Lasagneplatten",
+        "Rinderhack",
+        "Gehackte Tomaten",
+        "Zwiebel",
+        "Knoblauch",
+        "Milch",
+        "Butter",
+        "Weizenmehl",
+        "Parmesan"
+      ],
+      "base": [
+        "Olivenöl",
+        "Muskatnuss",
+        "Getrockneter Oregano",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Ragù machen",
+          "text": "Zwiebel und Knoblauch andünsten, Hack anbraten, Tomaten und Oregano zugeben und 20 Minuten köcheln.",
+          "ings": [
+            "🧅 Zwiebel · 1 pc",
+            "🧄 Knoblauch · 2 cloves",
+            "🥩 Rinderhack · 500g",
+            "🥫 Gehackte Tomaten · 800g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Béchamel machen",
+          "text": "Butter schmelzen, Mehl einrühren, dann nach und nach Milch zu einer glatten Sauce geben. Mit etwas Muskat würzen.",
+          "ings": [
+            "🧈 Butter · 50g",
+            "🌾 Weizenmehl · 50g",
+            "🥛 Milch · 600ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Schichten",
+          "text": "Ragù, Lasagneplatten und Béchamel schichten, wiederholen, mit Béchamel und Parmesan abschließen.",
+          "ings": [
+            "🍝 Lasagneplatten · 250g",
+            "🧀 Parmesan · 60g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Backen",
+          "text": "Bei 180°C 35–40 Minuten goldbraun backen. Vor dem Schneiden 10 Minuten ruhen lassen.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Lasaña de carne clásica",
+      "ingredients": [
+        "Placas de lasaña",
+        "Carne picada de ternera",
+        "Tomate triturado",
+        "Cebolla",
+        "Ajo",
+        "Leche",
+        "Mantequilla",
+        "Harina de trigo",
+        "Parmesano"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Nuez moscada",
+        "Orégano seco",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Haz el ragú",
+          "text": "Sofríe cebolla y ajo, dora la carne, añade el tomate y el orégano y cuece 20 minutos.",
+          "ings": [
+            "🧅 Cebolla · 1 pc",
+            "🧄 Ajo · 2 cloves",
+            "🥩 Carne picada de ternera · 500g",
+            "🥫 Tomate triturado · 800g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Haz la bechamel",
+          "text": "Funde la mantequilla, incorpora la harina y añade la leche poco a poco hasta una salsa fina. Sazona con un poco de nuez moscada.",
+          "ings": [
+            "🧈 Mantequilla · 50g",
+            "🌾 Harina de trigo · 50g",
+            "🥛 Leche · 600ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monta las capas",
+          "text": "Alterna ragú, placas y bechamel, repite y termina con bechamel y parmesano.",
+          "ings": [
+            "🍝 Placas de lasaña · 250g",
+            "🧀 Parmesano · 60g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea",
+          "text": "Hornea a 180°C 35–40 minutos hasta dorar. Deja reposar 10 minutos antes de cortar.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Lasagnes à la bolognaise",
+      "ingredients": [
+        "Feuilles de lasagnes",
+        "Bœuf haché",
+        "Tomates concassées",
+        "Oignon",
+        "Ail",
+        "Lait",
+        "Beurre",
+        "Farine de blé",
+        "Parmesan"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Noix de muscade",
+        "Origan séché",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Préparer le ragù",
+          "text": "Faire suer oignon et ail, colorer le haché, ajouter les tomates et l'origan et mijoter 20 minutes.",
+          "ings": [
+            "🧅 Oignon · 1 pc",
+            "🧄 Ail · 2 cloves",
+            "🥩 Bœuf haché · 500g",
+            "🥫 Tomates concassées · 800g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer la béchamel",
+          "text": "Faire fondre le beurre, incorporer la farine, puis ajouter le lait peu à peu pour une sauce lisse. Assaisonner d'un peu de muscade.",
+          "ings": [
+            "🧈 Beurre · 50g",
+            "🌾 Farine de blé · 50g",
+            "🥛 Lait · 600ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monter les couches",
+          "text": "Alterner ragù, feuilles et béchamel, répéter et finir par béchamel et parmesan.",
+          "ings": [
+            "🍝 Feuilles de lasagnes · 250g",
+            "🧀 Parmesan · 60g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire",
+          "text": "Cuire à 180°C 35–40 minutes jusqu'à doré. Laisser reposer 10 minutes avant de couper.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "creamy-mac-and-cheese": {
+    "de": {
+      "title": "Cremige Mac and Cheese",
+      "ingredients": [
+        "Makkaroni",
+        "Cheddar",
+        "Milch",
+        "Butter",
+        "Weizenmehl",
+        "Semmelbrösel"
+      ],
+      "base": [
+        "Senfpulver",
+        "Muskatnuss",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Nudeln kochen",
+          "text": "Makkaroni gerade al dente kochen und abgießen.",
+          "ings": [
+            "🍝 Makkaroni · 350g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Käsesauce",
+          "text": "Butter schmelzen, Mehl einrühren, Milch nach und nach zu einer glatten Sauce geben, dann Cheddar und eine Prise Senfpulver einrühren.",
+          "ings": [
+            "🧈 Butter · 40g",
+            "🌾 Weizenmehl · 40g",
+            "🥛 Milch · 500ml",
+            "🧀 Cheddar · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Vermengen",
+          "text": "Die abgetropften Nudeln unter die Käsesauce heben und abschmecken.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Backen (optional)",
+          "text": "Mit Semmelbröseln bestreuen und bei 200°C 15 Minuten goldbraun backen, oder sofort servieren.",
+          "ings": [
+            "🍞 Semmelbrösel · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Macarrones con queso cremosos",
+      "ingredients": [
+        "Macarrones",
+        "Cheddar",
+        "Leche",
+        "Mantequilla",
+        "Harina de trigo",
+        "Pan rallado"
+      ],
+      "base": [
+        "Mostaza en polvo",
+        "Nuez moscada",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuece la pasta",
+          "text": "Cuece los macarrones al dente y escurre.",
+          "ings": [
+            "🍝 Macarrones · 350g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Salsa de queso",
+          "text": "Funde la mantequilla, incorpora la harina, añade la leche poco a poco hasta una salsa fina y agrega el cheddar y una pizca de mostaza en polvo.",
+          "ings": [
+            "🧈 Mantequilla · 40g",
+            "🌾 Harina de trigo · 40g",
+            "🥛 Leche · 500ml",
+            "🧀 Cheddar · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mezcla",
+          "text": "Incorpora la pasta escurrida a la salsa de queso y salpimienta.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea (opcional)",
+          "text": "Cubre con pan rallado y hornea a 200°C 15 minutos hasta dorar, o sirve al momento.",
+          "ings": [
+            "🍞 Pan rallado · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Mac and cheese crémeux",
+      "ingredients": [
+        "Macaronis",
+        "Cheddar",
+        "Lait",
+        "Beurre",
+        "Farine de blé",
+        "Chapelure"
+      ],
+      "base": [
+        "Moutarde en poudre",
+        "Noix de muscade",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuire les pâtes",
+          "text": "Cuire les macaronis juste al dente et égoutter.",
+          "ings": [
+            "🍝 Macaronis · 350g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sauce au fromage",
+          "text": "Faire fondre le beurre, incorporer la farine, ajouter le lait peu à peu pour une sauce lisse, puis ajouter le cheddar et une pincée de moutarde en poudre.",
+          "ings": [
+            "🧈 Beurre · 40g",
+            "🌾 Farine de blé · 40g",
+            "🥛 Lait · 500ml",
+            "🧀 Cheddar · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mélanger",
+          "text": "Incorporer les pâtes égouttées à la sauce et assaisonner.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire (facultatif)",
+          "text": "Parsemer de chapelure et cuire à 200°C 15 minutes jusqu'à doré, ou servir aussitôt.",
+          "ings": [
+            "🍞 Chapelure · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "chili-con-carne": {
+    "de": {
+      "title": "Chili con Carne",
+      "ingredients": [
+        "Rinderhack",
+        "Kidneybohnen",
+        "Gehackte Tomaten",
+        "Zwiebel",
+        "Knoblauch",
+        "Rote Paprika",
+        "Reis"
+      ],
+      "base": [
+        "Kreuzkümmel",
+        "Geräuchertes Paprikapulver",
+        "Chilipulver",
+        "Olivenöl"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Reis kochen",
+          "text": "Reis nach Packung kochen.",
+          "ings": [
+            "🍚 Reis · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Basis anbraten",
+          "text": "Zwiebel, Knoblauch und Paprika in Öl andünsten, dann Hack zugeben und anbraten.",
+          "ings": [
+            "🧅 Zwiebel · 1 pc",
+            "🧄 Knoblauch · 2 cloves",
+            "🫑 Rote Paprika · 1 pc",
+            "🥩 Rinderhack · 500g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Würzen & köcheln",
+          "text": "Kreuzkümmel, Paprika und Chili einrühren, dann Tomaten und Bohnen. 30 Minuten köcheln.",
+          "ings": [
+            "🥫 Gehackte Tomaten · 400g",
+            "🫘 Kidneybohnen · 400g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Servieren",
+          "text": "Abschmecken und über dem Reis servieren.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Chili con carne",
+      "ingredients": [
+        "Carne picada de ternera",
+        "Alubias rojas",
+        "Tomate triturado",
+        "Cebolla",
+        "Ajo",
+        "Pimiento rojo",
+        "Arroz"
+      ],
+      "base": [
+        "Comino",
+        "Pimentón ahumado",
+        "Chile en polvo",
+        "Aceite de oliva"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuece el arroz",
+          "text": "Cuece el arroz según el paquete.",
+          "ings": [
+            "🍚 Arroz · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Dora la base",
+          "text": "Sofríe cebolla, ajo y pimiento en aceite, luego añade la carne y dórala.",
+          "ings": [
+            "🧅 Cebolla · 1 pc",
+            "🧄 Ajo · 2 cloves",
+            "🫑 Pimiento rojo · 1 pc",
+            "🥩 Carne picada de ternera · 500g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Especia y cuece",
+          "text": "Incorpora comino, pimentón y chile, luego el tomate y las alubias. Cuece 30 minutos.",
+          "ings": [
+            "🥫 Tomate triturado · 400g",
+            "🫘 Alubias rojas · 400g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sirve",
+          "text": "Salpimienta y sirve sobre el arroz.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Chili con carne",
+      "ingredients": [
+        "Bœuf haché",
+        "Haricots rouges",
+        "Tomates concassées",
+        "Oignon",
+        "Ail",
+        "Poivron rouge",
+        "Riz"
+      ],
+      "base": [
+        "Cumin",
+        "Paprika fumé",
+        "Piment en poudre",
+        "Huile d'olive"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuire le riz",
+          "text": "Cuire le riz selon le paquet.",
+          "ings": [
+            "🍚 Riz · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Colorer la base",
+          "text": "Faire suer oignon, ail et poivron dans l'huile, puis ajouter le haché et le colorer.",
+          "ings": [
+            "🧅 Oignon · 1 pc",
+            "🧄 Ail · 2 cloves",
+            "🫑 Poivron rouge · 1 pc",
+            "🥩 Bœuf haché · 500g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Épicer et mijoter",
+          "text": "Incorporer cumin, paprika et piment, puis les tomates et les haricots. Mijoter 30 minutes.",
+          "ings": [
+            "🥫 Tomates concassées · 400g",
+            "🫘 Haricots rouges · 400g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Servir",
+          "text": "Assaisonner et servir sur le riz.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "egg-fried-rice": {
+    "de": {
+      "title": "Gebratener Reis mit Ei",
+      "ingredients": [
+        "Gekochter Reis",
+        "Eier",
+        "Erbsen",
+        "Frühlingszwiebeln",
+        "Karotte",
+        "Knoblauch"
+      ],
+      "base": [
+        "Sojasauce",
+        "Sesamöl",
+        "Pflanzenöl"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Eier verquirlen",
+          "text": "Eier verquirlen und in etwas Öl schnell zu Rührei braten, beiseitestellen.",
+          "ings": [
+            "🥚 Eier · 3 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Gemüse braten",
+          "text": "Knoblauch, Karotte, Erbsen und Frühlingszwiebeln bei hoher Hitze anbraten.",
+          "ings": [
+            "🧄 Knoblauch · 2 cloves",
+            "🥕 Karotte · 1 pc",
+            "🟢 Erbsen · 100g",
+            "🧅 Frühlingszwiebeln · 3 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Reis braten",
+          "text": "Gekochten Reis zugeben und bei hoher Hitze mit einem Schuss Sojasauce schwenken.",
+          "ings": [
+            "🍚 Gekochter Reis · 400g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Vermengen",
+          "text": "Eier zurückgeben, mit Sesamöl beträufeln, vermengen und servieren.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Arroz frito con huevo",
+      "ingredients": [
+        "Arroz cocido",
+        "Huevos",
+        "Guisantes",
+        "Cebolletas",
+        "Zanahoria",
+        "Ajo"
+      ],
+      "base": [
+        "Salsa de soja",
+        "Aceite de sésamo",
+        "Aceite vegetal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuaja los huevos",
+          "text": "Bate y cuaja rápido los huevos en un poco de aceite y reserva.",
+          "ings": [
+            "🥚 Huevos · 3 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Saltea la verdura",
+          "text": "Saltea el ajo, la zanahoria, los guisantes y las cebolletas a fuego fuerte.",
+          "ings": [
+            "🧄 Ajo · 2 cloves",
+            "🥕 Zanahoria · 1 pc",
+            "🟢 Guisantes · 100g",
+            "🧅 Cebolletas · 3 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Fríe el arroz",
+          "text": "Añade el arroz cocido y saltea a fuego fuerte con un chorro de salsa de soja.",
+          "ings": [
+            "🍚 Arroz cocido · 400g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mezcla",
+          "text": "Devuelve los huevos, riega con aceite de sésamo, mezcla y sirve.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Riz sauté aux œufs",
+      "ingredients": [
+        "Riz cuit",
+        "Œufs",
+        "Petits pois",
+        "Oignons nouveaux",
+        "Carotte",
+        "Ail"
+      ],
+      "base": [
+        "Sauce soja",
+        "Huile de sésame",
+        "Huile végétale"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Brouiller les œufs",
+          "text": "Battre et brouiller rapidement les œufs dans un peu d'huile, réserver.",
+          "ings": [
+            "🥚 Œufs · 3 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sauter les légumes",
+          "text": "Faire sauter l'ail, la carotte, les petits pois et les oignons nouveaux à feu vif.",
+          "ings": [
+            "🧄 Ail · 2 cloves",
+            "🥕 Carotte · 1 pc",
+            "🟢 Petits pois · 100g",
+            "🧅 Oignons nouveaux · 3 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sauter le riz",
+          "text": "Ajouter le riz cuit et sauter à feu vif avec un trait de sauce soja.",
+          "ings": [
+            "🍚 Riz cuit · 400g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mélanger",
+          "text": "Remettre les œufs, arroser d'huile de sésame, mélanger et servir.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "marry-me-chicken": {
+    "de": {
+      "title": "Marry Me Chicken",
+      "ingredients": [
+        "Hähnchenbrust",
+        "Schlagsahne",
+        "Getrocknete Tomaten",
+        "Parmesan",
+        "Knoblauch",
+        "Spinat"
+      ],
+      "base": [
+        "Olivenöl",
+        "Getrockneter Oregano",
+        "Chiliflocken",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Hähnchen anbraten",
+          "text": "Hähnchenbrüste würzen und in Olivenöl beidseitig goldbraun anbraten, beiseitestellen.",
+          "ings": [
+            "🍗 Hähnchenbrust · 4 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sauce machen",
+          "text": "Knoblauch andünsten, dann getrocknete Tomaten, Sahne, Parmesan, Oregano und eine Prise Chili zugeben.",
+          "ings": [
+            "🧄 Knoblauch · 3 cloves",
+            "🍅 Getrocknete Tomaten · 80g",
+            "🥛 Schlagsahne · 250ml",
+            "🧀 Parmesan · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Köcheln",
+          "text": "Hähnchen zurückgeben und 10 Minuten in der Sauce köcheln, dann Spinat unterrühren.",
+          "ings": [
+            "🥬 Spinat · 60g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Servieren",
+          "text": "Mit Reis, Pasta oder knusprigem Brot servieren.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Marry Me Chicken (pollo cremoso)",
+      "ingredients": [
+        "Pechuga de pollo",
+        "Nata para montar",
+        "Tomates secos",
+        "Parmesano",
+        "Ajo",
+        "Espinacas"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Orégano seco",
+        "Copos de chile",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Sella el pollo",
+          "text": "Salpimienta las pechugas y séllalas en aceite hasta dorar por ambos lados, reserva.",
+          "ings": [
+            "🍗 Pechuga de pollo · 4 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Haz la salsa",
+          "text": "Sofríe el ajo, luego añade los tomates secos, la nata, el parmesano, el orégano y una pizca de chile.",
+          "ings": [
+            "🧄 Ajo · 3 cloves",
+            "🍅 Tomates secos · 80g",
+            "🥛 Nata para montar · 250ml",
+            "🧀 Parmesano · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuece",
+          "text": "Devuelve el pollo y cuece en la salsa 10 minutos, luego incorpora las espinacas.",
+          "ings": [
+            "🥬 Espinacas · 60g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sirve",
+          "text": "Sirve con arroz, pasta o pan crujiente.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Marry Me Chicken (poulet crémeux)",
+      "ingredients": [
+        "Blanc de poulet",
+        "Crème entière",
+        "Tomates séchées",
+        "Parmesan",
+        "Ail",
+        "Épinards"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Origan séché",
+        "Flocons de piment",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Saisir le poulet",
+          "text": "Assaisonner les blancs et les saisir dans l'huile jusqu'à doré des deux côtés, réserver.",
+          "ings": [
+            "🍗 Blanc de poulet · 4 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Faire la sauce",
+          "text": "Faire suer l'ail, puis ajouter les tomates séchées, la crème, le parmesan, l'origan et une pincée de piment.",
+          "ings": [
+            "🧄 Ail · 3 cloves",
+            "🍅 Tomates séchées · 80g",
+            "🥛 Crème entière · 250ml",
+            "🧀 Parmesan · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mijoter",
+          "text": "Remettre le poulet et mijoter dans la sauce 10 minutes, puis incorporer les épinards.",
+          "ings": [
+            "🥬 Épinards · 60g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Servir",
+          "text": "Servir avec riz, pâtes ou pain croustillant.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "chicken-fajita-bowl": {
+    "de": {
+      "title": "Hähnchen-Fajita-Bowl",
+      "ingredients": [
+        "Hähnchenbrust",
+        "Gemischte Paprika",
+        "Zwiebel",
+        "Reis",
+        "Schwarze Bohnen",
+        "Avocado",
+        "Limette"
+      ],
+      "base": [
+        "Kreuzkümmel",
+        "Geräuchertes Paprikapulver",
+        "Olivenöl",
+        "Salz"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Reis kochen",
+          "text": "Reis nach Packung kochen.",
+          "ings": [
+            "🍚 Reis · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hähnchen würzen & braten",
+          "text": "Geschnittenes Hähnchen mit Kreuzkümmel, Paprika und Salz mischen und goldbraun garen.",
+          "ings": [
+            "🍗 Hähnchenbrust · 500g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Gemüse anrösten",
+          "text": "Paprika und Zwiebel bei hoher Hitze rösten, bis sie Röstaromen haben und gerade weich sind.",
+          "ings": [
+            "🫑 Gemischte Paprika · 2 pcs",
+            "🧅 Zwiebel · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Bowl aufbauen",
+          "text": "Reis und Bohnen einfüllen, Hähnchen und Gemüse dazugeben, mit Avocado und einem Spritzer Limette toppen.",
+          "ings": [
+            "🫘 Schwarze Bohnen · 400g",
+            "🥑 Avocado · 1 pc",
+            "🍋 Limette · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Bol de fajita de pollo",
+      "ingredients": [
+        "Pechuga de pollo",
+        "Pimientos variados",
+        "Cebolla",
+        "Arroz",
+        "Frijoles negros",
+        "Aguacate",
+        "Lima"
+      ],
+      "base": [
+        "Comino",
+        "Pimentón ahumado",
+        "Aceite de oliva",
+        "Sal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuece el arroz",
+          "text": "Cuece el arroz según el paquete.",
+          "ings": [
+            "🍚 Arroz · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sazona y cocina el pollo",
+          "text": "Mezcla el pollo en tiras con comino, pimentón y sal y cocina hasta dorar.",
+          "ings": [
+            "🍗 Pechuga de pollo · 500g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Asa la verdura",
+          "text": "Cocina los pimientos y la cebolla a fuego fuerte hasta que estén tostados y tiernos.",
+          "ings": [
+            "🫑 Pimientos variados · 2 pcs",
+            "🧅 Cebolla · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monta el bol",
+          "text": "Pon el arroz y los frijoles, añade el pollo y la verdura, y corona con aguacate y un chorrito de lima.",
+          "ings": [
+            "🫘 Frijoles negros · 400g",
+            "🥑 Aguacate · 1 pc",
+            "🍋 Lima · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Bol fajita au poulet",
+      "ingredients": [
+        "Blanc de poulet",
+        "Poivrons mélangés",
+        "Oignon",
+        "Riz",
+        "Haricots noirs",
+        "Avocat",
+        "Citron vert"
+      ],
+      "base": [
+        "Cumin",
+        "Paprika fumé",
+        "Huile d'olive",
+        "Sel"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Cuire le riz",
+          "text": "Cuire le riz selon le paquet.",
+          "ings": [
+            "🍚 Riz · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Assaisonner et cuire le poulet",
+          "text": "Mélanger le poulet émincé avec cumin, paprika et sel et cuire jusqu'à doré.",
+          "ings": [
+            "🍗 Blanc de poulet · 500g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Saisir les légumes",
+          "text": "Cuire les poivrons et l'oignon à feu vif jusqu'à coloration et tendreté.",
+          "ings": [
+            "🫑 Poivrons mélangés · 2 pcs",
+            "🧅 Oignon · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monter le bol",
+          "text": "Disposer le riz et les haricots, ajouter le poulet et les légumes, garnir d'avocat et d'un trait de citron vert.",
+          "ings": [
+            "🫘 Haricots noirs · 400g",
+            "🥑 Avocat · 1 pc",
+            "🍋 Citron vert · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "chicken-pad-thai": {
+    "de": {
+      "title": "Pad Thai mit Hähnchen",
+      "ingredients": [
+        "Reisnudeln",
+        "Hähnchenbrust",
+        "Eier",
+        "Sojasprossen",
+        "Erdnüsse",
+        "Frühlingszwiebeln",
+        "Limette"
+      ],
+      "base": [
+        "Tamarindenpaste",
+        "Fischsauce",
+        "Brauner Zucker",
+        "Pflanzenöl"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Nudeln einweichen",
+          "text": "Reisnudeln in warmem Wasser einweichen, bis biegsam, dann abgießen.",
+          "ings": [
+            "🍜 Reisnudeln · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hähnchen & Ei garen",
+          "text": "Hähnchen anbraten, zur Seite schieben und die Eier zu Rührei braten.",
+          "ings": [
+            "🍗 Hähnchenbrust · 300g",
+            "🥚 Eier · 2 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mit Sauce schwenken",
+          "text": "Nudeln mit Tamarinde, Fischsauce und Zucker zugeben und bei hoher Hitze schwenken.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Abschließen",
+          "text": "Sojasprossen und Frühlingszwiebeln zugeben, mit gehackten Erdnüssen und einer Limettenspalte toppen.",
+          "ings": [
+            "🫛 Sojasprossen · 100g",
+            "🥜 Erdnüsse · 30g",
+            "🧅 Frühlingszwiebeln · 2 pcs",
+            "🍋 Limette · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Pad thai de pollo",
+      "ingredients": [
+        "Fideos de arroz",
+        "Pechuga de pollo",
+        "Huevos",
+        "Brotes de soja",
+        "Cacahuetes",
+        "Cebolletas",
+        "Lima"
+      ],
+      "base": [
+        "Pasta de tamarindo",
+        "Salsa de pescado",
+        "Azúcar moreno",
+        "Aceite vegetal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Remoja los fideos",
+          "text": "Remoja los fideos de arroz en agua tibia hasta que estén flexibles y escurre.",
+          "ings": [
+            "🍜 Fideos de arroz · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cocina pollo y huevo",
+          "text": "Saltea el pollo, apártalo a un lado y cuaja los huevos.",
+          "ings": [
+            "🍗 Pechuga de pollo · 300g",
+            "🥚 Huevos · 2 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Saltea con salsa",
+          "text": "Añade los fideos con tamarindo, salsa de pescado y azúcar y saltea a fuego fuerte.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Termina",
+          "text": "Añade los brotes y las cebolletas, corona con cacahuetes picados y un gajo de lima.",
+          "ings": [
+            "🫛 Brotes de soja · 100g",
+            "🥜 Cacahuetes · 30g",
+            "🧅 Cebolletas · 2 pcs",
+            "🍋 Lima · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Pad thaï au poulet",
+      "ingredients": [
+        "Nouilles de riz",
+        "Blanc de poulet",
+        "Œufs",
+        "Pousses de soja",
+        "Cacahuètes",
+        "Oignons nouveaux",
+        "Citron vert"
+      ],
+      "base": [
+        "Pâte de tamarin",
+        "Sauce poisson",
+        "Sucre roux",
+        "Huile végétale"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Tremper les nouilles",
+          "text": "Tremper les nouilles de riz dans l'eau tiède jusqu'à souplesse, puis égoutter.",
+          "ings": [
+            "🍜 Nouilles de riz · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire poulet et œuf",
+          "text": "Faire sauter le poulet, le pousser sur le côté et brouiller les œufs.",
+          "ings": [
+            "🍗 Blanc de poulet · 300g",
+            "🥚 Œufs · 2 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sauter avec la sauce",
+          "text": "Ajouter les nouilles avec le tamarin, la sauce poisson et le sucre et sauter à feu vif.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Finir",
+          "text": "Ajouter les pousses de soja et les oignons nouveaux, garnir de cacahuètes concassées et d'un quartier de citron vert.",
+          "ings": [
+            "🫛 Pousses de soja · 100g",
+            "🥜 Cacahuètes · 30g",
+            "🧅 Oignons nouveaux · 2 pcs",
+            "🍋 Citron vert · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "vegetarian-lasagna": {
+    "de": {
+      "title": "Beste vegetarische Lasagne",
+      "ingredients": [
+        "Lasagneplatten",
+        "Aubergine",
+        "Zucchini",
+        "Rote Paprika",
+        "Gehackte Tomaten",
+        "Milch",
+        "Butter",
+        "Weizenmehl",
+        "Mozzarella"
+      ],
+      "base": [
+        "Olivenöl",
+        "Knoblauch",
+        "Getrockneter Oregano",
+        "Muskatnuss",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Gemüse rösten",
+          "text": "Aubergine, Zucchini und Paprika würfeln, mit Olivenöl mischen und bei 200°C 20 Minuten rösten.",
+          "ings": [
+            "🍆 Aubergine · 1 pc",
+            "🥒 Zucchini · 1 pc",
+            "🫑 Rote Paprika · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Tomatensauce",
+          "text": "Gehackte Tomaten mit Knoblauch und Oregano 15 Minuten köcheln, dann das geröstete Gemüse unterrühren.",
+          "ings": [
+            "🥫 Gehackte Tomaten · 800g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Béchamel",
+          "text": "Butter schmelzen, Mehl einrühren, Milch nach und nach zu einer glatten Sauce geben und mit Muskat würzen.",
+          "ings": [
+            "🧈 Butter · 50g",
+            "🌾 Weizenmehl · 50g",
+            "🥛 Milch · 600ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Schichten & backen",
+          "text": "Gemüsesauce, Lasagneplatten und Béchamel schichten, mit Mozzarella belegen und bei 180°C 35–40 Minuten backen.",
+          "ings": [
+            "🍝 Lasagneplatten · 250g",
+            "🧀 Mozzarella · 125g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "La mejor lasaña vegetariana",
+      "ingredients": [
+        "Placas de lasaña",
+        "Berenjena",
+        "Calabacín",
+        "Pimiento rojo",
+        "Tomate triturado",
+        "Leche",
+        "Mantequilla",
+        "Harina de trigo",
+        "Mozzarella"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Ajo",
+        "Orégano seco",
+        "Nuez moscada",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Asa la verdura",
+          "text": "Corta en dados la berenjena, el calabacín y el pimiento, mezcla con aceite y asa a 200°C 20 minutos.",
+          "ings": [
+            "🍆 Berenjena · 1 pc",
+            "🥒 Calabacín · 1 pc",
+            "🫑 Pimiento rojo · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Salsa de tomate",
+          "text": "Cuece el tomate triturado con ajo y orégano 15 minutos, luego incorpora la verdura asada.",
+          "ings": [
+            "🥫 Tomate triturado · 800g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Bechamel",
+          "text": "Funde la mantequilla, incorpora la harina, añade la leche poco a poco hasta una salsa fina y sazona con nuez moscada.",
+          "ings": [
+            "🧈 Mantequilla · 50g",
+            "🌾 Harina de trigo · 50g",
+            "🥛 Leche · 600ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monta y hornea",
+          "text": "Alterna salsa de verduras, placas y bechamel, cubre con mozzarella y hornea a 180°C 35–40 minutos.",
+          "ings": [
+            "🍝 Placas de lasaña · 250g",
+            "🧀 Mozzarella · 125g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Meilleures lasagnes végétariennes",
+      "ingredients": [
+        "Feuilles de lasagnes",
+        "Aubergine",
+        "Courgette",
+        "Poivron rouge",
+        "Tomates concassées",
+        "Lait",
+        "Beurre",
+        "Farine de blé",
+        "Mozzarella"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Ail",
+        "Origan séché",
+        "Noix de muscade",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Rôtir les légumes",
+          "text": "Couper l'aubergine, la courgette et le poivron en dés, mélanger à l'huile et rôtir à 200°C 20 minutes.",
+          "ings": [
+            "🍆 Aubergine · 1 pc",
+            "🥒 Courgette · 1 pc",
+            "🫑 Poivron rouge · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sauce tomate",
+          "text": "Mijoter les tomates concassées avec ail et origan 15 minutes, puis incorporer les légumes rôtis.",
+          "ings": [
+            "🥫 Tomates concassées · 800g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Béchamel",
+          "text": "Faire fondre le beurre, incorporer la farine, ajouter le lait peu à peu pour une sauce lisse et assaisonner de muscade.",
+          "ings": [
+            "🧈 Beurre · 50g",
+            "🌾 Farine de blé · 50g",
+            "🥛 Lait · 600ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monter et cuire",
+          "text": "Alterner sauce aux légumes, feuilles et béchamel, couvrir de mozzarella et cuire à 180°C 35–40 minutes.",
+          "ings": [
+            "🍝 Feuilles de lasagnes · 250g",
+            "🧀 Mozzarella · 125g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "fudgy-chocolate-brownies": {
+    "de": {
+      "title": "Saftige Schoko-Brownies",
+      "ingredients": [
+        "Zartbitterschokolade",
+        "Butter",
+        "Zucker",
+        "Eier",
+        "Weizenmehl",
+        "Kakaopulver"
+      ],
+      "base": [
+        "Vanilleextrakt",
+        "Eine Prise Salz"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Schmelzen",
+          "text": "Zartbitterschokolade mit der Butter glatt schmelzen, dann leicht abkühlen lassen.",
+          "ings": [
+            "🍫 Zartbitterschokolade · 200g",
+            "🧈 Butter · 150g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Teig anrühren",
+          "text": "Eier, Zucker und Vanille dick und hell aufschlagen, dann geschmolzene Schokolade unterheben.",
+          "ings": [
+            "🥚 Eier · 3 pcs",
+            "🍬 Zucker · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Trockenes unterheben",
+          "text": "Mehl, Kakao und eine Prise Salz vorsichtig unterheben — aufhören, sobald alles verbunden ist.",
+          "ings": [
+            "🌾 Weizenmehl · 100g",
+            "🍫 Kakaopulver · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Backen & schneiden",
+          "text": "In eine ausgelegte Form gießen und bei 180°C 20–25 Minuten backen, bis gerade fest. Vollständig abkühlen, dann in Stücke schneiden.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Brownies de chocolate jugosos",
+      "ingredients": [
+        "Chocolate negro",
+        "Mantequilla",
+        "Azúcar",
+        "Huevos",
+        "Harina de trigo",
+        "Cacao en polvo"
+      ],
+      "base": [
+        "Extracto de vainilla",
+        "Una pizca de sal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Funde",
+          "text": "Funde el chocolate negro con la mantequilla hasta que quede liso, deja enfriar un poco.",
+          "ings": [
+            "🍫 Chocolate negro · 200g",
+            "🧈 Mantequilla · 150g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Prepara la masa",
+          "text": "Bate los huevos, el azúcar y la vainilla hasta que blanqueen y espesen, luego incorpora el chocolate fundido.",
+          "ings": [
+            "🥚 Huevos · 3 pcs",
+            "🍬 Azúcar · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Incorpora lo seco",
+          "text": "Incorpora con suavidad la harina, el cacao y una pizca de sal — para en cuanto se integre.",
+          "ings": [
+            "🌾 Harina de trigo · 100g",
+            "🍫 Cacao en polvo · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea y corta",
+          "text": "Vierte en un molde forrado y hornea a 180°C 20–25 minutos hasta que esté justo cuajado. Enfría del todo y corta en cuadrados.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Brownies au chocolat fondants",
+      "ingredients": [
+        "Chocolat noir",
+        "Beurre",
+        "Sucre",
+        "Œufs",
+        "Farine de blé",
+        "Cacao en poudre"
+      ],
+      "base": [
+        "Extrait de vanille",
+        "Une pincée de sel"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Faire fondre",
+          "text": "Faire fondre le chocolat noir avec le beurre jusqu'à lisse, laisser tiédir.",
+          "ings": [
+            "🍫 Chocolat noir · 200g",
+            "🧈 Beurre · 150g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer la pâte",
+          "text": "Fouetter les œufs, le sucre et la vanille jusqu'à épaississement, puis incorporer le chocolat fondu.",
+          "ings": [
+            "🥚 Œufs · 3 pcs",
+            "🍬 Sucre · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Incorporer le sec",
+          "text": "Incorporer délicatement la farine, le cacao et une pincée de sel — arrêter dès que c'est homogène.",
+          "ings": [
+            "🌾 Farine de blé · 100g",
+            "🍫 Cacao en poudre · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire et couper",
+          "text": "Verser dans un moule chemisé et cuire à 180°C 20–25 minutes jusqu'à juste pris. Laisser refroidir puis couper en carrés.",
+          "ings": [],
           "tip": null,
           "kidsHelp": null
         }

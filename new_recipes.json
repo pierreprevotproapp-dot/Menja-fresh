@@ -1354,130 +1354,6 @@
     ]
   },
   {
-    "id": "flourless-chocolate-almond-cake",
-    "title": "Flourless Chocolate Almond Cake",
-    "subtitle": "Dense, fudgy and naturally gluten-free — a real celebration cake",
-    "emoji": "🎂",
-    "is_kids": false,
-    "tags": [
-      "Vegetarian",
-      "Gluten-free"
-    ],
-    "meal": [
-      "Dessert"
-    ],
-    "categories": [
-      "Süßspeise"
-    ],
-    "diet": [
-      "Vegetarian",
-      "Gluten-free"
-    ],
-    "prep_minutes": 15,
-    "cook_minutes": 30,
-    "servings": 8,
-    "image_url": "",
-    "image_prompt": "Dense flourless chocolate almond cake dusted with cocoa, one slice removed showing fudgy interior, moody food photography",
-    "nutrition": {
-      "fat": 22,
-      "kcal": 320,
-      "carbs": 22,
-      "fiber": 3,
-      "protein": 7
-    },
-    "ingredients": [
-      {
-        "name": "Dark chocolate",
-        "emoji": "🍫",
-        "amount": "150g"
-      },
-      {
-        "name": "Butter",
-        "emoji": "🧈",
-        "amount": "100g"
-      },
-      {
-        "name": "Eggs",
-        "emoji": "🥚",
-        "amount": "3 pcs"
-      },
-      {
-        "name": "Ground almonds",
-        "emoji": "🌰",
-        "amount": "100g"
-      },
-      {
-        "name": "Sugar",
-        "emoji": "🍬",
-        "amount": "80g"
-      }
-    ],
-    "base_ingredients": [
-      "Pinch of salt"
-    ],
-    "dressing": [],
-    "mise_en_place": [
-      {
-        "name": "Dark chocolate",
-        "emoji": "🍫",
-        "amount": "150g"
-      },
-      {
-        "name": "Butter",
-        "emoji": "🧈",
-        "amount": "100g"
-      },
-      {
-        "name": "Eggs",
-        "emoji": "🥚",
-        "amount": "3 pcs"
-      },
-      {
-        "name": "Ground almonds",
-        "emoji": "🌰",
-        "amount": "100g"
-      },
-      {
-        "name": "Sugar",
-        "emoji": "🍬",
-        "amount": "80g"
-      }
-    ],
-    "steps": [
-      {
-        "num": 1,
-        "title": "Melt the chocolate",
-        "text": "Melt the dark chocolate with the butter until smooth, then let it cool slightly.",
-        "ings": [
-          "🍫 Dark chocolate · 150g",
-          "🧈 Butter · 100g"
-        ],
-        "tip": null,
-        "kidsHelp": null
-      },
-      {
-        "num": 2,
-        "title": "Mix the batter",
-        "text": "Whisk the eggs with the sugar until pale, then fold in the melted chocolate, ground almonds and a pinch of salt.",
-        "ings": [
-          "🥚 Eggs · 3 pcs",
-          "🍬 Sugar · 80g",
-          "🌰 Ground almonds · 100g"
-        ],
-        "tip": null,
-        "kidsHelp": null
-      },
-      {
-        "num": 3,
-        "title": "Bake",
-        "text": "Pour into a lined tin and bake at 170°C for 25–30 minutes until just set with a slight wobble. Cool before slicing.",
-        "ings": [],
-        "tip": "A little wobble in the centre = a fudgy cake. Don't overbake.",
-        "kidsHelp": null
-      }
-    ]
-  },
-  {
     "id": "classic-carrot-cake-cream-cheese",
     "title": "Classic Carrot Cake with Cream-Cheese Frosting",
     "subtitle": "The crowd-favourite bake — moist, spiced and generously frosted",
@@ -2169,6 +2045,1869 @@
           "🌰 Pine nuts · 30g",
           "🧀 Burrata · 250g"
         ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "spaghetti-bolognese",
+    "title": "Spaghetti Bolognese",
+    "subtitle": "The slow-simmered Italian classic the whole family asks for",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Pasta"
+    ],
+    "diet": [],
+    "prep_minutes": 15,
+    "cook_minutes": 45,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Bowl of spaghetti bolognese with rich meat sauce, grated parmesan and basil, rustic Italian food photography",
+    "nutrition": {
+      "fat": 22,
+      "kcal": 620,
+      "carbs": 68,
+      "fiber": 6,
+      "protein": 34
+    },
+    "ingredients": [
+      {
+        "name": "Spaghetti",
+        "emoji": "🍝",
+        "amount": "400g"
+      },
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Carrot",
+        "emoji": "🥕",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Tomato purée",
+        "emoji": "🍅",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Dried oregano",
+      "Bay leaf",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Spaghetti",
+        "emoji": "🍝",
+        "amount": "400g"
+      },
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Carrot",
+        "emoji": "🥕",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Tomato purée",
+        "emoji": "🍅",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Soffritto",
+        "text": "Finely chop the onion, carrot and garlic and soften gently in olive oil for about 8 minutes.",
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🥕 Carrot · 1 pc",
+          "🧄 Garlic · 2 cloves"
+        ],
+        "tip": "A slow, gentle soffritto is the flavour base — don't rush or brown it.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Brown the mince",
+        "text": "Turn up the heat, add the beef mince and brown well, breaking it up with a spoon.",
+        "ings": [
+          "🥩 Beef mince · 500g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Simmer the sauce",
+        "text": "Stir in the chopped tomatoes, tomato purée, oregano and bay leaf. Simmer on low for at least 30 minutes.",
+        "ings": [
+          "🥫 Chopped tomatoes · 800g",
+          "🍅 Tomato purée · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Cook & toss",
+        "text": "Boil the spaghetti until al dente, drain, toss with the sauce and serve with grated parmesan.",
+        "ings": [
+          "🍝 Spaghetti · 400g",
+          "🧀 Parmesan · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "thai-green-chicken-curry",
+    "title": "Thai Green Chicken Curry",
+    "subtitle": "Fragrant, creamy and on the table in 30 minutes",
+    "emoji": "🍛",
+    "is_kids": false,
+    "tags": [
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Curry"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 20,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Thai green chicken curry with coconut sauce, green beans and red pepper over jasmine rice, fresh basil, vibrant food photography",
+    "nutrition": {
+      "fat": 24,
+      "kcal": 560,
+      "carbs": 58,
+      "fiber": 5,
+      "protein": 32
+    },
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "500g"
+      },
+      {
+        "name": "Green curry paste",
+        "emoji": "🟢",
+        "amount": "3 tbsp"
+      },
+      {
+        "name": "Coconut milk",
+        "emoji": "🥥",
+        "amount": "400ml"
+      },
+      {
+        "name": "Jasmine rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      },
+      {
+        "name": "Green beans",
+        "emoji": "🫛",
+        "amount": "150g"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "base_ingredients": [
+      "Vegetable oil",
+      "Fish sauce",
+      "Brown sugar",
+      "Thai basil"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "500g"
+      },
+      {
+        "name": "Green curry paste",
+        "emoji": "🟢",
+        "amount": "3 tbsp"
+      },
+      {
+        "name": "Coconut milk",
+        "emoji": "🥥",
+        "amount": "400ml"
+      },
+      {
+        "name": "Jasmine rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      },
+      {
+        "name": "Green beans",
+        "emoji": "🫛",
+        "amount": "150g"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the rice",
+        "text": "Rinse and cook the jasmine rice according to the packet.",
+        "ings": [
+          "🍚 Jasmine rice · 250g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Fry the paste",
+        "text": "Fry the green curry paste in a little oil for 1 minute until fragrant.",
+        "ings": [
+          "🟢 Green curry paste · 3 tbsp"
+        ],
+        "tip": "Frying the paste first wakes up all the aromatics — don't skip it.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Simmer the curry",
+        "text": "Add the sliced chicken and coconut milk with a splash of fish sauce and sugar. Simmer 10 minutes, then add the beans and pepper for 5 more.",
+        "ings": [
+          "🍗 Chicken breast · 500g",
+          "🥥 Coconut milk · 400ml",
+          "🫛 Green beans · 150g",
+          "🫑 Red pepper · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Finish",
+        "text": "Squeeze in the lime, scatter Thai basil and serve over the rice.",
+        "ings": [
+          "🍋 Lime · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "margherita-pizza",
+    "title": "Margherita Pizza",
+    "subtitle": "Blistered, bubbling and better than delivery",
+    "emoji": "🍕",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Pizza"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 12,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Classic margherita pizza with blistered crust, melted mozzarella, tomato and fresh basil, overhead shot, wood-fired look",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 560,
+      "carbs": 74,
+      "fiber": 4,
+      "protein": 22
+    },
+    "ingredients": [
+      {
+        "name": "Pizza dough",
+        "emoji": "🫓",
+        "amount": "300g"
+      },
+      {
+        "name": "Passata",
+        "emoji": "🥫",
+        "amount": "150g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
+      },
+      {
+        "name": "Fresh basil",
+        "emoji": "🌿",
+        "amount": "1 handful"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Garlic",
+      "Dried oregano",
+      "Salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Pizza dough",
+        "emoji": "🫓",
+        "amount": "300g"
+      },
+      {
+        "name": "Passata",
+        "emoji": "🥫",
+        "amount": "150g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
+      },
+      {
+        "name": "Fresh basil",
+        "emoji": "🌿",
+        "amount": "1 handful"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Heat the oven",
+        "text": "Heat the oven as hot as it goes (250°C) with a tray or stone inside.",
+        "ings": [],
+        "tip": "A screaming-hot oven + preheated tray is the secret to a crisp base at home.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the sauce",
+        "text": "Mix the passata with a little crushed garlic, oregano, olive oil and salt.",
+        "ings": [
+          "🥫 Passata · 150g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Top the base",
+        "text": "Stretch the dough thin, spread a thin layer of sauce and tear over the mozzarella.",
+        "ings": [
+          "🫓 Pizza dough · 300g",
+          "🧀 Mozzarella · 125g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Bake & finish",
+        "text": "Bake 8–12 minutes until blistered. Finish with fresh basil, parmesan and a drizzle of olive oil.",
+        "ings": [
+          "🌿 Fresh basil · 1 handful",
+          "🧀 Parmesan · 20g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "classic-beef-lasagna",
+    "title": "Classic Beef Lasagna",
+    "subtitle": "Layers of rich ragù and creamy béchamel — the ultimate comfort bake",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Pasta"
+    ],
+    "diet": [],
+    "prep_minutes": 30,
+    "cook_minutes": 45,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Classic beef lasagna with golden bubbling cheese top, one portion lifted showing layers of ragù and béchamel, cosy food photography",
+    "nutrition": {
+      "fat": 26,
+      "kcal": 580,
+      "carbs": 46,
+      "fiber": 4,
+      "protein": 32
+    },
+    "ingredients": [
+      {
+        "name": "Lasagne sheets",
+        "emoji": "🍝",
+        "amount": "250g"
+      },
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "600ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "50g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "60g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Nutmeg",
+      "Dried oregano",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Lasagne sheets",
+        "emoji": "🍝",
+        "amount": "250g"
+      },
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "600ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "50g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "60g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Make the ragù",
+        "text": "Soften the onion and garlic, brown the mince, add the tomatoes and oregano and simmer 20 minutes.",
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 2 cloves",
+          "🥩 Beef mince · 500g",
+          "🥫 Chopped tomatoes · 800g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the béchamel",
+        "text": "Melt the butter, whisk in the flour, then gradually add the milk to make a smooth sauce. Season with a little nutmeg.",
+        "ings": [
+          "🧈 Butter · 50g",
+          "🌾 Plain flour · 50g",
+          "🥛 Milk · 600ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Layer it up",
+        "text": "Layer ragù, lasagne sheets and béchamel, repeat, and finish with béchamel and parmesan.",
+        "ings": [
+          "🍝 Lasagne sheets · 250g",
+          "🧀 Parmesan · 60g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Bake",
+        "text": "Bake at 180°C for 35–40 minutes until golden and bubbling. Rest 10 minutes before cutting.",
+        "ings": [],
+        "tip": "Resting before you cut lets the layers set so it slices cleanly.",
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "creamy-mac-and-cheese",
+    "title": "Creamy Mac and Cheese",
+    "subtitle": "Ultra-cheesy, crowd-pleasing comfort in one pan",
+    "emoji": "🧀",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Pasta"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 20,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Creamy macaroni and cheese with golden breadcrumb top in a baking dish, spoon pulling a cheesy portion, cosy food photography",
+    "nutrition": {
+      "fat": 28,
+      "kcal": 600,
+      "carbs": 58,
+      "fiber": 3,
+      "protein": 24
+    },
+    "ingredients": [
+      {
+        "name": "Macaroni",
+        "emoji": "🍝",
+        "amount": "350g"
+      },
+      {
+        "name": "Cheddar",
+        "emoji": "🧀",
+        "amount": "200g"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "500ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "40g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "40g"
+      },
+      {
+        "name": "Breadcrumbs",
+        "emoji": "🍞",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Mustard powder",
+      "Nutmeg",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Macaroni",
+        "emoji": "🍝",
+        "amount": "350g"
+      },
+      {
+        "name": "Cheddar",
+        "emoji": "🧀",
+        "amount": "200g"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "500ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "40g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "40g"
+      },
+      {
+        "name": "Breadcrumbs",
+        "emoji": "🍞",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the pasta",
+        "text": "Boil the macaroni until just al dente, then drain.",
+        "ings": [
+          "🍝 Macaroni · 350g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Cheese sauce",
+        "text": "Melt the butter, whisk in the flour, add the milk gradually to a smooth sauce, then stir in the cheddar and a pinch of mustard powder.",
+        "ings": [
+          "🧈 Butter · 40g",
+          "🌾 Plain flour · 40g",
+          "🥛 Milk · 500ml",
+          "🧀 Cheddar · 200g"
+        ],
+        "tip": "Take the pan off the heat before adding the cheese so it stays silky, not grainy.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Combine",
+        "text": "Fold the drained pasta into the cheese sauce and season.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Bake (optional)",
+        "text": "Top with breadcrumbs and bake at 200°C for 15 minutes until golden, or serve straight away.",
+        "ings": [
+          "🍞 Breadcrumbs · 30g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "chili-con-carne",
+    "title": "Chili con Carne",
+    "subtitle": "Smoky, spiced and even better the next day",
+    "emoji": "🌶️",
+    "is_kids": false,
+    "tags": [
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Stew"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 40,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Bowl of chili con carne with kidney beans over rice, topped with coriander, warm rustic food photography",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 560,
+      "carbs": 62,
+      "fiber": 12,
+      "protein": 34
+    },
+    "ingredients": [
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Kidney beans",
+        "emoji": "🫘",
+        "amount": "400g"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "400g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      }
+    ],
+    "base_ingredients": [
+      "Cumin",
+      "Smoked paprika",
+      "Chilli powder",
+      "Olive oil"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Kidney beans",
+        "emoji": "🫘",
+        "amount": "400g"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "400g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the rice",
+        "text": "Cook the rice according to the packet.",
+        "ings": [
+          "🍚 Rice · 250g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Brown the base",
+        "text": "Soften the onion, garlic and pepper in oil, then add the mince and brown.",
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 2 cloves",
+          "🫑 Red pepper · 1 pc",
+          "🥩 Beef mince · 500g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Spice & simmer",
+        "text": "Stir in the cumin, paprika and chilli, then the tomatoes and beans. Simmer 30 minutes.",
+        "ings": [
+          "🥫 Chopped tomatoes · 400g",
+          "🫘 Kidney beans · 400g"
+        ],
+        "tip": "A long simmer melts everything together — the longer the better.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Serve",
+        "text": "Season and serve over the rice.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "egg-fried-rice",
+    "title": "Egg Fried Rice",
+    "subtitle": "The 15-minute takeaway favourite, made at home",
+    "emoji": "🍚",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Rice"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 10,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Egg fried rice with peas, carrot and spring onion in a wok, glossy and steaming, top-down food photography",
+    "nutrition": {
+      "fat": 12,
+      "kcal": 430,
+      "carbs": 62,
+      "fiber": 4,
+      "protein": 14
+    },
+    "ingredients": [
+      {
+        "name": "Cooked rice",
+        "emoji": "🍚",
+        "amount": "400g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Peas",
+        "emoji": "🟢",
+        "amount": "100g"
+      },
+      {
+        "name": "Spring onions",
+        "emoji": "🧅",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Carrot",
+        "emoji": "🥕",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      }
+    ],
+    "base_ingredients": [
+      "Soy sauce",
+      "Sesame oil",
+      "Vegetable oil"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Cooked rice",
+        "emoji": "🍚",
+        "amount": "400g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Peas",
+        "emoji": "🟢",
+        "amount": "100g"
+      },
+      {
+        "name": "Spring onions",
+        "emoji": "🧅",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Carrot",
+        "emoji": "🥕",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Scramble the eggs",
+        "text": "Beat and quickly scramble the eggs in a little oil, then set aside.",
+        "ings": [
+          "🥚 Eggs · 3 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Stir-fry the veg",
+        "text": "Stir-fry the garlic, carrot, peas and spring onions over high heat.",
+        "ings": [
+          "🧄 Garlic · 2 cloves",
+          "🥕 Carrot · 1 pc",
+          "🟢 Peas · 100g",
+          "🧅 Spring onions · 3 pcs"
+        ],
+        "tip": "Use cold, day-old rice if you can — it fries up far better than fresh.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Fry the rice",
+        "text": "Add the cooked rice and toss on high heat with a splash of soy sauce.",
+        "ings": [
+          "🍚 Cooked rice · 400g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Combine",
+        "text": "Return the eggs, drizzle with sesame oil, toss together and serve.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "marry-me-chicken",
+    "title": "Marry Me Chicken",
+    "subtitle": "The viral creamy sun-dried tomato chicken everyone is searching for",
+    "emoji": "🍗",
+    "is_kids": false,
+    "tags": [
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Chicken"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 25,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Marry me chicken — golden chicken breasts in creamy sun-dried tomato sauce with spinach and parmesan in a skillet, cosy food photography",
+    "nutrition": {
+      "fat": 30,
+      "kcal": 540,
+      "carbs": 10,
+      "fiber": 2,
+      "protein": 42
+    },
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Double cream",
+        "emoji": "🥛",
+        "amount": "250ml"
+      },
+      {
+        "name": "Sun-dried tomatoes",
+        "emoji": "🍅",
+        "amount": "80g"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "3 cloves"
+      },
+      {
+        "name": "Spinach",
+        "emoji": "🥬",
+        "amount": "60g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Dried oregano",
+      "Chilli flakes",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Double cream",
+        "emoji": "🥛",
+        "amount": "250ml"
+      },
+      {
+        "name": "Sun-dried tomatoes",
+        "emoji": "🍅",
+        "amount": "80g"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "3 cloves"
+      },
+      {
+        "name": "Spinach",
+        "emoji": "🥬",
+        "amount": "60g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Sear the chicken",
+        "text": "Season the chicken breasts and sear in olive oil until golden on both sides, then set aside.",
+        "ings": [
+          "🍗 Chicken breast · 4 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the sauce",
+        "text": "Soften the garlic, then add the sun-dried tomatoes, cream, parmesan, oregano and a pinch of chilli.",
+        "ings": [
+          "🧄 Garlic · 3 cloves",
+          "🍅 Sun-dried tomatoes · 80g",
+          "🥛 Double cream · 250ml",
+          "🧀 Parmesan · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Simmer",
+        "text": "Return the chicken and simmer in the sauce for 10 minutes, then stir through the spinach.",
+        "ings": [
+          "🥬 Spinach · 60g"
+        ],
+        "tip": "Let it bubble gently so the sauce thickens and coats the chicken.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Serve",
+        "text": "Serve with rice, pasta or crusty bread to mop up the sauce.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "chicken-fajita-bowl",
+    "title": "Chicken Fajita Bowl",
+    "subtitle": "Charred peppers, spiced chicken and all the toppings",
+    "emoji": "🌯",
+    "is_kids": true,
+    "tags": [
+      "Gluten-free",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Bowl"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 15,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Chicken fajita bowl with charred peppers, black beans, rice, avocado and lime, colourful overhead food photography",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 540,
+      "carbs": 60,
+      "fiber": 11,
+      "protein": 38
+    },
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "500g"
+      },
+      {
+        "name": "Mixed peppers",
+        "emoji": "🫑",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      },
+      {
+        "name": "Black beans",
+        "emoji": "🫘",
+        "amount": "400g"
+      },
+      {
+        "name": "Avocado",
+        "emoji": "🥑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "base_ingredients": [
+      "Cumin",
+      "Smoked paprika",
+      "Olive oil",
+      "Salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "500g"
+      },
+      {
+        "name": "Mixed peppers",
+        "emoji": "🫑",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      },
+      {
+        "name": "Black beans",
+        "emoji": "🫘",
+        "amount": "400g"
+      },
+      {
+        "name": "Avocado",
+        "emoji": "🥑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the rice",
+        "text": "Cook the rice according to the packet.",
+        "ings": [
+          "🍚 Rice · 250g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Season & cook chicken",
+        "text": "Toss the sliced chicken with cumin, paprika and salt, then cook until golden and done.",
+        "ings": [
+          "🍗 Chicken breast · 500g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Char the veg",
+        "text": "Cook the peppers and onion over high heat until charred and just soft.",
+        "ings": [
+          "🫑 Mixed peppers · 2 pcs",
+          "🧅 Onion · 1 pc"
+        ],
+        "tip": "Leave them undisturbed for a minute at a time to get that smoky char.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Build the bowl",
+        "text": "Bowl up the rice and beans, add the chicken and veg, and top with avocado and a squeeze of lime.",
+        "ings": [
+          "🫘 Black beans · 400g",
+          "🥑 Avocado · 1 pc",
+          "🍋 Lime · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "chicken-pad-thai",
+    "title": "Chicken Pad Thai",
+    "subtitle": "Sweet, tangy, peanutty noodles — the Thai street-food icon",
+    "emoji": "🍜",
+    "is_kids": false,
+    "tags": [
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Noodles"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 10,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Chicken pad thai with rice noodles, beansprouts, crushed peanuts, spring onion and lime wedge, vibrant street-food photography",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 560,
+      "carbs": 72,
+      "fiber": 5,
+      "protein": 30
+    },
+    "ingredients": [
+      {
+        "name": "Rice noodles",
+        "emoji": "🍜",
+        "amount": "200g"
+      },
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "300g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Beansprouts",
+        "emoji": "🫛",
+        "amount": "100g"
+      },
+      {
+        "name": "Peanuts",
+        "emoji": "🥜",
+        "amount": "30g"
+      },
+      {
+        "name": "Spring onions",
+        "emoji": "🧅",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "base_ingredients": [
+      "Tamarind paste",
+      "Fish sauce",
+      "Brown sugar",
+      "Vegetable oil"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Rice noodles",
+        "emoji": "🍜",
+        "amount": "200g"
+      },
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "300g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Beansprouts",
+        "emoji": "🫛",
+        "amount": "100g"
+      },
+      {
+        "name": "Peanuts",
+        "emoji": "🥜",
+        "amount": "30g"
+      },
+      {
+        "name": "Spring onions",
+        "emoji": "🧅",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Soak the noodles",
+        "text": "Soak the rice noodles in warm water until pliable, then drain.",
+        "ings": [
+          "🍜 Rice noodles · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Cook chicken & egg",
+        "text": "Stir-fry the chicken until cooked, push to one side and scramble the eggs.",
+        "ings": [
+          "🍗 Chicken breast · 300g",
+          "🥚 Eggs · 2 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Toss with sauce",
+        "text": "Add the noodles with the tamarind, fish sauce and sugar, and toss over high heat to coat.",
+        "ings": [],
+        "tip": "Tamarind + fish sauce + sugar is the classic sweet-salty-sour balance — taste and adjust.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Finish",
+        "text": "Add the beansprouts and spring onion, then top with crushed peanuts and a wedge of lime.",
+        "ings": [
+          "🫛 Beansprouts · 100g",
+          "🥜 Peanuts · 30g",
+          "🧅 Spring onions · 2 pcs",
+          "🍋 Lime · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "vegetarian-lasagna",
+    "title": "Best-Ever Vegetarian Lasagna",
+    "subtitle": "Roasted veg and a rich tomato-béchamel — no one misses the meat",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Pasta"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 30,
+    "cook_minutes": 45,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Vegetarian lasagna with roasted aubergine, courgette and pepper, golden mozzarella top, one slice lifted, cosy food photography",
+    "nutrition": {
+      "fat": 20,
+      "kcal": 480,
+      "carbs": 54,
+      "fiber": 8,
+      "protein": 20
+    },
+    "ingredients": [
+      {
+        "name": "Lasagne sheets",
+        "emoji": "🍝",
+        "amount": "250g"
+      },
+      {
+        "name": "Aubergine",
+        "emoji": "🍆",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Courgette",
+        "emoji": "🥒",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "600ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "50g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Garlic",
+      "Dried oregano",
+      "Nutmeg",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Lasagne sheets",
+        "emoji": "🍝",
+        "amount": "250g"
+      },
+      {
+        "name": "Aubergine",
+        "emoji": "🍆",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Courgette",
+        "emoji": "🥒",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "600ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "50g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Roast the veg",
+        "text": "Dice the aubergine, courgette and pepper, toss with olive oil and roast at 200°C for 20 minutes.",
+        "ings": [
+          "🍆 Aubergine · 1 pc",
+          "🥒 Courgette · 1 pc",
+          "🫑 Red pepper · 1 pc"
+        ],
+        "tip": "Roasting the veg first deepens the flavour and stops the lasagna going watery.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Tomato sauce",
+        "text": "Simmer the chopped tomatoes with garlic and oregano for 15 minutes, then stir in the roasted veg.",
+        "ings": [
+          "🥫 Chopped tomatoes · 800g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Béchamel",
+        "text": "Melt the butter, whisk in the flour, add the milk gradually to a smooth sauce and season with nutmeg.",
+        "ings": [
+          "🧈 Butter · 50g",
+          "🌾 Plain flour · 50g",
+          "🥛 Milk · 600ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Layer & bake",
+        "text": "Layer veg sauce, lasagne sheets and béchamel, top with mozzarella and bake at 180°C for 35–40 minutes.",
+        "ings": [
+          "🍝 Lasagne sheets · 250g",
+          "🧀 Mozzarella · 125g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "fudgy-chocolate-brownies",
+    "title": "Fudgy Chocolate Brownies",
+    "subtitle": "Crackly top, dense fudgy middle — the chocolate hit everyone wants",
+    "emoji": "🍫",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 25,
+    "servings": 12,
+    "image_url": "",
+    "image_prompt": "Stack of fudgy chocolate brownies with crackly tops and dense centres, chocolate chunks visible, moody food photography",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 300,
+      "carbs": 34,
+      "fiber": 2,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "150g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "200g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "100g"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "150g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "200g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "100g"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Melt",
+        "text": "Melt the dark chocolate with the butter until smooth, then let it cool slightly.",
+        "ings": [
+          "🍫 Dark chocolate · 200g",
+          "🧈 Butter · 150g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Mix the batter",
+        "text": "Whisk the eggs, sugar and vanilla until thick and pale, then fold in the melted chocolate.",
+        "ings": [
+          "🥚 Eggs · 3 pcs",
+          "🍬 Sugar · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Fold in dry",
+        "text": "Gently fold in the flour, cocoa and a pinch of salt — stop as soon as it's combined.",
+        "ings": [
+          "🌾 Plain flour · 100g",
+          "🍫 Cocoa powder · 30g"
+        ],
+        "tip": "Under-mixing and under-baking slightly is the secret to a fudgy, not cakey, brownie.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Bake & cut",
+        "text": "Pour into a lined tin and bake at 180°C for 20–25 minutes until just set. Cool fully, then cut into squares.",
+        "ings": [],
         "tip": null,
         "kidsHelp": null
       }
