@@ -10881,11 +10881,14 @@
         "Brauner oder Kokoszucker",
         "Kakaopulver",
         "Zartbitterschokolade (85%)",
-        "Mandelmilch"
+        "Mandelmilch",
+        "Frische Himbeeren",
+        "Pistazien"
       ],
       "base": [
         "Vanilleextrakt",
-        "Meersalz"
+        "Meersalz",
+        "Honig"
       ],
       "dressing": [],
       "steps": [
@@ -10900,7 +10903,7 @@
         },
         {
           "title": "Glatt mixen",
-          "text": "Avocado, Erdnussbutter, Ahornsirup, Zucker, Kakao, Mandelmilch, Vanille und eine Prise Salz zusammen mit der geschmolzenen Schokolade vollständig glatt und glänzend mixen.",
+          "text": "Avocado, Erdnussbutter, Ahornsirup, Zucker, Kakao, Mandelmilch, Vanille und eine Prise Salz mit der geschmolzenen Schokolade vollständig glatt und glänzend mixen.",
           "ings": [
             "🥑 Avocado · 1 St.",
             "🥜 Erdnussbutter · 2 EL",
@@ -10911,9 +10914,20 @@
           "kidsHelp": null
         },
         {
-          "title": "Kühlen & servieren",
-          "text": "In 2 Gläser füllen und mindestens 2 Stunden kühlen, bis fest.",
-          "ings": [],
+          "title": "Pistazien karamellisieren",
+          "text": "Pistazien in einer kleinen trockenen Pfanne mit dem Honig bei mittlerer Hitze 1–2 Minuten rösten, bis glänzend und karamellisiert, dann auf Backpapier auskühlen lassen.",
+          "ings": [
+            "🌰 Pistazien · 20g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Kühlen, toppen & servieren",
+          "text": "Mousse in 2 Gläser füllen und mindestens 2 Stunden kühlen. Kurz vor dem Servieren mit Himbeeren und den karamellisierten Pistazien toppen.",
+          "ings": [
+            "🍓 Himbeeren · 60g"
+          ],
           "tip": null,
           "kidsHelp": null
         }
@@ -10928,11 +10942,14 @@
         "Azúcar moreno o de coco",
         "Cacao en polvo",
         "Chocolate negro (85%)",
-        "Leche de almendras"
+        "Leche de almendras",
+        "Frambuesas frescas",
+        "Pistachos"
       ],
       "base": [
         "Extracto de vainilla",
-        "Sal marina"
+        "Sal marina",
+        "Miel"
       ],
       "dressing": [],
       "steps": [
@@ -10947,7 +10964,7 @@
         },
         {
           "title": "Tritura fino",
-          "text": "Tritura el aguacate, la crema de cacahuete, el sirope, el azúcar, el cacao, la leche de almendras, la vainilla y una pizca de sal junto con el chocolate fundido hasta que quede fino y brillante.",
+          "text": "Tritura el aguacate, la crema de cacahuete, el sirope, el azúcar, el cacao, la leche de almendras, la vainilla y una pizca de sal con el chocolate fundido hasta que quede fino y brillante.",
           "ings": [
             "🥑 Aguacate · 1 ud",
             "🥜 Crema de cacahuete · 2 cdas",
@@ -10958,9 +10975,20 @@
           "kidsHelp": null
         },
         {
-          "title": "Enfría y sirve",
-          "text": "Reparte en 2 vasitos y refrigera al menos 2 horas hasta que cuaje.",
-          "ings": [],
+          "title": "Carameliza los pistachos",
+          "text": "En una sartén pequeña, tuesta los pistachos con la miel a fuego medio 1–2 minutos hasta que estén brillantes y caramelizados; pásalos a papel de horno para que enfríen y endurezcan.",
+          "ings": [
+            "🌰 Pistachos · 20g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Enfría, corona y sirve",
+          "text": "Reparte la mousse en 2 vasitos y refrigera al menos 2 horas. Justo antes de servir, corona con las frambuesas y los pistachos caramelizados.",
+          "ings": [
+            "🍓 Frambuesas · 60g"
+          ],
           "tip": null,
           "kidsHelp": null
         }
@@ -10975,11 +11003,14 @@
         "Sucre roux ou de coco",
         "Cacao en poudre",
         "Chocolat noir (85%)",
-        "Lait d'amande"
+        "Lait d'amande",
+        "Framboises fraîches",
+        "Pistaches"
       ],
       "base": [
         "Extrait de vanille",
-        "Sel marin"
+        "Sel marin",
+        "Miel"
       ],
       "dressing": [],
       "steps": [
@@ -10994,7 +11025,7 @@
         },
         {
           "title": "Mixer onctueux",
-          "text": "Mixer l'avocat, le beurre de cacahuète, le sirop d'érable, le sucre, le cacao, le lait d'amande, la vanille et une pincée de sel avec le chocolat fondu jusqu'à une texture lisse et brillante.",
+          "text": "Mixer l'avocat, le beurre de cacahuète, le sirop d'érable, le sucre, le cacao, le lait d'amande, la vanille et une pincée de sel avec le chocolat fondu jusqu'à lisse et brillant.",
           "ings": [
             "🥑 Avocat · 1 pc",
             "🥜 Beurre de cacahuète · 2 c. à s.",
@@ -11005,9 +11036,20 @@
           "kidsHelp": null
         },
         {
-          "title": "Réfrigérer et servir",
-          "text": "Répartir dans 2 verrines et réfrigérer au moins 2 heures jusqu'à prise.",
-          "ings": [],
+          "title": "Caraméliser les pistaches",
+          "text": "Dans une petite poêle sèche, torréfier les pistaches avec le miel à feu moyen 1–2 minutes jusqu'à ce qu'elles soient brillantes et caramélisées, puis débarrasser sur du papier cuisson pour refroidir.",
+          "ings": [
+            "🌰 Pistaches · 20g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Réfrigérer, garnir et servir",
+          "text": "Répartir la mousse dans 2 verrines et réfrigérer au moins 2 heures. Juste avant de servir, garnir de framboises et des pistaches caramélisées.",
+          "ings": [
+            "🍓 Framboises · 60g"
+          ],
           "tip": null,
           "kidsHelp": null
         }

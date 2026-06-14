@@ -2841,11 +2841,22 @@
         "emoji": "🥛",
         "name": "Almond milk",
         "amount": "2 tbsp"
+      },
+      {
+        "emoji": "🍓",
+        "name": "Fresh raspberries",
+        "amount": "60g"
+      },
+      {
+        "emoji": "🌰",
+        "name": "Pistachios",
+        "amount": "20g"
       }
     ],
     "base_ingredients": [
       "Vanilla extract",
-      "Sea salt"
+      "Sea salt",
+      "Honey"
     ],
     "dressing": [],
     "steps": [
@@ -2862,33 +2873,53 @@
       {
         "num": 2,
         "title": "Blend smooth",
-        "text": "Blend the avocado, peanut butter, maple syrup, sugar, cocoa, almond milk, vanilla and a pinch of salt together with the melted chocolate until completely smooth and glossy.",
+        "text": "Blend the avocado, peanut butter, maple syrup, sugar, cocoa, almond milk, vanilla and a pinch of salt with the melted chocolate until completely smooth and glossy.",
         "ings": [
           "🥑 Avocado · 1 pc",
           "🥜 Peanut butter · 2 tbsp",
           "🍁 Maple syrup · 45ml",
           "🍫 Cocoa powder · 25g"
         ],
-        "tip": "The melted 85% chocolate + peanut butter give it a deep, fudgy, grown-up richness.",
+        "tip": "The 85% chocolate + peanut butter give it a deep, fudgy richness.",
         "kidsHelp": null
       },
       {
         "num": 3,
-        "title": "Chill & serve",
-        "text": "Spoon into 2 glasses and chill for at least 2 hours until set and the flavour deepens.",
-        "ings": [],
+        "title": "Caramelise the pistachios",
+        "text": "In a small dry pan, toast the pistachios with the honey over medium heat for 1–2 minutes until glossy and caramelised, then tip onto baking paper to cool and harden.",
+        "ings": [
+          "🌰 Pistachios · 20g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Chill, top & serve",
+        "text": "Spoon the mousse into 2 glasses and chill for at least 2 hours. Just before serving, top with the raspberries and the caramelised pistachios.",
+        "ings": [
+          "🍓 Raspberries · 60g"
+        ],
         "tip": null,
         "kidsHelp": null
       }
     ],
     "nutrition": {
-      "fat": 28,
-      "kcal": 440,
-      "carbs": 38,
-      "fiber": 8,
-      "protein": 8
+      "fat": 32,
+      "kcal": 520,
+      "carbs": 46,
+      "fiber": 9,
+      "protein": 9
     },
-    "servings": 2
+    "servings": 2,
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ]
   },
   "mediterranean-eggs-benedict": {
     "steps": [
