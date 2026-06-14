@@ -2023,5 +2023,155 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "strawberry-tomato-burrata-salad",
+    "title": "Strawberry, Tomato & Burrata Salad",
+    "subtitle": "Summer on a plate — juicy fruit, creamy burrata, herby vinaigrette",
+    "emoji": "🍓",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course",
+      "Kleine Mahlzeit"
+    ],
+    "categories": [
+      "Salat"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 5,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Strawberry, tomato and burrata salad on a platter with torn burrata, toasted pine nuts, fresh basil and a herby vinaigrette, bright summer food photography",
+    "nutrition": {
+      "fat": 26,
+      "kcal": 360,
+      "carbs": 20,
+      "fiber": 4,
+      "protein": 12
+    },
+    "ingredients": [
+      {
+        "name": "Strawberries",
+        "emoji": "🍓",
+        "amount": "250g"
+      },
+      {
+        "name": "Cherry tomatoes",
+        "emoji": "🍅",
+        "amount": "300g"
+      },
+      {
+        "name": "Burrata",
+        "emoji": "🧀",
+        "amount": "250g"
+      },
+      {
+        "name": "Pine nuts",
+        "emoji": "🌰",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Balsamic vinegar",
+      "Garlic",
+      "Lemon zest",
+      "Salt & pepper",
+      "Chilli flakes"
+    ],
+    "dressing": [
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Shallot",
+        "emoji": "🧅",
+        "amount": "½ pc"
+      },
+      {
+        "name": "Fresh herbs (basil, oregano, thyme)",
+        "emoji": "🌿",
+        "amount": "1 handful"
+      }
+    ],
+    "mise_en_place": [
+      {
+        "name": "Strawberries",
+        "emoji": "🍓",
+        "amount": "250g"
+      },
+      {
+        "name": "Cherry tomatoes",
+        "emoji": "🍅",
+        "amount": "300g"
+      },
+      {
+        "name": "Burrata",
+        "emoji": "🧀",
+        "amount": "250g"
+      },
+      {
+        "name": "Pine nuts",
+        "emoji": "🌰",
+        "amount": "30g"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Shallot",
+        "emoji": "🧅",
+        "amount": "½ pc"
+      },
+      {
+        "name": "Fresh herbs (basil, oregano, thyme)",
+        "emoji": "🌿",
+        "amount": "1 handful"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Make the vinaigrette",
+        "text": "Whisk the olive oil, balsamic vinegar, honey, finely chopped shallot, grated garlic, lemon zest and chopped herbs with salt and a pinch of chilli flakes.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Marinate",
+        "text": "Halve the strawberries and toss with the cherry tomatoes and a third of the vinaigrette. Let sit for 10 minutes so the juices mingle.",
+        "ings": [
+          "🍓 Strawberries · 250g",
+          "🍅 Cherry tomatoes · 300g"
+        ],
+        "tip": "Swap strawberries for peaches or cherries — if using peaches, sear the wedges cut-side down for 1–2 min first to deepen the flavour.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Toast & assemble",
+        "text": "Toast the pine nuts in a dry pan until golden. Arrange the marinated fruit and tomatoes on a platter, tear the burrata over the top, drizzle with the remaining vinaigrette and scatter with pine nuts and extra herbs.",
+        "ings": [
+          "🌰 Pine nuts · 30g",
+          "🧀 Burrata · 250g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
   }
 ]

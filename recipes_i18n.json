@@ -15584,5 +15584,196 @@
         }
       ]
     }
+  },
+  "strawberry-tomato-burrata-salad": {
+    "de": {
+      "title": "Erdbeer-Tomaten-Burrata-Salat",
+      "ingredients": [
+        "Erdbeeren",
+        "Cherry-Tomaten",
+        "Burrata",
+        "Pinienkerne"
+      ],
+      "base": [
+        "Olivenöl",
+        "Balsamico",
+        "Knoblauch",
+        "Zitronenabrieb",
+        "Salz & Pfeffer",
+        "Chiliflocken"
+      ],
+      "dressing": [
+        {
+          "name": "Honig",
+          "emoji": "🍯",
+          "amount": "1 tbsp"
+        },
+        {
+          "name": "Schalotte",
+          "emoji": "🧅",
+          "amount": "½ pc"
+        },
+        {
+          "name": "Frische Kräuter (Basilikum, Oregano, Thymian)",
+          "emoji": "🌿",
+          "amount": "1 handful"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Vinaigrette anrühren",
+          "text": "Olivenöl, Balsamico, Honig, fein gehackte Schalotte, geriebenen Knoblauch, Zitronenabrieb und gehackte Kräuter mit Salz und einer Prise Chiliflocken verquirlen.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Marinieren",
+          "text": "Erdbeeren halbieren und mit den Cherry-Tomaten und einem Drittel der Vinaigrette mischen. 10 Minuten ziehen lassen, damit sich die Säfte verbinden.",
+          "ings": [
+            "🍓 Erdbeeren · 250g",
+            "🍅 Cherry-Tomaten · 300g"
+          ],
+          "tip": "Statt Erdbeeren gehen auch Pfirsiche oder Kirschen — Pfirsichspalten vorher kurz mit der Schnittfläche nach unten anbraten, das intensiviert den Geschmack.",
+          "kidsHelp": null
+        },
+        {
+          "title": "Rösten & anrichten",
+          "text": "Pinienkerne in einer trockenen Pfanne goldbraun rösten. Mariniertes Obst und Tomaten auf einer Platte anrichten, Burrata darüber zupfen, restliche Vinaigrette darüberträufeln und mit Pinienkernen und Kräutern bestreuen.",
+          "ings": [
+            "🌰 Pinienkerne · 30g",
+            "🧀 Burrata · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Ensalada de fresa, tomate y burrata",
+      "ingredients": [
+        "Fresas",
+        "Tomates cherry",
+        "Burrata",
+        "Piñones"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Vinagre balsámico",
+        "Ajo",
+        "Ralladura de limón",
+        "Sal y pimienta",
+        "Copos de chile"
+      ],
+      "dressing": [
+        {
+          "name": "Miel",
+          "emoji": "🍯",
+          "amount": "1 tbsp"
+        },
+        {
+          "name": "Chalota",
+          "emoji": "🧅",
+          "amount": "½ pc"
+        },
+        {
+          "name": "Hierbas frescas (albahaca, orégano, tomillo)",
+          "emoji": "🌿",
+          "amount": "1 handful"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Prepara la vinagreta",
+          "text": "Bate el aceite, el vinagre balsámico, la miel, la chalota picada, el ajo rallado, la ralladura de limón y las hierbas picadas con sal y una pizca de copos de chile.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Marina",
+          "text": "Parte las fresas y mézclalas con los tomates cherry y un tercio de la vinagreta. Deja reposar 10 minutos.",
+          "ings": [
+            "🍓 Fresas · 250g",
+            "🍅 Tomates cherry · 300g"
+          ],
+          "tip": "Puedes cambiar las fresas por melocotones o cerezas — si usas melocotón, dóralo un momento por el lado del corte para intensificar el sabor.",
+          "kidsHelp": null
+        },
+        {
+          "title": "Tuesta y monta",
+          "text": "Tuesta los piñones en una sartén seca hasta dorar. Coloca la fruta marinada y los tomates en una fuente, reparte la burrata por encima, riega con el resto de la vinagreta y esparce piñones y hierbas.",
+          "ings": [
+            "🌰 Piñones · 30g",
+            "🧀 Burrata · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Salade fraise, tomate et burrata",
+      "ingredients": [
+        "Fraises",
+        "Tomates cerises",
+        "Burrata",
+        "Pignons de pin"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Vinaigre balsamique",
+        "Ail",
+        "Zeste de citron",
+        "Sel & poivre",
+        "Flocons de piment"
+      ],
+      "dressing": [
+        {
+          "name": "Miel",
+          "emoji": "🍯",
+          "amount": "1 tbsp"
+        },
+        {
+          "name": "Échalote",
+          "emoji": "🧅",
+          "amount": "½ pc"
+        },
+        {
+          "name": "Herbes fraîches (basilic, origan, thym)",
+          "emoji": "🌿",
+          "amount": "1 handful"
+        }
+      ],
+      "steps": [
+        {
+          "title": "Préparer la vinaigrette",
+          "text": "Fouetter l'huile, le vinaigre balsamique, le miel, l'échalote ciselée, l'ail râpé, le zeste de citron et les herbes ciselées avec du sel et une pincée de flocons de piment.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Mariner",
+          "text": "Couper les fraises et les mélanger aux tomates cerises et à un tiers de la vinaigrette. Laisser reposer 10 minutes.",
+          "ings": [
+            "🍓 Fraises · 250g",
+            "🍅 Tomates cerises · 300g"
+          ],
+          "tip": "Remplacez les fraises par des pêches ou des cerises — pour les pêches, saisissez-les côté coupé 1–2 min pour intensifier le goût.",
+          "kidsHelp": null
+        },
+        {
+          "title": "Torréfier et dresser",
+          "text": "Torréfier les pignons à sec jusqu'à doré. Disposer les fruits marinés et les tomates sur un plat, répartir la burrata, arroser du reste de vinaigrette et parsemer de pignons et d'herbes.",
+          "ings": [
+            "🌰 Pignons de pin · 30g",
+            "🧀 Burrata · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
   }
 }
