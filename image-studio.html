@@ -9,52 +9,57 @@
   *{box-sizing:border-box}
   body{margin:0;font-family:-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
   header{position:sticky;top:0;background:var(--green);color:#fff;padding:14px 20px;z-index:10;box-shadow:0 2px 10px rgba(0,0,0,.15)}
-  header h1{margin:0 0 10px;font-size:18px}
+  header h1{margin:0 0 4px;font-size:18px}
+  .sub{font-size:12px;color:#dfeada;margin-bottom:10px}
   .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
   input,select,button,textarea{font-family:inherit;font-size:13px}
   input,select{padding:8px 10px;border-radius:8px;border:1px solid #ffffff55;background:#ffffff20;color:#fff}
   input::placeholder{color:#ffffffaa}
-  input.k{min-width:230px}
+  input.k{min-width:240px}
+  label.fld{display:flex;flex-direction:column;gap:3px;font-size:10.5px;color:#cfe0d0}
   button{padding:8px 14px;border-radius:99px;border:none;background:#E07A4E;color:#fff;font-weight:600;cursor:pointer}
   button.ghost{background:#ffffff25}
   button:disabled{opacity:.5;cursor:not-allowed}
   .wrap{max-width:980px;margin:18px auto;padding:0 16px}
-  .hint{font-size:12px;color:var(--muted);margin:8px 0 16px}
-  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;display:grid;grid-template-columns:1fr 320px;gap:14px}
+  .hint{font-size:12px;color:var(--muted);margin:8px 0 16px;line-height:1.5}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;display:grid;grid-template-columns:1fr 340px;gap:14px}
   @media(max-width:720px){.card{grid-template-columns:1fr}}
   .card h3{margin:0 0 6px;font-size:15px}
   .card .id{font-size:11px;color:var(--muted);margin-bottom:8px}
-  textarea{width:100%;min-height:90px;padding:10px;border-radius:8px;border:1px solid var(--border);resize:vertical;font-size:12.5px;color:var(--text);background:#fff}
-  .imgbox{background:#f0ece1;border:1px dashed var(--border);border-radius:10px;min-height:200px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  textarea{width:100%;min-height:92px;padding:10px;border-radius:8px;border:1px solid var(--border);resize:vertical;font-size:12.5px;color:var(--text);background:#fff}
+  .imgbox{background:#f0ece1;border:1px dashed var(--border);border-radius:10px;min-height:210px;display:flex;align-items:center;justify-content:center;overflow:hidden}
   .imgbox img{width:100%;height:auto;display:block}
   .imgbox .ph{color:var(--muted);font-size:12px;text-align:center;padding:20px}
   .actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;align-items:center}
   .status{font-size:12px;color:var(--muted);margin-top:6px;min-height:16px}
-  .saved{color:#2E7D32;font-weight:600}
-  .err{color:#c0392b}
-  .topbtns{margin-top:8px}
-  code{background:#00000022;padding:1px 5px;border-radius:4px}
+  .saved{color:#2E7D32;font-weight:600}.err{color:#c0392b}
+  .topbtns{margin-top:10px}
 </style>
 </head>
 <body>
 <header>
   <h1>🍳 Menja Image Studio — fal.ai</h1>
+  <div class="sub">Regenerate the photos for the 17 recipes added after the original 67.</div>
   <div class="row">
-    <input class="k" id="falKey" type="password" placeholder="fal.ai API key (fal-...)">
-    <input class="k" id="svcKey" type="password" placeholder="Supabase service_role key (to save)">
-    <select id="model">
-      <option value="fal-ai/flux/schnell">flux/schnell — fast & cheap</option>
-      <option value="fal-ai/flux/dev" selected>flux/dev — slower, better</option>
-      <option value="fal-ai/flux-pro/v1.1">flux-pro v1.1 — best, pricier</option>
-    </select>
-    <select id="size">
-      <option value="landscape_4_3" selected>landscape 4:3</option>
-      <option value="landscape_16_9">landscape 16:9</option>
-      <option value="square_hd">square</option>
-    </select>
+    <label class="fld">fal.ai API key (required to generate)
+      <input class="k" id="falKey" type="password" placeholder="fal-..."></label>
+    <label class="fld">Supabase service key (only to save)
+      <input class="k" id="svcKey" type="password" placeholder="eyJ... (optional)"></label>
+    <label class="fld">Model
+      <select id="model">
+        <option value="fal-ai/flux/schnell">flux/schnell — fast</option>
+        <option value="fal-ai/flux/dev" selected>flux/dev — better</option>
+        <option value="fal-ai/flux-pro/v1.1">flux-pro v1.1 — best</option>
+      </select></label>
+    <label class="fld">Size
+      <select id="size">
+        <option value="landscape_4_3" selected>landscape 4:3</option>
+        <option value="landscape_16_9">landscape 16:9</option>
+        <option value="square_hd">square</option>
+      </select></label>
   </div>
   <div class="topbtns row">
-    <button id="loadBtn" class="ghost">① Load recipes without photo</button>
+    <button id="loadBtn">① Load the 17 new recipes</button>
     <button id="genAllBtn" class="ghost" disabled>② Generate all</button>
     <span id="headStatus" style="font-size:12px"></span>
   </div>
@@ -62,25 +67,25 @@
 
 <div class="wrap">
   <div class="hint">
-    Keys stay only in this browser tab (sessionStorage) — nothing is uploaded or committed.
-    Flow: paste your <b>fal key</b> → <b>Load</b> → <b>Generate</b> per recipe → preview → <b>Save to DB</b>
-    (needs the service key). You can edit a prompt and re-generate until you like it.
+    <b>1.</b> Paste your <b>fal key</b> → <b>Load</b> &nbsp;
+    <b>2.</b> <b>Generate</b> per recipe (or “Generate all”) → the picture appears below &nbsp;
+    <b>3.</b> Like it? <b>Save to DB</b> (needs the service key once) — it overwrites the old low-quality photo.
+    You can tweak a prompt and re-generate any time. Keys stay only in this browser tab.
   </div>
   <div id="list"></div>
 </div>
 
 <script>
 const SUPA_URL='https://ekuynkjtcvpiueollznp.supabase.co';
-const ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrdXlua2p0Y3ZwaXVlb2xsem5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4ODExNTUsImV4cCI6MjA5NTQ1NzE1NX0.rOdHlfIyu6tjzhmexXs25maNVkckCmck-UEhSgM0rEY';
 const STYLE=', professional food photography, natural daylight, fresh and appetising, shallow depth of field, high detail';
+// The 17 recipes added after the original 67 (embedded so no DB read is needed).
+const NEW_RECIPES=[{"id":"classic-greek-salad-horiatiki","title":"Classic Greek Salad (Horiatiki)","image_prompt":"Authentic Greek village salad (Horiatiki) in a rustic bowl: chunky ripe tomatoes, thick cucumber slices, green pepper rings, red onion, kalamata olives, topped with a whole block of feta drizzled with olive oil and dried oregano, bright Mediterranean daylight, overhead editorial food photography"},{"id":"spanish-tortilla-herbed-yogurt-greens","title":"Spanish Tortilla with Herbed Yogurt & Greens","image_prompt":"Modern Spanish tortilla wedge on a plate, golden and slightly juicy in the centre, topped with a dollop of herbed Greek yogurt, crumbled feta, sumac, chilli flakes and fresh microgreens, bright Mediterranean daylight, overhead editorial food photography"},{"id":"greek-yogurt-berry-bark","title":"Frozen Greek Yogurt Berry Bark","image_prompt":"Frozen Greek yogurt bark broken into shards on a marble board, topped with raspberries, blueberries and dark chocolate shavings, bright airy food photography"},{"id":"frozen-banana-nice-cream","title":"Chocolate-Peanut Banana Nice Cream","image_prompt":"Creamy chocolate banana nice cream swirled in a bowl, dusted with cocoa and a swirl of peanut butter, soft natural light"},{"id":"berry-chia-pudding-parfait","title":"Berry Chia Pudding Parfait","image_prompt":"Chia pudding parfait layered with fresh berries in a glass, topped with mint, bright clean food photography"},{"id":"no-bake-chocolate-peanut-oat-bars","title":"No-Bake Chocolate Peanut Oat Bars","image_prompt":"No-bake oat bars with a glossy dark chocolate top, cut into squares on parchment, cozy food photography"},{"id":"banana-oat-choc-chip-cookies","title":"Banana Oat Chocolate-Chip Cookies","image_prompt":"Soft banana oat cookies with melting dark chocolate chips on a cooling rack, warm homely light"},{"id":"baked-cinnamon-apples-oat-crumble","title":"Baked Cinnamon Apples with Oat Crumble","image_prompt":"Baked whole apples stuffed with golden oat-walnut crumble in a rustic dish, steam rising, warm cosy light"},{"id":"stuffed-medjool-dates","title":"Peanut-Butter Stuffed Dates","image_prompt":"Medjool dates filled with peanut butter and coated in dark chocolate, sprinkled with sea salt flakes on parchment"},{"id":"dark-chocolate-almond-bark","title":"Dark Chocolate Almond & Cranberry Bark","image_prompt":"Dark chocolate bark studded with whole almonds and dried cranberries, broken into shards on baking paper"},{"id":"roasted-honey-peaches-yogurt","title":"Roasted Honey Peaches with Yogurt","image_prompt":"Roasted peach halves caramelised with honey, served over Greek yogurt and topped with crushed pistachios, bright summer light"},{"id":"flourless-chocolate-almond-cake","title":"Flourless Chocolate Almond Cake","image_prompt":"Dense flourless chocolate almond cake dusted with cocoa, one slice removed showing fudgy interior, moody food photography"},{"id":"classic-carrot-cake-cream-cheese","title":"Classic Carrot Cake with Cream-Cheese Frosting","image_prompt":"Classic two-layer carrot cake with thick cream cheese frosting and chopped pecans on top, one slice cut to show the moist spiced crumb, soft natural light, editorial food photography"},{"id":"strammer-max","title":"Strammer Max","image_prompt":"Strammer Max — rye bread topped with ham and a sunny-side-up fried egg, chives, runny yolk, cosy German food photography"},{"id":"pasta-pesto-basic","title":"Pasta with Pesto","image_prompt":"Bowl of pasta tossed with green basil pesto, grated parmesan and cherry tomatoes, simple bright food photography"},{"id":"pasta-tomato-sauce-basic","title":"Pasta with Tomato Sauce","image_prompt":"Simple bowl of pasta in tomato sauce topped with grated parmesan and basil, homely food photography"},{"id":"strawberry-tomato-burrata-salad","title":"Strawberry, Tomato & Burrata Salad","image_prompt":"Strawberry, tomato and burrata salad on a platter with torn burrata, toasted pine nuts, fresh basil and a herby vinaigrette, bright summer food photography"}];
+
 const $=id=>document.getElementById(id);
-// remember keys for this tab
-['falKey','svcKey','model','size'].forEach(id=>{
-  const el=$(id); const k='menja_studio_'+id;
+['falKey','svcKey','model','size'].forEach(id=>{const el=$(id),k='menja_studio_'+id;
   if(sessionStorage[k])el.value=sessionStorage[k];
-  el.addEventListener('change',()=>sessionStorage[k]=el.value);
   el.addEventListener('input',()=>sessionStorage[k]=el.value);
-});
+  el.addEventListener('change',()=>sessionStorage[k]=el.value);});
 
 async function genImage(prompt){
   const falKey=$('falKey').value.trim();
@@ -88,78 +93,43 @@ async function genImage(prompt){
   const body={prompt:prompt+STYLE,image_size:$('size').value,num_images:1};
   const r=await fetch('https://fal.run/'+$('model').value,{method:'POST',headers:{'Authorization':'Key '+falKey,'Content-Type':'application/json'},body:JSON.stringify(body)});
   if(!r.ok)throw new Error('fal '+r.status+' '+(await r.text()).slice(0,140));
-  const d=await r.json();
-  const url=d.images&&d.images[0]&&d.images[0].url;
-  if(!url)throw new Error('no image returned');
-  return url;
+  const d=await r.json();const url=d.images&&d.images[0]&&d.images[0].url;
+  if(!url)throw new Error('no image returned');return url;
 }
 async function saveDB(id,url){
   const svc=$('svcKey').value.trim();
-  if(!svc)throw new Error('Enter the service_role key to save');
+  if(!svc)throw new Error('Paste the service key (top) to save');
   const r=await fetch(SUPA_URL+'/rest/v1/recipes?id=eq.'+encodeURIComponent(id),{method:'PATCH',headers:{apikey:svc,Authorization:'Bearer '+svc,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({image_url:url})});
   if(!r.ok)throw new Error('save '+r.status+' '+(await r.text()).slice(0,140));
 }
 
 function card(r){
-  const el=document.createElement('div');el.className='card';el.dataset.id=r.id;
-  el.innerHTML=`
-    <div>
-      <h3>${r.title||r.id}</h3>
-      <div class="id">${r.id}</div>
+  const el=document.createElement('div');el.className='card';
+  el.innerHTML=`<div>
+      <h3>${r.title||r.id}</h3><div class="id">${r.id}</div>
       <textarea class="prompt">${(r.image_prompt||'').replace(/</g,'&lt;')}</textarea>
       <div class="actions">
         <button class="gen">✨ Generate</button>
         <button class="save ghost" disabled>💾 Save to DB</button>
         <a class="open" target="_blank" style="font-size:12px;display:none">open ↗</a>
-      </div>
-      <div class="status"></div>
+      </div><div class="status"></div>
     </div>
     <div class="imgbox"><div class="ph">no image yet</div></div>`;
   const imgbox=el.querySelector('.imgbox'),status=el.querySelector('.status'),
         genBtn=el.querySelector('.gen'),saveBtn=el.querySelector('.save'),openA=el.querySelector('.open');
-  let currentUrl=null;
-  genBtn.onclick=async()=>{
-    status.className='status';status.textContent='Generating…';genBtn.disabled=true;saveBtn.disabled=true;
-    try{
-      const url=await genImage(el.querySelector('.prompt').value.trim());
-      currentUrl=url;imgbox.innerHTML='';const im=new Image();im.src=url;imgbox.appendChild(im);
-      openA.href=url;openA.style.display='inline';
-      status.textContent='Done — preview above. Save it if you like it.';saveBtn.disabled=false;genBtn.textContent='♻ Regenerate';
-    }catch(e){status.className='status err';status.textContent=e.message;}
-    genBtn.disabled=false;
-  };
-  saveBtn.onclick=async()=>{
-    if(!currentUrl)return;status.className='status';status.textContent='Saving…';saveBtn.disabled=true;
-    try{await saveDB(r.id,currentUrl);status.className='status saved';status.textContent='✓ Saved to the database';}
-    catch(e){status.className='status err';status.textContent=e.message;saveBtn.disabled=false;}
-  };
+  let url=null;
+  genBtn.onclick=async()=>{status.className='status';status.textContent='Generating…';genBtn.disabled=true;saveBtn.disabled=true;
+    try{url=await genImage(el.querySelector('.prompt').value.trim());imgbox.innerHTML='';const im=new Image();im.src=url;imgbox.appendChild(im);openA.href=url;openA.style.display='inline';status.textContent='Done — save it if you like it.';saveBtn.disabled=false;genBtn.textContent='♻ Regenerate';}
+    catch(e){status.className='status err';status.textContent=e.message;}finally{genBtn.disabled=false;}};
+  saveBtn.onclick=async()=>{if(!url)return;status.className='status';status.textContent='Saving…';saveBtn.disabled=true;
+    try{await saveDB(r.id,url);status.className='status saved';status.textContent='✓ Saved — overwrote the old photo';}
+    catch(e){status.className='status err';status.textContent=e.message;saveBtn.disabled=false;}};
   return el;
 }
-
-$('loadBtn').onclick=async()=>{
-  $('headStatus').textContent='Loading…';
-  try{
-    const r=await fetch(SUPA_URL+'/rest/v1/recipes?select=id,title,image_url,image_prompt&order=title&limit=1000',{headers:{apikey:ANON,Authorization:'Bearer '+ANON}});
-    const all=await r.json();
-    const todo=all.filter(x=>!x.image_url&&x.image_prompt);
-    const list=$('list');list.innerHTML='';
-    todo.forEach(x=>list.appendChild(card(x)));
-    $('headStatus').textContent=todo.length+' recipe(s) without a photo';
-    $('genAllBtn').disabled=todo.length===0;
-  }catch(e){$('headStatus').textContent='Load failed: '+e.message;}
-};
-
-$('genAllBtn').onclick=async()=>{
-  const cards=[...document.querySelectorAll('.card')];
-  for(const c of cards){
-    if(c.querySelector('.save').disabled){ // not generated yet
-      c.querySelector('.gen').click();
-      // wait until this card finishes (status no longer "Generating…")
-      await new Promise(res=>{const t=setInterval(()=>{const s=c.querySelector('.status').textContent;if(s!=='Generating…'){clearInterval(t);res();}},500);});
-    }
-  }
-  $('headStatus').textContent='All done — review & Save the ones you like.';
-};
+$('loadBtn').onclick=()=>{const list=$('list');list.innerHTML='';NEW_RECIPES.forEach(r=>list.appendChild(card(r)));$('headStatus').textContent=NEW_RECIPES.length+' recipes loaded';$('genAllBtn').disabled=false;};
+$('genAllBtn').onclick=async()=>{const cards=[...document.querySelectorAll('.card')];
+  for(const c of cards){if(c.querySelector('.save').disabled){c.querySelector('.gen').click();await new Promise(res=>{const t=setInterval(()=>{const s=c.querySelector('.status').textContent;if(s!=='Generating…'){clearInterval(t);res();}},500);});}}
+  $('headStatus').textContent='All generated — review & Save the good ones.';};
 </script>
 </body>
 </html>
