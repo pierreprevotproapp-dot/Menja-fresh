@@ -4197,8 +4197,10 @@ function renderRecipes(){
 
 function setRecTag(k){state.recTag=k;save();renderRecipes();}
 
+let _recListScroll=0;   // remember where the recipe list was scrolled to
 function openRecipe(id){
   const d=getDish(id);if(!d)return;
+  _recListScroll=window.scrollY||document.documentElement.scrollTop||0;   // save list position
   _rdTab='ing';
   _detailTarget=null;
   document.getElementById('rec-list-view').style.display='none';
@@ -4209,6 +4211,11 @@ function openRecipe(id){
   window.scrollTo(0,0);
   document.documentElement.scrollTop=0;document.body.scrollTop=0;
   document.getElementById('screen-recipes').scrollTop=0;
+}
+// Back from a recipe → rebuild the list AND restore the previous scroll position.
+function backToRecipes(){
+  renderRecipes();
+  requestAnimationFrame(()=>{window.scrollTo(0,_recListScroll);document.documentElement.scrollTop=_recListScroll;});
 }
 
 function changeServings(id,delta){
@@ -4292,12 +4299,12 @@ function renderRecipeDetail(id,targetId){
 
   const _at=(_rdTab==='macro'&&!d.nutrition)?'ing':_rdTab;   // active tab (fallback if no macros)
   dv.innerHTML=`
-    <div class="rd-back" onclick="${overlay?'closeRecipeOverlay()':'renderRecipes()'}">
+    <div class="rd-back" onclick="${overlay?'closeRecipeOverlay()':'backToRecipes()'}">
       <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>${overlay?t('closeWordShort'):t('allRecipes')}
     </div>
     <div class="rd-hero">
       ${img}
-      <button class="rd-back-btn" onclick="${overlay?'closeRecipeOverlay()':'renderRecipes()'}" title="${overlay?t('closeWordShort'):t('allRecipes')}" aria-label="${overlay?t('closeWordShort'):t('allRecipes')}"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <button class="rd-back-btn" onclick="${overlay?'closeRecipeOverlay()':'backToRecipes()'}" title="${overlay?t('closeWordShort'):t('allRecipes')}" aria-label="${overlay?t('closeWordShort'):t('allRecipes')}"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
       <button class="rd-fav ${isFav(id)?'on':''}" onclick="toggleFav(event,'${id}');renderRecipeDetail('${id}')" title="${t('saveFav')}">${isFav(id)?'♥':'♡'}</button>
       <div class="rd-hero-overlay">
         <div class="rd-hero-title">${dishName(d)}</div>
