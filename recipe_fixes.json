@@ -664,6 +664,13 @@
         "title": "Finish & serve",
         "kidsHelp": null
       }
+    ],
+    "dressing": [
+      {
+        "name": "Tamari",
+        "emoji": "🫙",
+        "amount": "2 tbsp"
+      }
     ]
   },
   "beef-chimichurri-rice": {
@@ -758,6 +765,13 @@
         "title": "Slice & serve",
         "kidsHelp": null
       }
+    ],
+    "dressing": [
+      {
+        "name": "Tamari",
+        "emoji": "🫙",
+        "amount": "3 tbsp"
+      }
     ]
   },
   "loaded-avocado-toast-eggs": {
@@ -843,6 +857,9 @@
         "title": "Build & serve",
         "kidsHelp": null
       }
+    ],
+    "base_ingredients": [
+      "Maple syrup (optional)"
     ]
   },
   "blueberry-chia-overnight-oats": {
@@ -1644,6 +1661,12 @@
         "title": "Assemble",
         "kidsHelp": null
       }
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "tags": [
+      "Vegetarian"
     ]
   },
   "labneh-beetroot-berries": {
@@ -1839,6 +1862,12 @@
         "title": "Plate & finish",
         "kidsHelp": null
       }
+    ],
+    "diet": [
+      "Pescatarian"
+    ],
+    "tags": [
+      "Pescatarian"
     ]
   },
   "hummus-bowl-roasted-veg": {
@@ -1876,6 +1905,13 @@
         "title": "Assemble",
         "kidsHelp": "Kids can spread the hummus! 🧒"
       }
+    ],
+    "diet": [
+      "Vegan"
+    ],
+    "tags": [
+      "Vegan",
+      "Kid-Friendly"
     ]
   },
   "banana-bread-walnut": {
@@ -2639,6 +2675,13 @@
         "title": "Build the bowl",
         "kidsHelp": null
       }
+    ],
+    "dressing": [
+      {
+        "name": "Tamari",
+        "emoji": "🫙",
+        "amount": "2 tbsp"
+      }
     ]
   },
   "spring-green-pea-soup": {
@@ -2941,6 +2984,13 @@
         "title": "Bring it together",
         "kidsHelp": null
       }
+    ],
+    "dressing": [
+      {
+        "name": "Tamari",
+        "emoji": "🫙",
+        "amount": "3 tbsp"
+      }
     ]
   },
   "black-rice-stuffed-peppers-feta-pistachios": {
@@ -3162,6 +3212,14 @@
         "title": "Toss & serve",
         "kidsHelp": null
       }
+    ],
+    "base_ingredients": [
+      "Tamari",
+      "Sesame oil",
+      "Maple syrup",
+      "Garlic",
+      "Ginger",
+      "Roasted peanuts to top"
     ]
   },
   "spinach-sweet-potato-muffins": {
@@ -3303,6 +3361,38 @@
         "title": "Top & serve",
         "kidsHelp": "Kids can arrange their own toppings! 🧒"
       }
+    ],
+    "ingredients": [
+      {
+        "name": "Buckwheat groats",
+        "emoji": "🌾",
+        "amount": "160g"
+      },
+      {
+        "name": "Oat milk",
+        "emoji": "🥛",
+        "amount": "400ml"
+      },
+      {
+        "name": "Fresh raspberries",
+        "emoji": "🍓",
+        "amount": "80g"
+      },
+      {
+        "name": "Banana",
+        "emoji": "🍌",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Mixed seeds (chia, hemp, flax)",
+        "emoji": "⚫",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      }
     ]
   },
   "harissa-tomato-lemon-yogurt-pasta": {
@@ -3389,6 +3479,11 @@
         "title": "Build & serve",
         "kidsHelp": null
       }
+    ],
+    "base_ingredients": [
+      "Cinnamon",
+      "Pinch of salt",
+      "Coconut oil"
     ]
   }
 }

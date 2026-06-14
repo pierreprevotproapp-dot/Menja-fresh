@@ -1307,7 +1307,7 @@
     ],
     "dressing": [
       {
-        "name": "Soy sauce",
+        "name": "Tamari",
         "emoji": "🫙",
         "amount": "2 tbsp"
       }
@@ -1646,7 +1646,7 @@
     ],
     "dressing": [
       {
-        "name": "Soy sauce",
+        "name": "Tamari",
         "emoji": "🫙",
         "amount": "3 tbsp"
       }
@@ -1981,7 +1981,7 @@
     ],
     "dressing": [],
     "base_ingredients": [
-      "Honey or maple syrup (optional)"
+      "Maple syrup (optional)"
     ],
     "mise_en_place": [
       {
@@ -4831,8 +4831,7 @@
     "emoji": "🥚",
     "is_kids": false,
     "tags": [
-      "Vegetarian",
-      "Gluten-free"
+      "Vegetarian"
     ],
     "meal": [
       "Frühstück",
@@ -4843,8 +4842,7 @@
       "Pfannengericht"
     ],
     "diet": [
-      "Vegetarian",
-      "Gluten-free"
+      "Vegetarian"
     ],
     "prep_minutes": 5,
     "cook_minutes": 10,
@@ -5452,7 +5450,6 @@
     "emoji": "🐟",
     "is_kids": false,
     "tags": [
-      "Gluten-free",
       "Pescatarian"
     ],
     "meal": [
@@ -5462,7 +5459,6 @@
       "Fisch & Meeresfrüchte"
     ],
     "diet": [
-      "Gluten-free",
       "Pescatarian"
     ],
     "prep_minutes": 10,
@@ -5616,7 +5612,6 @@
     "is_kids": true,
     "tags": [
       "Vegan",
-      "Gluten-free",
       "Kid-Friendly"
     ],
     "meal": [
@@ -5627,8 +5622,7 @@
       "Bowl"
     ],
     "diet": [
-      "Vegan",
-      "Gluten-free"
+      "Vegan"
     ],
     "prep_minutes": 10,
     "cook_minutes": 25,
@@ -8255,7 +8249,7 @@
     ],
     "dressing": [
       {
-        "name": "Soy sauce",
+        "name": "Tamari",
         "emoji": "🫙",
         "amount": "2 tbsp"
       }
@@ -9165,7 +9159,7 @@
     ],
     "dressing": [
       {
-        "name": "Soy sauce",
+        "name": "Tamari",
         "emoji": "🫙",
         "amount": "3 tbsp"
       }
@@ -10154,7 +10148,7 @@
       }
     ],
     "base_ingredients": [
-      "Soy sauce",
+      "Tamari",
       "Sesame oil",
       "Maple syrup",
       "Garlic",
@@ -10671,7 +10665,7 @@
         "amount": "2 tbsp"
       },
       {
-        "name": "Maple syrup or honey",
+        "name": "Maple syrup",
         "emoji": "🍯",
         "amount": "2 tbsp"
       }
@@ -11334,7 +11328,7 @@
     "base_ingredients": [
       "Cinnamon",
       "Pinch of salt",
-      "Butter or coconut oil"
+      "Coconut oil"
     ],
     "dressing": [
       {

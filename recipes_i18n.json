@@ -1519,7 +1519,7 @@
         "Sal y pimienta"
       ],
       "dressing": [
-        "Salsa de soja"
+        "Tamari"
       ],
       "steps": [
         {
@@ -1588,7 +1588,7 @@
         "Sel & poivre"
       ],
       "dressing": [
-        "Sauce soja"
+        "Tamari"
       ],
       "steps": [
         {
@@ -1657,7 +1657,7 @@
         "Salz & Pfeffer"
       ],
       "dressing": [
-        "Sojasoße"
+        "Tamari"
       ],
       "steps": [
         {
@@ -1911,7 +1911,7 @@
         "Jengibre (fresco o en polvo)"
       ],
       "dressing": [
-        "Salsa de soja"
+        "Tamari"
       ],
       "steps": [
         {
@@ -1974,7 +1974,7 @@
         "Gingembre (frais ou en poudre)"
       ],
       "dressing": [
-        "Sauce soja"
+        "Tamari"
       ],
       "steps": [
         {
@@ -2037,7 +2037,7 @@
         "Ingwer (frisch oder gemahlen)"
       ],
       "dressing": [
-        "Sojasoße"
+        "Tamari"
       ],
       "steps": [
         {
@@ -2283,7 +2283,7 @@
         "Bebida de avena"
       ],
       "base": [
-        "Miel o sirope de arce (opcional)"
+        "Sirope de arce (opcional)"
       ],
       "dressing": [],
       "steps": [
@@ -2335,7 +2335,7 @@
         "Boisson à l'avoine"
       ],
       "base": [
-        "Miel ou sirop d'érable (facultatif)"
+        "Sirop d'érable (facultatif)"
       ],
       "dressing": [],
       "steps": [
@@ -2387,7 +2387,7 @@
         "Haferdrink"
       ],
       "base": [
-        "Honig oder Ahornsirup (optional)"
+        "Ahornsirup (optional)"
       ],
       "dressing": [],
       "steps": [
@@ -3472,7 +3472,7 @@
       "base": [
         "Canela",
         "Una pizca de sal",
-        "Mantequilla o aceite de coco"
+        "Aceite de coco"
       ],
       "dressing": [
         "Sirope de arce",
@@ -3527,7 +3527,7 @@
       "base": [
         "Cannelle",
         "Une pincée de sel",
-        "Beurre ou huile de coco"
+        "Huile de coco"
       ],
       "dressing": [
         "Sirop d'érable",
@@ -3582,7 +3582,7 @@
       "base": [
         "Zimt",
         "Eine Prise Salz",
-        "Butter oder Kokosöl"
+        "Kokosöl"
       ],
       "dressing": [
         "Ahornsirup",
@@ -10210,7 +10210,7 @@
         "Vinagre de arroz"
       ],
       "dressing": [
-        "Salsa de soja"
+        "Tamari"
       ],
       "steps": [
         {
@@ -10271,7 +10271,7 @@
         "Vinaigre de riz"
       ],
       "dressing": [
-        "Sauce soja"
+        "Tamari"
       ],
       "steps": [
         {
@@ -10332,7 +10332,7 @@
         "Reisessig"
       ],
       "dressing": [
-        "Sojasoße"
+        "Tamari"
       ],
       "steps": [
         {
@@ -11209,7 +11209,7 @@
         "Sal y pimienta"
       ],
       "dressing": [
-        "Salsa de soja"
+        "Tamari"
       ],
       "steps": [
         {
@@ -11278,7 +11278,7 @@
         "Sel et poivre"
       ],
       "dressing": [
-        "Sauce soja"
+        "Tamari"
       ],
       "steps": [
         {
@@ -11347,7 +11347,7 @@
         "Salz & Pfeffer"
       ],
       "dressing": [
-        "Sojasauce"
+        "Tamari"
       ],
       "steps": [
         {
@@ -12341,7 +12341,7 @@
         "Cilantro fresco"
       ],
       "base": [
-        "Salsa de soja",
+        "Tamari",
         "Aceite de sésamo",
         "Sirope de arce",
         "Ajo",
@@ -12406,7 +12406,7 @@
         "Coriandre fraîche"
       ],
       "base": [
-        "Sauce soja",
+        "Tamari",
         "Huile de sésame",
         "Sirop d'érable",
         "Ail",
@@ -12471,7 +12471,7 @@
         "Frischer Koriander"
       ],
       "base": [
-        "Sojasauce",
+        "Tamari",
         "Sesamöl",
         "Ahornsirup",
         "Knoblauch",
@@ -12946,7 +12946,7 @@
         "Frambuesas frescas",
         "Plátano",
         "Semillas variadas (chía, cáñamo, lino)",
-        "Sirope de arce o miel"
+        "Sirope de arce"
       ],
       "base": [
         "Una pizca de sal",
@@ -12995,7 +12995,7 @@
         "Framboises fraîches",
         "Banane",
         "Graines variées (chia, chanvre, lin)",
-        "Sirop d'érable ou miel"
+        "Sirop d'érable"
       ],
       "base": [
         "Une pincée de sel",
@@ -13044,7 +13044,7 @@
         "Frische Himbeeren",
         "Banane",
         "Gemischte Samen (Chia, Hanf, Lein)",
-        "Ahornsirup oder Honig"
+        "Ahornsirup"
       ],
       "base": [
         "Eine Prise Salz",
