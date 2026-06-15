@@ -3480,46 +3480,90 @@
     ]
   },
   "apple-pie-pecan-oat-bowl": {
-    "steps": [
+    "ingredients": [
       {
-        "num": 1,
-        "tip": "A splash more oat milk at the end loosens it to your liking.",
-        "ings": [
-          "🌾 Rolled oats · 100g",
-          "🥛 Oat milk · 400ml"
-        ],
-        "text": "Simmer the oats with oat milk, a pinch of salt and ½ tsp cinnamon for 5–7 minutes, stirring, until creamy.",
-        "title": "Cook the porridge",
-        "kidsHelp": null
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "100g"
       },
       {
-        "num": 2,
-        "tip": null,
-        "ings": [
-          "🍎 Apple · 2 pcs",
-          "🌰 Pecans · 40g"
-        ],
-        "text": "Cube the apples and cook in a little butter or coconut oil with cinnamon and 1 tbsp maple syrup for 4–5 minutes until soft and golden. Toast the pecans in a dry pan for 2–3 minutes, then roughly chop.",
-        "title": "Sauté the cinnamon apples",
-        "kidsHelp": "Kids can stir the cinnamon apples! 🧒"
+        "name": "Oat milk",
+        "emoji": "🥛",
+        "amount": "400ml"
       },
       {
-        "num": 3,
-        "tip": null,
-        "ings": [
-          "🟤 Raisins · 2 tbsp",
-          "🍯 Maple syrup · 1 tbsp",
-          "🥜 Almond butter · 2 tbsp"
-        ],
-        "text": "Spoon the porridge into bowls, top with the cinnamon apples, pecans and raisins, then drizzle with maple syrup and almond butter.",
-        "title": "Build & serve",
-        "kidsHelp": null
+        "name": "Apple",
+        "emoji": "🍎",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Pecans",
+        "emoji": "🌰",
+        "amount": "40g"
+      },
+      {
+        "name": "Raisins",
+        "emoji": "🟤",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Fresh berries",
+        "emoji": "🫐",
+        "amount": "80g"
       }
     ],
     "base_ingredients": [
       "Cinnamon",
       "Pinch of salt",
       "Coconut oil"
-    ]
+    ],
+    "dressing": [
+      {
+        "name": "Maple syrup",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Almond butter",
+        "emoji": "🥜",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the porridge",
+        "text": "Simmer the oats with the oat milk, a pinch of salt and ½ tsp cinnamon for 5–7 minutes, stirring, until creamy.",
+        "ings": [
+          "🌾 Rolled oats · 100g",
+          "🥛 Oat milk · 400ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Sauté the cinnamon apples",
+        "text": "Cube the apples and cook in a little coconut oil with cinnamon and a drizzle of maple for 4–5 minutes until soft and golden. Toast the pecans in a dry pan for 2–3 minutes, then roughly chop.",
+        "ings": [
+          "🍎 Apple · 2 pcs",
+          "🌰 Pecans · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Build & serve",
+        "text": "Spoon the porridge into bowls, top with the cinnamon apples, pecans, raisins and a generous handful of fresh berries, then drizzle with maple syrup and almond butter.",
+        "ings": [
+          "🟤 Raisins · 2 tbsp",
+          "🫐 Fresh berries · 80g"
+        ],
+        "tip": "The fresh berries add colour, juicy freshness and a tart contrast to the sweet apples.",
+        "kidsHelp": null
+      }
+    ],
+    "image_prompt": "A cosy homemade breakfast bowl of creamy oat porridge topped with golden cinnamon-sautéed apple, toasted pecans, plump raisins and a generous scatter of fresh raspberries and blueberries, a swirl of almond butter and a maple drizzle — vibrant pops of red and purple berries against the warm oats — in a ceramic bowl on a wooden table, soft natural window light, realistic homemade food photography, slightly imperfect, not over-stylised"
   }
 }

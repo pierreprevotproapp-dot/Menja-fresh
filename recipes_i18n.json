@@ -3459,15 +3459,13 @@
   "apple-pie-pecan-oat-bowl": {
     "es": {
       "title": "Bol de avena estilo tarta de manzana con pecanas",
-      "subtitle": "Calentito, reconfortante y sabe a postre",
       "ingredients": [
         "Copos de avena",
         "Bebida de avena",
         "Manzana",
         "Nueces pecanas",
         "Pasas",
-        "Sirope de arce",
-        "Mantequilla de almendra"
+        "Frutos rojos frescos"
       ],
       "base": [
         "Canela",
@@ -3475,54 +3473,59 @@
         "Aceite de coco"
       ],
       "dressing": [
-        "Sirope de arce",
-        "Mantequilla de almendra"
+        {
+          "name": "Sirope de arce",
+          "emoji": "🍯",
+          "amount": "2 tbsp"
+        },
+        {
+          "name": "Crema de almendras",
+          "emoji": "🥜",
+          "amount": "2 tbsp"
+        }
       ],
       "steps": [
         {
-          "tip": "Un chorrito más de bebida al final la deja a tu gusto.",
+          "title": "Cuece el porridge",
+          "text": "Cuece la avena con la bebida de avena, una pizca de sal y ½ cdta de canela 5–7 minutos, removiendo, hasta que quede cremoso.",
           "ings": [
             "🌾 Copos de avena · 100g",
             "🥛 Bebida de avena · 400ml"
           ],
-          "text": "Cuece la avena con la bebida de avena, una pizca de sal y ½ cdta de canela 5–7 minutos, removiendo, hasta que quede cremosa.",
-          "title": "Cuece las gachas",
+          "tip": null,
           "kidsHelp": null
         },
         {
-          "tip": null,
+          "title": "Saltea las manzanas a la canela",
+          "text": "Corta las manzanas en dados y cocínalas en un poco de aceite de coco con canela y un chorrito de sirope 4–5 minutos hasta que estén blandas y doradas. Tuesta las nueces 2–3 minutos y pícalas.",
           "ings": [
-            "🍎 Manzana · 2 ud",
+            "🍎 Manzana · 2 pcs",
             "🌰 Nueces pecanas · 40g"
           ],
-          "text": "Corta las manzanas en dados y cocínalas en un poco de mantequilla o aceite de coco con canela y 1 cda de sirope de arce 4–5 minutos hasta que estén blandas y doradas. Tuesta las pecanas en una sartén seca 2–3 minutos y pícalas en trozos.",
-          "title": "Saltea las manzanas con canela",
-          "kidsHelp": "¡Los niños pueden remover las manzanas con canela! 🧒"
+          "tip": null,
+          "kidsHelp": null
         },
         {
-          "tip": null,
-          "ings": [
-            "🟤 Pasas · 2 cdas",
-            "🍯 Sirope de arce · 1 cda",
-            "🥜 Mantequilla de almendra · 2 cdas"
-          ],
-          "text": "Pon las gachas en boles, corona con las manzanas a la canela, las pecanas y las pasas, y riega con sirope de arce y mantequilla de almendra.",
           "title": "Monta y sirve",
+          "text": "Reparte el porridge en boles, corona con las manzanas a la canela, las nueces, las pasas y un buen puñado de frutos rojos frescos, y riega con sirope de arce y crema de almendras.",
+          "ings": [
+            "🟤 Pasas · 2 tbsp",
+            "🫐 Frutos rojos frescos · 80g"
+          ],
+          "tip": null,
           "kidsHelp": null
         }
       ]
     },
     "fr": {
       "title": "Bol d'avoine façon tarte aux pommes & pécan",
-      "subtitle": "Chaud, réconfortant, goût de dessert",
       "ingredients": [
         "Flocons d'avoine",
-        "Boisson à l'avoine",
+        "Lait d'avoine",
         "Pomme",
         "Noix de pécan",
         "Raisins secs",
-        "Sirop d'érable",
-        "Purée d'amande"
+        "Fruits rouges frais"
       ],
       "base": [
         "Cannelle",
@@ -3530,54 +3533,59 @@
         "Huile de coco"
       ],
       "dressing": [
-        "Sirop d'érable",
-        "Purée d'amande"
+        {
+          "name": "Sirop d'érable",
+          "emoji": "🍯",
+          "amount": "2 tbsp"
+        },
+        {
+          "name": "Purée d'amande",
+          "emoji": "🥜",
+          "amount": "2 tbsp"
+        }
       ],
       "steps": [
         {
-          "tip": "Un trait de boisson en fin de cuisson l'ajuste à votre goût.",
+          "title": "Cuire le porridge",
+          "text": "Faire cuire les flocons d'avoine avec le lait d'avoine, une pincée de sel et ½ c. à c. de cannelle 5–7 minutes en remuant jusqu'à consistance crémeuse.",
           "ings": [
             "🌾 Flocons d'avoine · 100g",
-            "🥛 Boisson à l'avoine · 400ml"
+            "🥛 Lait d'avoine · 400ml"
           ],
-          "text": "Cuire les flocons d'avoine avec la boisson à l'avoine, une pincée de sel et ½ c. à c. de cannelle 5–7 minutes, en remuant, jusqu'à ce que ce soit crémeux.",
-          "title": "Cuire le porridge",
+          "tip": null,
           "kidsHelp": null
         },
         {
-          "tip": null,
+          "title": "Poêler les pommes à la cannelle",
+          "text": "Couper les pommes en dés et les cuire dans un peu d'huile de coco avec la cannelle et un filet de sirop 4–5 minutes jusqu'à tendreté et coloration. Torréfier les noix de pécan 2–3 minutes, puis les concasser.",
           "ings": [
-            "🍎 Pomme · 2 pc",
+            "🍎 Pomme · 2 pcs",
             "🌰 Noix de pécan · 40g"
           ],
-          "text": "Couper les pommes en dés et les cuire dans un peu de beurre ou d'huile de coco avec la cannelle et 1 c. à s. de sirop d'érable 4–5 minutes jusqu'à ce qu'elles soient tendres et dorées. Torréfier les pécans dans une poêle sèche 2–3 minutes, puis les hacher grossièrement.",
-          "title": "Poêler les pommes à la cannelle",
-          "kidsHelp": "Les enfants peuvent remuer les pommes à la cannelle ! 🧒"
+          "tip": null,
+          "kidsHelp": null
         },
         {
-          "tip": null,
+          "title": "Dresser et servir",
+          "text": "Répartir le porridge dans des bols, garnir des pommes à la cannelle, des noix, des raisins et d'une belle poignée de fruits rouges frais, puis arroser de sirop d'érable et de purée d'amande.",
           "ings": [
-            "🟤 Raisins secs · 2 c. à s.",
-            "🍯 Sirop d'érable · 1 c. à s.",
-            "🥜 Purée d'amande · 2 c. à s."
+            "🟤 Raisins secs · 2 tbsp",
+            "🫐 Fruits rouges frais · 80g"
           ],
-          "text": "Verser le porridge dans les bols, garnir des pommes à la cannelle, des pécans et des raisins secs, puis arroser de sirop d'érable et de purée d'amande.",
-          "title": "Monter et servir",
+          "tip": null,
           "kidsHelp": null
         }
       ]
     },
     "de": {
       "title": "Apple-Pie-Haferbowl mit Pekannüssen",
-      "subtitle": "Warm, gemütlich und wie Dessert",
       "ingredients": [
         "Haferflocken",
-        "Haferdrink",
+        "Hafermilch",
         "Apfel",
         "Pekannüsse",
         "Rosinen",
-        "Ahornsirup",
-        "Mandelmus"
+        "Frische Beeren"
       ],
       "base": [
         "Zimt",
@@ -3585,39 +3593,46 @@
         "Kokosöl"
       ],
       "dressing": [
-        "Ahornsirup",
-        "Mandelmus"
+        {
+          "name": "Ahornsirup",
+          "emoji": "🍯",
+          "amount": "2 tbsp"
+        },
+        {
+          "name": "Mandelmus",
+          "emoji": "🥜",
+          "amount": "2 tbsp"
+        }
       ],
       "steps": [
         {
-          "tip": "Ein Schuss mehr Drink am Ende macht es so cremig, wie du magst.",
+          "title": "Porridge kochen",
+          "text": "Haferflocken mit Hafermilch, einer Prise Salz und ½ TL Zimt 5–7 Minuten unter Rühren cremig köcheln.",
           "ings": [
             "🌾 Haferflocken · 100g",
-            "🥛 Haferdrink · 400ml"
+            "🥛 Hafermilch · 400ml"
           ],
-          "text": "Haferflocken mit Haferdrink, einer Prise Salz und ½ TL Zimt 5–7 Minuten unter Rühren cremig kochen.",
-          "title": "Porridge kochen",
+          "tip": null,
           "kidsHelp": null
         },
         {
-          "tip": null,
+          "title": "Zimt-Äpfel anbraten",
+          "text": "Äpfel würfeln und in etwas Kokosöl mit Zimt und einem Schuss Ahornsirup 4–5 Minuten weich und goldbraun braten. Pekannüsse 2–3 Minuten trocken rösten, dann grob hacken.",
           "ings": [
-            "🍎 Apfel · 2 St.",
+            "🍎 Apfel · 2 pcs",
             "🌰 Pekannüsse · 40g"
           ],
-          "text": "Äpfel würfeln und in etwas Butter oder Kokosöl mit Zimt und 1 EL Ahornsirup 4–5 Minuten weich und goldbraun braten. Pekannüsse in einer trockenen Pfanne 2–3 Minuten rösten, dann grob hacken.",
-          "title": "Zimt-Äpfel anbraten",
-          "kidsHelp": "Kinder können die Zimt-Äpfel umrühren! 🧒"
+          "tip": null,
+          "kidsHelp": null
         },
         {
-          "tip": null,
-          "ings": [
-            "🟤 Rosinen · 2 EL",
-            "🍯 Ahornsirup · 1 EL",
-            "🥜 Mandelmus · 2 EL"
-          ],
-          "text": "Porridge in Schalen füllen, mit Zimt-Äpfeln, Pekannüssen und Rosinen belegen, dann mit Ahornsirup und Mandelmus beträufeln.",
           "title": "Anrichten & servieren",
+          "text": "Porridge in Schalen füllen, mit Zimt-Äpfeln, Pekannüssen, Rosinen und einer großzügigen Handvoll frischer Beeren belegen, dann mit Ahornsirup und Mandelmus beträufeln.",
+          "ings": [
+            "🟤 Rosinen · 2 tbsp",
+            "🫐 Frische Beeren · 80g"
+          ],
+          "tip": null,
           "kidsHelp": null
         }
       ]
