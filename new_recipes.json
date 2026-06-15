@@ -4731,7 +4731,7 @@
     "cook_minutes": 25,
     "servings": 4,
     "image_url": "",
-    "image_prompt": "Rustic beetroot and feta tart on a wholesome golden almond-oat crust (no puff pastry), caramelised red onion, walnuts, thyme and fresh rocket, one slice cut, bright editorial food photography",
+    "image_prompt": "A rustic round beetroot and feta tart on a pale grey ceramic plate, golden crimped shortcrust edge, overlapping thin slices of deep crimson and pink beetroot, crumbled white feta, toasted walnut pieces and fresh dill scattered on top, one wedge cut and pulled slightly aside with a few crumbs on the plate, a linen napkin beside, overhead top-down shot, soft natural daylight, realistic editorial food photography, homemade, not over-stylised",
     "nutrition": {
       "fat": 30,
       "kcal": 410,
@@ -4781,9 +4781,9 @@
         "amount": "40g"
       },
       {
-        "name": "Rocket",
-        "emoji": "🥬",
-        "amount": "30g"
+        "emoji": "🌿",
+        "name": "Fresh dill",
+        "amount": "10g"
       }
     ],
     "base_ingredients": [
@@ -4836,9 +4836,9 @@
         "amount": "40g"
       },
       {
-        "name": "Rocket",
-        "emoji": "🥬",
-        "amount": "30g"
+        "emoji": "🌿",
+        "name": "Fresh dill",
+        "amount": "10g"
       }
     ],
     "steps": [
@@ -4880,9 +4880,9 @@
       {
         "num": 4,
         "title": "Bake & finish",
-        "text": "Bake at 190°C for 18–20 minutes until set and golden, then finish with fresh rocket.",
+        "text": "Bake at 190°C for 18–20 minutes until set and golden, then finish with fresh dill.",
         "ings": [
-          "🥬 Rocket · 30g"
+          "🌿 Fresh dill · 10g"
         ],
         "tip": null,
         "kidsHelp": null

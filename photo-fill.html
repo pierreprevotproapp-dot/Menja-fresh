@@ -64,7 +64,9 @@ const ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI
 const STYLE=', realistic editorial food photography, natural window light, homemade look, not over-stylised, high detail';
 // Always include this one even though it already has a photo (it looks too AI).
 const FORCE=[{id:'apple-pie-pecan-oat-bowl',title:'Apple Pie Pecan Oat Bowl',badge:'replace AI photo',
-  image_prompt:'A cosy homemade breakfast bowl of creamy oat porridge topped with golden cinnamon-sautéed apple, toasted pecans, plump raisins and a generous scatter of fresh raspberries and blueberries, a swirl of almond butter and a maple drizzle — vibrant pops of red and purple berries against the warm oats — in a ceramic bowl on a wooden table, soft natural window light, realistic homemade food photography, slightly imperfect, not over-stylised'}];
+  image_prompt:'A cosy homemade breakfast bowl of creamy oat porridge topped with golden cinnamon-sautéed apple, toasted pecans, plump raisins and a generous scatter of fresh raspberries and blueberries, a swirl of almond butter and a maple drizzle — vibrant pops of red and purple berries against the warm oats — in a ceramic bowl on a wooden table, soft natural window light, realistic homemade food photography, slightly imperfect, not over-stylised'},
+  {id:'beetroot-feta-tart',title:'Beetroot & Feta Tart',badge:'replace AI photo',
+  image_prompt:'A rustic round beetroot and feta tart on a pale grey ceramic plate, golden crimped shortcrust edge, overlapping thin slices of deep crimson and pink beetroot, crumbled white feta, toasted walnut pieces and fresh dill scattered on top, one wedge cut and pulled slightly aside with a few crumbs on the plate, a linen napkin beside, overhead top-down shot, soft natural daylight, realistic editorial food photography, homemade, not over-stylised'}];
 const $=id=>document.getElementById(id);
 ['falKey','svcKey','model','size'].forEach(id=>{const el=$(id),k='menja_pf_'+id;if(sessionStorage[k])el.value=sessionStorage[k];el.addEventListener('input',()=>sessionStorage[k]=el.value);el.addEventListener('change',()=>sessionStorage[k]=el.value);});
 

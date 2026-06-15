@@ -18762,7 +18762,7 @@
         "Feta",
         "Rote Zwiebel",
         "Walnüsse",
-        "Rucola"
+        "Dill"
       ],
       "base": [
         "Olivenöl",
@@ -18807,9 +18807,9 @@
         },
         {
           "title": "Backen & abschließen",
-          "text": "Bei 190 °C 18–20 Minuten goldbraun backen, dann mit frischem Rucola abschließen.",
+          "text": "Bei 190 °C 18–20 Minuten goldbraun backen, dann mit frischem Dill abschließen.",
           "ings": [
-            "🥬 Rucola · 30g"
+            "🌿 Dill · 10g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -18827,7 +18827,7 @@
         "Feta",
         "Cebolla roja",
         "Nueces",
-        "Rúcula"
+        "Eneldo"
       ],
       "base": [
         "Aceite de oliva",
@@ -18872,9 +18872,9 @@
         },
         {
           "title": "Hornea y termina",
-          "text": "Hornea a 190 °C 18–20 minutos hasta que cuaje y dore, y termina con rúcula fresca.",
+          "text": "Hornea a 190 °C 18–20 minutos hasta que cuaje y dore, y termina con eneldo fresco.",
           "ings": [
-            "🥬 Rúcula · 30g"
+            "🌿 Eneldo · 10g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -18892,7 +18892,7 @@
         "Feta",
         "Oignon rouge",
         "Noix",
-        "Roquette"
+        "Aneth"
       ],
       "base": [
         "Huile d'olive",
@@ -18937,9 +18937,9 @@
         },
         {
           "title": "Cuire et finir",
-          "text": "Cuire à 190 °C 18–20 minutes jusqu'à ce que ce soit pris et doré, puis finir avec de la roquette fraîche.",
+          "text": "Cuire à 190 °C 18–20 minutes jusqu'à ce que ce soit pris et doré, puis finir avec de l'aneth frais.",
           "ings": [
-            "🥬 Roquette · 30g"
+            "🌿 Aneth · 10g"
           ],
           "tip": null,
           "kidsHelp": null
