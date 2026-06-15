@@ -1271,13 +1271,40 @@ const SUPA_URL='https://ekuynkjtcvpiueollznp.supabase.co';
 const SUPA_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrdXlua2p0Y3ZwaXVlb2xsem5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4ODExNTUsImV4cCI6MjA5NTQ1NzE1NX0.rOdHlfIyu6tjzhmexXs25maNVkckCmck-UEhSgM0rEY';
 // Wait for supabase library to load before creating client
 let sb;
+let _sbTries=0,_sbCdnTried=false;
+function withTimeout(p,ms){return Promise.race([p,new Promise(r=>setTimeout(()=>r({__timeout:true}),ms))]);}
 function initSupabase(){
-  if(typeof supabase==='undefined'){
-    setTimeout(initSupabase,50);
+  if(typeof supabase!=='undefined'){
+    try{sb=supabase.createClient(SUPA_URL,SUPA_KEY);}
+    catch(e){console.error('Supabase createClient failed:',e);bootWithoutSupabase();return;}
+    init(); // Start app once Supabase is ready
     return;
   }
-  sb=supabase.createClient(SUPA_URL,SUPA_KEY);
-  init(); // Start app once Supabase is ready
+  _sbTries++;
+  // ~2s in: the local library hasn't loaded — add a CDN fallback source
+  if(_sbTries===40&&!_sbCdnTried){
+    _sbCdnTried=true;
+    console.warn('supabase-client.js slow/missing — adding CDN fallback');
+    const s=document.createElement('script');
+    s.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2';
+    s.crossOrigin='anonymous';
+    document.head.appendChild(s);
+  }
+  // ~10s in: give up gracefully and at least render the UI (never a blank white screen)
+  if(_sbTries>200){
+    console.warn('Supabase library never loaded — booting in offline mode');
+    bootWithoutSupabase();
+    return;
+  }
+  setTimeout(initSupabase,50);
+}
+// Last-resort boot when the Supabase library can't load: show the welcome
+// screen so the user never sees an endless blank page.
+function bootWithoutSupabase(){
+  try{const saved=localStorage.getItem('menja_lang');if(saved&&TR[saved])lang=saved;}catch(e){}
+  try{applyLang();}catch(e){}
+  try{hideLoading();}catch(e){}
+  try{showWelcome();}catch(e){}
 }
 // Don't call init() at bottom — initSupabase handles it
 
@@ -2421,7 +2448,7 @@ async function signInWithFacebook(){
 }
 async function continueAsGuest(){
   isGuest=true;loadLocal();
-  await loadRecipes();
+  await withTimeout(loadRecipes(),8000);
   hideLoading();
   showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤',plan:'guest'}});
 }
@@ -4716,7 +4743,7 @@ async function init(){
       clearTimeout(window._safetyTimer);
       isGuest=false;                       // leaving guest mode → local data migrates to the account
       try{localStorage.removeItem('menja_guest');}catch(e){}
-      await Promise.all([loadUserData(session.user), loadRecipes()]);
+      await withTimeout(Promise.all([loadUserData(session.user), loadRecipes()]),8000);
       hideLoading();
       showApp(session.user);
     }else if(event==='SIGNED_OUT'){
@@ -4747,7 +4774,7 @@ async function init(){
 
     if(session&&session.user){
       // Valid session found — load data and show app
-      await Promise.all([loadUserData(session.user), loadRecipes()]);
+      await withTimeout(Promise.all([loadUserData(session.user), loadRecipes()]),8000);
       hideLoading();
       showApp(session.user);
       return;
@@ -4758,7 +4785,7 @@ async function init(){
       const g=localStorage.getItem('menja_guest');
       if(g&&JSON.parse(g).isGuest){
         isGuest=true;loadLocal();
-        await loadRecipes();
+        await withTimeout(loadRecipes(),8000);
         hideLoading();
         showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤',plan:'guest'}});
         return;
@@ -4778,6 +4805,18 @@ async function init(){
 
 // init() is called by initSupabase() once the library loads
 initSupabase();
+
+// ── Global watchdog — the app must NEVER sit on a blank loading screen ──
+// Whatever goes wrong (library, network, a hanging await), force the welcome
+// screen after 12s if we're still showing the loader.
+setTimeout(()=>{
+  const el=document.getElementById('loading');
+  if(el && el.style.display!=='none' && !el.classList.contains('hide')){
+    console.warn('Watchdog: still loading after 12s — forcing welcome screen');
+    try{hideLoading();}catch(e){}
+    try{showWelcome();}catch(e){}
+  }
+},12000);
 </script>
 
 <script>
