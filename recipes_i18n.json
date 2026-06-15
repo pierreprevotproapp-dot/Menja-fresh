@@ -18736,12 +18736,14 @@
     "de": {
       "title": "Rote-Bete-Feta-Tarte",
       "ingredients": [
-        "Blätterteig",
+        "Mandelmehl",
+        "Hafermehl",
+        "Butter",
+        "Ei",
         "Gekochte Rote Bete",
         "Feta",
         "Rote Zwiebel",
         "Walnüsse",
-        "Ei",
         "Rucola"
       ],
       "base": [
@@ -18754,10 +18756,12 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Teig vorbereiten",
-          "text": "Blätterteig auf ein ausgelegtes Blech rollen, mit dem Messer einen 2-cm-Rand einritzen und den Rand mit verquirltem Ei bestreichen.",
+          "title": "Boden machen",
+          "text": "Mandelmehl, Hafermehl, eine Prise Salz, die kalte Butter und das Ei zu einem Teig verkneten. Gleichmäßig in eine Tarteform drücken und bei 180 °C 12–15 Minuten blind backen, bis fest und leicht goldbraun.",
           "ings": [
-            "🥐 Blätterteig · 320g",
+            "🌰 Mandelmehl · 120g",
+            "🌾 Hafermehl · 80g",
+            "🧈 Butter · 80g",
             "🥚 Ei · 1 pc"
           ],
           "tip": null,
@@ -18774,7 +18778,7 @@
         },
         {
           "title": "Tarte belegen",
-          "text": "Zwiebeln innerhalb des Rands verteilen, Rote-Bete-Scheiben darauf, Feta darüberbröseln, Thymian und Walnüsse aufstreuen und mit etwas Honig beträufeln.",
+          "text": "Zwiebeln auf dem Boden verteilen, Rote-Bete-Scheiben darauf, Feta darüberbröseln, Thymian und Walnüsse aufstreuen und mit etwas Honig beträufeln.",
           "ings": [
             "🫚 Gekochte Rote Bete · 250g",
             "🧀 Feta · 150g",
@@ -18785,7 +18789,7 @@
         },
         {
           "title": "Backen & abschließen",
-          "text": "Bei 200 °C 22–25 Minuten goldbraun backen. Mit frischem Rucola abschließen.",
+          "text": "Bei 190 °C 18–20 Minuten goldbraun backen, dann mit frischem Rucola abschließen.",
           "ings": [
             "🥬 Rucola · 30g"
           ],
@@ -18797,12 +18801,14 @@
     "es": {
       "title": "Tarta de remolacha y feta",
       "ingredients": [
-        "Hojaldre",
+        "Harina de almendra",
+        "Harina de avena",
+        "Mantequilla",
+        "Huevo",
         "Remolacha cocida",
         "Feta",
         "Cebolla roja",
         "Nueces",
-        "Huevo",
         "Rúcula"
       ],
       "base": [
@@ -18815,10 +18821,12 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Prepara el hojaldre",
-          "text": "Extiende el hojaldre en una bandeja forrada, marca un borde de 2 cm con un cuchillo y pinta el borde con huevo batido.",
+          "title": "Haz la base",
+          "text": "Mezcla con las manos la harina de almendra, la de avena, una pizca de sal, la mantequilla fría y el huevo hasta formar una masa. Presiónala en un molde de tarta y hornéala en vacío a 180 °C 12–15 minutos hasta que cuaje y dore ligeramente.",
           "ings": [
-            "🥐 Hojaldre · 320g",
+            "🌰 Harina de almendra · 120g",
+            "🌾 Harina de avena · 80g",
+            "🧈 Mantequilla · 80g",
             "🥚 Huevo · 1 pc"
           ],
           "tip": null,
@@ -18835,7 +18843,7 @@
         },
         {
           "title": "Cubre la tarta",
-          "text": "Reparte la cebolla dentro del borde, coloca la remolacha en rodajas, desmenuza el feta, esparce tomillo y nueces y riega con un poco de miel.",
+          "text": "Reparte la cebolla sobre la base, coloca la remolacha en rodajas, desmenuza el feta, esparce tomillo y nueces y riega con un poco de miel.",
           "ings": [
             "🫚 Remolacha cocida · 250g",
             "🧀 Feta · 150g",
@@ -18846,7 +18854,7 @@
         },
         {
           "title": "Hornea y termina",
-          "text": "Hornea a 200 °C 22–25 minutos hasta que el hojaldre esté hinchado y dorado. Termina con rúcula fresca.",
+          "text": "Hornea a 190 °C 18–20 minutos hasta que cuaje y dore, y termina con rúcula fresca.",
           "ings": [
             "🥬 Rúcula · 30g"
           ],
@@ -18858,12 +18866,14 @@
     "fr": {
       "title": "Tarte betterave & feta",
       "ingredients": [
-        "Pâte feuilletée",
+        "Poudre d'amande",
+        "Farine d'avoine",
+        "Beurre",
+        "Œuf",
         "Betterave cuite",
         "Feta",
         "Oignon rouge",
         "Noix",
-        "Œuf",
         "Roquette"
       ],
       "base": [
@@ -18877,9 +18887,11 @@
       "steps": [
         {
           "title": "Préparer la pâte",
-          "text": "Dérouler la pâte feuilletée sur une plaque chemisée, marquer un bord de 2 cm au couteau et le badigeonner d'œuf battu.",
+          "text": "Sabler la poudre d'amande, la farine d'avoine, une pincée de sel, le beurre froid et l'œuf en une pâte. Tasser dans un moule à tarte et cuire à blanc à 180 °C 12–15 minutes jusqu'à ce que ce soit pris et légèrement doré.",
           "ings": [
-            "🥐 Pâte feuilletée · 320g",
+            "🌰 Poudre d'amande · 120g",
+            "🌾 Farine d'avoine · 80g",
+            "🧈 Beurre · 80g",
             "🥚 Œuf · 1 pc"
           ],
           "tip": null,
@@ -18896,7 +18908,7 @@
         },
         {
           "title": "Garnir la tarte",
-          "text": "Étaler l'oignon à l'intérieur du bord, disposer la betterave en tranches, émietter la feta, parsemer de thym et de noix et arroser d'un peu de miel.",
+          "text": "Étaler l'oignon sur la pâte, disposer la betterave en tranches, émietter la feta, parsemer de thym et de noix et arroser d'un peu de miel.",
           "ings": [
             "🫚 Betterave cuite · 250g",
             "🧀 Feta · 150g",
@@ -18907,7 +18919,7 @@
         },
         {
           "title": "Cuire et finir",
-          "text": "Cuire à 200 °C 22–25 minutes jusqu'à ce que la pâte soit gonflée et dorée. Finir avec de la roquette fraîche.",
+          "text": "Cuire à 190 °C 18–20 minutes jusqu'à ce que ce soit pris et doré, puis finir avec de la roquette fraîche.",
           "ings": [
             "🥬 Roquette · 30g"
           ],

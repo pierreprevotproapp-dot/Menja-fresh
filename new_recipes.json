@@ -4710,7 +4710,7 @@
   {
     "id": "beetroot-feta-tart",
     "title": "Beetroot & Feta Tart",
-    "subtitle": "Jammy onions, sweet beetroot and salty feta on crisp puff pastry",
+    "subtitle": "Jammy onions, sweet beetroot and feta on a crisp almond-oat crust",
     "emoji": "🫚",
     "is_kids": false,
     "tags": [
@@ -4730,19 +4730,34 @@
     "cook_minutes": 25,
     "servings": 4,
     "image_url": "",
-    "image_prompt": "Rustic beetroot and feta puff pastry tart with caramelised red onion, walnuts, thyme and fresh rocket, one slice cut, bright editorial food photography",
+    "image_prompt": "Rustic beetroot and feta tart on a wholesome golden almond-oat crust (no puff pastry), caramelised red onion, walnuts, thyme and fresh rocket, one slice cut, bright editorial food photography",
     "nutrition": {
-      "fat": 24,
-      "kcal": 420,
-      "carbs": 34,
-      "fiber": 4,
-      "protein": 11
+      "fat": 30,
+      "kcal": 410,
+      "carbs": 20,
+      "fiber": 5,
+      "protein": 14
     },
     "ingredients": [
       {
-        "name": "Puff pastry",
-        "emoji": "🥐",
-        "amount": "320g"
+        "name": "Almond flour",
+        "emoji": "🌰",
+        "amount": "120g"
+      },
+      {
+        "name": "Oat flour",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "80g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
       },
       {
         "name": "Cooked beetroot",
@@ -4763,11 +4778,6 @@
         "name": "Walnuts",
         "emoji": "🌰",
         "amount": "40g"
-      },
-      {
-        "name": "Egg",
-        "emoji": "🥚",
-        "amount": "1 pc"
       },
       {
         "name": "Rocket",
@@ -4785,9 +4795,24 @@
     "dressing": [],
     "mise_en_place": [
       {
-        "name": "Puff pastry",
-        "emoji": "🥐",
-        "amount": "320g"
+        "name": "Almond flour",
+        "emoji": "🌰",
+        "amount": "120g"
+      },
+      {
+        "name": "Oat flour",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "80g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
       },
       {
         "name": "Cooked beetroot",
@@ -4810,11 +4835,6 @@
         "amount": "40g"
       },
       {
-        "name": "Egg",
-        "emoji": "🥚",
-        "amount": "1 pc"
-      },
-      {
         "name": "Rocket",
         "emoji": "🥬",
         "amount": "30g"
@@ -4823,13 +4843,15 @@
     "steps": [
       {
         "num": 1,
-        "title": "Prep the pastry",
-        "text": "Unroll the puff pastry onto a lined tray, score a 2 cm border with a knife and brush the border with beaten egg.",
+        "title": "Make the crust",
+        "text": "Rub together the almond flour, oat flour, a pinch of salt, the cold butter and the egg into a dough. Press evenly into a tart tin and blind-bake at 180°C for 12–15 minutes until set and lightly golden.",
         "ings": [
-          "🥐 Puff pastry · 320g",
+          "🌰 Almond flour · 120g",
+          "🌾 Oat flour · 80g",
+          "🧈 Butter · 80g",
           "🥚 Egg · 1 pc"
         ],
-        "tip": null,
+        "tip": "Buckwheat flour works in place of the oat flour for a nuttier, gluten-free crust.",
         "kidsHelp": null
       },
       {
@@ -4845,19 +4867,19 @@
       {
         "num": 3,
         "title": "Top the tart",
-        "text": "Spread the onion inside the border, arrange the sliced beetroot, crumble over the feta, scatter thyme and walnuts and drizzle with a little honey.",
+        "text": "Spread the onion over the crust, arrange the sliced beetroot, crumble over the feta, scatter thyme and walnuts and drizzle with a little honey.",
         "ings": [
           "🫚 Cooked beetroot · 250g",
           "🧀 Feta · 150g",
           "🌰 Walnuts · 40g"
         ],
-        "tip": "Pat the beetroot dry first so the pastry stays crisp, not soggy.",
+        "tip": "Pat the beetroot dry first so the crust stays crisp.",
         "kidsHelp": null
       },
       {
         "num": 4,
         "title": "Bake & finish",
-        "text": "Bake at 200°C for 22–25 minutes until the pastry is puffed and golden. Finish with fresh rocket.",
+        "text": "Bake at 190°C for 18–20 minutes until set and golden, then finish with fresh rocket.",
         "ings": [
           "🥬 Rocket · 30g"
         ],
