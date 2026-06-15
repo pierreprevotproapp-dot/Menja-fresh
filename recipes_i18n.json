@@ -17658,5 +17658,1263 @@
         }
       ]
     }
+  },
+  "apple-crumble": {
+    "de": {
+      "title": "Apfel-Hafer-Crumble",
+      "ingredients": [
+        "Äpfel",
+        "Haferflocken",
+        "Weizenmehl",
+        "Butter",
+        "Brauner Zucker",
+        "Pekannüsse"
+      ],
+      "base": [
+        "Zimt",
+        "Ahornsirup",
+        "Eine Prise Salz"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Äpfel vorbereiten",
+          "text": "Äpfel schälen, entkernen, in Scheiben schneiden, mit Zimt und etwas Ahornsirup mischen und in eine Auflaufform geben.",
+          "ings": [
+            "🍎 Äpfel · 800g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Streusel machen",
+          "text": "Butter mit Haferflocken, Mehl, braunem Zucker und gehackten Pekannüssen mit den Fingern zu Streuseln verreiben.",
+          "ings": [
+            "🌾 Haferflocken · 80g",
+            "🌾 Weizenmehl · 80g",
+            "🧈 Butter · 90g",
+            "🟤 Brauner Zucker · 60g",
+            "🌰 Pekannüsse · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Backen",
+          "text": "Streusel über die Äpfel geben und bei 190 °C 35–40 Minuten goldbraun backen.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Crumble de manzana y avena",
+      "ingredients": [
+        "Manzanas",
+        "Copos de avena",
+        "Harina de trigo",
+        "Mantequilla",
+        "Azúcar moreno",
+        "Nueces pecanas"
+      ],
+      "base": [
+        "Canela",
+        "Sirope de arce",
+        "Una pizca de sal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Prepara las manzanas",
+          "text": "Pela, descorazona y corta las manzanas, mézclalas con canela y un poco de sirope y ponlas en una fuente.",
+          "ings": [
+            "🍎 Manzanas · 800g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Haz el crumble",
+          "text": "Mezcla con los dedos la mantequilla con la avena, la harina, el azúcar moreno y las nueces picadas hasta formar grumos.",
+          "ings": [
+            "🌾 Copos de avena · 80g",
+            "🌾 Harina de trigo · 80g",
+            "🧈 Mantequilla · 90g",
+            "🟤 Azúcar moreno · 60g",
+            "🌰 Nueces pecanas · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea",
+          "text": "Reparte el crumble sobre las manzanas y hornea a 190 °C 35–40 minutos hasta dorar.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Crumble pommes & avoine",
+      "ingredients": [
+        "Pommes",
+        "Flocons d'avoine",
+        "Farine de blé",
+        "Beurre",
+        "Sucre roux",
+        "Noix de pécan"
+      ],
+      "base": [
+        "Cannelle",
+        "Sirop d'érable",
+        "Une pincée de sel"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Préparer les pommes",
+          "text": "Éplucher, évider et couper les pommes, les mélanger avec la cannelle et un peu de sirop et les mettre dans un plat.",
+          "ings": [
+            "🍎 Pommes · 800g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer le crumble",
+          "text": "Sabler du bout des doigts le beurre avec les flocons, la farine, le sucre roux et les noix concassées jusqu'à obtenir des grumeaux.",
+          "ings": [
+            "🌾 Flocons d'avoine · 80g",
+            "🌾 Farine de blé · 80g",
+            "🧈 Beurre · 90g",
+            "🟤 Sucre roux · 60g",
+            "🌰 Noix de pécan · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire",
+          "text": "Répartir le crumble sur les pommes et cuire à 190 °C 35–40 minutes jusqu'à doré.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "orange-energy-balls": {
+    "de": {
+      "title": "Orangen-Mandel-Energiekugeln",
+      "ingredients": [
+        "Medjool-Datteln",
+        "Haferflocken",
+        "Mandeln",
+        "Orange",
+        "Kokosraspeln"
+      ],
+      "base": [
+        "Vanilleextrakt",
+        "Eine Prise Salz"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Nüsse & Hafer mahlen",
+          "text": "Mandeln und Haferflocken im Mixer grob mahlen.",
+          "ings": [
+            "🌰 Mandeln · 80g",
+            "🌾 Haferflocken · 80g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Datteln & Orange zugeben",
+          "text": "Entsteinte Datteln, Abrieb und Saft der Orange, Vanille und eine Prise Salz zugeben und zu einem klebrigen Teig mixen.",
+          "ings": [
+            "🌴 Medjool-Datteln · 200g",
+            "🍊 Orange · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Rollen & kühlen",
+          "text": "Zu Kugeln rollen, in Kokosraspeln wälzen und 30 Minuten kühlen.",
+          "ings": [
+            "🥥 Kokosraspeln · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Bolitas energéticas de naranja y almendra",
+      "ingredients": [
+        "Dátiles Medjool",
+        "Copos de avena",
+        "Almendras",
+        "Naranja",
+        "Coco rallado"
+      ],
+      "base": [
+        "Extracto de vainilla",
+        "Una pizca de sal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Tritura frutos secos y avena",
+          "text": "Tritura las almendras y la avena en la picadora hasta una textura gruesa.",
+          "ings": [
+            "🌰 Almendras · 80g",
+            "🌾 Copos de avena · 80g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade dátiles y naranja",
+          "text": "Añade los dátiles sin hueso, la ralladura y el zumo de la naranja, la vainilla y una pizca de sal, y tritura hasta una masa pegajosa.",
+          "ings": [
+            "🌴 Dátiles Medjool · 200g",
+            "🍊 Naranja · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Forma y enfría",
+          "text": "Forma bolitas, rebózalas en coco rallado y refrigera 30 minutos.",
+          "ings": [
+            "🥥 Coco rallado · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Billes énergétiques orange & amande",
+      "ingredients": [
+        "Dattes Medjool",
+        "Flocons d'avoine",
+        "Amandes",
+        "Orange",
+        "Noix de coco râpée"
+      ],
+      "base": [
+        "Extrait de vanille",
+        "Une pincée de sel"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Mixer fruits secs et avoine",
+          "text": "Mixer les amandes et les flocons d'avoine en une poudre grossière.",
+          "ings": [
+            "🌰 Amandes · 80g",
+            "🌾 Flocons d'avoine · 80g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter dattes et orange",
+          "text": "Ajouter les dattes dénoyautées, le zeste et le jus de l'orange, la vanille et une pincée de sel, et mixer en une pâte collante.",
+          "ings": [
+            "🌴 Dattes Medjool · 200g",
+            "🍊 Orange · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Rouler et réfrigérer",
+          "text": "Façonner des billes, les rouler dans la noix de coco râpée et réfrigérer 30 minutes.",
+          "ings": [
+            "🥥 Noix de coco râpée · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "baked-cheesecake-lighter": {
+    "de": {
+      "title": "Gebackener Vanille-Käsekuchen",
+      "ingredients": [
+        "Frischkäse",
+        "Griechischer Joghurt",
+        "Zucker",
+        "Eier",
+        "Butterkekse",
+        "Butter"
+      ],
+      "base": [
+        "Vanilleextrakt",
+        "Zitronenabrieb"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Boden machen",
+          "text": "Kekse zerbröseln, mit geschmolzener Butter mischen und fest in eine ausgelegte Form drücken. Kühlen, während die Füllung entsteht.",
+          "ings": [
+            "🍪 Butterkekse · 200g",
+            "🧈 Butter · 70g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Füllung",
+          "text": "Frischkäse mit dem Zucker glatt rühren, dann die Eier einzeln, den griechischen Joghurt, Vanille und Zitronenabrieb unterrühren.",
+          "ings": [
+            "🧀 Frischkäse · 400g",
+            "🍬 Zucker · 120g",
+            "🥚 Eier · 3 pcs",
+            "🥛 Griechischer Joghurt · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Niedrig backen",
+          "text": "Über den Boden gießen und bei 160 °C etwa 55 Minuten backen, bis die Mitte gerade fest ist und leicht wackelt.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Kühlen",
+          "text": "Im ausgeschalteten Ofen mit leicht geöffneter Tür abkühlen, dann mehrere Stunden kühlen.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Tarta de queso al horno con vainilla",
+      "ingredients": [
+        "Queso crema",
+        "Yogur griego",
+        "Azúcar",
+        "Huevos",
+        "Galletas digestive",
+        "Mantequilla"
+      ],
+      "base": [
+        "Extracto de vainilla",
+        "Ralladura de limón"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Haz la base",
+          "text": "Tritura las galletas, mézclalas con la mantequilla fundida y presiónalas en un molde forrado. Refrigera mientras preparas el relleno.",
+          "ings": [
+            "🍪 Galletas digestive · 200g",
+            "🧈 Mantequilla · 70g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Relleno",
+          "text": "Bate el queso crema con el azúcar, luego incorpora los huevos uno a uno, el yogur griego, la vainilla y la ralladura de limón.",
+          "ings": [
+            "🧀 Queso crema · 400g",
+            "🍬 Azúcar · 120g",
+            "🥚 Huevos · 3 pcs",
+            "🥛 Yogur griego · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea suave",
+          "text": "Vierte sobre la base y hornea a 160 °C unos 55 minutos hasta que el centro esté casi cuajado y tiemble un poco.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Enfría",
+          "text": "Deja enfriar en el horno apagado con la puerta entreabierta y refrigera varias horas antes de cortar.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Cheesecake vanille au four",
+      "ingredients": [
+        "Fromage frais",
+        "Yaourt grec",
+        "Sucre",
+        "Œufs",
+        "Biscuits digestive",
+        "Beurre"
+      ],
+      "base": [
+        "Extrait de vanille",
+        "Zeste de citron"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Préparer la base",
+          "text": "Émietter les biscuits, mélanger au beurre fondu et tasser dans un moule chemisé. Réfrigérer pendant la préparation de l'appareil.",
+          "ings": [
+            "🍪 Biscuits digestive · 200g",
+            "🧈 Beurre · 70g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Appareil",
+          "text": "Battre le fromage frais avec le sucre, puis incorporer les œufs un à un, le yaourt grec, la vanille et le zeste de citron.",
+          "ings": [
+            "🧀 Fromage frais · 400g",
+            "🍬 Sucre · 120g",
+            "🥚 Œufs · 3 pcs",
+            "🥛 Yaourt grec · 200g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire doucement",
+          "text": "Verser sur la base et cuire à 160 °C environ 55 minutes jusqu'à ce que le centre soit juste pris et tremble légèrement.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Refroidir",
+          "text": "Laisser refroidir dans le four éteint porte entrouverte, puis réfrigérer plusieurs heures avant de trancher.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "tiramisu-lighter": {
+    "de": {
+      "title": "Leichteres Tiramisu",
+      "ingredients": [
+        "Mascarpone",
+        "Griechischer Joghurt",
+        "Eier",
+        "Zucker",
+        "Löffelbiskuits",
+        "Starker Kaffee",
+        "Kakaopulver"
+      ],
+      "base": [
+        "Vanilleextrakt"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Creme aufschlagen",
+          "text": "Eigelb mit dem Zucker hell aufschlagen, dann Mascarpone, griechischen Joghurt und Vanille unterheben. Eiweiß zu weichen Spitzen schlagen und unterheben.",
+          "ings": [
+            "🥚 Eier · 3 pcs",
+            "🍬 Zucker · 70g",
+            "🧀 Mascarpone · 250g",
+            "🥛 Griechischer Joghurt · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Biskuits tränken",
+          "text": "Löffelbiskuits kurz in den abgekühlten Kaffee tauchen — zügig, damit sie nicht durchweichen.",
+          "ings": [
+            "🍪 Löffelbiskuits · 200g",
+            "☕ Starker Kaffee · 300ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Schichten",
+          "text": "Getränkte Biskuits und Creme schichten, wiederholen und mit einer glatten Cremeschicht abschließen.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Kühlen & bestäuben",
+          "text": "Mindestens 4 Stunden kühlen, dann kurz vor dem Servieren großzügig mit Kakao bestäuben.",
+          "ings": [
+            "🍫 Kakaopulver · 2 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Tiramisú más ligero",
+      "ingredients": [
+        "Mascarpone",
+        "Yogur griego",
+        "Huevos",
+        "Azúcar",
+        "Bizcochos de soletilla",
+        "Café fuerte",
+        "Cacao en polvo"
+      ],
+      "base": [
+        "Extracto de vainilla"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Monta la crema",
+          "text": "Bate las yemas con el azúcar hasta que blanqueen, luego incorpora el mascarpone, el yogur griego y la vainilla. Monta las claras a punto suave e incorpóralas.",
+          "ings": [
+            "🥚 Huevos · 3 pcs",
+            "🍬 Azúcar · 70g",
+            "🧀 Mascarpone · 250g",
+            "🥛 Yogur griego · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Empapa los bizcochos",
+          "text": "Moja los bizcochos un momento en el café frío — rápido, para que no se deshagan.",
+          "ings": [
+            "🍪 Bizcochos de soletilla · 200g",
+            "☕ Café fuerte · 300ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monta capas",
+          "text": "Alterna bizcochos empapados y crema, repite y termina con una capa lisa de crema.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Enfría y espolvorea",
+          "text": "Refrigera al menos 4 horas y espolvorea generosamente con cacao justo antes de servir.",
+          "ings": [
+            "🍫 Cacao en polvo · 2 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Tiramisu plus léger",
+      "ingredients": [
+        "Mascarpone",
+        "Yaourt grec",
+        "Œufs",
+        "Sucre",
+        "Biscuits à la cuillère",
+        "Café fort",
+        "Cacao en poudre"
+      ],
+      "base": [
+        "Extrait de vanille"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Monter la crème",
+          "text": "Battre les jaunes avec le sucre jusqu'à blanchiment, puis incorporer le mascarpone, le yaourt grec et la vanille. Monter les blancs en neige souple et les incorporer.",
+          "ings": [
+            "🥚 Œufs · 3 pcs",
+            "🍬 Sucre · 70g",
+            "🧀 Mascarpone · 250g",
+            "🥛 Yaourt grec · 250g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Imbiber les biscuits",
+          "text": "Tremper rapidement les biscuits dans le café refroidi — vite, pour qu'ils ne se détrempent pas.",
+          "ings": [
+            "🍪 Biscuits à la cuillère · 200g",
+            "☕ Café fort · 300ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monter",
+          "text": "Alterner biscuits imbibés et crème, répéter et finir par une couche lisse de crème.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Réfrigérer et saupoudrer",
+          "text": "Réfrigérer au moins 4 heures, puis saupoudrer généreusement de cacao juste avant de servir.",
+          "ings": [
+            "🍫 Cacao en poudre · 2 tbsp"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "chocolate-chip-cookies": {
+    "de": {
+      "title": "Schoko-Cookies",
+      "ingredients": [
+        "Weizenmehl",
+        "Vollkornmehl",
+        "Butter",
+        "Brauner Zucker",
+        "Ei",
+        "Zartbitter-Schokostückchen"
+      ],
+      "base": [
+        "Vanilleextrakt",
+        "Natron",
+        "Meersalz"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Butter & Zucker cremig rühren",
+          "text": "Weiche Butter mit braunem Zucker cremig rühren, dann Ei und Vanille unterrühren.",
+          "ings": [
+            "🧈 Butter · 140g",
+            "🟤 Brauner Zucker · 120g",
+            "🥚 Ei · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Teig machen",
+          "text": "Beide Mehle, Natron und eine kräftige Prise Salz unterheben, dann die Schokostückchen.",
+          "ings": [
+            "🌾 Weizenmehl · 200g",
+            "🌾 Vollkornmehl · 50g",
+            "🍫 Zartbitter-Schokostückchen · 150g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Backen",
+          "text": "Häufchen auf ein ausgelegtes Blech setzen und bei 180 °C 10–12 Minuten backen, bis die Ränder goldbraun, die Mitte aber noch weich ist.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Galletas con pepitas de chocolate",
+      "ingredients": [
+        "Harina de trigo",
+        "Harina integral",
+        "Mantequilla",
+        "Azúcar moreno",
+        "Huevo",
+        "Pepitas de chocolate negro"
+      ],
+      "base": [
+        "Extracto de vainilla",
+        "Bicarbonato",
+        "Sal marina"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Bate mantequilla y azúcar",
+          "text": "Bate la mantequilla blanda con el azúcar moreno hasta que esté cremosa, luego incorpora el huevo y la vainilla.",
+          "ings": [
+            "🧈 Mantequilla · 140g",
+            "🟤 Azúcar moreno · 120g",
+            "🥚 Huevo · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Haz la masa",
+          "text": "Incorpora las dos harinas, el bicarbonato y una buena pizca de sal, y por último las pepitas de chocolate.",
+          "ings": [
+            "🌾 Harina de trigo · 200g",
+            "🌾 Harina integral · 50g",
+            "🍫 Pepitas de chocolate negro · 150g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea",
+          "text": "Coloca montoncitos en una bandeja forrada y hornea a 180 °C 10–12 minutos hasta que los bordes estén dorados y el centro siga blando.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Cookies aux pépites de chocolat",
+      "ingredients": [
+        "Farine de blé",
+        "Farine complète",
+        "Beurre",
+        "Sucre roux",
+        "Œuf",
+        "Pépites de chocolat noir"
+      ],
+      "base": [
+        "Extrait de vanille",
+        "Bicarbonate",
+        "Sel marin"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Crémer beurre et sucre",
+          "text": "Battre le beurre mou avec le sucre roux jusqu'à consistance crémeuse, puis incorporer l'œuf et la vanille.",
+          "ings": [
+            "🧈 Beurre · 140g",
+            "🟤 Sucre roux · 120g",
+            "🥚 Œuf · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Faire la pâte",
+          "text": "Incorporer les deux farines, le bicarbonate et une bonne pincée de sel, puis les pépites de chocolat.",
+          "ings": [
+            "🌾 Farine de blé · 200g",
+            "🌾 Farine complète · 50g",
+            "🍫 Pépites de chocolat noir · 150g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire",
+          "text": "Déposer des petits tas sur une plaque chemisée et cuire à 180 °C 10–12 minutes jusqu'à ce que les bords soient dorés et le centre encore moelleux.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "molten-chocolate-lava-cake": {
+    "de": {
+      "title": "Schokoladen-Lavakuchen",
+      "ingredients": [
+        "Zartbitterschokolade",
+        "Butter",
+        "Eier",
+        "Ahornsirup",
+        "Gemahlene Mandeln"
+      ],
+      "base": [
+        "Vanilleextrakt",
+        "Eine Prise Salz",
+        "Kakaopulver (für die Förmchen)"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Schmelzen",
+          "text": "Zartbitterschokolade mit der Butter glatt schmelzen, dann leicht abkühlen lassen.",
+          "ings": [
+            "🍫 Zartbitterschokolade · 120g",
+            "🧈 Butter · 90g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Teig",
+          "text": "Eier mit Ahornsirup und Vanille hell aufschlagen, geschmolzene Schokolade unterheben, dann gemahlene Mandeln und eine Prise Salz.",
+          "ings": [
+            "🥚 Eier · 2 pcs",
+            "🍁 Ahornsirup · 60ml",
+            "🌰 Gemahlene Mandeln · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Heiß & kurz backen",
+          "text": "In gebutterte, mit Kakao bestäubte Förmchen füllen und bei 200 °C 10–12 Minuten backen, bis außen fest, innen flüssig.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sofort servieren",
+          "text": "Stürzen und sofort servieren, solange die Mitte noch flüssig ist.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Coulant de chocolate",
+      "ingredients": [
+        "Chocolate negro",
+        "Mantequilla",
+        "Huevos",
+        "Sirope de arce",
+        "Almendra molida"
+      ],
+      "base": [
+        "Extracto de vainilla",
+        "Una pizca de sal",
+        "Cacao en polvo (para los moldes)"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Funde",
+          "text": "Funde el chocolate negro con la mantequilla hasta que quede liso y deja enfriar un poco.",
+          "ings": [
+            "🍫 Chocolate negro · 120g",
+            "🧈 Mantequilla · 90g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Masa",
+          "text": "Bate los huevos con el sirope de arce y la vainilla hasta que blanqueen, incorpora el chocolate fundido y luego la almendra molida y una pizca de sal.",
+          "ings": [
+            "🥚 Huevos · 2 pcs",
+            "🍁 Sirope de arce · 60ml",
+            "🌰 Almendra molida · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea fuerte y corto",
+          "text": "Vierte en moldes engrasados y espolvoreados con cacao y hornea a 200 °C 10–12 minutos hasta que estén cuajados por fuera y líquidos por dentro.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Sirve al momento",
+          "text": "Desmolda y sirve enseguida mientras el centro siga líquido.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Coulant au chocolat",
+      "ingredients": [
+        "Chocolat noir",
+        "Beurre",
+        "Œufs",
+        "Sirop d'érable",
+        "Poudre d'amande"
+      ],
+      "base": [
+        "Extrait de vanille",
+        "Une pincée de sel",
+        "Cacao en poudre (pour les moules)"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Faire fondre",
+          "text": "Faire fondre le chocolat noir avec le beurre jusqu'à lisse, puis laisser tiédir.",
+          "ings": [
+            "🍫 Chocolat noir · 120g",
+            "🧈 Beurre · 90g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Pâte",
+          "text": "Fouetter les œufs avec le sirop d'érable et la vanille jusqu'à blanchiment, incorporer le chocolat fondu, puis la poudre d'amande et une pincée de sel.",
+          "ings": [
+            "🥚 Œufs · 2 pcs",
+            "🍁 Sirop d'érable · 60ml",
+            "🌰 Poudre d'amande · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire chaud et court",
+          "text": "Verser dans des ramequins beurrés et chemisés de cacao et cuire à 200 °C 10–12 minutes jusqu'à ce que ce soit pris dehors et coulant au centre.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Servir aussitôt",
+          "text": "Démouler et servir immédiatement tant que le centre est coulant.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "creme-brulee": {
+    "de": {
+      "title": "Crème brûlée",
+      "ingredients": [
+        "Schlagsahne",
+        "Eigelb",
+        "Zucker"
+      ],
+      "base": [
+        "Vanilleextrakt",
+        "Zucker (für die Kruste)"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Sahne aromatisieren",
+          "text": "Sahne mit Vanille sanft erwärmen, bis sie dampft — nicht kochen.",
+          "ings": [
+            "🥛 Schlagsahne · 500ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Creme machen",
+          "text": "Eigelb mit dem Zucker verrühren, dann langsam die warme Sahne unterrühren.",
+          "ings": [
+            "🥚 Eigelb · 5 pcs",
+            "🍬 Zucker · 70g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Im Wasserbad backen",
+          "text": "In Förmchen füllen, in ein Blech mit heißem Wasser stellen und bei 150 °C 35–40 Minuten backen, bis gerade fest. Abkühlen, dann kühlen.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Kruste flambieren",
+          "text": "Mit einer dünnen Zuckerschicht bestreuen und kurz vor dem Servieren mit dem Bunsenbrenner (oder unter dem heißen Grill) karamellisieren.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Crema catalana / crème brûlée",
+      "ingredients": [
+        "Nata para montar",
+        "Yemas de huevo",
+        "Azúcar"
+      ],
+      "base": [
+        "Extracto de vainilla",
+        "Azúcar (para la costra)"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Infusiona la nata",
+          "text": "Calienta la nata con la vainilla hasta que humee — sin que hierva.",
+          "ings": [
+            "🥛 Nata para montar · 500ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Haz la crema",
+          "text": "Bate las yemas con el azúcar y luego incorpora poco a poco la nata caliente.",
+          "ings": [
+            "🥚 Yemas de huevo · 5 pcs",
+            "🍬 Azúcar · 70g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea al baño maría",
+          "text": "Reparte en ramequines, ponlos en una bandeja con agua caliente y hornea a 150 °C 35–40 minutos hasta que cuaje. Enfría y refrigera.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Quema la costra",
+          "text": "Espolvorea una capa fina de azúcar y caramelízala con soplete (o bajo el grill) justo antes de servir.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Crème brûlée à la vanille",
+      "ingredients": [
+        "Crème entière",
+        "Jaunes d'œuf",
+        "Sucre"
+      ],
+      "base": [
+        "Extrait de vanille",
+        "Sucre (pour le dessus)"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Infuser la crème",
+          "text": "Chauffer doucement la crème avec la vanille jusqu'à frémissement — sans la faire bouillir.",
+          "ings": [
+            "🥛 Crème entière · 500ml"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Préparer la crème",
+          "text": "Fouetter les jaunes avec le sucre, puis incorporer lentement la crème chaude.",
+          "ings": [
+            "🥚 Jaunes d'œuf · 5 pcs",
+            "🍬 Sucre · 70g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire au bain-marie",
+          "text": "Répartir dans des ramequins, les poser dans un plat d'eau chaude et cuire à 150 °C 35–40 minutes jusqu'à juste prise. Refroidir, puis réfrigérer.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Caraméliser le dessus",
+          "text": "Saupoudrer d'une fine couche de sucre et caraméliser au chalumeau (ou sous le gril) juste avant de servir.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "beetroot-feta-tart": {
+    "de": {
+      "title": "Rote-Bete-Feta-Tarte",
+      "ingredients": [
+        "Blätterteig",
+        "Gekochte Rote Bete",
+        "Feta",
+        "Rote Zwiebel",
+        "Walnüsse",
+        "Ei",
+        "Rucola"
+      ],
+      "base": [
+        "Olivenöl",
+        "Balsamico",
+        "Thymian",
+        "Honig",
+        "Salz & Pfeffer"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Teig vorbereiten",
+          "text": "Blätterteig auf ein ausgelegtes Blech rollen, mit dem Messer einen 2-cm-Rand einritzen und den Rand mit verquirltem Ei bestreichen.",
+          "ings": [
+            "🥐 Blätterteig · 320g",
+            "🥚 Ei · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Zwiebel karamellisieren",
+          "text": "Rote Zwiebel in etwas Olivenöl mit einem Schuss Balsamico weich und marmeladig dünsten.",
+          "ings": [
+            "🧅 Rote Zwiebel · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Tarte belegen",
+          "text": "Zwiebeln innerhalb des Rands verteilen, Rote-Bete-Scheiben darauf, Feta darüberbröseln, Thymian und Walnüsse aufstreuen und mit etwas Honig beträufeln.",
+          "ings": [
+            "🫚 Gekochte Rote Bete · 250g",
+            "🧀 Feta · 150g",
+            "🌰 Walnüsse · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Backen & abschließen",
+          "text": "Bei 200 °C 22–25 Minuten goldbraun backen. Mit frischem Rucola abschließen.",
+          "ings": [
+            "🥬 Rucola · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Tarta de remolacha y feta",
+      "ingredients": [
+        "Hojaldre",
+        "Remolacha cocida",
+        "Feta",
+        "Cebolla roja",
+        "Nueces",
+        "Huevo",
+        "Rúcula"
+      ],
+      "base": [
+        "Aceite de oliva",
+        "Vinagre balsámico",
+        "Tomillo",
+        "Miel",
+        "Sal y pimienta"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Prepara el hojaldre",
+          "text": "Extiende el hojaldre en una bandeja forrada, marca un borde de 2 cm con un cuchillo y pinta el borde con huevo batido.",
+          "ings": [
+            "🥐 Hojaldre · 320g",
+            "🥚 Huevo · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Carameliza la cebolla",
+          "text": "Pocha la cebolla roja en un poco de aceite con un chorro de balsámico hasta que esté blanda y melosa.",
+          "ings": [
+            "🧅 Cebolla roja · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cubre la tarta",
+          "text": "Reparte la cebolla dentro del borde, coloca la remolacha en rodajas, desmenuza el feta, esparce tomillo y nueces y riega con un poco de miel.",
+          "ings": [
+            "🫚 Remolacha cocida · 250g",
+            "🧀 Feta · 150g",
+            "🌰 Nueces · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Hornea y termina",
+          "text": "Hornea a 200 °C 22–25 minutos hasta que el hojaldre esté hinchado y dorado. Termina con rúcula fresca.",
+          "ings": [
+            "🥬 Rúcula · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Tarte betterave & feta",
+      "ingredients": [
+        "Pâte feuilletée",
+        "Betterave cuite",
+        "Feta",
+        "Oignon rouge",
+        "Noix",
+        "Œuf",
+        "Roquette"
+      ],
+      "base": [
+        "Huile d'olive",
+        "Vinaigre balsamique",
+        "Thym",
+        "Miel",
+        "Sel & poivre"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Préparer la pâte",
+          "text": "Dérouler la pâte feuilletée sur une plaque chemisée, marquer un bord de 2 cm au couteau et le badigeonner d'œuf battu.",
+          "ings": [
+            "🥐 Pâte feuilletée · 320g",
+            "🥚 Œuf · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Caraméliser l'oignon",
+          "text": "Faire fondre l'oignon rouge émincé dans un peu d'huile avec un trait de balsamique jusqu'à ce qu'il soit fondant et confit.",
+          "ings": [
+            "🧅 Oignon rouge · 1 pc"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Garnir la tarte",
+          "text": "Étaler l'oignon à l'intérieur du bord, disposer la betterave en tranches, émietter la feta, parsemer de thym et de noix et arroser d'un peu de miel.",
+          "ings": [
+            "🫚 Betterave cuite · 250g",
+            "🧀 Feta · 150g",
+            "🌰 Noix · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Cuire et finir",
+          "text": "Cuire à 200 °C 22–25 minutes jusqu'à ce que la pâte soit gonflée et dorée. Finir avec de la roquette fraîche.",
+          "ings": [
+            "🥬 Roquette · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
   }
 }

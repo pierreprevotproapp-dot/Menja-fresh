@@ -3767,5 +3767,1103 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "apple-crumble",
+    "title": "Apple & Oat Crumble",
+    "subtitle": "Cosy classic, lightly wholesome — oats, nuts and just enough sugar",
+    "emoji": "🍎",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 40,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Golden apple and oat crumble in a rustic baking dish, bubbling fruit at the edges, a spoonful served with a little cream, cosy warm food photography",
+    "nutrition": {
+      "fat": 14,
+      "kcal": 330,
+      "carbs": 44,
+      "fiber": 5,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Apples",
+        "emoji": "🍎",
+        "amount": "800g"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "90g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "60g"
+      },
+      {
+        "name": "Pecans",
+        "emoji": "🌰",
+        "amount": "40g"
+      }
+    ],
+    "base_ingredients": [
+      "Cinnamon",
+      "Maple syrup",
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Apples",
+        "emoji": "🍎",
+        "amount": "800g"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "90g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "60g"
+      },
+      {
+        "name": "Pecans",
+        "emoji": "🌰",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Prep the apples",
+        "text": "Peel, core and slice the apples, toss with cinnamon and a little maple syrup and tip into a baking dish.",
+        "ings": [
+          "🍎 Apples · 800g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the crumble",
+        "text": "Rub the butter into the oats, flour, brown sugar and chopped pecans with your fingertips until clumpy.",
+        "ings": [
+          "🌾 Rolled oats · 80g",
+          "🌾 Plain flour · 80g",
+          "🧈 Butter · 90g",
+          "🟤 Brown sugar · 60g",
+          "🌰 Pecans · 40g"
+        ],
+        "tip": "Leave some big clumps — that's where the crunch comes from.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Scatter the crumble over the apples and bake at 190°C for 35–40 minutes until golden and bubbling.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "orange-energy-balls",
+    "title": "Orange & Almond Energy Balls",
+    "subtitle": "No-bake bites sweetened only by dates — bright with orange",
+    "emoji": "🟠",
+    "is_kids": true,
+    "tags": [
+      "Vegan",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Snack",
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 0,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Orange and almond energy balls rolled in desiccated coconut on a plate, fresh orange and dates beside, bright clean natural-food photography",
+    "nutrition": {
+      "fat": 9,
+      "kcal": 190,
+      "carbs": 24,
+      "fiber": 4,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Medjool dates",
+        "emoji": "🌴",
+        "amount": "200g"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Almonds",
+        "emoji": "🌰",
+        "amount": "80g"
+      },
+      {
+        "name": "Orange",
+        "emoji": "🍊",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Desiccated coconut",
+        "emoji": "🥥",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Medjool dates",
+        "emoji": "🌴",
+        "amount": "200g"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Almonds",
+        "emoji": "🌰",
+        "amount": "80g"
+      },
+      {
+        "name": "Orange",
+        "emoji": "🍊",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Desiccated coconut",
+        "emoji": "🥥",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Blitz nuts & oats",
+        "text": "Pulse the almonds and oats in a food processor to a coarse meal.",
+        "ings": [
+          "🌰 Almonds · 80g",
+          "🌾 Rolled oats · 80g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Add dates & orange",
+        "text": "Add the pitted dates, the zest and juice of the orange, vanilla and a pinch of salt, and blitz to a sticky dough.",
+        "ings": [
+          "🌴 Medjool dates · 200g",
+          "🍊 Orange · 1 pc"
+        ],
+        "tip": "Add the orange juice a splash at a time — just enough to bind, so they're not too wet.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Roll & chill",
+        "text": "Roll into balls, then roll in the desiccated coconut. Chill for 30 minutes to firm up.",
+        "ings": [
+          "🥥 Desiccated coconut · 30g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "baked-cheesecake-lighter",
+    "title": "Baked Vanilla Cheesecake",
+    "subtitle": "Creamy and rich but lightened with Greek yogurt",
+    "emoji": "🍰",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 55,
+    "servings": 10,
+    "image_url": "",
+    "image_prompt": "Slice of baked vanilla cheesecake on a biscuit base, smooth creamy top, served on a plate with a few berries, soft natural light",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 340,
+      "carbs": 28,
+      "fiber": 1,
+      "protein": 8
+    },
+    "ingredients": [
+      {
+        "name": "Cream cheese",
+        "emoji": "🧀",
+        "amount": "400g"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "200g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "120g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Digestive biscuits",
+        "emoji": "🍪",
+        "amount": "200g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "70g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Lemon zest"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Cream cheese",
+        "emoji": "🧀",
+        "amount": "400g"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "200g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "120g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Digestive biscuits",
+        "emoji": "🍪",
+        "amount": "200g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "70g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Make the base",
+        "text": "Crush the biscuits, mix with the melted butter and press firmly into a lined tin. Chill while you make the filling.",
+        "ings": [
+          "🍪 Digestive biscuits · 200g",
+          "🧈 Butter · 70g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Filling",
+        "text": "Beat the cream cheese with the sugar until smooth, then beat in the eggs one at a time, the Greek yogurt, vanilla and lemon zest.",
+        "ings": [
+          "🧀 Cream cheese · 400g",
+          "🍬 Sugar · 120g",
+          "🥚 Eggs · 3 pcs",
+          "🥛 Greek yogurt · 200g"
+        ],
+        "tip": "The yogurt keeps it creamy but lighter than an all-cream-cheese cake.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake low & slow",
+        "text": "Pour over the base and bake at 160°C for about 55 minutes until just set with a slight wobble in the centre.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Cool & chill",
+        "text": "Cool in the switched-off oven with the door ajar, then chill several hours before slicing.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "tiramisu-lighter",
+    "title": "Lighter Tiramisu",
+    "subtitle": "The Italian favourite, rounded out with Greek yogurt",
+    "emoji": "🍰",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 30,
+    "cook_minutes": 0,
+    "servings": 8,
+    "image_url": "",
+    "image_prompt": "Lighter tiramisu in a glass dish dusted with cocoa, one portion scooped to show the layers of coffee-soaked biscuit and cream, moody food photography",
+    "nutrition": {
+      "fat": 16,
+      "kcal": 330,
+      "carbs": 30,
+      "fiber": 1,
+      "protein": 9
+    },
+    "ingredients": [
+      {
+        "name": "Mascarpone",
+        "emoji": "🧀",
+        "amount": "250g"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "250g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "70g"
+      },
+      {
+        "name": "Ladyfingers",
+        "emoji": "🍪",
+        "amount": "200g"
+      },
+      {
+        "name": "Strong coffee",
+        "emoji": "☕",
+        "amount": "300ml"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "2 tbsp"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Mascarpone",
+        "emoji": "🧀",
+        "amount": "250g"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "250g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "70g"
+      },
+      {
+        "name": "Ladyfingers",
+        "emoji": "🍪",
+        "amount": "200g"
+      },
+      {
+        "name": "Strong coffee",
+        "emoji": "☕",
+        "amount": "300ml"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Whip the cream",
+        "text": "Beat the egg yolks with the sugar until pale, then fold in the mascarpone, Greek yogurt and vanilla. Whisk the egg whites to soft peaks and fold through.",
+        "ings": [
+          "🥚 Eggs · 3 pcs",
+          "🍬 Sugar · 70g",
+          "🧀 Mascarpone · 250g",
+          "🥛 Greek yogurt · 250g"
+        ],
+        "tip": "The yogurt lightens the mascarpone so it tastes rich but not heavy.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Soak the biscuits",
+        "text": "Dip the ladyfingers briefly in the cooled coffee — quick, so they don't go soggy.",
+        "ings": [
+          "🍪 Ladyfingers · 200g",
+          "☕ Strong coffee · 300ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Layer",
+        "text": "Layer soaked biscuits and cream, repeat, and finish with a smooth layer of cream.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Chill & dust",
+        "text": "Chill for at least 4 hours, then dust generously with cocoa just before serving.",
+        "ings": [
+          "🍫 Cocoa powder · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "chocolate-chip-cookies",
+    "title": "Chocolate Chip Cookies",
+    "subtitle": "Crisp edges, soft middle — a touch of wholemeal for depth",
+    "emoji": "🍪",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 12,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Stack of chocolate chip cookies with melty dark chocolate and crisp golden edges on a cooling rack, warm homely light",
+    "nutrition": {
+      "fat": 11,
+      "kcal": 230,
+      "carbs": 30,
+      "fiber": 2,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "200g"
+      },
+      {
+        "name": "Wholemeal flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "140g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "120g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Dark chocolate chips",
+        "emoji": "🍫",
+        "amount": "150g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Baking soda",
+      "Sea salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "200g"
+      },
+      {
+        "name": "Wholemeal flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "140g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "120g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Dark chocolate chips",
+        "emoji": "🍫",
+        "amount": "150g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cream butter & sugar",
+        "text": "Beat the soft butter with the brown sugar until creamy, then beat in the egg and vanilla.",
+        "ings": [
+          "🧈 Butter · 140g",
+          "🟤 Brown sugar · 120g",
+          "🥚 Egg · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the dough",
+        "text": "Fold in both flours, the baking soda and a good pinch of salt, then the chocolate chips.",
+        "ings": [
+          "🌾 Plain flour · 200g",
+          "🌾 Wholemeal flour · 50g",
+          "🍫 Dark chocolate chips · 150g"
+        ],
+        "tip": "A little wholemeal flour and flaky salt give a more grown-up, less sugary-flat cookie.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Scoop onto a lined tray and bake at 180°C for 10–12 minutes until golden at the edges but still soft in the middle.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "molten-chocolate-lava-cake",
+    "title": "Molten Chocolate Lava Cake",
+    "subtitle": "Gooey-centred and naturally gluten-free with ground almonds",
+    "emoji": "🍫",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 12,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Molten chocolate lava cake on a plate with the gooey centre spilling out, dusting of cocoa and a few raspberries, moody food photography",
+    "nutrition": {
+      "fat": 26,
+      "kcal": 400,
+      "carbs": 28,
+      "fiber": 3,
+      "protein": 8
+    },
+    "ingredients": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "120g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "90g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "60ml"
+      },
+      {
+        "name": "Ground almonds",
+        "emoji": "🌰",
+        "amount": "40g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Pinch of salt",
+      "Cocoa powder (for the moulds)"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "120g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "90g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "60ml"
+      },
+      {
+        "name": "Ground almonds",
+        "emoji": "🌰",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Melt",
+        "text": "Melt the dark chocolate with the butter until smooth, then let it cool slightly.",
+        "ings": [
+          "🍫 Dark chocolate · 120g",
+          "🧈 Butter · 90g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Batter",
+        "text": "Whisk the eggs with the maple syrup and vanilla until pale, fold in the melted chocolate, then the ground almonds and a pinch of salt.",
+        "ings": [
+          "🥚 Eggs · 2 pcs",
+          "🍁 Maple syrup · 60ml",
+          "🌰 Ground almonds · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake hot & short",
+        "text": "Pour into buttered, cocoa-dusted ramekins and bake at 200°C for 10–12 minutes until set outside but molten in the centre.",
+        "ings": [],
+        "tip": "Bake just until the tops are set — the few minutes either side decide gooey vs cakey.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Serve at once",
+        "text": "Turn out and serve immediately while the centre is still runny.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "creme-brulee",
+    "title": "Vanilla Crème Brûlée",
+    "subtitle": "Silky vanilla custard under a crackly caramel top",
+    "emoji": "🍮",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 40,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Crème brûlée in a ramekin with a glassy caramelised sugar top being cracked with a spoon, vanilla flecks in the custard, elegant food photography",
+    "nutrition": {
+      "fat": 38,
+      "kcal": 450,
+      "carbs": 24,
+      "fiber": 0,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Double cream",
+        "emoji": "🥛",
+        "amount": "500ml"
+      },
+      {
+        "name": "Egg yolks",
+        "emoji": "🥚",
+        "amount": "5 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "70g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Sugar (for the top)"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Double cream",
+        "emoji": "🥛",
+        "amount": "500ml"
+      },
+      {
+        "name": "Egg yolks",
+        "emoji": "🥚",
+        "amount": "5 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🍬",
+        "amount": "70g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Infuse the cream",
+        "text": "Gently warm the cream with the vanilla until steaming — do not let it boil.",
+        "ings": [
+          "🥛 Double cream · 500ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the custard",
+        "text": "Whisk the egg yolks with the sugar, then slowly whisk in the warm cream.",
+        "ings": [
+          "🥚 Egg yolks · 5 pcs",
+          "🍬 Sugar · 70g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake in a bain-marie",
+        "text": "Pour into ramekins, set them in a tray of hot water and bake at 150°C for 35–40 minutes until just set. Cool, then chill.",
+        "ings": [],
+        "tip": "The water bath keeps it silky — bake just until it barely jiggles in the middle.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Brûlée the top",
+        "text": "Sprinkle with a thin layer of sugar and caramelise with a blowtorch (or under a hot grill) just before serving.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "beetroot-feta-tart",
+    "title": "Beetroot & Feta Tart",
+    "subtitle": "Jammy onions, sweet beetroot and salty feta on crisp puff pastry",
+    "emoji": "🫚",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Main Course",
+      "Kleine Mahlzeit"
+    ],
+    "categories": [
+      "Tart"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 25,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Rustic beetroot and feta puff pastry tart with caramelised red onion, walnuts, thyme and fresh rocket, one slice cut, bright editorial food photography",
+    "nutrition": {
+      "fat": 24,
+      "kcal": 420,
+      "carbs": 34,
+      "fiber": 4,
+      "protein": 11
+    },
+    "ingredients": [
+      {
+        "name": "Puff pastry",
+        "emoji": "🥐",
+        "amount": "320g"
+      },
+      {
+        "name": "Cooked beetroot",
+        "emoji": "🫚",
+        "amount": "250g"
+      },
+      {
+        "name": "Feta",
+        "emoji": "🧀",
+        "amount": "150g"
+      },
+      {
+        "name": "Red onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Walnuts",
+        "emoji": "🌰",
+        "amount": "40g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rocket",
+        "emoji": "🥬",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Balsamic vinegar",
+      "Thyme",
+      "Honey",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Puff pastry",
+        "emoji": "🥐",
+        "amount": "320g"
+      },
+      {
+        "name": "Cooked beetroot",
+        "emoji": "🫚",
+        "amount": "250g"
+      },
+      {
+        "name": "Feta",
+        "emoji": "🧀",
+        "amount": "150g"
+      },
+      {
+        "name": "Red onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Walnuts",
+        "emoji": "🌰",
+        "amount": "40g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rocket",
+        "emoji": "🥬",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Prep the pastry",
+        "text": "Unroll the puff pastry onto a lined tray, score a 2 cm border with a knife and brush the border with beaten egg.",
+        "ings": [
+          "🥐 Puff pastry · 320g",
+          "🥚 Egg · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Caramelise the onion",
+        "text": "Soften the sliced red onion in a little olive oil with a splash of balsamic until soft and jammy.",
+        "ings": [
+          "🧅 Red onion · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Top the tart",
+        "text": "Spread the onion inside the border, arrange the sliced beetroot, crumble over the feta, scatter thyme and walnuts and drizzle with a little honey.",
+        "ings": [
+          "🫚 Cooked beetroot · 250g",
+          "🧀 Feta · 150g",
+          "🌰 Walnuts · 40g"
+        ],
+        "tip": "Pat the beetroot dry first so the pastry stays crisp, not soggy.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Bake & finish",
+        "text": "Bake at 200°C for 22–25 minutes until the pastry is puffed and golden. Finish with fresh rocket.",
+        "ings": [
+          "🥬 Rocket · 30g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
   }
 ]
