@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Menja · Fill Missing Photos (fal.ai)</title>
+<style>
+  :root{--green:#37704A;--bg:#F7F4EC;--card:#fff;--border:#e4ddcd;--text:#2b2b2b;--muted:#7a7a72;}
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--text)}
+  header{position:sticky;top:0;background:var(--green);color:#fff;padding:14px 20px;z-index:10;box-shadow:0 2px 10px rgba(0,0,0,.15)}
+  header h1{margin:0 0 4px;font-size:18px}
+  .sub{font-size:12px;color:#dfeada;margin-bottom:10px}
+  .row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+  input,select{padding:8px 10px;border-radius:8px;border:1px solid #ffffff55;background:#ffffff20;color:#fff;font-size:13px}
+  input::placeholder{color:#ffffffaa}.k{min-width:240px}
+  label.fld{display:flex;flex-direction:column;gap:3px;font-size:10.5px;color:#cfe0d0}
+  button{padding:8px 14px;border-radius:99px;border:none;background:#E07A4E;color:#fff;font-weight:600;cursor:pointer;font-size:13px}
+  button.ghost{background:#ffffff25}button:disabled{opacity:.5;cursor:not-allowed}
+  .wrap{max-width:980px;margin:18px auto;padding:0 16px}
+  .hint{font-size:12px;color:var(--muted);margin:8px 0 16px;line-height:1.5}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:14px;padding:14px;margin-bottom:14px;display:grid;grid-template-columns:1fr 340px;gap:14px}
+  @media(max-width:720px){.card{grid-template-columns:1fr}}
+  .card h3{margin:0 0 6px;font-size:15px}.card .id{font-size:11px;color:var(--muted);margin-bottom:8px}
+  .card .badge{display:inline-block;font-size:10px;background:#E07A4E22;color:#b25a32;border-radius:99px;padding:2px 8px;margin-left:6px}
+  textarea{width:100%;min-height:96px;padding:10px;border-radius:8px;border:1px solid var(--border);resize:vertical;font-size:12.5px;color:var(--text);background:#fff}
+  .imgbox{background:#f0ece1;border:1px dashed var(--border);border-radius:10px;min-height:210px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+  .imgbox img{width:100%;height:auto;display:block}.imgbox .ph{color:var(--muted);font-size:12px;padding:20px;text-align:center}
+  .actions{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap;align-items:center}
+  .status{font-size:12px;color:var(--muted);margin-top:6px;min-height:16px}.saved{color:#2E7D32;font-weight:600}.err{color:#c0392b}
+</style>
+</head>
+<body>
+<header>
+  <h1>🖼️ Fill Missing Photos</h1>
+  <div class="sub">Only recipes without a photo in the database — plus the Apple Pie Pecan Oat Bowl (needs a less AI-looking shot).</div>
+  <div class="row">
+    <label class="fld">fal.ai API key (to generate)<input class="k" id="falKey" type="password" placeholder="fal-..."></label>
+    <label class="fld">Supabase service key (to save)<input class="k" id="svcKey" type="password" placeholder="eyJ..."></label>
+    <label class="fld">Model<select id="model">
+      <option value="fal-ai/flux/schnell">flux/schnell — fast</option>
+      <option value="fal-ai/flux/dev" selected>flux/dev — better</option>
+      <option value="fal-ai/flux-pro/v1.1">flux-pro v1.1 — best</option>
+    </select></label>
+    <label class="fld">Size<select id="size">
+      <option value="landscape_4_3" selected>landscape 4:3</option>
+      <option value="landscape_16_9">landscape 16:9</option>
+      <option value="square_hd">square</option>
+    </select></label>
+  </div>
+  <div class="row" style="margin-top:10px">
+    <button id="loadBtn">① Load recipes missing a photo</button>
+    <button id="genAllBtn" class="ghost" disabled>② Generate all</button>
+    <span id="headStatus" style="font-size:12px"></span>
+  </div>
+</header>
+<div class="wrap">
+  <div class="hint">Paste your <b>fal key</b> → <b>Load</b> → <b>Generate</b> per recipe → <b>Save to DB</b> (needs the service key). Tweak a prompt and re-generate any time. For a less AI look, keep words like “realistic, homemade, natural window light, not over-stylised” in the prompt.</div>
+  <div id="list"></div>
+</div>
+<script>
+const SUPA_URL='https://ekuynkjtcvpiueollznp.supabase.co';
+const ANON='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImVrdXlua2p0Y3ZwaXVlb2xsem5wIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Nzk4ODExNTUsImV4cCI6MjA5NTQ1NzE1NX0.rOdHlfIyu6tjzhmexXs25maNVkckCmck-UEhSgM0rEY';
+const STYLE=', realistic editorial food photography, natural window light, homemade look, not over-stylised, high detail';
+// Always include this one even though it already has a photo (it looks too AI).
+const FORCE=[{id:'apple-pie-pecan-oat-bowl',title:'Apple Pie Pecan Oat Bowl',badge:'replace AI photo',
+  image_prompt:'A homemade apple pie pecan oat breakfast bowl: warm cinnamon-spiced apple chunks over creamy oats, toasted pecans, a swirl of yogurt and a drizzle of maple, in a ceramic bowl on a rustic wooden table, soft natural window light, realistic homemade look'}];
+const $=id=>document.getElementById(id);
+['falKey','svcKey','model','size'].forEach(id=>{const el=$(id),k='menja_pf_'+id;if(sessionStorage[k])el.value=sessionStorage[k];el.addEventListener('input',()=>sessionStorage[k]=el.value);el.addEventListener('change',()=>sessionStorage[k]=el.value);});
+
+async function genImage(prompt){
+  const fk=$('falKey').value.trim();if(!fk)throw new Error('Enter your fal.ai key first');
+  const body={prompt:prompt+STYLE,image_size:$('size').value,num_images:1};
+  const r=await fetch('https://fal.run/'+$('model').value,{method:'POST',headers:{'Authorization':'Key '+fk,'Content-Type':'application/json'},body:JSON.stringify(body)});
+  if(!r.ok)throw new Error('fal '+r.status+' '+(await r.text()).slice(0,140));
+  const d=await r.json();const url=d.images&&d.images[0]&&d.images[0].url;if(!url)throw new Error('no image');return url;
+}
+async function saveDB(id,url){
+  const svc=$('svcKey').value.trim();if(!svc)throw new Error('Paste the service key to save');
+  const r=await fetch(SUPA_URL+'/rest/v1/recipes?id=eq.'+encodeURIComponent(id),{method:'PATCH',headers:{apikey:svc,Authorization:'Bearer '+svc,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({image_url:url})});
+  if(!r.ok)throw new Error('save '+r.status+' '+(await r.text()).slice(0,140));
+}
+function card(r){
+  const el=document.createElement('div');el.className='card';
+  el.innerHTML=`<div><h3>${r.title||r.id}${r.badge?'<span class=\"badge\">'+r.badge+'</span>':''}</h3><div class="id">${r.id}</div>
+    <textarea class="prompt">${(r.image_prompt||'').replace(/</g,'&lt;')}</textarea>
+    <div class="actions"><button class="gen">✨ Generate</button><button class="save ghost" disabled>💾 Save to DB</button><a class="open" target="_blank" style="font-size:12px;display:none">open ↗</a></div>
+    <div class="status"></div></div><div class="imgbox"><div class="ph">no image yet</div></div>`;
+  const box=el.querySelector('.imgbox'),st=el.querySelector('.status'),g=el.querySelector('.gen'),s=el.querySelector('.save'),o=el.querySelector('.open');let url=null;
+  g.onclick=async()=>{st.className='status';st.textContent='Generating…';g.disabled=true;s.disabled=true;
+    try{url=await genImage(el.querySelector('.prompt').value.trim());box.innerHTML='';const im=new Image();im.src=url;box.appendChild(im);o.href=url;o.style.display='inline';st.textContent='Done — save it if you like it.';s.disabled=false;g.textContent='♻ Regenerate';}
+    catch(e){st.className='status err';st.textContent=e.message;}finally{g.disabled=false;}};
+  s.onclick=async()=>{if(!url)return;st.className='status';st.textContent='Saving…';s.disabled=true;
+    try{await saveDB(r.id,url);st.className='status saved';st.textContent='✓ Saved to the database';}catch(e){st.className='status err';st.textContent=e.message;s.disabled=false;}};
+  return el;
+}
+$('loadBtn').onclick=async()=>{
+  $('headStatus').textContent='Loading…';
+  try{
+    const r=await fetch(SUPA_URL+'/rest/v1/recipes?select=id,title,image_url,image_prompt&order=title&limit=1000',{headers:{apikey:ANON,Authorization:'Bearer '+ANON}});
+    const all=await r.json();
+    if(!Array.isArray(all))throw new Error('DB read failed: '+JSON.stringify(all).slice(0,120));
+    const missing=all.filter(x=>!x.image_url&&x.image_prompt&&x.id!=='apple-pie-pecan-oat-bowl');
+    const list=$('list');list.innerHTML='';
+    FORCE.forEach(f=>list.appendChild(card(f)));
+    missing.forEach(x=>list.appendChild(card(x)));
+    const n=FORCE.length+missing.length;
+    $('headStatus').textContent=missing.length+' missing + '+FORCE.length+' to replace = '+n+' total';
+    $('genAllBtn').disabled=n===0;
+  }catch(e){$('headStatus').textContent='Load failed: '+e.message;}
+};
+$('genAllBtn').onclick=async()=>{const cs=[...document.querySelectorAll('.card')];
+  for(const c of cs){if(c.querySelector('.save').disabled){c.querySelector('.gen').click();await new Promise(res=>{const t=setInterval(()=>{if(c.querySelector('.status').textContent!=='Generating…'){clearInterval(t);res();}},500);});}}
+  $('headStatus').textContent='All generated — review & Save the good ones.';};
+</script>
+</body>
+</html>
