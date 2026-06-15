@@ -4032,8 +4032,8 @@
   },
   {
     "id": "baked-cheesecake-lighter",
-    "title": "Baked Vanilla Cheesecake",
-    "subtitle": "Creamy and rich, lightened with Greek yogurt — base made from scratch",
+    "title": "German Käsekuchen (Quark)",
+    "subtitle": "The classic German baked cheesecake — made with quark, on a shortcrust base",
     "emoji": "🍰",
     "is_kids": false,
     "tags": [
@@ -4048,125 +4048,126 @@
     "diet": [
       "Vegetarian"
     ],
-    "prep_minutes": 20,
-    "cook_minutes": 55,
-    "servings": 10,
+    "prep_minutes": 30,
+    "cook_minutes": 60,
+    "servings": 12,
     "image_url": "",
-    "image_prompt": "Slice of baked vanilla cheesecake on a homemade toasted-oat base, smooth creamy top, served on a plate with a few berries, soft natural light",
+    "image_prompt": "Classic German Käsekuchen (quark cheesecake) in a springform tin with a golden shortcrust edge and a tall, pale, lightly browned set filling, one slice cut to reveal the creamy interior, on a plate with a cake fork, soft natural daylight, realistic homemade food photography, not over-stylised",
     "nutrition": {
       "fat": 18,
-      "kcal": 340,
-      "carbs": 30,
-      "fiber": 2,
-      "protein": 9
+      "kcal": 360,
+      "carbs": 38,
+      "fiber": 1,
+      "protein": 12
     },
     "ingredients": [
       {
-        "name": "Rolled oats",
+        "name": "Plain flour",
         "emoji": "🌾",
-        "amount": "120g"
+        "amount": "200g"
       },
       {
         "name": "Butter",
         "emoji": "🧈",
-        "amount": "80g"
+        "amount": "150g"
       },
       {
         "name": "Sugar",
         "emoji": "🥄",
-        "amount": "140g"
-      },
-      {
-        "name": "Cream cheese",
-        "emoji": "🫙",
-        "amount": "400g"
-      },
-      {
-        "name": "Greek yogurt",
-        "emoji": "🥛",
-        "amount": "200g"
+        "amount": "180g"
       },
       {
         "name": "Eggs",
         "emoji": "🥚",
-        "amount": "3 pcs"
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Quark",
+        "emoji": "🥛",
+        "amount": "500g"
+      },
+      {
+        "name": "Vanilla custard powder",
+        "emoji": "🍮",
+        "amount": "40g"
       }
     ],
     "base_ingredients": [
       "Vanilla extract",
       "Lemon zest",
+      "Baking powder",
       "Pinch of salt"
     ],
     "dressing": [],
     "mise_en_place": [
       {
-        "name": "Rolled oats",
+        "name": "Plain flour",
         "emoji": "🌾",
-        "amount": "120g"
+        "amount": "200g"
       },
       {
         "name": "Butter",
         "emoji": "🧈",
-        "amount": "80g"
+        "amount": "150g"
       },
       {
         "name": "Sugar",
         "emoji": "🥄",
-        "amount": "140g"
-      },
-      {
-        "name": "Cream cheese",
-        "emoji": "🫙",
-        "amount": "400g"
-      },
-      {
-        "name": "Greek yogurt",
-        "emoji": "🥛",
-        "amount": "200g"
+        "amount": "180g"
       },
       {
         "name": "Eggs",
         "emoji": "🥚",
-        "amount": "3 pcs"
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Quark",
+        "emoji": "🥛",
+        "amount": "500g"
+      },
+      {
+        "name": "Vanilla custard powder",
+        "emoji": "🍮",
+        "amount": "40g"
       }
     ],
     "steps": [
       {
         "num": 1,
-        "title": "Make the base from scratch",
-        "text": "Blitz the oats to a coarse meal, mix with the melted butter and a third of the sugar, then press firmly into a lined tin and bake at 170°C for 10 minutes until lightly golden.",
+        "title": "Make the shortcrust",
+        "text": "Rub the flour with 100g of the butter, 60g of the sugar and 1 egg into a dough. Chill 20 minutes, then press into the base and up the sides of a lined springform tin.",
         "ings": [
-          "🌾 Rolled oats · 120g",
-          "🧈 Butter · 80g"
-        ],
-        "tip": "A toasted oat base stays crisp under the filling — no shop-bought biscuits needed.",
-        "kidsHelp": null
-      },
-      {
-        "num": 2,
-        "title": "Make the filling",
-        "text": "Beat the cream cheese with the rest of the sugar until smooth, then beat in the eggs one at a time, the Greek yogurt, vanilla and lemon zest.",
-        "ings": [
-          "🫙 Cream cheese · 400g",
-          "🥄 Sugar · 140g",
-          "🥚 Eggs · 3 pcs",
-          "🥛 Greek yogurt · 200g"
+          "🌾 Plain flour · 200g",
+          "🧈 Butter · 150g"
         ],
         "tip": null,
         "kidsHelp": null
       },
       {
+        "num": 2,
+        "title": "Quark filling",
+        "text": "Beat the quark with the remaining sugar, the other 3 eggs, the rest of the butter (melted), the custard powder, vanilla and lemon zest until smooth.",
+        "ings": [
+          "🥛 Quark · 500g",
+          "🥄 Sugar · 180g",
+          "🥚 Eggs · 4 pcs",
+          "🍮 Vanilla custard powder · 40g"
+        ],
+        "tip": "Quark is the key to a real German Käsekuchen — lighter and tangier than cream cheese.",
+        "kidsHelp": null
+      },
+      {
         "num": 3,
-        "title": "Bake low & slow",
-        "text": "Pour over the base and bake at 160°C for about 50 minutes until just set with a slight wobble in the centre.",
+        "title": "Bake",
+        "text": "Pour the filling onto the base and bake at 170°C for about 60 minutes until set and golden (cover loosely if it browns too fast).",
         "ings": [],
         "tip": null,
         "kidsHelp": null
       },
       {
         "num": 4,
-        "title": "Cool & chill",
-        "text": "Cool in the switched-off oven with the door ajar, then chill several hours before slicing.",
+        "title": "Cool slowly",
+        "text": "Turn off the oven and let the cake cool inside with the door ajar to stop it cracking, then chill before slicing.",
         "ings": [],
         "tip": null,
         "kidsHelp": null
@@ -4731,7 +4732,7 @@
     "cook_minutes": 25,
     "servings": 4,
     "image_url": "",
-    "image_prompt": "A rustic round beetroot and feta tart on a pale grey ceramic plate, golden crimped shortcrust edge, overlapping thin slices of deep crimson and pink beetroot, crumbled white feta, toasted walnut pieces and fresh dill scattered on top, one wedge cut and pulled slightly aside with a few crumbs on the plate, a linen napkin beside, overhead top-down shot, soft natural daylight, realistic editorial food photography, homemade, not over-stylised",
+    "image_prompt": "A rustic round beetroot and feta tart on a pale grey ceramic plate, golden crimped crust, overlapping slices of deep crimson beetroot generously topped with lots of crumbled white feta, toasted walnuts, plenty of fresh dill and a handful of peppery rocket, one wedge cut and pulled slightly aside, photographed from a low three-quarter side angle (about 30 degrees) so the height and crust show, soft natural daylight, realistic editorial food photography, homemade, not over-stylised",
     "nutrition": {
       "fat": 30,
       "kcal": 410,
@@ -4768,7 +4769,7 @@
       {
         "name": "Feta",
         "emoji": "🧀",
-        "amount": "150g"
+        "amount": "200g"
       },
       {
         "name": "Red onion",
@@ -4784,6 +4785,11 @@
         "emoji": "🌿",
         "name": "Fresh dill",
         "amount": "10g"
+      },
+      {
+        "emoji": "🥬",
+        "name": "Rocket",
+        "amount": "30g"
       }
     ],
     "base_ingredients": [
@@ -4823,7 +4829,7 @@
       {
         "name": "Feta",
         "emoji": "🧀",
-        "amount": "150g"
+        "amount": "200g"
       },
       {
         "name": "Red onion",
@@ -4839,6 +4845,11 @@
         "emoji": "🌿",
         "name": "Fresh dill",
         "amount": "10g"
+      },
+      {
+        "emoji": "🥬",
+        "name": "Rocket",
+        "amount": "30g"
       }
     ],
     "steps": [
@@ -4868,7 +4879,7 @@
       {
         "num": 3,
         "title": "Top the tart",
-        "text": "Spread the onion over the crust, arrange the sliced beetroot, crumble over the feta, scatter thyme and walnuts and drizzle with a little honey.",
+        "text": "Spread the onion over the crust, arrange the sliced beetroot, crumble over plenty of feta, scatter thyme and walnuts and drizzle with a little honey.",
         "ings": [
           "🫚 Cooked beetroot · 250g",
           "🧀 Feta · 150g",
@@ -4880,9 +4891,10 @@
       {
         "num": 4,
         "title": "Bake & finish",
-        "text": "Bake at 190°C for 18–20 minutes until set and golden, then finish with fresh dill.",
+        "text": "Bake at 190°C for 18–20 minutes until set and golden, then finish with plenty of fresh dill and a handful of rocket.",
         "ings": [
-          "🌿 Fresh dill · 10g"
+          "🌿 Fresh dill · 10g",
+          "🥬 Rocket · 30g"
         ],
         "tip": null,
         "kidsHelp": null

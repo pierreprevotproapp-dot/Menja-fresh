@@ -17962,54 +17962,55 @@
   },
   "baked-cheesecake-lighter": {
     "de": {
-      "title": "Gebackener Vanille-Käsekuchen",
+      "title": "Deutscher Käsekuchen",
       "ingredients": [
-        "Haferflocken",
+        "Weizenmehl",
         "Butter",
         "Zucker",
-        "Frischkäse",
-        "Griechischer Joghurt",
-        "Eier"
+        "Eier",
+        "Quark",
+        "Vanillepuddingpulver"
       ],
       "base": [
         "Vanilleextrakt",
         "Zitronenabrieb",
+        "Backpulver",
         "Eine Prise Salz"
       ],
       "dressing": [],
       "steps": [
         {
-          "title": "Boden selbst machen",
-          "text": "Haferflocken grob mahlen, mit der geschmolzenen Butter und einem Drittel des Zuckers mischen, fest in eine ausgelegte Form drücken und bei 170 °C 10 Minuten leicht goldbraun backen.",
+          "title": "Mürbeteig machen",
+          "text": "Mehl mit 100 g der Butter, 60 g Zucker und 1 Ei zu einem Teig verkneten. 20 Minuten kühlen, dann als Boden und Rand in eine ausgelegte Springform drücken.",
           "ings": [
-            "🌾 Haferflocken · 120g",
-            "🧈 Butter · 80g"
+            "🌾 Weizenmehl · 200g",
+            "🧈 Butter · 150g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Füllung machen",
-          "text": "Frischkäse mit dem restlichen Zucker glatt rühren, dann die Eier einzeln, den griechischen Joghurt, Vanille und Zitronenabrieb unterrühren.",
+          "title": "Quarkmasse",
+          "text": "Quark mit dem restlichen Zucker, den 3 übrigen Eiern, der restlichen geschmolzenen Butter, dem Puddingpulver, Vanille und Zitronenabrieb glatt rühren.",
           "ings": [
-            "🫙 Frischkäse · 400g",
-            "🥄 Zucker · 140g",
-            "🥚 Eier · 3 pcs",
-            "🥛 Griechischer Joghurt · 200g"
+            "🥛 Quark · 500g",
+            "🥄 Zucker · 180g",
+            "🥚 Eier · 4 pcs",
+            "🍮 Vanillepuddingpulver · 40g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Niedrig backen",
-          "text": "Über den Boden gießen und bei 160 °C etwa 50 Minuten backen, bis die Mitte gerade fest ist und leicht wackelt.",
+          "title": "Backen",
+          "text": "Die Masse auf den Boden gießen und bei 170 °C ca. 60 Minuten backen, bis fest und goldbraun (bei Bedarf locker abdecken).",
           "ings": [],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Kühlen",
-          "text": "Im ausgeschalteten Ofen mit leicht geöffneter Tür abkühlen, dann mehrere Stunden kühlen.",
+          "title": "Langsam abkühlen",
+          "text": "Ofen ausschalten und den Kuchen bei leicht geöffneter Tür darin abkühlen lassen (verhindert Risse), dann vor dem Schneiden kühlen.",
           "ings": [],
           "tip": null,
           "kidsHelp": null
@@ -18017,54 +18018,55 @@
       ]
     },
     "es": {
-      "title": "Tarta de queso al horno con vainilla",
+      "title": "Tarta de queso alemana (quark)",
       "ingredients": [
-        "Copos de avena",
+        "Harina de trigo",
         "Mantequilla",
         "Azúcar",
-        "Queso crema",
-        "Yogur griego",
-        "Huevos"
+        "Huevos",
+        "Quark",
+        "Preparado de natillas de vainilla"
       ],
       "base": [
         "Extracto de vainilla",
         "Ralladura de limón",
+        "Levadura química",
         "Una pizca de sal"
       ],
       "dressing": [],
       "steps": [
         {
-          "title": "Haz la base desde cero",
-          "text": "Tritura la avena hasta una textura gruesa, mézclala con la mantequilla fundida y un tercio del azúcar, presiónala en un molde forrado y hornea a 170 °C 10 minutos hasta que dore ligeramente.",
+          "title": "Haz la masa quebrada",
+          "text": "Amasa la harina con 100 g de mantequilla, 60 g de azúcar y 1 huevo. Refrigera 20 minutos y presiona como base y borde en un molde desmontable forrado.",
           "ings": [
-            "🌾 Copos de avena · 120g",
-            "🧈 Mantequilla · 80g"
+            "🌾 Harina de trigo · 200g",
+            "🧈 Mantequilla · 150g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Haz el relleno",
-          "text": "Bate el queso crema con el resto del azúcar, luego incorpora los huevos uno a uno, el yogur griego, la vainilla y la ralladura de limón.",
+          "title": "Relleno de quark",
+          "text": "Bate el quark con el resto del azúcar, los 3 huevos restantes, el resto de la mantequilla fundida, el preparado de natillas, la vainilla y la ralladura de limón hasta que quede liso.",
           "ings": [
-            "🫙 Queso crema · 400g",
-            "🥄 Azúcar · 140g",
-            "🥚 Huevos · 3 pcs",
-            "🥛 Yogur griego · 200g"
+            "🥛 Quark · 500g",
+            "🥄 Azúcar · 180g",
+            "🥚 Huevos · 4 pcs",
+            "🍮 Preparado de natillas de vainilla · 40g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Hornea suave",
-          "text": "Vierte sobre la base y hornea a 160 °C unos 50 minutos hasta que el centro esté casi cuajado y tiemble un poco.",
+          "title": "Hornea",
+          "text": "Vierte el relleno sobre la base y hornea a 170 °C unos 60 minutos hasta que cuaje y dore (cubre sin apretar si se dora demasiado).",
           "ings": [],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Enfría",
-          "text": "Deja enfriar en el horno apagado con la puerta entreabierta y refrigera varias horas antes de cortar.",
+          "title": "Enfría despacio",
+          "text": "Apaga el horno y deja enfriar el pastel dentro con la puerta entreabierta (evita grietas), luego refrigera antes de cortar.",
           "ings": [],
           "tip": null,
           "kidsHelp": null
@@ -18072,54 +18074,55 @@
       ]
     },
     "fr": {
-      "title": "Cheesecake vanille au four",
+      "title": "Käsekuchen allemand (au quark)",
       "ingredients": [
-        "Flocons d'avoine",
+        "Farine de blé",
         "Beurre",
         "Sucre",
-        "Fromage frais",
-        "Yaourt grec",
-        "Œufs"
+        "Œufs",
+        "Quark",
+        "Préparation pour flan vanille"
       ],
       "base": [
         "Extrait de vanille",
         "Zeste de citron",
+        "Levure chimique",
         "Une pincée de sel"
       ],
       "dressing": [],
       "steps": [
         {
-          "title": "Faire la base maison",
-          "text": "Mixer les flocons d'avoine en poudre grossière, mélanger au beurre fondu et à un tiers du sucre, tasser dans un moule chemisé et cuire à 170 °C 10 minutes jusqu'à légèrement doré.",
+          "title": "Préparer la pâte sablée",
+          "text": "Pétrir la farine avec 100 g de beurre, 60 g de sucre et 1 œuf. Réfrigérer 20 minutes, puis tasser en fond et bords d'un moule à charnière chemisé.",
           "ings": [
-            "🌾 Flocons d'avoine · 120g",
-            "🧈 Beurre · 80g"
+            "🌾 Farine de blé · 200g",
+            "🧈 Beurre · 150g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Préparer l'appareil",
-          "text": "Battre le fromage frais avec le reste du sucre, puis incorporer les œufs un à un, le yaourt grec, la vanille et le zeste de citron.",
+          "title": "Appareil au quark",
+          "text": "Battre le quark avec le reste du sucre, les 3 œufs restants, le reste du beurre fondu, la préparation pour flan, la vanille et le zeste de citron jusqu'à consistance lisse.",
           "ings": [
-            "🫙 Fromage frais · 400g",
-            "🥄 Sucre · 140g",
-            "🥚 Œufs · 3 pcs",
-            "🥛 Yaourt grec · 200g"
+            "🥛 Quark · 500g",
+            "🥄 Sucre · 180g",
+            "🥚 Œufs · 4 pcs",
+            "🍮 Préparation pour flan vanille · 40g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Cuire doucement",
-          "text": "Verser sur la base et cuire à 160 °C environ 50 minutes jusqu'à ce que le centre soit juste pris et tremble légèrement.",
+          "title": "Cuire",
+          "text": "Verser l'appareil sur la base et cuire à 170 °C environ 60 minutes jusqu'à ce que ce soit pris et doré (couvrir sans serrer si ça dore trop).",
           "ings": [],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Refroidir",
-          "text": "Laisser refroidir dans le four éteint porte entrouverte, puis réfrigérer plusieurs heures avant de trancher.",
+          "title": "Refroidir lentement",
+          "text": "Éteindre le four et laisser refroidir le gâteau à l'intérieur porte entrouverte (évite les fissures), puis réfrigérer avant de trancher.",
           "ings": [],
           "tip": null,
           "kidsHelp": null
@@ -18762,7 +18765,8 @@
         "Feta",
         "Rote Zwiebel",
         "Walnüsse",
-        "Dill"
+        "Dill",
+        "Rucola"
       ],
       "base": [
         "Olivenöl",
@@ -18796,7 +18800,7 @@
         },
         {
           "title": "Tarte belegen",
-          "text": "Zwiebeln auf dem Boden verteilen, Rote-Bete-Scheiben darauf, Feta darüberbröseln, Thymian und Walnüsse aufstreuen und mit etwas Honig beträufeln.",
+          "text": "Zwiebeln auf dem Boden verteilen, Rote-Bete-Scheiben darauf, reichlich Feta darüberbröseln, Thymian und Walnüsse aufstreuen und mit etwas Honig beträufeln.",
           "ings": [
             "🫚 Gekochte Rote Bete · 250g",
             "🧀 Feta · 150g",
@@ -18807,9 +18811,10 @@
         },
         {
           "title": "Backen & abschließen",
-          "text": "Bei 190 °C 18–20 Minuten goldbraun backen, dann mit frischem Dill abschließen.",
+          "text": "Bei 190 °C 18–20 Minuten goldbraun backen, dann mit reichlich frischem Dill und einer Handvoll Rucola abschließen.",
           "ings": [
-            "🌿 Dill · 10g"
+            "🌿 Dill · 10g",
+            "🥬 Rucola · 30g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -18827,7 +18832,8 @@
         "Feta",
         "Cebolla roja",
         "Nueces",
-        "Eneldo"
+        "Eneldo",
+        "Rúcula"
       ],
       "base": [
         "Aceite de oliva",
@@ -18861,7 +18867,7 @@
         },
         {
           "title": "Cubre la tarta",
-          "text": "Reparte la cebolla sobre la base, coloca la remolacha en rodajas, desmenuza el feta, esparce tomillo y nueces y riega con un poco de miel.",
+          "text": "Reparte la cebolla sobre la base, coloca la remolacha en rodajas, desmenuza bastante feta, esparce tomillo y nueces y riega con un poco de miel.",
           "ings": [
             "🫚 Remolacha cocida · 250g",
             "🧀 Feta · 150g",
@@ -18872,9 +18878,10 @@
         },
         {
           "title": "Hornea y termina",
-          "text": "Hornea a 190 °C 18–20 minutos hasta que cuaje y dore, y termina con eneldo fresco.",
+          "text": "Hornea a 190 °C 18–20 minutos hasta que cuaje y dore, y termina con abundante eneldo fresco y un puñado de rúcula.",
           "ings": [
-            "🌿 Eneldo · 10g"
+            "🌿 Eneldo · 10g",
+            "🥬 Rúcula · 30g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -18892,7 +18899,8 @@
         "Feta",
         "Oignon rouge",
         "Noix",
-        "Aneth"
+        "Aneth",
+        "Roquette"
       ],
       "base": [
         "Huile d'olive",
@@ -18926,7 +18934,7 @@
         },
         {
           "title": "Garnir la tarte",
-          "text": "Étaler l'oignon sur la pâte, disposer la betterave en tranches, émietter la feta, parsemer de thym et de noix et arroser d'un peu de miel.",
+          "text": "Étaler l'oignon sur la pâte, disposer la betterave en tranches, émietter généreusement de la feta, parsemer de thym et de noix et arroser d'un peu de miel.",
           "ings": [
             "🫚 Betterave cuite · 250g",
             "🧀 Feta · 150g",
@@ -18937,9 +18945,10 @@
         },
         {
           "title": "Cuire et finir",
-          "text": "Cuire à 190 °C 18–20 minutes jusqu'à ce que ce soit pris et doré, puis finir avec de l'aneth frais.",
+          "text": "Cuire à 190 °C 18–20 minutes jusqu'à ce que ce soit pris et doré, puis finir avec beaucoup d'aneth frais et une poignée de roquette.",
           "ings": [
-            "🌿 Aneth · 10g"
+            "🌿 Aneth · 10g",
+            "🥬 Roquette · 30g"
           ],
           "tip": null,
           "kidsHelp": null
