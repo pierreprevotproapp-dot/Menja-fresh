@@ -1406,7 +1406,7 @@
       },
       {
         "name": "Sugar",
-        "emoji": "🍬",
+        "emoji": "🥄",
         "amount": "200g"
       },
       {
@@ -1434,7 +1434,7 @@
     "dressing": [
       {
         "name": "Cream cheese",
-        "emoji": "🧀",
+        "emoji": "🫙",
         "amount": "225g"
       },
       {
@@ -1471,7 +1471,7 @@
       },
       {
         "name": "Sugar",
-        "emoji": "🍬",
+        "emoji": "🥄",
         "amount": "200g"
       },
       {
@@ -1491,7 +1491,7 @@
       },
       {
         "name": "Cream cheese",
-        "emoji": "🧀",
+        "emoji": "🫙",
         "amount": "225g"
       },
       {
@@ -3668,7 +3668,7 @@
       },
       {
         "name": "Sugar",
-        "emoji": "🍬",
+        "emoji": "🥄",
         "amount": "200g"
       },
       {
@@ -3705,7 +3705,7 @@
       },
       {
         "name": "Sugar",
-        "emoji": "🍬",
+        "emoji": "🥄",
         "amount": "200g"
       },
       {
@@ -3742,7 +3742,7 @@
         "text": "Whisk the eggs, sugar and vanilla until thick and pale, then fold in the melted chocolate.",
         "ings": [
           "🥚 Eggs · 3 pcs",
-          "🍬 Sugar · 200g"
+          "🥄 Sugar · 200g"
         ],
         "tip": null,
         "kidsHelp": null
@@ -4033,7 +4033,7 @@
   {
     "id": "baked-cheesecake-lighter",
     "title": "Baked Vanilla Cheesecake",
-    "subtitle": "Creamy and rich but lightened with Greek yogurt",
+    "subtitle": "Creamy and rich, lightened with Greek yogurt — base made from scratch",
     "emoji": "🍰",
     "is_kids": false,
     "tags": [
@@ -4052,18 +4052,33 @@
     "cook_minutes": 55,
     "servings": 10,
     "image_url": "",
-    "image_prompt": "Slice of baked vanilla cheesecake on a biscuit base, smooth creamy top, served on a plate with a few berries, soft natural light",
+    "image_prompt": "Slice of baked vanilla cheesecake on a homemade toasted-oat base, smooth creamy top, served on a plate with a few berries, soft natural light",
     "nutrition": {
       "fat": 18,
       "kcal": 340,
-      "carbs": 28,
-      "fiber": 1,
-      "protein": 8
+      "carbs": 30,
+      "fiber": 2,
+      "protein": 9
     },
     "ingredients": [
       {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "120g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "80g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "140g"
+      },
+      {
         "name": "Cream cheese",
-        "emoji": "🧀",
+        "emoji": "🫙",
         "amount": "400g"
       },
       {
@@ -4072,35 +4087,36 @@
         "amount": "200g"
       },
       {
-        "name": "Sugar",
-        "emoji": "🍬",
-        "amount": "120g"
-      },
-      {
         "name": "Eggs",
         "emoji": "🥚",
         "amount": "3 pcs"
-      },
-      {
-        "name": "Digestive biscuits",
-        "emoji": "🍪",
-        "amount": "200g"
-      },
-      {
-        "name": "Butter",
-        "emoji": "🧈",
-        "amount": "70g"
       }
     ],
     "base_ingredients": [
       "Vanilla extract",
-      "Lemon zest"
+      "Lemon zest",
+      "Pinch of salt"
     ],
     "dressing": [],
     "mise_en_place": [
       {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "120g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "80g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "140g"
+      },
+      {
         "name": "Cream cheese",
-        "emoji": "🧀",
+        "emoji": "🫙",
         "amount": "400g"
       },
       {
@@ -4109,55 +4125,40 @@
         "amount": "200g"
       },
       {
-        "name": "Sugar",
-        "emoji": "🍬",
-        "amount": "120g"
-      },
-      {
         "name": "Eggs",
         "emoji": "🥚",
         "amount": "3 pcs"
-      },
-      {
-        "name": "Digestive biscuits",
-        "emoji": "🍪",
-        "amount": "200g"
-      },
-      {
-        "name": "Butter",
-        "emoji": "🧈",
-        "amount": "70g"
       }
     ],
     "steps": [
       {
         "num": 1,
-        "title": "Make the base",
-        "text": "Crush the biscuits, mix with the melted butter and press firmly into a lined tin. Chill while you make the filling.",
+        "title": "Make the base from scratch",
+        "text": "Blitz the oats to a coarse meal, mix with the melted butter and a third of the sugar, then press firmly into a lined tin and bake at 170°C for 10 minutes until lightly golden.",
         "ings": [
-          "🍪 Digestive biscuits · 200g",
-          "🧈 Butter · 70g"
+          "🌾 Rolled oats · 120g",
+          "🧈 Butter · 80g"
+        ],
+        "tip": "A toasted oat base stays crisp under the filling — no shop-bought biscuits needed.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the filling",
+        "text": "Beat the cream cheese with the rest of the sugar until smooth, then beat in the eggs one at a time, the Greek yogurt, vanilla and lemon zest.",
+        "ings": [
+          "🫙 Cream cheese · 400g",
+          "🥄 Sugar · 140g",
+          "🥚 Eggs · 3 pcs",
+          "🥛 Greek yogurt · 200g"
         ],
         "tip": null,
         "kidsHelp": null
       },
       {
-        "num": 2,
-        "title": "Filling",
-        "text": "Beat the cream cheese with the sugar until smooth, then beat in the eggs one at a time, the Greek yogurt, vanilla and lemon zest.",
-        "ings": [
-          "🧀 Cream cheese · 400g",
-          "🍬 Sugar · 120g",
-          "🥚 Eggs · 3 pcs",
-          "🥛 Greek yogurt · 200g"
-        ],
-        "tip": "The yogurt keeps it creamy but lighter than an all-cream-cheese cake.",
-        "kidsHelp": null
-      },
-      {
         "num": 3,
         "title": "Bake low & slow",
-        "text": "Pour over the base and bake at 160°C for about 55 minutes until just set with a slight wobble in the centre.",
+        "text": "Pour over the base and bake at 160°C for about 50 minutes until just set with a slight wobble in the centre.",
         "ings": [],
         "tip": null,
         "kidsHelp": null
@@ -4220,7 +4221,7 @@
       },
       {
         "name": "Sugar",
-        "emoji": "🍬",
+        "emoji": "🥄",
         "amount": "70g"
       },
       {
@@ -4261,7 +4262,7 @@
       },
       {
         "name": "Sugar",
-        "emoji": "🍬",
+        "emoji": "🥄",
         "amount": "70g"
       },
       {
@@ -4287,7 +4288,7 @@
         "text": "Beat the egg yolks with the sugar until pale, then fold in the mascarpone, Greek yogurt and vanilla. Whisk the egg whites to soft peaks and fold through.",
         "ings": [
           "🥚 Eggs · 3 pcs",
-          "🍬 Sugar · 70g",
+          "🥄 Sugar · 70g",
           "🧀 Mascarpone · 250g",
           "🥛 Greek yogurt · 250g"
         ],
@@ -4641,7 +4642,7 @@
       },
       {
         "name": "Sugar",
-        "emoji": "🍬",
+        "emoji": "🥄",
         "amount": "70g"
       }
     ],
@@ -4663,7 +4664,7 @@
       },
       {
         "name": "Sugar",
-        "emoji": "🍬",
+        "emoji": "🥄",
         "amount": "70g"
       }
     ],
@@ -4684,7 +4685,7 @@
         "text": "Whisk the egg yolks with the sugar, then slowly whisk in the warm cream.",
         "ings": [
           "🥚 Egg yolks · 5 pcs",
-          "🍬 Sugar · 70g"
+          "🥄 Sugar · 70g"
         ],
         "tip": null,
         "kidsHelp": null

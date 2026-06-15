@@ -14889,7 +14889,7 @@
       "dressing": [
         {
           "name": "Frischkäse",
-          "emoji": "🧀",
+          "emoji": "🫙",
           "amount": "225g"
         },
         {
@@ -14961,7 +14961,7 @@
       "dressing": [
         {
           "name": "Queso crema",
-          "emoji": "🧀",
+          "emoji": "🫙",
           "amount": "225g"
         },
         {
@@ -15033,7 +15033,7 @@
       "dressing": [
         {
           "name": "Fromage frais",
-          "emoji": "🧀",
+          "emoji": "🫙",
           "amount": "225g"
         },
         {
@@ -17524,7 +17524,7 @@
           "text": "Eier, Zucker und Vanille dick und hell aufschlagen, dann geschmolzene Schokolade unterheben.",
           "ings": [
             "🥚 Eier · 3 pcs",
-            "🍬 Zucker · 200g"
+            "🥄 Zucker · 200g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17579,7 +17579,7 @@
           "text": "Bate los huevos, el azúcar y la vainilla hasta que blanqueen y espesen, luego incorpora el chocolate fundido.",
           "ings": [
             "🥚 Huevos · 3 pcs",
-            "🍬 Azúcar · 200g"
+            "🥄 Azúcar · 200g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17634,7 +17634,7 @@
           "text": "Fouetter les œufs, le sucre et la vanille jusqu'à épaississement, puis incorporer le chocolat fondu.",
           "ings": [
             "🥚 Œufs · 3 pcs",
-            "🍬 Sucre · 200g"
+            "🥄 Sucre · 200g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17949,35 +17949,36 @@
     "de": {
       "title": "Gebackener Vanille-Käsekuchen",
       "ingredients": [
+        "Haferflocken",
+        "Butter",
+        "Zucker",
         "Frischkäse",
         "Griechischer Joghurt",
-        "Zucker",
-        "Eier",
-        "Butterkekse",
-        "Butter"
+        "Eier"
       ],
       "base": [
         "Vanilleextrakt",
-        "Zitronenabrieb"
+        "Zitronenabrieb",
+        "Eine Prise Salz"
       ],
       "dressing": [],
       "steps": [
         {
-          "title": "Boden machen",
-          "text": "Kekse zerbröseln, mit geschmolzener Butter mischen und fest in eine ausgelegte Form drücken. Kühlen, während die Füllung entsteht.",
+          "title": "Boden selbst machen",
+          "text": "Haferflocken grob mahlen, mit der geschmolzenen Butter und einem Drittel des Zuckers mischen, fest in eine ausgelegte Form drücken und bei 170 °C 10 Minuten leicht goldbraun backen.",
           "ings": [
-            "🍪 Butterkekse · 200g",
-            "🧈 Butter · 70g"
+            "🌾 Haferflocken · 120g",
+            "🧈 Butter · 80g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Füllung",
-          "text": "Frischkäse mit dem Zucker glatt rühren, dann die Eier einzeln, den griechischen Joghurt, Vanille und Zitronenabrieb unterrühren.",
+          "title": "Füllung machen",
+          "text": "Frischkäse mit dem restlichen Zucker glatt rühren, dann die Eier einzeln, den griechischen Joghurt, Vanille und Zitronenabrieb unterrühren.",
           "ings": [
-            "🧀 Frischkäse · 400g",
-            "🍬 Zucker · 120g",
+            "🫙 Frischkäse · 400g",
+            "🥄 Zucker · 140g",
             "🥚 Eier · 3 pcs",
             "🥛 Griechischer Joghurt · 200g"
           ],
@@ -17986,7 +17987,7 @@
         },
         {
           "title": "Niedrig backen",
-          "text": "Über den Boden gießen und bei 160 °C etwa 55 Minuten backen, bis die Mitte gerade fest ist und leicht wackelt.",
+          "text": "Über den Boden gießen und bei 160 °C etwa 50 Minuten backen, bis die Mitte gerade fest ist und leicht wackelt.",
           "ings": [],
           "tip": null,
           "kidsHelp": null
@@ -18003,35 +18004,36 @@
     "es": {
       "title": "Tarta de queso al horno con vainilla",
       "ingredients": [
+        "Copos de avena",
+        "Mantequilla",
+        "Azúcar",
         "Queso crema",
         "Yogur griego",
-        "Azúcar",
-        "Huevos",
-        "Galletas digestive",
-        "Mantequilla"
+        "Huevos"
       ],
       "base": [
         "Extracto de vainilla",
-        "Ralladura de limón"
+        "Ralladura de limón",
+        "Una pizca de sal"
       ],
       "dressing": [],
       "steps": [
         {
-          "title": "Haz la base",
-          "text": "Tritura las galletas, mézclalas con la mantequilla fundida y presiónalas en un molde forrado. Refrigera mientras preparas el relleno.",
+          "title": "Haz la base desde cero",
+          "text": "Tritura la avena hasta una textura gruesa, mézclala con la mantequilla fundida y un tercio del azúcar, presiónala en un molde forrado y hornea a 170 °C 10 minutos hasta que dore ligeramente.",
           "ings": [
-            "🍪 Galletas digestive · 200g",
-            "🧈 Mantequilla · 70g"
+            "🌾 Copos de avena · 120g",
+            "🧈 Mantequilla · 80g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Relleno",
-          "text": "Bate el queso crema con el azúcar, luego incorpora los huevos uno a uno, el yogur griego, la vainilla y la ralladura de limón.",
+          "title": "Haz el relleno",
+          "text": "Bate el queso crema con el resto del azúcar, luego incorpora los huevos uno a uno, el yogur griego, la vainilla y la ralladura de limón.",
           "ings": [
-            "🧀 Queso crema · 400g",
-            "🍬 Azúcar · 120g",
+            "🫙 Queso crema · 400g",
+            "🥄 Azúcar · 140g",
             "🥚 Huevos · 3 pcs",
             "🥛 Yogur griego · 200g"
           ],
@@ -18040,7 +18042,7 @@
         },
         {
           "title": "Hornea suave",
-          "text": "Vierte sobre la base y hornea a 160 °C unos 55 minutos hasta que el centro esté casi cuajado y tiemble un poco.",
+          "text": "Vierte sobre la base y hornea a 160 °C unos 50 minutos hasta que el centro esté casi cuajado y tiemble un poco.",
           "ings": [],
           "tip": null,
           "kidsHelp": null
@@ -18057,35 +18059,36 @@
     "fr": {
       "title": "Cheesecake vanille au four",
       "ingredients": [
+        "Flocons d'avoine",
+        "Beurre",
+        "Sucre",
         "Fromage frais",
         "Yaourt grec",
-        "Sucre",
-        "Œufs",
-        "Biscuits digestive",
-        "Beurre"
+        "Œufs"
       ],
       "base": [
         "Extrait de vanille",
-        "Zeste de citron"
+        "Zeste de citron",
+        "Une pincée de sel"
       ],
       "dressing": [],
       "steps": [
         {
-          "title": "Préparer la base",
-          "text": "Émietter les biscuits, mélanger au beurre fondu et tasser dans un moule chemisé. Réfrigérer pendant la préparation de l'appareil.",
+          "title": "Faire la base maison",
+          "text": "Mixer les flocons d'avoine en poudre grossière, mélanger au beurre fondu et à un tiers du sucre, tasser dans un moule chemisé et cuire à 170 °C 10 minutes jusqu'à légèrement doré.",
           "ings": [
-            "🍪 Biscuits digestive · 200g",
-            "🧈 Beurre · 70g"
+            "🌾 Flocons d'avoine · 120g",
+            "🧈 Beurre · 80g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Appareil",
-          "text": "Battre le fromage frais avec le sucre, puis incorporer les œufs un à un, le yaourt grec, la vanille et le zeste de citron.",
+          "title": "Préparer l'appareil",
+          "text": "Battre le fromage frais avec le reste du sucre, puis incorporer les œufs un à un, le yaourt grec, la vanille et le zeste de citron.",
           "ings": [
-            "🧀 Fromage frais · 400g",
-            "🍬 Sucre · 120g",
+            "🫙 Fromage frais · 400g",
+            "🥄 Sucre · 140g",
             "🥚 Œufs · 3 pcs",
             "🥛 Yaourt grec · 200g"
           ],
@@ -18094,7 +18097,7 @@
         },
         {
           "title": "Cuire doucement",
-          "text": "Verser sur la base et cuire à 160 °C environ 55 minutes jusqu'à ce que le centre soit juste pris et tremble légèrement.",
+          "text": "Verser sur la base et cuire à 160 °C environ 50 minutes jusqu'à ce que le centre soit juste pris et tremble légèrement.",
           "ings": [],
           "tip": null,
           "kidsHelp": null
@@ -18131,7 +18134,7 @@
           "text": "Eigelb mit dem Zucker hell aufschlagen, dann Mascarpone, griechischen Joghurt und Vanille unterheben. Eiweiß zu weichen Spitzen schlagen und unterheben.",
           "ings": [
             "🥚 Eier · 3 pcs",
-            "🍬 Zucker · 70g",
+            "🥄 Zucker · 70g",
             "🧀 Mascarpone · 250g",
             "🥛 Griechischer Joghurt · 250g"
           ],
@@ -18187,7 +18190,7 @@
           "text": "Bate las yemas con el azúcar hasta que blanqueen, luego incorpora el mascarpone, el yogur griego y la vainilla. Monta las claras a punto suave e incorpóralas.",
           "ings": [
             "🥚 Huevos · 3 pcs",
-            "🍬 Azúcar · 70g",
+            "🥄 Azúcar · 70g",
             "🧀 Mascarpone · 250g",
             "🥛 Yogur griego · 250g"
           ],
@@ -18243,7 +18246,7 @@
           "text": "Battre les jaunes avec le sucre jusqu'à blanchiment, puis incorporer le mascarpone, le yaourt grec et la vanille. Monter les blancs en neige souple et les incorporer.",
           "ings": [
             "🥚 Œufs · 3 pcs",
-            "🍬 Sucre · 70g",
+            "🥄 Sucre · 70g",
             "🧀 Mascarpone · 250g",
             "🥛 Yaourt grec · 250g"
           ],
@@ -18614,7 +18617,7 @@
           "text": "Eigelb mit dem Zucker verrühren, dann langsam die warme Sahne unterrühren.",
           "ings": [
             "🥚 Eigelb · 5 pcs",
-            "🍬 Zucker · 70g"
+            "🥄 Zucker · 70g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -18662,7 +18665,7 @@
           "text": "Bate las yemas con el azúcar y luego incorpora poco a poco la nata caliente.",
           "ings": [
             "🥚 Yemas de huevo · 5 pcs",
-            "🍬 Azúcar · 70g"
+            "🥄 Azúcar · 70g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -18710,7 +18713,7 @@
           "text": "Fouetter les jaunes avec le sucre, puis incorporer lentement la crème chaude.",
           "ings": [
             "🥚 Jaunes d'œuf · 5 pcs",
-            "🍬 Sucre · 70g"
+            "🥄 Sucre · 70g"
           ],
           "tip": null,
           "kidsHelp": null
