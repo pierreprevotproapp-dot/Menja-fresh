@@ -507,7 +507,8 @@
         "ings": [
           "🫚 Beetroot · 150g",
           "🍎 Apple · ½ pc",
-          "🥕 Carrot · 1 pc"
+          "🥕 Carrot · 1 pc",
+          "🍅 Cherry tomatoes · 100g"
         ],
         "text": "Slice beetroot and apple thinly. Grate carrot. Halve cherry tomatoes.",
         "title": "Prep the vegetables",
@@ -705,7 +706,8 @@
         "tip": null,
         "ings": [
           "🧀 Goat cheese · 80g",
-          "🫐 Cranberries · 2 tbsp"
+          "🫐 Cranberries · 2 tbsp",
+          "🥬 Arugula · 60g"
         ],
         "text": "Layer arugula, sweet potato and pear. Crumble goat cheese on top. Scatter walnuts and cranberries. Drizzle dressing over everything.",
         "title": "Assemble",
@@ -842,7 +844,9 @@
         "tip": "Marinate overnight in the fridge for even deeper flavour.",
         "ings": [
           "🍗 Chicken thighs · 300g",
-          "🌶️ Red chilli · 1 pc"
+          "🌶️ Red chilli · 1 pc",
+          "🍋 Lime · 1 pc",
+          "🧄 Garlic · 2 cloves"
         ],
         "text": "Mix olive oil, smoked paprika, minced garlic, chopped chilli, oregano, salt and lime juice. Coat chicken thighs and marinate for at least 10 minutes.",
         "title": "Marinate the chicken",
@@ -1021,7 +1025,8 @@
         "ings": [
           "🫙 Dijon mustard · 2 tbsp",
           "🍋 Lemon · 1 pc",
-          "🍯 Honey · 1 tsp"
+          "🍯 Honey · 1 tsp",
+          "🧄 Garlic · 1 clove"
         ],
         "text": "Mix Dijon mustard, lemon juice, honey, minced garlic and a drizzle of olive oil into a smooth glaze.",
         "title": "Make the glaze",
@@ -1185,7 +1190,8 @@
         "tip": "The drier the chickpeas, the crispier the falafel.",
         "ings": [
           "🫘 Chickpeas · 400g",
-          "🌿 Parsley · 20g"
+          "🌿 Parsley · 20g",
+          "🧄 Garlic · 2 cloves"
         ],
         "text": "Drain chickpeas well and pat dry. Blend with parsley, garlic, cumin, coriander, a pinch of salt and 2 tbsp flour until a rough paste forms. Don't over-blend — it should have some texture.",
         "title": "Make the falafel mix",
@@ -1227,7 +1233,8 @@
         "tip": null,
         "ings": [
           "🫓 Flatbread · 2 pcs",
-          "🍅 Tomatoes · 2 pcs"
+          "🍅 Tomatoes · 2 pcs",
+          "🥒 Cucumber · ½ pc"
         ],
         "text": "Warm flatbreads. Top with sliced tomato, cucumber, falafel and a generous drizzle of tahini sauce.",
         "title": "Assemble",
@@ -1359,9 +1366,12 @@
         "tip": null,
         "ings": [
           "🟨 Firm tofu · 300g",
-          "🫙 Soy sauce · 2 tbsp"
+          "🫙 Soy sauce · 2 tbsp",
+          "🧄 Garlic · 3 cloves",
+          "🍋 Lemon · 1 pc",
+          "🌶️ Chilli flakes · ½ tsp"
         ],
-        "text": "Press tofu for 15 minutes between kitchen paper. Cube and marinate in soy sauce, lemon juice and chilli flakes for 10 minutes.",
+        "text": "Press tofu for 15 minutes between kitchen paper. Cube and marinate in soy sauce, lemon juice, minced garlic and chilli flakes for 10 minutes.",
         "title": "Press & marinate the tofu",
         "kidsHelp": null
       },
@@ -1536,7 +1546,8 @@
         "ings": [
           "🌿 Parsley · 30g",
           "🧄 Garlic · 3 cloves",
-          "🌶️ Chilli · ½ pc"
+          "🌶️ Chilli · ½ pc",
+          "🫒 Olive oil · 4 tbsp"
         ],
         "text": "Finely chop parsley, garlic and chilli. Mix with olive oil, red wine vinegar, oregano and a pinch of salt. Let rest for at least 10 minutes.",
         "title": "Make the chimichurri",
@@ -1566,9 +1577,10 @@
         "num": 4,
         "tip": null,
         "ings": [
-          "🥬 Arugula · 50g"
+          "🥬 Arugula · 50g",
+          "🍋 Lemon · 1 pc"
         ],
-        "text": "Slice steak against the grain. Layer rice and arugula, add steak slices and spoon chimichurri generously over the top.",
+        "text": "Slice steak against the grain. Layer rice and arugula, add steak slices and spoon chimichurri generously over the top. Squeeze lemon over everything.",
         "title": "Slice & assemble",
         "kidsHelp": null
       }
@@ -1874,7 +1886,8 @@
         "tip": null,
         "ings": [
           "🥑 Avocado · 1 pc",
-          "🍋 Lemon · ½ pc"
+          "🍋 Lemon · ½ pc",
+          "🌶️ Chilli flakes · ½ tsp"
         ],
         "text": "Halve and scoop avocado into a bowl. Smash with a fork, add lemon juice, salt and chilli flakes.",
         "title": "Smash the avocado",
@@ -1895,7 +1908,8 @@
         "tip": null,
         "ings": [
           "🍞 Sourdough bread · 2 slices",
-          "🌰 Dukkah · 1 tbsp"
+          "🌰 Dukkah · 1 tbsp",
+          "🌿 Chives · 10g"
         ],
         "text": "Toast sourdough. Spread avocado generously, add caramelised onion and the poached egg. Top with dukkah, chives and a drizzle of olive oil.",
         "title": "Toast & assemble",
@@ -2055,7 +2069,8 @@
         "ings": [
           "🌾 Granola · 50g",
           "🥜 Almond butter · 2 tbsp",
-          "🫐 Blueberries · 80g"
+          "🫐 Blueberries · 80g",
+          "🥥 Coconut flakes · 2 tbsp"
         ],
         "text": "Pour açaí base into chilled bowls. Arrange banana, berries, granola and coconut flakes on top. Drizzle with almond butter and a touch of honey if desired.",
         "title": "Build & serve",
@@ -2187,7 +2202,8 @@
         "ings": [
           "🌾 Rolled oats · 100g",
           "⚫ Chia seeds · 2 tbsp",
-          "🥛 Oat milk · 300ml"
+          "🥛 Oat milk · 300ml",
+          "🍯 Maple syrup · 2 tbsp"
         ],
         "text": "Combine oats, chia seeds, oat milk, maple syrup, lemon zest and a pinch of salt in a jar or bowl. Stir well.",
         "title": "Mix the oats",
@@ -2206,7 +2222,8 @@
         "tip": null,
         "ings": [
           "🫐 Blueberries · 100g",
-          "🥜 Almond butter · 2 tbsp"
+          "🥜 Almond butter · 2 tbsp",
+          "🥥 Coconut flakes · 1 tbsp"
         ],
         "text": "In the morning, stir the oats and add a splash more milk if too thick. Top with blueberries, almond butter drizzle and coconut flakes.",
         "title": "Top & serve",
@@ -2328,7 +2345,8 @@
         "num": 1,
         "tip": null,
         "ings": [
-          "🥦 Cauliflower · 1 head"
+          "🥦 Cauliflower · 1 head",
+          "🧄 Garlic · 2 cloves"
         ],
         "text": "Remove outer leaves, keeping the cauliflower whole. Rub all over with olive oil, garlic, cumin, salt and pepper.",
         "title": "Prep the cauliflower",
@@ -2737,7 +2755,8 @@
         "ings": [
           "🧀 Feta · 100g",
           "🫒 Olives · 60g",
-          "🌿 Mint & parsley · 20g"
+          "🌿 Mint & parsley · 20g",
+          "🍅 Semi-dried tomatoes · 60g"
         ],
         "kidsHelp": null
       },
@@ -2910,7 +2929,8 @@
         "tip": null,
         "ings": [
           "🫙 Tahini · 2 tbsp",
-          "🍯 Maple syrup · 1 tbsp"
+          "🍯 Maple syrup · 1 tbsp",
+          "🍋 Lime · ½ pc"
         ],
         "text": "Whisk tahini, maple syrup and lime juice with 2 tbsp water. Layer quinoa and pumpkin in bowls. Drizzle sauce and top with crispy sage and toasted seeds.",
         "title": "Make maple tahini & assemble",
@@ -3021,7 +3041,9 @@
         "tip": null,
         "ings": [
           "🍗 Chicken breast · 300g",
-          "🍋 Lemon · 1 pc"
+          "🍋 Lemon · 1 pc",
+          "🌿 Thyme & rosemary · 10g",
+          "🧄 Garlic · 2 cloves"
         ],
         "text": "Mix lemon zest, lemon juice, minced garlic, chopped herbs, olive oil, salt and pepper. Coat chicken and leave for 10 minutes.",
         "title": "Marinate the chicken",
@@ -3181,7 +3203,8 @@
         "tip": null,
         "ings": [
           "🍅 Cherry tomatoes · 300g",
-          "🧄 Garlic · 3 cloves"
+          "🧄 Garlic · 3 cloves",
+          "🌶️ Chilli flakes · ½ tsp"
         ],
         "text": "Halve tomatoes and place on a tray with whole garlic cloves, olive oil, chilli flakes, salt and pepper. Roast at 200°C for 20 minutes until burst and slightly caramelised.",
         "title": "Roast the tomatoes",
@@ -3362,7 +3385,8 @@
         "num": 2,
         "tip": null,
         "ings": [
-          "🍅 Chopped tomatoes · 400g"
+          "🍅 Chopped tomatoes · 400g",
+          "🌶️ Chilli flakes · ½ tsp"
         ],
         "text": "Stir in cumin, smoked paprika and chilli flakes. Cook 1 minute, then add chopped tomatoes. Simmer for 10 minutes until thickened.",
         "title": "Add the spices & tomatoes",
@@ -3508,7 +3532,8 @@
         "tip": null,
         "ings": [
           "🧅 Onion · 1 pc",
-          "🧄 Garlic · 3 cloves"
+          "🧄 Garlic · 3 cloves",
+          "🌿 Thyme · 5 sprigs"
         ],
         "text": "Dice onion and cook in olive oil over medium heat for 5 minutes. Add garlic and thyme, cook 2 more minutes.",
         "title": "Sauté aromatics",
@@ -3679,7 +3704,8 @@
         "tip": null,
         "ings": [
           "🧅 Onion · 1 pc",
-          "🫚 Ginger · 3cm"
+          "🫚 Ginger · 3cm",
+          "🧄 Garlic · 2 cloves"
         ],
         "text": "Dice onion and cook in olive oil for 5 minutes. Add garlic, grated ginger, cumin and turmeric. Cook 2 minutes.",
         "title": "Sauté the aromatics",
@@ -3992,7 +4018,8 @@
         "tip": null,
         "ings": [
           "🍄 Mushrooms · 200g",
-          "🧅 Onion · 1 pc"
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 1 clove"
         ],
         "text": "Preheat oven to 180°C. Slice onion, mushrooms and garlic. Cook in olive oil in an oven-safe frying pan for 5–6 minutes.",
         "title": "Preheat & sauté",
@@ -4331,7 +4358,8 @@
         "tip": null,
         "ings": [
           "🫐 Pomegranate seeds · 2 tbsp",
-          "🌿 Parsley · 15g"
+          "🌿 Parsley · 15g",
+          "🌶️ Chilli flakes · ½ tsp"
         ],
         "text": "Split sweet potatoes open. Fill with crispy chickpeas, drizzle tahini, scatter pomegranate seeds, parsley and chilli flakes.",
         "title": "Load & serve",
@@ -4640,7 +4668,8 @@
         "tip": "Don't overcrowd — space means roasting not steaming.",
         "ings": [
           "🥒 Courgette · 1 pc",
-          "🫑 Red pepper · 1 pc"
+          "🫑 Red pepper · 1 pc",
+          "🌿 Thyme · 5g"
         ],
         "text": "Toss everything with olive oil, salt, pepper and thyme. Spread on a large baking tray — give everything space. Roast at 200°C for 25–30 minutes.",
         "title": "Season & roast",
@@ -4650,7 +4679,8 @@
         "num": 3,
         "tip": null,
         "ings": [
-          "🫙 Wholegrain mustard · 2 tbsp"
+          "🫙 Wholegrain mustard · 2 tbsp",
+          "🍋 Lemon · ½ pc"
         ],
         "text": "Whisk wholegrain mustard, lemon juice and olive oil together.",
         "title": "Make the dressing",
@@ -4796,7 +4826,8 @@
         "ings": [
           "🌾 Rolled oats · 100g",
           "🍵 Matcha · 1 tsp",
-          "🥛 Oat milk · 300ml"
+          "🥛 Oat milk · 300ml",
+          "🍯 Honey or maple syrup · 1 tbsp"
         ],
         "text": "Whisk matcha into a small amount of warm oat milk until dissolved. Add oats, remaining oat milk, yogurt, honey and a pinch of salt. Stir well.",
         "title": "Mix the base",
@@ -4815,7 +4846,8 @@
         "tip": null,
         "ings": [
           "🍌 Banana · 1 pc",
-          "🌾 Granola · 30g"
+          "🌾 Granola · 30g",
+          "⚫ Hemp seeds · 2 tbsp"
         ],
         "text": "In the morning stir and top with banana slices, granola and hemp seeds. Dust with a pinch of matcha.",
         "title": "Top & serve",
@@ -5095,7 +5127,8 @@
         "num": 1,
         "tip": "Wear gloves — beetroot stains!",
         "ings": [
-          "🫚 Beetroot · 200g"
+          "🫚 Beetroot · 200g",
+          "🍋 Lemon · ½ pc"
         ],
         "text": "Slice cooked beetroot thinly or into wedges. Dress with a splash of balsamic, olive oil and lemon juice.",
         "title": "Slice the beetroot",
@@ -5117,7 +5150,8 @@
         "ings": [
           "🧀 Labneh · 200g",
           "🫐 Blackberries · 80g",
-          "🍅 Cherry tomatoes · 80g"
+          "🍅 Cherry tomatoes · 80g",
+          "🌿 Dill · 10g"
         ],
         "text": "Spread labneh over a plate or board. Arrange beetroot, berries and tomatoes on top. Scatter hazelnuts and fresh dill. Drizzle with olive oil.",
         "title": "Plate",
@@ -5255,7 +5289,8 @@
         "num": 3,
         "tip": null,
         "ings": [
-          "🫙 Tahini · 2 tbsp"
+          "🫙 Tahini · 2 tbsp",
+          "🍋 Lemon · 1 pc"
         ],
         "text": "Mix tahini with lemon juice and water until pourable.",
         "title": "Make tahini sauce",
@@ -5723,7 +5758,8 @@
         "ings": [
           "🥒 Courgette · 1 pc",
           "🫑 Red pepper · 1 pc",
-          "🫘 Chickpeas · 200g"
+          "🫘 Chickpeas · 200g",
+          "🍅 Cherry tomatoes · 150g"
         ],
         "text": "Chop courgette, pepper and tomatoes. Toss with drained chickpeas, olive oil, smoked paprika and salt. Roast at 200°C for 20–25 minutes.",
         "title": "Roast the vegetables",
@@ -5883,7 +5919,9 @@
         "tip": null,
         "ings": [
           "🥚 Eggs · 2 pcs",
-          "🫚 Coconut oil · 60ml"
+          "🫚 Coconut oil · 60ml",
+          "🍯 Maple syrup or honey · 5-6 tbsp",
+          "🥛 Oat milk · 60ml"
         ],
         "text": "Whisk eggs, melted coconut oil, oat milk, 5–6 tbsp maple syrup and vanilla into the mashed banana.",
         "title": "Mix wet ingredients",
@@ -6047,7 +6085,9 @@
         "tip": null,
         "ings": [
           "🥭 Mango · 1 pc",
-          "🥑 Avocado · 1 pc"
+          "🥑 Avocado · 1 pc",
+          "🥒 Cucumber · ½ pc",
+          "🌶️ Red chilli · ½ pc"
         ],
         "text": "Dice mango, slice avocado and cucumber. Finely chop chilli.",
         "title": "Prepare the fruit & veg",
@@ -6247,7 +6287,8 @@
         "tip": null,
         "ings": [
           "🌮 Corn tortillas · 6 pcs",
-          "🌿 Coriander · 15g"
+          "🌿 Coriander · 15g",
+          "🟣 Red cabbage · 80g"
         ],
         "text": "Warm tortillas. Spread avocado crema, add beans and sweet potato, top with cabbage, pickled onion and coriander. Squeeze lime over everything.",
         "title": "Assemble the tacos",
@@ -6713,7 +6754,8 @@
         "ings": [
           "🍅 Cherry tomatoes · 200g",
           "🥒 Courgette · 1 pc",
-          "🫒 Olives · 40g"
+          "🫒 Olives · 40g",
+          "🧄 Garlic · 2 cloves"
         ],
         "text": "Halve tomatoes, slice courgette. Arrange on a baking tray with sliced garlic and olives. Drizzle with olive oil and season.",
         "title": "Prep the vegetables",
@@ -6907,7 +6949,8 @@
         "tip": null,
         "ings": [
           "🥑 Avocado · 1 pc",
-          "⚫ Hemp seeds · 2 tbsp"
+          "⚫ Hemp seeds · 2 tbsp",
+          "🥒 Cucumber · 1 pc"
         ],
         "text": "Combine kale, sliced cucumber, broccoli and edamame. Top with sliced avocado. Drizzle dressing and scatter hemp seeds.",
         "title": "Assemble",
@@ -7050,7 +7093,8 @@
         "tip": null,
         "ings": [
           "🥛 Greek yogurt · 100g",
-          "🧄 Garlic · 1 clove"
+          "🧄 Garlic · 1 clove",
+          "🍋 Lemon · ½ pc"
         ],
         "text": "Mix Greek yogurt with grated garlic, lemon juice and chopped parsley.",
         "title": "Make the dipping sauce",
@@ -7226,7 +7270,8 @@
         "tip": null,
         "ings": [
           "🥑 Avocado · 1 pc",
-          "🌻 Sunflower seeds · 2 tbsp"
+          "🌻 Sunflower seeds · 2 tbsp",
+          "🥒 Cucumber · ½ pc"
         ],
         "text": "Layer rice, broccoli, edamame. Add avocado slices and cucumber ribbons. Drizzle dressing and finish with sunflower seeds.",
         "title": "Build the bowl",
@@ -7402,7 +7447,8 @@
         "tip": null,
         "ings": [
           "🥬 Salad greens · 60g",
-          "🫒 Olives · 40g"
+          "🫒 Olives · 40g",
+          "🍅 Cherry tomatoes · 100g"
         ],
         "text": "Arrange greens, tomatoes, beans and olives. Place tuna and halved eggs on top. Drizzle with dressing.",
         "title": "Plate",
@@ -7526,7 +7572,8 @@
         "num": 1,
         "tip": null,
         "ings": [
-          "🍗 Turkey mince · 400g"
+          "🍗 Turkey mince · 400g",
+          "🧄 Garlic · 3 cloves"
         ],
         "text": "Mix turkey mince with breadcrumbs, one egg, half the garlic (minced), oregano, salt and pepper. Roll into small balls.",
         "title": "Make the meatballs",
@@ -7723,7 +7770,8 @@
         "tip": null,
         "ings": [
           "🌾 Granola · 30g",
-          "⚫ Chia seeds · 1 tbsp"
+          "⚫ Chia seeds · 1 tbsp",
+          "🥥 Coconut flakes · 1 tbsp"
         ],
         "text": "Pour thick base into bowls. Top with kiwi, strawberries, granola, coconut flakes and chia seeds.",
         "title": "Build & serve",
@@ -7993,7 +8041,8 @@
         "ings": [
           "🫘 Green lentils · 400g",
           "🧅 Onion · 1 pc",
-          "🍅 Cherry tomatoes · 150g"
+          "🍅 Cherry tomatoes · 150g",
+          "🧄 Garlic · 2 cloves"
         ],
         "text": "Sauté diced onion and garlic in olive oil for 5 minutes. Add drained lentils, cumin, paprika, salt and halved cherry tomatoes. Cook 5 minutes.",
         "title": "Make the filling",
@@ -8157,7 +8206,8 @@
         "tip": null,
         "ings": [
           "🍋 Lemon · 1 pc",
-          "🫙 Dijon mustard · 1 tsp"
+          "🫙 Dijon mustard · 1 tsp",
+          "🧄 Garlic · 1 clove"
         ],
         "text": "Blend lemon juice, garlic, Dijon mustard, 3 tbsp olive oil and a pinch of salt until smooth.",
         "title": "Make the Caesar dressing",
@@ -8333,7 +8383,9 @@
         "tip": null,
         "ings": [
           "🥑 Avocado · 1 pc",
-          "⚪ Sesame seeds · 1 tbsp"
+          "⚪ Sesame seeds · 1 tbsp",
+          "🥒 Cucumber · ½ pc",
+          "🫘 Edamame · 80g"
         ],
         "text": "Add rice to bowls. Top with sliced salmon, avocado, cucumber and edamame. Spoon dressing and scatter sesame seeds.",
         "title": "Build the bowl",
@@ -8616,7 +8668,8 @@
         "tip": null,
         "ings": [
           "🧅 Onion · 1 pc",
-          "🧄 Garlic · 4 cloves"
+          "🧄 Garlic · 4 cloves",
+          "🌿 Thyme · 5 sprigs"
         ],
         "text": "Cook diced onion in olive oil for 5 minutes. Add garlic and thyme, cook 2 more minutes.",
         "title": "Sauté onion & garlic",
@@ -8930,7 +8983,9 @@
           "🥑 Avocado · 1 pc",
           "🥜 Peanut butter · 2 tbsp",
           "🍁 Maple syrup · 45ml",
-          "🍫 Cocoa powder · 25g"
+          "🍫 Cocoa powder · 25g",
+          "🟤 Brown or coconut sugar · 20g",
+          "🥛 Almond milk · 2 tbsp"
         ],
         "tip": "The 85% chocolate + peanut butter give it a deep, fudgy richness.",
         "kidsHelp": null
@@ -9105,7 +9160,8 @@
         "ings": [
           "🍞 Sourdough · 2 slices",
           "🧀 Feta · 60g",
-          "🌿 Basil · 10g"
+          "🌿 Basil · 10g",
+          "🫒 Kalamata olives · 30g"
         ],
         "text": "Toast sourdough. Layer with spinach, roasted tomatoes and olives. Top with poached eggs. Crumble feta and finish with fresh basil and olive oil.",
         "title": "Assemble",
@@ -9247,7 +9303,9 @@
         "num": 2,
         "tip": "Thin slices cook faster and more evenly.",
         "ings": [
-          "🍗 Chicken breast · 300g"
+          "🍗 Chicken breast · 300g",
+          "🫚 Ginger · 2cm",
+          "🧄 Garlic · 2 cloves"
         ],
         "text": "Slice chicken into thin strips. Chop broccoli and pepper. Mince garlic and grate ginger. Have everything ready before you start — stir-fries move fast.",
         "title": "Prep everything first",
@@ -9268,7 +9326,8 @@
         "tip": null,
         "ings": [
           "🥦 Broccoli · 150g",
-          "🫑 Red pepper · 1 pc"
+          "🫑 Red pepper · 1 pc",
+          "🫘 Snap peas · 80g"
         ],
         "text": "In the same pan, cook garlic and ginger for 30 seconds. Add broccoli, pepper and snap peas. Stir-fry 3–4 minutes on high heat.",
         "title": "Stir-fry the veg",
@@ -9437,7 +9496,9 @@
         "ings": [
           "🧀 Feta · 120g",
           "🌰 Pistachios · 40g",
-          "🍇 Raisins · 2 tbsp"
+          "🍇 Raisins · 2 tbsp",
+          "🍋 Lemon · 1 pc",
+          "🧅 Spring onion · 2 pcs"
         ],
         "text": "Mix warm black rice with crumbled feta, roughly crushed pistachios, raisins, sliced spring onion, cinnamon, cumin and lemon juice. Toss with olive oil. Taste and season.",
         "title": "Make the filling",
@@ -9582,7 +9643,8 @@
         "ings": [
           "🫐 Fresh figs · 3 pcs",
           "🍯 Honey · 2 tbsp",
-          "🌰 Pistachios · 20g"
+          "🌰 Pistachios · 20g",
+          "🌿 Thyme · 3 sprigs"
         ],
         "text": "Slice figs and arrange on top. Crush pistachios and scatter over. Drizzle honey generously and finish with fresh thyme leaves.",
         "title": "Top & drizzle",
@@ -9917,7 +9979,8 @@
         "ings": [
           "🫑 Red bell pepper · 1 pc",
           "🥒 Cucumber · 1 pc",
-          "🫘 Chickpeas · 400g"
+          "🫘 Chickpeas · 400g",
+          "🧅 Red onion · ¼ pc"
         ],
         "text": "Dice red pepper and cucumber. Thinly slice red onion. Drain and rinse chickpeas.",
         "title": "Prep the vegetables",
@@ -10056,9 +10119,10 @@
         "num": 1,
         "tip": "Low and slow is the only way. High heat burns instead of caramelises.",
         "ings": [
-          "🧅 Onions · 3 large"
+          "🧅 Onions · 3 large",
+          "🧄 Garlic · 2 cloves"
         ],
-        "text": "This is the heart of mujadara — don't rush it. Thinly slice onions and cook in olive oil over medium-low heat for 30–35 minutes, stirring every few minutes, until deeply golden and jammy. Season with salt halfway through.",
+        "text": "This is the heart of mujadara — don't rush it. Thinly slice onions and garlic, cook in olive oil over medium-low heat for 30–35 minutes, stirring every few minutes, until deeply golden and jammy. Season with salt halfway through.",
         "title": "Caramelise the onions",
         "kidsHelp": null
       },
@@ -10234,7 +10298,8 @@
         "tip": null,
         "ings": [
           "🟣 Red cabbage · 150g",
-          "🥕 Carrots · 2 medium"
+          "🥕 Carrots · 2 medium",
+          "🧅 Spring onions · 3 pcs"
         ],
         "text": "Finely shred red cabbage. Grate or julienne carrots. Blanch edamame 3 minutes and drain. Thinly slice spring onions.",
         "title": "Prep the vegetables",
@@ -10437,7 +10502,9 @@
           "🥚 Eggs · 3 pcs",
           "🥬 Baby spinach · 2 handfuls",
           "🫐 Dates · 3 pcs",
-          "🥛 Yogurt · 150g"
+          "🥛 Yogurt · 150g",
+          "🫒 Olive oil · 80ml",
+          "🍋 Lemon zest · 1 tsp"
         ],
         "text": "In a blender, combine eggs, spinach, pitted dates, yogurt, olive oil and lemon zest. Blend until completely smooth and bright green.",
         "title": "Blend wet ingredients",
@@ -10761,7 +10828,8 @@
         "ings": [
           "🍓 Raspberries · 80g",
           "🍌 Banana · 1 pc",
-          "⚫ Mixed seeds · 2 tbsp"
+          "⚫ Mixed seeds · 2 tbsp",
+          "🍯 Maple syrup · 2 tbsp"
         ],
         "text": "Spoon into bowls. Top with fresh raspberries, sliced banana, mixed seeds and a drizzle of maple syrup.",
         "title": "Top & serve",
