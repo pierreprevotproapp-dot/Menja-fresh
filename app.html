@@ -44,6 +44,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .wp-em{font-size:26px;flex-shrink:0;width:34px;text-align:center}
 .wp-t{font-size:16px;font-weight:600;color:#fff}
 .wp-d{font-size:13px;color:var(--nav-t);margin-top:2px;line-height:1.45}
+.welcome-stats{display:flex;gap:9px;margin:8px 0 2px}
+.wstat{flex:1;background:rgba(255,255,255,.10);border-radius:14px;padding:12px 7px;text-align:center}
+.wstat-n{font-size:22px;font-weight:800;color:var(--nav-a);line-height:1;font-family:var(--fb)}
+.wstat-d{font-size:11px;color:var(--nav-t);margin-top:6px;line-height:1.35}
 .welcome-cta{padding-top:18px}
 .welcome-start{width:100%;background:var(--nav-a);color:var(--nav);border:none;border-radius:99px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--fb)}
 .welcome-guest{width:100%;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);border-radius:99px;padding:14px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);margin-top:10px}
@@ -861,6 +865,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <div class="welcome-point"><span class="wp-em">🛒</span><div><div class="wp-t" data-t="wp3t">Grocery list, automatic</div><div class="wp-d" data-t="wp3d">Built from your meals, sorted by aisle.</div></div></div>
       <div class="welcome-point"><span class="wp-em">🌱</span><div><div class="wp-t" data-t="wp4t">Meals you'll actually love</div><div class="wp-d" data-t="wp4d">It quietly learns your family's taste.</div></div></div>
     </div>
+    <div class="welcome-stats">
+      <div class="wstat"><div class="wstat-n">2 min</div><div class="wstat-d" data-t="wstat1">to plan your whole week</div></div>
+      <div class="wstat"><div class="wstat-n">100+</div><div class="wstat-d" data-t="wstat2">recipes, in 5 languages</div></div>
+      <div class="wstat"><div class="wstat-n">1 tap</div><div class="wstat-d" data-t="wstat3">auto shopping list, by aisle</div></div>
+    </div>
     <div class="welcome-cta">
       <button class="welcome-start" onclick="welcomeGetStarted()" data-t="welcomeStart">Get started — it's free →</button>
       <button class="welcome-guest" onclick="welcomeGuest()" data-t="welcomeGuestBtn">Try without signing up</button>
@@ -1376,6 +1385,7 @@ en:{
   wp2t:'Less mental load',wp2d:'We suggest, you tweak with a tap.',
   wp3t:'Grocery list, automatic',wp3d:'Built from your meals, sorted by aisle.',
   wp4t:"Meals you'll actually love",wp4d:"It quietly learns your family's taste.",
+  wstat1:'to plan your whole week',wstat2:'recipes, in 5 languages',wstat3:'auto shopping list, by aisle',
   welcomeStart:"Get started — it's free →",welcomeGuestBtn:'Try without signing up',
   welcomeSigninPre:'Already with us?',welcomeSigninLink:'Sign in',
   navPlan:'Plan',navGroceries:'Groceries',navMe:'Me',
@@ -1497,6 +1507,7 @@ fr:{
   wp2t:'Moins de charge mentale',wp2d:'On propose, vous ajustez d\'un geste.',
   wp3t:'Liste de courses, automatique',wp3d:'Créée à partir de vos repas, triée par rayon.',
   wp4t:'Des repas que vous aimerez vraiment',wp4d:'Elle apprend discrètement les goûts de votre famille.',
+  wstat1:'pour planifier toute la semaine',wstat2:'recettes, en 5 langues',wstat3:'liste de courses auto, par rayon',
   welcomeStart:"Commencer — c'est gratuit →",welcomeGuestBtn:'Essayer sans inscription',
   welcomeSigninPre:'Déjà parmi nous ?',welcomeSigninLink:'Se connecter',
   navPlan:'Planifier',navGroceries:'Courses',navMe:'Moi',
@@ -1618,6 +1629,7 @@ es:{
   wp2t:'Menos carga mental',wp2d:'Nosotros proponemos, tú ajustas con un toque.',
   wp3t:'Lista de la compra, automática',wp3d:'Creada con tus comidas, ordenada por pasillo.',
   wp4t:'Comidas que de verdad te gustarán',wp4d:'Aprende en silencio los gustos de tu familia.',
+  wstat1:'para planificar toda la semana',wstat2:'recetas, en 5 idiomas',wstat3:'lista de la compra automática, por pasillo',
   welcomeStart:'Empezar — es gratis →',welcomeGuestBtn:'Probar sin registrarse',
   welcomeSigninPre:'¿Ya con nosotros?',welcomeSigninLink:'Iniciar sesión',
   navPlan:'Planificar',navGroceries:'Compras',navMe:'Yo',
@@ -1785,6 +1797,7 @@ de:{
   wp2t:'Weniger Kopf-Last',wp2d:'Wir schlagen vor, du passt mit einem Tipp an.',
   wp3t:'Einkaufsliste, automatisch',wp3d:'Aus deinen Mahlzeiten erstellt, nach Gang sortiert.',
   wp4t:'Gerichte, die du wirklich magst',wp4d:'Lernt still den Geschmack deiner Familie.',
+  wstat1:'für die ganze Wochenplanung',wstat2:'Rezepte, in 5 Sprachen',wstat3:'automatische Einkaufsliste, nach Gang',
   welcomeStart:'Loslegen — kostenlos →',welcomeGuestBtn:'Ohne Anmeldung testen',
   welcomeSigninPre:'Schon dabei?',welcomeSigninLink:'Anmelden',
   navPlan:'Planen',navGroceries:'Einkauf',navMe:'Ich',
