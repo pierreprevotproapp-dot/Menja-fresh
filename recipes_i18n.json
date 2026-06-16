@@ -17828,10 +17828,9 @@
       "title": "Orangen-Mandel-Energiekugeln",
       "ingredients": [
         "Medjool-Datteln",
-        "Haferflocken",
         "Mandeln",
-        "Orange",
-        "Kokosraspeln"
+        "Kokosraspeln",
+        "Orange"
       ],
       "base": [
         "Vanilleextrakt",
@@ -17840,11 +17839,10 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Nüsse & Hafer mahlen",
-          "text": "Mandeln und Haferflocken im Mixer grob mahlen.",
+          "title": "Mandeln mahlen",
+          "text": "Mandeln im Mixer grob mahlen.",
           "ings": [
-            "🌰 Mandeln · 80g",
-            "🌾 Haferflocken · 80g"
+            "🌰 Mandeln · 120g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17856,14 +17854,14 @@
             "🌴 Medjool-Datteln · 200g",
             "🍊 Orange · 1 pc"
           ],
-          "tip": null,
+          "tip": "Den Orangensaft schluckweise zugeben — nur so viel, dass es bindet.",
           "kidsHelp": null
         },
         {
           "title": "Rollen & kühlen",
           "text": "Zu Kugeln rollen, in Kokosraspeln wälzen und 30 Minuten kühlen.",
           "ings": [
-            "🥥 Kokosraspeln · 30g"
+            "🥥 Kokosraspeln · 50g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17874,10 +17872,9 @@
       "title": "Bolitas energéticas de naranja y almendra",
       "ingredients": [
         "Dátiles Medjool",
-        "Copos de avena",
         "Almendras",
-        "Naranja",
-        "Coco rallado"
+        "Coco rallado",
+        "Naranja"
       ],
       "base": [
         "Extracto de vainilla",
@@ -17886,11 +17883,10 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Tritura frutos secos y avena",
-          "text": "Tritura las almendras y la avena en la picadora hasta una textura gruesa.",
+          "title": "Tritura las almendras",
+          "text": "Tritura las almendras en la picadora hasta una textura gruesa.",
           "ings": [
-            "🌰 Almendras · 80g",
-            "🌾 Copos de avena · 80g"
+            "🌰 Almendras · 120g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17902,14 +17898,14 @@
             "🌴 Dátiles Medjool · 200g",
             "🍊 Naranja · 1 pc"
           ],
-          "tip": null,
+          "tip": "Añade el zumo poco a poco — lo justo para que ligue.",
           "kidsHelp": null
         },
         {
           "title": "Forma y enfría",
           "text": "Forma bolitas, rebózalas en coco rallado y refrigera 30 minutos.",
           "ings": [
-            "🥥 Coco rallado · 30g"
+            "🥥 Coco rallado · 50g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17920,10 +17916,9 @@
       "title": "Billes énergétiques orange & amande",
       "ingredients": [
         "Dattes Medjool",
-        "Flocons d'avoine",
         "Amandes",
-        "Orange",
-        "Noix de coco râpée"
+        "Noix de coco râpée",
+        "Orange"
       ],
       "base": [
         "Extrait de vanille",
@@ -17932,11 +17927,10 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Mixer fruits secs et avoine",
-          "text": "Mixer les amandes et les flocons d'avoine en une poudre grossière.",
+          "title": "Mixer les amandes",
+          "text": "Mixer les amandes en poudre grossière.",
           "ings": [
-            "🌰 Amandes · 80g",
-            "🌾 Flocons d'avoine · 80g"
+            "🌰 Amandes · 120g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17948,14 +17942,14 @@
             "🌴 Dattes Medjool · 200g",
             "🍊 Orange · 1 pc"
           ],
-          "tip": null,
+          "tip": "Ajouter le jus petit à petit — juste assez pour lier.",
           "kidsHelp": null
         },
         {
           "title": "Rouler et réfrigérer",
           "text": "Façonner des billes, les rouler dans la noix de coco râpée et réfrigérer 30 minutes.",
           "ings": [
-            "🥥 Noix de coco râpée · 30g"
+            "🥥 Noix de coco râpée · 50g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -18151,15 +18145,15 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Eigelb garen (Zabaglione)",
-          "text": "Eigelb mit dem Zucker in einer hitzebeständigen Schüssel über einem Topf mit siedendem Wasser 4–5 Minuten dick, hell und heiß aufschlagen — so garen die Eier sanft. Vom Herd nehmen, abkühlen, dann Mascarpone und griechischen Joghurt unterheben.",
+          "title": "Creme machen",
+          "text": "Eier trennen. Eigelb mit dem Zucker hell und cremig aufschlagen, dann Mascarpone und griechischen Joghurt unterheben. Eiweiß zu weichen Spitzen schlagen und vorsichtig unterheben — für eine leichte, luftige Creme.",
           "ings": [
-            "🥚 Eier · 3 St.",
+            "🥚 Eier · 3 pcs",
             "🥄 Zucker · 70g",
-            "🧀 Mascarpone · 250g",
-            "🥛 Griechischer Joghurt · 250g"
+            "🧀 Mascarpone · 350g",
+            "🥛 Griechischer Joghurt · 150g"
           ],
-          "tip": "Keine rohen Eier — das Eigelb wird über dem Wasserbad gegart.",
+          "tip": "Klassische Methode mit rohen Eiern — Eischnee und etwas Joghurt machen es leichter, ohne die Mascarpone-Fülle zu verlieren.",
           "kidsHelp": null
         },
         {
@@ -18207,15 +18201,15 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Cocina las yemas (sabayón)",
-          "text": "Bate las yemas con el azúcar en un bol resistente al calor sobre una olla con agua hirviendo a fuego suave 4–5 minutos hasta que estén espesas, pálidas y calientes — así se cuajan los huevos. Retira del calor, enfría e incorpora el mascarpone y el yogur griego.",
+          "title": "Haz la crema",
+          "text": "Separa los huevos. Bate las yemas con el azúcar hasta que blanqueen, luego incorpora el mascarpone y el yogur griego. Monta las claras a punto suave e incorpóralas con suavidad — para una crema ligera y aireada.",
           "ings": [
-            "🥚 Huevos · 3 ud",
+            "🥚 Huevos · 3 pcs",
             "🥄 Azúcar · 70g",
-            "🧀 Mascarpone · 250g",
-            "🥛 Yogur griego · 250g"
+            "🧀 Mascarpone · 350g",
+            "🥛 Yogur griego · 150g"
           ],
-          "tip": "Sin huevo crudo — las yemas se cuecen al baño maría.",
+          "tip": "Método clásico con huevo crudo — las claras montadas y un poco de yogur la aligeran sin perder la untuosidad del mascarpone.",
           "kidsHelp": null
         },
         {
@@ -18263,15 +18257,15 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Cuire les jaunes (sabayon)",
-          "text": "Fouetter les jaunes avec le sucre dans un bol résistant à la chaleur au-dessus d'une casserole d'eau frémissante 4–5 minutes jusqu'à ce qu'ils soient épais, pâles et chauds — cela cuit doucement les œufs. Retirer du feu, laisser refroidir, puis incorporer le mascarpone et le yaourt grec.",
+          "title": "Préparer la crème",
+          "text": "Séparer les œufs. Battre les jaunes avec le sucre jusqu'à blanchiment, puis incorporer le mascarpone et le yaourt grec. Monter les blancs en neige souple et les incorporer délicatement — pour une crème légère et aérienne.",
           "ings": [
-            "🥚 Œufs · 3 pc",
+            "🥚 Œufs · 3 pcs",
             "🥄 Sucre · 70g",
-            "🧀 Mascarpone · 250g",
-            "🥛 Yaourt grec · 250g"
+            "🧀 Mascarpone · 350g",
+            "🥛 Yaourt grec · 150g"
           ],
-          "tip": "Pas d'œufs crus — les jaunes sont cuits au bain-marie.",
+          "tip": "Méthode classique aux œufs crus — les blancs montés et un peu de yaourt l'allègent sans perdre l'onctuosité du mascarpone.",
           "kidsHelp": null
         },
         {

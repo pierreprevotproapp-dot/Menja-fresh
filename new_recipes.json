@@ -3917,7 +3917,7 @@
   {
     "id": "orange-energy-balls",
     "title": "Orange & Almond Energy Balls",
-    "subtitle": "No-bake bites sweetened only by dates — bright with orange",
+    "subtitle": "No-bake bites of dates, almonds & orange — no oats, just like Little Green Kitchen",
     "emoji": "🟠",
     "is_kids": true,
     "tags": [
@@ -3940,9 +3940,9 @@
     "image_url": "",
     "image_prompt": "Orange and almond energy balls rolled in desiccated coconut on a plate, fresh orange and dates beside, bright clean natural-food photography",
     "nutrition": {
-      "fat": 9,
-      "kcal": 190,
-      "carbs": 24,
+      "fat": 11,
+      "kcal": 185,
+      "carbs": 22,
       "fiber": 4,
       "protein": 5
     },
@@ -3953,24 +3953,19 @@
         "amount": "200g"
       },
       {
-        "name": "Rolled oats",
-        "emoji": "🌾",
-        "amount": "80g"
-      },
-      {
         "name": "Almonds",
         "emoji": "🌰",
-        "amount": "80g"
+        "amount": "120g"
+      },
+      {
+        "name": "Desiccated coconut",
+        "emoji": "🥥",
+        "amount": "50g"
       },
       {
         "name": "Orange",
         "emoji": "🍊",
         "amount": "1 pc"
-      },
-      {
-        "name": "Desiccated coconut",
-        "emoji": "🥥",
-        "amount": "30g"
       }
     ],
     "base_ingredients": [
@@ -3985,34 +3980,28 @@
         "amount": "200g"
       },
       {
-        "name": "Rolled oats",
-        "emoji": "🌾",
-        "amount": "80g"
-      },
-      {
         "name": "Almonds",
         "emoji": "🌰",
-        "amount": "80g"
+        "amount": "120g"
+      },
+      {
+        "name": "Desiccated coconut",
+        "emoji": "🥥",
+        "amount": "50g"
       },
       {
         "name": "Orange",
         "emoji": "🍊",
         "amount": "1 pc"
-      },
-      {
-        "name": "Desiccated coconut",
-        "emoji": "🥥",
-        "amount": "30g"
       }
     ],
     "steps": [
       {
         "num": 1,
-        "title": "Blitz nuts & oats",
-        "text": "Pulse the almonds and oats in a food processor to a coarse meal.",
+        "title": "Blitz the almonds",
+        "text": "Pulse the almonds in a food processor to a coarse meal.",
         "ings": [
-          "🌰 Almonds · 80g",
-          "🌾 Rolled oats · 80g"
+          "🌰 Almonds · 120g"
         ],
         "tip": null,
         "kidsHelp": null
@@ -4033,7 +4022,7 @@
         "title": "Roll & chill",
         "text": "Roll into balls, then roll in the desiccated coconut. Chill for 30 minutes to firm up.",
         "ings": [
-          "🥥 Desiccated coconut · 30g"
+          "🥥 Desiccated coconut · 50g"
         ],
         "tip": null,
         "kidsHelp": null
@@ -4187,7 +4176,7 @@
   {
     "id": "tiramisu-lighter",
     "title": "Lighter Tiramisu",
-    "subtitle": "The Italian favourite, rounded out with Greek yogurt",
+    "subtitle": "The traditional Italian tiramisu — raw-egg method, just a touch lighter",
     "emoji": "🍰",
     "is_kids": false,
     "tags": [
@@ -4218,12 +4207,12 @@
       {
         "name": "Mascarpone",
         "emoji": "🧀",
-        "amount": "250g"
+        "amount": "350g"
       },
       {
         "name": "Greek yogurt",
         "emoji": "🥛",
-        "amount": "250g"
+        "amount": "150g"
       },
       {
         "name": "Eggs",
@@ -4259,12 +4248,12 @@
       {
         "name": "Mascarpone",
         "emoji": "🧀",
-        "amount": "250g"
+        "amount": "350g"
       },
       {
         "name": "Greek yogurt",
         "emoji": "🥛",
-        "amount": "250g"
+        "amount": "150g"
       },
       {
         "name": "Eggs",
@@ -4295,15 +4284,15 @@
     "steps": [
       {
         "num": 1,
-        "title": "Cook the egg yolks (zabaglione)",
-        "text": "Whisk the egg yolks with the sugar in a heatproof bowl set over a pan of simmering water for 4–5 minutes until thick, pale and hot — this gently cooks the eggs. Take off the heat, let cool, then fold in the mascarpone and Greek yogurt.",
+        "title": "Make the cream",
+        "text": "Separate the eggs. Beat the yolks with the sugar until pale and creamy, then fold in the mascarpone and Greek yogurt. Whisk the egg whites to soft peaks and gently fold them through for a light, airy cream.",
         "ings": [
           "🥚 Eggs · 3 pcs",
           "🥄 Sugar · 70g",
-          "🧀 Mascarpone · 250g",
-          "🥛 Greek yogurt · 250g"
+          "🧀 Mascarpone · 350g",
+          "🥛 Greek yogurt · 150g"
         ],
-        "tip": "No raw eggs — the yolks are gently cooked over a bain-marie.",
+        "tip": "Classic raw-egg method — whipped whites and a little Greek yogurt keep it lighter without losing the mascarpone richness.",
         "kidsHelp": null
       },
       {
@@ -4320,7 +4309,7 @@
       {
         "num": 3,
         "title": "Layer",
-        "text": "Layer soaked biscuits and cream, repeat, and finish with a smooth layer of cream.",
+        "text": "Layer the soaked biscuits and cream, repeat, and finish with a smooth layer of cream.",
         "ings": [],
         "tip": null,
         "kidsHelp": null
