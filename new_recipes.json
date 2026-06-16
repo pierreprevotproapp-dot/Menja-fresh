@@ -3445,12 +3445,11 @@
   },
   {
     "id": "vegetarian-lasagna",
-    "title": "Creamy Dairy-Free Veggie Lasagna",
-    "subtitle": "Roasted veg, lentil ragù and a creamy cashew & white-bean ricotta — no milk, no béchamel",
+    "title": "Vegetable Lasagna (No Béchamel)",
+    "subtitle": "Roasted veg, tomato sauce and a creamy ricotta-spinach layer instead of béchamel",
     "emoji": "🍝",
     "is_kids": true,
     "tags": [
-      "Vegan",
       "Vegetarian",
       "Kid-Friendly"
     ],
@@ -3461,20 +3460,19 @@
       "Pasta"
     ],
     "diet": [
-      "Vegan",
       "Vegetarian"
     ],
     "prep_minutes": 30,
     "cook_minutes": 45,
     "servings": 6,
     "image_url": "",
-    "image_prompt": "Creamy dairy-free vegetable lasagna, layers of roasted aubergine and courgette, rich tomato-lentil ragù and a smooth cashew & white-bean ricotta, golden bubbling top, one portion lifted to show the layers, rustic baking dish, soft natural daylight, realistic homemade food photography, not over-stylised",
+    "image_prompt": "Vegetarian vegetable lasagna with roasted aubergine and courgette, rich tomato sauce and a creamy ricotta-spinach layer (no béchamel), golden melted mozzarella top, one portion lifted to show the layers, rustic baking dish, soft natural daylight, realistic homemade food photography, not over-stylised",
     "nutrition": {
-      "fat": 16,
-      "kcal": 480,
-      "carbs": 64,
-      "fiber": 13,
-      "protein": 20
+      "fat": 22,
+      "kcal": 470,
+      "carbs": 46,
+      "fiber": 7,
+      "protein": 23
     },
     "ingredients": [
       {
@@ -3498,19 +3496,19 @@
         "amount": "800g"
       },
       {
-        "name": "Red lentils",
-        "emoji": "🟠",
-        "amount": "120g"
-      },
-      {
-        "name": "White beans",
-        "emoji": "🫘",
+        "name": "Ricotta",
+        "emoji": "🧀",
         "amount": "400g"
       },
       {
-        "name": "Cashews",
-        "emoji": "🌰",
-        "amount": "60g"
+        "name": "Spinach",
+        "emoji": "🥬",
+        "amount": "150g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
       },
       {
         "name": "Onion",
@@ -3521,13 +3519,17 @@
         "name": "Garlic",
         "emoji": "🧄",
         "amount": "3 cloves"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
       }
     ],
     "base_ingredients": [
       "Olive oil",
-      "Nutritional yeast",
-      "Lemon",
       "Dried oregano",
+      "Nutmeg",
       "Salt & pepper"
     ],
     "dressing": [],
@@ -3553,19 +3555,19 @@
         "amount": "800g"
       },
       {
-        "name": "Red lentils",
-        "emoji": "🟠",
-        "amount": "120g"
-      },
-      {
-        "name": "White beans",
-        "emoji": "🫘",
+        "name": "Ricotta",
+        "emoji": "🧀",
         "amount": "400g"
       },
       {
-        "name": "Cashews",
-        "emoji": "🌰",
-        "amount": "60g"
+        "name": "Spinach",
+        "emoji": "🥬",
+        "amount": "150g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
       },
       {
         "name": "Onion",
@@ -3576,6 +3578,11 @@
         "name": "Garlic",
         "emoji": "🧄",
         "amount": "3 cloves"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
       }
     ],
     "steps": [
@@ -3592,12 +3599,11 @@
       },
       {
         "num": 2,
-        "title": "Lentil-tomato ragù",
-        "text": "Soften the onion and garlic in olive oil, add the red lentils, chopped tomatoes and oregano and simmer 20 minutes until thick, then stir in the roasted veg.",
+        "title": "Tomato sauce",
+        "text": "Soften the onion and garlic in olive oil, add the chopped tomatoes and oregano and simmer 15 minutes, then stir in the roasted veg.",
         "ings": [
           "🧅 Onion · 1 pc",
           "🧄 Garlic · 3 cloves",
-          "🟠 Red lentils · 120g",
           "🥫 Chopped tomatoes · 800g"
         ],
         "tip": null,
@@ -3605,21 +3611,23 @@
       },
       {
         "num": 3,
-        "title": "Cashew & white-bean \"ricotta\"",
-        "text": "Blend the cashews and white beans with the juice of the lemon, nutritional yeast, a splash of water, salt and pepper until smooth and creamy.",
+        "title": "Ricotta-spinach layer",
+        "text": "Wilt the spinach, squeeze it dry, then mix with the ricotta, a little nutmeg, salt and pepper.",
         "ings": [
-          "🌰 Cashews · 60g",
-          "🫘 White beans · 400g"
+          "🥬 Spinach · 150g",
+          "🧀 Ricotta · 400g"
         ],
-        "tip": "Soak the cashews in hot water for 10 minutes first — it makes the dairy-free layer beautifully creamy.",
+        "tip": "This creamy ricotta-spinach layer replaces béchamel — no white-sauce faff.",
         "kidsHelp": null
       },
       {
         "num": 4,
         "title": "Layer & bake",
-        "text": "Layer ragù, lasagne sheets and the cashew–bean cream, repeat, finish with a layer of the cream and bake at 180°C for 35–40 minutes until golden and bubbling.",
+        "text": "Layer the tomato-veg sauce, lasagne sheets and the ricotta-spinach, repeat, top with mozzarella and parmesan and bake at 180°C for 35–40 minutes until golden and bubbling.",
         "ings": [
-          "🍝 Lasagne sheets · 250g"
+          "🍝 Lasagne sheets · 250g",
+          "🧀 Mozzarella · 125g",
+          "🧀 Parmesan · 40g"
         ],
         "tip": null,
         "kidsHelp": null
@@ -4287,15 +4295,15 @@
     "steps": [
       {
         "num": 1,
-        "title": "Whip the cream",
-        "text": "Beat the egg yolks with the sugar until pale, then fold in the mascarpone, Greek yogurt and vanilla. Whisk the egg whites to soft peaks and fold through.",
+        "title": "Cook the egg yolks (zabaglione)",
+        "text": "Whisk the egg yolks with the sugar in a heatproof bowl set over a pan of simmering water for 4–5 minutes until thick, pale and hot — this gently cooks the eggs. Take off the heat, let cool, then fold in the mascarpone and Greek yogurt.",
         "ings": [
           "🥚 Eggs · 3 pcs",
           "🥄 Sugar · 70g",
           "🧀 Mascarpone · 250g",
           "🥛 Greek yogurt · 250g"
         ],
-        "tip": "The yogurt lightens the mascarpone so it tastes rich but not heavy.",
+        "tip": "No raw eggs — the yolks are gently cooked over a bain-marie.",
         "kidsHelp": null
       },
       {
@@ -4601,117 +4609,6 @@
     ]
   },
   {
-    "id": "creme-brulee",
-    "title": "Vanilla Crème Brûlée",
-    "subtitle": "Silky vanilla custard under a crackly caramel top",
-    "emoji": "🍮",
-    "is_kids": false,
-    "tags": [
-      "Vegetarian",
-      "Gluten-free"
-    ],
-    "meal": [
-      "Dessert"
-    ],
-    "categories": [
-      "Süßspeise"
-    ],
-    "diet": [
-      "Vegetarian",
-      "Gluten-free"
-    ],
-    "prep_minutes": 20,
-    "cook_minutes": 40,
-    "servings": 4,
-    "image_url": "",
-    "image_prompt": "Crème brûlée in a ramekin with a glassy caramelised sugar top being cracked with a spoon, vanilla flecks in the custard, elegant food photography",
-    "nutrition": {
-      "fat": 38,
-      "kcal": 450,
-      "carbs": 24,
-      "fiber": 0,
-      "protein": 5
-    },
-    "ingredients": [
-      {
-        "name": "Double cream",
-        "emoji": "🥛",
-        "amount": "500ml"
-      },
-      {
-        "name": "Egg yolks",
-        "emoji": "🥚",
-        "amount": "5 pcs"
-      },
-      {
-        "name": "Sugar",
-        "emoji": "🥄",
-        "amount": "70g"
-      }
-    ],
-    "base_ingredients": [
-      "Vanilla extract",
-      "Sugar (for the top)"
-    ],
-    "dressing": [],
-    "mise_en_place": [
-      {
-        "name": "Double cream",
-        "emoji": "🥛",
-        "amount": "500ml"
-      },
-      {
-        "name": "Egg yolks",
-        "emoji": "🥚",
-        "amount": "5 pcs"
-      },
-      {
-        "name": "Sugar",
-        "emoji": "🥄",
-        "amount": "70g"
-      }
-    ],
-    "steps": [
-      {
-        "num": 1,
-        "title": "Infuse the cream",
-        "text": "Gently warm the cream with the vanilla until steaming — do not let it boil.",
-        "ings": [
-          "🥛 Double cream · 500ml"
-        ],
-        "tip": null,
-        "kidsHelp": null
-      },
-      {
-        "num": 2,
-        "title": "Make the custard",
-        "text": "Whisk the egg yolks with the sugar, then slowly whisk in the warm cream.",
-        "ings": [
-          "🥚 Egg yolks · 5 pcs",
-          "🥄 Sugar · 70g"
-        ],
-        "tip": null,
-        "kidsHelp": null
-      },
-      {
-        "num": 3,
-        "title": "Bake in a bain-marie",
-        "text": "Pour into ramekins, set them in a tray of hot water and bake at 150°C for 35–40 minutes until just set. Cool, then chill.",
-        "ings": [],
-        "tip": "The water bath keeps it silky — bake just until it barely jiggles in the middle.",
-        "kidsHelp": null
-      },
-      {
-        "num": 4,
-        "title": "Brûlée the top",
-        "text": "Sprinkle with a thin layer of sugar and caramelise with a blowtorch (or under a hot grill) just before serving.",
-        "ings": [],
-        "tip": null,
-        "kidsHelp": null
-      }
-    ]
-  },
-  {
     "id": "beetroot-feta-tart",
     "title": "Beetroot & Feta Tart",
     "subtitle": "Jammy onions, sweet beetroot and feta on a crisp almond-oat crust",
@@ -4899,6 +4796,129 @@
           "🥬 Rocket · 30g"
         ],
         "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "mousse-au-chocolat",
+    "title": "Mousse au Chocolat",
+    "subtitle": "The traditional French chocolate mousse — light, airy and intensely chocolatey",
+    "emoji": "🍫",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 0,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Classic French chocolate mousse (mousse au chocolat) in a small glass, dark, airy and glossy, a spoonful lifted, a few chocolate shavings on top, soft natural light, realistic homemade food photography, not over-stylised",
+    "nutrition": {
+      "fat": 22,
+      "kcal": 320,
+      "carbs": 24,
+      "fiber": 3,
+      "protein": 7
+    },
+    "ingredients": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "40g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "40g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Melt the chocolate",
+        "text": "Melt the dark chocolate with the butter until smooth, then let it cool slightly.",
+        "ings": [
+          "🍫 Dark chocolate · 200g",
+          "🧈 Butter · 30g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Add the yolks",
+        "text": "Separate the eggs and stir the yolks into the melted chocolate with the vanilla.",
+        "ings": [
+          "🥚 Eggs · 4 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Whip the whites",
+        "text": "Whisk the egg whites with a pinch of salt to soft peaks, add the sugar and whisk to a glossy meringue.",
+        "ings": [
+          "🥄 Sugar · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Fold & chill",
+        "text": "Gently fold the whites into the chocolate in three batches, spoon into glasses and chill for at least 3 hours.",
+        "ings": [],
+        "tip": "Fold gently to keep the air — that's what makes a classic mousse light.",
         "kidsHelp": null
       }
     ]

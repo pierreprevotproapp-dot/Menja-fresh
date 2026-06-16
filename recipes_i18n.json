@@ -17312,23 +17312,23 @@
   },
   "vegetarian-lasagna": {
     "de": {
-      "title": "Cremige milchfreie Gemüse-Lasagne",
+      "title": "Gemüse-Lasagne (ohne Béchamel)",
       "ingredients": [
         "Lasagneplatten",
         "Aubergine",
         "Zucchini",
         "Gehackte Tomaten",
-        "Rote Linsen",
-        "Weiße Bohnen",
-        "Cashews",
+        "Ricotta",
+        "Spinat",
+        "Mozzarella",
         "Zwiebel",
-        "Knoblauch"
+        "Knoblauch",
+        "Parmesan"
       ],
       "base": [
         "Olivenöl",
-        "Hefeflocken",
-        "Zitrone",
         "Getrockneter Oregano",
+        "Muskatnuss",
         "Salz & Pfeffer"
       ],
       "dressing": [],
@@ -17344,32 +17344,33 @@
           "kidsHelp": null
         },
         {
-          "title": "Linsen-Tomaten-Ragù",
-          "text": "Zwiebel und Knoblauch in Olivenöl andünsten, rote Linsen, gehackte Tomaten und Oregano zugeben und 20 Minuten dicklich köcheln, dann das geröstete Gemüse unterrühren.",
+          "title": "Tomatensauce",
+          "text": "Zwiebel und Knoblauch in Olivenöl andünsten, gehackte Tomaten und Oregano zugeben und 15 Minuten köcheln, dann das geröstete Gemüse unterrühren.",
           "ings": [
             "🧅 Zwiebel · 1 pc",
             "🧄 Knoblauch · 3 cloves",
-            "🟠 Rote Linsen · 120g",
             "🥫 Gehackte Tomaten · 800g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "Cashew-Bohnen-„Ricotta\"",
-          "text": "Cashews und weiße Bohnen mit dem Saft der Zitrone, Hefeflocken, einem Schuss Wasser, Salz und Pfeffer cremig mixen.",
+          "title": "Ricotta-Spinat-Schicht",
+          "text": "Spinat zusammenfallen lassen, gut ausdrücken und mit Ricotta, etwas Muskat, Salz und Pfeffer verrühren.",
           "ings": [
-            "🌰 Cashews · 60g",
-            "🫘 Weiße Bohnen · 400g"
+            "🥬 Spinat · 150g",
+            "🧀 Ricotta · 400g"
           ],
-          "tip": "Cashews vorher 10 Minuten in heißem Wasser einweichen — dann wird die milchfreie Schicht besonders cremig.",
+          "tip": "Diese cremige Ricotta-Spinat-Schicht ersetzt das Béchamel — ohne Mehlschwitze.",
           "kidsHelp": null
         },
         {
           "title": "Schichten & backen",
-          "text": "Ragù, Lasagneplatten und Cashew-Bohnen-Creme schichten, wiederholen, mit einer Cremeschicht abschließen und bei 180 °C 35–40 Minuten goldbraun backen.",
+          "text": "Tomaten-Gemüse-Sauce, Lasagneplatten und Ricotta-Spinat schichten, wiederholen, mit Mozzarella und Parmesan belegen und bei 180 °C 35–40 Minuten goldbraun backen.",
           "ings": [
-            "🍝 Lasagneplatten · 250g"
+            "🍝 Lasagneplatten · 250g",
+            "🧀 Mozzarella · 125g",
+            "🧀 Parmesan · 40g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17377,23 +17378,23 @@
       ]
     },
     "es": {
-      "title": "Lasaña de verduras cremosa sin lácteos",
+      "title": "Lasaña de verduras (sin bechamel)",
       "ingredients": [
         "Placas de lasaña",
         "Berenjena",
         "Calabacín",
         "Tomate triturado",
-        "Lentejas rojas",
-        "Alubias blancas",
-        "Anacardos",
+        "Ricotta",
+        "Espinacas",
+        "Mozzarella",
         "Cebolla",
-        "Ajo"
+        "Ajo",
+        "Parmesano"
       ],
       "base": [
         "Aceite de oliva",
-        "Levadura nutricional",
-        "Limón",
         "Orégano seco",
+        "Nuez moscada",
         "Sal y pimienta"
       ],
       "dressing": [],
@@ -17409,32 +17410,33 @@
           "kidsHelp": null
         },
         {
-          "title": "Ragú de lentejas y tomate",
-          "text": "Sofríe la cebolla y el ajo en aceite, añade las lentejas rojas, el tomate triturado y el orégano y cuece 20 minutos hasta que espese, luego incorpora las verduras asadas.",
+          "title": "Salsa de tomate",
+          "text": "Sofríe la cebolla y el ajo en aceite, añade el tomate triturado y el orégano y cuece 15 minutos, luego incorpora las verduras asadas.",
           "ings": [
             "🧅 Cebolla · 1 pc",
             "🧄 Ajo · 3 cloves",
-            "🟠 Lentejas rojas · 120g",
             "🥫 Tomate triturado · 800g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "«Ricotta» de anacardos y alubias",
-          "text": "Tritura los anacardos y las alubias blancas con el zumo del limón, la levadura nutricional, un chorro de agua, sal y pimienta hasta que quede cremoso.",
+          "title": "Capa de ricotta y espinacas",
+          "text": "Pocha las espinacas, escúrrelas bien y mézclalas con la ricotta, un poco de nuez moscada, sal y pimienta.",
           "ings": [
-            "🌰 Anacardos · 60g",
-            "🫘 Alubias blancas · 400g"
+            "🥬 Espinacas · 150g",
+            "🧀 Ricotta · 400g"
           ],
-          "tip": "Remoja los anacardos 10 minutos en agua caliente para que la capa sin lácteos quede muy cremosa.",
+          "tip": "Esta capa cremosa de ricotta y espinacas sustituye a la bechamel — sin complicaciones.",
           "kidsHelp": null
         },
         {
           "title": "Monta y hornea",
-          "text": "Alterna ragú, placas de lasaña y la crema de anacardos y alubias, repite, termina con una capa de crema y hornea a 180 °C 35–40 minutos hasta dorar.",
+          "text": "Alterna la salsa de tomate y verduras, las placas de lasaña y la mezcla de ricotta y espinacas, repite, cubre con mozzarella y parmesano y hornea a 180 °C 35–40 minutos hasta dorar.",
           "ings": [
-            "🍝 Placas de lasaña · 250g"
+            "🍝 Placas de lasaña · 250g",
+            "🧀 Mozzarella · 125g",
+            "🧀 Parmesano · 40g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17442,30 +17444,30 @@
       ]
     },
     "fr": {
-      "title": "Lasagnes de légumes crémeuses sans lactose",
+      "title": "Lasagnes de légumes (sans béchamel)",
       "ingredients": [
         "Feuilles de lasagnes",
         "Aubergine",
         "Courgette",
         "Tomates concassées",
-        "Lentilles corail",
-        "Haricots blancs",
-        "Noix de cajou",
+        "Ricotta",
+        "Épinards",
+        "Mozzarella",
         "Oignon",
-        "Ail"
+        "Ail",
+        "Parmesan"
       ],
       "base": [
         "Huile d'olive",
-        "Levure maltée",
-        "Citron",
         "Origan séché",
+        "Noix de muscade",
         "Sel & poivre"
       ],
       "dressing": [],
       "steps": [
         {
           "title": "Rôtir les légumes",
-          "text": "Couper l'aubergine et la courgette en dés, mélanger à l'huile et rôtir à 200 °C 20 minutes jusqu'à tendreté et caramélisation.",
+          "text": "Couper l'aubergine et la courgette en dés, mélanger à l'huile et rôtir à 200 °C 20 minutes jusqu'à tendreté.",
           "ings": [
             "🍆 Aubergine · 1 pc",
             "🥒 Courgette · 1 pc"
@@ -17474,32 +17476,33 @@
           "kidsHelp": null
         },
         {
-          "title": "Ragù lentilles-tomate",
-          "text": "Faire suer l'oignon et l'ail dans l'huile, ajouter les lentilles corail, les tomates concassées et l'origan et mijoter 20 minutes jusqu'à épaississement, puis incorporer les légumes rôtis.",
+          "title": "Sauce tomate",
+          "text": "Faire suer l'oignon et l'ail dans l'huile, ajouter les tomates concassées et l'origan et mijoter 15 minutes, puis incorporer les légumes rôtis.",
           "ings": [
             "🧅 Oignon · 1 pc",
             "🧄 Ail · 3 cloves",
-            "🟠 Lentilles corail · 120g",
             "🥫 Tomates concassées · 800g"
           ],
           "tip": null,
           "kidsHelp": null
         },
         {
-          "title": "« Ricotta » cajou-haricots blancs",
-          "text": "Mixer les noix de cajou et les haricots blancs avec le jus du citron, la levure maltée, un filet d'eau, sel et poivre jusqu'à consistance crémeuse.",
+          "title": "Couche ricotta-épinards",
+          "text": "Faire tomber les épinards, bien les essorer, puis les mélanger à la ricotta, un peu de muscade, sel et poivre.",
           "ings": [
-            "🌰 Noix de cajou · 60g",
-            "🫘 Haricots blancs · 400g"
+            "🥬 Épinards · 150g",
+            "🧀 Ricotta · 400g"
           ],
-          "tip": "Faire tremper les noix de cajou 10 minutes dans l'eau chaude pour une couche sans lactose bien crémeuse.",
+          "tip": "Cette couche crémeuse de ricotta-épinards remplace la béchamel — sans roux.",
           "kidsHelp": null
         },
         {
           "title": "Monter et cuire",
-          "text": "Alterner ragù, feuilles de lasagnes et crème cajou-haricots, répéter, finir par une couche de crème et cuire à 180 °C 35–40 minutes jusqu'à doré.",
+          "text": "Alterner la sauce tomate-légumes, les feuilles de lasagnes et la ricotta-épinards, répéter, couvrir de mozzarella et de parmesan et cuire à 180 °C 35–40 minutes jusqu'à doré.",
           "ings": [
-            "🍝 Feuilles de lasagnes · 250g"
+            "🍝 Feuilles de lasagnes · 250g",
+            "🧀 Mozzarella · 125g",
+            "🧀 Parmesan · 40g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -18148,15 +18151,15 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Creme aufschlagen",
-          "text": "Eigelb mit dem Zucker hell aufschlagen, dann Mascarpone, griechischen Joghurt und Vanille unterheben. Eiweiß zu weichen Spitzen schlagen und unterheben.",
+          "title": "Eigelb garen (Zabaglione)",
+          "text": "Eigelb mit dem Zucker in einer hitzebeständigen Schüssel über einem Topf mit siedendem Wasser 4–5 Minuten dick, hell und heiß aufschlagen — so garen die Eier sanft. Vom Herd nehmen, abkühlen, dann Mascarpone und griechischen Joghurt unterheben.",
           "ings": [
-            "🥚 Eier · 3 pcs",
+            "🥚 Eier · 3 St.",
             "🥄 Zucker · 70g",
             "🧀 Mascarpone · 250g",
             "🥛 Griechischer Joghurt · 250g"
           ],
-          "tip": null,
+          "tip": "Keine rohen Eier — das Eigelb wird über dem Wasserbad gegart.",
           "kidsHelp": null
         },
         {
@@ -18204,15 +18207,15 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Monta la crema",
-          "text": "Bate las yemas con el azúcar hasta que blanqueen, luego incorpora el mascarpone, el yogur griego y la vainilla. Monta las claras a punto suave e incorpóralas.",
+          "title": "Cocina las yemas (sabayón)",
+          "text": "Bate las yemas con el azúcar en un bol resistente al calor sobre una olla con agua hirviendo a fuego suave 4–5 minutos hasta que estén espesas, pálidas y calientes — así se cuajan los huevos. Retira del calor, enfría e incorpora el mascarpone y el yogur griego.",
           "ings": [
-            "🥚 Huevos · 3 pcs",
+            "🥚 Huevos · 3 ud",
             "🥄 Azúcar · 70g",
             "🧀 Mascarpone · 250g",
             "🥛 Yogur griego · 250g"
           ],
-          "tip": null,
+          "tip": "Sin huevo crudo — las yemas se cuecen al baño maría.",
           "kidsHelp": null
         },
         {
@@ -18260,15 +18263,15 @@
       "dressing": [],
       "steps": [
         {
-          "title": "Monter la crème",
-          "text": "Battre les jaunes avec le sucre jusqu'à blanchiment, puis incorporer le mascarpone, le yaourt grec et la vanille. Monter les blancs en neige souple et les incorporer.",
+          "title": "Cuire les jaunes (sabayon)",
+          "text": "Fouetter les jaunes avec le sucre dans un bol résistant à la chaleur au-dessus d'une casserole d'eau frémissante 4–5 minutes jusqu'à ce qu'ils soient épais, pâles et chauds — cela cuit doucement les œufs. Retirer du feu, laisser refroidir, puis incorporer le mascarpone et le yaourt grec.",
           "ings": [
-            "🥚 Œufs · 3 pcs",
+            "🥚 Œufs · 3 pc",
             "🥄 Sucre · 70g",
             "🧀 Mascarpone · 250g",
             "🥛 Yaourt grec · 250g"
           ],
-          "tip": null,
+          "tip": "Pas d'œufs crus — les jaunes sont cuits au bain-marie.",
           "kidsHelp": null
         },
         {
@@ -18607,152 +18610,6 @@
       ]
     }
   },
-  "creme-brulee": {
-    "de": {
-      "title": "Crème brûlée",
-      "ingredients": [
-        "Schlagsahne",
-        "Eigelb",
-        "Zucker"
-      ],
-      "base": [
-        "Vanilleextrakt",
-        "Zucker (für die Kruste)"
-      ],
-      "dressing": [],
-      "steps": [
-        {
-          "title": "Sahne aromatisieren",
-          "text": "Sahne mit Vanille sanft erwärmen, bis sie dampft — nicht kochen.",
-          "ings": [
-            "🥛 Schlagsahne · 500ml"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Creme machen",
-          "text": "Eigelb mit dem Zucker verrühren, dann langsam die warme Sahne unterrühren.",
-          "ings": [
-            "🥚 Eigelb · 5 pcs",
-            "🥄 Zucker · 70g"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Im Wasserbad backen",
-          "text": "In Förmchen füllen, in ein Blech mit heißem Wasser stellen und bei 150 °C 35–40 Minuten backen, bis gerade fest. Abkühlen, dann kühlen.",
-          "ings": [],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Kruste flambieren",
-          "text": "Mit einer dünnen Zuckerschicht bestreuen und kurz vor dem Servieren mit dem Bunsenbrenner (oder unter dem heißen Grill) karamellisieren.",
-          "ings": [],
-          "tip": null,
-          "kidsHelp": null
-        }
-      ]
-    },
-    "es": {
-      "title": "Crema catalana / crème brûlée",
-      "ingredients": [
-        "Nata para montar",
-        "Yemas de huevo",
-        "Azúcar"
-      ],
-      "base": [
-        "Extracto de vainilla",
-        "Azúcar (para la costra)"
-      ],
-      "dressing": [],
-      "steps": [
-        {
-          "title": "Infusiona la nata",
-          "text": "Calienta la nata con la vainilla hasta que humee — sin que hierva.",
-          "ings": [
-            "🥛 Nata para montar · 500ml"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Haz la crema",
-          "text": "Bate las yemas con el azúcar y luego incorpora poco a poco la nata caliente.",
-          "ings": [
-            "🥚 Yemas de huevo · 5 pcs",
-            "🥄 Azúcar · 70g"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Hornea al baño maría",
-          "text": "Reparte en ramequines, ponlos en una bandeja con agua caliente y hornea a 150 °C 35–40 minutos hasta que cuaje. Enfría y refrigera.",
-          "ings": [],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Quema la costra",
-          "text": "Espolvorea una capa fina de azúcar y caramelízala con soplete (o bajo el grill) justo antes de servir.",
-          "ings": [],
-          "tip": null,
-          "kidsHelp": null
-        }
-      ]
-    },
-    "fr": {
-      "title": "Crème brûlée à la vanille",
-      "ingredients": [
-        "Crème entière",
-        "Jaunes d'œuf",
-        "Sucre"
-      ],
-      "base": [
-        "Extrait de vanille",
-        "Sucre (pour le dessus)"
-      ],
-      "dressing": [],
-      "steps": [
-        {
-          "title": "Infuser la crème",
-          "text": "Chauffer doucement la crème avec la vanille jusqu'à frémissement — sans la faire bouillir.",
-          "ings": [
-            "🥛 Crème entière · 500ml"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Préparer la crème",
-          "text": "Fouetter les jaunes avec le sucre, puis incorporer lentement la crème chaude.",
-          "ings": [
-            "🥚 Jaunes d'œuf · 5 pcs",
-            "🥄 Sucre · 70g"
-          ],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Cuire au bain-marie",
-          "text": "Répartir dans des ramequins, les poser dans un plat d'eau chaude et cuire à 150 °C 35–40 minutes jusqu'à juste prise. Refroidir, puis réfrigérer.",
-          "ings": [],
-          "tip": null,
-          "kidsHelp": null
-        },
-        {
-          "title": "Caraméliser le dessus",
-          "text": "Saupoudrer d'une fine couche de sucre et caraméliser au chalumeau (ou sous le gril) juste avant de servir.",
-          "ings": [],
-          "tip": null,
-          "kidsHelp": null
-        }
-      ]
-    }
-  },
   "beetroot-feta-tart": {
     "de": {
       "title": "Rote-Bete-Feta-Tarte",
@@ -18950,6 +18807,161 @@
             "🌿 Aneth · 10g",
             "🥬 Roquette · 30g"
           ],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    }
+  },
+  "mousse-au-chocolat": {
+    "de": {
+      "title": "Mousse au Chocolat",
+      "ingredients": [
+        "Zartbitterschokolade",
+        "Eier",
+        "Zucker",
+        "Butter"
+      ],
+      "base": [
+        "Vanilleextrakt",
+        "Eine Prise Salz"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Schokolade schmelzen",
+          "text": "Zartbitterschokolade mit der Butter glatt schmelzen, dann leicht abkühlen lassen.",
+          "ings": [
+            "🍫 Zartbitterschokolade · 200g",
+            "🧈 Butter · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Eigelb zugeben",
+          "text": "Eier trennen und die Eigelbe mit der Vanille unter die geschmolzene Schokolade rühren.",
+          "ings": [
+            "🥚 Eier · 4 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Eiweiß schlagen",
+          "text": "Eiweiß mit einer Prise Salz zu weichen Spitzen schlagen, Zucker zugeben und zu glänzendem Eischnee schlagen.",
+          "ings": [
+            "🥄 Zucker · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Unterheben & kühlen",
+          "text": "Eischnee in drei Portionen vorsichtig unter die Schokolade heben, in Gläser füllen und mindestens 3 Stunden kühlen.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "es": {
+      "title": "Mousse de chocolate",
+      "ingredients": [
+        "Chocolate negro",
+        "Huevos",
+        "Azúcar",
+        "Mantequilla"
+      ],
+      "base": [
+        "Extracto de vainilla",
+        "Una pizca de sal"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Funde el chocolate",
+          "text": "Funde el chocolate negro con la mantequilla hasta que quede liso y deja enfriar un poco.",
+          "ings": [
+            "🍫 Chocolate negro · 200g",
+            "🧈 Mantequilla · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Añade las yemas",
+          "text": "Separa los huevos e incorpora las yemas con la vainilla al chocolate fundido.",
+          "ings": [
+            "🥚 Huevos · 4 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monta las claras",
+          "text": "Monta las claras con una pizca de sal a punto suave, añade el azúcar y bate hasta un merengue brillante.",
+          "ings": [
+            "🥄 Azúcar · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Incorpora y enfría",
+          "text": "Incorpora las claras al chocolate en tres veces con suavidad, reparte en vasitos y refrigera al menos 3 horas.",
+          "ings": [],
+          "tip": null,
+          "kidsHelp": null
+        }
+      ]
+    },
+    "fr": {
+      "title": "Mousse au chocolat",
+      "ingredients": [
+        "Chocolat noir",
+        "Œufs",
+        "Sucre",
+        "Beurre"
+      ],
+      "base": [
+        "Extrait de vanille",
+        "Une pincée de sel"
+      ],
+      "dressing": [],
+      "steps": [
+        {
+          "title": "Faire fondre le chocolat",
+          "text": "Faire fondre le chocolat noir avec le beurre jusqu'à lisse, puis laisser tiédir.",
+          "ings": [
+            "🍫 Chocolat noir · 200g",
+            "🧈 Beurre · 30g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Ajouter les jaunes",
+          "text": "Séparer les œufs et incorporer les jaunes avec la vanille au chocolat fondu.",
+          "ings": [
+            "🥚 Œufs · 4 pcs"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Monter les blancs",
+          "text": "Monter les blancs avec une pincée de sel en neige souple, ajouter le sucre et fouetter en meringue brillante.",
+          "ings": [
+            "🥄 Sucre · 40g"
+          ],
+          "tip": null,
+          "kidsHelp": null
+        },
+        {
+          "title": "Incorporer et réfrigérer",
+          "text": "Incorporer délicatement les blancs au chocolat en trois fois, répartir dans des verrines et réfrigérer au moins 3 heures.",
+          "ings": [],
           "tip": null,
           "kidsHelp": null
         }
