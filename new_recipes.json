@@ -3445,11 +3445,12 @@
   },
   {
     "id": "vegetarian-lasagna",
-    "title": "Best-Ever Vegetarian Lasagna",
-    "subtitle": "Roasted veg and a rich tomato-béchamel — no one misses the meat",
+    "title": "Creamy Dairy-Free Veggie Lasagna",
+    "subtitle": "Roasted veg, lentil ragù and a creamy cashew & white-bean ricotta — no milk, no béchamel",
     "emoji": "🍝",
     "is_kids": true,
     "tags": [
+      "Vegan",
       "Vegetarian",
       "Kid-Friendly"
     ],
@@ -3460,18 +3461,19 @@
       "Pasta"
     ],
     "diet": [
+      "Vegan",
       "Vegetarian"
     ],
     "prep_minutes": 30,
     "cook_minutes": 45,
     "servings": 6,
     "image_url": "",
-    "image_prompt": "Vegetarian lasagna with roasted aubergine, courgette and pepper, golden mozzarella top, one slice lifted, cosy food photography",
+    "image_prompt": "Creamy dairy-free vegetable lasagna, layers of roasted aubergine and courgette, rich tomato-lentil ragù and a smooth cashew & white-bean ricotta, golden bubbling top, one portion lifted to show the layers, rustic baking dish, soft natural daylight, realistic homemade food photography, not over-stylised",
     "nutrition": {
-      "fat": 20,
+      "fat": 16,
       "kcal": 480,
-      "carbs": 54,
-      "fiber": 8,
+      "carbs": 64,
+      "fiber": 13,
       "protein": 20
     },
     "ingredients": [
@@ -3491,41 +3493,41 @@
         "amount": "1 pc"
       },
       {
-        "name": "Red pepper",
-        "emoji": "🫑",
-        "amount": "1 pc"
-      },
-      {
         "name": "Chopped tomatoes",
         "emoji": "🥫",
         "amount": "800g"
       },
       {
-        "name": "Milk",
-        "emoji": "🥛",
-        "amount": "600ml"
+        "name": "Red lentils",
+        "emoji": "🟠",
+        "amount": "120g"
       },
       {
-        "name": "Butter",
-        "emoji": "🧈",
-        "amount": "50g"
+        "name": "White beans",
+        "emoji": "🫘",
+        "amount": "400g"
       },
       {
-        "name": "Plain flour",
-        "emoji": "🌾",
-        "amount": "50g"
+        "name": "Cashews",
+        "emoji": "🌰",
+        "amount": "60g"
       },
       {
-        "name": "Mozzarella",
-        "emoji": "🧀",
-        "amount": "125g"
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "3 cloves"
       }
     ],
     "base_ingredients": [
       "Olive oil",
-      "Garlic",
+      "Nutritional yeast",
+      "Lemon",
       "Dried oregano",
-      "Nutmeg",
       "Salt & pepper"
     ],
     "dressing": [],
@@ -3546,54 +3548,56 @@
         "amount": "1 pc"
       },
       {
-        "name": "Red pepper",
-        "emoji": "🫑",
-        "amount": "1 pc"
-      },
-      {
         "name": "Chopped tomatoes",
         "emoji": "🥫",
         "amount": "800g"
       },
       {
-        "name": "Milk",
-        "emoji": "🥛",
-        "amount": "600ml"
+        "name": "Red lentils",
+        "emoji": "🟠",
+        "amount": "120g"
       },
       {
-        "name": "Butter",
-        "emoji": "🧈",
-        "amount": "50g"
+        "name": "White beans",
+        "emoji": "🫘",
+        "amount": "400g"
       },
       {
-        "name": "Plain flour",
-        "emoji": "🌾",
-        "amount": "50g"
+        "name": "Cashews",
+        "emoji": "🌰",
+        "amount": "60g"
       },
       {
-        "name": "Mozzarella",
-        "emoji": "🧀",
-        "amount": "125g"
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "3 cloves"
       }
     ],
     "steps": [
       {
         "num": 1,
         "title": "Roast the veg",
-        "text": "Dice the aubergine, courgette and pepper, toss with olive oil and roast at 200°C for 20 minutes.",
+        "text": "Dice the aubergine and courgette, toss with olive oil and roast at 200°C for 20 minutes until soft and caramelised.",
         "ings": [
           "🍆 Aubergine · 1 pc",
-          "🥒 Courgette · 1 pc",
-          "🫑 Red pepper · 1 pc"
+          "🥒 Courgette · 1 pc"
         ],
-        "tip": "Roasting the veg first deepens the flavour and stops the lasagna going watery.",
+        "tip": null,
         "kidsHelp": null
       },
       {
         "num": 2,
-        "title": "Tomato sauce",
-        "text": "Simmer the chopped tomatoes with garlic and oregano for 15 minutes, then stir in the roasted veg.",
+        "title": "Lentil-tomato ragù",
+        "text": "Soften the onion and garlic in olive oil, add the red lentils, chopped tomatoes and oregano and simmer 20 minutes until thick, then stir in the roasted veg.",
         "ings": [
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 3 cloves",
+          "🟠 Red lentils · 120g",
           "🥫 Chopped tomatoes · 800g"
         ],
         "tip": null,
@@ -3601,23 +3605,21 @@
       },
       {
         "num": 3,
-        "title": "Béchamel",
-        "text": "Melt the butter, whisk in the flour, add the milk gradually to a smooth sauce and season with nutmeg.",
+        "title": "Cashew & white-bean \"ricotta\"",
+        "text": "Blend the cashews and white beans with the juice of the lemon, nutritional yeast, a splash of water, salt and pepper until smooth and creamy.",
         "ings": [
-          "🧈 Butter · 50g",
-          "🌾 Plain flour · 50g",
-          "🥛 Milk · 600ml"
+          "🌰 Cashews · 60g",
+          "🫘 White beans · 400g"
         ],
-        "tip": null,
+        "tip": "Soak the cashews in hot water for 10 minutes first — it makes the dairy-free layer beautifully creamy.",
         "kidsHelp": null
       },
       {
         "num": 4,
         "title": "Layer & bake",
-        "text": "Layer veg sauce, lasagne sheets and béchamel, top with mozzarella and bake at 180°C for 35–40 minutes.",
+        "text": "Layer ragù, lasagne sheets and the cashew–bean cream, repeat, finish with a layer of the cream and bake at 180°C for 35–40 minutes until golden and bubbling.",
         "ings": [
-          "🍝 Lasagne sheets · 250g",
-          "🧀 Mozzarella · 125g"
+          "🍝 Lasagne sheets · 250g"
         ],
         "tip": null,
         "kidsHelp": null
