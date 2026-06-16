@@ -1831,7 +1831,8 @@
     "base_ingredients": [
       "Olive oil",
       "Salt & pepper",
-      "White vinegar (for poaching)"
+      "White vinegar (for poaching)",
+      "Balsamic vinegar"
     ],
     "mise_en_place": [
       {
@@ -1877,7 +1878,7 @@
         "ings": [
           "🧅 Red onion · ½ pc"
         ],
-        "text": "Thinly slice red onion and cook in olive oil over low heat for 8–10 minutes, stirring occasionally until soft and golden.",
+        "text": "Thinly slice red onion and cook in olive oil over low heat for 5 minutes, add a splash of balsamic vinegar and continue cooking for 3–5 minutes, stirring, until golden and caramelised.",
         "title": "Caramelise the onion",
         "kidsHelp": null
       },
@@ -2203,7 +2204,8 @@
           "🌾 Rolled oats · 100g",
           "⚫ Chia seeds · 2 tbsp",
           "🥛 Oat milk · 300ml",
-          "🍯 Maple syrup · 2 tbsp"
+          "🍯 Maple syrup · 2 tbsp",
+          "🍋 Lemon zest · ½ tsp"
         ],
         "text": "Combine oats, chia seeds, oat milk, maple syrup, lemon zest and a pinch of salt in a jar or bowl. Stir well.",
         "title": "Mix the oats",
@@ -2388,7 +2390,8 @@
         "tip": null,
         "ings": [
           "🌶️ Harissa paste · 2 tbsp",
-          "🌿 Coriander · 15g"
+          "🌿 Coriander · 15g",
+          "🫒 Olive oil · 3 tbsp"
         ],
         "text": "Place roasted cauliflower on a platter. Drizzle tahini and harissa over the top. Scatter hazelnuts and coriander.",
         "title": "Plate & finish",
@@ -2521,7 +2524,8 @@
         "tip": null,
         "ings": [
           "🧄 Garlic · 2 cloves",
-          "🌿 Rosemary · 2 sprigs"
+          "🌿 Rosemary · 2 sprigs",
+          "🫒 Olive oil · 3 tbsp"
         ],
         "text": "Drain and place on a baking tray. Smash each one flat with a glass. Drizzle with olive oil, add crushed garlic, rosemary, salt and pepper.",
         "title": "Smash & season",
@@ -3204,7 +3208,8 @@
         "ings": [
           "🍅 Cherry tomatoes · 300g",
           "🧄 Garlic · 3 cloves",
-          "🌶️ Chilli flakes · ½ tsp"
+          "🌶️ Chilli flakes · ½ tsp",
+          "🫒 Olive oil · 4 tbsp"
         ],
         "text": "Halve tomatoes and place on a tray with whole garlic cloves, olive oil, chilli flakes, salt and pepper. Roast at 200°C for 20 minutes until burst and slightly caramelised.",
         "title": "Roast the tomatoes",
@@ -4183,7 +4188,8 @@
         "num": 2,
         "tip": null,
         "ings": [
-          "🍋 Lemon · ½ pc"
+          "🍋 Lemon · ½ pc",
+          "🫒 Olive oil · 3 tbsp"
         ],
         "text": "Whisk olive oil, lemon juice and a splash of balsamic. Season well.",
         "title": "Make the dressing",
@@ -4511,7 +4517,8 @@
         "tip": null,
         "ings": [
           "🍅 Cherry tomatoes · 100g",
-          "🥒 Cucumber · ½ pc"
+          "🥒 Cucumber · ½ pc",
+          "🍋 Lemon · 1 pc"
         ],
         "text": "Halve cherry tomatoes, slice cucumber and chop herbs. Make a simple dressing with lemon juice, olive oil, salt and pepper.",
         "title": "Prepare the salad",
@@ -6480,7 +6487,8 @@
         "ings": [
           "🥛 Greek yogurt · 4 tbsp",
           "🍓 Strawberries · 80g",
-          "🫐 Blueberries · 50g"
+          "🫐 Blueberries · 50g",
+          "🍯 Maple syrup · 2 tbsp"
         ],
         "text": "Stack pancakes and top with Greek yogurt, sliced strawberries, blueberries and a drizzle of maple syrup.",
         "title": "Serve with yogurt & berries",
@@ -10689,7 +10697,8 @@
         "tip": null,
         "ings": [
           "🧀 Feta · 100g",
-          "🌿 Basil · 15g"
+          "🌿 Basil · 15g",
+          "🍋 Lemon · 1 pc"
         ],
         "text": "Whisk lemon juice, a splash of balsamic and olive oil. Toss warm farro with roasted vegetables and dressing. Crumble feta and scatter basil and nuts on top.",
         "title": "Make the dressing & combine",
@@ -11497,7 +11506,9 @@
         "text": "Spoon the porridge into bowls, top with the cinnamon apples, pecans, raisins and a generous handful of fresh berries, then drizzle with maple syrup and almond butter.",
         "ings": [
           "🟤 Raisins · 2 tbsp",
-          "🫐 Fresh berries · 80g"
+          "🫐 Fresh berries · 80g",
+          "🍯 Maple syrup · 2 tbsp",
+          "🥜 Almond butter · 2 tbsp"
         ],
         "tip": "The fresh berries add colour, juicy freshness and a tart contrast to the sweet apples.",
         "kidsHelp": null
