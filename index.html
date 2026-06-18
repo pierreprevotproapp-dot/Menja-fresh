@@ -504,5 +504,21 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
 if('serviceWorker' in navigator){navigator.serviceWorker.getRegistrations().then(rs=>rs.forEach(r=>r.unregister())).catch(()=>{});}
 if(window.caches&&caches.keys){caches.keys().then(ks=>ks.forEach(k=>caches.delete(k))).catch(()=>{});}
 </script>
+<!-- Cookie Consent Banner -->
+<div id="cc-bar" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#213F27;color:#FBF5E9;padding:16px 22px;box-shadow:0 -4px 20px rgba(33,63,39,.25)">
+  <div style="max-width:1140px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px">
+    <div style="flex:1;min-width:200px;font-size:14px;line-height:1.5">
+      <b style="font-size:15px">Cookies &amp; Datenschutz</b><br>
+      Wir verwenden Cookies für grundlegende Funktionen sowie Analyse- und Affiliate-Tracking (Awin). <a href="datenschutz.html" style="color:#E6A92E;text-decoration:underline">Mehr erfahren</a>
+    </div>
+    <div style="display:flex;gap:10px;flex-shrink:0">
+      <button onclick="ccSet('declined')" style="background:transparent;border:1.5px solid rgba(251,245,233,.4);color:#FBF5E9;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer">Nur notwendige</button>
+      <button onclick="ccSet('accepted')" style="background:#D6492F;border:none;color:#fff;border-radius:999px;padding:9px 18px;font-size:14px;font-weight:600;cursor:pointer">Alle akzeptieren</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){var k='menja_cc';function ccSet(v){localStorage.setItem(k,v);document.getElementById('cc-bar').style.display='none';}window.ccSet=ccSet;if(!localStorage.getItem(k)){document.getElementById('cc-bar').style.display='block';}})();
+</script>
 </body>
 </html>
