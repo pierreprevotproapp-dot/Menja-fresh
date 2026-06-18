@@ -1475,7 +1475,7 @@ en:{
   weekPlannedTitle:'Your week is planned 🎉',weekPlannedSub:'Dinner is one less thing to think about.',toGroceryList:'🛒 Take me to my grocery list →',stayOnPlan:'Stay on this page',
   streakChip:'🔥 {n}-week streak',weeksPlanned1:'🌱 First week planned',weeksPlannedN:'✓ {n} weeks planned',backToToday:'↩ Back to today',
   planCoachHint:'👆 <b>Tap a meal</b> to see the recipe · <b>swipe / ‹ ›</b> to change it · <b>✓ Choose</b> to lock it in · <b>🗑 Skip day</b> to drop one',gotItWord:'Got it',
-  notPlanningLabel:'Not planning',planThisDay:'Plan this day',pickADinner:'Pick a dinner',skipDay:'Skip day',skipDayTitle:'Skip this whole day',
+  notPlanningLabel:'Not planning',planThisDay:'Plan this day',pickADinner:'Pick a dinner',easyMealHint:'⚡ or try an Easy Meal',skipDay:'Skip day',skipDayTitle:'Skip this whole day',
   tabPrep:'Preparation',tabMacros:'Macros',
 },
 fr:{
@@ -1597,7 +1597,7 @@ fr:{
   weekPlannedTitle:'Votre semaine est planifiée 🎉',weekPlannedSub:'Le dîner, une chose de moins à gérer.',toGroceryList:'🛒 Voir ma liste de courses →',stayOnPlan:'Rester sur cette page',
   streakChip:'🔥 {n} semaines de suite',weeksPlanned1:'🌱 Première semaine planifiée',weeksPlannedN:'✓ {n} semaines planifiées',backToToday:'↩ Retour à aujourd’hui',
   planCoachHint:'👆 <b>Touche</b> un repas pour voir la recette · <b>glisse / ‹ ›</b> pour changer · <b>✓ Choisir</b> pour valider · <b>🗑 Passer le jour</b> pour en retirer un',gotItWord:'Compris',
-  notPlanningLabel:'Non planifié',planThisDay:'Planifier ce jour',pickADinner:'Choisir un dîner',skipDay:'Passer le jour',skipDayTitle:'Passer toute la journée',
+  notPlanningLabel:'Non planifié',planThisDay:'Planifier ce jour',pickADinner:'Choisir un dîner',easyMealHint:'⚡ ou essayer un Repas facile',skipDay:'Passer le jour',skipDayTitle:'Passer toute la journée',
   tabPrep:'Préparation',tabMacros:'Macros',
 },
 es:{
@@ -1719,7 +1719,7 @@ es:{
   weekPlannedTitle:'¡Tu semana está planificada! 🎉',weekPlannedSub:'La cena, una cosa menos en que pensar.',toGroceryList:'🛒 Ir a mi lista de la compra →',stayOnPlan:'Quedarme en esta página',
   streakChip:'🔥 {n} semanas seguidas',weeksPlanned1:'🌱 Primera semana planificada',weeksPlannedN:'✓ {n} semanas planificadas',backToToday:'↩ Volver a hoy',
   planCoachHint:'👆 <b>Toca</b> una comida para ver la receta · <b>desliza / ‹ ›</b> para cambiar · <b>✓ Elegir</b> para fijar · <b>🗑 Saltar día</b> para quitar uno',gotItWord:'Entendido',
-  notPlanningLabel:'Sin planificar',planThisDay:'Planificar este día',pickADinner:'Elegir una cena',skipDay:'Saltar día',skipDayTitle:'Saltar todo el día',
+  notPlanningLabel:'Sin planificar',planThisDay:'Planificar este día',pickADinner:'Elegir una cena',easyMealHint:'⚡ o prueba una Comida fácil',skipDay:'Saltar día',skipDayTitle:'Saltar todo el día',
   tabPrep:'Preparación',tabMacros:'Macros',
 },
 pt:{
@@ -1887,7 +1887,7 @@ de:{
   weekPlannedTitle:'Deine Woche ist geplant 🎉',weekPlannedSub:'Das Abendessen – eine Sorge weniger.',toGroceryList:'🛒 Zu meiner Einkaufsliste →',stayOnPlan:'Auf dieser Seite bleiben',
   streakChip:'🔥 {n} Wochen in Folge',weeksPlanned1:'🌱 Erste Woche geplant',weeksPlannedN:'✓ {n} Wochen geplant',backToToday:'↩ Zurück zu heute',
   planCoachHint:'👆 <b>Tippe</b> auf eine Mahlzeit für das Rezept · <b>wischen / ‹ ›</b> zum Wechseln · <b>✓ Wählen</b> zum Festlegen · <b>🗑 Tag überspringen</b> zum Streichen',gotItWord:'Verstanden',
-  notPlanningLabel:'Nicht geplant',planThisDay:'Tag planen',pickADinner:'Abendessen wählen',skipDay:'Tag überspringen',skipDayTitle:'Ganzen Tag überspringen',
+  notPlanningLabel:'Nicht geplant',planThisDay:'Tag planen',pickADinner:'Abendessen wählen',easyMealHint:'⚡ oder ein Easy Meal wählen',skipDay:'Tag überspringen',skipDayTitle:'Ganzen Tag überspringen',
   tabPrep:'Zubereitung',tabMacros:'Makros',
 },
 };
@@ -3884,6 +3884,12 @@ function startBrowse(key,type){
   const cur=state.plan[key]&&state.plan[key][type]&&state.plan[key][type].dishId;
   const list=browseListNow();
   if(cur){const i=list.findIndex(d=>String(d.id)===String(cur));browse.idx=i>=0?i:0;}
+  renderPlan();
+  setTimeout(()=>{const el=document.getElementById('ibrowse-card');if(el)el.scrollIntoView({block:'center',behavior:'smooth'});},40);
+}
+function startBrowseEasy(key,type){
+  if(!DISHES.length)return;
+  browse={key,type,cat:'quick',idx:0,_cache:null,_cacheCat:null};
   renderPlan();
   setTimeout(()=>{const el=document.getElementById('ibrowse-card');if(el)el.scrollIntoView({block:'center',behavior:'smooth'});},40);
 }
