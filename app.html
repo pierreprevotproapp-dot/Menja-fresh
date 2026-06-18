@@ -548,9 +548,6 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .pday-skip-row{display:flex;align-items:center;justify-content:space-between;background:var(--surface2);border:1px dashed var(--border2);border-radius:var(--r);padding:13px 15px}
 .pday-skip-label{font-size:12px;color:var(--text3)}
 .pday-replan{background:var(--accent-l);color:var(--accent);border:none;border-radius:99px;padding:6px 13px;font-size:12px;font-weight:500;cursor:pointer;font-family:var(--fb)}
-.pday.lazy-day{opacity:.9}
-.pday-lazy-btn{border:1.5px dashed var(--border2);border-radius:var(--r);padding:22px 20px;text-align:center;color:var(--text3);font-size:13.5px;font-weight:500;cursor:pointer;background:var(--surface2);margin-bottom:10px;transition:background .15s}
-.pday-lazy-btn:active{background:var(--surface3)}
 .pday-meal-badge{display:inline-block;font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:#fff;background:rgba(0,0,0,.4);padding:2px 8px;border-radius:99px;margin-bottom:6px}
 .pday-card{position:relative;border-radius:var(--r);overflow:hidden;background:var(--surface2);box-shadow:var(--sh);cursor:pointer;user-select:none;-webkit-user-select:none;touch-action:pan-y;margin-bottom:10px}
 .pday-card.swiping{transition:none}
@@ -1434,7 +1431,7 @@ en:{
   greetMorning:'Good morning ☀️',greetAfternoon:'Good afternoon 🌤',greetEvening:'Good evening 🌙',greetNight:'Good night 🌙',tomorrow:'Tomorrow',inDays:'In {n} days',
   cookNow:'🍳 Cook now',recipeWord:'Recipe',cooked:'Cooked',cookedDone:'✓ Cooked',moreWord:'more',
   planNextTitle:'Plan next week?',planNextSub:'A calm few taps now = a sorted week ahead.',planNextBtn:'Plan next week →',
-  letsSortDinner:"Let's sort dinner",nothingPlannedYet:'Nothing planned yet',whenTonight:'tonight',whenThisDay:'this day',pickTonight:"Pick tonight's meal →",lazyDayBasic:'Lazy day? Add a 5-min basic',lazyDayLabel:'Lazy Day',addLazyMeal:'Add Lazy Meal',
+  letsSortDinner:"Let's sort dinner",nothingPlannedYet:'Nothing planned yet',whenTonight:'tonight',whenThisDay:'this day',pickTonight:"Pick tonight's meal →",lazyDayBasic:'Lazy day? Add a 5-min basic',
   emptyTodaySentence:'A few taps now and {when} is one less thing to think about.',
   macroLockTitle:'Macro tracking',macroLockSub:'Calories & protein for every day — Premium',unlockWord:'Unlock',
   todaysNutrition:"Today's nutrition",perPerson:'per person',carbsWord:'carbs',fatWord:'fat',setDailyGoals:'＋ Set daily goals',
@@ -1555,7 +1552,7 @@ fr:{
   greetMorning:'Bonjour ☀️',greetAfternoon:'Bon après-midi 🌤',greetEvening:'Bonsoir 🌙',greetNight:'Bonne nuit 🌙',tomorrow:'Demain',inDays:'Dans {n} jours',
   cookNow:'🍳 Cuisiner',recipeWord:'Recette',cooked:'Cuisiné',cookedDone:'✓ Cuisiné',moreWord:'de plus',
   planNextTitle:'Planifier la semaine prochaine ?',planNextSub:'Quelques touches maintenant = une semaine réglée.',planNextBtn:'Planifier la semaine prochaine →',
-  letsSortDinner:'On règle le dîner',nothingPlannedYet:'Rien de planifié',whenTonight:'ce soir',whenThisDay:'ce jour',pickTonight:'Choisir le dîner →',lazyDayBasic:'Jour flemme ? Un basique en 5 min',lazyDayLabel:'Jour libre',addLazyMeal:'Ajouter un repas facile',
+  letsSortDinner:'On règle le dîner',nothingPlannedYet:'Rien de planifié',whenTonight:'ce soir',whenThisDay:'ce jour',pickTonight:'Choisir le dîner →',lazyDayBasic:'Jour flemme ? Un basique en 5 min',
   emptyTodaySentence:'Quelques touches et {when} est une chose de moins à gérer.',
   macroLockTitle:'Suivi des macros',macroLockSub:'Calories et protéines chaque jour — Premium',unlockWord:'Débloquer',
   todaysNutrition:'Nutrition du jour',perPerson:'par personne',carbsWord:'glucides',fatWord:'lipides',setDailyGoals:'＋ Définir des objectifs',
@@ -1676,7 +1673,7 @@ es:{
   greetMorning:'¡Buenos días! ☀️',greetAfternoon:'¡Buenas tardes! 🌤',greetEvening:'¡Buenas noches! 🌙',greetNight:'¡Buenas noches! 🌙',tomorrow:'Mañana',inDays:'En {n} días',
   cookNow:'🍳 Cocinar',recipeWord:'Receta',cooked:'Cocinado',cookedDone:'✓ Cocinado',moreWord:'más',
   planNextTitle:'¿Planificar la próxima semana?',planNextSub:'Unos toques ahora = una semana resuelta.',planNextBtn:'Planificar la próxima semana →',
-  letsSortDinner:'Resolvamos la cena',nothingPlannedYet:'Nada planificado',whenTonight:'esta noche',whenThisDay:'este día',pickTonight:'Elegir la cena →',lazyDayBasic:'¿Día perezoso? Un básico de 5 min',lazyDayLabel:'Día libre',addLazyMeal:'Añadir comida fácil',
+  letsSortDinner:'Resolvamos la cena',nothingPlannedYet:'Nada planificado',whenTonight:'esta noche',whenThisDay:'este día',pickTonight:'Elegir la cena →',lazyDayBasic:'¿Día perezoso? Un básico de 5 min',
   emptyTodaySentence:'Unos toques ahora y {when} es una cosa menos en que pensar.',
   macroLockTitle:'Seguimiento de macros',macroLockSub:'Calorías y proteínas cada día — Premium',unlockWord:'Desbloquear',
   todaysNutrition:'Nutrición de hoy',perPerson:'por persona',carbsWord:'carbohidratos',fatWord:'grasas',setDailyGoals:'＋ Fijar objetivos diarios',
@@ -1843,7 +1840,7 @@ de:{
   greetMorning:'Guten Morgen ☀️',greetAfternoon:'Guten Tag 🌤',greetEvening:'Guten Abend 🌙',greetNight:'Gute Nacht 🌙',tomorrow:'Morgen',inDays:'In {n} Tagen',
   cookNow:'🍳 Jetzt kochen',recipeWord:'Rezept',cooked:'Gekocht',cookedDone:'✓ Gekocht',moreWord:'weitere',
   planNextTitle:'Nächste Woche planen?',planNextSub:'Ein paar ruhige Tipps jetzt = eine geregelte Woche.',planNextBtn:'Nächste Woche planen →',
-  letsSortDinner:'Regeln wir das Abendessen',nothingPlannedYet:'Noch nichts geplant',whenTonight:'heute Abend',whenThisDay:'dieser Tag',pickTonight:'Abendessen wählen →',lazyDayBasic:'Fauler Tag? 5-Minuten-Basic',lazyDayLabel:'Entspannter Tag',addLazyMeal:'Lazy Meal hinzufügen',
+  letsSortDinner:'Regeln wir das Abendessen',nothingPlannedYet:'Noch nichts geplant',whenTonight:'heute Abend',whenThisDay:'dieser Tag',pickTonight:'Abendessen wählen →',lazyDayBasic:'Fauler Tag? 5-Minuten-Basic',
   emptyTodaySentence:'Ein paar Tipps jetzt und {when} ist eine Sorge weniger.',
   macroLockTitle:'Makro-Tracking',macroLockSub:'Kalorien & Eiweiß für jeden Tag — Premium',unlockWord:'Freischalten',
   todaysNutrition:'Heutige Nährwerte',perPerson:'pro Person',carbsWord:'Kohlenhydrate',fatWord:'Fett',setDailyGoals:'＋ Tagesziele festlegen',
@@ -3922,13 +3919,7 @@ function renderCal(){
     const key=dateKey(d);const isToday=key===todayKey;
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
     if(isSkipped(key)){
-      const ldm=state.plan[key]||{};
-      const lazyDish=ldm.Dinner&&ldm.Dinner.dishId?getDish(ldm.Dinner.dishId):null;
-      const lazyContent=isBrowsing(key,'Dinner')?inlineBrowseCard(key,'Dinner'):lazyDish?mealCard(key,'Dinner',lazyDish):`<div class="pday-lazy-btn" onclick="pickBasic('${key}','Dinner')">☀️ ${t('addLazyMeal')}</div>`;
-      return`<div class="pday lazy-day">
-        <div class="pday-label-row"><span class="pday-label">☀️ ${labelTxt} · ${t('lazyDayLabel')}</span><button class="pday-replan" onclick="planDay('${key}')">＋ ${t('planThisDay')}</button></div>
-        ${lazyContent}
-      </div>`;
+      return`<div class="pday"><div class="pday-skip-row"><span class="pday-skip-label">${labelTxt} · ${t('notPlanningLabel')}</span><button class="pday-replan" onclick="planDay('${key}')">＋ ${t('planThisDay')}</button></div></div>`;
     }
     const dm=state.plan[key]||{};
     let cards='';
@@ -3939,7 +3930,7 @@ function renderCal(){
     if(isBrowsing(key,'Dinner'))cards+=inlineBrowseCard(key,'Dinner');
     else{
       const dinner=dm.Dinner&&dm.Dinner.dishId?getDish(dm.Dinner.dishId):null;
-      cards+=dinner?mealCard(key,'Dinner',dinner):`<div class="pday-empty" onclick="startBrowse('${key}','Dinner')">＋ ${t('pickADinner')}</div>`;
+      cards+=dinner?mealCard(key,'Dinner',dinner):`<div class="pday-empty" onclick="startBrowse('${key}','Dinner')">＋ ${t('pickADinner')}</div><div class="pday-basic-link" onclick="pickBasic('${key}','Dinner')">⏱ ${t('lazyDayBasic')}</div>`;
     }
     const adds=['Breakfast','Lunch'].filter(tp=>!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
     const dCost=isPremium()?dayCostEstimate(key):0;
@@ -4082,7 +4073,7 @@ function checkWeekDone(){
 // ═══════════════════════════════════════════════════
 // VISUAL DISH CHOOSER (full-screen, big photos, "Choose" to lock in)
 // ═══════════════════════════════════════════════════
-let chooserState={key:null,type:null,cat:'all',idx:0,lazy:false};
+let chooserState={key:null,type:null,cat:'all',idx:0};
 function chooserDishes(){
   let list=DISHES.filter(d=>recipeMatchesCat(d,chooserState.cat));
   if(chooserState.type==='Breakfast')list=list.slice().sort((a,b)=>(isBreakfastDish(b)?1:0)-(isBreakfastDish(a)?1:0));
@@ -4099,12 +4090,12 @@ function openDishChooser(key,type,cat){
   renderDishChooser();
   document.getElementById('chooser-bg').classList.add('open');
 }
-// Lazy-day shortcut: open the picker showing ONLY the quick Basics. Day stays lazy after picking.
-function pickBasic(key,type){openDishChooser(key,type||'Dinner','basics');chooserState.lazy=true;}
+// Lazy-day shortcut: open the picker showing ONLY the quick Basics.
+function pickBasic(key,type){openDishChooser(key,type||'Dinner','basics');}
 function setChooserCat(c){chooserState.cat=c;chooserState.idx=0;renderDishChooser();}
-function closeDishChooser(){document.getElementById('chooser-bg').classList.remove('open');chooserState.lazy=false;}
+function closeDishChooser(){document.getElementById('chooser-bg').classList.remove('open');}
 function chooserNav(dir){const list=chooserDishes();if(!list.length)return;chooserState.idx=((chooserState.idx+dir)%list.length+list.length)%list.length;renderDishChooser();}
-function chooserSelect(){const list=chooserDishes();const d=list[chooserState.idx];if(d)chooseDish(chooserState.key,chooserState.type,d.id,chooserState.lazy);}
+function chooserSelect(){const list=chooserDishes();const d=list[chooserState.idx];if(d)chooseDish(chooserState.key,chooserState.type,d.id);}
 // One big card at a time. Swipe / arrows browse; tap the photo (or Choose) locks it in.
 function renderDishChooser(){
   const {type,cat}=chooserState;
@@ -4146,8 +4137,8 @@ function bindChooserSwipe(){
   card.addEventListener('mousemove',move);card.addEventListener('touchmove',move,{passive:true});
   card.addEventListener('mouseup',up);card.addEventListener('mouseleave',up);card.addEventListener('touchend',up);
 }
-function chooseDish(key,type,dishId,keepLazy=false){
-  if(!keepLazy&&state.skippedDays)delete state.skippedDays[key]; // choosing re-activates a skipped day (unless it's a lazy meal pick)
+function chooseDish(key,type,dishId){
+  if(state.skippedDays)delete state.skippedDays[key]; // choosing re-activates a skipped day
   if(!state.plan[key])state.plan[key]={};
   const prev=state.plan[key][type];
   const g=prev&&prev.dishId?{adults:prev.adults,children:prev.children}:defaultGuests();
@@ -4562,7 +4553,7 @@ function renderToday(){
   const hasMeals=plannedTypes.length>0;
   const reminder=shouldRemindNextWeek()?`<div class="plan-reminder"><div class="plan-reminder-txt">🗓️ <b>${t('planNextTitle')}</b><br>${t('planNextSub')}</div><button class="plan-reminder-btn" onclick="planNextWeek()">${t('planNextBtn')}</button></div>`:'';
   const macro=hasMeals?macroCardHTML(key):'';
-  tm.innerHTML=reminder+macro+(hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="openDishChooser('${key}','Dinner')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button></div>`);
+  tm.innerHTML=reminder+macro+(hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="openDishChooser('${key}','Dinner')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button><div class="pday-basic-link" style="justify-content:center;margin-top:14px" onclick="pickBasic('${key}','Dinner')">⏱ ${t('lazyDayBasic')}</div></div>`);
 }
 // ── Plan-next-week reminder (in-app, lightweight) ──
 function weekHasPlanAtOffset(off){
