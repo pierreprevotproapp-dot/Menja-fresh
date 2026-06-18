@@ -15162,7 +15162,11 @@
           "ings": [
             "🌾 Weizenmehl · 260g",
             "🥕 Geriebene Karotten · 300g",
-            "🥚 Eier · 4 pcs"
+            "🥚 Eier · 4 pcs",
+            "🫗 Pflanzenöl · 295ml",
+            "🥄 Zucker · 200g",
+            "🟤 Brauner Zucker · 190g",
+            "🍇 Rosinen · 70g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -15177,7 +15181,11 @@
         {
           "title": "Frosting machen",
           "text": "Frischkäse glatt rühren, Puderzucker unterrühren, dann die kalte Schlagsahne dick und streichfähig aufschlagen.",
-          "ings": [],
+          "ings": [
+            "🫙 Frischkäse · 225g",
+            "🍚 Puderzucker · 140g",
+            "🥛 Schlagsahne · 80ml"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -15234,7 +15242,11 @@
           "ings": [
             "🌾 Harina de trigo · 260g",
             "🥕 Zanahoria rallada · 300g",
-            "🥚 Huevos · 4 pcs"
+            "🥚 Huevos · 4 pcs",
+            "🫗 Aceite vegetal · 295ml",
+            "🥄 Azúcar · 200g",
+            "🟤 Azúcar moreno · 190g",
+            "🍇 Pasas · 70g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -15249,7 +15261,11 @@
         {
           "title": "Haz el frosting",
           "text": "Bate el queso crema hasta que quede liso, incorpora el azúcar glas y luego monta con la nata fría hasta que quede espeso y untable.",
-          "ings": [],
+          "ings": [
+            "🫙 Queso crema · 225g",
+            "🍚 Azúcar glas · 140g",
+            "🥛 Nata para montar · 80ml"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -15306,7 +15322,11 @@
           "ings": [
             "🌾 Farine de blé · 260g",
             "🥕 Carottes râpées · 300g",
-            "🥚 Œufs · 4 pcs"
+            "🥚 Œufs · 4 pcs",
+            "🫗 Huile végétale · 295ml",
+            "🥄 Sucre · 200g",
+            "🟤 Sucre roux · 190g",
+            "🍇 Raisins secs · 70g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -15321,7 +15341,11 @@
         {
           "title": "Préparer le glaçage",
           "text": "Battre le fromage frais jusqu'à ce qu'il soit lisse, incorporer le sucre glace, puis monter avec la crème froide jusqu'à une texture épaisse et tartinable.",
-          "ings": [],
+          "ings": [
+            "🫙 Fromage frais · 225g",
+            "🍚 Sucre glace · 140g",
+            "🥛 Crème liquide entière · 80ml"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -15783,7 +15807,11 @@
         {
           "title": "Vinaigrette anrühren",
           "text": "Olivenöl, Balsamico, Honig, fein gehackte Schalotte, geriebenen Knoblauch, Zitronenabrieb und gehackte Kräuter mit Salz und einer Prise Chiliflocken verquirlen.",
-          "ings": [],
+          "ings": [
+            "🍯 Honig · 1 tbsp",
+            "🧅 Schalotte · ½ pc",
+            "🌿 Frische Kräuter · 1 handful"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -15846,7 +15874,11 @@
         {
           "title": "Prepara la vinagreta",
           "text": "Bate el aceite, el vinagre balsámico, la miel, la chalota picada, el ajo rallado, la ralladura de limón y las hierbas picadas con sal y una pizca de copos de chile.",
-          "ings": [],
+          "ings": [
+            "🍯 Miel · 1 tbsp",
+            "🧅 Chalota · ½ pc",
+            "🌿 Hierbas frescas · 1 handful"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -15909,7 +15941,11 @@
         {
           "title": "Préparer la vinaigrette",
           "text": "Fouetter l'huile, le vinaigre balsamique, le miel, l'échalote ciselée, l'ail râpé, le zeste de citron et les herbes ciselées avec du sel et une pincée de flocons de piment.",
-          "ings": [],
+          "ings": [
+            "🍯 Miel · 1 tbsp",
+            "🧅 Échalote · ½ pc",
+            "🌿 Herbes fraîches · 1 handful"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -17933,7 +17969,8 @@
           "title": "Äpfel vorbereiten",
           "text": "Äpfel schälen, entkernen, in Scheiben schneiden, mit Zimt und etwas Ahornsirup mischen und in eine Auflaufform geben.",
           "ings": [
-            "🍎 Äpfel · 800g"
+            "🍎 Äpfel · 800g",
+            "🍯 Ahornsirup · 1 EL"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17943,7 +17980,7 @@
           "text": "Butter mit Haferflocken, Mehl, braunem Zucker und gehackten Pekannüssen mit den Fingern zu Streuseln verreiben.",
           "ings": [
             "🌾 Haferflocken · 80g",
-            "🌾 Weizenmehl · 80g",
+            "🫙 Mehl · 80g",
             "🧈 Butter · 90g",
             "🟤 Brauner Zucker · 60g",
             "🌰 Pekannüsse · 40g"
@@ -17981,7 +18018,8 @@
           "title": "Prepara las manzanas",
           "text": "Pela, descorazona y corta las manzanas, mézclalas con canela y un poco de sirope y ponlas en una fuente.",
           "ings": [
-            "🍎 Manzanas · 800g"
+            "🍎 Manzanas · 800g",
+            "🍯 Sirope de arce · 1 cdas"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17991,7 +18029,7 @@
           "text": "Mezcla con los dedos la mantequilla con la avena, la harina, el azúcar moreno y las nueces picadas hasta formar grumos.",
           "ings": [
             "🌾 Copos de avena · 80g",
-            "🌾 Harina de trigo · 80g",
+            "🫙 Harina · 80g",
             "🧈 Mantequilla · 90g",
             "🟤 Azúcar moreno · 60g",
             "🌰 Nueces pecanas · 40g"
@@ -18029,7 +18067,8 @@
           "title": "Préparer les pommes",
           "text": "Éplucher, évider et couper les pommes, les mélanger avec la cannelle et un peu de sirop et les mettre dans un plat.",
           "ings": [
-            "🍎 Pommes · 800g"
+            "🍎 Pommes · 800g",
+            "🍯 Sirop d'érable · 1 c. à s."
           ],
           "tip": null,
           "kidsHelp": null
@@ -18039,7 +18078,7 @@
           "text": "Sabler du bout des doigts le beurre avec les flocons, la farine, le sucre roux et les noix concassées jusqu'à obtenir des grumeaux.",
           "ings": [
             "🌾 Flocons d'avoine · 80g",
-            "🌾 Farine de blé · 80g",
+            "🫙 Farine · 80g",
             "🧈 Beurre · 90g",
             "🟤 Sucre roux · 60g",
             "🌰 Noix de pécan · 40g"
@@ -18571,7 +18610,7 @@
           "text": "Beide Mehle, Natron und eine kräftige Prise Salz unterheben, dann die Schokostückchen.",
           "ings": [
             "🌾 Weizenmehl · 200g",
-            "🌾 Vollkornmehl · 50g",
+            "🍞 Vollkornmehl · 50g",
             "🍫 Zartbitter-Schokostückchen · 150g"
           ],
           "tip": null,
@@ -18619,7 +18658,7 @@
           "text": "Incorpora las dos harinas, el bicarbonato y una buena pizca de sal, y por último las pepitas de chocolate.",
           "ings": [
             "🌾 Harina de trigo · 200g",
-            "🌾 Harina integral · 50g",
+            "🍞 Harina integral · 50g",
             "🍫 Pepitas de chocolate negro · 150g"
           ],
           "tip": null,
@@ -18667,7 +18706,7 @@
           "text": "Incorporer les deux farines, le bicarbonate et une bonne pincée de sel, puis les pépites de chocolat.",
           "ings": [
             "🌾 Farine de blé · 200g",
-            "🌾 Farine complète · 50g",
+            "🍞 Farine complète · 50g",
             "🍫 Pépites de chocolat noir · 150g"
           ],
           "tip": null,

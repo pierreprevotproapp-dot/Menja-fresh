@@ -11855,5 +11855,4579 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "greek-yogurt-berry-bark",
+    "title": "Frozen Greek Yogurt Berry Bark",
+    "subtitle": "A crunchy frozen treat that tastes like dessert, not diet food",
+    "emoji": "🍫",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Frozen Greek yogurt bark broken into shards on a marble board, topped with raspberries, blueberries and dark chocolate shavings, bright airy food photography",
+    "nutrition": {
+      "fat": 6,
+      "kcal": 150,
+      "carbs": 16,
+      "fiber": 2,
+      "protein": 8
+    },
+    "ingredients": [
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "400g"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Mixed berries",
+        "emoji": "🫐",
+        "amount": "150g"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "400g"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Mixed berries",
+        "emoji": "🫐",
+        "amount": "150g"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Sweeten the yogurt",
+        "text": "Stir the Greek yogurt with the honey and a little vanilla until smooth and creamy.",
+        "ings": [
+          "🥛 Greek yogurt · 400g",
+          "🍯 Honey · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Spread & top",
+        "text": "Spread the yogurt onto a lined tray in a ~1 cm layer. Scatter the berries and chopped dark chocolate over the top.",
+        "ings": [
+          "🫐 Mixed berries · 150g",
+          "🍫 Dark chocolate · 30g"
+        ],
+        "tip": "Press the berries in lightly so they freeze into the bark.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Freeze & break",
+        "text": "Freeze for at least 3 hours until solid, then break into shards. Keep in the freezer until serving.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "frozen-banana-nice-cream",
+    "title": "Chocolate-Peanut Banana Nice Cream",
+    "subtitle": "Two-minute soft-serve from frozen bananas — no ice-cream machine",
+    "emoji": "🍌",
+    "is_kids": true,
+    "tags": [
+      "Vegan",
+      "Gluten-free",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "prep_minutes": 5,
+    "cook_minutes": 0,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Creamy chocolate banana nice cream swirled in a bowl, dusted with cocoa and a swirl of peanut butter, soft natural light",
+    "nutrition": {
+      "fat": 7,
+      "kcal": 230,
+      "carbs": 38,
+      "fiber": 5,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Frozen ripe bananas",
+        "emoji": "🍌",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Plant milk",
+        "emoji": "🥛",
+        "amount": "2 tbsp"
+      }
+    ],
+    "base_ingredients": [
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Frozen ripe bananas",
+        "emoji": "🍌",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Plant milk",
+        "emoji": "🥛",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Freeze ahead",
+        "text": "Slice ripe bananas and freeze for at least 3 hours (best done the night before).",
+        "ings": [
+          "🍌 Frozen ripe bananas · 3 pcs"
+        ],
+        "tip": "The riper the bananas, the sweeter the nice cream — no added sugar needed.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Blend smooth",
+        "text": "Blend the frozen banana with peanut butter, cocoa, plant milk and a pinch of salt until thick and creamy like soft-serve.",
+        "ings": [
+          "🥜 Peanut butter · 1 tbsp",
+          "🍫 Cocoa powder · 1 tbsp",
+          "🥛 Plant milk · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Serve",
+        "text": "Eat straight away as soft-serve, or freeze for 1 hour for a scoopable texture.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "berry-chia-pudding-parfait",
+    "title": "Berry Chia Pudding Parfait",
+    "subtitle": "Make-ahead pudding that sets overnight — creamy, fruity, no cooking",
+    "emoji": "🫐",
+    "is_kids": false,
+    "tags": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Chia pudding parfait layered with fresh berries in a glass, topped with mint, bright clean food photography",
+    "nutrition": {
+      "fat": 9,
+      "kcal": 210,
+      "carbs": 24,
+      "fiber": 11,
+      "protein": 6
+    },
+    "ingredients": [
+      {
+        "name": "Chia seeds",
+        "emoji": "⚫",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Coconut or almond milk",
+        "emoji": "🥥",
+        "amount": "250ml"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Mixed berries",
+        "emoji": "🫐",
+        "amount": "120g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Chia seeds",
+        "emoji": "⚫",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Coconut or almond milk",
+        "emoji": "🥥",
+        "amount": "250ml"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Mixed berries",
+        "emoji": "🫐",
+        "amount": "120g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Mix the pudding",
+        "text": "Whisk the chia seeds with the milk, maple syrup and a little vanilla. Let it rest 5 minutes, then whisk again to break up any clumps.",
+        "ings": [
+          "⚫ Chia seeds · 4 tbsp",
+          "🥥 Coconut or almond milk · 250ml",
+          "🍁 Maple syrup · 1 tbsp"
+        ],
+        "tip": "The second whisk is the trick to a smooth, lump-free pudding.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Chill to set",
+        "text": "Cover and chill for at least 4 hours, or overnight, until thick and spoonable.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Layer & serve",
+        "text": "Layer the chia pudding with the berries in glasses and serve cold.",
+        "ings": [
+          "🫐 Mixed berries · 120g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "no-bake-chocolate-peanut-oat-bars",
+    "title": "No-Bake Chocolate Peanut Oat Bars",
+    "subtitle": "Chewy oat bars with a dark-chocolate top — no oven needed",
+    "emoji": "🍫",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 0,
+    "servings": 8,
+    "image_url": "",
+    "image_prompt": "No-bake oat bars with a glossy dark chocolate top, cut into squares on parchment, cozy food photography",
+    "nutrition": {
+      "fat": 11,
+      "kcal": 230,
+      "carbs": 24,
+      "fiber": 3,
+      "protein": 6
+    },
+    "ingredients": [
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "150g"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "120g"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "60ml"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "60g"
+      }
+    ],
+    "base_ingredients": [
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "150g"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "120g"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "60ml"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "60g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Mix the base",
+        "text": "Gently warm the peanut butter with the maple syrup until runny, then stir into the oats with a pinch of salt until evenly coated.",
+        "ings": [
+          "🌾 Rolled oats · 150g",
+          "🥜 Peanut butter · 120g",
+          "🍁 Maple syrup · 60ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Press & chill",
+        "text": "Press the mixture firmly into a lined tin and chill for 30 minutes until set.",
+        "ings": [],
+        "tip": "Press hard — well-compacted bars hold together when you cut them.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Chocolate top",
+        "text": "Melt the dark chocolate, spread over the top, chill until set, then cut into bars.",
+        "ings": [
+          "🍫 Dark chocolate · 60g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "banana-oat-choc-chip-cookies",
+    "title": "Banana Oat Chocolate-Chip Cookies",
+    "subtitle": "Soft cookies sweetened mostly by ripe banana",
+    "emoji": "🍪",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 15,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Soft banana oat cookies with melting dark chocolate chips on a cooling rack, warm homely light",
+    "nutrition": {
+      "fat": 6,
+      "kcal": 200,
+      "carbs": 30,
+      "fiber": 4,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Ripe bananas",
+        "emoji": "🍌",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "120g"
+      },
+      {
+        "name": "Dark chocolate chips",
+        "emoji": "🍫",
+        "amount": "50g"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "2 tbsp"
+      }
+    ],
+    "base_ingredients": [
+      "Cinnamon"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Ripe bananas",
+        "emoji": "🍌",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "120g"
+      },
+      {
+        "name": "Dark chocolate chips",
+        "emoji": "🍫",
+        "amount": "50g"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Mash & mix",
+        "text": "Mash the bananas well, then stir in the oats, peanut butter, a little cinnamon and the chocolate chips into a thick dough.",
+        "ings": [
+          "🍌 Ripe bananas · 2 pcs",
+          "🌾 Rolled oats · 120g",
+          "🥜 Peanut butter · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Shape",
+        "text": "Spoon mounds onto a lined tray and flatten gently into cookies — they don't spread much.",
+        "ings": [
+          "🍫 Dark chocolate chips · 50g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Bake at 180°C for 12–15 minutes until golden at the edges. Cool on a rack to firm up.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "baked-cinnamon-apples-oat-crumble",
+    "title": "Baked Cinnamon Apples with Oat Crumble",
+    "subtitle": "All the apple-crumble cosiness, in single portions",
+    "emoji": "🍎",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 30,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Baked whole apples stuffed with golden oat-walnut crumble in a rustic dish, steam rising, warm cosy light",
+    "nutrition": {
+      "fat": 9,
+      "kcal": 240,
+      "carbs": 34,
+      "fiber": 5,
+      "protein": 3
+    },
+    "ingredients": [
+      {
+        "name": "Apples",
+        "emoji": "🍎",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "60g"
+      },
+      {
+        "name": "Walnuts",
+        "emoji": "🌰",
+        "amount": "40g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "30g"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "2 tbsp"
+      }
+    ],
+    "base_ingredients": [
+      "Cinnamon"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Apples",
+        "emoji": "🍎",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "60g"
+      },
+      {
+        "name": "Walnuts",
+        "emoji": "🌰",
+        "amount": "40g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "30g"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Prep the apples",
+        "text": "Core the apples and set them upright in a baking dish.",
+        "ings": [
+          "🍎 Apples · 4 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the crumble",
+        "text": "Mix the oats, chopped walnuts, soft butter, maple syrup and plenty of cinnamon into a crumble, then spoon it into and over the apples.",
+        "ings": [
+          "🌾 Rolled oats · 60g",
+          "🌰 Walnuts · 40g",
+          "🧈 Butter · 30g",
+          "🍁 Maple syrup · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Bake at 180°C for 25–30 minutes until the apples are soft and the topping is golden. Serve warm.",
+        "ings": [],
+        "tip": "Lovely with a spoon of Greek yogurt on top.",
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "stuffed-medjool-dates",
+    "title": "Peanut-Butter Stuffed Dates",
+    "subtitle": "Three ingredients, \"snickers\" energy — the famous viral treat",
+    "emoji": "🍫",
+    "is_kids": true,
+    "tags": [
+      "Vegan",
+      "Gluten-free",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 0,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Medjool dates filled with peanut butter and coated in dark chocolate, sprinkled with sea salt flakes on parchment",
+    "nutrition": {
+      "fat": 9,
+      "kcal": 200,
+      "carbs": 28,
+      "fiber": 4,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Medjool dates",
+        "emoji": "🌴",
+        "amount": "8 pcs"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "50g"
+      }
+    ],
+    "base_ingredients": [
+      "Sea salt flakes"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Medjool dates",
+        "emoji": "🌴",
+        "amount": "8 pcs"
+      },
+      {
+        "name": "Peanut butter",
+        "emoji": "🥜",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "50g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Fill the dates",
+        "text": "Slit each date down one side, remove the pit and fill the cavity with peanut butter.",
+        "ings": [
+          "🌴 Medjool dates · 8 pcs",
+          "🥜 Peanut butter · 4 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Coat in chocolate",
+        "text": "Melt the dark chocolate and dip or drizzle each date until coated.",
+        "ings": [
+          "🍫 Dark chocolate · 50g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Set & serve",
+        "text": "Sprinkle with sea-salt flakes and chill until the chocolate sets.",
+        "ings": [],
+        "tip": "The salt is what makes them taste like a candy bar — don't skip it.",
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "dark-chocolate-almond-bark",
+    "title": "Dark Chocolate Almond & Cranberry Bark",
+    "subtitle": "A 3-ingredient chocolate bark you make in ten minutes",
+    "emoji": "🍫",
+    "is_kids": false,
+    "tags": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "servings": 8,
+    "image_url": "",
+    "image_prompt": "Dark chocolate bark studded with whole almonds and dried cranberries, broken into shards on baking paper",
+    "nutrition": {
+      "fat": 13,
+      "kcal": 190,
+      "carbs": 16,
+      "fiber": 3,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Almonds",
+        "emoji": "🌰",
+        "amount": "60g"
+      },
+      {
+        "name": "Dried cranberries",
+        "emoji": "🫐",
+        "amount": "40g"
+      }
+    ],
+    "base_ingredients": [
+      "Sea salt flakes"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Almonds",
+        "emoji": "🌰",
+        "amount": "60g"
+      },
+      {
+        "name": "Dried cranberries",
+        "emoji": "🫐",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Melt the chocolate",
+        "text": "Melt the dark chocolate gently over a water bath or in short bursts in the microwave, stirring until smooth.",
+        "ings": [
+          "🍫 Dark chocolate · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Spread & top",
+        "text": "Spread the chocolate onto a lined tray and scatter over the toasted almonds, cranberries and a few sea-salt flakes.",
+        "ings": [
+          "🌰 Almonds · 60g",
+          "🫐 Dried cranberries · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Set & break",
+        "text": "Chill until fully set, then break into rough pieces.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "roasted-honey-peaches-yogurt",
+    "title": "Roasted Honey Peaches with Yogurt",
+    "subtitle": "Warm caramelised peaches over cool yogurt — summer in a bowl",
+    "emoji": "🍑",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 20,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Roasted peach halves caramelised with honey, served over Greek yogurt and topped with crushed pistachios, bright summer light",
+    "nutrition": {
+      "fat": 6,
+      "kcal": 180,
+      "carbs": 24,
+      "fiber": 3,
+      "protein": 7
+    },
+    "ingredients": [
+      {
+        "name": "Peaches",
+        "emoji": "🍑",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "200g"
+      },
+      {
+        "name": "Pistachios",
+        "emoji": "🌰",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Cinnamon"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Peaches",
+        "emoji": "🍑",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "200g"
+      },
+      {
+        "name": "Pistachios",
+        "emoji": "🌰",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Prep the peaches",
+        "text": "Halve and pit the peaches and place them cut-side up in a baking dish. Drizzle with the honey and a little cinnamon.",
+        "ings": [
+          "🍑 Peaches · 4 pcs",
+          "🍯 Honey · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Roast",
+        "text": "Roast at 200°C for about 20 minutes until soft and caramelised at the edges.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Serve",
+        "text": "Spoon over the Greek yogurt, set the warm peaches on top and finish with crushed pistachios.",
+        "ings": [
+          "🥛 Greek yogurt · 200g",
+          "🌰 Pistachios · 30g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "classic-carrot-cake-cream-cheese",
+    "title": "Classic Carrot Cake with Cream-Cheese Frosting",
+    "subtitle": "The crowd-favourite bake — moist, spiced and generously frosted",
+    "emoji": "🥕",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 40,
+    "servings": 12,
+    "image_url": "",
+    "image_prompt": "Classic two-layer carrot cake with thick cream cheese frosting and chopped pecans on top, one slice cut to show the moist spiced crumb, soft natural light, editorial food photography",
+    "nutrition": {
+      "fat": 24,
+      "kcal": 420,
+      "carbs": 46,
+      "fiber": 2,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Grated carrots",
+        "emoji": "🥕",
+        "amount": "300g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "260g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Vegetable oil",
+        "emoji": "🫗",
+        "amount": "295ml"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "200g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "190g"
+      },
+      {
+        "name": "Pecans",
+        "emoji": "🌰",
+        "amount": "120g"
+      },
+      {
+        "name": "Raisins",
+        "emoji": "🍇",
+        "amount": "70g"
+      }
+    ],
+    "base_ingredients": [
+      "Baking soda",
+      "Cinnamon",
+      "Vanilla extract",
+      "Sea salt"
+    ],
+    "dressing": [
+      {
+        "name": "Cream cheese",
+        "emoji": "🫙",
+        "amount": "225g"
+      },
+      {
+        "name": "Powdered sugar",
+        "emoji": "🍚",
+        "amount": "140g"
+      },
+      {
+        "name": "Heavy cream",
+        "emoji": "🥛",
+        "amount": "80ml"
+      }
+    ],
+    "mise_en_place": [
+      {
+        "name": "Grated carrots",
+        "emoji": "🥕",
+        "amount": "300g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "260g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Vegetable oil",
+        "emoji": "🫗",
+        "amount": "295ml"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "200g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "190g"
+      },
+      {
+        "name": "Pecans",
+        "emoji": "🌰",
+        "amount": "120g"
+      },
+      {
+        "name": "Raisins",
+        "emoji": "🍇",
+        "amount": "70g"
+      },
+      {
+        "name": "Cream cheese",
+        "emoji": "🫙",
+        "amount": "225g"
+      },
+      {
+        "name": "Powdered sugar",
+        "emoji": "🍚",
+        "amount": "140g"
+      },
+      {
+        "name": "Heavy cream",
+        "emoji": "🥛",
+        "amount": "80ml"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Mix the batter",
+        "text": "Whisk the flour, baking soda, cinnamon and salt. In a second bowl whisk the oil, both sugars and vanilla, then beat in the eggs one at a time. Stir the dry mix into the wet in three parts, then fold in the carrots, pecans and raisins.",
+        "ings": [
+          "🌾 Plain flour · 260g",
+          "🥕 Grated carrots · 300g",
+          "🥚 Eggs · 4 pcs",
+          "🫗 Vegetable oil · 295ml",
+          "🥄 Sugar · 200g",
+          "🟤 Brown sugar · 190g",
+          "🍇 Raisins · 70g"
+        ],
+        "tip": "Don't overmix once the flour goes in — fold just until combined for a tender crumb.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Bake",
+        "text": "Divide the batter between two lined 23 cm (9-inch) tins and bake at 180°C for 35–45 minutes, until the tops spring back when pressed. Cool completely before frosting.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Make the frosting",
+        "text": "Beat the cream cheese until smooth, beat in the powdered sugar, then whip in the cold heavy cream until thick and spreadable.",
+        "ings": [
+          "🫙 Cream cheese · 225g",
+          "🍚 Powdered sugar · 140g",
+          "🥛 Heavy cream · 80ml"
+        ],
+        "tip": "Use cold cream and a block cream cheese (not spreadable tub) so the frosting holds its shape.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Frost & serve",
+        "text": "Spread the frosting between and over the cooled layers, then finish with the remaining chopped pecans.",
+        "ings": [
+          "🌰 Pecans · 120g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "strammer-max",
+    "title": "Strammer Max",
+    "subtitle": "Ham and fried egg on buttered bread — ready in 5 minutes",
+    "emoji": "🍳",
+    "is_kids": true,
+    "tags": [
+      "Basic",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course",
+      "Kleine Mahlzeit"
+    ],
+    "categories": [
+      "Basic"
+    ],
+    "diet": [],
+    "prep_minutes": 3,
+    "cook_minutes": 5,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Strammer Max — rye bread topped with ham and a sunny-side-up fried egg, chives, runny yolk, cosy German food photography",
+    "nutrition": {
+      "fat": 24,
+      "kcal": 420,
+      "carbs": 28,
+      "fiber": 2,
+      "protein": 24
+    },
+    "ingredients": [
+      {
+        "name": "Rye bread",
+        "emoji": "🍞",
+        "amount": "2 slices"
+      },
+      {
+        "name": "Cooked ham",
+        "emoji": "🥓",
+        "amount": "4 slices"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Chives",
+        "emoji": "🌿",
+        "amount": "5g"
+      }
+    ],
+    "base_ingredients": [
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Rye bread",
+        "emoji": "🍞",
+        "amount": "2 slices"
+      },
+      {
+        "name": "Cooked ham",
+        "emoji": "🥓",
+        "amount": "4 slices"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Chives",
+        "emoji": "🌿",
+        "amount": "5g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Butter the bread",
+        "text": "Lightly toast the rye bread and spread with butter.",
+        "ings": [
+          "🍞 Rye bread · 2 slices",
+          "🧈 Butter · 1 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Fry ham & eggs",
+        "text": "Warm the ham briefly in the pan, then fry the eggs sunny-side up.",
+        "ings": [
+          "🥓 Cooked ham · 4 slices",
+          "🥚 Eggs · 2 pcs"
+        ],
+        "tip": "Keep the yolks runny — they become the sauce.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Build & serve",
+        "text": "Top the bread with ham and a fried egg, season and scatter with chives.",
+        "ings": [
+          "🌿 Chives · 5g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "pasta-pesto-basic",
+    "title": "Pasta with Pesto",
+    "subtitle": "Three ingredients, ten minutes — the ultimate easy dinner",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Basic",
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Basic"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 3,
+    "cook_minutes": 10,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Bowl of pasta tossed with green basil pesto, grated parmesan and cherry tomatoes, simple bright food photography",
+    "nutrition": {
+      "fat": 22,
+      "kcal": 520,
+      "carbs": 64,
+      "fiber": 4,
+      "protein": 16
+    },
+    "ingredients": [
+      {
+        "name": "Pasta",
+        "emoji": "🍝",
+        "amount": "200g"
+      },
+      {
+        "name": "Pesto",
+        "emoji": "🌿",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      },
+      {
+        "name": "Cherry tomatoes",
+        "emoji": "🍅",
+        "amount": "100g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Pasta",
+        "emoji": "🍝",
+        "amount": "200g"
+      },
+      {
+        "name": "Pesto",
+        "emoji": "🌿",
+        "amount": "4 tbsp"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      },
+      {
+        "name": "Cherry tomatoes",
+        "emoji": "🍅",
+        "amount": "100g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the pasta",
+        "text": "Boil the pasta in salted water until al dente, then drain — keep a splash of the cooking water.",
+        "ings": [
+          "🍝 Pasta · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Toss with pesto",
+        "text": "Stir the pesto through the warm pasta, loosening with a little pasta water until glossy.",
+        "ings": [
+          "🌿 Pesto · 4 tbsp"
+        ],
+        "tip": "A splash of pasta water makes the pesto cling and turns it silky.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Serve",
+        "text": "Top with grated parmesan and halved cherry tomatoes.",
+        "ings": [
+          "🧀 Parmesan · 20g",
+          "🍅 Cherry tomatoes · 100g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "pasta-tomato-sauce-basic",
+    "title": "Pasta with Tomato Sauce",
+    "subtitle": "The everyday classic — pantry to plate in 15 minutes",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Basic",
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Basic"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 3,
+    "cook_minutes": 12,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Simple bowl of pasta in tomato sauce topped with grated parmesan and basil, homely food photography",
+    "nutrition": {
+      "fat": 12,
+      "kcal": 480,
+      "carbs": 78,
+      "fiber": 6,
+      "protein": 15
+    },
+    "ingredients": [
+      {
+        "name": "Pasta",
+        "emoji": "🍝",
+        "amount": "200g"
+      },
+      {
+        "name": "Passata",
+        "emoji": "🥫",
+        "amount": "300g"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "1 clove"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Dried oregano",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Pasta",
+        "emoji": "🍝",
+        "amount": "200g"
+      },
+      {
+        "name": "Passata",
+        "emoji": "🥫",
+        "amount": "300g"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "1 clove"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the pasta",
+        "text": "Boil the pasta in salted water until al dente, then drain.",
+        "ings": [
+          "🍝 Pasta · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Quick tomato sauce",
+        "text": "Soften the garlic in a little olive oil, add the passata and oregano and simmer 5 minutes, then season.",
+        "ings": [
+          "🧄 Garlic · 1 clove",
+          "🥫 Passata · 300g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Combine & serve",
+        "text": "Toss the pasta in the sauce and top with grated parmesan.",
+        "ings": [
+          "🧀 Parmesan · 20g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "strawberry-tomato-burrata-salad",
+    "title": "Strawberry, Tomato & Burrata Salad",
+    "subtitle": "Summer on a plate — juicy fruit, creamy burrata, herby vinaigrette",
+    "emoji": "🍓",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course",
+      "Kleine Mahlzeit"
+    ],
+    "categories": [
+      "Salat"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 5,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Strawberry, tomato and burrata salad on a platter with torn burrata, toasted pine nuts, fresh basil and a herby vinaigrette, bright summer food photography",
+    "nutrition": {
+      "fat": 26,
+      "kcal": 360,
+      "carbs": 20,
+      "fiber": 4,
+      "protein": 12
+    },
+    "ingredients": [
+      {
+        "name": "Strawberries",
+        "emoji": "🍓",
+        "amount": "250g"
+      },
+      {
+        "name": "Cherry tomatoes",
+        "emoji": "🍅",
+        "amount": "300g"
+      },
+      {
+        "name": "Burrata",
+        "emoji": "🧀",
+        "amount": "250g"
+      },
+      {
+        "name": "Pine nuts",
+        "emoji": "🌰",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Balsamic vinegar",
+      "Garlic",
+      "Lemon zest",
+      "Salt & pepper",
+      "Chilli flakes"
+    ],
+    "dressing": [
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Shallot",
+        "emoji": "🧅",
+        "amount": "½ pc"
+      },
+      {
+        "name": "Fresh herbs (basil, oregano, thyme)",
+        "emoji": "🌿",
+        "amount": "1 handful"
+      }
+    ],
+    "mise_en_place": [
+      {
+        "name": "Strawberries",
+        "emoji": "🍓",
+        "amount": "250g"
+      },
+      {
+        "name": "Cherry tomatoes",
+        "emoji": "🍅",
+        "amount": "300g"
+      },
+      {
+        "name": "Burrata",
+        "emoji": "🧀",
+        "amount": "250g"
+      },
+      {
+        "name": "Pine nuts",
+        "emoji": "🌰",
+        "amount": "30g"
+      },
+      {
+        "name": "Honey",
+        "emoji": "🍯",
+        "amount": "1 tbsp"
+      },
+      {
+        "name": "Shallot",
+        "emoji": "🧅",
+        "amount": "½ pc"
+      },
+      {
+        "name": "Fresh herbs (basil, oregano, thyme)",
+        "emoji": "🌿",
+        "amount": "1 handful"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Make the vinaigrette",
+        "text": "Whisk the olive oil, balsamic vinegar, honey, finely chopped shallot, grated garlic, lemon zest and chopped herbs with salt and a pinch of chilli flakes.",
+        "ings": [
+          "🍯 Honey · 1 tbsp",
+          "🧅 Shallot · ½ pc",
+          "🌿 Fresh herbs · 1 handful"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Marinate",
+        "text": "Halve the strawberries and toss with the cherry tomatoes and a third of the vinaigrette. Let sit for 10 minutes so the juices mingle.",
+        "ings": [
+          "🍓 Strawberries · 250g",
+          "🍅 Cherry tomatoes · 300g"
+        ],
+        "tip": "Swap strawberries for peaches or cherries — if using peaches, sear the wedges cut-side down for 1–2 min first to deepen the flavour.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Toast & assemble",
+        "text": "Toast the pine nuts in a dry pan until golden. Arrange the marinated fruit and tomatoes on a platter, tear the burrata over the top, drizzle with the remaining vinaigrette and scatter with pine nuts and extra herbs.",
+        "ings": [
+          "🌰 Pine nuts · 30g",
+          "🧀 Burrata · 250g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "spaghetti-bolognese",
+    "title": "Spaghetti Bolognese",
+    "subtitle": "The slow-simmered Italian classic the whole family asks for",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Pasta"
+    ],
+    "diet": [],
+    "prep_minutes": 15,
+    "cook_minutes": 45,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Bowl of spaghetti bolognese with rich meat sauce, grated parmesan and basil, rustic Italian food photography",
+    "nutrition": {
+      "fat": 22,
+      "kcal": 620,
+      "carbs": 68,
+      "fiber": 6,
+      "protein": 34
+    },
+    "ingredients": [
+      {
+        "name": "Spaghetti",
+        "emoji": "🍝",
+        "amount": "400g"
+      },
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Carrot",
+        "emoji": "🥕",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Tomato purée",
+        "emoji": "🍅",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Dried oregano",
+      "Bay leaf",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Spaghetti",
+        "emoji": "🍝",
+        "amount": "400g"
+      },
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Carrot",
+        "emoji": "🥕",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Tomato purée",
+        "emoji": "🍅",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Soffritto",
+        "text": "Finely chop the onion, carrot and garlic and soften gently in olive oil for about 8 minutes.",
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🥕 Carrot · 1 pc",
+          "🧄 Garlic · 2 cloves"
+        ],
+        "tip": "A slow, gentle soffritto is the flavour base — don't rush or brown it.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Brown the mince",
+        "text": "Turn up the heat, add the beef mince and brown well, breaking it up with a spoon.",
+        "ings": [
+          "🥩 Beef mince · 500g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Simmer the sauce",
+        "text": "Stir in the chopped tomatoes, tomato purée, oregano and bay leaf. Simmer on low for at least 30 minutes.",
+        "ings": [
+          "🥫 Chopped tomatoes · 800g",
+          "🍅 Tomato purée · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Cook & toss",
+        "text": "Boil the spaghetti until al dente, drain, toss with the sauce and serve with grated parmesan.",
+        "ings": [
+          "🍝 Spaghetti · 400g",
+          "🧀 Parmesan · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "thai-green-chicken-curry",
+    "title": "Thai Green Chicken Curry",
+    "subtitle": "Fragrant, creamy and on the table in 30 minutes",
+    "emoji": "🍛",
+    "is_kids": false,
+    "tags": [
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Curry"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 20,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Thai green chicken curry with coconut sauce, green beans and red pepper over jasmine rice, fresh basil, vibrant food photography",
+    "nutrition": {
+      "fat": 24,
+      "kcal": 560,
+      "carbs": 58,
+      "fiber": 5,
+      "protein": 32
+    },
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "500g"
+      },
+      {
+        "name": "Green curry paste",
+        "emoji": "🟢",
+        "amount": "3 tbsp"
+      },
+      {
+        "name": "Coconut milk",
+        "emoji": "🥥",
+        "amount": "400ml"
+      },
+      {
+        "name": "Jasmine rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      },
+      {
+        "name": "Green beans",
+        "emoji": "🫛",
+        "amount": "150g"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "base_ingredients": [
+      "Vegetable oil",
+      "Fish sauce",
+      "Brown sugar",
+      "Thai basil"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "500g"
+      },
+      {
+        "name": "Green curry paste",
+        "emoji": "🟢",
+        "amount": "3 tbsp"
+      },
+      {
+        "name": "Coconut milk",
+        "emoji": "🥥",
+        "amount": "400ml"
+      },
+      {
+        "name": "Jasmine rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      },
+      {
+        "name": "Green beans",
+        "emoji": "🫛",
+        "amount": "150g"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the rice",
+        "text": "Rinse and cook the jasmine rice according to the packet.",
+        "ings": [
+          "🍚 Jasmine rice · 250g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Fry the paste",
+        "text": "Fry the green curry paste in a little oil for 1 minute until fragrant.",
+        "ings": [
+          "🟢 Green curry paste · 3 tbsp"
+        ],
+        "tip": "Frying the paste first wakes up all the aromatics — don't skip it.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Simmer the curry",
+        "text": "Add the sliced chicken and coconut milk with a splash of fish sauce and sugar. Simmer 10 minutes, then add the beans and pepper for 5 more.",
+        "ings": [
+          "🍗 Chicken breast · 500g",
+          "🥥 Coconut milk · 400ml",
+          "🫛 Green beans · 150g",
+          "🫑 Red pepper · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Finish",
+        "text": "Squeeze in the lime, scatter Thai basil and serve over the rice.",
+        "ings": [
+          "🍋 Lime · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "margherita-pizza",
+    "title": "Margherita Pizza",
+    "subtitle": "Blistered, bubbling and better than delivery",
+    "emoji": "🍕",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Pizza"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 12,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Classic margherita pizza with blistered crust, melted mozzarella, tomato and fresh basil, overhead shot, wood-fired look",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 560,
+      "carbs": 74,
+      "fiber": 4,
+      "protein": 22
+    },
+    "ingredients": [
+      {
+        "name": "Pizza dough",
+        "emoji": "🫓",
+        "amount": "300g"
+      },
+      {
+        "name": "Passata",
+        "emoji": "🥫",
+        "amount": "150g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
+      },
+      {
+        "name": "Fresh basil",
+        "emoji": "🌿",
+        "amount": "1 handful"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Garlic",
+      "Dried oregano",
+      "Salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Pizza dough",
+        "emoji": "🫓",
+        "amount": "300g"
+      },
+      {
+        "name": "Passata",
+        "emoji": "🥫",
+        "amount": "150g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
+      },
+      {
+        "name": "Fresh basil",
+        "emoji": "🌿",
+        "amount": "1 handful"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "20g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Heat the oven",
+        "text": "Heat the oven as hot as it goes (250°C) with a tray or stone inside.",
+        "ings": [],
+        "tip": "A screaming-hot oven + preheated tray is the secret to a crisp base at home.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the sauce",
+        "text": "Mix the passata with a little crushed garlic, oregano, olive oil and salt.",
+        "ings": [
+          "🥫 Passata · 150g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Top the base",
+        "text": "Stretch the dough thin, spread a thin layer of sauce and tear over the mozzarella.",
+        "ings": [
+          "🫓 Pizza dough · 300g",
+          "🧀 Mozzarella · 125g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Bake & finish",
+        "text": "Bake 8–12 minutes until blistered. Finish with fresh basil, parmesan and a drizzle of olive oil.",
+        "ings": [
+          "🌿 Fresh basil · 1 handful",
+          "🧀 Parmesan · 20g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "classic-beef-lasagna",
+    "title": "Classic Beef Lasagna",
+    "subtitle": "Layers of rich ragù and creamy béchamel — the ultimate comfort bake",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Pasta"
+    ],
+    "diet": [],
+    "prep_minutes": 30,
+    "cook_minutes": 45,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Classic beef lasagna with golden bubbling cheese top, one portion lifted showing layers of ragù and béchamel, cosy food photography",
+    "nutrition": {
+      "fat": 26,
+      "kcal": 580,
+      "carbs": 46,
+      "fiber": 4,
+      "protein": 32
+    },
+    "ingredients": [
+      {
+        "name": "Lasagne sheets",
+        "emoji": "🍝",
+        "amount": "250g"
+      },
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "600ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "50g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "60g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Nutmeg",
+      "Dried oregano",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Lasagne sheets",
+        "emoji": "🍝",
+        "amount": "250g"
+      },
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "600ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "50g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "60g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Make the ragù",
+        "text": "Soften the onion and garlic, brown the mince, add the tomatoes and oregano and simmer 20 minutes.",
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 2 cloves",
+          "🥩 Beef mince · 500g",
+          "🥫 Chopped tomatoes · 800g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the béchamel",
+        "text": "Melt the butter, whisk in the flour, then gradually add the milk to make a smooth sauce. Season with a little nutmeg.",
+        "ings": [
+          "🧈 Butter · 50g",
+          "🌾 Plain flour · 50g",
+          "🥛 Milk · 600ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Layer it up",
+        "text": "Layer ragù, lasagne sheets and béchamel, repeat, and finish with béchamel and parmesan.",
+        "ings": [
+          "🍝 Lasagne sheets · 250g",
+          "🧀 Parmesan · 60g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Bake",
+        "text": "Bake at 180°C for 35–40 minutes until golden and bubbling. Rest 10 minutes before cutting.",
+        "ings": [],
+        "tip": "Resting before you cut lets the layers set so it slices cleanly.",
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "chili-con-carne",
+    "title": "Chili con Carne",
+    "subtitle": "Smoky, spiced and even better the next day",
+    "emoji": "🌶️",
+    "is_kids": false,
+    "tags": [
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Stew"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 40,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Bowl of chili con carne with kidney beans over rice, topped with coriander, warm rustic food photography",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 560,
+      "carbs": 62,
+      "fiber": 12,
+      "protein": 34
+    },
+    "ingredients": [
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Kidney beans",
+        "emoji": "🫘",
+        "amount": "400g"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "400g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      }
+    ],
+    "base_ingredients": [
+      "Cumin",
+      "Smoked paprika",
+      "Chilli powder",
+      "Olive oil"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Beef mince",
+        "emoji": "🥩",
+        "amount": "500g"
+      },
+      {
+        "name": "Kidney beans",
+        "emoji": "🫘",
+        "amount": "400g"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "400g"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the rice",
+        "text": "Cook the rice according to the packet.",
+        "ings": [
+          "🍚 Rice · 250g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Brown the base",
+        "text": "Soften the onion, garlic and pepper in oil, then add the mince and brown.",
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 2 cloves",
+          "🫑 Red pepper · 1 pc",
+          "🥩 Beef mince · 500g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Spice & simmer",
+        "text": "Stir in the cumin, paprika and chilli, then the tomatoes and beans. Simmer 30 minutes.",
+        "ings": [
+          "🥫 Chopped tomatoes · 400g",
+          "🫘 Kidney beans · 400g"
+        ],
+        "tip": "A long simmer melts everything together — the longer the better.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Serve",
+        "text": "Season and serve over the rice.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "egg-fried-rice",
+    "title": "Egg Fried Rice",
+    "subtitle": "The 15-minute takeaway favourite, made at home",
+    "emoji": "🍚",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Rice"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 10,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Egg fried rice with peas, carrot and spring onion in a wok, glossy and steaming, top-down food photography",
+    "nutrition": {
+      "fat": 12,
+      "kcal": 430,
+      "carbs": 62,
+      "fiber": 4,
+      "protein": 14
+    },
+    "ingredients": [
+      {
+        "name": "Cooked rice",
+        "emoji": "🍚",
+        "amount": "400g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Peas",
+        "emoji": "🟢",
+        "amount": "100g"
+      },
+      {
+        "name": "Spring onions",
+        "emoji": "🧅",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Carrot",
+        "emoji": "🥕",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      }
+    ],
+    "base_ingredients": [
+      "Soy sauce",
+      "Sesame oil",
+      "Vegetable oil"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Cooked rice",
+        "emoji": "🍚",
+        "amount": "400g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Peas",
+        "emoji": "🟢",
+        "amount": "100g"
+      },
+      {
+        "name": "Spring onions",
+        "emoji": "🧅",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Carrot",
+        "emoji": "🥕",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "2 cloves"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Scramble the eggs",
+        "text": "Beat and quickly scramble the eggs in a little oil, then set aside.",
+        "ings": [
+          "🥚 Eggs · 3 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Stir-fry the veg",
+        "text": "Stir-fry the garlic, carrot, peas and spring onions over high heat.",
+        "ings": [
+          "🧄 Garlic · 2 cloves",
+          "🥕 Carrot · 1 pc",
+          "🟢 Peas · 100g",
+          "🧅 Spring onions · 3 pcs"
+        ],
+        "tip": "Use cold, day-old rice if you can — it fries up far better than fresh.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Fry the rice",
+        "text": "Add the cooked rice and toss on high heat with a splash of soy sauce.",
+        "ings": [
+          "🍚 Cooked rice · 400g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Combine",
+        "text": "Return the eggs, drizzle with sesame oil, toss together and serve.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "marry-me-chicken",
+    "title": "Marry Me Chicken",
+    "subtitle": "The viral creamy sun-dried tomato chicken everyone is searching for",
+    "emoji": "🍗",
+    "is_kids": false,
+    "tags": [
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Chicken"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 25,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Marry me chicken — golden chicken breasts in creamy sun-dried tomato sauce with spinach and parmesan in a skillet, cosy food photography",
+    "nutrition": {
+      "fat": 30,
+      "kcal": 540,
+      "carbs": 10,
+      "fiber": 2,
+      "protein": 42
+    },
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Double cream",
+        "emoji": "🥛",
+        "amount": "250ml"
+      },
+      {
+        "name": "Sun-dried tomatoes",
+        "emoji": "🍅",
+        "amount": "80g"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "3 cloves"
+      },
+      {
+        "name": "Spinach",
+        "emoji": "🥬",
+        "amount": "60g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Dried oregano",
+      "Chilli flakes",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Double cream",
+        "emoji": "🥛",
+        "amount": "250ml"
+      },
+      {
+        "name": "Sun-dried tomatoes",
+        "emoji": "🍅",
+        "amount": "80g"
+      },
+      {
+        "name": "Parmesan",
+        "emoji": "🧀",
+        "amount": "40g"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "3 cloves"
+      },
+      {
+        "name": "Spinach",
+        "emoji": "🥬",
+        "amount": "60g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Sear the chicken",
+        "text": "Season the chicken breasts and sear in olive oil until golden on both sides, then set aside.",
+        "ings": [
+          "🍗 Chicken breast · 4 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the sauce",
+        "text": "Soften the garlic, then add the sun-dried tomatoes, cream, parmesan, oregano and a pinch of chilli.",
+        "ings": [
+          "🧄 Garlic · 3 cloves",
+          "🍅 Sun-dried tomatoes · 80g",
+          "🥛 Double cream · 250ml",
+          "🧀 Parmesan · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Simmer",
+        "text": "Return the chicken and simmer in the sauce for 10 minutes, then stir through the spinach.",
+        "ings": [
+          "🥬 Spinach · 60g"
+        ],
+        "tip": "Let it bubble gently so the sauce thickens and coats the chicken.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Serve",
+        "text": "Serve with rice, pasta or crusty bread to mop up the sauce.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "chicken-fajita-bowl",
+    "title": "Chicken Fajita Bowl",
+    "subtitle": "Charred peppers, spiced chicken and all the toppings",
+    "emoji": "🌯",
+    "is_kids": true,
+    "tags": [
+      "Gluten-free",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Bowl"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 15,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Chicken fajita bowl with charred peppers, black beans, rice, avocado and lime, colourful overhead food photography",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 540,
+      "carbs": 60,
+      "fiber": 11,
+      "protein": 38
+    },
+    "ingredients": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "500g"
+      },
+      {
+        "name": "Mixed peppers",
+        "emoji": "🫑",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      },
+      {
+        "name": "Black beans",
+        "emoji": "🫘",
+        "amount": "400g"
+      },
+      {
+        "name": "Avocado",
+        "emoji": "🥑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "base_ingredients": [
+      "Cumin",
+      "Smoked paprika",
+      "Olive oil",
+      "Salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "500g"
+      },
+      {
+        "name": "Mixed peppers",
+        "emoji": "🫑",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Rice",
+        "emoji": "🍚",
+        "amount": "250g"
+      },
+      {
+        "name": "Black beans",
+        "emoji": "🫘",
+        "amount": "400g"
+      },
+      {
+        "name": "Avocado",
+        "emoji": "🥑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the rice",
+        "text": "Cook the rice according to the packet.",
+        "ings": [
+          "🍚 Rice · 250g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Season & cook chicken",
+        "text": "Toss the sliced chicken with cumin, paprika and salt, then cook until golden and done.",
+        "ings": [
+          "🍗 Chicken breast · 500g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Char the veg",
+        "text": "Cook the peppers and onion over high heat until charred and just soft.",
+        "ings": [
+          "🫑 Mixed peppers · 2 pcs",
+          "🧅 Onion · 1 pc"
+        ],
+        "tip": "Leave them undisturbed for a minute at a time to get that smoky char.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Build the bowl",
+        "text": "Bowl up the rice and beans, add the chicken and veg, and top with avocado and a squeeze of lime.",
+        "ings": [
+          "🫘 Black beans · 400g",
+          "🥑 Avocado · 1 pc",
+          "🍋 Lime · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "chicken-pad-thai",
+    "title": "Chicken Pad Thai",
+    "subtitle": "Sweet, tangy, peanutty noodles — the Thai street-food icon",
+    "emoji": "🍜",
+    "is_kids": false,
+    "tags": [
+      "Gluten-free"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Noodles"
+    ],
+    "diet": [
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 10,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Chicken pad thai with rice noodles, beansprouts, crushed peanuts, spring onion and lime wedge, vibrant street-food photography",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 560,
+      "carbs": 72,
+      "fiber": 5,
+      "protein": 30
+    },
+    "ingredients": [
+      {
+        "name": "Rice noodles",
+        "emoji": "🍜",
+        "amount": "200g"
+      },
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "300g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Beansprouts",
+        "emoji": "🫛",
+        "amount": "100g"
+      },
+      {
+        "name": "Peanuts",
+        "emoji": "🥜",
+        "amount": "30g"
+      },
+      {
+        "name": "Spring onions",
+        "emoji": "🧅",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "base_ingredients": [
+      "Tamarind paste",
+      "Fish sauce",
+      "Brown sugar",
+      "Vegetable oil"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Rice noodles",
+        "emoji": "🍜",
+        "amount": "200g"
+      },
+      {
+        "name": "Chicken breast",
+        "emoji": "🍗",
+        "amount": "300g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Beansprouts",
+        "emoji": "🫛",
+        "amount": "100g"
+      },
+      {
+        "name": "Peanuts",
+        "emoji": "🥜",
+        "amount": "30g"
+      },
+      {
+        "name": "Spring onions",
+        "emoji": "🧅",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Lime",
+        "emoji": "🍋",
+        "amount": "1 pc"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Soak the noodles",
+        "text": "Soak the rice noodles in warm water until pliable, then drain.",
+        "ings": [
+          "🍜 Rice noodles · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Cook chicken & egg",
+        "text": "Stir-fry the chicken until cooked, push to one side and scramble the eggs.",
+        "ings": [
+          "🍗 Chicken breast · 300g",
+          "🥚 Eggs · 2 pcs"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Toss with sauce",
+        "text": "Add the noodles with the tamarind, fish sauce and sugar, and toss over high heat to coat.",
+        "ings": [],
+        "tip": "Tamarind + fish sauce + sugar is the classic sweet-salty-sour balance — taste and adjust.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Finish",
+        "text": "Add the beansprouts and spring onion, then top with crushed peanuts and a wedge of lime.",
+        "ings": [
+          "🫛 Beansprouts · 100g",
+          "🥜 Peanuts · 30g",
+          "🧅 Spring onions · 2 pcs",
+          "🍋 Lime · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "vegetarian-lasagna",
+    "title": "Best-Ever Vegetarian Lasagna",
+    "subtitle": "Roasted veg and a rich tomato-béchamel — no one misses the meat",
+    "emoji": "🍝",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Main Course"
+    ],
+    "categories": [
+      "Pasta"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 30,
+    "cook_minutes": 45,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Vegetarian lasagna with roasted aubergine, courgette and pepper, golden mozzarella top, one slice lifted, cosy food photography",
+    "nutrition": {
+      "fat": 20,
+      "kcal": 480,
+      "carbs": 54,
+      "fiber": 8,
+      "protein": 20
+    },
+    "ingredients": [
+      {
+        "name": "Lasagne sheets",
+        "emoji": "🍝",
+        "amount": "250g"
+      },
+      {
+        "name": "Aubergine",
+        "emoji": "🍆",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Courgette",
+        "emoji": "🥒",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "600ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "50g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Garlic",
+      "Dried oregano",
+      "Nutmeg",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Lasagne sheets",
+        "emoji": "🍝",
+        "amount": "250g"
+      },
+      {
+        "name": "Aubergine",
+        "emoji": "🍆",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Courgette",
+        "emoji": "🥒",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Red pepper",
+        "emoji": "🫑",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Chopped tomatoes",
+        "emoji": "🥫",
+        "amount": "800g"
+      },
+      {
+        "name": "Milk",
+        "emoji": "🥛",
+        "amount": "600ml"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "50g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Mozzarella",
+        "emoji": "🧀",
+        "amount": "125g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Roast the veg",
+        "text": "Dice the aubergine, courgette and pepper, toss with olive oil and roast at 200°C for 20 minutes.",
+        "ings": [
+          "🍆 Aubergine · 1 pc",
+          "🥒 Courgette · 1 pc",
+          "🫑 Red pepper · 1 pc"
+        ],
+        "tip": "Roasting the veg first deepens the flavour and stops the lasagna going watery.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Tomato sauce",
+        "text": "Simmer the chopped tomatoes with garlic and oregano for 15 minutes, then stir in the roasted veg.",
+        "ings": [
+          "🥫 Chopped tomatoes · 800g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Béchamel",
+        "text": "Melt the butter, whisk in the flour, add the milk gradually to a smooth sauce and season with nutmeg.",
+        "ings": [
+          "🧈 Butter · 50g",
+          "🌾 Plain flour · 50g",
+          "🥛 Milk · 600ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Layer & bake",
+        "text": "Layer veg sauce, lasagne sheets and béchamel, top with mozzarella and bake at 180°C for 35–40 minutes.",
+        "ings": [
+          "🍝 Lasagne sheets · 250g",
+          "🧀 Mozzarella · 125g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "fudgy-chocolate-brownies",
+    "title": "Fudgy Chocolate Brownies",
+    "subtitle": "Crackly top, dense fudgy middle — the chocolate hit everyone wants",
+    "emoji": "🍫",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 25,
+    "servings": 12,
+    "image_url": "",
+    "image_prompt": "Stack of fudgy chocolate brownies with crackly tops and dense centres, chocolate chunks visible, moody food photography",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 300,
+      "carbs": 34,
+      "fiber": 2,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "150g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "200g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "100g"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "200g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "150g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "200g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "100g"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Melt",
+        "text": "Melt the dark chocolate with the butter until smooth, then let it cool slightly.",
+        "ings": [
+          "🍫 Dark chocolate · 200g",
+          "🧈 Butter · 150g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Mix the batter",
+        "text": "Whisk the eggs, sugar and vanilla until thick and pale, then fold in the melted chocolate.",
+        "ings": [
+          "🥚 Eggs · 3 pcs",
+          "🥄 Sugar · 200g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Fold in dry",
+        "text": "Gently fold in the flour, cocoa and a pinch of salt — stop as soon as it's combined.",
+        "ings": [
+          "🌾 Plain flour · 100g",
+          "🍫 Cocoa powder · 30g"
+        ],
+        "tip": "Under-mixing and under-baking slightly is the secret to a fudgy, not cakey, brownie.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Bake & cut",
+        "text": "Pour into a lined tin and bake at 180°C for 20–25 minutes until just set. Cool fully, then cut into squares.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "apple-crumble",
+    "title": "Apple & Oat Crumble",
+    "subtitle": "Cosy classic, lightly wholesome — oats, nuts and just enough sugar",
+    "emoji": "🍎",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 40,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Golden apple and oat crumble in a rustic baking dish, bubbling fruit at the edges, a spoonful served with a little cream, cosy warm food photography",
+    "nutrition": {
+      "fat": 14,
+      "kcal": 330,
+      "carbs": 44,
+      "fiber": 5,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Apples",
+        "emoji": "🍎",
+        "amount": "800g"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🫙",
+        "amount": "80g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "90g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "60g"
+      },
+      {
+        "name": "Pecans",
+        "emoji": "🌰",
+        "amount": "40g"
+      }
+    ],
+    "base_ingredients": [
+      "Cinnamon",
+      "Maple syrup",
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Apples",
+        "emoji": "🍎",
+        "amount": "800g"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "90g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "60g"
+      },
+      {
+        "name": "Pecans",
+        "emoji": "🌰",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Prep the apples",
+        "text": "Peel, core and slice the apples, toss with cinnamon and a little maple syrup and tip into a baking dish.",
+        "ings": [
+          "🍎 Apples · 800g",
+          "🍯 Maple syrup · 1 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the crumble",
+        "text": "Rub the butter into the oats, flour, brown sugar and chopped pecans with your fingertips until clumpy.",
+        "ings": [
+          "🌾 Rolled oats · 80g",
+          "🫙 Plain flour · 80g",
+          "🧈 Butter · 90g",
+          "🟤 Brown sugar · 60g",
+          "🌰 Pecans · 40g"
+        ],
+        "tip": "Leave some big clumps — that's where the crunch comes from.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Scatter the crumble over the apples and bake at 190°C for 35–40 minutes until golden and bubbling.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "orange-energy-balls",
+    "title": "Orange & Almond Energy Balls",
+    "subtitle": "No-bake bites sweetened only by dates — bright with orange",
+    "emoji": "🟠",
+    "is_kids": true,
+    "tags": [
+      "Vegan",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Snack",
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegan"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 0,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Orange and almond energy balls rolled in desiccated coconut on a plate, fresh orange and dates beside, bright clean natural-food photography",
+    "nutrition": {
+      "fat": 9,
+      "kcal": 190,
+      "carbs": 24,
+      "fiber": 4,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Medjool dates",
+        "emoji": "🌴",
+        "amount": "200g"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Almonds",
+        "emoji": "🌰",
+        "amount": "80g"
+      },
+      {
+        "name": "Orange",
+        "emoji": "🍊",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Desiccated coconut",
+        "emoji": "🥥",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Medjool dates",
+        "emoji": "🌴",
+        "amount": "200g"
+      },
+      {
+        "name": "Rolled oats",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Almonds",
+        "emoji": "🌰",
+        "amount": "80g"
+      },
+      {
+        "name": "Orange",
+        "emoji": "🍊",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Desiccated coconut",
+        "emoji": "🥥",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Blitz nuts & oats",
+        "text": "Pulse the almonds and oats in a food processor to a coarse meal.",
+        "ings": [
+          "🌰 Almonds · 80g",
+          "🌾 Rolled oats · 80g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Add dates & orange",
+        "text": "Add the pitted dates, the zest and juice of the orange, vanilla and a pinch of salt, and blitz to a sticky dough.",
+        "ings": [
+          "🌴 Medjool dates · 200g",
+          "🍊 Orange · 1 pc"
+        ],
+        "tip": "Add the orange juice a splash at a time — just enough to bind, so they're not too wet.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Roll & chill",
+        "text": "Roll into balls, then roll in the desiccated coconut. Chill for 30 minutes to firm up.",
+        "ings": [
+          "🥥 Desiccated coconut · 30g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "baked-cheesecake-lighter",
+    "title": "German Käsekuchen (Quark)",
+    "subtitle": "The classic German baked cheesecake — made with quark, on a shortcrust base",
+    "emoji": "🍰",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 30,
+    "cook_minutes": 60,
+    "servings": 12,
+    "image_url": "",
+    "image_prompt": "Classic German Käsekuchen (quark cheesecake) in a springform tin with a golden shortcrust edge and a tall, pale, lightly browned set filling, one slice cut to reveal the creamy interior, on a plate with a cake fork, soft natural daylight, realistic homemade food photography, not over-stylised",
+    "nutrition": {
+      "fat": 18,
+      "kcal": 360,
+      "carbs": 38,
+      "fiber": 1,
+      "protein": 12
+    },
+    "ingredients": [
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "200g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "150g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "180g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Quark",
+        "emoji": "🥛",
+        "amount": "500g"
+      },
+      {
+        "name": "Vanilla custard powder",
+        "emoji": "🍮",
+        "amount": "40g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Lemon zest",
+      "Baking powder",
+      "Pinch of salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "200g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "150g"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "180g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "4 pcs"
+      },
+      {
+        "name": "Quark",
+        "emoji": "🥛",
+        "amount": "500g"
+      },
+      {
+        "name": "Vanilla custard powder",
+        "emoji": "🍮",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Make the shortcrust",
+        "text": "Rub the flour with 100g of the butter, 60g of the sugar and 1 egg into a dough. Chill 20 minutes, then press into the base and up the sides of a lined springform tin.",
+        "ings": [
+          "🌾 Plain flour · 200g",
+          "🧈 Butter · 150g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Quark filling",
+        "text": "Beat the quark with the remaining sugar, the other 3 eggs, the rest of the butter (melted), the custard powder, vanilla and lemon zest until smooth.",
+        "ings": [
+          "🥛 Quark · 500g",
+          "🥄 Sugar · 180g",
+          "🥚 Eggs · 4 pcs",
+          "🍮 Vanilla custard powder · 40g"
+        ],
+        "tip": "Quark is the key to a real German Käsekuchen — lighter and tangier than cream cheese.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Pour the filling onto the base and bake at 170°C for about 60 minutes until set and golden (cover loosely if it browns too fast).",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Cool slowly",
+        "text": "Turn off the oven and let the cake cool inside with the door ajar to stop it cracking, then chill before slicing.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "tiramisu-lighter",
+    "title": "Lighter Tiramisu",
+    "subtitle": "The Italian favourite, rounded out with Greek yogurt",
+    "emoji": "🍰",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 30,
+    "cook_minutes": 0,
+    "servings": 8,
+    "image_url": "",
+    "image_prompt": "Lighter tiramisu in a glass dish dusted with cocoa, one portion scooped to show the layers of coffee-soaked biscuit and cream, moody food photography",
+    "nutrition": {
+      "fat": 16,
+      "kcal": 330,
+      "carbs": 30,
+      "fiber": 1,
+      "protein": 9
+    },
+    "ingredients": [
+      {
+        "name": "Mascarpone",
+        "emoji": "🧀",
+        "amount": "250g"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "250g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "70g"
+      },
+      {
+        "name": "Ladyfingers",
+        "emoji": "🍪",
+        "amount": "200g"
+      },
+      {
+        "name": "Strong coffee",
+        "emoji": "☕",
+        "amount": "300ml"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "2 tbsp"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Mascarpone",
+        "emoji": "🧀",
+        "amount": "250g"
+      },
+      {
+        "name": "Greek yogurt",
+        "emoji": "🥛",
+        "amount": "250g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "3 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "70g"
+      },
+      {
+        "name": "Ladyfingers",
+        "emoji": "🍪",
+        "amount": "200g"
+      },
+      {
+        "name": "Strong coffee",
+        "emoji": "☕",
+        "amount": "300ml"
+      },
+      {
+        "name": "Cocoa powder",
+        "emoji": "🍫",
+        "amount": "2 tbsp"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Whip the cream",
+        "text": "Beat the egg yolks with the sugar until pale, then fold in the mascarpone, Greek yogurt and vanilla. Whisk the egg whites to soft peaks and fold through.",
+        "ings": [
+          "🥚 Eggs · 3 pcs",
+          "🥄 Sugar · 70g",
+          "🧀 Mascarpone · 250g",
+          "🥛 Greek yogurt · 250g"
+        ],
+        "tip": "The yogurt lightens the mascarpone so it tastes rich but not heavy.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Soak the biscuits",
+        "text": "Dip the ladyfingers briefly in the cooled coffee — quick, so they don't go soggy.",
+        "ings": [
+          "🍪 Ladyfingers · 200g",
+          "☕ Strong coffee · 300ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Layer",
+        "text": "Layer soaked biscuits and cream, repeat, and finish with a smooth layer of cream.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Chill & dust",
+        "text": "Chill for at least 4 hours, then dust generously with cocoa just before serving.",
+        "ings": [
+          "🍫 Cocoa powder · 2 tbsp"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "chocolate-chip-cookies",
+    "title": "Chocolate Chip Cookies",
+    "subtitle": "Crisp edges, soft middle — a touch of wholemeal for depth",
+    "emoji": "🍪",
+    "is_kids": true,
+    "tags": [
+      "Vegetarian",
+      "Kid-Friendly"
+    ],
+    "meal": [
+      "Dessert",
+      "Snack"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 12,
+    "servings": 6,
+    "image_url": "",
+    "image_prompt": "Stack of chocolate chip cookies with melty dark chocolate and crisp golden edges on a cooling rack, warm homely light",
+    "nutrition": {
+      "fat": 11,
+      "kcal": 230,
+      "carbs": 30,
+      "fiber": 2,
+      "protein": 4
+    },
+    "ingredients": [
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "200g"
+      },
+      {
+        "name": "Wholemeal flour",
+        "emoji": "🍞",
+        "amount": "50g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "140g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "120g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Dark chocolate chips",
+        "emoji": "🍫",
+        "amount": "150g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Baking soda",
+      "Sea salt"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Plain flour",
+        "emoji": "🌾",
+        "amount": "200g"
+      },
+      {
+        "name": "Wholemeal flour",
+        "emoji": "🌾",
+        "amount": "50g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "140g"
+      },
+      {
+        "name": "Brown sugar",
+        "emoji": "🟤",
+        "amount": "120g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Dark chocolate chips",
+        "emoji": "🍫",
+        "amount": "150g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cream butter & sugar",
+        "text": "Beat the soft butter with the brown sugar until creamy, then beat in the egg and vanilla.",
+        "ings": [
+          "🧈 Butter · 140g",
+          "🟤 Brown sugar · 120g",
+          "🥚 Egg · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the dough",
+        "text": "Fold in both flours, the baking soda and a good pinch of salt, then the chocolate chips.",
+        "ings": [
+          "🌾 Plain flour · 200g",
+          "🍞 Wholemeal flour · 50g",
+          "🍫 Dark chocolate chips · 150g"
+        ],
+        "tip": "A little wholemeal flour and flaky salt give a more grown-up, less sugary-flat cookie.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake",
+        "text": "Scoop onto a lined tray and bake at 180°C for 10–12 minutes until golden at the edges but still soft in the middle.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "molten-chocolate-lava-cake",
+    "title": "Molten Chocolate Lava Cake",
+    "subtitle": "Gooey-centred and naturally gluten-free with ground almonds",
+    "emoji": "🍫",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 15,
+    "cook_minutes": 12,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Molten chocolate lava cake on a plate with the gooey centre spilling out, dusting of cocoa and a few raspberries, moody food photography",
+    "nutrition": {
+      "fat": 26,
+      "kcal": 400,
+      "carbs": 28,
+      "fiber": 3,
+      "protein": 8
+    },
+    "ingredients": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "120g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "90g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "60ml"
+      },
+      {
+        "name": "Ground almonds",
+        "emoji": "🌰",
+        "amount": "40g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Pinch of salt",
+      "Cocoa powder (for the moulds)"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Dark chocolate",
+        "emoji": "🍫",
+        "amount": "120g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "90g"
+      },
+      {
+        "name": "Eggs",
+        "emoji": "🥚",
+        "amount": "2 pcs"
+      },
+      {
+        "name": "Maple syrup",
+        "emoji": "🍁",
+        "amount": "60ml"
+      },
+      {
+        "name": "Ground almonds",
+        "emoji": "🌰",
+        "amount": "40g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Melt",
+        "text": "Melt the dark chocolate with the butter until smooth, then let it cool slightly.",
+        "ings": [
+          "🍫 Dark chocolate · 120g",
+          "🧈 Butter · 90g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Batter",
+        "text": "Whisk the eggs with the maple syrup and vanilla until pale, fold in the melted chocolate, then the ground almonds and a pinch of salt.",
+        "ings": [
+          "🥚 Eggs · 2 pcs",
+          "🍁 Maple syrup · 60ml",
+          "🌰 Ground almonds · 40g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake hot & short",
+        "text": "Pour into buttered, cocoa-dusted ramekins and bake at 200°C for 10–12 minutes until set outside but molten in the centre.",
+        "ings": [],
+        "tip": "Bake just until the tops are set — the few minutes either side decide gooey vs cakey.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Serve at once",
+        "text": "Turn out and serve immediately while the centre is still runny.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "creme-brulee",
+    "title": "Vanilla Crème Brûlée",
+    "subtitle": "Silky vanilla custard under a crackly caramel top",
+    "emoji": "🍮",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "meal": [
+      "Dessert"
+    ],
+    "categories": [
+      "Süßspeise"
+    ],
+    "diet": [
+      "Vegetarian",
+      "Gluten-free"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 40,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "Crème brûlée in a ramekin with a glassy caramelised sugar top being cracked with a spoon, vanilla flecks in the custard, elegant food photography",
+    "nutrition": {
+      "fat": 38,
+      "kcal": 450,
+      "carbs": 24,
+      "fiber": 0,
+      "protein": 5
+    },
+    "ingredients": [
+      {
+        "name": "Double cream",
+        "emoji": "🥛",
+        "amount": "500ml"
+      },
+      {
+        "name": "Egg yolks",
+        "emoji": "🥚",
+        "amount": "5 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "70g"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract",
+      "Sugar (for the top)"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Double cream",
+        "emoji": "🥛",
+        "amount": "500ml"
+      },
+      {
+        "name": "Egg yolks",
+        "emoji": "🥚",
+        "amount": "5 pcs"
+      },
+      {
+        "name": "Sugar",
+        "emoji": "🥄",
+        "amount": "70g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Infuse the cream",
+        "text": "Gently warm the cream with the vanilla until steaming — do not let it boil.",
+        "ings": [
+          "🥛 Double cream · 500ml"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Make the custard",
+        "text": "Whisk the egg yolks with the sugar, then slowly whisk in the warm cream.",
+        "ings": [
+          "🥚 Egg yolks · 5 pcs",
+          "🥄 Sugar · 70g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bake in a bain-marie",
+        "text": "Pour into ramekins, set them in a tray of hot water and bake at 150°C for 35–40 minutes until just set. Cool, then chill.",
+        "ings": [],
+        "tip": "The water bath keeps it silky — bake just until it barely jiggles in the middle.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Brûlée the top",
+        "text": "Sprinkle with a thin layer of sugar and caramelise with a blowtorch (or under a hot grill) just before serving.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
+  },
+  {
+    "id": "beetroot-feta-tart",
+    "title": "Beetroot & Feta Tart",
+    "subtitle": "Jammy onions, sweet beetroot and feta on a crisp almond-oat crust",
+    "emoji": "🫚",
+    "is_kids": false,
+    "tags": [
+      "Vegetarian"
+    ],
+    "meal": [
+      "Main Course",
+      "Kleine Mahlzeit"
+    ],
+    "categories": [
+      "Tart"
+    ],
+    "diet": [
+      "Vegetarian"
+    ],
+    "prep_minutes": 20,
+    "cook_minutes": 25,
+    "servings": 4,
+    "image_url": "",
+    "image_prompt": "A rustic round beetroot and feta tart on a pale grey ceramic plate, golden crimped crust, overlapping slices of deep crimson beetroot generously topped with lots of crumbled white feta, toasted walnuts, plenty of fresh dill and a handful of peppery rocket, one wedge cut and pulled slightly aside, photographed from a low three-quarter side angle (about 30 degrees) so the height and crust show, soft natural daylight, realistic editorial food photography, homemade, not over-stylised",
+    "nutrition": {
+      "fat": 30,
+      "kcal": 410,
+      "carbs": 20,
+      "fiber": 5,
+      "protein": 14
+    },
+    "ingredients": [
+      {
+        "name": "Almond flour",
+        "emoji": "🌰",
+        "amount": "120g"
+      },
+      {
+        "name": "Oat flour",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "80g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Cooked beetroot",
+        "emoji": "🫚",
+        "amount": "250g"
+      },
+      {
+        "name": "Feta",
+        "emoji": "🧀",
+        "amount": "200g"
+      },
+      {
+        "name": "Red onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Walnuts",
+        "emoji": "🌰",
+        "amount": "40g"
+      },
+      {
+        "emoji": "🌿",
+        "name": "Fresh dill",
+        "amount": "10g"
+      },
+      {
+        "emoji": "🥬",
+        "name": "Rocket",
+        "amount": "30g"
+      }
+    ],
+    "base_ingredients": [
+      "Olive oil",
+      "Balsamic vinegar",
+      "Thyme",
+      "Honey",
+      "Salt & pepper"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Almond flour",
+        "emoji": "🌰",
+        "amount": "120g"
+      },
+      {
+        "name": "Oat flour",
+        "emoji": "🌾",
+        "amount": "80g"
+      },
+      {
+        "name": "Butter",
+        "emoji": "🧈",
+        "amount": "80g"
+      },
+      {
+        "name": "Egg",
+        "emoji": "🥚",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Cooked beetroot",
+        "emoji": "🫚",
+        "amount": "250g"
+      },
+      {
+        "name": "Feta",
+        "emoji": "🧀",
+        "amount": "200g"
+      },
+      {
+        "name": "Red onion",
+        "emoji": "🧅",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Walnuts",
+        "emoji": "🌰",
+        "amount": "40g"
+      },
+      {
+        "emoji": "🌿",
+        "name": "Fresh dill",
+        "amount": "10g"
+      },
+      {
+        "emoji": "🥬",
+        "name": "Rocket",
+        "amount": "30g"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Make the crust",
+        "text": "Rub together the almond flour, oat flour, a pinch of salt, the cold butter and the egg into a dough. Press evenly into a tart tin and blind-bake at 180°C for 12–15 minutes until set and lightly golden.",
+        "ings": [
+          "🌰 Almond flour · 120g",
+          "🌾 Oat flour · 80g",
+          "🧈 Butter · 80g",
+          "🥚 Egg · 1 pc"
+        ],
+        "tip": "Buckwheat flour works in place of the oat flour for a nuttier, gluten-free crust.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Caramelise the onion",
+        "text": "Soften the sliced red onion in a little olive oil with a splash of balsamic until soft and jammy.",
+        "ings": [
+          "🧅 Red onion · 1 pc"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Top the tart",
+        "text": "Spread the onion over the crust, arrange the sliced beetroot, crumble over plenty of feta, scatter thyme and walnuts and drizzle with a little honey.",
+        "ings": [
+          "🫚 Cooked beetroot · 250g",
+          "🧀 Feta · 150g",
+          "🌰 Walnuts · 40g"
+        ],
+        "tip": "Pat the beetroot dry first so the crust stays crisp.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Bake & finish",
+        "text": "Bake at 190°C for 18–20 minutes until set and golden, then finish with plenty of fresh dill and a handful of rocket.",
+        "ings": [
+          "🌿 Fresh dill · 10g",
+          "🥬 Rocket · 30g"
+        ],
+        "tip": null,
+        "kidsHelp": null
+      }
+    ]
   }
 ]
