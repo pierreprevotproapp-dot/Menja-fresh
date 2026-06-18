@@ -475,7 +475,8 @@
           "ings": [
             "🫚 Remolacha · 150g",
             "🍎 Manzana · ½ ud",
-            "🥕 Zanahoria · 1 ud"
+            "🥕 Zanahoria · 1 ud",
+            "🍅 Tomates cherry · 100g"
           ],
           "text": "Corta la remolacha y la manzana en láminas finas. Ralla la zanahoria. Parte los tomates cherry por la mitad.",
           "title": "Prepara las verduras",
@@ -545,7 +546,8 @@
           "ings": [
             "🫚 Betterave · 150g",
             "🍎 Pomme · ½ pc",
-            "🥕 Carotte · 1 pc"
+            "🥕 Carotte · 1 pc",
+            "🍅 Tomates cerises · 100g"
           ],
           "text": "Émincer finement la betterave et la pomme. Râper la carotte. Couper les tomates cerises en deux.",
           "title": "Préparer les légumes",
@@ -615,7 +617,8 @@
           "ings": [
             "🫚 Rote Bete · 150g",
             "🍎 Apfel · ½ St.",
-            "🥕 Karotte · 1 St."
+            "🥕 Karotte · 1 St.",
+            "🍅 Kirschtomaten · 100g"
           ],
           "text": "Rote Bete und Apfel dünn in Scheiben schneiden. Karotte reiben. Kirschtomaten halbieren.",
           "title": "Gemüse vorbereiten",
@@ -708,7 +711,8 @@
           "tip": null,
           "ings": [
             "🧀 Queso de cabra · 80g",
-            "🫐 Arándanos rojos · 2 cdas"
+            "🫐 Arándanos rojos · 2 cdas",
+            "🥬 Rúcula · 60g"
           ],
           "text": "Coloca capas de rúcula, boniato y pera. Desmenuza el queso de cabra por encima. Reparte las nueces y los arándanos rojos. Riega el aliño por encima de todo.",
           "title": "Monta el bol",
@@ -779,7 +783,8 @@
           "tip": null,
           "ings": [
             "🧀 Fromage de chèvre · 80g",
-            "🫐 Cranberries · 2 c. à s."
+            "🫐 Cranberries · 2 c. à s.",
+            "🥬 Roquette · 60g"
           ],
           "text": "Disposer en couches la roquette, la patate douce et la poire. Émietter le fromage de chèvre dessus. Parsemer de noix et de cranberries. Arroser de vinaigrette sur l'ensemble.",
           "title": "Assembler",
@@ -850,7 +855,8 @@
           "tip": null,
           "ings": [
             "🧀 Ziegenkäse · 80g",
-            "🫐 Cranberrys · 2 EL"
+            "🫐 Cranberrys · 2 EL",
+            "🥬 Rucola · 60g"
           ],
           "text": "Rucola, Süßkartoffel und Birne schichten. Ziegenkäse darüber zerbröseln. Walnüsse und Cranberrys darüber streuen. Das Dressing über alles träufeln.",
           "title": "Anrichten",
@@ -885,7 +891,9 @@
           "tip": "Marinar toda la noche en la nevera da aún más sabor.",
           "ings": [
             "🍗 Muslos de pollo · 300g",
-            "🌶️ Chile rojo · 1 ud"
+            "🌶️ Chile rojo · 1 ud",
+            "🍋 Lima · 1 ud",
+            "🧄 Ajo · 2 dientes"
           ],
           "text": "Mezcla aceite de oliva, pimentón ahumado, ajo picado, chile picado, orégano, sal y zumo de lima. Cubre los muslos de pollo y déjalos marinar al menos 10 minutos.",
           "title": "Marina el pollo",
@@ -955,7 +963,9 @@
           "tip": "Mariner une nuit au frigo pour une saveur encore plus profonde.",
           "ings": [
             "🍗 Cuisses de poulet · 300g",
-            "🌶️ Piment rouge · 1 pc"
+            "🌶️ Piment rouge · 1 pc",
+            "🍋 Citron vert · 1 pc",
+            "🧄 Ail · 2 gousses"
           ],
           "text": "Mélanger huile d'olive, paprika fumé, ail haché, piment haché, origan, sel et jus de citron vert. Enrober les cuisses de poulet et laisser mariner au moins 10 minutes.",
           "title": "Mariner le poulet",
@@ -1025,7 +1035,9 @@
           "tip": "Über Nacht im Kühlschrank marinieren für noch mehr Geschmack.",
           "ings": [
             "🍗 Hähnchenschenkel · 300g",
-            "🌶️ Rote Chili · 1 St."
+            "🌶️ Rote Chili · 1 St.",
+            "🍋 Limette · 1 St.",
+            "🧄 Knoblauch · 2 Zehen"
           ],
           "text": "Olivenöl, geräuchertes Paprika, gehackten Knoblauch, gehackte Chili, Oregano, Salz und Limettensaft mischen. Hähnchenschenkel einreiben und mindestens 10 Minuten marinieren.",
           "title": "Hähnchen marinieren",
@@ -1106,7 +1118,8 @@
           "ings": [
             "🫙 Mostaza de Dijon · 2 cdas",
             "🍋 Limón · 1 ud",
-            "🍯 Miel · 1 cdta"
+            "🍯 Miel · 1 cdta",
+            "🧄 Ajo · 1 diente"
           ],
           "text": "Mezcla mostaza de Dijon, zumo de limón, miel, ajo picado y un chorrito de aceite de oliva hasta obtener un glaseado homogéneo.",
           "title": "Prepara el glaseado",
@@ -1175,7 +1188,8 @@
           "ings": [
             "🫙 Moutarde de Dijon · 2 c. à s.",
             "🍋 Citron · 1 pc",
-            "🍯 Miel · 1 c. à c."
+            "🍯 Miel · 1 c. à c.",
+            "🧄 Ail · 1 gousse"
           ],
           "text": "Mélanger moutarde de Dijon, jus de citron, miel, ail haché et un filet d'huile d'olive en un glaçage lisse.",
           "title": "Préparer le glaçage",
@@ -1244,7 +1258,8 @@
           "ings": [
             "🫙 Dijon-Senf · 2 EL",
             "🍋 Zitrone · 1 St.",
-            "🍯 Honig · 1 TL"
+            "🍯 Honig · 1 TL",
+            "🧄 Knoblauch · 1 Zehe"
           ],
           "text": "Dijon-Senf, Zitronensaft, Honig, gehackten Knoblauch und einen Schuss Olivenöl zu einer glatten Glasur verrühren.",
           "title": "Glasur anrühren",
@@ -1308,7 +1323,8 @@
           "tip": "Cuanto más secos los garbanzos, más crujiente el falafel.",
           "ings": [
             "🫘 Garbanzos · 400g",
-            "🌿 Perejil · 20g"
+            "🌿 Perejil · 20g",
+            "🧄 Ajo · 2 dientes"
           ],
           "text": "Escurre bien los garbanzos y sécalos. Tritura con perejil, ajo, comino, cilantro, una pizca de sal y 2 cdas de harina hasta formar una pasta rústica. No tritures de más: debe quedar con algo de textura.",
           "title": "Prepara la masa de falafel",
@@ -1346,7 +1362,8 @@
           "tip": null,
           "ings": [
             "🫓 Pan plano · 2 ud",
-            "🍅 Tomates · 2 ud"
+            "🍅 Tomates · 2 ud",
+            "🥒 Pepino · ½ ud"
           ],
           "text": "Calienta los panes planos. Cubre con tomate en rodajas, pepino, falafel y un buen chorro de salsa de tahini.",
           "title": "Monta",
@@ -1381,7 +1398,8 @@
           "tip": "Plus les pois chiches sont secs, plus les falafels sont croustillants.",
           "ings": [
             "🫘 Pois chiches · 400g",
-            "🌿 Persil · 20g"
+            "🌿 Persil · 20g",
+            "🧄 Ail · 2 gousses"
           ],
           "text": "Bien égoutter les pois chiches et les sécher. Mixer avec persil, ail, cumin, coriandre, une pincée de sel et 2 c. à s. de farine jusqu'à une pâte grossière. Ne pas trop mixer : il faut garder un peu de texture.",
           "title": "Préparer la pâte à falafels",
@@ -1419,7 +1437,8 @@
           "tip": null,
           "ings": [
             "🫓 Pain plat · 2 pc",
-            "🍅 Tomates · 2 pc"
+            "🍅 Tomates · 2 pc",
+            "🥒 Concombre · ½ pc"
           ],
           "text": "Réchauffer les pains plats. Garnir de tomate en tranches, concombre, falafels et un bon filet de sauce tahini.",
           "title": "Assembler",
@@ -1454,7 +1473,8 @@
           "tip": "Je trockener die Kichererbsen, desto knuspriger die Falafel.",
           "ings": [
             "🫘 Kichererbsen · 400g",
-            "🌿 Petersilie · 20g"
+            "🌿 Petersilie · 20g",
+            "🧄 Knoblauch · 2 Zehen"
           ],
           "text": "Kichererbsen gut abtropfen lassen und trocken tupfen. Mit Petersilie, Knoblauch, Kreuzkümmel, Koriander, einer Prise Salz und 2 EL Mehl zu einer groben Masse mixen. Nicht zu fein mixen – es sollte etwas Struktur behalten.",
           "title": "Falafel-Masse zubereiten",
@@ -1492,7 +1512,8 @@
           "tip": null,
           "ings": [
             "🫓 Fladenbrot · 2 St.",
-            "🍅 Tomaten · 2 St."
+            "🍅 Tomaten · 2 St.",
+            "🥒 Gurke · ½ St."
           ],
           "text": "Fladenbrote erwärmen. Mit Tomatenscheiben, Gurke, Falafel und reichlich Tahini-Soße belegen.",
           "title": "Zusammensetzen",
@@ -1526,7 +1547,10 @@
           "tip": null,
           "ings": [
             "🟨 Tofu firme · 300g",
-            "🫙 Salsa de soja · 2 cdas"
+            "🫙 Salsa de soja · 2 cdas",
+            "🧄 Ajo · 3 dientes",
+            "🍋 Limón · 1 ud",
+            "🌶️ Copos de chile · ½ cdta"
           ],
           "text": "Prensa el tofu 15 minutos entre papel de cocina. Córtalo en dados y marínalo en salsa de soja, zumo de limón y copos de chile 10 minutos.",
           "title": "Prensa y marina el tofu",
@@ -1595,9 +1619,12 @@
           "tip": null,
           "ings": [
             "🟨 Tofu ferme · 300g",
-            "🫙 Sauce soja · 2 c. à s."
+            "🫙 Sauce soja · 2 c. à s.",
+            "🧄 Ail · 3 gousses",
+            "🍋 Citron · 1 pc",
+            "🌶️ Flocons de piment · ½ c. à c."
           ],
-          "text": "Presser le tofu 15 minutes entre du papier absorbant. Couper en dés et mariner dans la sauce soja, le jus de citron et les flocons de piment 10 minutes.",
+          "text": "Presser le tofu 15 minutes entre du papier absorbant. Couper en dés et mariner dans la sauce soja, l'ail émincé, le jus de citron et les flocons de piment 10 minutes.",
           "title": "Presser et mariner le tofu",
           "kidsHelp": null
         },
@@ -1664,9 +1691,12 @@
           "tip": null,
           "ings": [
             "🟨 Fester Tofu · 300g",
-            "🫙 Sojasoße · 2 EL"
+            "🫙 Sojasoße · 2 EL",
+            "🧄 Knoblauch · 3 Zehen",
+            "🍋 Zitrone · 1 St.",
+            "🌶️ Chiliflocken · ½ TL"
           ],
-          "text": "Tofu 15 Minuten zwischen Küchenpapier pressen. In Würfel schneiden und 10 Minuten in Sojasoße, Zitronensaft und Chiliflocken marinieren.",
+          "text": "Tofu 15 Minuten zwischen Küchenpapier pressen. In Würfel schneiden und 10 Minuten in Sojasoße, Zitronensaft, gehacktem Knoblauch und Chiliflocken marinieren.",
           "title": "Tofu pressen & marinieren",
           "kidsHelp": null
         },
@@ -1736,7 +1766,8 @@
           "ings": [
             "🌿 Perejil · 30g",
             "🧄 Ajo · 3 dientes",
-            "🌶️ Chile · ½ ud"
+            "🌶️ Chile · ½ ud",
+            "🫒 Aceite de oliva · 4 cdas"
           ],
           "text": "Pica finamente el perejil, el ajo y el chile. Mezcla con aceite de oliva, vinagre de vino tinto, orégano y una pizca de sal. Deja reposar al menos 10 minutos.",
           "title": "Prepara el chimichurri",
@@ -1763,9 +1794,10 @@
         {
           "tip": null,
           "ings": [
-            "🥬 Rúcula · 50g"
+            "🥬 Rúcula · 50g",
+            "🍋 Limón · 1 ud"
           ],
-          "text": "Corta el solomillo contra la fibra. Coloca capas de arroz y rúcula, añade las láminas de ternera y vierte chimichurri generosamente por encima.",
+          "text": "Corta el solomillo contra la fibra. Coloca capas de arroz y rúcula, añade las láminas de ternera y vierte chimichurri generosamente por encima. Exprime el limón por encima.",
           "title": "Corta y monta",
           "kidsHelp": null
         }
@@ -1796,7 +1828,8 @@
           "ings": [
             "🌿 Persil · 30g",
             "🧄 Ail · 3 gousses",
-            "🌶️ Piment · ½ pc"
+            "🌶️ Piment · ½ pc",
+            "🫒 Huile d'olive · 4 c. à s."
           ],
           "text": "Hacher finement le persil, l'ail et le piment. Mélanger avec huile d'olive, vinaigre de vin rouge, origan et une pincée de sel. Laisser reposer au moins 10 minutes.",
           "title": "Préparer le chimichurri",
@@ -1823,9 +1856,10 @@
         {
           "tip": null,
           "ings": [
-            "🥬 Roquette · 50g"
+            "🥬 Roquette · 50g",
+            "🍋 Citron · 1 pc"
           ],
-          "text": "Trancher le bœuf dans le sens contraire des fibres. Disposer en couches le riz et la roquette, ajouter les tranches de bœuf et napper généreusement de chimichurri.",
+          "text": "Trancher le bœuf dans le sens contraire des fibres. Disposer en couches le riz et la roquette, ajouter les tranches de bœuf et napper généreusement de chimichurri. Pressez le citron par-dessus.",
           "title": "Trancher et assembler",
           "kidsHelp": null
         }
@@ -1856,7 +1890,8 @@
           "ings": [
             "🌿 Petersilie · 30g",
             "🧄 Knoblauch · 3 Zehen",
-            "🌶️ Chili · ½ St."
+            "🌶️ Chili · ½ St.",
+            "🫒 Olivenöl · 4 EL"
           ],
           "text": "Petersilie, Knoblauch und Chili fein hacken. Mit Olivenöl, Rotweinessig, Oregano und einer Prise Salz mischen. Mindestens 10 Minuten ruhen lassen.",
           "title": "Chimichurri zubereiten",
@@ -1883,9 +1918,10 @@
         {
           "tip": null,
           "ings": [
-            "🥬 Rucola · 50g"
+            "🥬 Rucola · 50g",
+            "🍋 Zitrone · 1 St."
           ],
-          "text": "Steak quer zur Faser aufschneiden. Reis und Rucola schichten, Steakscheiben darauflegen und großzügig Chimichurri darüber geben.",
+          "text": "Steak quer zur Faser aufschneiden. Reis und Rucola schichten, Steakscheiben darauflegen und großzügig Chimichurri darüber geben. Zitrone darüber auspressen.",
           "title": "Schneiden & anrichten",
           "kidsHelp": null
         }
@@ -2099,7 +2135,8 @@
       "base": [
         "Aceite de oliva",
         "Sal y pimienta",
-        "Vinagre blanco (para escalfar)"
+        "Vinagre blanco (para escalfar)",
+        "Vinagre balsámico"
       ],
       "dressing": [
         "Limón"
@@ -2110,7 +2147,7 @@
           "ings": [
             "🧅 Cebolla roja · ½ ud"
           ],
-          "text": "Corta la cebolla roja en láminas finas y cocínala en aceite de oliva a fuego bajo 8–10 minutos, removiendo de vez en cuando, hasta que esté blanda y dorada.",
+          "text": "Corta la cebolla roja en láminas finas y cocínala en aceite de oliva a fuego bajo 5 minutos, añade un chorrito de vinagre balsámico y continúa 3–5 minutos removiendo hasta que estén doradas y caramelizadas.",
           "title": "Carameliza la cebolla",
           "kidsHelp": null
         },
@@ -2118,7 +2155,8 @@
           "tip": null,
           "ings": [
             "🥑 Aguacate · 1 ud",
-            "🍋 Limón · ½ ud"
+            "🍋 Limón · ½ ud",
+            "🌶️ Copos de chile · ½ cdta"
           ],
           "text": "Parte el aguacate y ponlo en un bol. Aplástalo con un tenedor, añade zumo de limón, sal y copos de chile.",
           "title": "Prepara el aguacate",
@@ -2137,7 +2175,8 @@
           "tip": null,
           "ings": [
             "🍞 Pan de masa madre · 2 rebanadas",
-            "🌰 Dukkah · 1 cda"
+            "🌰 Dukkah · 1 cda",
+            "🌿 Cebollino · 10g"
           ],
           "text": "Tuesta el pan de masa madre. Unta el aguacate generosamente, añade la cebolla caramelizada y el huevo escalfado. Corona con dukkah, cebollino y un chorrito de aceite de oliva.",
           "title": "Tuesta y monta",
@@ -2160,7 +2199,8 @@
       "base": [
         "Huile d'olive",
         "Sel & poivre",
-        "Vinaigre blanc (pour pocher)"
+        "Vinaigre blanc (pour pocher)",
+        "Vinaigre balsamique"
       ],
       "dressing": [
         "Citron"
@@ -2171,7 +2211,7 @@
           "ings": [
             "🧅 Oignon rouge · ½ pc"
           ],
-          "text": "Émincer finement l'oignon rouge et le cuire à l'huile d'olive à feu doux 8–10 minutes, en remuant, jusqu'à ce qu'il soit tendre et doré.",
+          "text": "Émincer finement l'oignon rouge et le cuire à l'huile d'olive à feu doux 5 minutes, ajouter un trait de vinaigre balsamique et poursuivre 3–5 minutes en remuant jusqu'à dorure et caramélisation.",
           "title": "Caraméliser l'oignon",
           "kidsHelp": null
         },
@@ -2179,7 +2219,8 @@
           "tip": null,
           "ings": [
             "🥑 Avocat · 1 pc",
-            "🍋 Citron · ½ pc"
+            "🍋 Citron · ½ pc",
+            "🌶️ Flocons de piment · ½ c. à c."
           ],
           "text": "Couper l'avocat en deux et le mettre dans un bol. Écraser à la fourchette, ajouter jus de citron, sel et flocons de piment.",
           "title": "Préparer l'avocat",
@@ -2198,7 +2239,8 @@
           "tip": null,
           "ings": [
             "🍞 Pain au levain · 2 tranches",
-            "🌰 Dukkah · 1 c. à s."
+            "🌰 Dukkah · 1 c. à s.",
+            "🌿 Ciboulette · 10g"
           ],
           "text": "Toaster le pain au levain. Tartiner généreusement d'avocat, ajouter l'oignon caramélisé et l'œuf poché. Garnir de dukkah, de ciboulette et d'un filet d'huile d'olive.",
           "title": "Toaster et assembler",
@@ -2221,7 +2263,8 @@
       "base": [
         "Olivenöl",
         "Salz & Pfeffer",
-        "Weißweinessig (zum Pochieren)"
+        "Weißweinessig (zum Pochieren)",
+        "Balsamicoessig"
       ],
       "dressing": [
         "Zitrone"
@@ -2232,7 +2275,7 @@
           "ings": [
             "🧅 Rote Zwiebel · ½ St."
           ],
-          "text": "Rote Zwiebel fein schneiden und in Olivenöl bei niedriger Hitze 8–10 Minuten unter gelegentlichem Rühren weich und goldbraun braten.",
+          "text": "Rote Zwiebel fein schneiden und in Olivenöl bei niedriger Hitze 5 Minuten anbraten, einen Spritzer Balsamicoessig hinzufügen und weitere 3–5 Minuten karamellisieren, bis sie goldbraun und süßlich sind.",
           "title": "Zwiebel karamellisieren",
           "kidsHelp": null
         },
@@ -2240,7 +2283,8 @@
           "tip": null,
           "ings": [
             "🥑 Avocado · 1 St.",
-            "🍋 Zitrone · ½ St."
+            "🍋 Zitrone · ½ St.",
+            "🌶️ Chiliflocken · ½ TL"
           ],
           "text": "Avocado halbieren und in eine Schüssel geben. Mit einer Gabel zerdrücken, Zitronensaft, Salz und Chiliflocken zugeben.",
           "title": "Avocado vorbereiten",
@@ -2259,7 +2303,8 @@
           "tip": null,
           "ings": [
             "🍞 Sauerteigbrot · 2 Scheiben",
-            "🌰 Dukkah · 1 EL"
+            "🌰 Dukkah · 1 EL",
+            "🌿 Schnittlauch · 10g"
           ],
           "text": "Sauerteigbrot toasten. Avocado großzügig aufstreichen, karamellisierte Zwiebel und das pochierte Ei daraufgeben. Mit Dukkah, Schnittlauch und einem Schuss Olivenöl abschließen.",
           "title": "Toasten & belegen",
@@ -2313,7 +2358,8 @@
           "ings": [
             "🌾 Granola · 50g",
             "🥜 Mantequilla de almendra · 2 cdas",
-            "🫐 Arándanos · 80g"
+            "🫐 Arándanos · 80g",
+            "🥥 Copos de coco · 2 cdas"
           ],
           "text": "Vierte la base de açaí en boles fríos. Coloca encima el plátano, los frutos rojos, la granola y los copos de coco. Riega con mantequilla de almendra y un toque de miel si quieres.",
           "title": "Monta y sirve",
@@ -2365,7 +2411,8 @@
           "ings": [
             "🌾 Granola · 50g",
             "🥜 Purée d'amande · 2 c. à s.",
-            "🫐 Myrtilles · 80g"
+            "🫐 Myrtilles · 80g",
+            "🥥 Flocons de coco · 2 c. à s."
           ],
           "text": "Verser la base d'açaï dans des bols froids. Disposer dessus la banane, les fruits rouges, le granola et les flocons de coco. Arroser de purée d'amande et d'un peu de miel si désiré.",
           "title": "Monter et servir",
@@ -2417,7 +2464,8 @@
           "ings": [
             "🌾 Granola · 50g",
             "🥜 Mandelmus · 2 EL",
-            "🫐 Blaubeeren · 80g"
+            "🫐 Blaubeeren · 80g",
+            "🥥 Kokoschips · 2 EL"
           ],
           "text": "Açaí-Basis in gekühlte Schalen füllen. Banane, Beeren, Granola und Kokoschips darauf anrichten. Mit Mandelmus und nach Wunsch etwas Honig beträufeln.",
           "title": "Aufbauen & servieren",
@@ -2451,7 +2499,9 @@
           "ings": [
             "🌾 Copos de avena · 100g",
             "⚫ Semillas de chía · 2 cdas",
-            "🥛 Bebida de avena · 300ml"
+            "🥛 Bebida de avena · 300ml",
+            "🍯 Sirope de arce · 2 cdas",
+            "🍋 Ralladura de limón · ½ cdta"
           ],
           "text": "Combina avena, semillas de chía, bebida de avena, sirope de arce, ralladura de limón y una pizca de sal en un tarro o bol. Remueve bien.",
           "title": "Mezcla la avena",
@@ -2468,7 +2518,8 @@
           "tip": null,
           "ings": [
             "🫐 Arándanos · 100g",
-            "🥜 Mantequilla de almendra · 2 cdas"
+            "🥜 Mantequilla de almendra · 2 cdas",
+            "🥥 Copos de coco · 1 cdas"
           ],
           "text": "Por la mañana, remueve la avena y añade un poco más de bebida si está muy espesa. Corona con arándanos, un hilo de mantequilla de almendra y copos de coco.",
           "title": "Corona y sirve",
@@ -2500,7 +2551,9 @@
           "ings": [
             "🌾 Flocons d'avoine · 100g",
             "⚫ Graines de chia · 2 c. à s.",
-            "🥛 Boisson à l'avoine · 300ml"
+            "🥛 Boisson à l'avoine · 300ml",
+            "🍯 Sirop d'érable · 2 c. à s.",
+            "🍋 Zeste de citron · ½ c. à c."
           ],
           "text": "Mélanger flocons d'avoine, graines de chia, boisson à l'avoine, sirop d'érable, zeste de citron et une pincée de sel dans un bocal ou un bol. Bien remuer.",
           "title": "Mélanger l'avoine",
@@ -2517,7 +2570,8 @@
           "tip": null,
           "ings": [
             "🫐 Myrtilles · 100g",
-            "🥜 Purée d'amande · 2 c. à s."
+            "🥜 Purée d'amande · 2 c. à s.",
+            "🥥 Flocons de coco · 1 c. à s."
           ],
           "text": "Le matin, remuer l'avoine et ajouter un peu de boisson si c'est trop épais. Garnir de myrtilles, d'un filet de purée d'amande et de flocons de coco.",
           "title": "Garnir et servir",
@@ -2549,7 +2603,9 @@
           "ings": [
             "🌾 Haferflocken · 100g",
             "⚫ Chiasamen · 2 EL",
-            "🥛 Haferdrink · 300ml"
+            "🥛 Haferdrink · 300ml",
+            "🍯 Ahornsirup · 2 EL",
+            "🍋 Zitronenschale · ½ TL"
           ],
           "text": "Haferflocken, Chiasamen, Haferdrink, Ahornsirup, Zitronenschale und eine Prise Salz in einem Glas oder einer Schüssel verrühren. Gut umrühren.",
           "title": "Haferflocken mischen",
@@ -2566,7 +2622,8 @@
           "tip": null,
           "ings": [
             "🫐 Blaubeeren · 100g",
-            "🥜 Mandelmus · 2 EL"
+            "🥜 Mandelmus · 2 EL",
+            "🥥 Kokoschips · 1 EL"
           ],
           "text": "Morgens die Oats umrühren und bei Bedarf etwas mehr Drink zugeben, falls zu dick. Mit Blaubeeren, einem Schuss Mandelmus und Kokoschips garnieren.",
           "title": "Garnieren & servieren",
@@ -2599,7 +2656,8 @@
         {
           "tip": null,
           "ings": [
-            "🥦 Coliflor · 1 ud"
+            "🥦 Coliflor · 1 ud",
+            "🧄 Ajo · 2 dientes"
           ],
           "text": "Retira las hojas exteriores manteniendo la coliflor entera. Frótala por todas partes con aceite de oliva, ajo, comino, sal y pimienta.",
           "title": "Prepara la coliflor",
@@ -2637,7 +2695,8 @@
           "tip": null,
           "ings": [
             "🌶️ Pasta de harissa · 2 cdas",
-            "🌿 Cilantro · 15g"
+            "🌿 Cilantro · 15g",
+            "🫒 Aceite de oliva · 3 cdas"
           ],
           "text": "Coloca la coliflor asada en una fuente. Riega con tahini y harissa por encima. Reparte las avellanas y el cilantro.",
           "title": "Empláta y termina",
@@ -2668,7 +2727,8 @@
         {
           "tip": null,
           "ings": [
-            "🥦 Chou-fleur · 1 pièce"
+            "🥦 Chou-fleur · 1 pièce",
+            "🧄 Ail · 2 gousses"
           ],
           "text": "Retirer les feuilles extérieures en gardant le chou-fleur entier. Enrober de partout d'huile d'olive, d'ail, de cumin, de sel et de poivre.",
           "title": "Préparer le chou-fleur",
@@ -2706,7 +2766,8 @@
           "tip": null,
           "ings": [
             "🌶️ Pâte de harissa · 2 c. à s.",
-            "🌿 Coriandre · 15g"
+            "🌿 Coriandre · 15g",
+            "🫒 Huile d'olive · 3 c. à s."
           ],
           "text": "Disposer le chou-fleur rôti sur un plat. Arroser de tahini et de harissa sur le dessus. Parsemer de noisettes et de coriandre.",
           "title": "Dresser et finir",
@@ -2737,7 +2798,8 @@
         {
           "tip": null,
           "ings": [
-            "🥦 Blumenkohl · 1 Kopf"
+            "🥦 Blumenkohl · 1 Kopf",
+            "🧄 Knoblauch · 2 Zehen"
           ],
           "text": "Äußere Blätter entfernen, den Blumenkohl ganz lassen. Rundum mit Olivenöl, Knoblauch, Kreuzkümmel, Salz und Pfeffer einreiben.",
           "title": "Blumenkohl vorbereiten",
@@ -2775,7 +2837,8 @@
           "tip": null,
           "ings": [
             "🌶️ Harissa-Paste · 2 EL",
-            "🌿 Koriander · 15g"
+            "🌿 Koriander · 15g",
+            "🫒 Olivenöl · 3 EL"
           ],
           "text": "Gerösteten Blumenkohl auf eine Platte legen. Tahini und Harissa darüber träufeln. Haselnüsse und Koriander darüber streuen.",
           "title": "Anrichten & abschließen",
@@ -2817,7 +2880,8 @@
           "tip": null,
           "ings": [
             "🧄 Ajo · 2 dientes",
-            "🌿 Romero · 2 ramitas"
+            "🌿 Romero · 2 ramitas",
+            "🫒 Aceite de oliva · 3 cdas"
           ],
           "text": "Escurre y colócalas en una bandeja de horno. Aplasta cada una con un vaso. Riega con aceite de oliva, añade ajo machacado, romero, sal y pimienta.",
           "title": "Aplasta y sazona",
@@ -2885,7 +2949,8 @@
           "tip": null,
           "ings": [
             "🧄 Ail · 2 gousses",
-            "🌿 Romarin · 2 brins"
+            "🌿 Romarin · 2 brins",
+            "🫒 Huile d'olive · 3 c. à s."
           ],
           "text": "Égoutter et placer sur une plaque. Écraser chacune avec un verre. Arroser d'huile d'olive, ajouter l'ail écrasé, le romarin, le sel et le poivre.",
           "title": "Écraser et assaisonner",
@@ -2953,7 +3018,8 @@
           "tip": null,
           "ings": [
             "🧄 Knoblauch · 2 Zehen",
-            "🌿 Rosmarin · 2 Zweige"
+            "🌿 Rosmarin · 2 Zweige",
+            "🫒 Olivenöl · 3 EL"
           ],
           "text": "Abgießen und auf ein Backblech legen. Jede mit einem Glas flach drücken. Mit Olivenöl beträufeln, zerdrückten Knoblauch, Rosmarin, Salz und Pfeffer zugeben.",
           "title": "Stampfen & würzen",
@@ -3510,7 +3576,9 @@
           "text": "Reparte el porridge en boles, corona con las manzanas a la canela, las nueces, las pasas y un buen puñado de frutos rojos frescos, y riega con sirope de arce y crema de almendras.",
           "ings": [
             "🟤 Pasas · 2 tbsp",
-            "🫐 Frutos rojos frescos · 80g"
+            "🫐 Frutos rojos frescos · 80g",
+            "🍯 Sirope de arce · 2 cdas",
+            "🥜 Crema de almendras · 2 cdas"
           ],
           "tip": null,
           "kidsHelp": null
@@ -3570,7 +3638,9 @@
           "text": "Répartir le porridge dans des bols, garnir des pommes à la cannelle, des noix, des raisins et d'une belle poignée de fruits rouges frais, puis arroser de sirop d'érable et de purée d'amande.",
           "ings": [
             "🟤 Raisins secs · 2 tbsp",
-            "🫐 Fruits rouges frais · 80g"
+            "🫐 Fruits rouges frais · 80g",
+            "🍯 Sirop d'érable · 2 c. à s.",
+            "🥜 Purée d'amande · 2 c. à s."
           ],
           "tip": null,
           "kidsHelp": null
@@ -3630,7 +3700,9 @@
           "text": "Porridge in Schalen füllen, mit Zimt-Äpfeln, Pekannüssen, Rosinen und einer großzügigen Handvoll frischer Beeren belegen, dann mit Ahornsirup und Mandelmus beträufeln.",
           "ings": [
             "🟤 Rosinen · 2 tbsp",
-            "🫐 Frische Beeren · 80g"
+            "🫐 Frische Beeren · 80g",
+            "🍯 Ahornsirup · 2 EL",
+            "🥜 Mandelmus · 2 EL"
           ],
           "tip": null,
           "kidsHelp": null
@@ -3716,7 +3788,8 @@
           "ings": [
             "🧀 Feta · 100g",
             "🫒 Aceitunas · 60g",
-            "🌿 Menta y perejil · 20g"
+            "🌿 Menta y perejil · 20g",
+            "🍅 Tomates semisecos · 60g"
           ],
           "kidsHelp": null
         },
@@ -3813,7 +3886,8 @@
           "ings": [
             "🧀 Feta · 100g",
             "🫒 Olives · 60g",
-            "🌿 Menthe & persil · 20g"
+            "🌿 Menthe & persil · 20g",
+            "🍅 Tomates semi-séchées · 60g"
           ],
           "kidsHelp": null
         },
@@ -3910,7 +3984,8 @@
           "ings": [
             "🧀 Feta · 100g",
             "🫒 Oliven · 60g",
-            "🌿 Minze & Petersilie · 20g"
+            "🌿 Minze & Petersilie · 20g",
+            "🍅 Halbgetrocknete Tomaten · 60g"
           ],
           "kidsHelp": null
         },
@@ -3992,7 +4067,8 @@
           "tip": null,
           "ings": [
             "🫙 Tahini · 2 cdas",
-            "🍯 Sirope de arce · 1 cda"
+            "🍯 Sirope de arce · 1 cda",
+            "🍋 Lima · ½ ud"
           ],
           "text": "Bate el tahini, el sirope de arce y el zumo de lima con 2 cdas de agua. Coloca la quinoa y la calabaza en boles. Riega con la salsa y corona con la salvia crujiente y las pipas tostadas.",
           "title": "Salsa de tahini y arce, y monta",
@@ -4060,7 +4136,8 @@
           "tip": null,
           "ings": [
             "🫙 Tahini · 2 c. à s.",
-            "🍯 Sirop d'érable · 1 c. à s."
+            "🍯 Sirop d'érable · 1 c. à s.",
+            "🍋 Citron vert · ½ pc"
           ],
           "text": "Fouetter le tahini, le sirop d'érable et le jus de citron vert avec 2 c. à s. d'eau. Disposer le quinoa et le potiron dans les bols. Arroser de sauce et garnir de sauge croustillante et de graines torréfiées.",
           "title": "Sauce tahini-érable & dresser",
@@ -4128,7 +4205,8 @@
           "tip": null,
           "ings": [
             "🫙 Tahini · 2 EL",
-            "🍯 Ahornsirup · 1 EL"
+            "🍯 Ahornsirup · 1 EL",
+            "🍋 Limette · ½ St."
           ],
           "text": "Tahini, Ahornsirup und Limettensaft mit 2 EL Wasser verquirlen. Quinoa und Kürbis in Schalen schichten. Mit der Soße beträufeln und mit knusprigem Salbei und gerösteten Kernen belegen.",
           "title": "Ahorn-Tahini & anrichten",
@@ -4160,7 +4238,9 @@
           "tip": null,
           "ings": [
             "🍗 Pechuga de pollo · 300g",
-            "🍋 Limón · 1 ud"
+            "🍋 Limón · 1 ud",
+            "🌿 Tomillo y romero · 10g",
+            "🧄 Ajo · 2 dientes"
           ],
           "text": "Mezcla ralladura y zumo de limón, ajo picado, hierbas picadas, aceite de oliva, sal y pimienta. Cubre el pollo y déjalo 10 minutos.",
           "title": "Marina el pollo",
@@ -4226,7 +4306,9 @@
           "tip": null,
           "ings": [
             "🍗 Blanc de poulet · 300g",
-            "🍋 Citron · 1 pc"
+            "🍋 Citron · 1 pc",
+            "🌿 Thym & romarin · 10g",
+            "🧄 Ail · 2 gousses"
           ],
           "text": "Mélanger zeste et jus de citron, ail haché, herbes hachées, huile d'olive, sel et poivre. Enrober le poulet et laisser 10 minutes.",
           "title": "Mariner le poulet",
@@ -4292,7 +4374,9 @@
           "tip": null,
           "ings": [
             "🍗 Hähnchenbrust · 300g",
-            "🍋 Zitrone · 1 St."
+            "🍋 Zitrone · 1 St.",
+            "🌿 Thymian & Rosmarin · 10g",
+            "🧄 Knoblauch · 2 Zehen"
           ],
           "text": "Zitronenschale und -saft, gehackten Knoblauch, gehackte Kräuter, Olivenöl, Salz und Pfeffer mischen. Hähnchen einreiben und 10 Minuten ziehen lassen.",
           "title": "Hähnchen marinieren",
@@ -4360,7 +4444,9 @@
           "tip": null,
           "ings": [
             "🍅 Tomates cherry · 300g",
-            "🧄 Ajo · 3 dientes"
+            "🧄 Ajo · 3 dientes",
+            "🌶️ Copos de chile · ½ cdta",
+            "🫒 Aceite de oliva · 4 cdas"
           ],
           "text": "Parte los tomates por la mitad y ponlos en una bandeja con dientes de ajo enteros, aceite de oliva, copos de chile, sal y pimienta. Asa a 200°C 20 minutos hasta que revienten y se caramelicen un poco.",
           "title": "Asa los tomates",
@@ -4418,7 +4504,9 @@
           "tip": null,
           "ings": [
             "🍅 Tomates cerises · 300g",
-            "🧄 Ail · 3 gousses"
+            "🧄 Ail · 3 gousses",
+            "🌶️ Flocons de piment · ½ c. à c.",
+            "🫒 Huile d'olive · 4 c. à s."
           ],
           "text": "Couper les tomates en deux et les placer sur une plaque avec des gousses d'ail entières, huile d'olive, flocons de piment, sel et poivre. Rôtir à 200°C 20 minutes jusqu'à ce qu'elles éclatent et caramélisent légèrement.",
           "title": "Rôtir les tomates",
@@ -4476,7 +4564,9 @@
           "tip": null,
           "ings": [
             "🍅 Kirschtomaten · 300g",
-            "🧄 Knoblauch · 3 Zehen"
+            "🧄 Knoblauch · 3 Zehen",
+            "🌶️ Chiliflocken · ½ TL",
+            "🫒 Olivenöl · 4 EL"
           ],
           "text": "Tomaten halbieren und mit ganzen Knoblauchzehen, Olivenöl, Chiliflocken, Salz und Pfeffer auf ein Blech geben. Bei 200°C 20 Minuten rösten, bis sie aufplatzen und leicht karamellisieren.",
           "title": "Tomaten rösten",
@@ -4549,7 +4639,8 @@
         {
           "tip": null,
           "ings": [
-            "🍅 Tomate triturado · 400g"
+            "🍅 Tomate triturado · 400g",
+            "🌶️ Copos de chile · ½ cdta"
           ],
           "text": "Incorpora el comino, el pimentón ahumado y los copos de chile. Cocina 1 minuto y añade el tomate triturado. Cuece a fuego lento 10 minutos hasta que espese.",
           "title": "Añade especias y tomate",
@@ -4611,7 +4702,8 @@
         {
           "tip": null,
           "ings": [
-            "🍅 Tomates concassées · 400g"
+            "🍅 Tomates concassées · 400g",
+            "🌶️ Flocons de piment · ½ c. à c."
           ],
           "text": "Incorporer le cumin, le paprika fumé et les flocons de piment. Cuire 1 minute, puis ajouter les tomates concassées. Mijoter 10 minutes jusqu'à épaississement.",
           "title": "Ajouter épices et tomates",
@@ -4673,7 +4765,8 @@
         {
           "tip": null,
           "ings": [
-            "🍅 Gehackte Tomaten · 400g"
+            "🍅 Gehackte Tomaten · 400g",
+            "🌶️ Chiliflocken · ½ TL"
           ],
           "text": "Kreuzkümmel, geräuchertes Paprika und Chiliflocken einrühren. 1 Minute kochen, dann die gehackten Tomaten zugeben. 10 Minuten köcheln, bis es eindickt.",
           "title": "Gewürze & Tomaten zugeben",
@@ -4726,7 +4819,8 @@
           "tip": null,
           "ings": [
             "🧅 Cebolla · 1 ud",
-            "🧄 Ajo · 3 dientes"
+            "🧄 Ajo · 3 dientes",
+            "🌿 Tomillo · 5 ramitas"
           ],
           "text": "Pica la cebolla en dados y cocínala en aceite de oliva a fuego medio 5 minutos. Añade el ajo y el tomillo y cocina 2 minutos más.",
           "title": "Sofríe los aromáticos",
@@ -4786,7 +4880,8 @@
           "tip": null,
           "ings": [
             "🧅 Oignon · 1 pc",
-            "🧄 Ail · 3 gousses"
+            "🧄 Ail · 3 gousses",
+            "🌿 Thym · 5 brins"
           ],
           "text": "Couper l'oignon en dés et le cuire à l'huile d'olive à feu moyen 5 minutes. Ajouter l'ail et le thym, cuire 2 minutes de plus.",
           "title": "Faire revenir les aromates",
@@ -4846,7 +4941,8 @@
           "tip": null,
           "ings": [
             "🧅 Zwiebel · 1 St.",
-            "🧄 Knoblauch · 3 Zehen"
+            "🧄 Knoblauch · 3 Zehen",
+            "🌿 Thymian · 5 Zweige"
           ],
           "text": "Zwiebel würfeln und in Olivenöl bei mittlerer Hitze 5 Minuten braten. Knoblauch und Thymian zugeben, 2 weitere Minuten braten.",
           "title": "Aromaten anbraten",
@@ -4909,7 +5005,8 @@
           "tip": null,
           "ings": [
             "🧅 Cebolla · 1 ud",
-            "🫚 Jengibre · 3cm"
+            "🫚 Jengibre · 3cm",
+            "🧄 Ajo · 2 dientes"
           ],
           "text": "Pica la cebolla en dados y cocínala en aceite de oliva 5 minutos. Añade el ajo, el jengibre rallado, el comino y la cúrcuma. Cocina 2 minutos.",
           "title": "Sofríe los aromáticos",
@@ -4969,7 +5066,8 @@
           "tip": null,
           "ings": [
             "🧅 Oignon · 1 pc",
-            "🫚 Gingembre · 3cm"
+            "🫚 Gingembre · 3cm",
+            "🧄 Ail · 2 gousses"
           ],
           "text": "Couper l'oignon en dés et le cuire à l'huile d'olive 5 minutes. Ajouter l'ail, le gingembre râpé, le cumin et le curcuma. Cuire 2 minutes.",
           "title": "Faire revenir les aromates",
@@ -5029,7 +5127,8 @@
           "tip": null,
           "ings": [
             "🧅 Zwiebel · 1 St.",
-            "🫚 Ingwer · 3cm"
+            "🫚 Ingwer · 3cm",
+            "🧄 Knoblauch · 2 Zehen"
           ],
           "text": "Zwiebel würfeln und in Olivenöl 5 Minuten braten. Knoblauch, geriebenen Ingwer, Kreuzkümmel und Kurkuma zugeben. 2 Minuten braten.",
           "title": "Aromaten anbraten",
@@ -5273,7 +5372,8 @@
           "tip": null,
           "ings": [
             "🍄 Champiñones · 200g",
-            "🧅 Cebolla · 1 ud"
+            "🧅 Cebolla · 1 ud",
+            "🧄 Ajo · 1 diente"
           ],
           "text": "Precalienta el horno a 180°C. Corta en láminas la cebolla, los champiñones y el ajo. Cocina en aceite de oliva en una sartén apta para horno 5–6 minutos.",
           "title": "Precalienta y sofríe",
@@ -5331,7 +5431,8 @@
           "tip": null,
           "ings": [
             "🍄 Champignons · 200g",
-            "🧅 Oignon · 1 pc"
+            "🧅 Oignon · 1 pc",
+            "🧄 Ail · 1 gousse"
           ],
           "text": "Préchauffer le four à 180°C. Émincer l'oignon, les champignons et l'ail. Cuire à l'huile d'olive dans une poêle allant au four 5–6 minutes.",
           "title": "Préchauffer et faire revenir",
@@ -5389,7 +5490,8 @@
           "tip": null,
           "ings": [
             "🍄 Champignons · 200g",
-            "🧅 Zwiebel · 1 St."
+            "🧅 Zwiebel · 1 St.",
+            "🧄 Knoblauch · 1 Zehe"
           ],
           "text": "Ofen auf 180°C vorheizen. Zwiebel, Champignons und Knoblauch in Scheiben schneiden. In Olivenöl in einer ofenfesten Pfanne 5–6 Minuten braten.",
           "title": "Vorheizen und anbraten",
@@ -5460,7 +5562,8 @@
         {
           "tip": null,
           "ings": [
-            "🍋 Limón · ½ ud"
+            "🍋 Limón · ½ ud",
+            "🫒 Aceite de oliva · 3 cdas"
           ],
           "text": "Bate aceite de oliva, zumo de limón y un chorrito de balsámico. Sazona bien.",
           "title": "Prepara el aliño",
@@ -5520,7 +5623,8 @@
         {
           "tip": null,
           "ings": [
-            "🍋 Citron · ½ pc"
+            "🍋 Citron · ½ pc",
+            "🫒 Huile d'olive · 3 c. à s."
           ],
           "text": "Fouetter huile d'olive, jus de citron et un trait de balsamique. Bien assaisonner.",
           "title": "Préparer la vinaigrette",
@@ -5580,7 +5684,8 @@
         {
           "tip": null,
           "ings": [
-            "🍋 Zitrone · ½ St."
+            "🍋 Zitrone · ½ St.",
+            "🫒 Olivenöl · 3 EL"
           ],
           "text": "Olivenöl, Zitronensaft und einen Schuss Balsamico verquirlen. Gut würzen.",
           "title": "Dressing machen",
@@ -5661,7 +5766,8 @@
           "tip": null,
           "ings": [
             "🫐 Granos de granada · 2 cdas",
-            "🌿 Perejil · 15g"
+            "🌿 Perejil · 15g",
+            "🌶️ Copos de chile · ½ cdta"
           ],
           "text": "Abre los boniatos por la mitad. Rellena con los garbanzos crujientes, riega con tahini y reparte granada, perejil y copos de chile.",
           "title": "Rellena y sirve",
@@ -5721,7 +5827,8 @@
           "tip": null,
           "ings": [
             "🫐 Grains de grenade · 2 c. à s.",
-            "🌿 Persil · 15g"
+            "🌿 Persil · 15g",
+            "🌶️ Flocons de piment · ½ c. à c."
           ],
           "text": "Ouvrir les patates douces en deux. Remplir de pois chiches croustillants, arroser de tahini, parsemer de grenade, persil et flocons de piment.",
           "title": "Garnir et servir",
@@ -5781,7 +5888,8 @@
           "tip": null,
           "ings": [
             "🫐 Granatapfelkerne · 2 EL",
-            "🌿 Petersilie · 15g"
+            "🌿 Petersilie · 15g",
+            "🌶️ Chiliflocken · ½ TL"
           ],
           "text": "Süßkartoffeln aufschneiden. Mit knusprigen Kichererbsen füllen, Tahini darüber träufeln, Granatapfel, Petersilie und Chiliflocken darüber streuen.",
           "title": "Befüllen & servieren",
@@ -5834,7 +5942,8 @@
           "tip": null,
           "ings": [
             "🍅 Tomates cherry · 100g",
-            "🥒 Pepino · ½ ud"
+            "🥒 Pepino · ½ ud",
+            "🍋 Limón · 1 ud"
           ],
           "text": "Parte los tomates cherry por la mitad, corta el pepino y pica las hierbas. Haz un aliño sencillo con zumo de limón, aceite de oliva, sal y pimienta.",
           "title": "Prepara la ensalada",
@@ -5896,7 +6005,8 @@
           "tip": null,
           "ings": [
             "🍅 Tomates cerises · 100g",
-            "🥒 Concombre · ½ pc"
+            "🥒 Concombre · ½ pc",
+            "🍋 Citron · 1 pc"
           ],
           "text": "Couper les tomates cerises en deux, trancher le concombre et hacher les herbes. Préparer une vinaigrette simple avec jus de citron, huile d'olive, sel et poivre.",
           "title": "Préparer la salade",
@@ -5958,7 +6068,8 @@
           "tip": null,
           "ings": [
             "🍅 Kirschtomaten · 100g",
-            "🥒 Gurke · ½ St."
+            "🥒 Gurke · ½ St.",
+            "🍋 Zitrone · 1 St."
           ],
           "text": "Kirschtomaten halbieren, Gurke schneiden und Kräuter hacken. Ein einfaches Dressing aus Zitronensaft, Olivenöl, Salz und Pfeffer anrühren.",
           "title": "Salat vorbereiten",
@@ -6013,7 +6124,8 @@
           "tip": "No las amontones: el espacio hace que se asen y no se cuezan al vapor.",
           "ings": [
             "🥒 Calabacín · 1 ud",
-            "🫑 Pimiento rojo · 1 ud"
+            "🫑 Pimiento rojo · 1 ud",
+            "🌿 Tomillo · 5g"
           ],
           "text": "Mezcla todo con aceite de oliva, sal, pimienta y tomillo. Extiende en una bandeja grande: deja espacio entre las verduras. Asa a 200°C 25–30 minutos.",
           "title": "Sazona y asa",
@@ -6022,7 +6134,8 @@
         {
           "tip": null,
           "ings": [
-            "🫙 Mostaza en grano · 2 cdas"
+            "🫙 Mostaza en grano · 2 cdas",
+            "🍋 Limón · ½ ud"
           ],
           "text": "Bate la mostaza en grano, el zumo de limón y el aceite de oliva.",
           "title": "Prepara el aliño",
@@ -6073,7 +6186,8 @@
           "tip": "Ne pas surcharger — l'espace fait rôtir plutôt que cuire à la vapeur.",
           "ings": [
             "🥒 Courgette · 1 pc",
-            "🫑 Poivron rouge · 1 pc"
+            "🫑 Poivron rouge · 1 pc",
+            "🌿 Thym · 5g"
           ],
           "text": "Mélanger le tout avec huile d'olive, sel, poivre et thym. Étaler sur une grande plaque — laisser de l'espace. Rôtir à 200°C 25–30 minutes.",
           "title": "Assaisonner et rôtir",
@@ -6082,7 +6196,8 @@
         {
           "tip": null,
           "ings": [
-            "🫙 Moutarde à l'ancienne · 2 c. à s."
+            "🫙 Moutarde à l'ancienne · 2 c. à s.",
+            "🍋 Citron · ½ pc"
           ],
           "text": "Fouetter la moutarde à l'ancienne, le jus de citron et l'huile d'olive.",
           "title": "Préparer la vinaigrette",
@@ -6133,7 +6248,8 @@
           "tip": "Nicht überladen – Platz heißt rösten statt dämpfen.",
           "ings": [
             "🥒 Zucchini · 1 St.",
-            "🫑 Rote Paprika · 1 St."
+            "🫑 Rote Paprika · 1 St.",
+            "🌿 Thymian · 5g"
           ],
           "text": "Alles mit Olivenöl, Salz, Pfeffer und Thymian mischen. Auf einem großen Blech verteilen – allem Platz lassen. Bei 200°C 25–30 Minuten rösten.",
           "title": "Würzen und rösten",
@@ -6142,7 +6258,8 @@
         {
           "tip": null,
           "ings": [
-            "🫙 Körniger Senf · 2 EL"
+            "🫙 Körniger Senf · 2 EL",
+            "🍋 Zitrone · ½ St."
           ],
           "text": "Körnigen Senf, Zitronensaft und Olivenöl verquirlen.",
           "title": "Dressing machen",
@@ -6184,7 +6301,8 @@
           "ings": [
             "🌾 Copos de avena · 100g",
             "🍵 Matcha · 1 cdta",
-            "🥛 Bebida de avena · 300ml"
+            "🥛 Bebida de avena · 300ml",
+            "🍯 Miel o sirope de arce · 1 cdas"
           ],
           "text": "Disuelve el matcha en un poco de bebida de avena templada hasta que quede sin grumos. Añade la avena, el resto de la bebida de avena, el yogur, la miel y una pizca de sal. Remueve bien.",
           "title": "Prepara la base",
@@ -6201,7 +6319,8 @@
           "tip": null,
           "ings": [
             "🍌 Plátano · 1 ud",
-            "🌾 Granola · 30g"
+            "🌾 Granola · 30g",
+            "⚫ Semillas de cáñamo · 2 cdas"
           ],
           "text": "Por la mañana remueve y corona con rodajas de plátano, granola y semillas de cáñamo. Espolvorea una pizca de matcha.",
           "title": "Corona y sirve",
@@ -6232,7 +6351,8 @@
           "ings": [
             "🌾 Flocons d'avoine · 100g",
             "🍵 Matcha · 1 c. à c.",
-            "🥛 Boisson à l'avoine · 300ml"
+            "🥛 Boisson à l'avoine · 300ml",
+            "🍯 Miel ou sirop d'érable · 1 c. à s."
           ],
           "text": "Délayer le matcha dans un peu de boisson à l'avoine tiède jusqu'à dissolution. Ajouter les flocons, le reste de boisson à l'avoine, le yaourt, le miel et une pincée de sel. Bien mélanger.",
           "title": "Préparer la base",
@@ -6249,7 +6369,8 @@
           "tip": null,
           "ings": [
             "🍌 Banane · 1 pc",
-            "🌾 Granola · 30g"
+            "🌾 Granola · 30g",
+            "⚫ Graines de chanvre · 2 c. à s."
           ],
           "text": "Le matin, mélanger et garnir de rondelles de banane, de granola et de graines de chanvre. Saupoudrer d'une pincée de matcha.",
           "title": "Garnir et servir",
@@ -6280,7 +6401,8 @@
           "ings": [
             "🌾 Haferflocken · 100g",
             "🍵 Matcha · 1 TL",
-            "🥛 Haferdrink · 300ml"
+            "🥛 Haferdrink · 300ml",
+            "🍯 Honig oder Ahornsirup · 1 EL"
           ],
           "text": "Matcha in etwas warmem Haferdrink klümpchenfrei auflösen. Haferflocken, restlichen Haferdrink, Joghurt, Honig und eine Prise Salz zugeben. Gut umrühren.",
           "title": "Basis anrühren",
@@ -6297,7 +6419,8 @@
           "tip": null,
           "ings": [
             "🍌 Banane · 1 St.",
-            "🌾 Granola · 30g"
+            "🌾 Granola · 30g",
+            "⚫ Hanfsamen · 2 EL"
           ],
           "text": "Morgens umrühren und mit Bananenscheiben, Granola und Hanfsamen garnieren. Mit einer Prise Matcha bestäuben.",
           "title": "Garnieren & servieren",
@@ -6509,7 +6632,8 @@
         {
           "tip": "¡Ponte guantes, la remolacha mancha!",
           "ings": [
-            "🫚 Remolacha · 200g"
+            "🫚 Remolacha · 200g",
+            "🍋 Limón · ½ ud"
           ],
           "text": "Corta la remolacha cocida en láminas finas o en gajos. Aliña con un chorrito de balsámico, aceite de oliva y zumo de limón.",
           "title": "Corta la remolacha",
@@ -6529,7 +6653,8 @@
           "ings": [
             "🧀 Labneh · 200g",
             "🫐 Moras · 80g",
-            "🍅 Tomates cherry · 80g"
+            "🍅 Tomates cherry · 80g",
+            "🌿 Eneldo · 10g"
           ],
           "text": "Extiende el labneh sobre un plato o tabla. Coloca la remolacha, las moras y los tomates por encima. Reparte las avellanas y el eneldo fresco. Riega con aceite de oliva.",
           "title": "Empláta",
@@ -6560,7 +6685,8 @@
         {
           "tip": "Portez des gants — la betterave tache !",
           "ings": [
-            "🫚 Betterave · 200g"
+            "🫚 Betterave · 200g",
+            "🍋 Citron · ½ pc"
           ],
           "text": "Trancher finement la betterave cuite ou la couper en quartiers. Assaisonner d'un trait de balsamique, d'huile d'olive et de jus de citron.",
           "title": "Trancher la betterave",
@@ -6580,7 +6706,8 @@
           "ings": [
             "🧀 Labneh · 200g",
             "🫐 Mûres · 80g",
-            "🍅 Tomates cerises · 80g"
+            "🍅 Tomates cerises · 80g",
+            "🌿 Aneth · 10g"
           ],
           "text": "Étaler le labneh sur une assiette ou une planche. Disposer la betterave, les mûres et les tomates dessus. Parsemer de noisettes et d'aneth frais. Arroser d'huile d'olive.",
           "title": "Dresser",
@@ -6611,7 +6738,8 @@
         {
           "tip": "Handschuhe tragen – Rote Bete färbt!",
           "ings": [
-            "🫚 Rote Bete · 200g"
+            "🫚 Rote Bete · 200g",
+            "🍋 Zitrone · ½ St."
           ],
           "text": "Gekochte Rote Bete dünn in Scheiben oder Spalten schneiden. Mit einem Schuss Balsamico, Olivenöl und Zitronensaft anmachen.",
           "title": "Rote Bete schneiden",
@@ -6631,7 +6759,8 @@
           "ings": [
             "🧀 Labneh · 200g",
             "🫐 Brombeeren · 80g",
-            "🍅 Kirschtomaten · 80g"
+            "🍅 Kirschtomaten · 80g",
+            "🌿 Dill · 10g"
           ],
           "text": "Labneh auf einem Teller oder Brett verstreichen. Rote Bete, Beeren und Tomaten darauf anrichten. Haselnüsse und frischen Dill darüber streuen. Mit Olivenöl beträufeln.",
           "title": "Anrichten",
@@ -6682,7 +6811,8 @@
         {
           "tip": null,
           "ings": [
-            "🫙 Tahini · 2 cdas"
+            "🫙 Tahini · 2 cdas",
+            "🍋 Limón · 1 ud"
           ],
           "text": "Mezcla tahini con zumo de limón y agua hasta que quede fluida.",
           "title": "Prepara la salsa de tahini",
@@ -6741,7 +6871,8 @@
         {
           "tip": null,
           "ings": [
-            "🫙 Tahini · 2 c. à s."
+            "🫙 Tahini · 2 c. à s.",
+            "🍋 Citron · 1 pc"
           ],
           "text": "Mélanger le tahini avec le jus de citron et de l'eau jusqu'à ce que ce soit coulant.",
           "title": "Préparer la sauce tahini",
@@ -6800,7 +6931,8 @@
         {
           "tip": null,
           "ings": [
-            "🫙 Tahini · 2 EL"
+            "🫙 Tahini · 2 EL",
+            "🍋 Zitrone · 1 St."
           ],
           "text": "Tahini mit Zitronensaft und Wasser gießfähig verrühren.",
           "title": "Tahini-Soße machen",
@@ -7262,7 +7394,8 @@
           "ings": [
             "🥒 Calabacín · 1 ud",
             "🫑 Pimiento rojo · 1 ud",
-            "🫘 Garbanzos · 200g"
+            "🫘 Garbanzos · 200g",
+            "🍅 Tomates cherry · 150g"
           ],
           "text": "Trocea el calabacín, el pimiento y los tomates. Mezcla con los garbanzos escurridos, aceite de oliva, pimentón ahumado y sal. Asa a 200°C 20–25 minutos.",
           "title": "Asa las verduras",
@@ -7313,7 +7446,8 @@
           "ings": [
             "🥒 Courgette · 1 pc",
             "🫑 Poivron rouge · 1 pc",
-            "🫘 Pois chiches · 200g"
+            "🫘 Pois chiches · 200g",
+            "🍅 Tomates cerises · 150g"
           ],
           "text": "Couper la courgette, le poivron et les tomates. Mélanger avec les pois chiches égouttés, l'huile d'olive, le paprika fumé et le sel. Rôtir à 200°C 20–25 minutes.",
           "title": "Rôtir les légumes",
@@ -7364,7 +7498,8 @@
           "ings": [
             "🥒 Zucchini · 1 St.",
             "🫑 Rote Paprika · 1 St.",
-            "🫘 Kichererbsen · 200g"
+            "🫘 Kichererbsen · 200g",
+            "🍅 Kirschtomaten · 150g"
           ],
           "text": "Zucchini, Paprika und Tomaten klein schneiden. Mit den abgegossenen Kichererbsen, Olivenöl, geräuchertem Paprika und Salz mischen. Bei 200°C 20–25 Minuten rösten.",
           "title": "Gemüse rösten",
@@ -7426,7 +7561,9 @@
           "tip": null,
           "ings": [
             "🥚 Huevos · 2 ud",
-            "🫚 Aceite de coco · 60ml"
+            "🫚 Aceite de coco · 60ml",
+            "🍯 Sirope de arce o miel · 5-6 cdas",
+            "🥛 Bebida de avena · 60ml"
           ],
           "text": "Bate los huevos, el aceite de coco derretido, la bebida de avena, 5–6 cdas de sirope de arce y la vainilla con el plátano machacado.",
           "title": "Mezcla los ingredientes húmedos",
@@ -7484,7 +7621,9 @@
           "tip": null,
           "ings": [
             "🥚 Œufs · 2 pc",
-            "🫚 Huile de coco · 60ml"
+            "🫚 Huile de coco · 60ml",
+            "🍯 Sirop d'érable ou miel · 5-6 c. à s.",
+            "🥛 Boisson à l'avoine · 60ml"
           ],
           "text": "Fouetter les œufs, l'huile de coco fondue, la boisson à l'avoine, 5–6 c. à s. de sirop d'érable et la vanille avec la banane écrasée.",
           "title": "Mélanger les ingrédients humides",
@@ -7542,7 +7681,9 @@
           "tip": null,
           "ings": [
             "🥚 Eier · 2 St.",
-            "🫚 Kokosöl · 60ml"
+            "🫚 Kokosöl · 60ml",
+            "🍯 Ahornsirup oder Honig · 5-6 EL",
+            "🥛 Haferdrink · 60ml"
           ],
           "text": "Eier, geschmolzenes Kokosöl, Haferdrink, 5–6 EL Ahornsirup und Vanille mit der zerdrückten Banane verquirlen.",
           "title": "Feuchte Zutaten mischen",
@@ -7603,7 +7744,9 @@
           "tip": null,
           "ings": [
             "🥭 Mango · 1 ud",
-            "🥑 Aguacate · 1 ud"
+            "🥑 Aguacate · 1 ud",
+            "🥒 Pepino · ½ ud",
+            "🌶️ Chile rojo · ½ ud"
           ],
           "text": "Corta el mango en dados y lamina el aguacate y el pepino. Pica el chile finamente.",
           "title": "Prepara fruta y verdura",
@@ -7664,7 +7807,9 @@
           "tip": null,
           "ings": [
             "🥭 Mangue · 1 pc",
-            "🥑 Avocat · 1 pc"
+            "🥑 Avocat · 1 pc",
+            "🥒 Concombre · ½ pc",
+            "🌶️ Piment rouge · ½ pc"
           ],
           "text": "Couper la mangue en dés, trancher l'avocat et le concombre. Hacher finement le piment.",
           "title": "Préparer fruit et légumes",
@@ -7725,7 +7870,9 @@
           "tip": null,
           "ings": [
             "🥭 Mango · 1 St.",
-            "🥑 Avocado · 1 St."
+            "🥑 Avocado · 1 St.",
+            "🥒 Gurke · ½ St.",
+            "🌶️ Rote Chili · ½ St."
           ],
           "text": "Mango würfeln, Avocado und Gurke in Scheiben schneiden. Chili fein hacken.",
           "title": "Obst & Gemüse vorbereiten",
@@ -7817,7 +7964,8 @@
           "tip": null,
           "ings": [
             "🌮 Tortillas de maíz · 6 ud",
-            "🌿 Cilantro · 15g"
+            "🌿 Cilantro · 15g",
+            "🟣 Col lombarda rallada · 80g"
           ],
           "text": "Calienta las tortillas. Unta la crema de aguacate, añade frijoles y boniato, y corona con col, cebolla encurtida y cilantro. Exprime lima por encima de todo.",
           "title": "Monta los tacos",
@@ -7888,7 +8036,8 @@
           "tip": null,
           "ings": [
             "🌮 Tortillas de maïs · 6 pc",
-            "🌿 Coriandre · 15g"
+            "🌿 Coriandre · 15g",
+            "🟣 Chou rouge râpé · 80g"
           ],
           "text": "Réchauffer les tortillas. Étaler la crème d'avocat, ajouter haricots et patate douce, garnir de chou, oignon mariné et coriandre. Presser le citron vert sur l'ensemble.",
           "title": "Monter les tacos",
@@ -7959,7 +8108,8 @@
           "tip": null,
           "ings": [
             "🌮 Mais-Tortillas · 6 St.",
-            "🌿 Koriander · 15g"
+            "🌿 Koriander · 15g",
+            "🟣 Rotkohl · 80g"
           ],
           "text": "Tortillas erwärmen. Avocado-Creme aufstreichen, Bohnen und Süßkartoffel zugeben, mit Rotkohl, eingelegter Zwiebel und Koriander belegen. Limette über alles pressen.",
           "title": "Tacos zusammenbauen",
@@ -8035,7 +8185,8 @@
           "ings": [
             "🥛 Yogur griego · 4 cdas",
             "🍓 Fresas · 80g",
-            "🫐 Arándanos · 50g"
+            "🫐 Arándanos · 50g",
+            "🍯 Sirope de arce · 2 cdas"
           ],
           "text": "Apila las tortitas y corona con yogur griego, fresas en láminas, arándanos y un hilo de sirope de arce.",
           "title": "Sirve con yogur y frutos",
@@ -8109,7 +8260,8 @@
           "ings": [
             "🥛 Yaourt grec · 4 c. à s.",
             "🍓 Fraises · 80g",
-            "🫐 Myrtilles · 50g"
+            "🫐 Myrtilles · 50g",
+            "🍯 Sirop d'érable · 2 c. à s."
           ],
           "text": "Empiler les pancakes et garnir de yaourt grec, fraises tranchées, myrtilles et un filet de sirop d'érable.",
           "title": "Servir avec yaourt & fruits",
@@ -8183,7 +8335,8 @@
           "ings": [
             "🥛 Griechischer Joghurt · 4 EL",
             "🍓 Erdbeeren · 80g",
-            "🫐 Blaubeeren · 50g"
+            "🫐 Blaubeeren · 50g",
+            "🍯 Ahornsirup · 2 EL"
           ],
           "text": "Pfannkuchen stapeln und mit griechischem Joghurt, Erdbeerscheiben, Blaubeeren und einem Schuss Ahornsirup belegen.",
           "title": "Mit Joghurt & Beeren servieren",
@@ -8390,7 +8543,8 @@
           "ings": [
             "🍅 Tomates cherry · 200g",
             "🥒 Calabacín · 1 ud",
-            "🫒 Aceitunas · 40g"
+            "🫒 Aceitunas · 40g",
+            "🧄 Ajo · 2 dientes"
           ],
           "text": "Parte los tomates por la mitad y corta el calabacín. Colócalas en una bandeja con el ajo laminado y las aceitunas. Riega con aceite de oliva y salpimenta.",
           "title": "Prepara las verduras",
@@ -8448,7 +8602,8 @@
           "ings": [
             "🍅 Tomates cerises · 200g",
             "🥒 Courgette · 1 pc",
-            "🫒 Olives · 40g"
+            "🫒 Olives · 40g",
+            "🧄 Ail · 2 gousses"
           ],
           "text": "Couper les tomates en deux et trancher la courgette. Disposer sur une plaque avec l'ail tranché et les olives. Arroser d'huile d'olive et assaisonner.",
           "title": "Préparer les légumes",
@@ -8506,7 +8661,8 @@
           "ings": [
             "🍅 Kirschtomaten · 200g",
             "🥒 Zucchini · 1 St.",
-            "🫒 Oliven · 40g"
+            "🫒 Oliven · 40g",
+            "🧄 Knoblauch · 2 Zehen"
           ],
           "text": "Tomaten halbieren, Zucchini in Scheiben schneiden. Mit geschnittenem Knoblauch und Oliven auf einem Blech anordnen. Mit Olivenöl beträufeln und würzen.",
           "title": "Gemüse vorbereiten",
@@ -8596,7 +8752,8 @@
           "tip": null,
           "ings": [
             "🥑 Aguacate · 1 ud",
-            "⚫ Semillas de cáñamo · 2 cdas"
+            "⚫ Semillas de cáñamo · 2 cdas",
+            "🥒 Pepino · 1 ud"
           ],
           "text": "Combina la col rizada, el pepino en láminas, el brócoli y el edamame. Corona con aguacate en láminas. Riega con el aliño y reparte las semillas de cáñamo.",
           "title": "Monta",
@@ -8658,7 +8815,8 @@
           "tip": null,
           "ings": [
             "🥑 Avocat · 1 pc",
-            "⚫ Graines de chanvre · 2 c. à s."
+            "⚫ Graines de chanvre · 2 c. à s.",
+            "🥒 Concombre · 1 pc"
           ],
           "text": "Mélanger le chou kale, le concombre tranché, le brocoli et l'édamame. Garnir d'avocat tranché. Arroser de vinaigrette et parsemer de graines de chanvre.",
           "title": "Assembler",
@@ -8720,7 +8878,8 @@
           "tip": null,
           "ings": [
             "🥑 Avocado · 1 St.",
-            "⚫ Hanfsamen · 2 EL"
+            "⚫ Hanfsamen · 2 EL",
+            "🥒 Gurke · 1 St."
           ],
           "text": "Grünkohl, Gurkenscheiben, Brokkoli und Edamame vermengen. Mit Avocadoscheiben belegen. Mit Dressing beträufeln und Hanfsamen darüber streuen.",
           "title": "Anrichten",
@@ -8781,7 +8940,8 @@
           "tip": null,
           "ings": [
             "🥛 Yogur griego · 100g",
-            "🧄 Ajo · 1 diente"
+            "🧄 Ajo · 1 diente",
+            "🍋 Limón · ½ ud"
           ],
           "text": "Mezcla el yogur griego con ajo rallado, zumo de limón y perejil picado.",
           "title": "Prepara la salsa para mojar",
@@ -8849,7 +9009,8 @@
           "tip": null,
           "ings": [
             "🥛 Yaourt grec · 100g",
-            "🧄 Ail · 1 gousse"
+            "🧄 Ail · 1 gousse",
+            "🍋 Citron · ½ pc"
           ],
           "text": "Mélanger le yaourt grec avec ail râpé, jus de citron et persil haché.",
           "title": "Préparer la sauce",
@@ -8917,7 +9078,8 @@
           "tip": null,
           "ings": [
             "🥛 Griechischer Joghurt · 100g",
-            "🧄 Knoblauch · 1 Zehe"
+            "🧄 Knoblauch · 1 Zehe",
+            "🍋 Zitrone · ½ St."
           ],
           "text": "Griechischen Joghurt mit geriebenem Knoblauch, Zitronensaft und gehackter Petersilie verrühren.",
           "title": "Dip zubereiten",
@@ -8991,7 +9153,8 @@
           "tip": null,
           "ings": [
             "🥑 Aguacate · 1 ud",
-            "🌻 Pipas de girasol · 2 cdas"
+            "🌻 Pipas de girasol · 2 cdas",
+            "🥒 Pepino · ½ ud"
           ],
           "text": "Coloca capas de arroz, brócoli y edamame. Añade láminas de aguacate y cintas de pepino. Riega con el aliño y termina con las pipas de girasol.",
           "title": "Monta el bol",
@@ -9054,7 +9217,8 @@
           "tip": null,
           "ings": [
             "🥑 Avocat · 1 pc",
-            "🌻 Graines de tournesol · 2 c. à s."
+            "🌻 Graines de tournesol · 2 c. à s.",
+            "🥒 Concombre · ½ pc"
           ],
           "text": "Disposer en couches le riz, le brocoli et l'édamame. Ajouter des tranches d'avocat et des rubans de concombre. Arroser de sauce et finir avec les graines de tournesol.",
           "title": "Monter le bol",
@@ -9117,7 +9281,8 @@
           "tip": null,
           "ings": [
             "🥑 Avocado · 1 St.",
-            "🌻 Sonnenblumenkerne · 2 EL"
+            "🌻 Sonnenblumenkerne · 2 EL",
+            "🥒 Gurke · ½ St."
           ],
           "text": "Reis, Brokkoli und Edamame schichten. Avocadoscheiben und Gurkenbänder zugeben. Mit Dressing beträufeln und mit Sonnenblumenkernen abschließen.",
           "title": "Bowl aufbauen",
@@ -9189,7 +9354,8 @@
           "tip": null,
           "ings": [
             "🥬 Hojas de ensalada · 60g",
-            "🫒 Aceitunas · 40g"
+            "🫒 Aceitunas · 40g",
+            "🍅 Tomates cherry · 100g"
           ],
           "text": "Coloca las hojas, los tomates, las judías y las aceitunas. Coloca el atún y los huevos partidos por encima. Riega con el aliño.",
           "title": "Empláta",
@@ -9259,7 +9425,8 @@
           "tip": null,
           "ings": [
             "🥬 Jeunes pousses · 60g",
-            "🫒 Olives · 40g"
+            "🫒 Olives · 40g",
+            "🍅 Tomates cerises · 100g"
           ],
           "text": "Disposer les pousses, les tomates, les haricots et les olives. Poser le thon et les œufs coupés en deux dessus. Arroser de vinaigrette.",
           "title": "Dresser",
@@ -9329,7 +9496,8 @@
           "tip": null,
           "ings": [
             "🥬 Blattsalate · 60g",
-            "🫒 Oliven · 40g"
+            "🫒 Oliven · 40g",
+            "🍅 Kirschtomaten · 100g"
           ],
           "text": "Blattsalate, Tomaten, Bohnen und Oliven anrichten. Thunfisch und halbierte Eier darauflegen. Mit Dressing beträufeln.",
           "title": "Anrichten",
@@ -9363,7 +9531,8 @@
         {
           "tip": null,
           "ings": [
-            "🍗 Carne de pavo · 400g"
+            "🍗 Carne de pavo · 400g",
+            "🧄 Ajo · 3 dientes"
           ],
           "text": "Mezcla la carne de pavo con pan rallado, un huevo, la mitad del ajo picado, orégano, sal y pimienta. Forma bolitas pequeñas.",
           "title": "Prepara las albóndigas",
@@ -9430,7 +9599,8 @@
         {
           "tip": null,
           "ings": [
-            "🍗 Dinde hachée · 400g"
+            "🍗 Dinde hachée · 400g",
+            "🧄 Ail · 3 gousses"
           ],
           "text": "Mélanger la dinde hachée avec la chapelure, un œuf, la moitié de l'ail haché, l'origan, le sel et le poivre. Former de petites boulettes.",
           "title": "Préparer les boulettes",
@@ -9497,7 +9667,8 @@
         {
           "tip": null,
           "ings": [
-            "🍗 Putenhackfleisch · 400g"
+            "🍗 Putenhackfleisch · 400g",
+            "🧄 Knoblauch · 3 Zehen"
           ],
           "text": "Putenhack mit Semmelbröseln, einem Ei, der Hälfte des gehackten Knoblauchs, Oregano, Salz und Pfeffer mischen. Zu kleinen Bällchen formen.",
           "title": "Hackbällchen zubereiten",
@@ -9583,7 +9754,8 @@
           "tip": null,
           "ings": [
             "🌾 Granola · 30g",
-            "⚫ Semillas de chía · 1 cda"
+            "⚫ Semillas de chía · 1 cda",
+            "🥥 Copos de coco · 1 cdas"
           ],
           "text": "Vierte la base espesa en boles. Corona con kiwi, fresas, granola, copos de coco y semillas de chía.",
           "title": "Monta y sirve",
@@ -9632,7 +9804,8 @@
           "tip": null,
           "ings": [
             "🌾 Granola · 30g",
-            "⚫ Graines de chia · 1 c. à s."
+            "⚫ Graines de chia · 1 c. à s.",
+            "🥥 Flocons de coco · 1 c. à s."
           ],
           "text": "Verser la base épaisse dans des bols. Garnir de kiwi, fraises, granola, flocons de coco et graines de chia.",
           "title": "Monter et servir",
@@ -9681,7 +9854,8 @@
           "tip": null,
           "ings": [
             "🌾 Granola · 30g",
-            "⚫ Chiasamen · 1 EL"
+            "⚫ Chiasamen · 1 EL",
+            "🥥 Kokoschips · 1 EL"
           ],
           "text": "Die dicke Basis in Schalen füllen. Mit Kiwi, Erdbeeren, Granola, Kokoschips und Chiasamen belegen.",
           "title": "Aufbauen & servieren",
@@ -9877,7 +10051,8 @@
           "ings": [
             "🫘 Lentejas verdes · 400g",
             "🧅 Cebolla · 1 ud",
-            "🍅 Tomates cherry · 150g"
+            "🍅 Tomates cherry · 150g",
+            "🧄 Ajo · 2 dientes"
           ],
           "text": "Sofríe la cebolla picada y el ajo en aceite de oliva 5 minutos. Añade las lentejas escurridas, el comino, el pimentón, sal y los tomates cherry partidos. Cocina 5 minutos.",
           "title": "Prepara el relleno",
@@ -9937,7 +10112,8 @@
           "ings": [
             "🫘 Lentilles vertes · 400g",
             "🧅 Oignon · 1 pc",
-            "🍅 Tomates cerises · 150g"
+            "🍅 Tomates cerises · 150g",
+            "🧄 Ail · 2 gousses"
           ],
           "text": "Faire revenir l'oignon en dés et l'ail à l'huile d'olive 5 minutes. Ajouter les lentilles égouttées, le cumin, le paprika, le sel et les tomates cerises coupées en deux. Cuire 5 minutes.",
           "title": "Préparer la farce",
@@ -9997,7 +10173,8 @@
           "ings": [
             "🫘 Grüne Linsen · 400g",
             "🧅 Zwiebel · 1 St.",
-            "🍅 Kirschtomaten · 150g"
+            "🍅 Kirschtomaten · 150g",
+            "🧄 Knoblauch · 2 Zehen"
           ],
           "text": "Gewürfelte Zwiebel und Knoblauch in Olivenöl 5 Minuten anbraten. Abgegossene Linsen, Kreuzkümmel, Paprika, Salz und halbierte Kirschtomaten zugeben. 5 Minuten garen.",
           "title": "Füllung zubereiten",
@@ -10067,7 +10244,8 @@
           "tip": null,
           "ings": [
             "🍋 Limón · 1 ud",
-            "🫙 Mostaza de Dijon · 1 cdta"
+            "🫙 Mostaza de Dijon · 1 cdta",
+            "🧄 Ajo · 1 diente"
           ],
           "text": "Tritura zumo de limón, ajo, mostaza de Dijon, 3 cdas de aceite de oliva y una pizca de sal hasta que quede suave.",
           "title": "Prepara el aliño César",
@@ -10127,7 +10305,8 @@
           "tip": null,
           "ings": [
             "🍋 Citron · 1 pc",
-            "🫙 Moutarde de Dijon · 1 c. à c."
+            "🫙 Moutarde de Dijon · 1 c. à c.",
+            "🧄 Ail · 1 gousse"
           ],
           "text": "Mixer jus de citron, ail, moutarde de Dijon, 3 c. à s. d'huile d'olive et une pincée de sel jusqu'à une sauce lisse.",
           "title": "Préparer la sauce César",
@@ -10187,7 +10366,8 @@
           "tip": null,
           "ings": [
             "🍋 Zitrone · 1 St.",
-            "🫙 Dijon-Senf · 1 TL"
+            "🫙 Dijon-Senf · 1 TL",
+            "🧄 Knoblauch · 1 Zehe"
           ],
           "text": "Zitronensaft, Knoblauch, Dijon-Senf, 3 EL Olivenöl und eine Prise Salz glatt mixen.",
           "title": "Caesar-Dressing machen",
@@ -10260,7 +10440,9 @@
           "tip": null,
           "ings": [
             "🥑 Aguacate · 1 ud",
-            "⚪ Semillas de sésamo · 1 cda"
+            "⚪ Semillas de sésamo · 1 cda",
+            "🥒 Pepino · ½ ud",
+            "🫘 Edamame · 80g"
           ],
           "text": "Pon el arroz en los boles. Corona con el salmón en láminas, aguacate, pepino y edamame. Riega con el aliño y reparte las semillas de sésamo.",
           "title": "Monta el bol",
@@ -10321,7 +10503,9 @@
           "tip": null,
           "ings": [
             "🥑 Avocat · 1 pc",
-            "⚪ Graines de sésame · 1 c. à s."
+            "⚪ Graines de sésame · 1 c. à s.",
+            "🥒 Concombre · ½ pc",
+            "🫘 Édamame · 80g"
           ],
           "text": "Mettre le riz dans les bols. Garnir de saumon tranché, avocat, concombre et édamame. Arroser de sauce et parsemer de graines de sésame.",
           "title": "Monter le bol",
@@ -10382,7 +10566,9 @@
           "tip": null,
           "ings": [
             "🥑 Avocado · 1 St.",
-            "⚪ Sesam · 1 EL"
+            "⚪ Sesam · 1 EL",
+            "🥒 Gurke · ½ St.",
+            "🫘 Edamame · 80g"
           ],
           "text": "Reis in die Schalen geben. Mit geschnittenem Lachs, Avocado, Gurke und Edamame belegen. Mit Dressing beträufeln und Sesam darüber streuen.",
           "title": "Bowl aufbauen",
@@ -10572,7 +10758,8 @@
           "tip": null,
           "ings": [
             "🧅 Cebolla · 1 ud",
-            "🧄 Ajo · 4 dientes"
+            "🧄 Ajo · 4 dientes",
+            "🌿 Tomillo · 5 ramitas"
           ],
           "text": "Cocina la cebolla picada en aceite de oliva 5 minutos. Añade el ajo y el tomillo y cocina 2 minutos más.",
           "title": "Sofríe cebolla y ajo",
@@ -10634,7 +10821,8 @@
           "tip": null,
           "ings": [
             "🧅 Oignon · 1 pc",
-            "🧄 Ail · 4 gousses"
+            "🧄 Ail · 4 gousses",
+            "🌿 Thym · 5 brins"
           ],
           "text": "Cuire l'oignon en dés à l'huile d'olive 5 minutes. Ajouter l'ail et le thym, cuire 2 minutes de plus.",
           "title": "Faire revenir oignon & ail",
@@ -10696,7 +10884,8 @@
           "tip": null,
           "ings": [
             "🧅 Zwiebel · 1 St.",
-            "🧄 Knoblauch · 4 Zehen"
+            "🧄 Knoblauch · 4 Zehen",
+            "🌿 Thymian · 5 Zweige"
           ],
           "text": "Gewürfelte Zwiebel in Olivenöl 5 Minuten anbraten. Knoblauch und Thymian zugeben, 2 weitere Minuten braten.",
           "title": "Zwiebel & Knoblauch anbraten",
@@ -10923,7 +11112,9 @@
             "🥑 Avocado · 1 St.",
             "🥜 Erdnussbutter · 2 EL",
             "🍁 Ahornsirup · 45ml",
-            "🍫 Kakaopulver · 25g"
+            "🍫 Kakaopulver · 25g",
+            "🟤 Brauner oder Kokoszucker · 20g",
+            "🥛 Mandelmilch · 2 EL"
           ],
           "tip": null,
           "kidsHelp": null
@@ -10984,7 +11175,9 @@
             "🥑 Aguacate · 1 ud",
             "🥜 Crema de cacahuete · 2 cdas",
             "🍁 Sirope de arce · 45ml",
-            "🍫 Cacao en polvo · 25g"
+            "🍫 Cacao en polvo · 25g",
+            "🟤 Azúcar moreno o de coco · 20g",
+            "🥛 Leche de almendras · 2 cdas"
           ],
           "tip": null,
           "kidsHelp": null
@@ -11045,7 +11238,9 @@
             "🥑 Avocat · 1 pc",
             "🥜 Beurre de cacahuète · 2 c. à s.",
             "🍁 Sirop d'érable · 45ml",
-            "🍫 Cacao en poudre · 25g"
+            "🍫 Cacao en poudre · 25g",
+            "🟤 Sucre roux ou de coco · 20g",
+            "🥛 Lait d'amande · 2 c. à s."
           ],
           "tip": null,
           "kidsHelp": null
@@ -11123,7 +11318,8 @@
           "ings": [
             "🍞 Masa madre · 2 rebanadas",
             "🧀 Feta · 60g",
-            "🌿 Albahaca · 10g"
+            "🌿 Albahaca · 10g",
+            "🫒 Aceitunas kalamata · 30g"
           ],
           "text": "Tuesta el pan de masa madre. Cubre con espinacas, tomates asados y aceitunas. Coloca encima los huevos escalfados. Desmenuza el feta y termina con albahaca fresca y aceite de oliva.",
           "title": "Monta el plato",
@@ -11182,7 +11378,8 @@
           "ings": [
             "🍞 Levain · 2 tranches",
             "🧀 Feta · 60g",
-            "🌿 Basilic · 10g"
+            "🌿 Basilic · 10g",
+            "🫒 Olives kalamata · 30g"
           ],
           "text": "Fais griller le pain au levain. Garnis d'épinards, de tomates rôties et d'olives. Dépose les œufs pochés par-dessus. Émiette la feta et termine avec du basilic frais et de l'huile d'olive.",
           "title": "Dresse",
@@ -11241,7 +11438,8 @@
           "ings": [
             "🍞 Sauerteig · 2 Scheiben",
             "🧀 Feta · 60g",
-            "🌿 Basilikum · 10g"
+            "🌿 Basilikum · 10g",
+            "🫒 Kalamata-Oliven · 30g"
           ],
           "text": "Sauerteigbrot toasten. Mit Spinat, gerösteten Tomaten und Oliven belegen. Die pochierten Eier daraufsetzen. Feta zerbröseln und mit frischem Basilikum und Olivenöl vollenden.",
           "title": "Anrichten",
@@ -11284,7 +11482,9 @@
         {
           "tip": "Las tiras finas se cocinan más rápido y de forma más uniforme.",
           "ings": [
-            "🍗 Pechuga de pollo · 300g"
+            "🍗 Pechuga de pollo · 300g",
+            "🫚 Jengibre · 2cm",
+            "🧄 Ajo · 2 dientes"
           ],
           "text": "Corta el pollo en tiras finas. Pica el brócoli y el pimiento. Pica el ajo y ralla el jengibre. Ten todo listo antes de empezar: los salteados van rápido.",
           "title": "Prepáralo todo primero",
@@ -11303,7 +11503,8 @@
           "tip": null,
           "ings": [
             "🥦 Brócoli · 150g",
-            "🫑 Pimiento rojo · 1 ud"
+            "🫑 Pimiento rojo · 1 ud",
+            "🫘 Tirabeques · 80g"
           ],
           "text": "En la misma sartén, cocina el ajo y el jengibre 30 segundos. Añade el brócoli, el pimiento y los tirabeques. Saltea 3–4 minutos a fuego alto.",
           "title": "Saltea las verduras",
@@ -11353,7 +11554,9 @@
         {
           "tip": "Des lanières fines cuisent plus vite et plus uniformément.",
           "ings": [
-            "🍗 Blanc de poulet · 300g"
+            "🍗 Blanc de poulet · 300g",
+            "🫚 Gingembre · 2cm",
+            "🧄 Ail · 2 gousses"
           ],
           "text": "Coupe le poulet en fines lanières. Coupe le brocoli et le poivron. Hache l'ail et râpe le gingembre. Aie tout prêt avant de commencer — les sautés vont vite.",
           "title": "Prépare tout d'abord",
@@ -11372,7 +11575,8 @@
           "tip": null,
           "ings": [
             "🥦 Brocoli · 150g",
-            "🫑 Poivron rouge · 1 pc"
+            "🫑 Poivron rouge · 1 pc",
+            "🫘 Pois gourmands · 80g"
           ],
           "text": "Dans la même poêle, fais cuire l'ail et le gingembre 30 secondes. Ajoute le brocoli, le poivron et les pois gourmands. Fais sauter 3–4 minutes à feu vif.",
           "title": "Fais sauter les légumes",
@@ -11422,7 +11626,9 @@
         {
           "tip": "Dünne Streifen garen schneller und gleichmäßiger.",
           "ings": [
-            "🍗 Hähnchenbrust · 300g"
+            "🍗 Hähnchenbrust · 300g",
+            "🫚 Ingwer · 2cm",
+            "🧄 Knoblauch · 2 Zehen"
           ],
           "text": "Hähnchen in dünne Streifen schneiden. Brokkoli und Paprika schneiden. Knoblauch hacken und Ingwer reiben. Alles bereithalten, bevor du startest – Pfannengerichte gehen schnell.",
           "title": "Erst alles vorbereiten",
@@ -11441,7 +11647,8 @@
           "tip": null,
           "ings": [
             "🥦 Brokkoli · 150g",
-            "🫑 Rote Paprika · 1 St."
+            "🫑 Rote Paprika · 1 St.",
+            "🫘 Zuckerschoten · 80g"
           ],
           "text": "In derselben Pfanne Knoblauch und Ingwer 30 Sekunden braten. Brokkoli, Paprika und Zuckerschoten zugeben. 3–4 Minuten bei hoher Hitze pfannenrühren.",
           "title": "Gemüse anbraten",
@@ -11504,7 +11711,9 @@
           "ings": [
             "🧀 Feta · 120g",
             "🌰 Pistachos · 40g",
-            "🍇 Pasas · 2 cdas"
+            "🍇 Pasas · 2 cdas",
+            "🍋 Limón · 1 ud",
+            "🧅 Cebolleta · 2 uds"
           ],
           "text": "Mezcla el arroz negro templado con el feta desmenuzado, los pistachos picados, las pasas, la cebolleta en rodajas, la canela, el comino y el zumo de limón. Aliña con aceite de oliva. Prueba y salpimienta.",
           "title": "Prepara el relleno",
@@ -11565,7 +11774,9 @@
           "ings": [
             "🧀 Feta · 120g",
             "🌰 Pistaches · 40g",
-            "🍇 Raisins secs · 2 c. à s."
+            "🍇 Raisins secs · 2 c. à s.",
+            "🍋 Citron · 1 pc",
+            "🧅 Oignon nouveau · 2 pc"
           ],
           "text": "Mélange le riz noir tiède avec la feta émiettée, les pistaches grossièrement concassées, les raisins secs, l'oignon nouveau émincé, la cannelle, le cumin et le jus de citron. Mélange avec l'huile d'olive. Goûte et assaisonne.",
           "title": "Prépare la farce",
@@ -11626,7 +11837,9 @@
           "ings": [
             "🧀 Feta · 120g",
             "🌰 Pistazien · 40g",
-            "🍇 Rosinen · 2 EL"
+            "🍇 Rosinen · 2 EL",
+            "🍋 Zitrone · 1 St.",
+            "🧅 Frühlingszwiebel · 2 St."
           ],
           "text": "Warmen schwarzen Reis mit zerbröseltem Feta, grob gehackten Pistazien, Rosinen, in Ringe geschnittener Frühlingszwiebel, Zimt, Kreuzkümmel und Zitronensaft mischen. Mit Olivenöl vermengen. Abschmecken und würzen.",
           "title": "Füllung zubereiten",
@@ -11684,7 +11897,8 @@
           "ings": [
             "🫐 Higos frescos · 3 uds",
             "🍯 Miel · 2 cdas",
-            "🌰 Pistachos · 20g"
+            "🌰 Pistachos · 20g",
+            "🌿 Tomillo · 3 ramitas"
           ],
           "text": "Corta los higos en rodajas y colócalos encima. Pica los pistachos y espárcelos por encima. Rocía miel generosamente y termina con hojas de tomillo fresco.",
           "title": "Cubre y rocía",
@@ -11731,7 +11945,8 @@
           "ings": [
             "🫐 Figues fraîches · 3 pc",
             "🍯 Miel · 2 c. à s.",
-            "🌰 Pistaches · 20g"
+            "🌰 Pistaches · 20g",
+            "🌿 Thym · 3 brins"
           ],
           "text": "Coupe les figues en tranches et dispose-les dessus. Concasse les pistaches et parsème dessus. Arrose généreusement de miel et termine avec des feuilles de thym frais.",
           "title": "Garnis et arrose",
@@ -11778,7 +11993,8 @@
           "ings": [
             "🫐 Frische Feigen · 3 St.",
             "🍯 Honig · 2 EL",
-            "🌰 Pistazien · 20g"
+            "🌰 Pistazien · 20g",
+            "🌿 Thymian · 3 Zweige"
           ],
           "text": "Feigen in Scheiben schneiden und darauf anrichten. Pistazien hacken und darüberstreuen. Großzügig mit Honig beträufeln und mit frischen Thymianblättchen vollenden.",
           "title": "Belegen & beträufeln",
@@ -12058,7 +12274,8 @@
           "ings": [
             "🫑 Pimiento rojo · 1 ud",
             "🥒 Pepino · 1 ud",
-            "🫘 Garbanzos · 400g"
+            "🫘 Garbanzos · 400g",
+            "🧅 Cebolla roja · ¼ ud"
           ],
           "text": "Corta en dados el pimiento rojo y el pepino. Corta la cebolla roja en rodajas finas. Escurre y enjuaga los garbanzos.",
           "title": "Prepara las verduras",
@@ -12119,7 +12336,8 @@
           "ings": [
             "🫑 Poivron rouge · 1 pc",
             "🥒 Concombre · 1 pc",
-            "🫘 Pois chiches · 400g"
+            "🫘 Pois chiches · 400g",
+            "🧅 Oignon rouge · ¼ pc"
           ],
           "text": "Coupe en dés le poivron rouge et le concombre. Émince finement l'oignon rouge. Égoutte et rince les pois chiches.",
           "title": "Prépare les légumes",
@@ -12180,7 +12398,8 @@
           "ings": [
             "🫑 Rote Paprika · 1 St.",
             "🥒 Gurke · 1 St.",
-            "🫘 Kichererbsen · 400g"
+            "🫘 Kichererbsen · 400g",
+            "🧅 Rote Zwiebel · ¼ St."
           ],
           "text": "Rote Paprika und Gurke würfeln. Rote Zwiebel in feine Scheiben schneiden. Kichererbsen abgießen und abspülen.",
           "title": "Gemüse vorbereiten",
@@ -12232,9 +12451,10 @@
         {
           "tip": "A fuego bajo y lento es la única forma. El fuego fuerte quema en vez de caramelizar.",
           "ings": [
-            "🧅 Cebollas · 3 grandes"
+            "🧅 Cebollas · 3 grandes",
+            "🧄 Ajo · 2 dientes"
           ],
-          "text": "Este es el corazón de la mujadara: no tengas prisa. Corta las cebollas en rodajas finas y cocínalas en aceite de oliva a fuego medio-bajo 30–35 minutos, removiendo cada pocos minutos, hasta que estén muy doradas y melosas. Sala a media cocción.",
+          "text": "Este es el corazón de la mujadara: no tengas prisa. Corta las cebollas y el ajo en rodajas finas, cocínalos en aceite de oliva a fuego medio-bajo 30–35 minutos, removiendo cada pocos minutos, hasta que estén muy doradas y melosas. Sala a media cocción.",
           "title": "Caramela las cebollas",
           "kidsHelp": null
         },
@@ -12291,7 +12511,8 @@
         {
           "tip": "Doux et lent est la seule façon. Le feu vif brûle au lieu de caraméliser.",
           "ings": [
-            "🧅 Oignons · 3 grosses"
+            "🧅 Oignons · 3 grosses",
+            "🧄 Ail · 2 gousses"
           ],
           "text": "C'est le cœur de la mujadara — ne précipite pas. Émince finement les oignons et fais-les cuire dans l'huile d'olive à feu moyen-doux 30–35 minutes, en remuant toutes les quelques minutes, jusqu'à ce qu'ils soient bien dorés et confits. Sale à mi-cuisson.",
           "title": "Caramélise les oignons",
@@ -12350,7 +12571,8 @@
         {
           "tip": "Niedrig und langsam ist der einzige Weg. Hohe Hitze verbrennt, statt zu karamellisieren.",
           "ings": [
-            "🧅 Zwiebeln · 3 große"
+            "🧅 Zwiebeln · 3 große",
+            "🧄 Knoblauch · 2 Zehen"
           ],
           "text": "Das ist das Herz der Mujadara – nimm dir Zeit. Zwiebeln fein schneiden und in Olivenöl bei mittlerer bis niedriger Hitze 30–35 Minuten garen, alle paar Minuten rühren, bis sie tief goldbraun und sämig sind. Nach der Hälfte der Zeit salzen.",
           "title": "Zwiebeln karamellisieren",
@@ -12425,7 +12647,8 @@
           "tip": null,
           "ings": [
             "🟣 Lombarda · 150g",
-            "🥕 Zanahorias · 2 medianas"
+            "🥕 Zanahorias · 2 medianas",
+            "🧅 Cebolletas · 3 uds"
           ],
           "text": "Corta la lombarda en juliana fina. Ralla o corta las zanahorias en juliana. Escalda el edamame 3 minutos y escúrrelo. Corta las cebolletas en rodajas finas.",
           "title": "Prepara las verduras",
@@ -12490,7 +12713,8 @@
           "tip": null,
           "ings": [
             "🟣 Chou rouge · 150g",
-            "🥕 Carottes · 2 moyennes"
+            "🥕 Carottes · 2 moyennes",
+            "🧅 Oignons nouveaux · 3 pc"
           ],
           "text": "Émince finement le chou rouge. Râpe ou taille les carottes en julienne. Blanchis l'edamame 3 minutes et égoutte. Émince finement les oignons nouveaux.",
           "title": "Prépare les légumes",
@@ -12555,7 +12779,8 @@
           "tip": null,
           "ings": [
             "🟣 Rotkohl · 150g",
-            "🥕 Karotten · 2 mittelgroße"
+            "🥕 Karotten · 2 mittelgroße",
+            "🧅 Frühlingszwiebeln · 3 St."
           ],
           "text": "Rotkohl fein hobeln. Karotten reiben oder in feine Streifen schneiden. Edamame 3 Minuten blanchieren und abgießen. Frühlingszwiebeln in feine Ringe schneiden.",
           "title": "Gemüse vorbereiten",
@@ -12620,7 +12845,7 @@
           "tip": null,
           "ings": [
             "🌾 Harina de trigo sarraceno · 150g",
-            "🌾 Harina de avena · 80g"
+            "🥣 Harina de avena · 80g"
           ],
           "text": "En un bol grande mezcla la harina de trigo sarraceno, la harina de avena, 2 cdtas de levadura química, 1 cdta de jengibre molido y ½ cdta de sal marina.",
           "title": "Mezcla los ingredientes secos",
@@ -12632,7 +12857,9 @@
             "🥚 Huevos · 3 uds",
             "🥬 Espinacas baby · 2 puñados",
             "🫐 Dátiles · 3 uds",
-            "🥛 Yogur · 150g"
+            "🥛 Yogur · 150g",
+            "🫒 Aceite de oliva · 80ml",
+            "🍋 Ralladura de limón · 1 cdta"
           ],
           "text": "En una batidora, mezcla los huevos, las espinacas, los dátiles sin hueso, el yogur, el aceite de oliva y la ralladura de limón. Tritura hasta que quede totalmente suave y de un verde intenso.",
           "title": "Tritura los ingredientes húmedos",
@@ -12693,7 +12920,7 @@
           "tip": null,
           "ings": [
             "🌾 Farine de sarrasin · 150g",
-            "🌾 Farine d'avoine · 80g"
+            "🥣 Farine d'avoine · 80g"
           ],
           "text": "Dans un grand saladier, mélange la farine de sarrasin, la farine d'avoine, 2 c. à c. de levure chimique, 1 c. à c. de gingembre moulu et ½ c. à c. de sel de mer.",
           "title": "Mélange les ingrédients secs",
@@ -12705,7 +12932,9 @@
             "🥚 Œufs · 3 pc",
             "🥬 Jeunes épinards · 2 poignées",
             "🫐 Dattes · 3 pc",
-            "🥛 Yaourt · 150g"
+            "🥛 Yaourt · 150g",
+            "🫒 Huile d'olive · 80ml",
+            "🍋 Zeste de citron · 1 c. à c."
           ],
           "text": "Au blender, mixe les œufs, les épinards, les dattes dénoyautées, le yaourt, l'huile d'olive et le zeste de citron. Mixe jusqu'à ce que ce soit parfaitement lisse et vert vif.",
           "title": "Mixe les ingrédients humides",
@@ -12766,7 +12995,7 @@
           "tip": null,
           "ings": [
             "🌾 Buchweizenmehl · 150g",
-            "🌾 Hafermehl · 80g"
+            "🥣 Hafermehl · 80g"
           ],
           "text": "In einer großen Schüssel Buchweizenmehl, Hafermehl, 2 TL Backpulver, 1 TL gemahlenen Ingwer und ½ TL Meersalz verrühren.",
           "title": "Trockene Zutaten mischen",
@@ -12778,7 +13007,9 @@
             "🥚 Eier · 3 St.",
             "🥬 Babyspinat · 2 Handvoll",
             "🫐 Datteln · 3 St.",
-            "🥛 Joghurt · 150g"
+            "🥛 Joghurt · 150g",
+            "🫒 Olivenöl · 80ml",
+            "🍋 Zitronenabrieb · 1 TL"
           ],
           "text": "Im Mixer Eier, Spinat, entsteinte Datteln, Joghurt, Olivenöl und Zitronenabrieb vermengen. Pürieren, bis alles komplett glatt und leuchtend grün ist.",
           "title": "Feuchte Zutaten pürieren",
@@ -12861,7 +13092,8 @@
           "tip": null,
           "ings": [
             "🧀 Feta · 100g",
-            "🌿 Albahaca · 15g"
+            "🌿 Albahaca · 15g",
+            "🍋 Limón · 1 ud"
           ],
           "text": "Bate el zumo de limón, un chorrito de balsámico y aceite de oliva. Mezcla el farro templado con las verduras asadas y el aliño. Desmenuza el feta y esparce la albahaca y los frutos secos por encima.",
           "title": "Prepara el aliño y combina",
@@ -12924,7 +13156,8 @@
           "tip": null,
           "ings": [
             "🧀 Feta · 100g",
-            "🌿 Basilic · 15g"
+            "🌿 Basilic · 15g",
+            "🍋 Citron · 1 pc"
           ],
           "text": "Fouette le jus de citron, un trait de balsamique et l'huile d'olive. Mélange le farro tiède avec les légumes rôtis et la vinaigrette. Émiette la feta et parsème de basilic et de fruits secs.",
           "title": "Prépare la vinaigrette et combine",
@@ -12987,7 +13220,8 @@
           "tip": null,
           "ings": [
             "🧀 Feta · 100g",
-            "🌿 Basilikum · 15g"
+            "🌿 Basilikum · 15g",
+            "🍋 Zitrone · 1 St."
           ],
           "text": "Zitronensaft, einen Schuss Balsamico und Olivenöl verquirlen. Warmen Farro mit dem gerösteten Gemüse und dem Dressing vermengen. Feta zerbröseln und Basilikum und Nüsse darüberstreuen.",
           "title": "Dressing zubereiten & vereinen",
@@ -13038,7 +13272,8 @@
           "ings": [
             "🍓 Frambuesas · 80g",
             "🍌 Plátano · 1 ud",
-            "⚫ Semillas variadas · 2 cdas"
+            "⚫ Semillas variadas · 2 cdas",
+            "🍯 Sirope de arce · 2 cdas"
           ],
           "text": "Repártelo en boles. Corona con frambuesas frescas, plátano en rodajas, semillas variadas y un chorrito de sirope de arce.",
           "title": "Corona y sirve",
@@ -13087,7 +13322,8 @@
           "ings": [
             "🍓 Framboises · 80g",
             "🍌 Banane · 1 pc",
-            "⚫ Graines variées · 2 c. à s."
+            "⚫ Graines variées · 2 c. à s.",
+            "🍯 Sirop d'érable · 2 c. à s."
           ],
           "text": "Répartis dans des bols. Garnis de framboises fraîches, de banane en rondelles, de graines variées et d'un filet de sirop d'érable.",
           "title": "Garnis et sers",
@@ -13136,7 +13372,8 @@
           "ings": [
             "🍓 Himbeeren · 80g",
             "🍌 Banane · 1 St.",
-            "⚫ Gemischte Samen · 2 EL"
+            "⚫ Gemischte Samen · 2 EL",
+            "🍯 Ahornsirup · 2 EL"
           ],
           "text": "In Schalen füllen. Mit frischen Himbeeren, Bananenscheiben, gemischten Samen und einem Schuss Ahornsirup garnieren.",
           "title": "Garnieren & servieren",
@@ -14925,7 +15162,11 @@
           "ings": [
             "🌾 Weizenmehl · 260g",
             "🥕 Geriebene Karotten · 300g",
-            "🥚 Eier · 4 pcs"
+            "🥚 Eier · 4 pcs",
+            "🫗 Pflanzenöl · 295ml",
+            "🥄 Zucker · 200g",
+            "🟤 Brauner Zucker · 190g",
+            "🍇 Rosinen · 70g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -14940,7 +15181,11 @@
         {
           "title": "Frosting machen",
           "text": "Frischkäse glatt rühren, Puderzucker unterrühren, dann die kalte Schlagsahne dick und streichfähig aufschlagen.",
-          "ings": [],
+          "ings": [
+            "🫙 Frischkäse · 225g",
+            "🍚 Puderzucker · 140g",
+            "🥛 Schlagsahne · 80ml"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -14997,7 +15242,11 @@
           "ings": [
             "🌾 Harina de trigo · 260g",
             "🥕 Zanahoria rallada · 300g",
-            "🥚 Huevos · 4 pcs"
+            "🥚 Huevos · 4 pcs",
+            "🫗 Aceite vegetal · 295ml",
+            "🥄 Azúcar · 200g",
+            "🟤 Azúcar moreno · 190g",
+            "🍇 Pasas · 70g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -15012,7 +15261,11 @@
         {
           "title": "Haz el frosting",
           "text": "Bate el queso crema hasta que quede liso, incorpora el azúcar glas y luego monta con la nata fría hasta que quede espeso y untable.",
-          "ings": [],
+          "ings": [
+            "🫙 Queso crema · 225g",
+            "🍚 Azúcar glas · 140g",
+            "🥛 Nata para montar · 80ml"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -15069,7 +15322,11 @@
           "ings": [
             "🌾 Farine de blé · 260g",
             "🥕 Carottes râpées · 300g",
-            "🥚 Œufs · 4 pcs"
+            "🥚 Œufs · 4 pcs",
+            "🫗 Huile végétale · 295ml",
+            "🥄 Sucre · 200g",
+            "🟤 Sucre roux · 190g",
+            "🍇 Raisins secs · 70g"
           ],
           "tip": null,
           "kidsHelp": null
@@ -15084,7 +15341,11 @@
         {
           "title": "Préparer le glaçage",
           "text": "Battre le fromage frais jusqu'à ce qu'il soit lisse, incorporer le sucre glace, puis monter avec la crème froide jusqu'à une texture épaisse et tartinable.",
-          "ings": [],
+          "ings": [
+            "🫙 Fromage frais · 225g",
+            "🍚 Sucre glace · 140g",
+            "🥛 Crème liquide entière · 80ml"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -15546,7 +15807,11 @@
         {
           "title": "Vinaigrette anrühren",
           "text": "Olivenöl, Balsamico, Honig, fein gehackte Schalotte, geriebenen Knoblauch, Zitronenabrieb und gehackte Kräuter mit Salz und einer Prise Chiliflocken verquirlen.",
-          "ings": [],
+          "ings": [
+            "🍯 Honig · 1 tbsp",
+            "🧅 Schalotte · ½ pc",
+            "🌿 Frische Kräuter · 1 handful"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -15609,7 +15874,11 @@
         {
           "title": "Prepara la vinagreta",
           "text": "Bate el aceite, el vinagre balsámico, la miel, la chalota picada, el ajo rallado, la ralladura de limón y las hierbas picadas con sal y una pizca de copos de chile.",
-          "ings": [],
+          "ings": [
+            "🍯 Miel · 1 tbsp",
+            "🧅 Chalota · ½ pc",
+            "🌿 Hierbas frescas · 1 handful"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -15672,7 +15941,11 @@
         {
           "title": "Préparer la vinaigrette",
           "text": "Fouetter l'huile, le vinaigre balsamique, le miel, l'échalote ciselée, l'ail râpé, le zeste de citron et les herbes ciselées avec du sel et une pincée de flocons de piment.",
-          "ings": [],
+          "ings": [
+            "🍯 Miel · 1 tbsp",
+            "🧅 Échalote · ½ pc",
+            "🌿 Herbes fraîches · 1 handful"
+          ],
           "tip": null,
           "kidsHelp": null
         },
@@ -17699,7 +17972,8 @@
           "title": "Äpfel vorbereiten",
           "text": "Äpfel schälen, entkernen, in Scheiben schneiden, mit Zimt und etwas Ahornsirup mischen und in eine Auflaufform geben.",
           "ings": [
-            "🍎 Äpfel · 800g"
+            "🍎 Äpfel · 800g",
+            "🍯 Ahornsirup · 1 EL"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17709,7 +17983,7 @@
           "text": "Butter mit Haferflocken, Mehl, braunem Zucker und gehackten Pekannüssen mit den Fingern zu Streuseln verreiben.",
           "ings": [
             "🌾 Haferflocken · 80g",
-            "🌾 Weizenmehl · 80g",
+            "🫙 Mehl · 80g",
             "🧈 Butter · 90g",
             "🟤 Brauner Zucker · 60g",
             "🌰 Pekannüsse · 40g"
@@ -17747,7 +18021,8 @@
           "title": "Prepara las manzanas",
           "text": "Pela, descorazona y corta las manzanas, mézclalas con canela y un poco de sirope y ponlas en una fuente.",
           "ings": [
-            "🍎 Manzanas · 800g"
+            "🍎 Manzanas · 800g",
+            "🍯 Sirope de arce · 1 cdas"
           ],
           "tip": null,
           "kidsHelp": null
@@ -17757,7 +18032,7 @@
           "text": "Mezcla con los dedos la mantequilla con la avena, la harina, el azúcar moreno y las nueces picadas hasta formar grumos.",
           "ings": [
             "🌾 Copos de avena · 80g",
-            "🌾 Harina de trigo · 80g",
+            "🫙 Harina · 80g",
             "🧈 Mantequilla · 90g",
             "🟤 Azúcar moreno · 60g",
             "🌰 Nueces pecanas · 40g"
@@ -17795,7 +18070,8 @@
           "title": "Préparer les pommes",
           "text": "Éplucher, évider et couper les pommes, les mélanger avec la cannelle et un peu de sirop et les mettre dans un plat.",
           "ings": [
-            "🍎 Pommes · 800g"
+            "🍎 Pommes · 800g",
+            "🍯 Sirop d'érable · 1 c. à s."
           ],
           "tip": null,
           "kidsHelp": null
@@ -17805,7 +18081,7 @@
           "text": "Sabler du bout des doigts le beurre avec les flocons, la farine, le sucre roux et les noix concassées jusqu'à obtenir des grumeaux.",
           "ings": [
             "🌾 Flocons d'avoine · 80g",
-            "🌾 Farine de blé · 80g",
+            "🫙 Farine · 80g",
             "🧈 Beurre · 90g",
             "🟤 Sucre roux · 60g",
             "🌰 Noix de pécan · 40g"
@@ -18331,7 +18607,7 @@
           "text": "Beide Mehle, Natron und eine kräftige Prise Salz unterheben, dann die Schokostückchen.",
           "ings": [
             "🌾 Weizenmehl · 200g",
-            "🌾 Vollkornmehl · 50g",
+            "🍞 Vollkornmehl · 50g",
             "🍫 Zartbitter-Schokostückchen · 150g"
           ],
           "tip": null,
@@ -18379,7 +18655,7 @@
           "text": "Incorpora las dos harinas, el bicarbonato y una buena pizca de sal, y por último las pepitas de chocolate.",
           "ings": [
             "🌾 Harina de trigo · 200g",
-            "🌾 Harina integral · 50g",
+            "🍞 Harina integral · 50g",
             "🍫 Pepitas de chocolate negro · 150g"
           ],
           "tip": null,
@@ -18427,7 +18703,7 @@
           "text": "Incorporer les deux farines, le bicarbonate et une bonne pincée de sel, puis les pépites de chocolat.",
           "ings": [
             "🌾 Farine de blé · 200g",
-            "🌾 Farine complète · 50g",
+            "🍞 Farine complète · 50g",
             "🍫 Pépites de chocolat noir · 150g"
           ],
           "tip": null,

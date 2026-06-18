@@ -104,6 +104,17 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 /* ── FULL PAYWALL SCREEN ─────────────────────────── */
 .paywall-bg{display:none;position:fixed;inset:0;background:var(--nav);z-index:500;overflow-y:auto}
 .paywall-bg.open{display:block}
+.legal-bg{display:none;position:fixed;inset:0;background:var(--bg);z-index:500;overflow-y:auto}
+.legal-bg.open{display:block}
+.legal-inner{max-width:480px;margin:0 auto;padding:0 20px 40px}
+.legal-topbar{display:flex;align-items:center;padding:14px 0 20px;gap:10px}
+.legal-back{background:none;border:1px solid var(--border2);border-radius:99px;padding:6px 14px;font-size:12px;cursor:pointer;font-family:var(--fb);color:var(--text)}
+.legal-topbar h2{font-family:var(--fd);font-size:18px;font-weight:500;flex:1}
+.legal-section{margin-bottom:20px}
+.legal-section h3{font-size:13px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+.legal-section p,.legal-section a{font-size:14px;line-height:1.6;color:var(--text);display:block}
+.legal-section a{color:var(--nav)}
+.legal-divider{border:none;border-top:1px solid var(--border);margin:16px 0}
 .paywall-inner{min-height:100vh;display:flex;flex-direction:column;max-width:480px;margin:0 auto}
 .paywall-topbar{display:flex;align-items:center;gap:10px;padding:14px 16px 0}
 .paywall-back{background:rgba(255,255,255,.1);border:none;color:var(--nav-a);border-radius:99px;padding:6px 14px;font-size:12px;cursor:pointer;font-family:var(--fb)}
@@ -312,6 +323,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .shop-hdr{padding:18px 20px 4px;display:flex;align-items:center;justify-content:space-between}
 .shop-hdr h1{font-family:var(--fd);font-size:22px;font-weight:500}
 .cbtn{font-size:13px;color:var(--text3);cursor:pointer;background:none;border:none}
+.shop-from-row{padding:2px 16px 8px;display:flex;align-items:center;gap:8px}
+.shop-from-lbl{font-size:12px;color:var(--text3)}
+.shop-from-sel{font-size:13px;font-weight:500;border:none;background:var(--surface2);border-radius:8px;padding:5px 10px;color:var(--text1);cursor:pointer;outline:none}
 .shop-sub-tabs{display:flex;background:var(--surface2);border-radius:99px;padding:3px;margin:4px 16px 10px}
 .shop-stab{flex:1;text-align:center;padding:7px 6px;border-radius:99px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--text3)}
 .shop-stab.active{background:var(--nav);color:var(--nav-a)}
@@ -976,6 +990,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div class="fam-section" id="dev-section"></div>
     <button class="me-signout" onclick="signOut()" data-t="signOut">Sign out</button>
     <div id="delete-acct-wrap" style="text-align:center;margin:8px 20px 0"><a onclick="deleteAccount()" data-t="deleteAccount" style="font-size:12px;color:var(--text3);cursor:pointer;text-decoration:underline">Delete account</a></div>
+    <div style="text-align:center;margin:12px 20px 0"><a onclick="openImpressum()" style="font-size:12px;color:var(--text3);cursor:pointer;text-decoration:underline" data-t="legalNotice">Legal notice / Impressum</a></div>
     <div style="height:20px"></div>
   </div>
   <div class="screen" id="screen-discover">
@@ -1001,6 +1016,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <div class="screen" id="screen-shopping">
     <div class="shop-hdr"><h1 data-t="shoppingList">Shopping list</h1><div style="display:flex;gap:8px;align-items:center"><button class="cbtn shop-share" onclick="shareShoppingList()">↗ Share</button><button class="cbtn" onclick="clearChecked()" data-t="clearTicked">Clear ticked</button></div></div>
     <div class="shop-summary" id="shop-summary"></div>
+    <div class="shop-from-row" id="shop-from-row"></div>
     <div class="shop-sub-tabs"><div class="shop-stab active" id="stab-menu" onclick="switchShopTab('menu')" data-t="fromMenu">From Menu</div><div class="shop-stab" id="stab-generic" onclick="switchShopTab('generic')" data-t="genericItems">Generic Items</div></div>
     <div id="shop-menu-panel"><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div><div class="prog-txt" id="prog-txt"></div></div><div id="shop-delivery"></div><div id="shop-staples"></div><div id="shop-container"></div></div>
     <div id="shop-generic-panel" style="display:none"><div id="gen-container"></div></div>
@@ -1265,6 +1281,17 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 <div id="ghost"><div id="ghost-img"></div><div class="chip-name" id="ghost-name"></div></div>
 <div class="picker-bg" id="picker-bg"><div class="picker-modal"><div class="p-handle"></div><div class="p-preview" id="p-preview"></div><div class="p-q" id="p-q"></div><div class="p-opts" id="p-opts"></div><div class="p-cancel" onclick="closePicker()" data-t="cancel">Cancel</div></div></div>
 <div class="picker-bg" id="rate-bg"><div class="rate-modal"><div class="p-handle"></div><div class="rate-preview" id="rate-preview"></div><div class="rate-body"><p data-t="rateQ">How did you enjoy this meal?</p><div class="rate-stars" id="rate-stars"></div><div id="rate-fav"></div><button class="rate-submit" onclick="submitRating()" data-t="saveRating">Save rating</button></div><div class="rate-skip" onclick="closeRating()" data-t="skip">Skip</div></div></div>
+
+<div class="legal-bg" id="legal-bg">
+  <div class="legal-inner">
+    <div class="legal-topbar">
+      <button class="legal-back" onclick="closeImpressum()">← <span data-t="backWord">Back</span></button>
+      <h2 id="legal-title">Legal notice</h2>
+    </div>
+    <div id="legal-content"></div>
+  </div>
+</div>
+
 <script>
 
 // ═══════════════════════════════════════════════════
@@ -1384,11 +1411,11 @@ en:{
   welcomeSigninPre:'Already with us?',welcomeSigninLink:'Sign in',
   navPlan:'Plan',navGroceries:'Groceries',navMe:'Me',
   langHeader:'Language',meName:'Me',prefsAllergies:'⚙️ Preferences & allergies',
-  deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',
+  deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',legalNotice:'Legal notice / Impressum',
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
   facebookBtn:'Continue with Facebook',
   staplesHd:'🧂 Staples — you probably have these',staplesSub:'Tap any you need to buy and we\'ll add it to the list.',
-  everythingFor:'Everything for your',plannedMeal:'planned meal',plannedMeals:'planned meals',itemWord:'item',itemsWord:'items',
+  everythingFor:'Everything for your',plannedMeal:'planned meal',plannedMeals:'planned meals',itemWord:'item',itemsWord:'items',shoppingFrom:'Shopping from',
   tickedOff:'Ticked off',
   staplesCoverTitle:'Your staples cover it',staplesCoverSub:'Nothing extra to buy for this week. Nice.',
   noListTitle:'No list yet',noListSub:'Plan a few dinners and your grocery list builds itself.',
@@ -1506,11 +1533,11 @@ fr:{
   welcomeSigninPre:'Déjà parmi nous ?',welcomeSigninLink:'Se connecter',
   navPlan:'Planifier',navGroceries:'Courses',navMe:'Moi',
   langHeader:'Langue',meName:'Moi',prefsAllergies:'⚙️ Préférences et allergies',
-  deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',
+  deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',legalNotice:'Mentions légales / Impressum',
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
   facebookBtn:'Continuer avec Facebook',
   staplesHd:'🧂 Basiques — vous les avez sûrement',staplesSub:'Touchez ceux à acheter, on les ajoute à la liste.',
-  everythingFor:'Tout pour vos',plannedMeal:'repas planifié',plannedMeals:'repas planifiés',itemWord:'article',itemsWord:'articles',
+  everythingFor:'Tout pour vos',plannedMeal:'repas planifié',plannedMeals:'repas planifiés',itemWord:'article',itemsWord:'articles',shoppingFrom:'Courses à partir du',
   tickedOff:'Cochés',
   staplesCoverTitle:'Vos basiques suffisent',staplesCoverSub:'Rien de plus à acheter cette semaine. Parfait.',
   noListTitle:'Pas encore de liste',noListSub:'Planifiez quelques dîners et la liste se crée toute seule.',
@@ -1628,11 +1655,11 @@ es:{
   welcomeSigninPre:'¿Ya con nosotros?',welcomeSigninLink:'Iniciar sesión',
   navPlan:'Planificar',navGroceries:'Compras',navMe:'Yo',
   langHeader:'Idioma',meName:'Yo',prefsAllergies:'⚙️ Preferencias y alergias',
-  deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',
+  deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',legalNotice:'Aviso legal / Impressum',
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
   facebookBtn:'Continuar con Facebook',
   staplesHd:'🧂 Básicos — seguro que ya los tienes',staplesSub:'Toca los que necesites comprar y los añadimos a la lista.',
-  everythingFor:'Todo para tus',plannedMeal:'comida planificada',plannedMeals:'comidas planificadas',itemWord:'artículo',itemsWord:'artículos',
+  everythingFor:'Todo para tus',plannedMeal:'comida planificada',plannedMeals:'comidas planificadas',itemWord:'artículo',itemsWord:'artículos',shoppingFrom:'Compra desde el',
   tickedOff:'Marcados',
   staplesCoverTitle:'Con tus básicos basta',staplesCoverSub:'Nada más que comprar esta semana. Genial.',
   noListTitle:'Aún no hay lista',noListSub:'Planifica unas cenas y la lista se crea sola.',
@@ -1724,7 +1751,7 @@ pt:{
   person:'pessoa',people:'pessoas',
   recipesFor:'Receitas para',servings:'porções',
   mealsScheduled:'refeições agendadas',openDay:'Abra um dia para atribuir refeições',
-  of:'de',itemsReady:'itens prontos',
+  of:'de',itemsReady:'itens prontos',shoppingFrom:'Compras a partir de',
   goodMorning:'Bom dia! 🌱',goodAfternoon:'Boa tarde! 🌿',goodEvening:'Boa noite! 🍃',
   noBreakfast:'Sem café da manhã planejado',noLunch:'Sem almoço planejado',noDinner:'Sem jantar planejado',
   planIt:'Planejar →',allReviewed:'Tudo revisado!',savedDishes:'pratos salvos',
@@ -1796,11 +1823,11 @@ de:{
   welcomeSigninPre:'Schon dabei?',welcomeSigninLink:'Anmelden',
   navPlan:'Planen',navGroceries:'Einkauf',navMe:'Ich',
   langHeader:'Sprache',meName:'Ich',prefsAllergies:'⚙️ Vorlieben & Allergien',
-  deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',
+  deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',legalNotice:'Impressum',
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
   facebookBtn:'Mit Facebook fortfahren',
   staplesHd:'🧂 Basics — hast du wahrscheinlich',staplesSub:'Tippe an, was du kaufen musst, wir setzen es auf die Liste.',
-  everythingFor:'Alles für deine',plannedMeal:'geplante Mahlzeit',plannedMeals:'geplante Mahlzeiten',itemWord:'Artikel',itemsWord:'Artikel',
+  everythingFor:'Alles für deine',plannedMeal:'geplante Mahlzeit',plannedMeals:'geplante Mahlzeiten',itemWord:'Artikel',itemsWord:'Artikel',shoppingFrom:'Einkauf ab',
   tickedOff:'Abgehakt',
   staplesCoverTitle:'Deine Basics reichen',staplesCoverSub:'Diese Woche nichts extra zu kaufen. Schön.',
   noListTitle:'Noch keine Liste',noListSub:'Plane ein paar Abendessen und die Liste entsteht von selbst.',
@@ -2247,6 +2274,7 @@ let state={
   cooked:{},        // {'YYYY-MM-DD_MealType': true}
   skippedDays:{},   // {'YYYY-MM-DD': true} — days the user chose not to plan
   confirmed:{},     // {'YYYY-MM-DD': true} — dinner accepted ("Chosen") for that day
+  shoppingFrom:'',  // 'YYYY-MM-DD' cutoff — only plan entries ≥ this date feed the list
 };
 
 const STABLE=7;
@@ -2459,11 +2487,27 @@ async function continueAsGuest(){
   hideLoading();
   showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤',plan:'guest'}});
 }
+function openImpressum(){
+  const CONTENT={
+    de:`<div class="legal-section"><h3>Angaben gemäß § 5 TMG</h3><p>Judith Nigge<br>Schleiferweg 25<br>50127 Bergheim<br>Deutschland</p></div><hr class="legal-divider"><div class="legal-section"><h3>Kontakt</h3><p>E-Mail: <a href="mailto:info@menja-fresh.com">info@menja-fresh.com</a></p></div><hr class="legal-divider"><div class="legal-section"><h3>Haftungshinweis</h3><p>Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte externer Links. Für den Inhalt der verlinkten Seiten sind ausschließlich deren Betreiber verantwortlich.</p></div><hr class="legal-divider"><div class="legal-section"><h3>Datenschutz</h3><p>Die Nutzung dieser App setzt die Akzeptanz unserer Datenschutzrichtlinie voraus. Wir speichern nur die Daten, die für den Betrieb der App erforderlich sind. Es werden keine Daten an Dritte verkauft.</p></div>`,
+    fr:`<div class="legal-section"><h3>Éditeur</h3><p>Judith Nigge<br>Schleiferweg 25<br>50127 Bergheim<br>Allemagne</p></div><hr class="legal-divider"><div class="legal-section"><h3>Contact</h3><p>E-mail : <a href="mailto:info@menja-fresh.com">info@menja-fresh.com</a></p></div><hr class="legal-divider"><div class="legal-section"><h3>Hébergement</h3><p>L'application est hébergée via des services cloud basés dans l'Union Européenne.</p></div><hr class="legal-divider"><div class="legal-section"><h3>Données personnelles</h3><p>Les données collectées sont utilisées uniquement pour le fonctionnement de l'application et ne sont pas transmises à des tiers.</p></div>`,
+    es:`<div class="legal-section"><h3>Titular</h3><p>Judith Nigge<br>Schleiferweg 25<br>50127 Bergheim<br>Alemania</p></div><hr class="legal-divider"><div class="legal-section"><h3>Contacto</h3><p>Correo electrónico: <a href="mailto:info@menja-fresh.com">info@menja-fresh.com</a></p></div><hr class="legal-divider"><div class="legal-section"><h3>Protección de datos</h3><p>Los datos recopilados se utilizan únicamente para el funcionamiento de la aplicación y no se transmiten a terceros.</p></div>`,
+    en:`<div class="legal-section"><h3>Operator</h3><p>Judith Nigge<br>Schleiferweg 25<br>50127 Bergheim<br>Germany</p></div><hr class="legal-divider"><div class="legal-section"><h3>Contact</h3><p>Email: <a href="mailto:info@menja-fresh.com">info@menja-fresh.com</a></p></div><hr class="legal-divider"><div class="legal-section"><h3>Privacy</h3><p>Data collected is used solely for the operation of the app and is not shared with third parties.</p></div>`,
+  };
+  const titles={de:'Impressum',fr:'Mentions légales',es:'Aviso legal',en:'Legal notice'};
+  const l=lang||'en';
+  document.getElementById('legal-title').textContent=titles[l]||titles.en;
+  document.getElementById('legal-content').innerHTML=CONTENT[l]||CONTENT.en;
+  document.getElementById('legal-bg').classList.add('open');
+  window.scrollTo(0,0);
+}
+function closeImpressum(){document.getElementById('legal-bg').classList.remove('open');}
+
 async function signOut(){
   isGuest=false;
   try{localStorage.removeItem('menja_guest');}catch(e){}
   if(currentUser&&currentUser.id!=='guest')await sb.auth.signOut();
-  state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{}};
+  state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
   showWelcome();
 }
 
@@ -2688,7 +2732,9 @@ function toggleStaple(id){
 }
 function rebuildShopping(){
   const ex={...state.shopping};const totals={};
-  Object.values(state.plan).forEach(dm=>{
+  const cutoff=state.shoppingFrom||dateKey(new Date());
+  Object.entries(state.plan).forEach(([dateStr,dm])=>{
+    if(dateStr<cutoff)return;
     Object.values(dm).forEach(slot=>{
       if(!slot||!slot.dishId)return;
       const dish=getDish(slot.dishId);if(!dish)return;
@@ -2723,6 +2769,7 @@ function rebuildShopping(){
   });
   state.shopping=nl;save();
 }
+function setShoppingFrom(val){state.shoppingFrom=val;save();renderShopping();}
 function addCustomItem(){
   const inp=document.getElementById('custom-item-input');if(!inp)return;
   const v=inp.value.trim();if(!v)return;
@@ -2774,7 +2821,26 @@ function renderStaples(){
   </div>`;
 }
 function renderShopping(){
+  // Ensure shoppingFrom is never in the past (e.g. after a new day starts)
+  const todayKey=dateKey(new Date());
+  if(!state.shoppingFrom||state.shoppingFrom<todayKey)state.shoppingFrom=todayKey;
   rebuildShopping();
+  // ── Date picker ────────────────────────────────────────────────────────────
+  const rowEl=document.getElementById('shop-from-row');
+  if(rowEl){
+    // Collect all dates from today onwards that have at least one meal
+    const plannedDates=Object.entries(state.plan)
+      .filter(([d,dm])=>d>=todayKey&&Object.values(dm).some(s=>s&&s.dishId))
+      .map(([d])=>d).sort();
+    if(plannedDates.length>1){
+      const opts=plannedDates.map(d=>{
+        const dt=new Date(d+'T00:00:00');
+        const lbl=d===todayKey?t('todayWord'):`${dow(dt)} ${dt.getDate()} ${mon(dt)}`;
+        return`<option value="${d}"${state.shoppingFrom===d?' selected':''}>${lbl}</option>`;
+      }).join('');
+      rowEl.innerHTML=`<span class="shop-from-lbl">${t('shoppingFrom')}:</span><select class="shop-from-sel" onchange="setShoppingFrom(this.value)">${opts}</select>`;
+    }else{rowEl.innerHTML='';}
+  }
   const items=Object.entries(state.shopping);
   const total=items.length;const chk=items.filter(([,v])=>v.checked).length;
   document.getElementById('prog-fill').style.width=total?Math.round(chk/total*100)+'%':'0%';
@@ -4754,7 +4820,7 @@ async function init(){
       hideLoading();
       showApp(session.user);
     }else if(event==='SIGNED_OUT'){
-      state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{}};
+      state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
       showWelcome();
     }
   });
