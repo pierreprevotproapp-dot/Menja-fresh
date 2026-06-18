@@ -308,6 +308,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .shop-hdr{padding:18px 20px 4px;display:flex;align-items:center;justify-content:space-between}
 .shop-hdr h1{font-family:var(--fd);font-size:22px;font-weight:500}
 .cbtn{font-size:13px;color:var(--text3);cursor:pointer;background:none;border:none}
+.shop-from-row{padding:2px 16px 8px;display:flex;align-items:center;gap:8px}
+.shop-from-lbl{font-size:12px;color:var(--text3)}
+.shop-from-sel{font-size:13px;font-weight:500;border:none;background:var(--surface2);border-radius:8px;padding:5px 10px;color:var(--text1);cursor:pointer;outline:none}
 .shop-sub-tabs{display:flex;background:var(--surface2);border-radius:99px;padding:3px;margin:4px 16px 10px}
 .shop-stab{flex:1;text-align:center;padding:7px 6px;border-radius:99px;font-size:12px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--text3)}
 .shop-stab.active{background:var(--nav);color:var(--nav-a)}
@@ -998,6 +1001,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <div class="screen" id="screen-shopping">
     <div class="shop-hdr"><h1 data-t="shoppingList">Shopping list</h1><div style="display:flex;gap:8px;align-items:center"><button class="cbtn shop-share" onclick="shareShoppingList()">↗ Share</button><button class="cbtn" onclick="clearChecked()" data-t="clearTicked">Clear ticked</button></div></div>
     <div class="shop-summary" id="shop-summary"></div>
+    <div class="shop-from-row" id="shop-from-row"></div>
     <div class="shop-sub-tabs"><div class="shop-stab active" id="stab-menu" onclick="switchShopTab('menu')" data-t="fromMenu">From Menu</div><div class="shop-stab" id="stab-generic" onclick="switchShopTab('generic')" data-t="genericItems">Generic Items</div></div>
     <div id="shop-menu-panel"><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div><div class="prog-txt" id="prog-txt"></div></div><div id="shop-delivery"></div><div id="shop-staples"></div><div id="shop-container"></div></div>
     <div id="shop-generic-panel" style="display:none"><div id="gen-container"></div></div>
@@ -1384,7 +1388,7 @@ en:{
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
   facebookBtn:'Continue with Facebook',
   staplesHd:'🧂 Staples — you probably have these',staplesSub:'Tap any you need to buy and we\'ll add it to the list.',
-  everythingFor:'Everything for your',plannedMeal:'planned meal',plannedMeals:'planned meals',itemWord:'item',itemsWord:'items',
+  everythingFor:'Everything for your',plannedMeal:'planned meal',plannedMeals:'planned meals',itemWord:'item',itemsWord:'items',shoppingFrom:'Shopping from',
   tickedOff:'Ticked off',
   staplesCoverTitle:'Your staples cover it',staplesCoverSub:'Nothing extra to buy for this week. Nice.',
   noListTitle:'No list yet',noListSub:'Plan a few dinners and your grocery list builds itself.',
@@ -1505,7 +1509,7 @@ fr:{
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
   facebookBtn:'Continuer avec Facebook',
   staplesHd:'🧂 Basiques — vous les avez sûrement',staplesSub:'Touchez ceux à acheter, on les ajoute à la liste.',
-  everythingFor:'Tout pour vos',plannedMeal:'repas planifié',plannedMeals:'repas planifiés',itemWord:'article',itemsWord:'articles',
+  everythingFor:'Tout pour vos',plannedMeal:'repas planifié',plannedMeals:'repas planifiés',itemWord:'article',itemsWord:'articles',shoppingFrom:'Courses à partir du',
   tickedOff:'Cochés',
   staplesCoverTitle:'Vos basiques suffisent',staplesCoverSub:'Rien de plus à acheter cette semaine. Parfait.',
   noListTitle:'Pas encore de liste',noListSub:'Planifiez quelques dîners et la liste se crée toute seule.',
@@ -1626,7 +1630,7 @@ es:{
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
   facebookBtn:'Continuar con Facebook',
   staplesHd:'🧂 Básicos — seguro que ya los tienes',staplesSub:'Toca los que necesites comprar y los añadimos a la lista.',
-  everythingFor:'Todo para tus',plannedMeal:'comida planificada',plannedMeals:'comidas planificadas',itemWord:'artículo',itemsWord:'artículos',
+  everythingFor:'Todo para tus',plannedMeal:'comida planificada',plannedMeals:'comidas planificadas',itemWord:'artículo',itemsWord:'artículos',shoppingFrom:'Compra desde el',
   tickedOff:'Marcados',
   staplesCoverTitle:'Con tus básicos basta',staplesCoverSub:'Nada más que comprar esta semana. Genial.',
   noListTitle:'Aún no hay lista',noListSub:'Planifica unas cenas y la lista se crea sola.',
@@ -1718,7 +1722,7 @@ pt:{
   person:'pessoa',people:'pessoas',
   recipesFor:'Receitas para',servings:'porções',
   mealsScheduled:'refeições agendadas',openDay:'Abra um dia para atribuir refeições',
-  of:'de',itemsReady:'itens prontos',
+  of:'de',itemsReady:'itens prontos',shoppingFrom:'Compras a partir de',
   goodMorning:'Bom dia! 🌱',goodAfternoon:'Boa tarde! 🌿',goodEvening:'Boa noite! 🍃',
   noBreakfast:'Sem café da manhã planejado',noLunch:'Sem almoço planejado',noDinner:'Sem jantar planejado',
   planIt:'Planejar →',allReviewed:'Tudo revisado!',savedDishes:'pratos salvos',
@@ -1793,7 +1797,7 @@ de:{
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
   facebookBtn:'Mit Facebook fortfahren',
   staplesHd:'🧂 Basics — hast du wahrscheinlich',staplesSub:'Tippe an, was du kaufen musst, wir setzen es auf die Liste.',
-  everythingFor:'Alles für deine',plannedMeal:'geplante Mahlzeit',plannedMeals:'geplante Mahlzeiten',itemWord:'Artikel',itemsWord:'Artikel',
+  everythingFor:'Alles für deine',plannedMeal:'geplante Mahlzeit',plannedMeals:'geplante Mahlzeiten',itemWord:'Artikel',itemsWord:'Artikel',shoppingFrom:'Einkauf ab',
   tickedOff:'Abgehakt',
   staplesCoverTitle:'Deine Basics reichen',staplesCoverSub:'Diese Woche nichts extra zu kaufen. Schön.',
   noListTitle:'Noch keine Liste',noListSub:'Plane ein paar Abendessen und die Liste entsteht von selbst.',
@@ -2240,6 +2244,7 @@ let state={
   cooked:{},        // {'YYYY-MM-DD_MealType': true}
   skippedDays:{},   // {'YYYY-MM-DD': true} — days the user chose not to plan
   confirmed:{},     // {'YYYY-MM-DD': true} — dinner accepted ("Chosen") for that day
+  shoppingFrom:'',  // 'YYYY-MM-DD' cutoff — only plan entries ≥ this date feed the list
 };
 
 const STABLE=7;
@@ -2456,7 +2461,7 @@ async function signOut(){
   isGuest=false;
   try{localStorage.removeItem('menja_guest');}catch(e){}
   if(currentUser&&currentUser.id!=='guest')await sb.auth.signOut();
-  state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{}};
+  state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
   showWelcome();
 }
 
@@ -2681,7 +2686,9 @@ function toggleStaple(id){
 }
 function rebuildShopping(){
   const ex={...state.shopping};const totals={};
-  Object.values(state.plan).forEach(dm=>{
+  const cutoff=state.shoppingFrom||dateKey(new Date());
+  Object.entries(state.plan).forEach(([dateStr,dm])=>{
+    if(dateStr<cutoff)return;
     Object.values(dm).forEach(slot=>{
       if(!slot||!slot.dishId)return;
       const dish=getDish(slot.dishId);if(!dish)return;
@@ -2716,6 +2723,7 @@ function rebuildShopping(){
   });
   state.shopping=nl;save();
 }
+function setShoppingFrom(val){state.shoppingFrom=val;save();renderShopping();}
 function addCustomItem(){
   const inp=document.getElementById('custom-item-input');if(!inp)return;
   const v=inp.value.trim();if(!v)return;
@@ -2767,7 +2775,26 @@ function renderStaples(){
   </div>`;
 }
 function renderShopping(){
+  // Ensure shoppingFrom is never in the past (e.g. after a new day starts)
+  const todayKey=dateKey(new Date());
+  if(!state.shoppingFrom||state.shoppingFrom<todayKey)state.shoppingFrom=todayKey;
   rebuildShopping();
+  // ── Date picker ────────────────────────────────────────────────────────────
+  const rowEl=document.getElementById('shop-from-row');
+  if(rowEl){
+    // Collect all dates from today onwards that have at least one meal
+    const plannedDates=Object.entries(state.plan)
+      .filter(([d,dm])=>d>=todayKey&&Object.values(dm).some(s=>s&&s.dishId))
+      .map(([d])=>d).sort();
+    if(plannedDates.length>1){
+      const opts=plannedDates.map(d=>{
+        const dt=new Date(d+'T00:00:00');
+        const lbl=d===todayKey?t('todayWord'):`${dow(dt)} ${dt.getDate()} ${mon(dt)}`;
+        return`<option value="${d}"${state.shoppingFrom===d?' selected':''}>${lbl}</option>`;
+      }).join('');
+      rowEl.innerHTML=`<span class="shop-from-lbl">${t('shoppingFrom')}:</span><select class="shop-from-sel" onchange="setShoppingFrom(this.value)">${opts}</select>`;
+    }else{rowEl.innerHTML='';}
+  }
   const items=Object.entries(state.shopping);
   const total=items.length;const chk=items.filter(([,v])=>v.checked).length;
   document.getElementById('prog-fill').style.width=total?Math.round(chk/total*100)+'%':'0%';
@@ -4747,7 +4774,7 @@ async function init(){
       hideLoading();
       showApp(session.user);
     }else if(event==='SIGNED_OUT'){
-      state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{}};
+      state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
       showWelcome();
     }
   });
