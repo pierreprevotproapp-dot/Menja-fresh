@@ -3889,9 +3889,9 @@ function startBrowse(key,type){
 }
 function startBrowseEasy(key,type){
   if(!DISHES.length)return;
-  browse={key,type,cat:'quick',idx:0,_cache:null,_cacheCat:null};
-  renderPlan();
-  setTimeout(()=>{const el=document.getElementById('ibrowse-card');if(el)el.scrollIntoView({block:'center',behavior:'smooth'});},40);
+  const quickList=shuffleArr(dishesForCat('quick',type).slice());
+  if(!quickList.length)return;
+  chooseDish(key,type,quickList[0].id);
 }
 // Shuffled once per session so you always start somewhere new, but stable while you swipe.
 function browseListNow(){
