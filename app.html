@@ -665,7 +665,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .shop-empty-sub{font-size:13px;color:var(--text2);line-height:1.5}
 .ticked-scat{opacity:.7}
 .ticked-scat .clbl{color:var(--text3)}
-/* ── MACRO CARD (premium) ────────────────────── */
+/* ── MACRO CARD ──────────────────────────────── */
 .macro-card{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:14px 16px;margin:0 0 14px}
 .macro-hd{font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px}
 .macro-sub{font-size:11px;font-weight:400;color:var(--text3)}
@@ -674,6 +674,32 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .macro-ring{position:relative;width:62px;height:62px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),#e6ece2 0);margin:0 auto}
 .macro-ring::after{content:'';position:absolute;inset:6px;background:var(--surface);border-radius:50%}
 .macro-ring span{position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:15px;font-weight:500;color:var(--text)}
+.macro-body{display:flex;gap:14px;align-items:flex-start}
+.macro-kcal-col{text-align:center;flex-shrink:0}
+.macro-kcal-lbl{font-size:10px;color:var(--text3);margin-top:5px}
+.macro-bars-col{flex:1;min-width:0}
+.macro-bar-row{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.macro-bar-lbl{font-size:11px;color:var(--text3);width:48px;flex-shrink:0}
+.macro-bar-track{flex:1;height:6px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.macro-bar-fill{height:100%;border-radius:99px;transition:width .5s ease}
+.macro-bar-val{font-size:11px;color:var(--text2);min-width:58px;text-align:right;white-space:nowrap}
+.macro-bar-protein .macro-bar-fill{background:#C8622A}
+.macro-bar-carbs .macro-bar-fill{background:#4A90D9}
+.macro-bar-fat .macro-bar-fill{background:#F5A623}
+.macro-goal-met{margin-top:10px;background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border-radius:var(--rsm);padding:8px 12px;font-size:12px;font-weight:600;color:#2E7D32;text-align:center;animation:pop .35s ease}
+@keyframes pop{0%{transform:scale(.92);opacity:.6}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+/* ── RECIPE NUTRITION BARS ───────────────────── */
+.rd-nut-v2{margin-top:8px}
+.rd-nut-row{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.rd-nut-lbl{font-size:11px;color:var(--text3);width:52px;flex-shrink:0}
+.rd-nut-track{flex:1;height:5px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.rd-nut-fill{height:100%;border-radius:99px}
+.rd-nut-fill.protein{background:#C8622A}
+.rd-nut-fill.carbs{background:#4A90D9}
+.rd-nut-fill.fat{background:#F5A623}
+.rd-nut-fill.kcal{background:#2D5A3D}
+.rd-nut-val{font-size:11px;font-weight:600;color:var(--text2);min-width:36px;text-align:right}
+.rd-nut-pct{font-size:10px;color:var(--text3);min-width:34px;text-align:right}
 .macro-ring-lbl{font-size:10px;color:var(--text3);margin-top:5px}
 .macro-mini{text-align:center;min-width:46px}
 .macro-mini-v{font-family:var(--fd);font-size:17px;font-weight:500;color:var(--text)}
@@ -1139,8 +1165,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
           </div>
         </div>
         <div class="pw-dots">
-          <div class="pw-dot" data-t="pwPrem1">📊 Macro tracking — calories &amp; protein, with daily goals</div>
-          <div class="pw-dot" data-t="pwPrem2">💶 Budget mode — your week's cost, per day &amp; per serving</div>
+          <div class="pw-dot" data-t="pwPrem1">💶 Budget mode — your week's cost, per day &amp; per serving</div>
+          <div class="pw-dot" data-t="pwPrem2">📊 Advanced macros — carb &amp; fat goals, weekly trends</div>
           <div class="pw-dot" data-t="pwPrem3">🗓️ Plan up to 4 weeks ahead</div>
           <div class="pw-dot" data-t="pwPrem4">📷 AI fridge scanner</div>
           <div class="pw-dot" data-t="pwPrem5">☁️ Sync across all your devices</div>
@@ -1437,7 +1463,7 @@ en:{
   planNextTitle:'Plan next week?',planNextSub:'A calm few taps now = a sorted week ahead.',planNextBtn:'Plan next week →',
   letsSortDinner:"Let's sort dinner",nothingPlannedYet:'Nothing planned yet',whenTonight:'tonight',whenThisDay:'this day',pickTonight:"Pick tonight's meal →",lazyDayBasic:'Lazy day? Add a 5-min basic',
   emptyTodaySentence:'A few taps now and {when} is one less thing to think about.',
-  macroLockTitle:'Macro tracking',macroLockSub:'Calories & protein for every day — Premium',unlockWord:'Unlock',
+  macroLockTitle:'Macro tracking',macroLockSub:'Calories & protein for every day — Premium',unlockWord:'Unlock',proteinGoalMet:'Protein goal reached today!',ofDailyGoal:'of daily goal',
   todaysNutrition:"Today's nutrition",perPerson:'per person',carbsWord:'carbs',fatWord:'fat',setDailyGoals:'＋ Set daily goals',
   budgetLockTitle:'Budget mode',budgetLockSub:"See your week's cost & a gentle budget — Premium",
   estGroceries:'estimated groceries this week',setBudgetBtn:'＋ Set budget',budgetBtnLbl:'Budget',budgetNote:'A gentle estimate to help you plan — not exact prices.',
@@ -1450,7 +1476,7 @@ en:{
   maybeLater:'Maybe later — stay on Free',priceYear:'€44/year',priceMonth:'€4.99/mo',trialYear:'Start free trial — then €44/year',trialMonth:'Start free trial — then €4.99/month',hideComparison:'Hide comparison ↑',compareAll:'Compare all features ↓',
   pwBack:'← Back',pwTitle:'Plans & pricing',pwHeroTitle:'Eat well & spend smart',pwHeroSub:'Everything in Free — plus the tools that save you money and help you eat well.',
   pwFreeName:'🌿 Free',pwAlwaysFree:'Always free',pwFree1:'Plan your whole week in minutes',pwFree2:'Swap & choose meals, skip any day',pwFree3:'Automatic grocery list + staples',pwFree4:'Your favourites cookbook',pwFree5:"Learns your family's taste",
-  pwPremiumName:'⭐ Premium',pwBest:'BEST',pwPrem1:'📊 Macro tracking — calories & protein, with daily goals',pwPrem2:"💶 Budget mode — your week's cost, per day & per serving",pwPrem3:'🗓️ Plan up to 4 weeks ahead',pwPrem4:'📷 AI fridge scanner',pwPrem5:'☁️ Sync across all your devices',
+  pwPremiumName:'⭐ Premium',pwBest:'BEST',pwPrem1:"💶 Budget mode — your week's cost, per day & per serving",pwPrem2:'📊 Advanced macros — carb & fat goals, weekly trends',pwPrem3:'🗓️ Plan up to 4 weeks ahead',pwPrem4:'📷 AI fridge scanner',pwPrem5:'☁️ Sync across all your devices',
   perMonth:'per month',perYear:'per year',save27:'Save 27%',pwCta:'Try Premium free for 7 days',pwTerms:'7-day free trial · cancel anytime · no hidden fees',
   weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",
   setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupDietQ:'Any diet?',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
@@ -1559,7 +1585,7 @@ fr:{
   planNextTitle:'Planifier la semaine prochaine ?',planNextSub:'Quelques touches maintenant = une semaine réglée.',planNextBtn:'Planifier la semaine prochaine →',
   letsSortDinner:'On règle le dîner',nothingPlannedYet:'Rien de planifié',whenTonight:'ce soir',whenThisDay:'ce jour',pickTonight:'Choisir le dîner →',lazyDayBasic:'Jour flemme ? Un basique en 5 min',
   emptyTodaySentence:'Quelques touches et {when} est une chose de moins à gérer.',
-  macroLockTitle:'Suivi des macros',macroLockSub:'Calories et protéines chaque jour — Premium',unlockWord:'Débloquer',
+  macroLockTitle:'Suivi des macros',macroLockSub:'Calories et protéines chaque jour — Premium',unlockWord:'Débloquer',proteinGoalMet:'Objectif protéines atteint !',ofDailyGoal:'de l\'objectif journalier',
   todaysNutrition:'Nutrition du jour',perPerson:'par personne',carbsWord:'glucides',fatWord:'lipides',setDailyGoals:'＋ Définir des objectifs',
   budgetLockTitle:'Mode budget',budgetLockSub:'Voyez le coût de la semaine et un budget en douceur — Premium',
   estGroceries:'courses estimées cette semaine',setBudgetBtn:'＋ Définir un budget',budgetBtnLbl:'Budget',budgetNote:'Une estimation indicative pour planifier — pas des prix exacts.',
@@ -1572,7 +1598,7 @@ fr:{
   maybeLater:'Plus tard — rester en gratuit',priceYear:'44 €/an',priceMonth:'4,99 €/mois',trialYear:'Essai gratuit — puis 44 €/an',trialMonth:'Essai gratuit — puis 4,99 €/mois',hideComparison:'Masquer la comparaison ↑',compareAll:'Comparer les fonctions ↓',
   pwBack:'← Retour',pwTitle:'Offres et tarifs',pwHeroTitle:'Bien manger & dépenser malin',pwHeroSub:'Tout le gratuit — plus les outils qui font économiser et aident à bien manger.',
   pwFreeName:'🌿 Gratuit',pwAlwaysFree:'Toujours gratuit',pwFree1:'Planifiez toute la semaine en minutes',pwFree2:'Changez & choisissez les repas, sautez un jour',pwFree3:'Liste de courses automatique + basiques',pwFree4:'Votre carnet de favoris',pwFree5:'Apprend les goûts de votre famille',
-  pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'📊 Suivi des macros — calories & protéines, avec objectifs',pwPrem2:'💶 Mode budget — coût de la semaine, par jour & par portion',pwPrem3:'🗓️ Planifiez jusqu\'à 4 semaines à l\'avance',pwPrem4:'📷 Scanner de frigo IA',pwPrem5:'☁️ Synchro sur tous vos appareils',
+  pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Mode budget — coût de la semaine, par jour & par portion',pwPrem2:'📊 Macros avancés — objectifs glucides & lipides, tendances',pwPrem3:'🗓️ Planifiez jusqu\'à 4 semaines à l\'avance',pwPrem4:'📷 Scanner de frigo IA',pwPrem5:'☁️ Synchro sur tous vos appareils',
   perMonth:'par mois',perYear:'par an',save27:'-27 %',pwCta:'Essayer Premium gratuitement 7 jours',pwTerms:'Essai gratuit 7 jours · annulable à tout moment · sans frais cachés',
   weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',
   setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupDietQ:'Un régime ?',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
@@ -1681,7 +1707,7 @@ es:{
   planNextTitle:'¿Planificar la próxima semana?',planNextSub:'Unos toques ahora = una semana resuelta.',planNextBtn:'Planificar la próxima semana →',
   letsSortDinner:'Resolvamos la cena',nothingPlannedYet:'Nada planificado',whenTonight:'esta noche',whenThisDay:'este día',pickTonight:'Elegir la cena →',lazyDayBasic:'¿Día perezoso? Un básico de 5 min',
   emptyTodaySentence:'Unos toques ahora y {when} es una cosa menos en que pensar.',
-  macroLockTitle:'Seguimiento de macros',macroLockSub:'Calorías y proteínas cada día — Premium',unlockWord:'Desbloquear',
+  macroLockTitle:'Seguimiento de macros',macroLockSub:'Calorías y proteínas cada día — Premium',unlockWord:'Desbloquear',proteinGoalMet:'¡Objetivo de proteínas alcanzado!',ofDailyGoal:'del objetivo diario',
   todaysNutrition:'Nutrición de hoy',perPerson:'por persona',carbsWord:'carbohidratos',fatWord:'grasas',setDailyGoals:'＋ Fijar objetivos diarios',
   budgetLockTitle:'Modo presupuesto',budgetLockSub:'Ve el coste de la semana y un presupuesto suave — Premium',
   estGroceries:'compra estimada esta semana',setBudgetBtn:'＋ Fijar presupuesto',budgetBtnLbl:'Presupuesto',budgetNote:'Una estimación orientativa para planificar — no precios exactos.',
@@ -1694,7 +1720,7 @@ es:{
   maybeLater:'Quizá más tarde — seguir gratis',priceYear:'44 €/año',priceMonth:'4,99 €/mes',trialYear:'Prueba gratis — luego 44 €/año',trialMonth:'Prueba gratis — luego 4,99 €/mes',hideComparison:'Ocultar comparación ↑',compareAll:'Comparar funciones ↓',
   pwBack:'← Atrás',pwTitle:'Planes y precios',pwHeroTitle:'Come bien y gasta con cabeza',pwHeroSub:'Todo lo gratis — más las herramientas que te ahorran dinero y te ayudan a comer bien.',
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Siempre gratis',pwFree1:'Planifica toda la semana en minutos',pwFree2:'Cambia y elige comidas, salta cualquier día',pwFree3:'Lista de la compra automática + básicos',pwFree4:'Tu recetario de favoritos',pwFree5:'Aprende los gustos de tu familia',
-  pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'📊 Seguimiento de macros — calorías y proteínas, con objetivos',pwPrem2:'💶 Modo presupuesto — coste de la semana, por día y por ración',pwPrem3:'🗓️ Planifica hasta 4 semanas',pwPrem4:'📷 Escáner de nevera con IA',pwPrem5:'☁️ Sincroniza en todos tus dispositivos',
+  pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Modo presupuesto — coste de la semana, por día y por ración',pwPrem2:'📊 Macros avanzados — objetivos de carbos & grasas, tendencias',pwPrem3:'🗓️ Planifica hasta 4 semanas',pwPrem4:'📷 Escáner de nevera con IA',pwPrem5:'☁️ Sincroniza en todos tus dispositivos',
   perMonth:'al mes',perYear:'al año',save27:'-27 %',pwCta:'Prueba Premium gratis 7 días',pwTerms:'7 días de prueba gratis · cancela cuando quieras · sin costes ocultos',
   weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',
   setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupDietQ:'¿Alguna dieta?',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
@@ -1849,7 +1875,7 @@ de:{
   planNextTitle:'Nächste Woche planen?',planNextSub:'Ein paar ruhige Tipps jetzt = eine geregelte Woche.',planNextBtn:'Nächste Woche planen →',
   letsSortDinner:'Regeln wir das Abendessen',nothingPlannedYet:'Noch nichts geplant',whenTonight:'heute Abend',whenThisDay:'dieser Tag',pickTonight:'Abendessen wählen →',lazyDayBasic:'Fauler Tag? 5-Minuten-Basic',
   emptyTodaySentence:'Ein paar Tipps jetzt und {when} ist eine Sorge weniger.',
-  macroLockTitle:'Makro-Tracking',macroLockSub:'Kalorien & Eiweiß für jeden Tag — Premium',unlockWord:'Freischalten',
+  macroLockTitle:'Makro-Tracking',macroLockSub:'Kalorien & Eiweiß für jeden Tag — Premium',unlockWord:'Freischalten',proteinGoalMet:'Eiweißziel heute erreicht!',ofDailyGoal:'des Tagesziels',
   todaysNutrition:'Heutige Nährwerte',perPerson:'pro Person',carbsWord:'Kohlenhydrate',fatWord:'Fett',setDailyGoals:'＋ Tagesziele festlegen',
   budgetLockTitle:'Budget-Modus',budgetLockSub:'Sieh die Wochenkosten & ein sanftes Budget — Premium',
   estGroceries:'geschätzter Einkauf diese Woche',setBudgetBtn:'＋ Budget festlegen',budgetBtnLbl:'Budget',budgetNote:'Eine grobe Schätzung zum Planen — keine exakten Preise.',
@@ -1862,7 +1888,7 @@ de:{
   maybeLater:'Vielleicht später — kostenlos bleiben',priceYear:'44 €/Jahr',priceMonth:'4,99 €/Mon.',trialYear:'Gratis testen — dann 44 €/Jahr',trialMonth:'Gratis testen — dann 4,99 €/Monat',hideComparison:'Vergleich ausblenden ↑',compareAll:'Alle Funktionen vergleichen ↓',
   pwBack:'← Zurück',pwTitle:'Tarife & Preise',pwHeroTitle:'Gut essen & clever sparen',pwHeroSub:'Alles aus Gratis — plus die Tools, die Geld sparen und gutes Essen erleichtern.',
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Immer gratis',pwFree1:'Plane die ganze Woche in Minuten',pwFree2:'Mahlzeiten tauschen & wählen, Tag überspringen',pwFree3:'Automatische Einkaufsliste + Basics',pwFree4:'Dein Favoriten-Kochbuch',pwFree5:'Lernt den Geschmack deiner Familie',
-  pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'📊 Makro-Tracking — Kalorien & Eiweiß, mit Tageszielen',pwPrem2:'💶 Budget-Modus — Wochenkosten, pro Tag & pro Portion',pwPrem3:'🗓️ Bis zu 4 Wochen im Voraus planen',pwPrem4:'📷 KI-Kühlschrank-Scanner',pwPrem5:'☁️ Synchro auf all deinen Geräten',
+  pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Budget-Modus — Wochenkosten, pro Tag & pro Portion',pwPrem2:'📊 Erweiterte Makros — Kohlenhydrat- & Fettziele, Wochentrends',pwPrem3:'🗓️ Bis zu 4 Wochen im Voraus planen',pwPrem4:'📷 KI-Kühlschrank-Scanner',pwPrem5:'☁️ Synchro auf all deinen Geräten',
   perMonth:'pro Monat',perYear:'pro Jahr',save27:'-27 %',pwCta:'Premium 7 Tage gratis testen',pwTerms:'7 Tage gratis · jederzeit kündbar · keine versteckten Kosten',
   weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',
   setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupDietQ:'Eine Ernährungsweise?',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
@@ -3309,10 +3335,6 @@ function toggleDietPref(id){
 function renderMacroGoals(){
   const el=document.getElementById('macro-goals-section');if(!el)return;
   const calcBtn=`<button class="me-link calc-open-btn" onclick="openCalc()"><span>${t('calcOpen')}</span><span class="chev">›</span></button>`;
-  if(!isPremium()){
-    el.innerHTML=`<h3>${t('nutritionGoals')}</h3>${calcBtn}<button class="me-link" onclick="openPaywall('premium')"><span>🔒 ${t('macroGoalsLocked')}</span><span class="chev">›</span></button>`;
-    return;
-  }
   const g=state.macroGoals||{};
   el.innerHTML=`<h3>${t('nutritionGoals')} <span style="font-size:11px;color:var(--text3);font-weight:400">${t('perPerson')}</span></h3>
     ${calcBtn}
@@ -3326,7 +3348,7 @@ function setMacroGoal(k,v){if(!state.macroGoals)state.macroGoals={kcal:0,protein
 // ─── Calorie & protein calculator (Mifflin–St Jeor) ───
 let calcDraft={sex:'female',age:'',height:'',weight:'',activity:1.55,goal:1.0,result:null};
 const CALC_ACT=[{v:1.2,k:'calcAct1'},{v:1.375,k:'calcAct2'},{v:1.55,k:'calcAct3'},{v:1.725,k:'calcAct4'}];
-const CALC_GOAL=[{v:0.85,k:'calcLose',p:2.0},{v:1.0,k:'calcMaintain',p:1.6},{v:1.15,k:'calcMuscle',p:2.0},{v:1.10,k:'calcGain',p:1.8}];
+const CALC_GOAL=[{v:0.85,k:'calcLose',p:2.4},{v:1.0,k:'calcMaintain',p:1.6},{v:1.15,k:'calcMuscle',p:2.2},{v:1.10,k:'calcGain',p:1.8}];
 function openCalc(){renderCalc();document.getElementById('calc-bg').classList.add('open');}
 function closeCalc(){document.getElementById('calc-bg').classList.remove('open');}
 function calcSet(k,v){calcDraft[k]=v;renderCalc();}
@@ -4394,14 +4416,25 @@ function renderRecipeDetail(id,targetId){
   }).join('');
 
   // Nutrition
-  const nut=d.nutrition?`<div class="rd-section"><div class="rd-section-title">${t('nutritionPer')}</div>
-    <div class="rd-nut">
-      <div class="rd-nitem"><div class="rd-nval">${d.nutrition.kcal}</div><div class="rd-nlbl">${t('kcal')}</div></div>
-      <div class="rd-nitem"><div class="rd-nval">${d.nutrition.protein}g</div><div class="rd-nlbl">${t('protein')}</div></div>
-      <div class="rd-nitem"><div class="rd-nval">${d.nutrition.carbs}g</div><div class="rd-nlbl">${t('carbs')}</div></div>
-      <div class="rd-nitem"><div class="rd-nval">${d.nutrition.fat}g</div><div class="rd-nlbl">${t('fat')}</div></div>
-      ${d.nutrition.fiber?`<div class="rd-nitem"><div class="rd-nval">${d.nutrition.fiber}g</div><div class="rd-nlbl">${t('fiberLbl')}</div></div>`:''}
-    </div></div>`:'';
+  const nut=(()=>{
+    if(!d.nutrition)return'';
+    const n=d.nutrition,g=state.macroGoals||{};
+    const nutBar=(cls,val,goal,label,unit)=>{
+      const pct=goal>0?Math.min(100,Math.round(val/goal*100)):0;
+      const pctTxt=goal>0?`<span class="rd-nut-pct">${pct}%</span>`:'';
+      const barW=goal>0?pct:Math.min(80,Math.round(val/4));
+      return`<div class="rd-nut-row"><span class="rd-nut-lbl">${label}</span><div class="rd-nut-track"><div class="rd-nut-fill ${cls}" style="width:${barW}%"></div></div><span class="rd-nut-val">${val}${unit}</span>${pctTxt}</div>`;
+    };
+    const goalHint=g.protein>0?`<div style="font-size:10px;color:var(--text3);margin-top:2px">% = ${t('ofDailyGoal')}</div>`:'';
+    return`<div class="rd-section"><div class="rd-section-title">${t('nutritionPer')}</div>
+      <div class="rd-nut-v2">
+        ${nutBar('kcal',n.kcal,g.kcal,t('kcal'),'')}
+        ${nutBar('protein',n.protein,g.protein,t('protein'),'g')}
+        ${nutBar('carbs',n.carbs,0,t('carbsWord'),'g')}
+        ${nutBar('fat',n.fat,0,t('fatWord'),'g')}
+        ${n.fiber?nutBar('carbs',n.fiber,0,t('fiberLbl'),'g'):''}
+      </div>${goalHint}</div>`;
+  })();
 
   const _at=(_rdTab==='macro'&&!d.nutrition)?'ing':_rdTab;   // active tab (fallback if no macros)
   dv.innerHTML=`
@@ -4595,20 +4628,31 @@ function dayMacros(key){
   return any?t:null;
 }
 function macroCardHTML(key){
-  if(!isPremium()){
-    return`<div class="macro-card locked" onclick="openPaywall('premium')"><div class="macro-lock-em">🔒</div><div class="macro-lock-mid"><div class="macro-lock-title">${t('macroLockTitle')}</div><div class="macro-lock-sub">${t('macroLockSub')}</div></div><div class="macro-lock-cta">${t('unlockWord')}</div></div>`;
-  }
   const m=dayMacros(key);if(!m)return'';
   const g=state.macroGoals||{};
-  const ring=(val,goal,label,color)=>{const pct=goal>0?Math.min(100,Math.round(val/goal*100)):0;return`<div class="macro-ring-wrap"><div class="macro-ring" style="--p:${pct};--c:${color}"><span>${Math.round(val)}</span></div><div class="macro-ring-lbl">${label}${goal>0?` · ${pct}%`:''}</div></div>`;};
-  return`<div class="macro-card"><div class="macro-hd">${t('todaysNutrition')} <span class="macro-sub">${t('perPerson')}</span></div>
-    <div class="macro-rings">
-      ${ring(m.kcal,g.kcal,t('kcal'),'#2D5A3D')}
-      ${ring(m.protein,g.protein,t('protein'),'#C8622A')}
-      <div class="macro-mini"><div class="macro-mini-v">${Math.round(m.carbs)}g</div><div class="macro-mini-l">${t('carbsWord')}</div></div>
-      <div class="macro-mini"><div class="macro-mini-v">${Math.round(m.fat)}g</div><div class="macro-mini-l">${t('fatWord')}</div></div>
+  const bar=(cls,val,goal,label,unit)=>{
+    const pct=goal>0?Math.min(100,Math.round(val/goal*100)):0;
+    const valTxt=goal>0?`${Math.round(val)}${unit} / ${goal}${unit} · ${pct}%`:`${Math.round(val)}${unit}`;
+    return`<div class="macro-bar-row ${cls}"><span class="macro-bar-lbl">${label}</span><div class="macro-bar-track"><div class="macro-bar-fill" style="width:${pct||0}%"></div></div><span class="macro-bar-val">${valTxt}</span></div>`;
+  };
+  const kcalPct=g.kcal>0?Math.min(100,Math.round(m.kcal/g.kcal*100)):0;
+  const proteinMet=g.protein>0&&m.protein>=g.protein;
+  const celebration=proteinMet?`<div class="macro-goal-met">🎉 ${t('proteinGoalMet')}</div>`:'';
+  const noGoals=!(g.kcal||g.protein)?`<div class="macro-setgoal" onclick="showTab('family')">${t('setDailyGoals')}</div>`:'';
+  return`<div class="macro-card">
+    <div class="macro-hd">${t('todaysNutrition')} <span class="macro-sub">${t('perPerson')}</span></div>
+    <div class="macro-body">
+      <div class="macro-kcal-col">
+        <div class="macro-ring" style="--p:${kcalPct};--c:#2D5A3D"><span>${Math.round(m.kcal)}</span></div>
+        <div class="macro-kcal-lbl">${t('kcal')}${g.kcal?` · ${kcalPct}%`:''}</div>
+      </div>
+      <div class="macro-bars-col">
+        ${bar('macro-bar-protein',m.protein,g.protein,t('protein'),'g')}
+        ${bar('macro-bar-carbs',m.carbs,g.carbs||0,t('carbsWord'),'g')}
+        ${bar('macro-bar-fat',m.fat,g.fat||0,t('fatWord'),'g')}
+      </div>
     </div>
-    ${!(g.kcal||g.protein)?`<div class="macro-setgoal" onclick="showTab('family')">${t('setDailyGoals')}</div>`:''}
+    ${celebration}${noGoals}
   </div>`;
 }
 
