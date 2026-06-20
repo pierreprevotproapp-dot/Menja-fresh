@@ -34,8 +34,23 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .welcome-screen{display:none;position:fixed;inset:0;background:var(--nav);z-index:820;overflow-y:auto}
 .welcome-screen.open{display:block}
 .welcome-inner{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding:0 26px calc(28px + env(safe-area-inset-bottom))}
-.welcome-hero{text-align:center;padding:52px 10px 26px}
+.welcome-hero{text-align:center;padding:34px 10px 22px}
 .welcome-leaf{width:66px;height:66px;display:block;margin:0 auto 14px}
+.welcome-brand{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:18px}
+.welcome-brand svg{width:30px;height:30px}
+.welcome-brand span{font-family:var(--fd);font-size:18px;color:#fff;font-weight:500}
+.welcome-photo{position:relative;width:100%;aspect-ratio:4/3;border-radius:24px;overflow:hidden;margin-bottom:22px;box-shadow:0 14px 44px rgba(0,0,0,.4)}
+.welcome-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.welcome-photo-fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 38%,#3a6b47,#1A2E1F)}
+.welcome-photo-fb .plate{width:58%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 42%,#fffdf7,#e9e2d2);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 32px rgba(0,0,0,.35),inset 0 -10px 24px rgba(0,0,0,.06)}
+.welcome-photo-fb .plate b{font-size:60px;line-height:1}
+.welcome-photo-fb .garnish{position:absolute;font-size:30px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.3))}
+.welcome-photo-fb .g1{top:18%;left:20%}.welcome-photo-fb .g2{top:24%;right:18%}
+.welcome-photo-fb .g3{bottom:20%;left:24%}.welcome-photo-fb .g4{bottom:16%;right:22%}
+.welcome-headline{font-family:var(--fd);font-size:30px;font-weight:600;color:#fff;line-height:1.12;margin-bottom:10px}
+.welcome-subline{font-size:15px;color:var(--nav-t);line-height:1.5;margin-bottom:14px}
+.welcome-taste{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.welcome-taste span{font-size:12px;font-weight:600;color:#fff;background:rgba(126,200,122,.16);border:1px solid rgba(126,200,122,.34);border-radius:99px;padding:6px 12px}
 .brand-mark{display:block;margin:0 auto}
 .welcome-hero h1{font-family:var(--fd);font-size:34px;font-weight:500;color:#fff;margin-bottom:8px}
 .welcome-tag{font-size:15px;color:var(--nav-t);line-height:1.5}
@@ -929,9 +944,25 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 <div class="welcome-screen" id="welcome-screen">
   <div class="welcome-inner">
     <div class="welcome-hero">
-      <svg class="welcome-leaf" viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
-      <h1>Menja Fresh</h1>
-      <p class="welcome-tag" data-t="welcomeTag">Dinner, sorted — for busy families.</p>
+      <div class="welcome-brand">
+        <svg viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
+        <span>Menja Fresh</span>
+      </div>
+      <div class="welcome-photo">
+        <img src="welcome-hero.jpg" alt="" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="welcome-photo-fb">
+          <div class="plate"><b>🥗</b></div>
+          <span class="garnish g1">🍅</span><span class="garnish g2">🌿</span>
+          <span class="garnish g3">🥑</span><span class="garnish g4">🍋</span>
+        </div>
+      </div>
+      <h1 class="welcome-headline" data-t="welcomeHeadline">Recipes 100% for you</h1>
+      <p class="welcome-subline" data-t="welcomeSubline">Your perfect meal plan in under 5 minutes — built around your taste.</p>
+      <div class="welcome-taste">
+        <span data-t="welcomeTaste1">🥗 Healthy</span>
+        <span data-t="welcomeTaste2">⚡ Simple</span>
+        <span data-t="welcomeTaste3">🌈 Varied</span>
+      </div>
     </div>
     <div class="welcome-points">
       <div class="welcome-point"><span class="wp-em">🧘</span><div><div class="wp-t" data-t="wp1t">Less mental load</div><div class="wp-d" data-t="wp1d">Your week planned in minutes — no nightly "what's for dinner?"</div></div></div>
@@ -1495,6 +1526,7 @@ en:{
   genericIntro:'Tap items to add to your list',inPantry:'In pantry',
   appleBtn:'Continue with Apple',guestLimits:'Guest: 4 dishes · 3-day planner',freeAccountTitle:'Free account',freeAccountDesc:'10 dishes, full week planner, sync across devices',premiumCTA:"Unlock Premium",
   welcomeTag:'Dinner, sorted — for busy families.',
+  welcomeHeadline:'Recipes 100% for you',welcomeSubline:'Your perfect meal plan in under 5 minutes — built around your taste.',welcomeTaste1:'🥗 Healthy',welcomeTaste2:'⚡ Simple',welcomeTaste3:'🌈 Varied',
   wp1t:'Less mental load',wp1d:'Your week planned in minutes — no nightly "what\'s for dinner?"',
   wp2t:'Automatic grocery list & delivery',wp2d:'Built from your meals, sorted by aisle.',
   wp3t:"Meals you'll actually love",wp3d:'Real variety — never the same week twice.',
@@ -1618,6 +1650,7 @@ fr:{
   genericIntro:'Tapez pour ajouter à votre liste',inPantry:'En garde-manger',
   appleBtn:'Continuer avec Apple',guestLimits:'Invité : 4 plats · Planificateur 3 jours',freeAccountTitle:'Compte gratuit',freeAccountDesc:'10 plats, planificateur semaine complète, synchronisation',premiumCTA:'Débloquer Premium',
   welcomeTag:'Le dîner, réglé — pour les familles pressées.',
+  welcomeHeadline:'Des recettes 100% pour toi',welcomeSubline:'Ton plan de repas parfait en moins de 5 minutes — adapté à tes goûts.',welcomeTaste1:'🥗 Sain',welcomeTaste2:'⚡ Simple',welcomeTaste3:'🌈 Varié',
   wp1t:'Moins de charge mentale',wp1d:'Votre semaine planifiée en minutes — fini le « qu\'est-ce qu\'on mange ? » du soir',
   wp2t:'Liste de courses & livraison automatiques',wp2d:'Créée à partir de vos repas, triée par rayon.',
   wp3t:'Des repas que vous aimerez vraiment',wp3d:'De la vraie variété — jamais deux fois la même semaine.',
@@ -1741,6 +1774,7 @@ es:{
   genericIntro:'Toca para añadir a tu lista',inPantry:'En despensa',
   appleBtn:'Continuar con Apple',guestLimits:'Invitado: 4 platos · Planificador 3 días',freeAccountTitle:'Cuenta gratuita',freeAccountDesc:'10 platos, planificador semana completa, sincronización',premiumCTA:'Desbloquear Premium',
   welcomeTag:'La cena, resuelta — para familias con prisa.',
+  welcomeHeadline:'Recetas 100% para ti',welcomeSubline:'Tu plan de comidas perfecto en menos de 5 minutos — a tu gusto.',welcomeTaste1:'🥗 Sano',welcomeTaste2:'⚡ Simple',welcomeTaste3:'🌈 Variado',
   wp1t:'Menos carga mental',wp1d:'Tu semana planificada en minutos — se acabó el "¿qué cenamos?" cada noche',
   wp2t:'Lista de la compra y entrega automáticas',wp2d:'Creada con tus comidas, ordenada por pasillo.',
   wp3t:'Comidas que de verdad te gustarán',wp3d:'Variedad de verdad — nunca la misma semana dos veces.',
@@ -1910,6 +1944,7 @@ de:{
   genericIntro:'Tippen um zur Liste hinzuzufügen',inPantry:'In Speisekammer',
   appleBtn:'Mit Apple fortfahren',guestLimits:'Gast: 4 Gerichte · 3-Tage-Planer',freeAccountTitle:'Kostenloses Konto',freeAccountDesc:'10 Gerichte, Wochenplaner, geräteübergreifende Sync',premiumCTA:'Premium freischalten',
   welcomeTag:'Abendessen, geregelt — für Familien mit wenig Zeit.',
+  welcomeHeadline:'Rezepte 100% für dich',welcomeSubline:'Dein perfekter Essensplan in unter 5 Minuten — passend zu deinem Geschmack.',welcomeTaste1:'🥗 Gesund',welcomeTaste2:'⚡ Einfach',welcomeTaste3:'🌈 Abwechslungsreich',
   wp1t:'Weniger Kopf-Last',wp1d:'Deine Woche in Minuten geplant — Schluss mit dem abendlichen „Was gibt\'s zu essen?"',
   wp2t:'Automatische Einkaufsliste & Lieferung',wp2d:'Aus deinen Mahlzeiten erstellt, nach Gang sortiert.',
   wp3t:'Gerichte, die du wirklich magst',wp3d:'Echte Abwechslung — nie zweimal dieselbe Woche.',

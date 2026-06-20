@@ -1,0 +1,69 @@
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--nav:#1A2E1F;--nav-t:#A8C8A0;--nav-a:#7EC87A;--fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);background:#444;padding:24px;display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+.phone{width:390px;background:var(--nav);border-radius:30px;overflow-y:auto;height:780px;box-shadow:0 10px 50px rgba(0,0,0,.4)}
+.welcome-inner{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding:0 26px 28px}
+.welcome-hero{text-align:center;padding:34px 10px 22px}
+.welcome-brand{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:18px}
+.welcome-brand svg{width:30px;height:30px}
+.welcome-brand span{font-family:var(--fd);font-size:18px;color:#fff;font-weight:500}
+.welcome-photo{position:relative;width:100%;aspect-ratio:4/3;border-radius:24px;overflow:hidden;margin-bottom:22px;box-shadow:0 14px 44px rgba(0,0,0,.4)}
+.welcome-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.welcome-photo-fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 38%,#3a6b47,#1A2E1F)}
+.welcome-photo-fb .plate{width:58%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 42%,#fffdf7,#e9e2d2);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 32px rgba(0,0,0,.35),inset 0 -10px 24px rgba(0,0,0,.06)}
+.welcome-photo-fb .plate b{font-size:60px;line-height:1}
+.welcome-photo-fb .garnish{position:absolute;font-size:30px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.3))}
+.welcome-photo-fb .g1{top:18%;left:20%}.welcome-photo-fb .g2{top:24%;right:18%}
+.welcome-photo-fb .g3{bottom:20%;left:24%}.welcome-photo-fb .g4{bottom:16%;right:22%}
+.welcome-headline{font-family:var(--fd);font-size:30px;font-weight:600;color:#fff;line-height:1.12;margin-bottom:10px}
+.welcome-subline{font-size:15px;color:var(--nav-t);line-height:1.5;margin-bottom:14px}
+.welcome-taste{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
+.welcome-taste span{font-size:12px;font-weight:600;color:#fff;background:rgba(126,200,122,.16);border:1px solid rgba(126,200,122,.34);border-radius:99px;padding:6px 12px}
+.welcome-points{display:flex;flex-direction:column;gap:16px;flex:1;justify-content:center;padding:18px 0 10px}
+.welcome-point{display:flex;align-items:flex-start;gap:14px}
+.wp-em{font-size:22px}.wp-t{font-size:15px;font-weight:600;color:#fff}.wp-d{font-size:13px;color:var(--nav-t);margin-top:2px;line-height:1.45}
+.welcome-cta{padding-top:18px}
+.welcome-start{width:100%;background:var(--nav-a);color:var(--nav);border:none;border-radius:99px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.welcome-guest{width:100%;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);border-radius:99px;padding:14px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);margin-top:10px}
+.welcome-signin{text-align:center;font-size:13px;color:var(--nav-t);margin-top:16px}
+.lbl{color:#fff;text-align:center;width:100%;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:-8px}
+</style></head>
+<body>
+<div style="width:100%"><div class="lbl">Neuer Welcome / Value-Prop Screen (Platzhalter-Visual)</div></div>
+<div class="phone">
+  <div class="welcome-inner">
+    <div class="welcome-hero">
+      <div class="welcome-brand">
+        <svg viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
+        <span>Menja Fresh</span>
+      </div>
+      <div class="welcome-photo">
+        <div class="welcome-photo-fb" style="display:flex">
+          <div class="plate"><b>🥗</b></div>
+          <span class="garnish g1">🍅</span><span class="garnish g2">🌿</span>
+          <span class="garnish g3">🥑</span><span class="garnish g4">🍋</span>
+        </div>
+      </div>
+      <h1 class="welcome-headline">Rezepte 100% für dich</h1>
+      <p class="welcome-subline">Dein perfekter Essensplan in unter 5 Minuten — passend zu deinem Geschmack.</p>
+      <div class="welcome-taste">
+        <span>🥗 Gesund</span><span>⚡ Einfach</span><span>🌈 Abwechslungsreich</span>
+      </div>
+    </div>
+    <div class="welcome-points">
+      <div class="welcome-point"><span class="wp-em">🧘</span><div><div class="wp-t">Weniger Kopf-Last</div><div class="wp-d">Deine Woche in Minuten geplant — Schluss mit dem abendlichen „Was gibt's zu essen?"</div></div></div>
+      <div class="welcome-point"><span class="wp-em">🛒</span><div><div class="wp-t">Automatische Einkaufsliste</div><div class="wp-d">Aus deinen Gerichten erstellt, nach Gang sortiert.</div></div></div>
+      <div class="welcome-point"><span class="wp-em">🌱</span><div><div class="wp-t">Gerichte, die du wirklich magst</div><div class="wp-d">Echte Abwechslung — nie zweimal dieselbe Woche.</div></div></div>
+    </div>
+    <div class="welcome-cta">
+      <button class="welcome-start">Loslegen — kostenlos →</button>
+      <button class="welcome-guest">Ohne Anmeldung testen</button>
+      <div class="welcome-signin">Schon dabei? <a style="color:var(--nav-a);font-weight:600">Anmelden</a></div>
+    </div>
+  </div>
+</div>
+</body></html>
