@@ -3968,7 +3968,7 @@ function renderCal(){
     const key=dateKey(d);const isToday=key===todayKey;
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
     if(isSkipped(key)){
-      return`<div class="pday"><div class="pday-skip-row"><span class="pday-skip-label">${labelTxt} · ${t('notPlanningLabel')}</span><button class="pday-replan" onclick="planDay('${key}')">＋ ${t('planThisDay')}</button></div></div>`;
+      return`<div class="pday"><div class="pday-skip-row"><span class="pday-skip-label">${labelTxt}</span><button class="pday-replan" onclick="lazyDay('${key}')">⏱ ${t('lazyDayBasic')}</button></div><div class="pday-basic-link" style="justify-content:center;margin:6px 0 8px" onclick="planDay('${key}')">＋ ${t('planThisDay')}</div></div>`;
     }
     const dm=state.plan[key]||{};
     let cards='';
@@ -4066,6 +4066,10 @@ function rmDay(e,key){
 function planDay(key){
   if(state.skippedDays)delete state.skippedDays[key];
   save();renderPlan();
+}
+function lazyDay(key){
+  if(state.skippedDays)delete state.skippedDays[key];
+  save();renderPlan();pickBasic(key,'Dinner');
 }
 function isSkipped(key){return!!(state.skippedDays&&state.skippedDays[key]);}
 
