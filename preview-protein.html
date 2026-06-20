@@ -244,19 +244,30 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:412p
   <div class="rd-nut-row"><span class="rd-nut-lbl">fat</span><div class="rd-nut-track"><div class="rd-nut-fill fat" style="width:60%"></div></div><span class="rd-nut-val" style="font-size:11px;font-weight:600;color:var(--text2)">24g</span></div>
 </div>
 
-<!-- ⑦ ONBOARDING — PROTEIN GOAL SECTION -->
-<div class="lbl">⑦ Onboarding · Protein goal preset chips</div>
+<!-- ⑦ ONBOARDING — PROTEIN GOAL AUTO-CALCULATOR -->
+<div class="lbl">⑦ Onboarding · Protein goal — auto-calculated from weight</div>
 <div class="setup-box">
   <div class="setup-q">💚 Daily protein goal</div>
-  <div class="setup-hint">optional — helps track if you're getting enough</div>
-  <div class="setup-chips">
-    <div class="setup-chip">80g</div>
-    <div class="setup-chip on">120g</div>
-    <div class="setup-chip">100g</div>
-    <div class="setup-chip">150g</div>
-    <div class="setup-chip">Skip</div>
+  <div class="setup-hint" style="margin-bottom:12px">we'll calculate it for you</div>
+  <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
+    <div style="position:relative;flex:1">
+      <input type="number" value="72" style="width:100%;padding:10px 44px 10px 16px;border-radius:99px;border:1.5px solid rgba(45,90,61,0.18);background:#fff;font-size:17px;font-family:inherit;outline:none;color:#1A2214">
+      <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:#8A9E82">kg</span>
+    </div>
+    <div style="display:flex;gap:4px">
+      <div class="setup-chip on" style="padding:9px 14px">kg</div>
+      <div class="setup-chip" style="padding:9px 14px">lbs</div>
+    </div>
   </div>
-  <div class="setup-tip">Tip: 1.2–1.6g per kg body weight is a good starting point (70 kg → ~85–110g)</div>
+  <div style="display:flex;gap:7px;margin-bottom:10px">
+    <div class="setup-chip" style="flex:1;text-align:center">🚶 Light</div>
+    <div class="setup-chip on" style="flex:1;text-align:center">🏃 Moderate</div>
+    <div class="setup-chip" style="flex:1;text-align:center">💪 Active</div>
+  </div>
+  <div style="background:#E0EDD8;border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:#2D5A3D;text-align:center;margin-bottom:8px">
+    💚 Your goal: ~100g protein / day
+  </div>
+  <div class="setup-chip" style="margin-top:2px">Skip</div>
 </div>
 
 </body></html>

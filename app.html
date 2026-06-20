@@ -1299,15 +1299,24 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <div class="setup-chips" id="setup-dislikes"></div>
       </div>
       <div class="setup-sec" id="setup-protein-sec">
-        <h3>💚 <span data-t="setupProteinQ">Daily protein goal</span> <span class="setup-hint" data-t="setupProteinHint">optional — helps track if you're getting enough</span></h3>
-        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px" id="setup-protein-presets">
-          <button class="setup-chip" onclick="setupProteinPreset(80)">80g</button>
-          <button class="setup-chip" onclick="setupProteinPreset(100)">100g</button>
-          <button class="setup-chip" onclick="setupProteinPreset(120)">120g</button>
-          <button class="setup-chip" onclick="setupProteinPreset(150)">150g</button>
-          <button class="setup-chip" onclick="setupProteinPreset(0)" data-t="setupProteinSkip">Skip</button>
+        <h3>💚 <span data-t="setupProteinQ">Daily protein goal</span> <span class="setup-hint" data-t="setupProteinHint">we'll calculate it for you</span></h3>
+        <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
+          <div style="position:relative;flex:1">
+            <input type="number" id="setup-weight-input" min="30" max="300" placeholder="70" oninput="calcProteinGoal()" style="width:100%;padding:10px 44px 10px 16px;border-radius:99px;border:1.5px solid var(--border2);background:var(--surface);font-size:17px;font-family:var(--fb);outline:none;color:var(--text)">
+            <span id="setup-weight-unit-lbl" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text3);pointer-events:none">kg</span>
+          </div>
+          <div style="display:flex;gap:4px">
+            <button class="setup-chip on" id="unit-kg" onclick="setWeightUnit('kg')" style="padding:9px 14px">kg</button>
+            <button class="setup-chip" id="unit-lbs" onclick="setWeightUnit('lbs')" style="padding:9px 14px">lbs</button>
+          </div>
         </div>
-        <div style="font-size:11px;color:var(--text3)" data-t="setupProteinTip">Tip: 1.2–1.6g per kg body weight is a good starting point (70 kg → ~85–110g)</div>
+        <div style="display:flex;gap:7px;margin-bottom:10px" id="setup-activity-chips">
+          <button class="setup-chip" onclick="setupActivity('light')" style="flex:1;text-align:center">🚶 Light</button>
+          <button class="setup-chip on" onclick="setupActivity('moderate')" style="flex:1;text-align:center">🏃 Moderate</button>
+          <button class="setup-chip" onclick="setupActivity('active')" style="flex:1;text-align:center">💪 Active</button>
+        </div>
+        <div id="setup-protein-result" style="display:none;background:var(--accent-l);border-radius:var(--rsm);padding:10px 14px;font-size:14px;font-weight:600;color:var(--accent);text-align:center;margin-bottom:8px"></div>
+        <button class="setup-chip" onclick="skipProteinGoal()" data-t="setupProteinSkip" style="margin-top:2px">Skip</button>
       </div>
       <div class="setup-hint" style="margin-top:-6px" data-t="setupNightsHint">You'll pick which nights to cook each week when you plan.</div>
     </div>
@@ -1501,7 +1510,7 @@ en:{
   planNextTitle:'Plan next week?',planNextSub:'A calm few taps now = a sorted week ahead.',planNextBtn:'Plan next week →',
   letsSortDinner:"Let's sort dinner",nothingPlannedYet:'Nothing planned yet',whenTonight:'tonight',whenThisDay:'this day',pickTonight:"Pick tonight's meal →",lazyDayBasic:'Quick meal · 5 min',
   emptyTodaySentence:'A few taps now and {when} is one less thing to think about.',
-  setupProteinQ:'Daily protein goal',setupProteinHint:'optional — helps track if you\'re getting enough',setupProteinSkip:'Skip',setupProteinTip:'Tip: 1.2–1.6g per kg body weight is a good starting point (70 kg → ~85–110g)',
+  setupProteinQ:'Daily protein goal',setupProteinHint:'we\'ll calculate it for you',setupProteinSkip:'Skip',setupProteinTip:'Tip: 1.2–1.6g per kg body weight is a good starting point (70 kg → ~85–110g)',
   macroLockTitle:'Macro tracking',macroLockSub:'Calories & protein for every day — Premium',unlockWord:'Unlock',proteinGoalMet:'Protein goal reached today!',ofDailyGoal:'of daily goal',proteinToGo:'protein to hit your goal',proteinNudge:'+{n}g protein to go — high-protein dishes first',
   todaysNutrition:"Today's nutrition",perPerson:'per person',carbsWord:'carbs',fatWord:'fat',setDailyGoals:'＋ Set daily goals',
   budgetLockTitle:'Budget mode',budgetLockSub:"See your week's cost & a gentle budget — Premium",
@@ -1624,7 +1633,7 @@ fr:{
   planNextTitle:'Planifier la semaine prochaine ?',planNextSub:'Quelques touches maintenant = une semaine réglée.',planNextBtn:'Planifier la semaine prochaine →',
   letsSortDinner:'On règle le dîner',nothingPlannedYet:'Rien de planifié',whenTonight:'ce soir',whenThisDay:'ce jour',pickTonight:'Choisir le dîner →',lazyDayBasic:'Repas rapide · 5 min',
   emptyTodaySentence:'Quelques touches et {when} est une chose de moins à gérer.',
-  setupProteinQ:'Objectif protéines quotidien',setupProteinHint:'optionnel — aide à suivre vos apports',setupProteinSkip:'Ignorer',setupProteinTip:'Conseil : 1,2–1,6g par kg de poids corporel est un bon point de départ (70 kg → ~85–110g)',
+  setupProteinQ:'Objectif protéines quotidien',setupProteinHint:'on le calcule pour vous',setupProteinSkip:'Ignorer',setupProteinTip:'Conseil : 1,2–1,6g par kg de poids corporel est un bon point de départ (70 kg → ~85–110g)',
   macroLockTitle:'Suivi des macros',macroLockSub:'Calories et protéines chaque jour — Premium',unlockWord:'Débloquer',proteinGoalMet:'Objectif protéines atteint !',ofDailyGoal:'de l\'objectif journalier',proteinToGo:'de protéines pour atteindre ton objectif',proteinNudge:'+{n}g de protéines à atteindre — recettes riches en protéines en tête',
   todaysNutrition:'Nutrition du jour',perPerson:'par personne',carbsWord:'glucides',fatWord:'lipides',setDailyGoals:'＋ Définir des objectifs',
   budgetLockTitle:'Mode budget',budgetLockSub:'Voyez le coût de la semaine et un budget en douceur — Premium',
@@ -1747,7 +1756,7 @@ es:{
   planNextTitle:'¿Planificar la próxima semana?',planNextSub:'Unos toques ahora = una semana resuelta.',planNextBtn:'Planificar la próxima semana →',
   letsSortDinner:'Resolvamos la cena',nothingPlannedYet:'Nada planificado',whenTonight:'esta noche',whenThisDay:'este día',pickTonight:'Elegir la cena →',lazyDayBasic:'Comida rápida · 5 min',
   emptyTodaySentence:'Unos toques ahora y {when} es una cosa menos en que pensar.',
-  setupProteinQ:'Objetivo diario de proteínas',setupProteinHint:'opcional — ayuda a controlar tu ingesta',setupProteinSkip:'Omitir',setupProteinTip:'Consejo: 1,2–1,6g por kg de peso corporal es un buen punto de partida (70 kg → ~85–110g)',
+  setupProteinQ:'Objetivo diario de proteínas',setupProteinHint:'lo calculamos por ti',setupProteinSkip:'Omitir',setupProteinTip:'Consejo: 1,2–1,6g por kg de peso corporal es un buen punto de partida (70 kg → ~85–110g)',
   macroLockTitle:'Seguimiento de macros',macroLockSub:'Calorías y proteínas cada día — Premium',unlockWord:'Desbloquear',proteinGoalMet:'¡Objetivo de proteínas alcanzado!',ofDailyGoal:'del objetivo diario',proteinToGo:'de proteína para tu objetivo',proteinNudge:'+{n}g de proteína por alcanzar — platos ricos en proteína primero',
   todaysNutrition:'Nutrición de hoy',perPerson:'por persona',carbsWord:'carbohidratos',fatWord:'grasas',setDailyGoals:'＋ Fijar objetivos diarios',
   budgetLockTitle:'Modo presupuesto',budgetLockSub:'Ve el coste de la semana y un presupuesto suave — Premium',
@@ -1916,7 +1925,7 @@ de:{
   planNextTitle:'Nächste Woche planen?',planNextSub:'Ein paar ruhige Tipps jetzt = eine geregelte Woche.',planNextBtn:'Nächste Woche planen →',
   letsSortDinner:'Regeln wir das Abendessen',nothingPlannedYet:'Noch nichts geplant',whenTonight:'heute Abend',whenThisDay:'dieser Tag',pickTonight:'Abendessen wählen →',lazyDayBasic:'Schnelles Gericht · 5 Min',
   emptyTodaySentence:'Ein paar Tipps jetzt und {when} ist eine Sorge weniger.',
-  setupProteinQ:'Tägliches Eiweißziel',setupProteinHint:'optional — hilft, die Aufnahme im Blick zu behalten',setupProteinSkip:'Überspringen',setupProteinTip:'Tipp: 1,2–1,6g pro kg Körpergewicht ist ein guter Richtwert (70 kg → ~85–110g)',
+  setupProteinQ:'Tägliches Eiweißziel',setupProteinHint:'wir berechnen es für dich',setupProteinSkip:'Überspringen',setupProteinTip:'Tipp: 1,2–1,6g pro kg Körpergewicht ist ein guter Richtwert (70 kg → ~85–110g)',
   macroLockTitle:'Makro-Tracking',macroLockSub:'Kalorien & Eiweiß für jeden Tag — Premium',unlockWord:'Freischalten',proteinGoalMet:'Eiweißziel heute erreicht!',ofDailyGoal:'des Tagesziels',proteinToGo:'Eiweiß bis zum Ziel',proteinNudge:'+{n}g Eiweiß noch offen — eiweißreiche Gerichte zuerst',
   todaysNutrition:'Heutige Nährwerte',perPerson:'pro Person',carbsWord:'Kohlenhydrate',fatWord:'Fett',setDailyGoals:'＋ Tagesziele festlegen',
   budgetLockTitle:'Budget-Modus',budgetLockSub:'Sieh die Wochenkosten & ein sanftes Budget — Premium',
@@ -3530,13 +3539,40 @@ function renderSetup(){
 function setupAdj(type,delta){setupDraft[type]=Math.max(0,setupDraft[type]+delta);if(setupDraft.adults===0&&setupDraft.children===0)setupDraft.adults=1;renderSetup();}
 function setupToggle(field,id){const arr=setupDraft[field];const i=arr.indexOf(id);if(i>=0)arr.splice(i,1);else arr.push(id);renderSetup();}
 function closeSetup(){document.getElementById('setup-bg').classList.remove('open');}
-function setupProteinPreset(g){
+let setupWeightUnit='kg';
+let setupActivityLevel='moderate';
+function setWeightUnit(u){
+  setupWeightUnit=u;
+  document.getElementById('unit-kg').classList.toggle('on',u==='kg');
+  document.getElementById('unit-lbs').classList.toggle('on',u==='lbs');
+  document.getElementById('setup-weight-unit-lbl').textContent=u;
+  calcProteinGoal();
+}
+function setupActivity(level){
+  setupActivityLevel=level;
+  const btns=document.querySelectorAll('#setup-activity-chips .setup-chip');
+  ['light','moderate','active'].forEach((l,i)=>btns[i]&&btns[i].classList.toggle('on',l===level));
+  calcProteinGoal();
+}
+function calcProteinGoal(){
   if(!setupDraft)return;
-  setupDraft.proteinGoal=g;
-  document.querySelectorAll('#setup-protein-presets .setup-chip').forEach(b=>{
-    const match=parseInt(b.textContent)===g||(g===0&&b.dataset.t==='setupProteinSkip');
-    b.classList.toggle('on',match);
-  });
+  const input=document.getElementById('setup-weight-input');
+  let w=parseFloat(input&&input.value);
+  const result=document.getElementById('setup-protein-result');
+  if(!w||w<30){if(result)result.style.display='none';setupDraft.proteinGoal=0;return;}
+  if(setupWeightUnit==='lbs')w=w*0.4536;
+  const mult={light:1.2,moderate:1.4,active:1.6}[setupActivityLevel]||1.4;
+  const goal=Math.round(w*mult/5)*5;
+  setupDraft.proteinGoal=goal;
+  if(result){result.style.display='block';result.textContent=`💚 Your goal: ~${goal}g protein / day`;}
+}
+function skipProteinGoal(){
+  if(!setupDraft)return;
+  setupDraft.proteinGoal=0;
+  const input=document.getElementById('setup-weight-input');
+  const result=document.getElementById('setup-protein-result');
+  if(input)input.value='';
+  if(result)result.style.display='none';
 }
 function finishSetup(skip){
   if(!skip){
