@@ -1,0 +1,262 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7F2;--surface:#fff;--surface2:#EEF1E8;
+  --border:rgba(45,90,61,0.1);--border2:rgba(45,90,61,0.18);
+  --text:#1A2214;--text2:#4A5E40;--text3:#8A9E82;
+  --accent:#2D5A3D;--accent-l:#E0EDD8;--accent2:#C8622A;
+  --nav:#1A2E1F;--nav-t:#A8C8A0;--nav-a:#7EC87A;
+  --fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
+  --r:16px;--rsm:10px;--sh:0 2px 16px rgba(45,90,61,.1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:412px;margin:0 auto;padding:16px}
+/* ── LABELS ── */
+.lbl{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin:24px 0 8px;padding:0 2px}
+.lbl:first-child{margin-top:0}
+/* ── MACRO CARD ── */
+.macro-card{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:14px 16px;margin-bottom:14px}
+.macro-hd{font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px}
+.macro-sub{font-size:11px;font-weight:400;color:var(--text3)}
+.macro-rings{display:flex;align-items:center;gap:12px}
+.macro-ring-wrap{text-align:center;flex-shrink:0}
+.macro-ring{position:relative;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),#e6ece2 0);margin:0 auto}
+.macro-ring::after{content:'';position:absolute;background:var(--surface);border-radius:50%}
+.macro-ring span{position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-weight:500;color:var(--text)}
+/* protein ring — big star */
+.macro-ring.protein-ring{width:72px;height:72px}
+.macro-ring.protein-ring::after{inset:7px}
+.macro-ring.protein-ring span{font-size:16px}
+/* kcal ring — smaller secondary */
+.macro-ring.kcal-ring{width:48px;height:48px}
+.macro-ring.kcal-ring::after{inset:5px}
+.macro-ring.kcal-ring span{font-size:11px}
+.macro-kcal-lbl{font-size:10px;color:var(--text3);margin-top:5px}
+/* bars */
+.macro-bars-col{flex:1;min-width:0;padding-top:4px}
+.macro-bar-row{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.macro-bar-lbl{font-size:11px;color:var(--text3);width:48px;flex-shrink:0}
+.macro-bar-track{flex:1;height:6px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.macro-bar-fill{height:100%;border-radius:99px}
+.macro-bar-val{font-size:11px;color:var(--text2);min-width:58px;text-align:right;white-space:nowrap}
+.macro-bar-carbs .macro-bar-fill{background:#4A90D9}
+.macro-bar-fat .macro-bar-fill{background:#F5A623}
+/* states */
+.macro-protein-togo{margin-top:10px;font-size:12px;color:var(--text3);text-align:center}
+.macro-protein-togo strong{color:#C8622A}
+.macro-goal-met{margin-top:10px;background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border-radius:10px;padding:8px 12px;font-size:12px;font-weight:600;color:#2E7D32;text-align:center;animation:pop .35s ease}
+.macro-week-score{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px}
+.macro-week-dot{width:8px;height:8px;border-radius:50%;background:var(--surface2)}
+.macro-week-dot.hit{background:#C8622A}
+.macro-week-dot.today{box-shadow:0 0 0 2px #C8622A,0 0 0 4px #FBF0EB}
+@keyframes pop{0%{transform:scale(.92);opacity:.6}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
+/* ── PLAN DAY PROTEIN BADGE ── */
+.pday{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:14px 16px;margin-bottom:10px}
+.pday-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.pday-label{font-size:13px;font-weight:600;color:var(--text)}
+.pday-protein-badge{font-size:10px;font-weight:600;color:#2D5A3D;background:#E0EDD8;border-radius:99px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+.pday-card{background:var(--surface2);border-radius:12px;padding:12px;display:flex;gap:10px;align-items:flex-start}
+.pday-img-em{width:52px;height:52px;border-radius:10px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.pday-name{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
+.pday-meta{font-size:11px;color:var(--text3)}
+.pday-skip-lbl{font-size:11px;color:var(--text3);font-style:italic}
+/* ── MEAL PROTEIN PILL (Today tab) ── */
+.tmeal{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:12px 14px;margin-bottom:10px}
+.tmeal-type{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.meal-protein-pill{display:inline-flex;align-items:center;gap:3px;background:#FBF0EB;color:#C8622A;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700;margin-left:6px}
+.tmeal-row{display:flex;gap:12px;align-items:flex-start}
+.tmeal-em{width:56px;height:56px;border-radius:10px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0}
+.tmeal-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
+.tmeal-sub{font-size:11px;color:var(--text3)}
+/* ── DISH CHOOSER PROTEIN BADGE & NUDGE ── */
+.chooser-box{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;margin-bottom:14px}
+.chooser-protein-nudge{background:#E0EDD8;color:#2D5A3D;font-size:12px;font-weight:600;padding:8px 16px;text-align:center}
+.chooser-card{padding:14px 16px}
+.chooser-name{font-size:16px;font-weight:600;color:var(--text);margin-bottom:4px}
+.chooser-meta{font-size:12px;color:var(--text3);margin-bottom:6px}
+.dchoose-protein-badge{display:inline-block;background:#E0EDD8;color:#2D5A3D;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700}
+/* ── RECIPE PROTEIN HERO ── */
+.recipe-box{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:14px 16px;margin-bottom:14px}
+.rd-section-title{font-size:13px;font-weight:700;margin-bottom:10px;color:var(--text)}
+.rd-protein-hero{display:flex;align-items:center;gap:12px;background:#FBF0EB;border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.rd-protein-val{font-family:var(--fd);font-size:28px;font-weight:700;color:#C8622A;line-height:1}
+.rd-protein-meta{flex:1}
+.rd-protein-label{font-size:11px;font-weight:700;color:#C8622A;letter-spacing:.04em;text-transform:uppercase}
+.rd-protein-pct{font-size:11px;color:var(--text3);margin-top:2px}
+.rd-nut-row{display:flex;align-items:center;gap:7px;margin-bottom:7px}
+.rd-nut-lbl{font-size:11px;color:var(--text3);width:52px;flex-shrink:0}
+.rd-nut-track{flex:1;height:5px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.rd-nut-fill{height:100%;border-radius:99px}
+.rd-nut-fill.carbs{background:#4A90D9}
+.rd-nut-fill.fat{background:#F5A623}
+.rd-nut-val{font-size:11px;font-weight:600;color:var(--text2);min-width:36px;text-align:right}
+/* ── ONBOARDING CHIP ── */
+.setup-box{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:16px;margin-bottom:14px}
+.setup-q{font-size:15px;font-weight:600;color:var(--text);margin-bottom:4px}
+.setup-hint{font-size:12px;color:var(--text3);margin-bottom:12px}
+.setup-chips{display:flex;gap:8px;flex-wrap:wrap}
+.setup-chip{font-size:13px;font-weight:500;padding:9px 16px;border-radius:99px;background:var(--surface2);color:var(--text2);border:1.5px solid var(--border2);cursor:pointer}
+.setup-chip.on{background:var(--nav);color:var(--nav-a);border-color:var(--nav)}
+.setup-tip{font-size:11px;color:var(--text3);margin-top:10px;line-height:1.5}
+</style>
+</head>
+<body>
+
+<!-- ① TODAY TAB — MACRO CARD, PROTEIN NOT YET HIT -->
+<div class="lbl">① Today · Macro Card — protein not yet hit (68%)</div>
+<div class="macro-card">
+  <div class="macro-hd">Today's nutrition <span class="macro-sub">per person</span></div>
+  <div class="macro-rings">
+    <div class="macro-ring-wrap">
+      <div class="macro-ring protein-ring" style="--p:68;--c:#C8622A"><span>95g</span></div>
+      <div class="macro-kcal-lbl" style="font-weight:600;color:#C8622A;margin-top:4px">Protein · 68%</div>
+    </div>
+    <div class="macro-ring-wrap">
+      <div class="macro-ring kcal-ring" style="--p:82;--c:#2D5A3D"><span>1650</span></div>
+      <div class="macro-kcal-lbl" style="margin-top:3px">kcal</div>
+    </div>
+    <div class="macro-bars-col">
+      <div class="macro-bar-row macro-bar-carbs"><span class="macro-bar-lbl">carbs</span><div class="macro-bar-track"><div class="macro-bar-fill" style="width:72%"></div></div><span class="macro-bar-val">180g / 250g</span></div>
+      <div class="macro-bar-row macro-bar-fat"><span class="macro-bar-lbl">fat</span><div class="macro-bar-track"><div class="macro-bar-fill" style="width:86%"></div></div><span class="macro-bar-val">60g / 70g</span></div>
+    </div>
+  </div>
+  <div class="macro-protein-togo">💚 <strong>+45g</strong> protein to hit your goal</div>
+  <div class="macro-week-score">
+    <div class="macro-week-dot hit"></div>
+    <div class="macro-week-dot hit"></div>
+    <div class="macro-week-dot"></div>
+    <div class="macro-week-dot hit"></div>
+    <div class="macro-week-dot today"></div>
+    <div class="macro-week-dot"></div>
+    <div class="macro-week-dot"></div>
+  </div>
+</div>
+
+<!-- ② TODAY TAB — MACRO CARD, PROTEIN GOAL MET -->
+<div class="lbl">② Today · Macro Card — protein goal reached 🎉</div>
+<div class="macro-card">
+  <div class="macro-hd">Today's nutrition <span class="macro-sub">per person</span></div>
+  <div class="macro-rings">
+    <div class="macro-ring-wrap">
+      <div class="macro-ring protein-ring" style="--p:100;--c:#2E7D32"><span>148g</span></div>
+      <div class="macro-kcal-lbl" style="font-weight:600;color:#2E7D32;margin-top:4px">Protein · 100%</div>
+    </div>
+    <div class="macro-ring-wrap">
+      <div class="macro-ring kcal-ring" style="--p:100;--c:#C0392B"><span>2180</span></div>
+      <div class="macro-kcal-lbl" style="margin-top:3px">kcal · 112%</div>
+    </div>
+    <div class="macro-bars-col">
+      <div class="macro-bar-row macro-bar-carbs"><span class="macro-bar-lbl">carbs</span><div class="macro-bar-track"><div class="macro-bar-fill" style="width:94%"></div></div><span class="macro-bar-val">235g / 250g</span></div>
+      <div class="macro-bar-row macro-bar-fat"><span class="macro-bar-lbl">fat</span><div class="macro-bar-track"><div class="macro-bar-fill" style="width:100%"></div></div><span class="macro-bar-val">78g / 70g</span></div>
+    </div>
+  </div>
+  <div class="macro-goal-met">🎉 Protein goal reached today!</div>
+  <div class="macro-week-score">
+    <div class="macro-week-dot hit"></div>
+    <div class="macro-week-dot hit"></div>
+    <div class="macro-week-dot"></div>
+    <div class="macro-week-dot hit"></div>
+    <div class="macro-week-dot hit today"></div>
+    <div class="macro-week-dot"></div>
+    <div class="macro-week-dot"></div>
+  </div>
+</div>
+
+<!-- ③ TODAY TAB — MEAL CARD WITH PROTEIN PILL -->
+<div class="lbl">③ Today · Meal card with protein pill</div>
+<div class="tmeal">
+  <div class="tmeal-type">🍽 Dinner <span class="meal-protein-pill">💚 38g</span></div>
+  <div class="tmeal-row">
+    <div class="tmeal-em">🥗</div>
+    <div>
+      <div class="tmeal-name">Strawberry, Tomato & Burrata Salad</div>
+      <div class="tmeal-sub">Honey-shallot dressing, fresh herbs · ⏱ 15 min</div>
+    </div>
+  </div>
+</div>
+
+<!-- ④ PLAN TAB — DAY WITH PROTEIN BADGE -->
+<div class="lbl">④ Plan tab · Day label with protein score badge</div>
+<div class="pday">
+  <div class="pday-label-row">
+    <span class="pday-label">Mon 22 Jun · Today <span class="pday-protein-badge">💚 62g</span></span>
+    <span class="pday-skip-lbl">skip</span>
+  </div>
+  <div class="pday-card">
+    <div class="pday-img-em">🥗</div>
+    <div>
+      <div class="pday-name">Strawberry, Tomato & Burrata Salad</div>
+      <div class="pday-meta">⏱ 15 min · Veggie</div>
+    </div>
+  </div>
+</div>
+<div class="pday">
+  <div class="pday-label-row">
+    <span class="pday-label">Tue 23 Jun <span class="pday-protein-badge">💚 89g</span></span>
+    <span class="pday-skip-lbl">skip</span>
+  </div>
+  <div class="pday-card">
+    <div class="pday-img-em">🍛</div>
+    <div>
+      <div class="pday-name">Chickpea Curry with Spinach</div>
+      <div class="pday-meta">⏱ 30 min · Vegan</div>
+    </div>
+  </div>
+</div>
+
+<!-- ⑤ DISH CHOOSER — PROTEIN GAP NUDGE + HIGH-PROTEIN BADGE -->
+<div class="lbl">⑤ Dish chooser · protein gap nudge + 💚 high-protein badge</div>
+<div class="chooser-box">
+  <div class="chooser-protein-nudge">💚 +45g protein to go — high-protein dishes first</div>
+  <div class="chooser-card">
+    <div class="chooser-name">Chickpea Curry with Spinach</div>
+    <div class="chooser-meta">⏱ 30 min · Vegan · Gluten-free</div>
+    <div class="dchoose-protein-badge">💚 22g protein</div>
+  </div>
+</div>
+<div class="chooser-box">
+  <div class="chooser-protein-nudge">💚 +45g protein to go — high-protein dishes first</div>
+  <div class="chooser-card">
+    <div class="chooser-name">Strawberry, Tomato & Burrata Salad</div>
+    <div class="chooser-meta">⏱ 15 min · Vegetarian</div>
+    <div class="dchoose-protein-badge">💚 38g protein</div>
+  </div>
+</div>
+
+<!-- ⑥ RECIPE OVERLAY — PROTEIN HERO -->
+<div class="lbl">⑥ Recipe overlay · Protein hero + nutrition bars</div>
+<div class="recipe-box">
+  <div class="rd-section-title">Nutrition per serving</div>
+  <div class="rd-protein-hero">
+    <div class="rd-protein-val">38g</div>
+    <div class="rd-protein-meta">
+      <div class="rd-protein-label">💚 Protein</div>
+      <div class="rd-protein-pct">27% of daily goal</div>
+    </div>
+    <div style="text-align:right">
+      <div style="font-size:11px;color:var(--text3)">kcal</div>
+      <div style="font-family:var(--fd);font-size:16px;font-weight:600;color:var(--text)">420</div>
+    </div>
+  </div>
+  <div class="rd-nut-row"><span class="rd-nut-lbl">carbs</span><div class="rd-nut-track"><div class="rd-nut-fill carbs" style="width:45%"></div></div><span class="rd-nut-val" style="font-size:11px;font-weight:600;color:var(--text2)">22g</span></div>
+  <div class="rd-nut-row"><span class="rd-nut-lbl">fat</span><div class="rd-nut-track"><div class="rd-nut-fill fat" style="width:60%"></div></div><span class="rd-nut-val" style="font-size:11px;font-weight:600;color:var(--text2)">24g</span></div>
+</div>
+
+<!-- ⑦ ONBOARDING — PROTEIN GOAL SECTION -->
+<div class="lbl">⑦ Onboarding · Protein goal preset chips</div>
+<div class="setup-box">
+  <div class="setup-q">💚 Daily protein goal</div>
+  <div class="setup-hint">optional — helps track if you're getting enough</div>
+  <div class="setup-chips">
+    <div class="setup-chip">80g</div>
+    <div class="setup-chip on">120g</div>
+    <div class="setup-chip">100g</div>
+    <div class="setup-chip">150g</div>
+    <div class="setup-chip">Skip</div>
+  </div>
+  <div class="setup-tip">Tip: 1.2–1.6g per kg body weight is a good starting point (70 kg → ~85–110g)</div>
+</div>
+
+</body></html>
