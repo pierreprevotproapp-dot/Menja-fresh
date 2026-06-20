@@ -1855,9 +1855,9 @@
       "Breakfast"
     ],
     "categories": [
-      "quick",
       "vegetarian",
-      "vegan"
+      "vegan",
+      "breakfast"
     ],
     "diet": [
       "Vegan",
@@ -1867,13 +1867,13 @@
     "cook_minutes": 0,
     "servings": 2,
     "image_url": "",
-    "image_prompt": "Overhead shot of two acai chia pudding breakfast bowls on a white marble surface, purple-swirled chia base topped with neat rows of granola, banana slices, fresh strawberries and raspberries, toasted coconut flakes, cacao nibs, a drizzle of almond butter and honey, garnished with fresh mint leaves, bright natural morning light, editorial food photography",
+    "image_prompt": "Overhead shot of two acai chia pudding breakfast bowls on a white marble surface, purple-swirled chia base topped with neat rows of granola, banana slices, fresh strawberries and raspberries, toasted coconut flakes, cacao nibs, a drizzle of almond butter and maple syrup, garnished with fresh mint leaves, bright natural morning light, editorial food photography",
     "nutrition": {
-      "kcal": 480,
-      "protein": 11,
-      "carbs": 52,
-      "fat": 24,
-      "fiber": 14
+      "kcal": 840,
+      "protein": 20,
+      "carbs": 96,
+      "fat": 46,
+      "fiber": 28
     },
     "ingredients": [
       {
@@ -1932,8 +1932,8 @@
         "amount": "2 tbsp"
       },
       {
-        "name": "Wildflower honey",
-        "emoji": "🍯",
+        "name": "Maple syrup (for drizzle)",
+        "emoji": "🍁",
         "amount": "1 tbsp"
       }
     ],
@@ -2009,12 +2009,12 @@
       {
         "num": 5,
         "title": "Drizzle & serve",
-        "text": "Drizzle 1 tablespoon of almond butter and a little honey over each bowl. Finish with a pinch of fresh mint. Eat immediately.",
+        "text": "Drizzle 1 tablespoon of almond butter and a drizzle of maple syrup over each bowl. Finish with a pinch of fresh mint. Eat immediately.",
         "ings": [
           "🥜 Almond butter · 2 tbsp",
-          "🍯 Wildflower honey · 1 tbsp"
+          "🍁 Maple syrup · 1 tbsp"
         ],
-        "tip": "Swap honey for maple syrup to keep it 100% vegan.",
+        "tip": "Want a richer sweetness? A drizzle of date syrup works beautifully too.",
         "kidsHelp": null
       }
     ]
