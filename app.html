@@ -669,15 +669,27 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .macro-card{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:14px 16px;margin:0 0 14px}
 .macro-hd{font-size:13px;font-weight:600;color:var(--text);margin-bottom:12px}
 .macro-sub{font-size:11px;font-weight:400;color:var(--text3)}
-.macro-rings{display:flex;align-items:center;gap:16px;flex-wrap:wrap}
-.macro-ring-wrap{text-align:center}
+.macro-rings{display:flex;align-items:center;gap:12px}
+.macro-ring-wrap{text-align:center;flex-shrink:0}
 .macro-ring{position:relative;width:62px;height:62px;border-radius:50%;background:conic-gradient(var(--c) calc(var(--p)*1%),#e6ece2 0);margin:0 auto}
 .macro-ring::after{content:'';position:absolute;inset:6px;background:var(--surface);border-radius:50%}
 .macro-ring span{position:relative;z-index:1;width:100%;height:100%;display:flex;align-items:center;justify-content:center;font-family:var(--fd);font-size:15px;font-weight:500;color:var(--text)}
+.macro-ring.protein-ring{width:72px;height:72px}
+.macro-ring.protein-ring::after{inset:7px}
+.macro-ring.protein-ring span{font-size:16px}
+.macro-ring.kcal-ring{width:48px;height:48px}
+.macro-ring.kcal-ring::after{inset:5px}
+.macro-ring.kcal-ring span{font-size:11px}
 .macro-body{display:flex;gap:14px;align-items:flex-start}
 .macro-kcal-col{text-align:center;flex-shrink:0}
 .macro-kcal-lbl{font-size:10px;color:var(--text3);margin-top:5px}
 .macro-bars-col{flex:1;min-width:0}
+/* protein score on plan days */
+.pday-protein-badge{font-size:10px;font-weight:600;color:#2D5A3D;background:#E0EDD8;border-radius:99px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+/* high-protein badge in dish chooser */
+.dchoose-protein-badge{display:inline-block;background:#E0EDD8;color:#2D5A3D;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700;margin-top:4px}
+/* protein gap nudge banner in chooser */
+.chooser-protein-nudge{background:#E0EDD8;color:#2D5A3D;font-size:12px;font-weight:600;padding:8px 16px;text-align:center;flex-shrink:0}
 .macro-bar-row{display:flex;align-items:center;gap:7px;margin-bottom:7px}
 .macro-bar-lbl{font-size:11px;color:var(--text3);width:48px;flex-shrink:0}
 .macro-bar-track{flex:1;height:6px;background:var(--surface2);border-radius:99px;overflow:hidden}
@@ -1286,6 +1298,17 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <h3 data-t="setupDislikeQ">Anything you dislike?</h3>
         <div class="setup-chips" id="setup-dislikes"></div>
       </div>
+      <div class="setup-sec" id="setup-protein-sec">
+        <h3>💚 <span data-t="setupProteinQ">Daily protein goal</span> <span class="setup-hint" data-t="setupProteinHint">optional — helps track if you're getting enough</span></h3>
+        <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px" id="setup-protein-presets">
+          <button class="setup-chip" onclick="setupProteinPreset(80)">80g</button>
+          <button class="setup-chip" onclick="setupProteinPreset(100)">100g</button>
+          <button class="setup-chip" onclick="setupProteinPreset(120)">120g</button>
+          <button class="setup-chip" onclick="setupProteinPreset(150)">150g</button>
+          <button class="setup-chip" onclick="setupProteinPreset(0)" data-t="setupProteinSkip">Skip</button>
+        </div>
+        <div style="font-size:11px;color:var(--text3)" data-t="setupProteinTip">Tip: 1.2–1.6g per kg body weight is a good starting point (70 kg → ~85–110g)</div>
+      </div>
       <div class="setup-hint" style="margin-top:-6px" data-t="setupNightsHint">You'll pick which nights to cook each week when you plan.</div>
     </div>
     <div class="setup-foot">
@@ -1476,9 +1499,10 @@ en:{
   greetMorning:'Good morning ☀️',greetAfternoon:'Good afternoon 🌤',greetEvening:'Good evening 🌙',greetNight:'Good night 🌙',tomorrow:'Tomorrow',inDays:'In {n} days',
   cookNow:'🍳 Cook now',recipeWord:'Recipe',cooked:'Cooked',cookedDone:'✓ Cooked',moreWord:'more',
   planNextTitle:'Plan next week?',planNextSub:'A calm few taps now = a sorted week ahead.',planNextBtn:'Plan next week →',
-  letsSortDinner:"Let's sort dinner",nothingPlannedYet:'Nothing planned yet',whenTonight:'tonight',whenThisDay:'this day',pickTonight:"Pick tonight's meal →",lazyDayBasic:'Lazy day? Add a 5-min basic',
+  letsSortDinner:"Let's sort dinner",nothingPlannedYet:'Nothing planned yet',whenTonight:'tonight',whenThisDay:'this day',pickTonight:"Pick tonight's meal →",lazyDayBasic:'Quick meal · 5 min',
   emptyTodaySentence:'A few taps now and {when} is one less thing to think about.',
-  macroLockTitle:'Macro tracking',macroLockSub:'Calories & protein for every day — Premium',unlockWord:'Unlock',proteinGoalMet:'Protein goal reached today!',ofDailyGoal:'of daily goal',proteinToGo:'protein to hit your goal',
+  setupProteinQ:'Daily protein goal',setupProteinHint:'optional — helps track if you\'re getting enough',setupProteinSkip:'Skip',setupProteinTip:'Tip: 1.2–1.6g per kg body weight is a good starting point (70 kg → ~85–110g)',
+  macroLockTitle:'Macro tracking',macroLockSub:'Calories & protein for every day — Premium',unlockWord:'Unlock',proteinGoalMet:'Protein goal reached today!',ofDailyGoal:'of daily goal',proteinToGo:'protein to hit your goal',proteinNudge:'+{n}g protein to go — high-protein dishes first',
   todaysNutrition:"Today's nutrition",perPerson:'per person',carbsWord:'carbs',fatWord:'fat',setDailyGoals:'＋ Set daily goals',
   budgetLockTitle:'Budget mode',budgetLockSub:"See your week's cost & a gentle budget — Premium",
   estGroceries:'estimated groceries this week',setBudgetBtn:'＋ Set budget',budgetBtnLbl:'Budget',budgetNote:'A gentle estimate to help you plan — not exact prices.',
@@ -1598,9 +1622,10 @@ fr:{
   greetMorning:'Bonjour ☀️',greetAfternoon:'Bon après-midi 🌤',greetEvening:'Bonsoir 🌙',greetNight:'Bonne nuit 🌙',tomorrow:'Demain',inDays:'Dans {n} jours',
   cookNow:'🍳 Cuisiner',recipeWord:'Recette',cooked:'Cuisiné',cookedDone:'✓ Cuisiné',moreWord:'de plus',
   planNextTitle:'Planifier la semaine prochaine ?',planNextSub:'Quelques touches maintenant = une semaine réglée.',planNextBtn:'Planifier la semaine prochaine →',
-  letsSortDinner:'On règle le dîner',nothingPlannedYet:'Rien de planifié',whenTonight:'ce soir',whenThisDay:'ce jour',pickTonight:'Choisir le dîner →',lazyDayBasic:'Jour flemme ? Un basique en 5 min',
+  letsSortDinner:'On règle le dîner',nothingPlannedYet:'Rien de planifié',whenTonight:'ce soir',whenThisDay:'ce jour',pickTonight:'Choisir le dîner →',lazyDayBasic:'Repas rapide · 5 min',
   emptyTodaySentence:'Quelques touches et {when} est une chose de moins à gérer.',
-  macroLockTitle:'Suivi des macros',macroLockSub:'Calories et protéines chaque jour — Premium',unlockWord:'Débloquer',proteinGoalMet:'Objectif protéines atteint !',ofDailyGoal:'de l\'objectif journalier',proteinToGo:'de protéines pour atteindre ton objectif',
+  setupProteinQ:'Objectif protéines quotidien',setupProteinHint:'optionnel — aide à suivre vos apports',setupProteinSkip:'Ignorer',setupProteinTip:'Conseil : 1,2–1,6g par kg de poids corporel est un bon point de départ (70 kg → ~85–110g)',
+  macroLockTitle:'Suivi des macros',macroLockSub:'Calories et protéines chaque jour — Premium',unlockWord:'Débloquer',proteinGoalMet:'Objectif protéines atteint !',ofDailyGoal:'de l\'objectif journalier',proteinToGo:'de protéines pour atteindre ton objectif',proteinNudge:'+{n}g de protéines à atteindre — recettes riches en protéines en tête',
   todaysNutrition:'Nutrition du jour',perPerson:'par personne',carbsWord:'glucides',fatWord:'lipides',setDailyGoals:'＋ Définir des objectifs',
   budgetLockTitle:'Mode budget',budgetLockSub:'Voyez le coût de la semaine et un budget en douceur — Premium',
   estGroceries:'courses estimées cette semaine',setBudgetBtn:'＋ Définir un budget',budgetBtnLbl:'Budget',budgetNote:'Une estimation indicative pour planifier — pas des prix exacts.',
@@ -1720,9 +1745,10 @@ es:{
   greetMorning:'¡Buenos días! ☀️',greetAfternoon:'¡Buenas tardes! 🌤',greetEvening:'¡Buenas noches! 🌙',greetNight:'¡Buenas noches! 🌙',tomorrow:'Mañana',inDays:'En {n} días',
   cookNow:'🍳 Cocinar',recipeWord:'Receta',cooked:'Cocinado',cookedDone:'✓ Cocinado',moreWord:'más',
   planNextTitle:'¿Planificar la próxima semana?',planNextSub:'Unos toques ahora = una semana resuelta.',planNextBtn:'Planificar la próxima semana →',
-  letsSortDinner:'Resolvamos la cena',nothingPlannedYet:'Nada planificado',whenTonight:'esta noche',whenThisDay:'este día',pickTonight:'Elegir la cena →',lazyDayBasic:'¿Día perezoso? Un básico de 5 min',
+  letsSortDinner:'Resolvamos la cena',nothingPlannedYet:'Nada planificado',whenTonight:'esta noche',whenThisDay:'este día',pickTonight:'Elegir la cena →',lazyDayBasic:'Comida rápida · 5 min',
   emptyTodaySentence:'Unos toques ahora y {when} es una cosa menos en que pensar.',
-  macroLockTitle:'Seguimiento de macros',macroLockSub:'Calorías y proteínas cada día — Premium',unlockWord:'Desbloquear',proteinGoalMet:'¡Objetivo de proteínas alcanzado!',ofDailyGoal:'del objetivo diario',proteinToGo:'de proteína para tu objetivo',
+  setupProteinQ:'Objetivo diario de proteínas',setupProteinHint:'opcional — ayuda a controlar tu ingesta',setupProteinSkip:'Omitir',setupProteinTip:'Consejo: 1,2–1,6g por kg de peso corporal es un buen punto de partida (70 kg → ~85–110g)',
+  macroLockTitle:'Seguimiento de macros',macroLockSub:'Calorías y proteínas cada día — Premium',unlockWord:'Desbloquear',proteinGoalMet:'¡Objetivo de proteínas alcanzado!',ofDailyGoal:'del objetivo diario',proteinToGo:'de proteína para tu objetivo',proteinNudge:'+{n}g de proteína por alcanzar — platos ricos en proteína primero',
   todaysNutrition:'Nutrición de hoy',perPerson:'por persona',carbsWord:'carbohidratos',fatWord:'grasas',setDailyGoals:'＋ Fijar objetivos diarios',
   budgetLockTitle:'Modo presupuesto',budgetLockSub:'Ve el coste de la semana y un presupuesto suave — Premium',
   estGroceries:'compra estimada esta semana',setBudgetBtn:'＋ Fijar presupuesto',budgetBtnLbl:'Presupuesto',budgetNote:'Una estimación orientativa para planificar — no precios exactos.',
@@ -1888,9 +1914,10 @@ de:{
   greetMorning:'Guten Morgen ☀️',greetAfternoon:'Guten Tag 🌤',greetEvening:'Guten Abend 🌙',greetNight:'Gute Nacht 🌙',tomorrow:'Morgen',inDays:'In {n} Tagen',
   cookNow:'🍳 Jetzt kochen',recipeWord:'Rezept',cooked:'Gekocht',cookedDone:'✓ Gekocht',moreWord:'weitere',
   planNextTitle:'Nächste Woche planen?',planNextSub:'Ein paar ruhige Tipps jetzt = eine geregelte Woche.',planNextBtn:'Nächste Woche planen →',
-  letsSortDinner:'Regeln wir das Abendessen',nothingPlannedYet:'Noch nichts geplant',whenTonight:'heute Abend',whenThisDay:'dieser Tag',pickTonight:'Abendessen wählen →',lazyDayBasic:'Fauler Tag? 5-Minuten-Basic',
+  letsSortDinner:'Regeln wir das Abendessen',nothingPlannedYet:'Noch nichts geplant',whenTonight:'heute Abend',whenThisDay:'dieser Tag',pickTonight:'Abendessen wählen →',lazyDayBasic:'Schnelles Gericht · 5 Min',
   emptyTodaySentence:'Ein paar Tipps jetzt und {when} ist eine Sorge weniger.',
-  macroLockTitle:'Makro-Tracking',macroLockSub:'Kalorien & Eiweiß für jeden Tag — Premium',unlockWord:'Freischalten',proteinGoalMet:'Eiweißziel heute erreicht!',ofDailyGoal:'des Tagesziels',proteinToGo:'Eiweiß bis zum Ziel',
+  setupProteinQ:'Tägliches Eiweißziel',setupProteinHint:'optional — hilft, die Aufnahme im Blick zu behalten',setupProteinSkip:'Überspringen',setupProteinTip:'Tipp: 1,2–1,6g pro kg Körpergewicht ist ein guter Richtwert (70 kg → ~85–110g)',
+  macroLockTitle:'Makro-Tracking',macroLockSub:'Kalorien & Eiweiß für jeden Tag — Premium',unlockWord:'Freischalten',proteinGoalMet:'Eiweißziel heute erreicht!',ofDailyGoal:'des Tagesziels',proteinToGo:'Eiweiß bis zum Ziel',proteinNudge:'+{n}g Eiweiß noch offen — eiweißreiche Gerichte zuerst',
   todaysNutrition:'Heutige Nährwerte',perPerson:'pro Person',carbsWord:'Kohlenhydrate',fatWord:'Fett',setDailyGoals:'＋ Tagesziele festlegen',
   budgetLockTitle:'Budget-Modus',budgetLockSub:'Sieh die Wochenkosten & ein sanftes Budget — Premium',
   estGroceries:'geschätzter Einkauf diese Woche',setBudgetBtn:'＋ Budget festlegen',budgetBtnLbl:'Budget',budgetNote:'Eine grobe Schätzung zum Planen — keine exakten Preise.',
@@ -3503,11 +3530,20 @@ function renderSetup(){
 function setupAdj(type,delta){setupDraft[type]=Math.max(0,setupDraft[type]+delta);if(setupDraft.adults===0&&setupDraft.children===0)setupDraft.adults=1;renderSetup();}
 function setupToggle(field,id){const arr=setupDraft[field];const i=arr.indexOf(id);if(i>=0)arr.splice(i,1);else arr.push(id);renderSetup();}
 function closeSetup(){document.getElementById('setup-bg').classList.remove('open');}
+function setupProteinPreset(g){
+  if(!setupDraft)return;
+  setupDraft.proteinGoal=g;
+  document.querySelectorAll('#setup-protein-presets .setup-chip').forEach(b=>{
+    const match=parseInt(b.textContent)===g||(g===0&&b.dataset.t==='setupProteinSkip');
+    b.classList.toggle('on',match);
+  });
+}
 function finishSetup(skip){
   if(!skip){
     state.family.adults=setupDraft.adults;state.family.children=setupDraft.children;
     state.dietaryPrefs=setupDraft.diet;state.allergies=setupDraft.allergies;
     state.dislikes=setupDraft.dislikes;
+    if(setupDraft.proteinGoal>0){if(!state.macroGoals)state.macroGoals={kcal:0,protein:0};state.macroGoals.protein=setupDraft.proteinGoal;}
   }
   state.setupDone=true;
   save();renderFamily();renderDietPrefs();closeSetup();
@@ -3942,7 +3978,8 @@ function browseSetCat(c){browse.cat=c;browse.idx=0;browse._cache=null;renderPlan
 function browseChoose(){const l=browseListNow();const d=l[browse.idx];if(!d)return;const key=browse.key,type=browse.type;browse={key:null,type:null,cat:'all',idx:0};if(type==='Dinner'){if(!state.confirmed)state.confirmed={};state.confirmed[key]=true;}chooseDish(key,type,d.id);}
 function browseCancel(){browse={key:null,type:null,cat:'all',idx:0};renderPlan();}
 function inlineBrowseCard(key,type){
-  const filters=RECIPE_CATS.filter(c=>c.id!=='saved'&&c.id!=='basics').map(c=>`<div class="tag-pill ${browse.cat===c.id?'active':''}" onclick="browseSetCat('${c.id}')">${recCatLabel(c)}</div>`).join('');
+  const showCats=browse.cat==='basics'?RECIPE_CATS.filter(c=>c.id!=='saved'):RECIPE_CATS.filter(c=>c.id!=='saved'&&c.id!=='basics');
+  const filters=showCats.map(c=>`<div class="tag-pill ${browse.cat===c.id?'active':''}" onclick="browseSetCat('${c.id}')">${recCatLabel(c)}</div>`).join('');
   const l=browseListNow();
   if(!l.length)return`<div class="pday-browse"><div class="pday-browse-filters">${filters}</div><div class="pday-empty">${t('noRecipesHere')} · <span onclick="browseCancel()" style="color:var(--accent)">${t('cancelWord')}</span></div></div>`;
   if(browse.idx>=l.length)browse.idx=0;
@@ -3982,8 +4019,10 @@ function renderCal(){
       cards+=dinner?mealCard(key,'Dinner',dinner):`<div class="pday-empty" onclick="startBrowse('${key}','Dinner')">＋ ${t('pickADinner')}</div><div class="pday-basic-link" onclick="pickBasic('${key}','Dinner')">⏱ ${t('lazyDayBasic')}</div>`;
     }
     const adds=['Breakfast','Lunch'].filter(tp=>!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
+    const pdayMacros=dayMacros(key);
+    const pdayProteinBadge=pdayMacros&&pdayMacros.protein?`<span class="pday-protein-badge">💚 ${pdayMacros.protein}g</span>`:'';
     return`<div class="pday ${isToday?'today':''}">
-      <div class="pday-label-row"><span class="pday-label">${labelTxt}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑 ${t('skipDay')}</button></div>
+      <div class="pday-label-row"><span class="pday-label">${labelTxt}${pdayProteinBadge}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑 ${t('skipDay')}</button></div>
       ${cards}
       ${adds?`<div class="pday-extra">${adds}</div>`:''}
     </div>`;
@@ -4069,7 +4108,7 @@ function planDay(key){
 }
 function lazyDay(key){
   if(state.skippedDays)delete state.skippedDays[key];
-  save();renderPlan();pickBasic(key,'Dinner');
+  save();pickBasic(key,'Dinner');
 }
 function isSkipped(key){return!!(state.skippedDays&&state.skippedDays[key]);}
 
@@ -4141,8 +4180,13 @@ function openDishChooser(key,type,cat){
   renderDishChooser();
   document.getElementById('chooser-bg').classList.add('open');
 }
-// Lazy-day shortcut: open the picker showing ONLY the quick Basics.
-function pickBasic(key,type){openDishChooser(key,type||'Dinner','basics');}
+// Quick meal shortcut: inline browse pre-filtered to Basics.
+function pickBasic(key,type){
+  if(!DISHES.length)return;
+  browse={key,type:type||'Dinner',cat:'basics',idx:0,_cache:null,_cacheCat:null};
+  renderPlan();
+  setTimeout(()=>{const el=document.getElementById('ibrowse-card');if(el)el.scrollIntoView({block:'center',behavior:'smooth'});},40);
+}
 function setChooserCat(c){chooserState.cat=c;chooserState.idx=0;renderDishChooser();}
 function closeDishChooser(){document.getElementById('chooser-bg').classList.remove('open');}
 function chooserNav(dir){const list=chooserDishes();if(!list.length)return;chooserState.idx=((chooserState.idx+dir)%list.length+list.length)%list.length;renderDishChooser();}
@@ -4162,13 +4206,21 @@ function renderDishChooser(){
   const img=d.photo
     ?`<img class="dchoose-img" src="${d.photo}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="dchoose-img-em" style="display:none">${d.emoji}</div>`
     :`<div class="dchoose-img-em">${d.emoji}</div>`;
+  const dishProt=d.nutrition&&d.nutrition.protein>=25?`<span class="dchoose-protein-badge">💚 ${d.nutrition.protein}g ${t('protein')}</span>`:'';
+  // protein gap nudge
+  const todayKForNudge=dateKey(new Date());
+  const gForNudge=state.macroGoals||{};
+  const mForNudge=dayMacros(todayKForNudge)||{protein:0};
+  const proteinGapVal=gForNudge.protein>0?Math.round(gForNudge.protein-mForNudge.protein):0;
+  const nudgeEl=proteinGapVal>0?`<div class="chooser-protein-nudge">💚 ${t('proteinNudge').replace('{n}',proteinGapVal)}</div>`:'';
   wrap.innerHTML=`
+    ${nudgeEl}
     <div class="dchoose-counter">${chooserState.idx+1} / ${list.length}</div>
     <div class="dchoose-card" id="dchoose-card">
       ${img}
       <button class="dchoose-arrow left" onclick="chooserNav(-1)">‹</button>
       <button class="dchoose-arrow right" onclick="chooserNav(1)">›</button>
-      <div class="dchoose-info"><div class="dchoose-name">${dishName(d)}</div><div class="dchoose-meta">${time?`⏱ ${time} min`:''}${tags?` · ${tags}`:''}</div>
+      <div class="dchoose-info"><div class="dchoose-name">${dishName(d)}</div><div class="dchoose-meta">${time?`⏱ ${time} min`:''}${tags?` · ${tags}`:''}</div>${dishProt}
         <button class="dchoose-select" onclick="event.stopPropagation();chooserSelect()">${t('choose')} · ${mealName(type)}</button>
       </div>
     </div>
@@ -4679,22 +4731,29 @@ function macroCardHTML(key){
     return`<div class="macro-bar-row ${cls}"><span class="macro-bar-lbl">${label}</span><div class="macro-bar-track"><div class="macro-bar-fill" style="width:${pct||0}%"></div></div><span class="macro-bar-val">${valTxt}</span></div>`;
   };
   const kcalPct=g.kcal>0?Math.min(100,Math.round(m.kcal/g.kcal*100)):0;
-  const ringColor=kcalPct>=110?'#C0392B':kcalPct>=90?'#E67E22':'#2D5A3D';
+  const kcalColor=kcalPct>=110?'#C0392B':kcalPct>=90?'#E67E22':'#2D5A3D';
+  const proteinPct=g.protein>0?Math.min(100,Math.round(m.protein/g.protein*100)):0;
+  const proteinColor=proteinPct>=100?'#2E7D32':'#C8622A';
   const proteinMet=g.protein>0&&m.protein>=g.protein;
   const proteinLeft=g.protein>0&&!proteinMet?Math.round(g.protein-m.protein):0;
   const celebration=proteinMet?`<div class="macro-goal-met">🎉 ${t('proteinGoalMet')}</div>`:'';
-  const toGo=proteinLeft>0?`<div class="macro-protein-togo">💪 <strong>+${proteinLeft}g</strong> ${t('proteinToGo')}</div>`:'';
+  const toGo=proteinLeft>0?`<div class="macro-protein-togo">💚 <strong>+${proteinLeft}g</strong> ${t('proteinToGo')}</div>`:'';
   const weekDots=g.protein>0?`<div class="macro-week-score">${proteinWeekDots(key)}</div>`:'';
   const noGoals=!(g.kcal||g.protein)?`<div class="macro-setgoal" onclick="showTab('family')">${t('setDailyGoals')}</div>`:'';
+  const proteinLbl=g.protein?`${Math.round(m.protein)}g / ${g.protein}g`:`${Math.round(m.protein)}g`;
+  const kcalLbl=g.kcal?`${Math.round(m.kcal)} · ${kcalPct}%`:`${Math.round(m.kcal)}`;
   return`<div class="macro-card">
     <div class="macro-hd">${t('todaysNutrition')} <span class="macro-sub">${t('perPerson')}</span></div>
-    <div class="macro-body">
-      <div class="macro-kcal-col">
-        <div class="macro-ring" style="--p:${kcalPct};--c:${ringColor}"><span>${Math.round(m.kcal)}</span></div>
-        <div class="macro-kcal-lbl">${t('kcal')}${g.kcal?` · ${kcalPct}%`:''}</div>
+    <div class="macro-rings">
+      <div class="macro-ring-wrap">
+        <div class="macro-ring protein-ring" style="--p:${proteinPct};--c:${proteinColor}"><span>${Math.round(m.protein)}g</span></div>
+        <div class="macro-kcal-lbl" style="font-weight:600;color:#C8622A;margin-top:4px">${t('protein')}${g.protein?` · ${proteinPct}%`:''}</div>
       </div>
-      <div class="macro-bars-col">
-        ${bar('macro-bar-protein',m.protein,g.protein,t('protein'),'g')}
+      <div class="macro-ring-wrap">
+        <div class="macro-ring kcal-ring" style="--p:${kcalPct};--c:${kcalColor}"><span>${Math.round(m.kcal)}</span></div>
+        <div class="macro-kcal-lbl" style="margin-top:3px">${t('kcal')}</div>
+      </div>
+      <div class="macro-bars-col" style="padding-top:4px">
         ${bar('macro-bar-carbs',m.carbs,g.carbs||0,t('carbsWord'),'g')}
         ${bar('macro-bar-fat',m.fat,g.fat||0,t('fatWord'),'g')}
       </div>
