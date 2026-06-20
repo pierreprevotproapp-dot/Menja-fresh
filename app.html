@@ -1020,7 +1020,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <div class="diet-tags-row" id="prof-diet-tags"></div>
     </div>
     <div class="fam-section" id="macro-goals-section"></div>
-    <div class="fam-section" id="budget-section"></div>
+    <!-- budget-section hidden (feature/weekly-budget branch) -->
     <div class="fam-section"><h3 data-t="moreTools">More</h3>
       <button class="me-link" onclick="openSetup(false)"><span data-t="prefsAllergies">⚙️ Preferences & allergies</span><span class="chev">›</span></button>
       <button class="me-link" onclick="showTab('fridge')"><span>📷 <span data-t="navFridge">Fridge</span></span><span class="chev">›</span></button>
@@ -3982,10 +3982,8 @@ function renderCal(){
       cards+=dinner?mealCard(key,'Dinner',dinner):`<div class="pday-empty" onclick="startBrowse('${key}','Dinner')">＋ ${t('pickADinner')}</div><div class="pday-basic-link" onclick="pickBasic('${key}','Dinner')">⏱ ${t('lazyDayBasic')}</div>`;
     }
     const adds=['Breakfast','Lunch'].filter(tp=>!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
-    const dCost=isPremium()?dayCostEstimate(key):0;
-    const dCostHtml=dCost>0?`<span class="pday-cost">≈ ${money(dCost)}</span>`:'';
     return`<div class="pday ${isToday?'today':''}">
-      <div class="pday-label-row"><span class="pday-label">${labelTxt}${dCostHtml}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑 ${t('skipDay')}</button></div>
+      <div class="pday-label-row"><span class="pday-label">${labelTxt}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑 ${t('skipDay')}</button></div>
       ${cards}
       ${adds?`<div class="pday-extra">${adds}</div>`:''}
     </div>`;
@@ -3996,7 +3994,7 @@ function renderCal(){
       <button class="plan-cta-btn" onclick="showTab('shopping')">${t('toGroceryList')}</button>
     </div>`:'';
   const hint=(!hintSeen('plan')&&weekPlacedCount()>0)?`<div class="plan-hint"><span>${t('planCoachHint')}</span><button class="plan-hint-x" onclick="dismissHint('plan')">${t('gotItWord')}</button></div>`:'';
-  const budget=weekPlacedCount()>0?budgetCardHTML():'';
+  const budget=''; // hidden — see feature/weekly-budget branch
   cal.innerHTML=hint+banner+budget+cal.innerHTML;
   bindPdaySwipe();bindInlineBrowse();
 }
