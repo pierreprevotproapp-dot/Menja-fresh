@@ -1,0 +1,234 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#F5F7F2;--surface:#fff;--surface2:#EEF1E8;
+  --border:rgba(45,90,61,0.1);--border2:rgba(45,90,61,0.18);
+  --text:#1A2214;--text2:#4A5E40;--text3:#8A9E82;
+  --accent:#2D5A3D;--accent-l:#E0EDD8;
+  --nav:#1A2E1F;--nav-t:#A8C8A0;--nav-a:#7EC87A;
+  --fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
+  --r:16px;--rsm:10px;--sh:0 2px 16px rgba(45,90,61,.1)
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:var(--fb);background:#e8e8e8;padding:20px;display:flex;flex-direction:column;gap:32px;align-items:center}
+/* phone frame */
+.phone{width:375px;background:var(--bg);border-radius:28px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.22)}
+.phone-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#666;margin-bottom:8px;text-align:center}
+/* setup hero */
+.setup-hero{background:var(--nav);padding:40px 24px 26px;text-align:center;border-radius:0 0 28px 28px}
+.setup-leaf{width:56px;height:56px;display:block;margin:0 auto 10px}
+.setup-hero h1{font-family:var(--fd);font-size:23px;font-weight:500;color:#fff;margin-bottom:6px}
+.setup-hero p{font-size:13px;color:var(--nav-t);line-height:1.5}
+/* setup body */
+.setup-body{padding:20px 20px 0}
+.setup-sec{margin-bottom:22px}
+.setup-sec h3{font-family:var(--fd);font-size:16px;font-weight:500;margin-bottom:10px;color:var(--text)}
+.setup-hint{font-size:11px;color:var(--text3);font-weight:400}
+.setup-chips{display:flex;flex-wrap:wrap;gap:8px}
+.setup-chip{font-size:13px;font-weight:500;padding:8px 14px;border-radius:99px;background:var(--surface);color:var(--text2);border:1.5px solid var(--border2);cursor:pointer}
+.setup-chip.on{background:var(--nav);color:var(--nav-a);border-color:var(--nav)}
+.setup-counters{display:flex;flex-direction:column;gap:10px}
+.setup-ctr{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:12px 16px;box-shadow:var(--sh)}
+.setup-ctr>span{font-size:14px;font-weight:500}
+.setup-ctr-ctrls{display:flex;align-items:center;gap:14px}
+.setup-ctr-ctrls button{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border2);background:var(--surface2);font-size:18px;cursor:pointer;color:var(--text2)}
+.setup-ctr-ctrls b{font-family:var(--fd);font-size:20px;min-width:24px;text-align:center}
+/* foot */
+.setup-foot{padding:16px 20px 24px;background:var(--bg)}
+.setup-done{width:100%;padding:16px;background:var(--nav);color:var(--nav-a);font-size:15px;font-weight:700;border:none;border-radius:99px;cursor:pointer;font-family:var(--fb)}
+.setup-skip{display:block;text-align:center;padding:12px;font-size:12px;color:var(--text3);cursor:pointer}
+/* protein calculator */
+.proto-input{width:100%;padding:10px 44px 10px 16px;border-radius:99px;border:1.5px solid var(--border2);background:var(--surface);font-size:17px;font-family:inherit;outline:none;color:var(--text)}
+.proto-result{background:var(--accent-l);border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:var(--accent);text-align:center;margin-bottom:8px}
+/* protein labels — UPDATED */
+.meal-protein-pill{display:inline-flex;align-items:center;gap:3px;background:#FBF0EB;color:#C8622A;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700;margin-left:6px}
+.pday-protein-badge{font-size:10px;font-weight:600;color:#2D5A3D;background:#E0EDD8;border-radius:99px;padding:2px 7px;margin-left:6px;vertical-align:middle}
+.dchoose-protein-badge{display:inline-block;background:#E0EDD8;color:#2D5A3D;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700;margin-top:4px}
+/* meal card */
+.tmeal{padding:12px 16px;border-bottom:.5px solid var(--border)}
+.tmeal-type{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
+.tmeal-row{display:flex;gap:12px;align-items:flex-start}
+.tmeal-em{width:52px;height:52px;border-radius:10px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
+.tmeal-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
+.tmeal-sub{font-size:11px;color:var(--text3)}
+/* pday */
+.pday-label-row{display:flex;align-items:center;justify-content:space-between;padding:12px 16px 8px}
+.pday-label{font-size:13px;font-weight:600;color:var(--text)}
+.pday-card{margin:0 16px 12px;background:var(--surface2);border-radius:12px;padding:10px 12px;display:flex;gap:10px}
+.pday-em{width:44px;height:44px;border-radius:8px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.pday-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
+.pday-meta{font-size:11px;color:var(--text3)}
+/* chooser */
+.chooser-card{padding:14px 16px}
+.chooser-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
+.chooser-meta{font-size:11px;color:var(--text3);margin-bottom:6px}
+</style>
+</head>
+<body>
+
+<!-- ① SCREEN 1 — WELCOME / HERO -->
+<div>
+<div class="phone-lbl">① Onboarding start</div>
+<div class="phone">
+  <div class="setup-hero">
+    <svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
+    <h1>Let's set up your kitchen</h1>
+    <p>A few quick things so your weekly plan fits your family.</p>
+  </div>
+  <div class="setup-body">
+    <!-- WHO'S AT THE TABLE -->
+    <div class="setup-sec">
+      <h3>Who's at the table?</h3>
+      <div class="setup-counters">
+        <div class="setup-ctr">
+          <span>👨 Adults</span>
+          <div class="setup-ctr-ctrls"><button>−</button><b>2</b><button>+</button></div>
+        </div>
+        <div class="setup-ctr">
+          <span>🧒 Children</span>
+          <div class="setup-ctr-ctrls"><button>−</button><b>1</b><button>+</button></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ② SCREEN 2 — DIET + ALLERGIES -->
+<div>
+<div class="phone-lbl">② Diet & Allergies</div>
+<div class="phone">
+  <div class="setup-hero" style="padding:24px 24px 18px">
+    <h1 style="font-size:19px">Any food preferences?</h1>
+    <p>We'll filter recipes to suit your household.</p>
+  </div>
+  <div class="setup-body">
+    <div class="setup-sec">
+      <h3>Any diet?</h3>
+      <div class="setup-chips">
+        <div class="setup-chip on">🌱 Vegan</div>
+        <div class="setup-chip">🥦 Vegetarian</div>
+        <div class="setup-chip">🐟 Pescatarian</div>
+        <div class="setup-chip">🥩 Keto</div>
+        <div class="setup-chip">🌾 Gluten-free</div>
+        <div class="setup-chip">🥛 Dairy-free</div>
+      </div>
+    </div>
+    <div class="setup-sec">
+      <h3>Allergies <span class="setup-hint">we'll never suggest these</span></h3>
+      <div class="setup-chips">
+        <div class="setup-chip on">🥜 Nuts</div>
+        <div class="setup-chip">🥛 Dairy</div>
+        <div class="setup-chip">🌾 Gluten</div>
+        <div class="setup-chip">🥚 Eggs</div>
+        <div class="setup-chip">🐟 Fish</div>
+        <div class="setup-chip">🦐 Shellfish</div>
+        <div class="setup-chip">🫘 Soy</div>
+      </div>
+    </div>
+    <div class="setup-sec">
+      <h3>Anything you dislike?</h3>
+      <div class="setup-chips">
+        <div class="setup-chip">🧅 Onion</div>
+        <div class="setup-chip on">🫑 Peppers</div>
+        <div class="setup-chip">🍄 Mushrooms</div>
+        <div class="setup-chip">🫒 Olives</div>
+        <div class="setup-chip">🌶 Spicy</div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ③ SCREEN 3 — PROTEIN GOAL (auto-calculator) -->
+<div>
+<div class="phone-lbl">③ Protein goal — auto-calculator</div>
+<div class="phone">
+  <div class="setup-hero" style="padding:24px 24px 18px">
+    <h1 style="font-size:19px">💚 Daily protein goal</h1>
+    <p>Enter your weight and we calculate it automatically.</p>
+  </div>
+  <div class="setup-body">
+    <div class="setup-sec">
+      <h3>💚 Daily protein goal <span class="setup-hint">we'll calculate it for you</span></h3>
+      <!-- weight input + unit toggle -->
+      <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
+        <div style="position:relative;flex:1">
+          <input class="proto-input" type="number" value="72" placeholder="70">
+          <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text3)">kg</span>
+        </div>
+        <div style="display:flex;gap:4px">
+          <div class="setup-chip on" style="padding:9px 14px">kg</div>
+          <div class="setup-chip" style="padding:9px 14px">lbs</div>
+        </div>
+      </div>
+      <!-- activity level -->
+      <div style="display:flex;gap:7px;margin-bottom:12px">
+        <div class="setup-chip" style="flex:1;text-align:center">🚶 Light</div>
+        <div class="setup-chip on" style="flex:1;text-align:center">🏃 Moderate</div>
+        <div class="setup-chip" style="flex:1;text-align:center">💪 Active</div>
+      </div>
+      <!-- calculated result -->
+      <div class="proto-result">💚 Your goal: ~100g protein / day</div>
+      <div class="setup-chip" style="margin-top:4px">Skip</div>
+      <p style="font-size:11px;color:var(--text3);margin-top:10px;line-height:1.5">Based on 1.4g per kg body weight (moderate activity). You can change this anytime in your profile.</p>
+    </div>
+  </div>
+  <div class="setup-foot">
+    <button class="setup-done">Plan my first week →</button>
+    <span class="setup-skip">Skip for now</span>
+  </div>
+</div>
+</div>
+
+<!-- ④ PROTEIN LABELS — BEFORE vs AFTER -->
+<div>
+<div class="phone-lbl">④ Protein labels — Before vs After</div>
+<div class="phone" style="background:var(--surface)">
+  <div style="padding:10px 14px;background:#fff3e0;font-size:11px;font-weight:700;color:#e65100;letter-spacing:.06em;text-transform:uppercase">Before — not intuitive</div>
+  <!-- Today tab meal -->
+  <div class="tmeal">
+    <div class="tmeal-type">🍽 Dinner <span style="display:inline-flex;align-items:center;gap:3px;background:#FBF0EB;color:#C8622A;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700;margin-left:6px">🥩 38g</span></div>
+    <div class="tmeal-row">
+      <div class="tmeal-em">🥗</div>
+      <div><div class="tmeal-name">Burrata Salad</div><div class="tmeal-sub">⏱ 15 min</div></div>
+    </div>
+  </div>
+  <!-- Plan day -->
+  <div class="pday-label-row">
+    <span class="pday-label">Mon 22 Jun <span style="font-size:10px;font-weight:600;color:#2D5A3D;background:#E0EDD8;border-radius:99px;padding:2px 7px;margin-left:6px">💚 62g</span></span>
+  </div>
+  <div class="pday-card">
+    <div class="pday-em">🥗</div>
+    <div><div class="pday-name">Burrata Salad</div><div class="pday-meta">⏱ 15 min</div></div>
+  </div>
+
+  <div style="padding:10px 14px;background:#E0EDD8;font-size:11px;font-weight:700;color:#2D5A3D;letter-spacing:.06em;text-transform:uppercase;margin-top:4px">After — clear & consistent</div>
+  <!-- Today tab meal FIXED -->
+  <div class="tmeal">
+    <div class="tmeal-type">🍽 Dinner <span class="meal-protein-pill">💚 38g prot</span></div>
+    <div class="tmeal-row">
+      <div class="tmeal-em">🥗</div>
+      <div><div class="tmeal-name">Burrata Salad</div><div class="tmeal-sub">⏱ 15 min</div></div>
+    </div>
+  </div>
+  <!-- Plan day FIXED -->
+  <div class="pday-label-row">
+    <span class="pday-label">Mon 22 Jun <span class="pday-protein-badge">💚 62g prot</span></span>
+  </div>
+  <div class="pday-card">
+    <div class="pday-em">🥗</div>
+    <div><div class="pday-name">Burrata Salad</div><div class="pday-meta">⏱ 15 min</div></div>
+  </div>
+  <!-- Chooser badge (was already good) -->
+  <div class="chooser-card" style="border-top:.5px solid var(--border)">
+    <div class="chooser-name">Chickpea Curry with Spinach</div>
+    <div class="chooser-meta">⏱ 30 min · Vegan</div>
+    <div class="dchoose-protein-badge">💚 22g protein</div>
+  </div>
+</div>
+</div>
+
+</body></html>

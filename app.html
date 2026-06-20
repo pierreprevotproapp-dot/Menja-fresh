@@ -4056,7 +4056,7 @@ function renderCal(){
     }
     const adds=['Breakfast','Lunch'].filter(tp=>!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
     const pdayMacros=dayMacros(key);
-    const pdayProteinBadge=pdayMacros&&pdayMacros.protein?`<span class="pday-protein-badge">💚 ${pdayMacros.protein}g</span>`:'';
+    const pdayProteinBadge=pdayMacros&&pdayMacros.protein?`<span class="pday-protein-badge">💚 ${Math.round(pdayMacros.protein)}g prot</span>`:'';
     return`<div class="pday ${isToday?'today':''}">
       <div class="pday-label-row"><span class="pday-label">${labelTxt}${pdayProteinBadge}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑 ${t('skipDay')}</button></div>
       ${cards}
@@ -4688,8 +4688,8 @@ function renderToday(){
     const totalTime=(dish.prep||0)+(dish.cook||0);
     const cooked=isCooked(key,type);
     const did=typeof dish.id==='string'?`'${dish.id}'`:dish.id;
-    const dishProtein=dish.nutrition&&dish.nutrition.protein?Math.round(dish.nutrition.protein)+'g':'';
-    const proteinPill=dishProtein?`<span class="meal-protein-pill">🥩 ${dishProtein}</span>`:'';
+    const dishProtein=dish.nutrition&&dish.nutrition.protein?Math.round(dish.nutrition.protein):'';
+    const proteinPill=dishProtein?`<span class="meal-protein-pill">💚 ${dishProtein}g prot</span>`:'';
     return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)">
       <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">${MEAL_ICONS[type]} ${mealName(type)}${proteinPill}</div>
       <div style="display:flex;gap:12px;align-items:flex-start;cursor:pointer" onclick="openRecipeOverlay(${did})">
