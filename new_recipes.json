@@ -1839,5 +1839,184 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "honest-greens-chia-bowl",
+    "title": "Chia Bowl with Acai & Berries",
+    "subtitle": "Honest Greens-style — overnight chia base, acai swirl, granola & almond butter",
+    "emoji": "🫐",
+    "is_kids": true,
+    "tags": [
+      "Vegan",
+      "Gluten-free",
+      "Breakfast"
+    ],
+    "meal": [
+      "Breakfast"
+    ],
+    "categories": [
+      "quick",
+      "vegetarian",
+      "vegan"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 0,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Overhead shot of two acai chia pudding breakfast bowls on a white marble surface, purple-swirled chia base topped with neat rows of granola, banana slices, fresh strawberries and raspberries, toasted coconut flakes, cacao nibs, a drizzle of almond butter and honey, garnished with fresh mint leaves, bright natural morning light, editorial food photography",
+    "nutrition": {
+      "kcal": 480,
+      "protein": 11,
+      "carbs": 52,
+      "fat": 24,
+      "fiber": 14
+    },
+    "ingredients": [
+      {
+        "name": "Chia seeds",
+        "emoji": "🌱",
+        "amount": "60g"
+      },
+      {
+        "name": "Oat milk (unsweetened)",
+        "emoji": "🥛",
+        "amount": "400ml"
+      },
+      {
+        "name": "Frozen acai puree",
+        "emoji": "🫐",
+        "amount": "100g"
+      },
+      {
+        "name": "Frozen mixed berries",
+        "emoji": "🍓",
+        "amount": "80g"
+      },
+      {
+        "name": "Granola (oat or paleo)",
+        "emoji": "🌾",
+        "amount": "60g"
+      },
+      {
+        "name": "Banana",
+        "emoji": "🍌",
+        "amount": "1 pc"
+      },
+      {
+        "name": "Seasonal berries (strawberries, raspberries)",
+        "emoji": "🍓",
+        "amount": "100g"
+      },
+      {
+        "name": "Coconut flakes, toasted",
+        "emoji": "🥥",
+        "amount": "30g"
+      },
+      {
+        "name": "Sunflower seeds",
+        "emoji": "🌻",
+        "amount": "20g"
+      },
+      {
+        "name": "Cacao nibs",
+        "emoji": "🍫",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Almond butter",
+        "emoji": "🥜",
+        "amount": "2 tbsp"
+      },
+      {
+        "name": "Wildflower honey",
+        "emoji": "🍯",
+        "amount": "1 tbsp"
+      }
+    ],
+    "base_ingredients": [
+      "Vanilla extract · 1 tsp",
+      "Maple syrup · 1 tbsp",
+      "Fresh mint (garnish)"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Frozen acai puree",
+        "emoji": "🫐",
+        "amount": "100g — thaw overnight in fridge"
+      },
+      {
+        "name": "Frozen mixed berries",
+        "emoji": "🍓",
+        "amount": "80g — thaw alongside acai"
+      },
+      {
+        "name": "Banana",
+        "emoji": "🍌",
+        "amount": "1 pc — slice just before serving"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Mix the chia base (the night before)",
+        "text": "Whisk the chia seeds with oat milk, vanilla extract and maple syrup in a jar or bowl. Stir well so seeds are evenly distributed. Refrigerate overnight (minimum 6 hours). Stir once after 30 minutes to prevent clumping — the seeds absorb the milk and form a thick pudding.",
+        "ings": [
+          "🌱 Chia seeds · 60g",
+          "🥛 Oat milk · 400ml"
+        ],
+        "tip": "Make a big batch on Sunday — the chia base keeps in the fridge for up to 4 days. Zero effort mornings all week.",
+        "kidsHelp": "Little ones can pour the oat milk and stir — it's like making a magic potion that sets overnight."
+      },
+      {
+        "num": 2,
+        "title": "Blend the acai swirl",
+        "text": "Blend the thawed acai puree with the thawed mixed berries until smooth. Fold or swirl this purple mixture into the chilled chia base — don't mix completely, leave visible purple streaks.",
+        "ings": [
+          "🫐 Frozen acai puree · 100g",
+          "🍓 Frozen mixed berries · 80g"
+        ],
+        "tip": "No blender? Just mash the berries with a fork and stir in — slightly chunkier but equally delicious.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Divide into bowls",
+        "text": "Spoon the chia-acai mixture into 2 bowls.",
+        "ings": [],
+        "tip": null,
+        "kidsHelp": "Kids can help spoon the mixture into their own bowl."
+      },
+      {
+        "num": 4,
+        "title": "Add the toppings",
+        "text": "Arrange toppings in neat sections on each bowl: granola, banana slices, fresh berries, toasted coconut flakes, sunflower seeds and cacao nibs.",
+        "ings": [
+          "🌾 Granola · 60g",
+          "🍌 Banana · 1 pc, sliced",
+          "🍓 Seasonal berries · 100g",
+          "🥥 Coconut flakes · 30g",
+          "🌻 Sunflower seeds · 20g",
+          "🍫 Cacao nibs · 2 tbsp"
+        ],
+        "tip": "Arrange by colour — it takes 30 seconds and makes breakfast feel like a restaurant bowl.",
+        "kidsHelp": "Let kids choose where each topping goes — they eat more when they've built their own bowl."
+      },
+      {
+        "num": 5,
+        "title": "Drizzle & serve",
+        "text": "Drizzle 1 tablespoon of almond butter and a little honey over each bowl. Finish with a pinch of fresh mint. Eat immediately.",
+        "ings": [
+          "🥜 Almond butter · 2 tbsp",
+          "🍯 Wildflower honey · 1 tbsp"
+        ],
+        "tip": "Swap honey for maple syrup to keep it 100% vegan.",
+        "kidsHelp": null
+      }
+    ]
   }
 ]
