@@ -2018,5 +2018,169 @@
         "kidsHelp": null
       }
     ]
+  },
+  {
+    "id": "chickpea-curry-spinach",
+    "title": "Chickpea Curry with Spinach",
+    "title_de": "Kichererbsen Curry mit Spinat",
+    "subtitle": "Creamy coconut tomato curry with basmati rice — ready in 30 min",
+    "emoji": "🍛",
+    "is_kids": false,
+    "tags": [
+      "Vegan",
+      "Gluten-free",
+      "Quick"
+    ],
+    "meal": [
+      "Dinner",
+      "Lunch"
+    ],
+    "categories": [
+      "quick",
+      "vegetarian",
+      "vegan"
+    ],
+    "diet": [
+      "Vegan",
+      "Gluten-free",
+      "Vegetarian"
+    ],
+    "prep_minutes": 10,
+    "cook_minutes": 20,
+    "servings": 2,
+    "image_url": "",
+    "image_prompt": "Overhead shot of a shallow bowl with golden chickpea and spinach curry in a rich coconut-tomato sauce, a neat mound of fluffy white basmati rice on the side, garnished with fresh flat-leaf parsley, warm natural light on a light stone surface, editorial food photography",
+    "nutrition": {
+      "kcal": 809,
+      "protein": 22,
+      "carbs": 98,
+      "fat": 26,
+      "fiber": 12
+    },
+    "ingredients": [
+      {
+        "name": "Chickpeas (canned, drained)",
+        "emoji": "🫘",
+        "amount": "265g"
+      },
+      {
+        "name": "Coconut milk",
+        "emoji": "🥥",
+        "amount": "200ml"
+      },
+      {
+        "name": "Passata (strained tomatoes)",
+        "emoji": "🍅",
+        "amount": "250g"
+      },
+      {
+        "name": "Basmati rice",
+        "emoji": "🍚",
+        "amount": "160g"
+      },
+      {
+        "name": "Baby spinach",
+        "emoji": "🌿",
+        "amount": "100g"
+      },
+      {
+        "name": "Flat-leaf parsley",
+        "emoji": "🌱",
+        "amount": "1 handful"
+      }
+    ],
+    "base_ingredients": [
+      "Onion · 1 pc",
+      "Garlic · 1 clove",
+      "Rapeseed oil · 2 tsp",
+      "Curry powder · 2 tsp",
+      "Turmeric · 1 tsp",
+      "Garam masala · 1 tsp",
+      "Cumin · 1 tsp",
+      "Vegetable stock powder · 1 tsp",
+      "Salt · pinch",
+      "Pepper · pinch"
+    ],
+    "dressing": [],
+    "mise_en_place": [
+      {
+        "name": "Chickpeas",
+        "emoji": "🫘",
+        "amount": "265g — drain and rinse"
+      },
+      {
+        "name": "Onion",
+        "emoji": "🧅",
+        "amount": "1 pc — dice finely"
+      },
+      {
+        "name": "Garlic",
+        "emoji": "🧄",
+        "amount": "1 clove — mince"
+      }
+    ],
+    "steps": [
+      {
+        "num": 1,
+        "title": "Cook the basmati rice",
+        "text": "Rinse the basmati rice until the water runs clear. Cook in 320ml salted water: bring to the boil, reduce to the lowest heat, cover and cook for 10–12 minutes. Remove from heat and leave covered for 5 more minutes — do not lift the lid.",
+        "ings": [
+          "🍚 Basmati rice · 160g"
+        ],
+        "tip": "Start the rice first — it cooks hands-off while you make the curry.",
+        "kidsHelp": null
+      },
+      {
+        "num": 2,
+        "title": "Fry onion and garlic",
+        "text": "Heat the rapeseed oil in a wide pan over medium heat. Add the diced onion and cook for 4–5 minutes until soft and translucent. Add the minced garlic and cook for 1 more minute.",
+        "ings": [
+          "🧅 Onion · 1 pc",
+          "🧄 Garlic · 1 clove",
+          "🫒 Rapeseed oil · 2 tsp"
+        ],
+        "tip": "Don't rush this step — properly softened onions give the curry its sweetness.",
+        "kidsHelp": null
+      },
+      {
+        "num": 3,
+        "title": "Bloom the spices",
+        "text": "Add the curry powder, turmeric, garam masala and cumin directly to the onion pan. Stir constantly for 60 seconds over medium heat until fragrant. This step unlocks the full flavour of the spices.",
+        "ings": [
+          "Curry powder · 2 tsp",
+          "Turmeric · 1 tsp",
+          "Garam masala · 1 tsp",
+          "Cumin · 1 tsp"
+        ],
+        "tip": "If the pan looks too dry, add a splash of water rather than more oil.",
+        "kidsHelp": null
+      },
+      {
+        "num": 4,
+        "title": "Add chickpeas, tomatoes & coconut milk",
+        "text": "Add the drained chickpeas, passata, coconut milk and vegetable stock powder. Stir well to combine. Bring to a gentle boil, then simmer uncovered for 10 minutes, stirring occasionally, until the sauce thickens slightly.",
+        "ings": [
+          "🫘 Chickpeas · 265g",
+          "🍅 Passata · 250g",
+          "🥥 Coconut milk · 200ml",
+          "Vegetable stock powder · 1 tsp"
+        ],
+        "tip": "For a thicker curry, simmer for 15 minutes instead of 10.",
+        "kidsHelp": "Kids can help stir the pot gently with a long wooden spoon."
+      },
+      {
+        "num": 5,
+        "title": "Wilt the spinach & finish",
+        "text": "Stir in the baby spinach — it will wilt in 1–2 minutes. Season with salt and pepper. Taste and adjust spices if needed. Serve alongside the basmati rice and garnish generously with fresh flat-leaf parsley.",
+        "ings": [
+          "🌿 Baby spinach · 100g",
+          "🌱 Flat-leaf parsley · 1 handful",
+          "Salt · pinch",
+          "Pepper · pinch"
+        ],
+        "tip": "A squeeze of lemon juice right before serving brightens the whole dish.",
+        "kidsHelp": "Kids can tear the parsley leaves and scatter them on top."
+      }
+    ]
   }
 ]
