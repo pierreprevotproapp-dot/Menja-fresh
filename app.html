@@ -842,6 +842,12 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .setup-ctr-ctrls b,.setup-dpw b{font-family:var(--fd);font-size:20px;min-width:24px;text-align:center}
 .setup-dpw{display:flex;align-items:center;gap:14px;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:12px 16px;box-shadow:var(--sh);width:fit-content}
 .setup-dpw>span{font-size:13px;color:var(--text2)}
+.setup-dots{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px}
+.setup-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);transition:all .25s}
+.setup-dot.active{background:#fff;width:24px;border-radius:99px}
+.setup-dot.done{background:var(--nav-a)}
+.setup-step{animation:fadeIn .2s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 .setup-foot{position:sticky;bottom:0;background:linear-gradient(transparent,var(--bg) 35%);padding:16px 20px 22px}
 .setup-done{width:100%;padding:16px;background:var(--nav);color:var(--nav-a);font-size:15px;font-weight:700;border:none;border-radius:99px;cursor:pointer;font-family:var(--fb)}
 .setup-skip{display:block;text-align:center;padding:12px;font-size:12px;color:var(--text3);cursor:pointer}
@@ -1277,51 +1283,65 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <svg class="setup-leaf" viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
       <h1 id="setup-title">Let's set up your kitchen</h1>
       <p id="setup-subtitle">A few quick things so your weekly plan fits your family.</p>
+      <div class="setup-dots" id="setup-dots">
+        <div class="setup-dot active" id="sdot-1"></div>
+        <div class="setup-dot" id="sdot-2"></div>
+        <div class="setup-dot" id="sdot-3"></div>
+      </div>
     </div>
     <div class="setup-body">
-      <div class="setup-sec">
-        <h3 data-t="setupWho">Who's at the table?</h3>
-        <div class="setup-counters">
-          <div class="setup-ctr"><span data-t="setupAdults">👨 Adults</span><div class="setup-ctr-ctrls"><button onclick="setupAdj('adults',-1)">−</button><b id="setup-adults">2</b><button onclick="setupAdj('adults',1)">+</button></div></div>
-          <div class="setup-ctr"><span data-t="setupChildren">🧒 Children</span><div class="setup-ctr-ctrls"><button onclick="setupAdj('children',-1)">−</button><b id="setup-children">0</b><button onclick="setupAdj('children',1)">+</button></div></div>
-        </div>
-      </div>
-      <div class="setup-sec">
-        <h3 data-t="setupDietQ">Any diet?</h3>
-        <div class="setup-chips" id="setup-diet"></div>
-      </div>
-      <div class="setup-sec">
-        <h3><span data-t="setupAllergiesQ">Allergies</span> <span class="setup-hint" data-t="setupAllergiesHint">we'll never suggest these</span></h3>
-        <div class="setup-chips" id="setup-allergies"></div>
-      </div>
-      <div class="setup-sec">
-        <h3 data-t="setupDislikeQ">Anything you dislike?</h3>
-        <div class="setup-chips" id="setup-dislikes"></div>
-      </div>
-      <div class="setup-sec" id="setup-protein-sec">
-        <h3>💚 <span data-t="setupProteinQ">Daily protein goal</span> <span class="setup-hint" data-t="setupProteinHint">we'll calculate it for you</span></h3>
-        <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
-          <div style="position:relative;flex:1">
-            <input type="number" id="setup-weight-input" min="30" max="300" placeholder="70" oninput="calcProteinGoal()" style="width:100%;padding:10px 44px 10px 16px;border-radius:99px;border:1.5px solid var(--border2);background:var(--surface);font-size:17px;font-family:var(--fb);outline:none;color:var(--text)">
-            <span id="setup-weight-unit-lbl" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text3);pointer-events:none">kg</span>
-          </div>
-          <div style="display:flex;gap:4px">
-            <button class="setup-chip on" id="unit-kg" onclick="setWeightUnit('kg')" style="padding:9px 14px">kg</button>
-            <button class="setup-chip" id="unit-lbs" onclick="setWeightUnit('lbs')" style="padding:9px 14px">lbs</button>
+      <!-- STEP 1: Family -->
+      <div class="setup-step" id="setup-step-1">
+        <div class="setup-sec">
+          <h3 data-t="setupWho">Who's at the table?</h3>
+          <div class="setup-counters">
+            <div class="setup-ctr"><span data-t="setupAdults">👨 Adults</span><div class="setup-ctr-ctrls"><button onclick="setupAdj('adults',-1)">−</button><b id="setup-adults">2</b><button onclick="setupAdj('adults',1)">+</button></div></div>
+            <div class="setup-ctr"><span data-t="setupChildren">🧒 Children</span><div class="setup-ctr-ctrls"><button onclick="setupAdj('children',-1)">−</button><b id="setup-children">0</b><button onclick="setupAdj('children',1)">+</button></div></div>
           </div>
         </div>
-        <div style="display:flex;gap:7px;margin-bottom:10px" id="setup-activity-chips">
-          <button class="setup-chip" onclick="setupActivity('light')" style="flex:1;text-align:center">🚶 Light</button>
-          <button class="setup-chip on" onclick="setupActivity('moderate')" style="flex:1;text-align:center">🏃 Moderate</button>
-          <button class="setup-chip" onclick="setupActivity('active')" style="flex:1;text-align:center">💪 Active</button>
-        </div>
-        <div id="setup-protein-result" style="display:none;background:var(--accent-l);border-radius:var(--rsm);padding:10px 14px;font-size:14px;font-weight:600;color:var(--accent);text-align:center;margin-bottom:8px"></div>
-        <button class="setup-chip" onclick="skipProteinGoal()" data-t="setupProteinSkip" style="margin-top:2px">Skip</button>
       </div>
-      <div class="setup-hint" style="margin-top:-6px" data-t="setupNightsHint">You'll pick which nights to cook each week when you plan.</div>
+      <!-- STEP 2: Diet / Allergies / Dislikes -->
+      <div class="setup-step" id="setup-step-2" style="display:none">
+        <div class="setup-sec">
+          <h3 data-t="setupDietQ">Any diet?</h3>
+          <div class="setup-chips" id="setup-diet"></div>
+        </div>
+        <div class="setup-sec">
+          <h3><span data-t="setupAllergiesQ">Allergies</span> <span class="setup-hint" data-t="setupAllergiesHint">we'll never suggest these</span></h3>
+          <div class="setup-chips" id="setup-allergies"></div>
+        </div>
+        <div class="setup-sec">
+          <h3 data-t="setupDislikeQ">Anything you dislike?</h3>
+          <div class="setup-chips" id="setup-dislikes"></div>
+        </div>
+      </div>
+      <!-- STEP 3: Protein goal -->
+      <div class="setup-step" id="setup-step-3" style="display:none">
+        <div class="setup-sec" id="setup-protein-sec">
+          <h3>💚 <span data-t="setupProteinQ">Daily protein goal</span> <span class="setup-hint" data-t="setupProteinHint">we'll calculate it for you</span></h3>
+          <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
+            <div style="position:relative;flex:1">
+              <input type="number" id="setup-weight-input" min="30" max="300" placeholder="70" oninput="calcProteinGoal()" style="width:100%;padding:10px 44px 10px 16px;border-radius:99px;border:1.5px solid var(--border2);background:var(--surface);font-size:17px;font-family:var(--fb);outline:none;color:var(--text)">
+              <span id="setup-weight-unit-lbl" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text3);pointer-events:none">kg</span>
+            </div>
+            <div style="display:flex;gap:4px">
+              <button class="setup-chip on" id="unit-kg" onclick="setWeightUnit('kg')" style="padding:9px 14px">kg</button>
+              <button class="setup-chip" id="unit-lbs" onclick="setWeightUnit('lbs')" style="padding:9px 14px">lbs</button>
+            </div>
+          </div>
+          <div style="display:flex;gap:7px;margin-bottom:10px" id="setup-activity-chips">
+            <button class="setup-chip" onclick="setupActivity('light')" style="flex:1;text-align:center">🚶 Light</button>
+            <button class="setup-chip on" onclick="setupActivity('moderate')" style="flex:1;text-align:center">🏃 Moderate</button>
+            <button class="setup-chip" onclick="setupActivity('active')" style="flex:1;text-align:center">💪 Active</button>
+          </div>
+          <div id="setup-protein-result" style="display:none;background:var(--accent-l);border-radius:var(--rsm);padding:10px 14px;font-size:14px;font-weight:600;color:var(--accent);text-align:center;margin-bottom:8px"></div>
+          <button class="setup-chip" onclick="skipProteinGoal()" data-t="setupProteinSkip" style="margin-top:2px">Skip</button>
+        </div>
+        <div class="setup-hint" style="margin-top:-6px" data-t="setupNightsHint">You'll pick which nights to cook each week when you plan.</div>
+      </div>
     </div>
     <div class="setup-foot">
-      <button class="setup-done" id="setup-done-btn" onclick="finishSetup()">Plan my first week →</button>
+      <button class="setup-done" id="setup-done-btn" onclick="setupNext()">Next →</button>
       <span class="setup-skip" id="setup-skip" onclick="finishSetup(true)" data-t="setupSkipNow">Skip for now</span>
     </div>
   </div>
@@ -1520,7 +1540,7 @@ en:{
   budgetNudge:'If you fancy trimming a little, {dish} is the priciest pick (~{cost}). ',swapItLink:'Swap it →',
   stepXofY:'Step {i} of {n}',cookAllDone:'All done — enjoy your meal! 🌿',cookTapReady:'Tap "I cooked it" when ready',cookTapNext:'Tap anywhere for the next step →',
   loadingRecipes:'Loading recipes...',
-  setupTitleFirst:"Let's set up your kitchen",setupTitleEdit:'Your preferences',setupSubFirst:'A few quick things so your weekly plan fits your family.',setupSubEdit:'Update anytime — your next plan will follow these.',setupDoneFirst:'Plan my first week →',saveWord:'Save',
+  setupTitleFirst:"Let's set up your kitchen",setupTitleEdit:'Your preferences',setupSubFirst:'A few quick things so your weekly plan fits your family.',setupSubEdit:'Update anytime — your next plan will follow these.',setupDoneFirst:'Plan my first week →',saveWord:'Save',nextWord:'Next →',
   maybeLater:'Maybe later — stay on Free',priceYear:'€44/year',priceMonth:'€4.99/mo',trialYear:'Start free trial — then €44/year',trialMonth:'Start free trial — then €4.99/month',hideComparison:'Hide comparison ↑',compareAll:'Compare all features ↓',
   pwBack:'← Back',pwTitle:'Plans & pricing',pwHeroTitle:'Eat well & spend smart',pwHeroSub:'Everything in Free — plus the tools that save you money and help you eat well.',
   pwFreeName:'🌿 Free',pwAlwaysFree:'Always free',pwFree1:'Plan your whole week in minutes',pwFree2:'Swap & choose meals, skip any day',pwFree3:'Automatic grocery list + staples',pwFree4:'Your favourites cookbook',pwFree5:"Learns your family's taste",
@@ -1643,7 +1663,7 @@ fr:{
   budgetNudge:'Pour alléger un peu, {dish} est le choix le plus cher (~{cost}). ',swapItLink:'Changer →',
   stepXofY:'Étape {i} sur {n}',cookAllDone:'Terminé — bon appétit ! 🌿',cookTapReady:'Touchez « J\'ai cuisiné » quand c\'est prêt',cookTapNext:'Touchez n\'importe où pour l\'étape suivante →',
   loadingRecipes:'Chargement des recettes...',
-  setupTitleFirst:'Configurons votre cuisine',setupTitleEdit:'Vos préférences',setupSubFirst:'Quelques détails pour adapter le plan à votre famille.',setupSubEdit:'Modifiable à tout moment — votre prochain plan suivra.',setupDoneFirst:'Planifier ma première semaine →',saveWord:'Enregistrer',
+  setupTitleFirst:'Configurons votre cuisine',setupTitleEdit:'Vos préférences',setupSubFirst:'Quelques détails pour adapter le plan à votre famille.',setupSubEdit:'Modifiable à tout moment — votre prochain plan suivra.',setupDoneFirst:'Planifier ma première semaine →',saveWord:'Enregistrer',nextWord:'Suivant →',
   maybeLater:'Plus tard — rester en gratuit',priceYear:'44 €/an',priceMonth:'4,99 €/mois',trialYear:'Essai gratuit — puis 44 €/an',trialMonth:'Essai gratuit — puis 4,99 €/mois',hideComparison:'Masquer la comparaison ↑',compareAll:'Comparer les fonctions ↓',
   pwBack:'← Retour',pwTitle:'Offres et tarifs',pwHeroTitle:'Bien manger & dépenser malin',pwHeroSub:'Tout le gratuit — plus les outils qui font économiser et aident à bien manger.',
   pwFreeName:'🌿 Gratuit',pwAlwaysFree:'Toujours gratuit',pwFree1:'Planifiez toute la semaine en minutes',pwFree2:'Changez & choisissez les repas, sautez un jour',pwFree3:'Liste de courses automatique + basiques',pwFree4:'Votre carnet de favoris',pwFree5:'Apprend les goûts de votre famille',
@@ -1766,7 +1786,7 @@ es:{
   budgetNudge:'Si quieres recortar un poco, {dish} es lo más caro (~{cost}). ',swapItLink:'Cambiar →',
   stepXofY:'Paso {i} de {n}',cookAllDone:'¡Listo — que aproveche! 🌿',cookTapReady:'Toca "Lo cociné" cuando esté listo',cookTapNext:'Toca en cualquier sitio para el siguiente paso →',
   loadingRecipes:'Cargando recetas...',
-  setupTitleFirst:'Configuremos tu cocina',setupTitleEdit:'Tus preferencias',setupSubFirst:'Unos detalles para que el plan se ajuste a tu familia.',setupSubEdit:'Cámbialo cuando quieras — tu próximo plan lo seguirá.',setupDoneFirst:'Planificar mi primera semana →',saveWord:'Guardar',
+  setupTitleFirst:'Configuremos tu cocina',setupTitleEdit:'Tus preferencias',setupSubFirst:'Unos detalles para que el plan se ajuste a tu familia.',setupSubEdit:'Cámbialo cuando quieras — tu próximo plan lo seguirá.',setupDoneFirst:'Planificar mi primera semana →',saveWord:'Guardar',nextWord:'Siguiente →',
   maybeLater:'Quizá más tarde — seguir gratis',priceYear:'44 €/año',priceMonth:'4,99 €/mes',trialYear:'Prueba gratis — luego 44 €/año',trialMonth:'Prueba gratis — luego 4,99 €/mes',hideComparison:'Ocultar comparación ↑',compareAll:'Comparar funciones ↓',
   pwBack:'← Atrás',pwTitle:'Planes y precios',pwHeroTitle:'Come bien y gasta con cabeza',pwHeroSub:'Todo lo gratis — más las herramientas que te ahorran dinero y te ayudan a comer bien.',
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Siempre gratis',pwFree1:'Planifica toda la semana en minutos',pwFree2:'Cambia y elige comidas, salta cualquier día',pwFree3:'Lista de la compra automática + básicos',pwFree4:'Tu recetario de favoritos',pwFree5:'Aprende los gustos de tu familia',
@@ -1935,7 +1955,7 @@ de:{
   budgetNudge:'Zum Sparen: {dish} ist die teuerste Wahl (~{cost}). ',swapItLink:'Tauschen →',
   stepXofY:'Schritt {i} von {n}',cookAllDone:'Fertig — guten Appetit! 🌿',cookTapReady:'Tippe „Fertig gekocht", wenn bereit',cookTapNext:'Tippe irgendwo für den nächsten Schritt →',
   loadingRecipes:'Rezepte werden geladen...',
-  setupTitleFirst:'Richten wir deine Küche ein',setupTitleEdit:'Deine Vorlieben',setupSubFirst:'Ein paar Angaben, damit der Wochenplan zu deiner Familie passt.',setupSubEdit:'Jederzeit änderbar — dein nächster Plan folgt diesen.',setupDoneFirst:'Meine erste Woche planen →',saveWord:'Speichern',
+  setupTitleFirst:'Richten wir deine Küche ein',setupTitleEdit:'Deine Vorlieben',setupSubFirst:'Ein paar Angaben, damit der Wochenplan zu deiner Familie passt.',setupSubEdit:'Jederzeit änderbar — dein nächster Plan folgt diesen.',setupDoneFirst:'Meine erste Woche planen →',saveWord:'Speichern',nextWord:'Weiter →',
   maybeLater:'Vielleicht später — kostenlos bleiben',priceYear:'44 €/Jahr',priceMonth:'4,99 €/Mon.',trialYear:'Gratis testen — dann 44 €/Jahr',trialMonth:'Gratis testen — dann 4,99 €/Monat',hideComparison:'Vergleich ausblenden ↑',compareAll:'Alle Funktionen vergleichen ↓',
   pwBack:'← Zurück',pwTitle:'Tarife & Preise',pwHeroTitle:'Gut essen & clever sparen',pwHeroSub:'Alles aus Gratis — plus die Tools, die Geld sparen und gutes Essen erleichtern.',
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Immer gratis',pwFree1:'Plane die ganze Woche in Minuten',pwFree2:'Mahlzeiten tauschen & wählen, Tag überspringen',pwFree3:'Automatische Einkaufsliste + Basics',pwFree4:'Dein Favoriten-Kochbuch',pwFree5:'Lernt den Geschmack deiner Familie',
@@ -2582,7 +2602,7 @@ function closeImpressum(){document.getElementById('legal-bg').classList.remove('
 
 async function signOut(){
   isGuest=false;
-  try{localStorage.removeItem('menja_guest');}catch(e){}
+  try{localStorage.removeItem('menja_guest');localStorage.removeItem('menja_state');}catch(e){}
   if(currentUser&&currentUser.id!=='guest')await sb.auth.signOut();
   state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
   showWelcome();
@@ -3515,19 +3535,44 @@ function devSetTier(tt){
 // FIRST-RUN SETUP (household · diet · allergies · dislikes · dinners/week)
 // ═══════════════════════════════════════════════════
 let setupDraft=null;
+let setupStep=1;
+const SETUP_TOTAL=3;
 function openSetup(isFirstRun){
   setupDraft={
     adults:state.family.adults,children:state.family.children,
     diet:[...(state.dietaryPrefs||[])],allergies:[...(state.allergies||[])],
-    dislikes:[...(state.dislikes||[])]
+    dislikes:[...(state.dislikes||[])],proteinGoal:0
   };
+  setupStep=1;
   document.getElementById('setup-title').textContent=isFirstRun?t('setupTitleFirst'):t('setupTitleEdit');
   document.getElementById('setup-subtitle').textContent=isFirstRun?t('setupSubFirst'):t('setupSubEdit');
-  document.getElementById('setup-done-btn').textContent=isFirstRun?t('setupDoneFirst'):t('saveWord');
   document.getElementById('setup-skip').style.display=isFirstRun?'block':'none';
+  // hide dots when editing (not first run)
+  document.getElementById('setup-dots').style.display=isFirstRun?'flex':'none';
   renderSetup();
+  renderSetupStep();
   document.getElementById('setup-bg').classList.add('open');
   document.getElementById('setup-bg').scrollTop=0;
+}
+function renderSetupStep(){
+  for(let i=1;i<=SETUP_TOTAL;i++){
+    const el=document.getElementById('setup-step-'+i);
+    if(el)el.style.display=i===setupStep?'block':'none';
+  }
+  // update dots
+  for(let i=1;i<=SETUP_TOTAL;i++){
+    const d=document.getElementById('sdot-'+i);
+    if(!d)continue;
+    d.className='setup-dot'+(i===setupStep?' active':i<setupStep?' done':'');
+  }
+  // update button label
+  const btn=document.getElementById('setup-done-btn');
+  if(btn)btn.textContent=setupStep<SETUP_TOTAL?t('nextWord')||'Next →':t('setupDoneFirst')||'Plan my first week →';
+  document.getElementById('setup-bg').scrollTop=0;
+}
+function setupNext(){
+  if(setupStep<SETUP_TOTAL){setupStep++;renderSetupStep();}
+  else{finishSetup();}
 }
 function renderSetup(){
   document.getElementById('setup-adults').textContent=setupDraft.adults;
