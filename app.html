@@ -3365,9 +3365,9 @@ function renderCalc(){
       ${chip(d.sex==='male',"calcSet('sex','male')",t('calcMale'))}
     </div></div>
     <div class="calc-row"><div class="calc-nums">
-      <label>${t('calcAge')}<input type="number" inputmode="numeric" value="${d.age}" oninput="calcSetNum('age',this.value)" placeholder="30"></label>
-      <label>${t('calcHeight')}<input type="number" inputmode="numeric" value="${d.height}" oninput="calcSetNum('height',this.value)" placeholder="170"></label>
-      <label>${t('calcWeight')}<input type="number" inputmode="numeric" value="${d.weight}" oninput="calcSetNum('weight',this.value)" placeholder="70"></label>
+      <label>${t('calcAge')}<input id="calc-age" type="number" inputmode="numeric" step="1" value="${d.age}" oninput="calcSetNum('age',this.value)" placeholder="30"></label>
+      <label>${t('calcHeight')}<input id="calc-height" type="number" inputmode="numeric" step="1" value="${d.height}" oninput="calcSetNum('height',this.value)" placeholder="170"></label>
+      <label>${t('calcWeight')}<input id="calc-weight" type="number" inputmode="numeric" step="any" value="${d.weight}" oninput="calcSetNum('weight',this.value)" placeholder="70"></label>
     </div></div>
     <div class="calc-row"><label>${t('calcActivity')}</label><div class="calc-chips">${actChips}</div></div>
     <div class="calc-row"><label>${t('calcGoal')}</label><div class="calc-chips">${goalChips}</div></div>
@@ -3386,7 +3386,12 @@ function renderCalc(){
   el.innerHTML=html;
 }
 function calcCompute(){
-  const age=parseInt(calcDraft.age),h=parseInt(calcDraft.height),w=parseInt(calcDraft.weight);
+  // Read directly from DOM as fallback — oninput can be missed on mobile (tap → button without blur)
+  const ageEl=document.getElementById('calc-age'),hEl=document.getElementById('calc-height'),wEl=document.getElementById('calc-weight');
+  if(ageEl&&ageEl.value)calcDraft.age=ageEl.value;
+  if(hEl&&hEl.value)calcDraft.height=hEl.value;
+  if(wEl&&wEl.value)calcDraft.weight=wEl.value;
+  const age=parseInt(calcDraft.age),h=parseInt(calcDraft.height),w=parseFloat(calcDraft.weight);
   if(!age||!h||!w||age<10||age>100||h<100||h>230||w<30||w>250){alert(t('calcInvalid'));return;}
   const bmr=10*w+6.25*h-5*age+(calcDraft.sex==='male'?5:-161);
   const goal=CALC_GOAL.find(g=>g.v===calcDraft.goal)||CALC_GOAL[1];
