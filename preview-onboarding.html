@@ -1,6 +1,7 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8">
+<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Menja — Onboarding-Vorschau</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F5F7F2;--surface:#fff;--surface2:#EEF1E8;
@@ -8,227 +9,266 @@
   --text:#1A2214;--text2:#4A5E40;--text3:#8A9E82;
   --accent:#2D5A3D;--accent-l:#E0EDD8;
   --nav:#1A2E1F;--nav-t:#A8C8A0;--nav-a:#7EC87A;
+  --r:18px;--rsm:12px;--sh:0 1px 3px rgba(45,90,61,.06);
   --fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
-  --r:16px;--rsm:10px;--sh:0 2px 16px rgba(45,90,61,.1)
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:var(--fb);background:#e8e8e8;padding:20px;display:flex;flex-direction:column;gap:32px;align-items:center}
-/* phone frame */
-.phone{width:375px;background:var(--bg);border-radius:28px;overflow:hidden;box-shadow:0 8px 40px rgba(0,0,0,.22)}
-.phone-lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#666;margin-bottom:8px;text-align:center}
-/* setup hero */
-.setup-hero{background:var(--nav);padding:40px 24px 26px;text-align:center;border-radius:0 0 28px 28px}
-.setup-leaf{width:56px;height:56px;display:block;margin:0 auto 10px}
-.setup-hero h1{font-family:var(--fd);font-size:23px;font-weight:500;color:#fff;margin-bottom:6px}
+body{font-family:var(--fb);background:#3a3a3a;padding:28px;display:flex;gap:22px;flex-wrap:wrap;justify-content:center;align-items:flex-start}
+.phone{width:380px;background:var(--bg);border-radius:30px;overflow:hidden;height:760px;display:flex;flex-direction:column;box-shadow:0 12px 50px rgba(0,0,0,.45);position:relative}
+.cap{width:100%;text-align:center;color:#fff;font-size:13px;opacity:.7;margin:-8px 0 4px}
+/* setup */
+.setup-inner{display:flex;flex-direction:column;height:100%}
+.setup-hero{background:var(--nav);padding:34px 24px 22px;text-align:center;border-radius:0 0 28px 28px}
+.setup-leaf{width:50px;height:50px;display:block;margin:0 auto 10px}
+.setup-hero h1{font-family:var(--fd);font-size:22px;font-weight:500;color:#fff;margin-bottom:6px}
 .setup-hero p{font-size:13px;color:var(--nav-t);line-height:1.5}
-/* setup body */
-.setup-body{padding:20px 20px 0}
+.setup-progress{margin:16px auto 0;width:70%;max-width:240px;height:5px;border-radius:99px;background:rgba(255,255,255,.18);overflow:hidden}
+.setup-progress-fill{height:100%;border-radius:99px;background:var(--nav-a)}
+.setup-body{padding:22px 20px 8px;flex:1;overflow-y:auto}
 .setup-sec{margin-bottom:22px}
-.setup-sec h3{font-family:var(--fd);font-size:16px;font-weight:500;margin-bottom:10px;color:var(--text)}
-.setup-hint{font-size:11px;color:var(--text3);font-weight:400}
+.setup-sec h3{font-family:var(--fd);font-size:16px;font-weight:500;margin-bottom:10px}
+.setup-hint{font-size:11px;color:var(--text3)}
 .setup-chips{display:flex;flex-wrap:wrap;gap:8px}
 .setup-chip{font-size:13px;font-weight:500;padding:8px 14px;border-radius:99px;background:var(--surface);color:var(--text2);border:1.5px solid var(--border2);cursor:pointer}
 .setup-chip.on{background:var(--nav);color:var(--nav-a);border-color:var(--nav)}
-.setup-counters{display:flex;flex-direction:column;gap:10px}
-.setup-ctr{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:12px 16px;box-shadow:var(--sh)}
-.setup-ctr>span{font-size:14px;font-weight:500}
-.setup-ctr-ctrls{display:flex;align-items:center;gap:14px}
-.setup-ctr-ctrls button{width:34px;height:34px;border-radius:50%;border:1.5px solid var(--border2);background:var(--surface2);font-size:18px;cursor:pointer;color:var(--text2)}
-.setup-ctr-ctrls b{font-family:var(--fd);font-size:20px;min-width:24px;text-align:center}
-/* foot */
-.setup-foot{padding:16px 20px 24px;background:var(--bg)}
-.setup-done{width:100%;padding:16px;background:var(--nav);color:var(--nav-a);font-size:15px;font-weight:700;border:none;border-radius:99px;cursor:pointer;font-family:var(--fb)}
-.setup-skip{display:block;text-align:center;padding:12px;font-size:12px;color:var(--text3);cursor:pointer}
-/* protein calculator */
-.proto-input{width:100%;padding:10px 44px 10px 16px;border-radius:99px;border:1.5px solid var(--border2);background:var(--surface);font-size:17px;font-family:inherit;outline:none;color:var(--text)}
-.proto-result{background:var(--accent-l);border-radius:10px;padding:10px 14px;font-size:14px;font-weight:600;color:var(--accent);text-align:center;margin-bottom:8px}
-/* protein labels — UPDATED */
-.meal-protein-pill{display:inline-flex;align-items:center;gap:3px;background:#FBF0EB;color:#C8622A;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700;margin-left:6px}
-.pday-protein-badge{font-size:10px;font-weight:600;color:#2D5A3D;background:#E0EDD8;border-radius:99px;padding:2px 7px;margin-left:6px;vertical-align:middle}
-.dchoose-protein-badge{display:inline-block;background:#E0EDD8;color:#2D5A3D;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700;margin-top:4px}
-/* meal card */
-.tmeal{padding:12px 16px;border-bottom:.5px solid var(--border)}
-.tmeal-type{font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px}
-.tmeal-row{display:flex;gap:12px;align-items:flex-start}
-.tmeal-em{width:52px;height:52px;border-radius:10px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0}
-.tmeal-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
-.tmeal-sub{font-size:11px;color:var(--text3)}
-/* pday */
-.pday-label-row{display:flex;align-items:center;justify-content:space-between;padding:12px 16px 8px}
-.pday-label{font-size:13px;font-weight:600;color:var(--text)}
-.pday-card{margin:0 16px 12px;background:var(--surface2);border-radius:12px;padding:10px 12px;display:flex;gap:10px}
-.pday-em{width:44px;height:44px;border-radius:8px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
-.pday-name{font-size:13px;font-weight:600;color:var(--text);margin-bottom:2px}
-.pday-meta{font-size:11px;color:var(--text3)}
-/* chooser */
-.chooser-card{padding:14px 16px}
-.chooser-name{font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px}
-.chooser-meta{font-size:11px;color:var(--text3);margin-bottom:6px}
-</style>
-</head>
+.setup-text-input{width:100%;padding:14px 18px;border-radius:16px;border:1.5px solid var(--border2);background:var(--surface);font-size:18px;font-family:var(--fb);color:var(--text);text-align:center;margin-bottom:10px}
+.setup-num-row{display:flex;gap:10px}
+.setup-num{flex:1;display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:600;color:var(--text2)}
+.setup-num input{width:100%;padding:12px 14px;border-radius:14px;border:1.5px solid var(--border2);background:var(--surface);font-size:17px;font-family:var(--fb);color:var(--text)}
+.setup-num-inwrap{position:relative;display:block}
+.setup-num-inwrap b{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text3)}
+.setup-goalgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.setup-goal{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:16px 10px;border-radius:18px;border:1.5px solid var(--border2);background:var(--surface);font-size:13px;font-weight:600;color:var(--text)}
+.setup-goal .em{font-size:26px}
+.setup-goal.on{border-color:var(--nav);background:var(--accent-l);box-shadow:0 0 0 1.5px var(--nav) inset}
+.setup-choicegrid{display:flex;flex-direction:column;gap:10px}
+.setup-choice{display:flex;align-items:center;gap:14px;padding:16px;border-radius:18px;border:1.5px solid var(--border2);background:var(--surface);text-align:left}
+.setup-choice .em{font-size:26px;flex-shrink:0}
+.setup-choice b{font-size:15px;font-weight:600;color:var(--text);display:block}
+.setup-choice .d{font-size:12px;color:var(--text3);margin-top:2px}
+.setup-choice.on{border-color:var(--nav);background:var(--accent-l);box-shadow:0 0 0 1.5px var(--nav) inset}
+.setup-result{background:var(--accent-l);border-radius:16px;padding:16px;text-align:center;margin-top:14px}
+.setup-result .rrow{display:flex;justify-content:center;gap:26px;margin-bottom:6px}
+.setup-result .rv{font-family:var(--fd);font-size:24px;font-weight:600;color:var(--accent)}
+.setup-result .rl{font-size:11px;color:var(--text3);font-weight:500}
+.setup-result .rnote{font-size:11px;color:var(--text3);line-height:1.4}
+.setup-value{text-align:center;padding:10px 4px}
+.setup-value-icon{font-size:54px;margin-bottom:18px}
+.setup-value-pts{display:flex;flex-direction:column;gap:16px;text-align:left}
+.setup-value-pt{display:flex;align-items:flex-start;gap:13px}
+.setup-value-pt>span{font-size:22px}
+.setup-value-pt b{font-size:15px;font-weight:600;color:var(--text)}
+.setup-value-pt div div{font-size:13px;color:var(--text3);line-height:1.45;margin-top:2px}
+.setup-celebrate{text-align:center;padding:6px 4px}
+.setup-celebrate-em{font-size:60px;margin-bottom:10px}
+.setup-summary{display:flex;flex-direction:column;gap:9px;margin-top:8px}
+.setup-summary-row{display:flex;align-items:center;gap:11px;background:var(--surface);border:.5px solid var(--border);border-radius:14px;padding:12px 15px;box-shadow:var(--sh);text-align:left}
+.setup-summary-row .em{font-size:20px}
+.setup-summary-row .slbl{font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.setup-summary-row .val{font-size:14px;color:var(--text);font-weight:600}
+.setup-foot{padding:14px 20px 20px;background:linear-gradient(transparent,var(--bg) 35%)}
+.setup-foot-row{display:flex;align-items:center;gap:10px}
+.setup-back{width:52px;height:52px;flex-shrink:0;border-radius:99px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text2);font-size:22px}
+.setup-done{flex:1;padding:16px;background:var(--nav);color:var(--nav-a);font-size:15px;font-weight:700;border:none;border-radius:99px;font-family:var(--fb)}
+.setup-skip{display:block;text-align:center;padding:11px;font-size:12px;color:var(--text3)}
+/* welcome */
+.welcome{background:var(--nav);height:100%;display:flex;flex-direction:column;padding:30px 26px 24px;text-align:center}
+.welcome-brand{display:flex;align-items:center;justify-content:center;gap:8px;margin-bottom:14px}
+.welcome-brand svg{width:26px;height:26px}.welcome-brand span{font-family:var(--fd);font-size:17px;color:#fff}
+.welcome-photo{width:100%;aspect-ratio:4/3;border-radius:22px;overflow:hidden;margin-bottom:18px}
+.welcome-photo img{width:100%;height:100%;object-fit:cover}
+.welcome h1{font-family:var(--fd);font-size:27px;font-weight:600;color:#fff;line-height:1.12;margin-bottom:9px}
+.welcome .sub{font-size:14px;color:var(--nav-t);line-height:1.5;margin-bottom:13px}
+.welcome .taste{display:flex;justify-content:center;gap:7px;flex-wrap:wrap}
+.welcome .taste span{font-size:12px;font-weight:600;color:#fff;background:rgba(126,200,122,.16);border:1px solid rgba(126,200,122,.34);border-radius:99px;padding:5px 11px}
+.welcome .cta{margin-top:auto}
+.welcome-start{width:100%;background:var(--nav-a);color:var(--nav);border:none;border-radius:99px;padding:16px;font-size:16px;font-weight:700}
+.welcome-signin{font-size:13px;color:var(--nav-t);margin-top:15px}.welcome-signin a{color:var(--nav-a);font-weight:600}
+/* me-tab cards */
+.me{background:var(--bg);height:100%;overflow-y:auto;padding:18px 20px}
+.fam-section{margin-bottom:22px}
+.fam-section h3{font-family:var(--fd);font-size:16px;font-weight:500;margin-bottom:10px}
+.macro-sum{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:13px 16px;box-shadow:var(--sh)}
+.macro-sum-vals{display:flex;gap:16px;font-size:14px;font-weight:600;color:var(--text)}
+.chev{color:var(--text3)}
+.micro-card{display:flex;align-items:center;gap:16px;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:14px 16px;box-shadow:var(--sh)}
+.micro-ring{width:62px;height:62px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.micro-ring-in{width:48px;height:48px;border-radius:50%;background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.micro-ring-in b{font-family:var(--fd);font-size:19px;color:var(--text)}
+.micro-ring-in span{font-size:10px;color:var(--text3)}
+.micro-msg{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
+.micro-sub{font-size:12px;color:var(--text3);line-height:1.4}
+.micro-plants{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.micro-plants span{font-size:11px;font-weight:500;color:var(--text2);background:var(--surface2);border:1px solid var(--border2);border-radius:99px;padding:4px 10px;text-transform:capitalize}
+</style></head>
 <body>
+<div style="width:100%;text-align:center;color:#fff;margin-bottom:8px"><h2 style="font-weight:600">Menja — Neues Onboarding (Sign-Up zuletzt) + Calculator + Mikrobiom-Tracker</h2></div>
 
-<!-- ① SCREEN 1 — WELCOME / HERO -->
-<div>
-<div class="phone-lbl">① Onboarding start</div>
-<div class="phone">
-  <div class="setup-hero">
-    <svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
-    <h1>Let's set up your kitchen</h1>
-    <p>A few quick things so your weekly plan fits your family.</p>
-  </div>
-  <div class="setup-body">
-    <!-- WHO'S AT THE TABLE -->
-    <div class="setup-sec">
-      <h3>Who's at the table?</h3>
-      <div class="setup-counters">
-        <div class="setup-ctr">
-          <span>👨 Adults</span>
-          <div class="setup-ctr-ctrls"><button>−</button><b>2</b><button>+</button></div>
-        </div>
-        <div class="setup-ctr">
-          <span>🧒 Children</span>
-          <div class="setup-ctr-ctrls"><button>−</button><b>1</b><button>+</button></div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+<!-- 0. Welcome -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">① Welcome · Sign-Up zuletzt</div>
+<div class="phone"><div class="welcome">
+  <div class="welcome-brand"><svg viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg><span>Menja Fresh</span></div>
+  <div class="welcome-photo"><img src="https://v3b.fal.media/files/b/0a9cf80d/7zutElf_TjiowoI0eejH7_15c2f43eb8bb426794a154cab2c0dd86.jpg" alt=""></div>
+  <h1>Rezepte 100&nbsp;% für dich</h1>
+  <p class="sub">Dein perfekter Essensplan in unter 5 Minuten — passend zu deinem Geschmack.</p>
+  <div class="taste"><span>🥗 Gesund</span><span>⚡ Einfach</span><span>🌈 Abwechslungsreich</span></div>
+  <div class="cta"><button class="welcome-start">Loslegen — kostenlos →</button>
+  <div class="welcome-signin">Schon dabei? <a>Anmelden</a></div></div>
+</div></div></div>
 
-<!-- ② SCREEN 2 — DIET + ALLERGIES -->
-<div>
-<div class="phone-lbl">② Diet & Allergies</div>
-<div class="phone">
-  <div class="setup-hero" style="padding:24px 24px 18px">
-    <h1 style="font-size:19px">Any food preferences?</h1>
-    <p>We'll filter recipes to suit your household.</p>
-  </div>
-  <div class="setup-body">
-    <div class="setup-sec">
-      <h3>Any diet?</h3>
-      <div class="setup-chips">
-        <div class="setup-chip on">🌱 Vegan</div>
-        <div class="setup-chip">🥦 Vegetarian</div>
-        <div class="setup-chip">🐟 Pescatarian</div>
-        <div class="setup-chip">🥩 Keto</div>
-        <div class="setup-chip">🌾 Gluten-free</div>
-        <div class="setup-chip">🥛 Dairy-free</div>
-      </div>
-    </div>
-    <div class="setup-sec">
-      <h3>Allergies <span class="setup-hint">we'll never suggest these</span></h3>
-      <div class="setup-chips">
-        <div class="setup-chip on">🥜 Nuts</div>
-        <div class="setup-chip">🥛 Dairy</div>
-        <div class="setup-chip">🌾 Gluten</div>
-        <div class="setup-chip">🥚 Eggs</div>
-        <div class="setup-chip">🐟 Fish</div>
-        <div class="setup-chip">🦐 Shellfish</div>
-        <div class="setup-chip">🫘 Soy</div>
-      </div>
-    </div>
-    <div class="setup-sec">
-      <h3>Anything you dislike?</h3>
-      <div class="setup-chips">
-        <div class="setup-chip">🧅 Onion</div>
-        <div class="setup-chip on">🫑 Peppers</div>
-        <div class="setup-chip">🍄 Mushrooms</div>
-        <div class="setup-chip">🫒 Olives</div>
-        <div class="setup-chip">🌶 Spicy</div>
-      </div>
-    </div>
-  </div>
-</div>
-</div>
+<!-- 1. Name -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">② Name</div>
+<div class="phone"><div class="setup-inner">
+  <div class="setup-hero"><svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/></svg>
+    <h1>Wie dürfen wir dich nennen?</h1><p>Ein Vorname macht es persönlicher.</p>
+    <div class="setup-progress"><div class="setup-progress-fill" style="width:9%"></div></div></div>
+  <div class="setup-body"><div class="setup-sec">
+    <input class="setup-text-input" value="Judith" readonly>
+    <div class="setup-hint">Nur ein Vorname — damit sich die App nach dir anfühlt.</div>
+  </div></div>
+  <div class="setup-foot"><div class="setup-foot-row"><button class="setup-back" style="visibility:hidden">‹</button><button class="setup-done">Weiter →</button></div><div class="setup-skip">Überspringen</div></div>
+</div></div></div>
 
-<!-- ③ SCREEN 3 — PROTEIN GOAL (auto-calculator) -->
-<div>
-<div class="phone-lbl">③ Protein goal — auto-calculator</div>
-<div class="phone">
-  <div class="setup-hero" style="padding:24px 24px 18px">
-    <h1 style="font-size:19px">💚 Daily protein goal</h1>
-    <p>Enter your weight and we calculate it automatically.</p>
-  </div>
-  <div class="setup-body">
-    <div class="setup-sec">
-      <h3>💚 Daily protein goal <span class="setup-hint">we'll calculate it for you</span></h3>
-      <!-- weight input + unit toggle -->
-      <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
-        <div style="position:relative;flex:1">
-          <input class="proto-input" type="number" value="72" placeholder="70">
-          <span style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text3)">kg</span>
-        </div>
-        <div style="display:flex;gap:4px">
-          <div class="setup-chip on" style="padding:9px 14px">kg</div>
-          <div class="setup-chip" style="padding:9px 14px">lbs</div>
-        </div>
-      </div>
-      <!-- activity level -->
-      <div style="display:flex;gap:7px;margin-bottom:12px">
-        <div class="setup-chip" style="flex:1;text-align:center">🚶 Light</div>
-        <div class="setup-chip on" style="flex:1;text-align:center">🏃 Moderate</div>
-        <div class="setup-chip" style="flex:1;text-align:center">💪 Active</div>
-      </div>
-      <!-- calculated result -->
-      <div class="proto-result">💚 Your goal: ~100g protein / day</div>
-      <div class="setup-chip" style="margin-top:4px">Skip</div>
-      <p style="font-size:11px;color:var(--text3);margin-top:10px;line-height:1.5">Based on 1.4g per kg body weight (moderate activity). You can change this anytime in your profile.</p>
-    </div>
-  </div>
-  <div class="setup-foot">
-    <button class="setup-done">Plan my first week →</button>
-    <span class="setup-skip">Skip for now</span>
-  </div>
-</div>
-</div>
+<!-- 2. Goals -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">③ Deine Ziele</div>
+<div class="phone"><div class="setup-inner">
+  <div class="setup-hero"><svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/></svg>
+    <h1>Judith, was bringt dich her?</h1><p>Wähle alles Passende — wir richten deinen Plan danach aus.</p>
+    <div class="setup-progress"><div class="setup-progress-fill" style="width:18%"></div></div></div>
+  <div class="setup-body"><div class="setup-sec"><div class="setup-goalgrid">
+    <div class="setup-goal on"><span class="em">🥗</span>Gesünder essen</div>
+    <div class="setup-goal"><span class="em">⚖️</span>Abnehmen</div>
+    <div class="setup-goal on"><span class="em">💪</span>Muskeln aufbauen</div>
+    <div class="setup-goal"><span class="em">⚡</span>Mehr Energie</div>
+    <div class="setup-goal"><span class="em">⏱️</span>Zeit sparen</div>
+    <div class="setup-goal"><span class="em">🌈</span>Mehr Abwechslung</div>
+  </div></div></div>
+  <div class="setup-foot"><div class="setup-foot-row"><button class="setup-back">‹</button><button class="setup-done">Weiter →</button></div><div class="setup-skip">Überspringen</div></div>
+</div></div></div>
 
-<!-- ④ PROTEIN LABELS — BEFORE vs AFTER -->
-<div>
-<div class="phone-lbl">④ Protein labels — Before vs After</div>
-<div class="phone" style="background:var(--surface)">
-  <div style="padding:10px 14px;background:#fff3e0;font-size:11px;font-weight:700;color:#e65100;letter-spacing:.06em;text-transform:uppercase">Before — not intuitive</div>
-  <!-- Today tab meal -->
-  <div class="tmeal">
-    <div class="tmeal-type">🍽 Dinner <span style="display:inline-flex;align-items:center;gap:3px;background:#FBF0EB;color:#C8622A;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700;margin-left:6px">🥩 38g</span></div>
-    <div class="tmeal-row">
-      <div class="tmeal-em">🥗</div>
-      <div><div class="tmeal-name">Burrata Salad</div><div class="tmeal-sub">⏱ 15 min</div></div>
-    </div>
-  </div>
-  <!-- Plan day -->
-  <div class="pday-label-row">
-    <span class="pday-label">Mon 22 Jun <span style="font-size:10px;font-weight:600;color:#2D5A3D;background:#E0EDD8;border-radius:99px;padding:2px 7px;margin-left:6px">💚 62g</span></span>
-  </div>
-  <div class="pday-card">
-    <div class="pday-em">🥗</div>
-    <div><div class="pday-name">Burrata Salad</div><div class="pday-meta">⏱ 15 min</div></div>
-  </div>
+<!-- 3. Main meal -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">⑤ Hauptmahlzeit</div>
+<div class="phone"><div class="setup-inner">
+  <div class="setup-hero"><svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/></svg>
+    <h1>Deine Hauptmahlzeit?</h1><p>Wir bauen den Plan darum herum.</p>
+    <div class="setup-progress"><div class="setup-progress-fill" style="width:36%"></div></div></div>
+  <div class="setup-body"><div class="setup-sec"><div class="setup-choicegrid">
+    <div class="setup-choice"><span class="em">☀️</span><div><b>Mittag</b><div class="d">Hauptmahlzeit mittags</div></div></div>
+    <div class="setup-choice on"><span class="em">🌙</span><div><b>Abend</b><div class="d">Hauptmahlzeit abends</div></div></div>
+  </div></div></div>
+  <div class="setup-foot"><div class="setup-foot-row"><button class="setup-back">‹</button><button class="setup-done">Weiter →</button></div><div class="setup-skip">Überspringen</div></div>
+</div></div></div>
 
-  <div style="padding:10px 14px;background:#E0EDD8;font-size:11px;font-weight:700;color:#2D5A3D;letter-spacing:.06em;text-transform:uppercase;margin-top:4px">After — clear & consistent</div>
-  <!-- Today tab meal FIXED -->
-  <div class="tmeal">
-    <div class="tmeal-type">🍽 Dinner <span class="meal-protein-pill">💚 38g prot</span></div>
-    <div class="tmeal-row">
-      <div class="tmeal-em">🥗</div>
-      <div><div class="tmeal-name">Burrata Salad</div><div class="tmeal-sub">⏱ 15 min</div></div>
+<!-- 4. Body -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">⑦ Geschlecht · Größe · Gewicht</div>
+<div class="phone"><div class="setup-inner">
+  <div class="setup-hero"><svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/></svg>
+    <h1>Ein bisschen über dich</h1><p>Für dein Kalorien- &amp; Eiweißziel.</p>
+    <div class="setup-progress"><div class="setup-progress-fill" style="width:55%"></div></div></div>
+  <div class="setup-body"><div class="setup-sec">
+    <div class="setup-chips" style="margin-bottom:16px"><div class="setup-chip on">Weiblich</div><div class="setup-chip">Männlich</div></div>
+    <div class="setup-num-row">
+      <label class="setup-num"><span>Größe (cm)</span><input value="170" readonly></label>
+      <label class="setup-num"><span>Gewicht</span><span class="setup-num-inwrap"><input value="68" readonly><b>kg</b></span></label>
     </div>
+    <div class="setup-chips" style="margin-top:10px"><div class="setup-chip on">kg</div><div class="setup-chip">lbs</div></div>
+    <div class="setup-hint" style="margin-top:12px">Damit setzen wir dein tägliches Kalorien- &amp; Eiweißziel. Optional — jederzeit überspringbar.</div>
+  </div></div>
+  <div class="setup-foot"><div class="setup-foot-row"><button class="setup-back">‹</button><button class="setup-done">Weiter →</button></div><div class="setup-skip">Überspringen</div></div>
+</div></div></div>
+
+<!-- 5. Activity + result -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">⑨ Aktivität → kcal + Protein</div>
+<div class="phone"><div class="setup-inner">
+  <div class="setup-hero"><svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/></svg>
+    <h1>Wie aktiv bist du?</h1><p>Das letzte Teil deines Tagesziels.</p>
+    <div class="setup-progress"><div class="setup-progress-fill" style="width:73%"></div></div></div>
+  <div class="setup-body"><div class="setup-sec">
+    <div class="setup-choicegrid">
+      <div class="setup-choice"><span class="em">🚶</span><div><b>Leicht</b><div class="d">Überwiegend sitzend, wenig Sport</div></div></div>
+      <div class="setup-choice on"><span class="em">🏃</span><div><b>Mittel</b><div class="d">Auf den Beinen oder Sport ein paar Mal pro Woche</div></div></div>
+      <div class="setup-choice"><span class="em">💪</span><div><b>Aktiv</b><div class="d">Hartes Training oder körperliche Arbeit</div></div></div>
+    </div>
+    <div class="setup-result"><div class="rrow"><div><div class="rv">1950</div><div class="rl">Kalorien / Tag</div></div><div><div class="rv">110 g</div><div class="rl">Protein / Tag</div></div></div><div class="rnote">Geschätzt mit der Mifflin-St-Jeor-Formel. Ein guter Startwert.</div></div>
+  </div></div>
+  <div class="setup-foot"><div class="setup-foot-row"><button class="setup-back">‹</button><button class="setup-done">Weiter →</button></div><div class="setup-skip">Überspringen</div></div>
+</div></div></div>
+
+<!-- 6. Focus -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">⑩ Spezieller Fokus</div>
+<div class="phone"><div class="setup-inner">
+  <div class="setup-hero"><svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/></svg>
+    <h1>Ein besonderer Fokus?</h1><p>Wir können deinen Plan ausrichten.</p>
+    <div class="setup-progress"><div class="setup-progress-fill" style="width:82%"></div></div></div>
+  <div class="setup-body"><div class="setup-sec">
+    <div class="setup-choicegrid">
+      <div class="setup-choice on"><span class="em">💪</span><div><b>High-Protein</b><div class="d">Eiweißreiche Rezepte bevorzugen</div></div></div>
+      <div class="setup-choice"><span class="em">🥑</span><div><b>Low-Carb</b><div class="d">Weniger Kohlenhydrate, mehr Gemüse &amp; Eiweiß</div></div></div>
+    </div>
+    <div class="setup-hint" style="margin-top:12px">Optional — eins, beides oder keins.</div>
+  </div></div>
+  <div class="setup-foot"><div class="setup-foot-row"><button class="setup-back">‹</button><button class="setup-done">Weiter →</button></div><div class="setup-skip">Überspringen</div></div>
+</div></div></div>
+
+<!-- 7. Value shopping -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">⑪ Value: Einkauf ohne Stress</div>
+<div class="phone"><div class="setup-inner">
+  <div class="setup-hero"><svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/></svg>
+    <h1>Einkauf ohne Stress</h1><p>Dein Plan schreibt die Liste für dich.</p>
+    <div class="setup-progress"><div class="setup-progress-fill" style="width:91%"></div></div></div>
+  <div class="setup-body"><div class="setup-value">
+    <div class="setup-value-icon">🛒</div>
+    <div class="setup-value-pts">
+      <div class="setup-value-pt"><span>🧾</span><div><b>Eine automatische Liste</b><div>Alle Zutaten zusammengeführt und nach Gang sortiert.</div></div></div>
+      <div class="setup-value-pt"><span>🥫</span><div><b>Kennt deinen Vorrat</b><div>Basics, die du schon hast, werden weggelassen.</div></div></div>
+      <div class="setup-value-pt"><span>🚚</span><div><b>Mit einem Tipp bestellen</b><div>Sende die ganze Liste zur Lieferung, wenn du bereit bist.</div></div></div>
+    </div>
+  </div></div>
+  <div class="setup-foot"><div class="setup-foot-row"><button class="setup-back">‹</button><button class="setup-done">Weiter →</button></div></div>
+</div></div></div>
+
+<!-- 8. Celebration -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">🎉 Plan bereit → dann Sign-Up</div>
+<div class="phone"><div class="setup-inner">
+  <div class="setup-hero"><svg class="setup-leaf" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/></svg>
+    <h1>Judith, dein Plan ist bereit 🎉</h1><p>Darauf bauen wir auf.</p>
+    <div class="setup-progress"><div class="setup-progress-fill" style="width:100%"></div></div></div>
+  <div class="setup-body"><div class="setup-celebrate">
+    <div class="setup-celebrate-em">🎉</div>
+    <div class="setup-summary">
+      <div class="setup-summary-row"><span class="em">👥</span><div><div class="slbl">Haushalt</div><div class="val">2 Erwachsene</div></div></div>
+      <div class="setup-summary-row"><span class="em">🍽️</span><div><div class="slbl">Hauptmahlzeit</div><div class="val">Abend</div></div></div>
+      <div class="setup-summary-row"><span class="em">🔥</span><div><div class="slbl">Tagesziel</div><div class="val">1950 kcal · 110 g protein</div></div></div>
+      <div class="setup-summary-row"><span class="em">🎯</span><div><div class="slbl">Fokus</div><div class="val">High-Protein</div></div></div>
+    </div>
+  </div></div>
+  <div class="setup-foot"><div class="setup-foot-row"><button class="setup-back">‹</button><button class="setup-done">Kostenloses Konto erstellen →</button></div></div>
+</div></div></div>
+
+<!-- 9. Me tab -->
+<div style="display:flex;flex-direction:column;align-items:center">
+<div class="cap">Me-Tab: aufgeräumt + Mikrobiom</div>
+<div class="phone"><div class="me">
+  <div class="fam-section"><h3>Ernährungsziele <span style="font-size:11px;color:var(--text3);font-weight:400">pro Person</span></h3>
+    <div class="macro-sum"><div class="macro-sum-vals"><span>🔥 1950 kcal</span><span>💚 110 g protein</span></div><span class="chev">›</span></div>
+    <div style="font-size:11px;color:var(--text3);margin-top:6px">Tippen zum Anpassen — Rechner vorausgefüllt &amp; eingeklappt.</div>
   </div>
-  <!-- Plan day FIXED -->
-  <div class="pday-label-row">
-    <span class="pday-label">Mon 22 Jun <span class="pday-protein-badge">💚 62g prot</span></span>
+  <div class="fam-section"><h3>🌱 Pflanzenvielfalt <span style="font-size:11px;color:var(--text3);font-weight:400">diese Woche</span></h3>
+    <div class="micro-card">
+      <div class="micro-ring" style="background:conic-gradient(#9BC47E 230deg, var(--surface2) 230deg)"><div class="micro-ring-in"><b>19</b><span>/30</span></div></div>
+      <div class="micro-info"><div class="micro-msg">Noch 11 Pflanzen bis 30 diese Woche.</div><div class="micro-sub">Ziel: 30 verschiedene Pflanzen pro Woche für einen gesunden Darm.</div></div>
+    </div>
+    <div class="micro-plants"><span>spinat</span><span>kichererbse</span><span>tomate</span><span>avocado</span><span>linse</span><span>brokkoli</span><span>hafer</span><span>walnuss</span><span>basilikum</span><span>zitrone</span><span>karotte</span><span>knoblauch</span><span class="more">+7</span></div>
   </div>
-  <div class="pday-card">
-    <div class="pday-em">🥗</div>
-    <div><div class="pday-name">Burrata Salad</div><div class="pday-meta">⏱ 15 min</div></div>
-  </div>
-  <!-- Chooser badge (was already good) -->
-  <div class="chooser-card" style="border-top:.5px solid var(--border)">
-    <div class="chooser-name">Chickpea Curry with Spinach</div>
-    <div class="chooser-meta">⏱ 30 min · Vegan</div>
-    <div class="dchoose-protein-badge">💚 22g protein</div>
-  </div>
-</div>
-</div>
+</div></div></div>
 
 </body></html>

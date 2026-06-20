@@ -757,6 +757,20 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .macro-goal-inputs{display:flex;gap:10px}
 .macro-goal-inputs label{flex:1;font-size:11px;color:var(--text3);display:flex;flex-direction:column;gap:4px}
 .macro-goal-inputs input{padding:10px 12px;border-radius:var(--rsm);border:1.5px solid var(--border2);background:var(--surface);font-size:15px;font-family:var(--fb);outline:none}
+.macro-sum{display:flex;align-items:center;justify-content:space-between;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:13px 16px;box-shadow:var(--sh);cursor:pointer}
+.macro-sum-vals{display:flex;gap:16px;font-size:14px;font-weight:600;color:var(--text)}
+.macro-edit{margin-top:10px;display:flex;flex-direction:column;gap:10px}
+.micro-card{display:flex;align-items:center;gap:16px;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:14px 16px;box-shadow:var(--sh)}
+.micro-ring{width:62px;height:62px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.micro-ring-in{width:48px;height:48px;border-radius:50%;background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+.micro-ring-in b{font-family:var(--fd);font-size:19px;color:var(--text)}
+.micro-ring-in span{font-size:10px;color:var(--text3)}
+.micro-info{flex:1}
+.micro-msg{font-size:14px;font-weight:600;color:var(--text);margin-bottom:3px}
+.micro-sub{font-size:12px;color:var(--text3);line-height:1.4}
+.micro-plants{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.micro-plants span{font-size:11px;font-weight:500;color:var(--text2);background:var(--surface2);border:1px solid var(--border2);border-radius:99px;padding:4px 10px;text-transform:capitalize}
+.micro-plants span.more{color:var(--text3);text-transform:none}
 /* ── CALORIE / PROTEIN CALCULATOR ────────────── */
 .calc-head{padding:6px 22px 0;text-align:center}
 .calc-body{padding:14px 22px 0;max-height:62vh;overflow-y:auto}
@@ -857,14 +871,52 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .setup-ctr-ctrls b,.setup-dpw b{font-family:var(--fd);font-size:20px;min-width:24px;text-align:center}
 .setup-dpw{display:flex;align-items:center;gap:14px;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:12px 16px;box-shadow:var(--sh);width:fit-content}
 .setup-dpw>span{font-size:13px;color:var(--text2)}
-.setup-dots{display:flex;align-items:center;justify-content:center;gap:8px;margin-top:16px}
-.setup-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.3);transition:all .25s}
-.setup-dot.active{background:#fff;width:24px;border-radius:99px}
-.setup-dot.done{background:var(--nav-a)}
+.setup-progress{margin:18px auto 0;width:70%;max-width:240px;height:5px;border-radius:99px;background:rgba(255,255,255,.18);overflow:hidden}
+.setup-progress-fill{height:100%;width:9%;border-radius:99px;background:var(--nav-a);transition:width .3s ease}
 .setup-step{animation:fadeIn .2s ease}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.setup-text-input{width:100%;padding:14px 18px;border-radius:16px;border:1.5px solid var(--border2);background:var(--surface);font-size:18px;font-family:var(--fb);outline:none;color:var(--text);text-align:center;margin-bottom:10px}
+.setup-text-input:focus{border-color:var(--nav-a)}
+.setup-num-row{display:flex;gap:10px}
+.setup-num{flex:1;display:flex;flex-direction:column;gap:6px;font-size:12px;font-weight:600;color:var(--text2)}
+.setup-num input{width:100%;padding:12px 14px;border-radius:14px;border:1.5px solid var(--border2);background:var(--surface);font-size:17px;font-family:var(--fb);outline:none;color:var(--text)}
+.setup-num input:focus{border-color:var(--nav-a)}
+.setup-num-inwrap{position:relative;display:block}
+.setup-num-inwrap b{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text3);pointer-events:none}
+.setup-goalgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.setup-goal{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:16px 10px;border-radius:18px;border:1.5px solid var(--border2);background:var(--surface);cursor:pointer;transition:all .15s;font-size:13px;font-weight:600;color:var(--text)}
+.setup-goal .em{font-size:26px}
+.setup-goal.on{border-color:var(--nav);background:var(--accent-l);box-shadow:0 0 0 1.5px var(--nav) inset}
+.setup-choicegrid{display:flex;flex-direction:column;gap:10px}
+.setup-choice{display:flex;align-items:center;gap:14px;padding:16px;border-radius:18px;border:1.5px solid var(--border2);background:var(--surface);cursor:pointer;transition:all .15s;text-align:left}
+.setup-choice .em{font-size:26px;flex-shrink:0}
+.setup-choice b{font-size:15px;font-weight:600;color:var(--text);display:block}
+.setup-choice .d{font-size:12px;color:var(--text3);margin-top:2px}
+.setup-choice.on{border-color:var(--nav);background:var(--accent-l);box-shadow:0 0 0 1.5px var(--nav) inset}
+.setup-actgrid .setup-choice{padding:14px 16px}
+.setup-result{background:var(--accent-l);border-radius:16px;padding:16px;text-align:center;margin-top:14px}
+.setup-result .rrow{display:flex;justify-content:center;gap:26px;margin-bottom:6px}
+.setup-result .rv{font-family:var(--fd);font-size:24px;font-weight:600;color:var(--accent)}
+.setup-result .rl{font-size:11px;color:var(--text3);font-weight:500}
+.setup-result .rnote{font-size:11px;color:var(--text3);line-height:1.4}
+.setup-value{text-align:center;padding:10px 4px}
+.setup-value-icon{font-size:54px;margin-bottom:18px}
+.setup-value-pts{display:flex;flex-direction:column;gap:16px;text-align:left}
+.setup-value-pt{display:flex;align-items:flex-start;gap:13px}
+.setup-value-pt>span{font-size:22px}
+.setup-value-pt b{font-size:15px;font-weight:600;color:var(--text)}
+.setup-value-pt div div{font-size:13px;color:var(--text3);line-height:1.45;margin-top:2px}
+.setup-celebrate{text-align:center;padding:6px 4px}
+.setup-celebrate-em{font-size:60px;margin-bottom:10px;animation:float 1.6s ease-in-out infinite}
+.setup-summary{display:flex;flex-direction:column;gap:9px;margin-top:8px}
+.setup-summary-row{display:flex;align-items:center;gap:11px;background:var(--surface);border:.5px solid var(--border);border-radius:14px;padding:12px 15px;box-shadow:var(--sh);text-align:left}
+.setup-summary-row .em{font-size:20px}
+.setup-summary-row .lbl{font-size:11px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:.04em}
+.setup-summary-row .val{font-size:14px;color:var(--text);font-weight:600}
 .setup-foot{position:sticky;bottom:0;background:linear-gradient(transparent,var(--bg) 35%);padding:16px 20px 22px}
-.setup-done{width:100%;padding:16px;background:var(--nav);color:var(--nav-a);font-size:15px;font-weight:700;border:none;border-radius:99px;cursor:pointer;font-family:var(--fb)}
+.setup-foot-row{display:flex;align-items:center;gap:10px}
+.setup-back{width:52px;height:52px;flex-shrink:0;border-radius:99px;border:1.5px solid var(--border2);background:var(--surface);color:var(--text2);font-size:22px;cursor:pointer;line-height:1}
+.setup-done{flex:1;padding:16px;background:var(--nav);color:var(--nav-a);font-size:15px;font-weight:700;border:none;border-radius:99px;cursor:pointer;font-family:var(--fb)}
 .setup-skip{display:block;text-align:center;padding:12px;font-size:12px;color:var(--text3);cursor:pointer}
 /* ── WEEK-NIGHT PICKER ───────────────────────── */
 .weekpick-days{display:flex;gap:7px;justify-content:center;flex-wrap:wrap;padding:16px 16px 8px}
@@ -971,7 +1023,6 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     </div>
     <div class="welcome-cta">
       <button class="welcome-start" onclick="welcomeGetStarted()" data-t="welcomeStart">Get started — it's free →</button>
-      <button class="welcome-guest" onclick="welcomeGuest()" data-t="welcomeGuestBtn">Try without signing up</button>
       <div class="welcome-signin"><span data-t="welcomeSigninPre">Already with us?</span> <a onclick="welcomeSignin()" data-t="welcomeSigninLink">Sign in</a></div>
     </div>
   </div>
@@ -1033,7 +1084,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z"/></svg>
         <span data-t="appleBtn">Sign up with Apple</span>
       </div>
-      <div class="auth-guest" style="margin-top:14px;text-align:center;font-size:13px;color:var(--text3)">
+      <div class="auth-guest" style="margin-top:16px">
+        <a onclick="continueAsGuest()" style="display:block;text-align:center;padding:10px;border-radius:99px;border:1.5px solid var(--border2);font-size:13px;font-weight:500;color:var(--text2)">👤 <span data-t="guestSkip">Skip — keep my plan on this device only</span></a>
+      </div>
+      <div class="auth-guest" style="margin-top:12px;text-align:center;font-size:13px;color:var(--text3)">
         <span data-t="haveAccount">Already have an account?</span> <a onclick="switchAuthTab('signin')" data-t="signinLink" style="color:var(--accent);font-weight:500">Sign in →</a>
       </div>
     </div>
@@ -1069,6 +1123,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <div class="diet-tags-row" id="prof-diet-tags"></div>
     </div>
     <div class="fam-section" id="macro-goals-section"></div>
+    <div class="fam-section" id="microbiome-section"></div>
     <!-- budget-section hidden (feature/weekly-budget branch) -->
     <div class="fam-section"><h3 data-t="moreTools">More</h3>
       <button class="me-link" onclick="openSetup(false)"><span data-t="prefsAllergies">⚙️ Preferences & allergies</span><span class="chev">›</span></button>
@@ -1314,25 +1369,39 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <svg class="setup-leaf" viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
       <h1 id="setup-title">Let's set up your kitchen</h1>
       <p id="setup-subtitle">A few quick things so your weekly plan fits your family.</p>
-      <div class="setup-dots" id="setup-dots">
-        <div class="setup-dot active" id="sdot-1"></div>
-        <div class="setup-dot" id="sdot-2"></div>
-        <div class="setup-dot" id="sdot-3"></div>
-      </div>
+      <div class="setup-progress" id="setup-dots"><div class="setup-progress-fill" id="setup-progress-fill"></div></div>
     </div>
     <div class="setup-body">
-      <!-- STEP 1: Family -->
+      <!-- STEP 1: Name -->
       <div class="setup-step" id="setup-step-1">
         <div class="setup-sec">
-          <h3 data-t="setupWho">Who's at the table?</h3>
+          <input type="text" id="setup-name-input" class="setup-text-input" maxlength="24" autocomplete="given-name" placeholder="…" oninput="setupDraft.name=this.value">
+          <div class="setup-hint" data-t="setupNameHint">Just a first name — so the app feels like yours.</div>
+        </div>
+      </div>
+      <!-- STEP 2: Goals -->
+      <div class="setup-step" id="setup-step-2" style="display:none">
+        <div class="setup-sec">
+          <div class="setup-goalgrid" id="setup-goals"></div>
+        </div>
+      </div>
+      <!-- STEP 3: Household -->
+      <div class="setup-step" id="setup-step-3" style="display:none">
+        <div class="setup-sec">
           <div class="setup-counters">
             <div class="setup-ctr"><span data-t="setupAdults">👨 Adults</span><div class="setup-ctr-ctrls"><button onclick="setupAdj('adults',-1)">−</button><b id="setup-adults">2</b><button onclick="setupAdj('adults',1)">+</button></div></div>
             <div class="setup-ctr"><span data-t="setupChildren">🧒 Children</span><div class="setup-ctr-ctrls"><button onclick="setupAdj('children',-1)">−</button><b id="setup-children">0</b><button onclick="setupAdj('children',1)">+</button></div></div>
           </div>
         </div>
       </div>
-      <!-- STEP 2: Diet / Allergies / Dislikes -->
-      <div class="setup-step" id="setup-step-2" style="display:none">
+      <!-- STEP 4: Main meal -->
+      <div class="setup-step" id="setup-step-4" style="display:none">
+        <div class="setup-sec">
+          <div class="setup-choicegrid" id="setup-mainmeal"></div>
+        </div>
+      </div>
+      <!-- STEP 5: Diet / Allergies / Dislikes -->
+      <div class="setup-step" id="setup-step-5" style="display:none">
         <div class="setup-sec">
           <h3 data-t="setupDietQ">Any diet?</h3>
           <div class="setup-chips" id="setup-diet"></div>
@@ -1346,34 +1415,69 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
           <div class="setup-chips" id="setup-dislikes"></div>
         </div>
       </div>
-      <!-- STEP 3: Protein goal -->
-      <div class="setup-step" id="setup-step-3" style="display:none">
-        <div class="setup-sec" id="setup-protein-sec">
-          <h3>💚 <span data-t="setupProteinQ">Daily protein goal</span> <span class="setup-hint" data-t="setupProteinHint">we'll calculate it for you</span></h3>
-          <div style="display:flex;gap:8px;align-items:center;margin-bottom:10px">
-            <div style="position:relative;flex:1">
-              <input type="number" id="setup-weight-input" min="30" max="300" placeholder="70" oninput="calcProteinGoal()" style="width:100%;padding:10px 44px 10px 16px;border-radius:99px;border:1.5px solid var(--border2);background:var(--surface);font-size:17px;font-family:var(--fb);outline:none;color:var(--text)">
-              <span id="setup-weight-unit-lbl" style="position:absolute;right:16px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text3);pointer-events:none">kg</span>
-            </div>
-            <div style="display:flex;gap:4px">
-              <button class="setup-chip on" id="unit-kg" onclick="setWeightUnit('kg')" style="padding:9px 14px">kg</button>
-              <button class="setup-chip" id="unit-lbs" onclick="setWeightUnit('lbs')" style="padding:9px 14px">lbs</button>
-            </div>
+      <!-- STEP 6: Body — sex / height / weight -->
+      <div class="setup-step" id="setup-step-6" style="display:none">
+        <div class="setup-sec">
+          <div class="setup-chips" id="setup-sex" style="margin-bottom:16px"></div>
+          <div class="setup-num-row">
+            <label class="setup-num"><span data-t="calcHeight">Height (cm)</span><input type="number" id="setup-height-input" min="100" max="230" inputmode="numeric" placeholder="170" oninput="setupDraft.height=this.value"></label>
+            <label class="setup-num"><span data-t="calcWeight">Weight</span>
+              <span class="setup-num-inwrap"><input type="number" id="setup-weight-input" min="30" max="300" inputmode="decimal" placeholder="70" oninput="setupDraft.weight=this.value"><b id="setup-weight-unit-lbl">kg</b></span>
+            </label>
           </div>
-          <div style="display:flex;gap:7px;margin-bottom:10px" id="setup-activity-chips">
-            <button class="setup-chip" onclick="setupActivity('light')" style="flex:1;text-align:center">🚶 Light</button>
-            <button class="setup-chip on" onclick="setupActivity('moderate')" style="flex:1;text-align:center">🏃 Moderate</button>
-            <button class="setup-chip" onclick="setupActivity('active')" style="flex:1;text-align:center">💪 Active</button>
+          <div class="setup-chips" style="margin-top:10px">
+            <button class="setup-chip on" id="unit-kg" onclick="setWeightUnit('kg')">kg</button>
+            <button class="setup-chip" id="unit-lbs" onclick="setWeightUnit('lbs')">lbs</button>
           </div>
-          <div id="setup-protein-result" style="display:none;background:var(--accent-l);border-radius:var(--rsm);padding:10px 14px;font-size:14px;font-weight:600;color:var(--accent);text-align:center;margin-bottom:8px"></div>
-          <button class="setup-chip" onclick="skipProteinGoal()" data-t="setupProteinSkip" style="margin-top:2px">Skip</button>
+          <div class="setup-hint" style="margin-top:12px" data-t="setupBodyHint">We use this to set your daily calorie & protein target. Optional — skip anytime.</div>
         </div>
-        <div class="setup-hint" style="margin-top:-6px" data-t="setupNightsHint">You'll pick which nights to cook each week when you plan.</div>
+      </div>
+      <!-- STEP 7: Age -->
+      <div class="setup-step" id="setup-step-7" style="display:none">
+        <div class="setup-sec">
+          <input type="number" id="setup-age-input" class="setup-text-input" min="14" max="100" inputmode="numeric" placeholder="30" oninput="setupDraft.age=this.value">
+          <div class="setup-hint" data-t="setupAgeHint">Your age fine-tunes the calorie estimate.</div>
+        </div>
+      </div>
+      <!-- STEP 8: Activity → result -->
+      <div class="setup-step" id="setup-step-8" style="display:none">
+        <div class="setup-sec">
+          <div class="setup-choicegrid setup-actgrid" id="setup-activity-chips"></div>
+          <div id="setup-protein-result" class="setup-result" style="display:none"></div>
+        </div>
+      </div>
+      <!-- STEP 9: Focus -->
+      <div class="setup-step" id="setup-step-9" style="display:none">
+        <div class="setup-sec">
+          <div class="setup-choicegrid" id="setup-focus"></div>
+          <div class="setup-hint" style="margin-top:12px" data-t="setupFocusHint">Optional — pick one, both, or none.</div>
+        </div>
+      </div>
+      <!-- STEP 10: Value — shopping -->
+      <div class="setup-step" id="setup-step-10" style="display:none">
+        <div class="setup-value">
+          <div class="setup-value-icon">🛒</div>
+          <div class="setup-value-pts">
+            <div class="setup-value-pt"><span>🧾</span><div><b data-t="valShop1t">One automatic list</b><div data-t="valShop1d">Every recipe's ingredients, merged and sorted by aisle.</div></div></div>
+            <div class="setup-value-pt"><span>🥫</span><div><b data-t="valShop2t">Knows your pantry</b><div data-t="valShop2d">Staples you already have are quietly left off.</div></div></div>
+            <div class="setup-value-pt"><span>🚚</span><div><b data-t="valShop3t">Order in a tap</b><div data-t="valShop3d">Send the whole list to delivery when you're ready.</div></div></div>
+          </div>
+        </div>
+      </div>
+      <!-- STEP 11: Celebration -->
+      <div class="setup-step" id="setup-step-11" style="display:none">
+        <div class="setup-celebrate">
+          <div class="setup-celebrate-em">🎉</div>
+          <div class="setup-summary" id="setup-summary"></div>
+        </div>
       </div>
     </div>
     <div class="setup-foot">
-      <button class="setup-done" id="setup-done-btn" onclick="setupNext()">Next →</button>
-      <span class="setup-skip" id="setup-skip" onclick="finishSetup(true)" data-t="setupSkipNow">Skip for now</span>
+      <div class="setup-foot-row">
+        <button class="setup-back" id="setup-back-btn" onclick="setupBack()" style="visibility:hidden">‹</button>
+        <button class="setup-done" id="setup-done-btn" onclick="setupNext()">Next →</button>
+      </div>
+      <span class="setup-skip" id="setup-skip" onclick="setupNext(true)" data-t="setupSkipNow">Skip</span>
     </div>
   </div>
 </div>
@@ -1589,6 +1693,25 @@ en:{
   calcGoal:'Goal',calcLose:'Lose',calcMaintain:'Maintain',calcMuscle:'Build muscle',calcGain:'Gain',calcBtn:'Calculate',
   calcResKcal:'Calories / day',calcResProtein:'Protein / day',
   calcNote:'Estimated with the Mifflin–St Jeor formula. A good starting point — adjust to how you feel.',
+  stepNameT:"First, what should we call you?",stepNameS:'A first name keeps things personal.',
+  stepGoalsT:'What brings you to Menja?',stepGoalsTName:'{name}, what brings you here?',stepGoalsS:'Pick all that apply — we tune your plan around them.',
+  stepHouseT:"Who's at the table?",stepHouseS:'We scale every recipe to your household.',
+  stepMealT:'Your main meal?',stepMealS:'We build the plan around it.',
+  stepDietT:'Diet & no-go foods',stepDietS:'So we never suggest the wrong thing.',
+  stepBodyT:'A bit about you',stepBodyS:'For your personal calorie & protein target.',
+  stepAgeT:'How old are you?',stepAgeS:'It sharpens the calorie estimate.',
+  stepActT:'How active are you?',stepActS:'The last piece of your daily target.',
+  stepFocusT:'Any special focus?',stepFocusS:'We can lean your plan a certain way.',
+  stepShopT:'Shopping without the stress',stepShopS:'Your plan writes the list for you.',
+  stepDoneT:'Your plan is ready 🎉',stepDoneTName:'{name}, your plan is ready 🎉',stepDoneS:"Here's what we'll build around.",stepDoneCTA:'Create my free account →',
+  goalHealthy:'Eat healthier',goalLose:'Lose weight',goalMuscle:'Build muscle',goalEnergy:'More energy',goalTime:'Save time',goalVariety:'More variety',
+  mealLunch:'Lunch',mealLunchD:'Main meal at midday',mealDinner:'Dinner',mealDinnerD:'Main meal in the evening',
+  actLight:'Light',actLightD:'Mostly sitting, little exercise',actModerate:'Moderate',actModerateD:'On your feet or training a few times a week',actActive:'Active',actActiveD:'Hard training or a physical job',
+  focusHighProtein:'High-protein',focusHighProteinD:'Prioritise protein-rich recipes',focusLowCarb:'Low-carb',focusLowCarbD:'Fewer carbs, more veg & protein',
+  valShop1t:'One automatic list',valShop1d:"Every recipe's ingredients, merged and sorted by aisle.",valShop2t:'Knows your pantry',valShop2d:'Staples you already have are quietly left off.',valShop3t:'Order in a tap',valShop3d:"Send the whole list to delivery when you're ready.",
+  setupNameHint:'Just a first name — so the app feels like yours.',setupBodyHint:'We use this to set your daily calorie & protein target. Optional — skip anytime.',setupAgeHint:'Your age fine-tunes the calorie estimate.',setupFocusHint:'Optional — pick one, both, or none.',
+  sumHouse:'Household',sumMeal:'Main meal',sumDiet:'Diet',sumTarget:'Daily target',sumFocus:'Focus',adultsWord:'adults',childWord:'kids',prefsSaved:'Saved ✓',guestSkip:'Skip — keep my plan on this device only',
+  microTitle:'Plant diversity',microWeek:'this week',microSub:'Aim for 30 different plants a week for a happy gut.',microEmpty:'Plan some meals to start counting your plants.',microHit:'30+ plants — your gut is thriving! 🌿',microGo:'{n} more plants to hit 30 this week.',
   calcDisc:'Guidance only, not medical or dietary advice. Talk to a professional for individual needs.',
   calcApply:'Use these values as my goal',calcInvalid:'Please enter a realistic age, height and weight.',
   budgetWeekly:'Weekly budget',budgetLocked:'Weekly grocery budget — Premium',budgetHeader:'Weekly grocery budget',budgetEstimate:'estimate',budgetLabel:'Budget (€ / week)',budgetShowOnPlan:'💶 Show cost on the Plan',onWord:'On',offWord:'Off',costHiddenToast:'Cost hidden · turn it back on in Me',saveWord:'Save',savedConfirm:'Saved ✓',
@@ -1713,6 +1836,25 @@ fr:{
   calcGoal:'Objectif',calcLose:'Perdre',calcMaintain:'Maintenir',calcMuscle:'Prise de muscle',calcGain:'Prendre',calcBtn:'Calculer',
   calcResKcal:'Calories / jour',calcResProtein:'Protéines / jour',
   calcNote:'Estimé avec la formule de Mifflin-St Jeor. Un bon point de départ — ajuste selon ton ressenti.',
+  stepNameT:'Comment souhaitez-vous être appelé·e ?',stepNameS:'Un prénom rend tout plus personnel.',
+  stepGoalsT:'Qu\'est-ce qui vous amène ?',stepGoalsTName:'{name}, qu\'est-ce qui vous amène ?',stepGoalsS:'Sélectionnez tout ce qui s\'applique — on adapte votre plan.',
+  stepHouseT:'Qui est à table ?',stepHouseS:'On adapte chaque recette à votre foyer.',
+  stepMealT:'Votre repas principal ?',stepMealS:'On construit le plan autour.',
+  stepDietT:'Régime & aliments à éviter',stepDietS:'Pour ne jamais vous proposer la mauvaise chose.',
+  stepBodyT:'Un peu sur vous',stepBodyS:'Pour votre objectif calories & protéines.',
+  stepAgeT:'Quel âge avez-vous ?',stepAgeS:'Cela affine l\'estimation des calories.',
+  stepActT:'Quel est votre niveau d\'activité ?',stepActS:'La dernière pièce de votre objectif.',
+  stepFocusT:'Un focus particulier ?',stepFocusS:'On peut orienter votre plan.',
+  stepShopT:'Les courses sans stress',stepShopS:'Votre plan fait la liste pour vous.',
+  stepDoneT:'Votre plan est prêt 🎉',stepDoneTName:'{name}, votre plan est prêt 🎉',stepDoneS:'Voici ce sur quoi on s\'appuie.',stepDoneCTA:'Créer mon compte gratuit →',
+  goalHealthy:'Manger plus sain',goalLose:'Perdre du poids',goalMuscle:'Prendre du muscle',goalEnergy:'Plus d\'énergie',goalTime:'Gagner du temps',goalVariety:'Plus de variété',
+  mealLunch:'Déjeuner',mealLunchD:'Repas principal à midi',mealDinner:'Dîner',mealDinnerD:'Repas principal le soir',
+  actLight:'Léger',actLightD:'Surtout assis, peu d\'exercice',actModerate:'Modéré',actModerateD:'Debout ou sport quelques fois par semaine',actActive:'Actif',actActiveD:'Entraînement intense ou métier physique',
+  focusHighProtein:'Riche en protéines',focusHighProteinD:'Priorité aux recettes protéinées',focusLowCarb:'Faible en glucides',focusLowCarbD:'Moins de glucides, plus de légumes & protéines',
+  valShop1t:'Une liste automatique',valShop1d:'Tous les ingrédients fusionnés et triés par rayon.',valShop2t:'Connaît vos placards',valShop2d:'Les basiques que vous avez déjà sont retirés.',valShop3t:'Commandez en un clic',valShop3d:'Envoyez toute la liste en livraison quand vous voulez.',
+  setupNameHint:'Juste un prénom — pour que l\'app soit la vôtre.',setupBodyHint:'Sert à définir votre objectif quotidien calories & protéines. Optionnel.',setupAgeHint:'Votre âge affine l\'estimation des calories.',setupFocusHint:'Optionnel — un, les deux, ou aucun.',
+  sumHouse:'Foyer',sumMeal:'Repas principal',sumDiet:'Régime',sumTarget:'Objectif quotidien',sumFocus:'Focus',adultsWord:'adultes',childWord:'enfants',prefsSaved:'Enregistré ✓',guestSkip:'Passer — garder mon plan sur cet appareil',
+  microTitle:'Diversité végétale',microWeek:'cette semaine',microSub:'Visez 30 plantes différentes par semaine pour un intestin heureux.',microEmpty:'Planifiez des repas pour compter vos plantes.',microHit:'30+ plantes — votre intestin prospère ! 🌿',microGo:'Encore {n} plantes pour atteindre 30 cette semaine.',
   calcDisc:'Indicatif seulement, pas un avis médical ou nutritionnel. Consulte un professionnel pour des besoins individuels.',
   calcApply:'Utiliser ces valeurs comme objectif',calcInvalid:'Saisis un âge, une taille et un poids réalistes.',
   budgetWeekly:'Budget hebdo',budgetLocked:'Budget courses hebdomadaire — Premium',budgetHeader:'Budget courses hebdomadaire',budgetEstimate:'estimation',budgetLabel:'Budget (€ / semaine)',budgetShowOnPlan:'💶 Afficher le coût sur le planning',onWord:'Activé',offWord:'Désactivé',costHiddenToast:'Coût masqué · réactive-le dans Moi',saveWord:'Enregistrer',savedConfirm:'Enregistré ✓',
@@ -1837,6 +1979,25 @@ es:{
   calcGoal:'Objetivo',calcLose:'Adelgazar',calcMaintain:'Mantener',calcMuscle:'Ganar músculo',calcGain:'Ganar',calcBtn:'Calcular',
   calcResKcal:'Calorías / día',calcResProtein:'Proteína / día',
   calcNote:'Estimado con la fórmula Mifflin-St Jeor. Un buen punto de partida; ajústalo a cómo te sientes.',
+  stepNameT:'¿Cómo te llamamos?',stepNameS:'Un nombre lo hace más personal.',
+  stepGoalsT:'¿Qué te trae a Menja?',stepGoalsTName:'{name}, ¿qué te trae aquí?',stepGoalsS:'Elige todo lo que aplique — adaptamos tu plan.',
+  stepHouseT:'¿Quién está en la mesa?',stepHouseS:'Ajustamos cada receta a tu hogar.',
+  stepMealT:'¿Tu comida principal?',stepMealS:'Construimos el plan en torno a ella.',
+  stepDietT:'Dieta y alimentos a evitar',stepDietS:'Para no sugerirte nunca lo que no toca.',
+  stepBodyT:'Un poco sobre ti',stepBodyS:'Para tu objetivo de calorías y proteínas.',
+  stepAgeT:'¿Cuántos años tienes?',stepAgeS:'Afina la estimación de calorías.',
+  stepActT:'¿Cómo de activo eres?',stepActS:'La última pieza de tu objetivo diario.',
+  stepFocusT:'¿Algún enfoque especial?',stepFocusS:'Podemos orientar tu plan.',
+  stepShopT:'La compra sin estrés',stepShopS:'Tu plan hace la lista por ti.',
+  stepDoneT:'Tu plan está listo 🎉',stepDoneTName:'{name}, tu plan está listo 🎉',stepDoneS:'Esto es en lo que nos basamos.',stepDoneCTA:'Crear mi cuenta gratis →',
+  goalHealthy:'Comer más sano',goalLose:'Perder peso',goalMuscle:'Ganar músculo',goalEnergy:'Más energía',goalTime:'Ahorrar tiempo',goalVariety:'Más variedad',
+  mealLunch:'Almuerzo',mealLunchD:'Comida principal al mediodía',mealDinner:'Cena',mealDinnerD:'Comida principal por la noche',
+  actLight:'Ligera',actLightD:'Sobre todo sentado, poco ejercicio',actModerate:'Moderada',actModerateD:'De pie o entrenando varias veces por semana',actActive:'Activa',actActiveD:'Entrenamiento duro o trabajo físico',
+  focusHighProtein:'Alto en proteína',focusHighProteinD:'Priorizar recetas ricas en proteína',focusLowCarb:'Bajo en carbohidratos',focusLowCarbD:'Menos carbohidratos, más verdura y proteína',
+  valShop1t:'Una lista automática',valShop1d:'Todos los ingredientes unidos y ordenados por pasillo.',valShop2t:'Conoce tu despensa',valShop2d:'Los básicos que ya tienes se omiten.',valShop3t:'Pide con un toque',valShop3d:'Envía toda la lista a domicilio cuando quieras.',
+  setupNameHint:'Solo un nombre — para que la app sea tuya.',setupBodyHint:'Sirve para fijar tu objetivo diario de calorías y proteínas. Opcional.',setupAgeHint:'Tu edad afina la estimación de calorías.',setupFocusHint:'Opcional — uno, ambos o ninguno.',
+  sumHouse:'Hogar',sumMeal:'Comida principal',sumDiet:'Dieta',sumTarget:'Objetivo diario',sumFocus:'Enfoque',adultsWord:'adultos',childWord:'niños',prefsSaved:'Guardado ✓',guestSkip:'Omitir — guardar mi plan solo en este dispositivo',
+  microTitle:'Diversidad vegetal',microWeek:'esta semana',microSub:'Apunta a 30 plantas distintas por semana para un intestino feliz.',microEmpty:'Planifica comidas para empezar a contar tus plantas.',microHit:'30+ plantas — ¡tu intestino prospera! 🌿',microGo:'{n} plantas más para llegar a 30 esta semana.',
   calcDisc:'Solo orientativo, no es consejo médico ni nutricional. Consulta a un profesional para necesidades individuales.',
   calcApply:'Usar estos valores como objetivo',calcInvalid:'Introduce una edad, altura y peso realistas.',
   budgetWeekly:'Presupuesto semanal',budgetLocked:'Presupuesto semanal de la compra — Premium',budgetHeader:'Presupuesto semanal de la compra',budgetEstimate:'estimación',budgetLabel:'Presupuesto (€ / semana)',budgetShowOnPlan:'💶 Mostrar el coste en el Plan',onWord:'Activado',offWord:'Desactivado',costHiddenToast:'Coste oculto · vuelve a activarlo en Yo',saveWord:'Guardar',savedConfirm:'Guardado ✓',
@@ -2007,6 +2168,25 @@ de:{
   calcGoal:'Ziel',calcLose:'Abnehmen',calcMaintain:'Halten',calcMuscle:'Muskelaufbau',calcGain:'Zunehmen',calcBtn:'Berechnen',
   calcResKcal:'Kalorien / Tag',calcResProtein:'Protein / Tag',
   calcNote:'Geschätzt mit der Mifflin-St-Jeor-Formel. Ein guter Startwert – passe ihn an dein Gefühl an.',
+  stepNameT:'Wie dürfen wir dich nennen?',stepNameS:'Ein Vorname macht es persönlicher.',
+  stepGoalsT:'Was bringt dich zu Menja?',stepGoalsTName:'{name}, was bringt dich her?',stepGoalsS:'Wähle alles Passende — wir richten deinen Plan danach aus.',
+  stepHouseT:'Wer sitzt am Tisch?',stepHouseS:'Wir passen jedes Rezept an deinen Haushalt an.',
+  stepMealT:'Deine Hauptmahlzeit?',stepMealS:'Wir bauen den Plan darum herum.',
+  stepDietT:'Ernährung & No-Gos',stepDietS:'Damit wir nie das Falsche vorschlagen.',
+  stepBodyT:'Ein bisschen über dich',stepBodyS:'Für dein Kalorien- & Eiweißziel.',
+  stepAgeT:'Wie alt bist du?',stepAgeS:'Das verfeinert die Kalorienschätzung.',
+  stepActT:'Wie aktiv bist du?',stepActS:'Das letzte Teil deines Tagesziels.',
+  stepFocusT:'Ein besonderer Fokus?',stepFocusS:'Wir können deinen Plan ausrichten.',
+  stepShopT:'Einkauf ohne Stress',stepShopS:'Dein Plan schreibt die Liste für dich.',
+  stepDoneT:'Dein Plan ist bereit 🎉',stepDoneTName:'{name}, dein Plan ist bereit 🎉',stepDoneS:'Darauf bauen wir auf.',stepDoneCTA:'Kostenloses Konto erstellen →',
+  goalHealthy:'Gesünder essen',goalLose:'Abnehmen',goalMuscle:'Muskeln aufbauen',goalEnergy:'Mehr Energie',goalTime:'Zeit sparen',goalVariety:'Mehr Abwechslung',
+  mealLunch:'Mittag',mealLunchD:'Hauptmahlzeit mittags',mealDinner:'Abend',mealDinnerD:'Hauptmahlzeit abends',
+  actLight:'Leicht',actLightD:'Überwiegend sitzend, wenig Sport',actModerate:'Mittel',actModerateD:'Auf den Beinen oder Sport ein paar Mal pro Woche',actActive:'Aktiv',actActiveD:'Hartes Training oder körperliche Arbeit',
+  focusHighProtein:'High-Protein',focusHighProteinD:'Eiweißreiche Rezepte bevorzugen',focusLowCarb:'Low-Carb',focusLowCarbD:'Weniger Kohlenhydrate, mehr Gemüse & Eiweiß',
+  valShop1t:'Eine automatische Liste',valShop1d:'Alle Zutaten zusammengeführt und nach Gang sortiert.',valShop2t:'Kennt deinen Vorrat',valShop2d:'Basics, die du schon hast, werden weggelassen.',valShop3t:'Mit einem Tipp bestellen',valShop3d:'Sende die ganze Liste zur Lieferung, wenn du bereit bist.',
+  setupNameHint:'Nur ein Vorname — damit sich die App nach dir anfühlt.',setupBodyHint:'Damit setzen wir dein tägliches Kalorien- & Eiweißziel. Optional — jederzeit überspringbar.',setupAgeHint:'Dein Alter verfeinert die Kalorienschätzung.',setupFocusHint:'Optional — eins, beides oder keins.',
+  sumHouse:'Haushalt',sumMeal:'Hauptmahlzeit',sumDiet:'Ernährung',sumTarget:'Tagesziel',sumFocus:'Fokus',adultsWord:'Erwachsene',childWord:'Kinder',prefsSaved:'Gespeichert ✓',guestSkip:'Überspringen — Plan nur auf diesem Gerät behalten',
+  microTitle:'Pflanzenvielfalt',microWeek:'diese Woche',microSub:'Ziel: 30 verschiedene Pflanzen pro Woche für einen gesunden Darm.',microEmpty:'Plane Mahlzeiten, um deine Pflanzen zu zählen.',microHit:'30+ Pflanzen — dein Darm blüht auf! 🌿',microGo:'Noch {n} Pflanzen bis 30 diese Woche.',
   calcDisc:'Nur ein Richtwert, keine medizinische oder ernährungswissenschaftliche Beratung. Bei individuellem Bedarf bitte Fachpersonal fragen.',
   calcApply:'Diese Werte als Ziel übernehmen',calcInvalid:'Bitte realistisches Alter, Größe und Gewicht eingeben.',
   budgetWeekly:'Wochenbudget',budgetLocked:'Wöchentliches Lebensmittelbudget — Premium',budgetHeader:'Wöchentliches Lebensmittelbudget',budgetEstimate:'Schätzung',budgetLabel:'Budget (€ / Woche)',budgetShowOnPlan:'💶 Kosten im Plan anzeigen',onWord:'An',offWord:'Aus',costHiddenToast:'Kosten ausgeblendet · wieder einschalten unter Ich',saveWord:'Speichern',savedConfirm:'Gespeichert ✓',
@@ -2398,6 +2578,11 @@ let state={
   hintsSeen:{},     // one-time coach hints already dismissed
   taste:{tags:{},recipes:{}}, // silent on-device taste profile
   macroGoals:{kcal:0,protein:0}, // premium: daily targets per person
+  userName:'',      // first name from onboarding
+  goals:[],         // onboarding goals: eatHealthy, loseWeight, buildMuscle, …
+  mainMeal:'dinner',// which meal the planner centres on: 'lunch' | 'dinner'
+  focus:[],         // dietary focus: 'highProtein','lowCarb'
+  calc:null,        // {sex,age,height,weight,activity,unit} for the macro calculator
   weeklyBudget:0,   // premium: weekly grocery budget (€), 0 = not set
   weekCostLog:{},   // {weekStart: estimatedCost} for a gentle trend
   budgetHidden:false, // user chose to hide the cost card on the Plan
@@ -2639,7 +2824,7 @@ async function signOut(){
   isGuest=false;
   try{localStorage.removeItem('menja_guest');localStorage.removeItem('menja_state');}catch(e){}
   if(currentUser&&currentUser.id!=='guest')await sb.auth.signOut();
-  state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
+  state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},userName:'',goals:[],mainMeal:'dinner',focus:[],calc:null,weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
   showWelcome();
 }
 
@@ -3408,7 +3593,7 @@ function adjFamily(type,delta){
 function renderFamily(){
   document.getElementById('adults-count').textContent=state.family.adults;
   document.getElementById('children-count').textContent=state.family.children;
-  renderDietPrefs();renderMacroGoals();renderBudget();renderDevTier();
+  renderDietPrefs();renderMacroGoals();renderMicrobiome();renderBudget();renderDevTier();
 }
 
 // ─── Dietary preferences ────────────────────────
@@ -3432,24 +3617,124 @@ function toggleDietPref(id){
   if(idx>=0)state.dietaryPrefs.splice(idx,1);else state.dietaryPrefs.push(id);
   save();renderDietPrefs();
 }
+// Me-tab macro goals — show a compact summary, expandable for manual edits
+let macroEditOpen=false;
+function toggleMacroEdit(){macroEditOpen=!macroEditOpen;renderMacroGoals();}
 function renderMacroGoals(){
   const el=document.getElementById('macro-goals-section');if(!el)return;
-  const calcBtn=`<button class="me-link calc-open-btn" onclick="openCalc()"><span>${t('calcOpen')}</span><span class="chev">›</span></button>`;
   const g=state.macroGoals||{};
-  el.innerHTML=`<h3>${t('nutritionGoals')} <span style="font-size:11px;color:var(--text3);font-weight:400">${t('perPerson')}</span></h3>
-    ${calcBtn}
-    <div class="macro-goal-inputs">
-      <label>${t('macroCalories')}<input type="number" inputmode="numeric" value="${g.kcal||''}" placeholder="2000" oninput="setMacroGoal('kcal',this.value)"></label>
-      <label>${t('macroProtein')}<input type="number" inputmode="numeric" value="${g.protein||''}" placeholder="90" oninput="setMacroGoal('protein',this.value)"></label>
+  const hasGoal=g.kcal||g.protein;
+  let html=`<h3>${t('nutritionGoals')} <span style="font-size:11px;color:var(--text3);font-weight:400">${t('perPerson')}</span></h3>`;
+  if(hasGoal){
+    html+=`<div class="macro-sum" onclick="toggleMacroEdit()">
+      <div class="macro-sum-vals"><span>🔥 ${g.kcal||'—'} ${t('kcal')}</span><span>💚 ${g.protein||'—'} g ${t('macroProtein').toLowerCase()}</span></div>
+      <span class="chev" style="transition:transform .2s;transform:rotate(${macroEditOpen?90:0}deg)">›</span></div>`;
+  }
+  if(macroEditOpen||!hasGoal){
+    html+=`<div class="macro-edit">
+      <button class="me-link calc-open-btn" onclick="openCalc()"><span>${t('calcOpen')}</span><span class="chev">›</span></button>
+      <div class="macro-goal-inputs">
+        <label>${t('macroCalories')}<input type="number" inputmode="numeric" value="${g.kcal||''}" placeholder="2000" oninput="setMacroGoal('kcal',this.value)"></label>
+        <label>${t('macroProtein')}<input type="number" inputmode="numeric" value="${g.protein||''}" placeholder="90" oninput="setMacroGoal('protein',this.value)"></label>
+      </div>
     </div>`;
+  }
+  el.innerHTML=html;
 }
 function setMacroGoal(k,v){if(!state.macroGoals)state.macroGoals={kcal:0,protein:0};state.macroGoals[k]=parseInt(v)||0;save();}
+
+// ─── Microbiome diversity tracker ("30 plants a week") ──────────────
+// Gut-health research links eating ~30 different plants per week to a more
+// diverse microbiome. We count the distinct plant foods across this week's
+// planned & cooked meals and nudge gently toward 30.
+const MICROBIOME_TARGET=30;
+// keyword → canonical plant. Ordered roughly specific-first so each ingredient
+// maps to a single plant. Covers veg, fruit, legumes, grains, nuts, seeds, herbs & spices.
+const PLANT_MAP=[
+  ['sweet potato','sweet potato'],['spring onion','spring onion'],['green bean','green bean'],
+  ['butternut','butternut squash'],['kidney bean','kidney bean'],['black bean','black bean'],
+  ['cannellini','white bean'],['bell pepper','pepper'],['chickpea','chickpea'],['lentil','lentil'],
+  ['edamame','edamame'],['hummus','chickpea'],['tahini','sesame'],['tofu','soy'],['tempeh','soy'],
+  ['spinach','spinach'],['kale','kale'],['broccoli','broccoli'],['cauliflower','cauliflower'],
+  ['carrot','carrot'],['tomato','tomato'],['cucumber','cucumber'],['courgette','courgette'],
+  ['zucchini','courgette'],['aubergine','aubergine'],['eggplant','aubergine'],['mushroom','mushroom'],
+  ['potato','potato'],['beetroot','beetroot'],['beet','beetroot'],['radish','radish'],
+  ['cabbage','cabbage'],['lettuce','lettuce'],['rocket','rocket'],['arugula','rocket'],
+  ['chard','chard'],['asparagus','asparagus'],['artichoke','artichoke'],['fennel','fennel'],
+  ['leek','leek'],['celery','celery'],['shallot','shallot'],['onion','onion'],['garlic','garlic'],
+  ['pea','pea'],['avocado','avocado'],['sweetcorn','corn'],['corn','corn'],['squash','squash'],
+  ['pumpkin','pumpkin'],['lemon','lemon'],['lime','lime'],['orange','orange'],['apple','apple'],
+  ['pear','pear'],['banana','banana'],['strawberr','strawberry'],['blueberr','blueberry'],
+  ['raspberr','raspberry'],['cranberr','cranberry'],['berry','berry'],['grape','grape'],
+  ['mango','mango'],['pineapple','pineapple'],['peach','peach'],['plum','plum'],['cherry','cherry'],
+  ['pomegranate','pomegranate'],['apricot','apricot'],['fig','fig'],['date','date'],
+  ['raisin','raisin'],['sultana','raisin'],['rice','rice'],['quinoa','quinoa'],['oat','oat'],
+  ['barley','barley'],['buckwheat','buckwheat'],['bulgur','bulgur'],['couscous','couscous'],
+  ['almond','almond'],['walnut','walnut'],['cashew','cashew'],['hazelnut','hazelnut'],
+  ['pecan','pecan'],['pistachio','pistachio'],['peanut','peanut'],['pine nut','pine nut'],
+  ['sesame','sesame'],['chia','chia'],['flax','flax'],['sunflower','sunflower'],
+  ['basil','basil'],['parsley','parsley'],['coriander','coriander'],['cilantro','coriander'],
+  ['mint','mint'],['dill','dill'],['thyme','thyme'],['rosemary','rosemary'],['oregano','oregano'],
+  ['sage','sage'],['ginger','ginger'],['turmeric','turmeric'],['chilli','chilli'],['chili','chilli'],
+  ['cumin','cumin'],['paprika','paprika'],['cinnamon','cinnamon'],['olive','olive'],
+];
+function plantFromIngredient(name){
+  const n=(name||'').toLowerCase();
+  for(const[kw,plant]of PLANT_MAP){if(n.includes(kw))return plant;}
+  return null;
+}
+function microbiomeData(){
+  const plants=new Set();
+  // this calendar week (Mon-anchored), independent of the planner's weekOffset
+  const monday=new Date(_mondayKeyOf(new Date())+'T00:00:00');
+  for(let i=0;i<7;i++){
+    const d=new Date(monday);d.setDate(monday.getDate()+i);
+    const dm=state.plan[dateKey(d)];if(!dm)continue;
+    MEAL_TYPES.forEach(tp=>{
+      const slot=dm[tp];if(!slot||!slot.dishId)return;
+      const dish=getDish(slot.dishId);if(!dish||!dish.ingredients)return;
+      dish.ingredients.forEach(ing=>{const p=plantFromIngredient(ingName(ing));if(p)plants.add(p);});
+    });
+  }
+  return{count:plants.size,plants:[...plants].sort(),target:MICROBIOME_TARGET};
+}
+function renderMicrobiome(){
+  const el=document.getElementById('microbiome-section');if(!el)return;
+  const {count,plants,target}=microbiomeData();
+  const pct=Math.min(100,Math.round(count/target*100));
+  const deg=Math.round(pct*3.6);
+  const ringColor=count>=target?'#7EC87A':count>=target*0.5?'#9BC47E':'#C8B86A';
+  const msg=count===0?t('microEmpty'):count>=target?t('microHit'):tf('microGo',{n:target-count});
+  const chips=plants.length?`<div class="micro-plants">${plants.slice(0,18).map(p=>`<span>${p}</span>`).join('')}${plants.length>18?`<span class="more">+${plants.length-18}</span>`:''}</div>`:'';
+  el.innerHTML=`<h3>🌱 <span data-t="microTitle">${t('microTitle')}</span> <span style="font-size:11px;color:var(--text3);font-weight:400">${t('microWeek')}</span></h3>
+    <div class="micro-card">
+      <div class="micro-ring" style="background:conic-gradient(${ringColor} ${deg}deg, var(--surface2) ${deg}deg)">
+        <div class="micro-ring-in"><b>${count}</b><span>/${target}</span></div>
+      </div>
+      <div class="micro-info">
+        <div class="micro-msg">${msg}</div>
+        <div class="micro-sub">${t('microSub')}</div>
+      </div>
+    </div>${chips}`;
+}
 
 // ─── Calorie & protein calculator (Mifflin–St Jeor) ───
 let calcDraft={sex:'female',age:'',height:'',weight:'',activity:1.55,goal:1.0,result:null};
 const CALC_ACT=[{v:1.2,k:'calcAct1'},{v:1.375,k:'calcAct2'},{v:1.55,k:'calcAct3'},{v:1.725,k:'calcAct4'}];
 const CALC_GOAL=[{v:0.85,k:'calcLose',p:2.4},{v:1.0,k:'calcMaintain',p:1.6},{v:1.15,k:'calcMuscle',p:2.2},{v:1.10,k:'calcGain',p:1.8}];
-function openCalc(){renderCalc();document.getElementById('calc-bg').classList.add('open');}
+function openCalc(){
+  // pre-fill from anything the onboarding already collected
+  const c=state.calc;
+  if(c){
+    if(c.sex)calcDraft.sex=c.sex;
+    if(c.age)calcDraft.age=c.age;
+    if(c.height)calcDraft.height=c.height;
+    if(c.weight){let w=parseFloat(c.weight);if(c.unit==='lbs')w=Math.round(w*0.4536);calcDraft.weight=String(w);}
+    const am={light:1.375,moderate:1.55,active:1.725}[c.activity];if(am)calcDraft.activity=am;
+  }
+  renderCalc();document.getElementById('calc-bg').classList.add('open');
+}
+function _calcActivityId(mult){return mult<=1.375?'light':mult<=1.55?'moderate':'active';}
 function closeCalc(){document.getElementById('calc-bg').classList.remove('open');}
 function calcSet(k,v){calcDraft[k]=v;renderCalc();}
 function calcSetNum(k,v){calcDraft[k]=v;} // no re-render while typing
@@ -3506,6 +3791,9 @@ function calcApply(){
   if(!state.macroGoals)state.macroGoals={kcal:0,protein:0};
   state.macroGoals.kcal=calcDraft.result.kcal;
   state.macroGoals.protein=calcDraft.result.protein;
+  // keep the inputs so the Me-tab calculator stays pre-filled next time
+  state.calc={sex:calcDraft.sex,age:String(calcDraft.age),height:String(calcDraft.height),weight:String(calcDraft.weight),activity:_calcActivityId(calcDraft.activity),unit:'kg'};
+  macroEditOpen=false;
   save();renderMacroGoals();closeCalc();
 }
 function renderBudget(){
@@ -3567,104 +3855,221 @@ function devSetTier(tt){
 }
 
 // ═══════════════════════════════════════════════════
-// FIRST-RUN SETUP (household · diet · allergies · dislikes · dinners/week)
+// FIRST-RUN SETUP — guided 11-step flow
+//  1 Name · 2 Goals · 3 Household · 4 Main meal · 5 Diet/allergies ·
+//  6 Body · 7 Age · 8 Activity(→kcal+protein) · 9 Focus · 10 Value · 11 Celebrate
 // ═══════════════════════════════════════════════════
 let setupDraft=null;
 let setupStep=1;
-const SETUP_TOTAL=3;
+let setupIsFirstRun=false;
+const SETUP_TOTAL=11;
+let setupWeightUnit='kg';
+// In edit mode (from Me tab) we only show the preference steps, not the value/celebrate screens
+const SETUP_EDIT_STEPS=[3,4,5,6,7,8,9];
+const GOAL_OPTIONS=[
+  {id:'eatHealthy',em:'🥗',k:'goalHealthy'},
+  {id:'loseWeight',em:'⚖️',k:'goalLose'},
+  {id:'buildMuscle',em:'💪',k:'goalMuscle'},
+  {id:'moreEnergy',em:'⚡',k:'goalEnergy'},
+  {id:'saveTime',em:'⏱️',k:'goalTime'},
+  {id:'eatVaried',em:'🌈',k:'goalVariety'},
+];
+const MAINMEAL_OPTIONS=[
+  {id:'lunch',em:'☀️',k:'mealLunch',dk:'mealLunchD'},
+  {id:'dinner',em:'🌙',k:'mealDinner',dk:'mealDinnerD'},
+];
+const ACTIVITY_OPTIONS=[
+  {id:'light',em:'🚶',k:'actLight',dk:'actLightD',mult:1.375},
+  {id:'moderate',em:'🏃',k:'actModerate',dk:'actModerateD',mult:1.55},
+  {id:'active',em:'💪',k:'actActive',dk:'actActiveD',mult:1.725},
+];
+const FOCUS_OPTIONS=[
+  {id:'highProtein',em:'💪',k:'focusHighProtein',dk:'focusHighProteinD'},
+  {id:'lowCarb',em:'🥑',k:'focusLowCarb',dk:'focusLowCarbD'},
+];
+// Per-step header text (title + subtitle keys)
+const SETUP_META={
+  1:{t:'stepNameT',s:'stepNameS'},2:{t:'stepGoalsT',s:'stepGoalsS'},
+  3:{t:'stepHouseT',s:'stepHouseS'},4:{t:'stepMealT',s:'stepMealS'},
+  5:{t:'stepDietT',s:'stepDietS'},6:{t:'stepBodyT',s:'stepBodyS'},
+  7:{t:'stepAgeT',s:'stepAgeS'},8:{t:'stepActT',s:'stepActS'},
+  9:{t:'stepFocusT',s:'stepFocusS'},10:{t:'stepShopT',s:'stepShopS'},
+  11:{t:'stepDoneT',s:'stepDoneS'},
+};
 function openSetup(isFirstRun){
+  setupIsFirstRun=!!isFirstRun;
+  const c=state.calc||{};
   setupDraft={
+    name:state.userName||'',
+    goals:[...(state.goals||[])],
     adults:state.family.adults,children:state.family.children,
+    mainMeal:state.mainMeal||'dinner',
     diet:[...(state.dietaryPrefs||[])],allergies:[...(state.allergies||[])],
-    dislikes:[...(state.dislikes||[])],proteinGoal:0
+    dislikes:[...(state.dislikes||[])],
+    sex:c.sex||'female',age:c.age||'',height:c.height||'',weight:c.weight||'',
+    activity:c.activity||'moderate',
+    focus:[...(state.focus||[])],
+    calcResult:(state.macroGoals&&state.macroGoals.kcal)?{kcal:state.macroGoals.kcal,protein:state.macroGoals.protein}:null
   };
-  setupStep=1;
-  document.getElementById('setup-title').textContent=isFirstRun?t('setupTitleFirst'):t('setupTitleEdit');
-  document.getElementById('setup-subtitle').textContent=isFirstRun?t('setupSubFirst'):t('setupSubEdit');
-  document.getElementById('setup-skip').style.display=isFirstRun?'block':'none';
-  // hide dots when editing (not first run)
-  document.getElementById('setup-dots').style.display=isFirstRun?'flex':'none';
+  setupWeightUnit='kg';
+  setupStep=isFirstRun?1:SETUP_EDIT_STEPS[0];
+  document.getElementById('setup-skip').style.display='block';
   renderSetup();
   renderSetupStep();
   document.getElementById('setup-bg').classList.add('open');
   document.getElementById('setup-bg').scrollTop=0;
 }
+function setupStepList(){return setupIsFirstRun?Array.from({length:SETUP_TOTAL},(_,i)=>i+1):SETUP_EDIT_STEPS;}
 function renderSetupStep(){
   for(let i=1;i<=SETUP_TOTAL;i++){
     const el=document.getElementById('setup-step-'+i);
     if(el)el.style.display=i===setupStep?'block':'none';
   }
-  // update dots
-  for(let i=1;i<=SETUP_TOTAL;i++){
-    const d=document.getElementById('sdot-'+i);
-    if(!d)continue;
-    d.className='setup-dot'+(i===setupStep?' active':i<setupStep?' done':'');
-  }
-  // update button label
+  const list=setupStepList();
+  const pos=list.indexOf(setupStep);           // 0-based position in the active flow
+  // progress bar
+  const fill=document.getElementById('setup-progress-fill');
+  if(fill)fill.style.width=Math.round((pos+1)/list.length*100)+'%';
+  document.getElementById('setup-dots').style.display=setupIsFirstRun?'block':'none';
+  // header
+  const meta=SETUP_META[setupStep]||{};
+  const name=(setupDraft.name||'').trim();
+  let title=t(meta.t);
+  if(setupStep===2&&name)title=t('stepGoalsTName').replace('{name}',name);
+  if(setupStep===11&&name)title=t('stepDoneTName').replace('{name}',name);
+  document.getElementById('setup-title').textContent=title;
+  document.getElementById('setup-subtitle').textContent=t(meta.s);
+  // run any per-step prep
+  if(setupStep===8)setupComputeMacros();
+  if(setupStep===11)renderSetupSummary();
+  // back button
+  const back=document.getElementById('setup-back-btn');
+  if(back)back.style.visibility=pos>0?'visible':'hidden';
+  // skip visibility — hide on value & celebrate screens
+  document.getElementById('setup-skip').style.display=(setupStep===10||setupStep===11)?'none':'block';
+  // primary button label
+  const isLast=pos===list.length-1;
   const btn=document.getElementById('setup-done-btn');
-  if(btn)btn.textContent=setupStep<SETUP_TOTAL?t('nextWord')||'Next →':t('setupDoneFirst')||'Plan my first week →';
+  if(btn){
+    if(setupStep===11)btn.textContent=(setupIsFirstRun&&!currentUser)?t('stepDoneCTA'):t('setupDoneFirst');
+    else if(setupStep===10)btn.textContent=t('nextWord');
+    else btn.textContent=isLast?t('saveWord'):t('nextWord');
+  }
   document.getElementById('setup-bg').scrollTop=0;
 }
-function setupNext(){
-  if(setupStep<SETUP_TOTAL){setupStep++;renderSetupStep();}
-  else{finishSetup();}
+function setupNext(skip){
+  const list=setupStepList();
+  const pos=list.indexOf(setupStep);
+  if(pos<list.length-1){setupStep=list[pos+1];renderSetupStep();}
+  else{finishSetup(false);}
+}
+function setupBack(){
+  const list=setupStepList();
+  const pos=list.indexOf(setupStep);
+  if(pos>0){setupStep=list[pos-1];renderSetupStep();}
 }
 function renderSetup(){
+  // Step 1 — name
+  const nameIn=document.getElementById('setup-name-input');if(nameIn)nameIn.value=setupDraft.name||'';
+  // Step 2 — goals
+  const ge=document.getElementById('setup-goals');
+  if(ge)ge.innerHTML=GOAL_OPTIONS.map(o=>`<div class="setup-goal ${setupDraft.goals.includes(o.id)?'on':''}" onclick="setupToggle('goals','${o.id}')"><span class="em">${o.em}</span>${t(o.k)}</div>`).join('');
+  // Step 3 — household
   document.getElementById('setup-adults').textContent=setupDraft.adults;
   document.getElementById('setup-children').textContent=setupDraft.children;
+  // Step 4 — main meal
+  const me=document.getElementById('setup-mainmeal');
+  if(me)me.innerHTML=MAINMEAL_OPTIONS.map(o=>`<div class="setup-choice ${setupDraft.mainMeal===o.id?'on':''}" onclick="setupPick('mainMeal','${o.id}')"><span class="em">${o.em}</span><div><b>${t(o.k)}</b><div class="d">${t(o.dk)}</div></div></div>`).join('');
+  // Step 5 — diet / allergies / dislikes
   document.getElementById('setup-diet').innerHTML=DIET_OPTIONS.map(o=>`<div class="setup-chip ${setupDraft.diet.includes(o.id)?'on':''}" onclick="setupToggle('diet','${o.id}')">${optLabel(o)}</div>`).join('');
   document.getElementById('setup-allergies').innerHTML=ALLERGENS.map(o=>`<div class="setup-chip ${setupDraft.allergies.includes(o.id)?'on':''}" onclick="setupToggle('allergies','${o.id}')">${optLabel(o)}</div>`).join('');
   document.getElementById('setup-dislikes').innerHTML=DISLIKES.map(o=>`<div class="setup-chip ${setupDraft.dislikes.includes(o.id)?'on':''}" onclick="setupToggle('dislikes','${o.id}')">${optLabel(o)}</div>`).join('');
+  // Step 6 — body
+  const se=document.getElementById('setup-sex');
+  if(se)se.innerHTML=[['female','calcFemale'],['male','calcMale']].map(([id,k])=>`<div class="setup-chip ${setupDraft.sex===id?'on':''}" onclick="setupPick('sex','${id}')">${t(k)}</div>`).join('');
+  const hIn=document.getElementById('setup-height-input');if(hIn)hIn.value=setupDraft.height||'';
+  const wIn=document.getElementById('setup-weight-input');if(wIn)wIn.value=setupDraft.weight||'';
+  document.getElementById('unit-kg').classList.toggle('on',setupWeightUnit==='kg');
+  document.getElementById('unit-lbs').classList.toggle('on',setupWeightUnit==='lbs');
+  document.getElementById('setup-weight-unit-lbl').textContent=setupWeightUnit;
+  // Step 7 — age
+  const aIn=document.getElementById('setup-age-input');if(aIn)aIn.value=setupDraft.age||'';
+  // Step 8 — activity
+  const ae=document.getElementById('setup-activity-chips');
+  if(ae)ae.innerHTML=ACTIVITY_OPTIONS.map(o=>`<div class="setup-choice ${setupDraft.activity===o.id?'on':''}" onclick="setupPickActivity('${o.id}')"><span class="em">${o.em}</span><div><b>${t(o.k)}</b><div class="d">${t(o.dk)}</div></div></div>`).join('');
+  // Step 9 — focus
+  const fe=document.getElementById('setup-focus');
+  if(fe)fe.innerHTML=FOCUS_OPTIONS.map(o=>`<div class="setup-choice ${setupDraft.focus.includes(o.id)?'on':''}" onclick="setupToggle('focus','${o.id}')"><span class="em">${o.em}</span><div><b>${t(o.k)}</b><div class="d">${t(o.dk)}</div></div></div>`).join('');
 }
 function setupAdj(type,delta){setupDraft[type]=Math.max(0,setupDraft[type]+delta);if(setupDraft.adults===0&&setupDraft.children===0)setupDraft.adults=1;renderSetup();}
 function setupToggle(field,id){const arr=setupDraft[field];const i=arr.indexOf(id);if(i>=0)arr.splice(i,1);else arr.push(id);renderSetup();}
+function setupPick(field,id){setupDraft[field]=id;renderSetup();}
+function setupPickActivity(id){setupDraft.activity=id;renderSetup();setupComputeMacros();}
 function closeSetup(){document.getElementById('setup-bg').classList.remove('open');}
-let setupWeightUnit='kg';
-let setupActivityLevel='moderate';
 function setWeightUnit(u){
+  // convert the entered value so the number stays sensible
+  const wIn=document.getElementById('setup-weight-input');
+  let v=parseFloat(wIn&&wIn.value);
+  if(v){if(u==='lbs'&&setupWeightUnit==='kg')v=Math.round(v/0.4536);else if(u==='kg'&&setupWeightUnit==='lbs')v=Math.round(v*0.4536);setupDraft.weight=String(v);}
   setupWeightUnit=u;
-  document.getElementById('unit-kg').classList.toggle('on',u==='kg');
-  document.getElementById('unit-lbs').classList.toggle('on',u==='lbs');
-  document.getElementById('setup-weight-unit-lbl').textContent=u;
-  calcProteinGoal();
+  renderSetup();
 }
-function setupActivity(level){
-  setupActivityLevel=level;
-  const btns=document.querySelectorAll('#setup-activity-chips .setup-chip');
-  ['light','moderate','active'].forEach((l,i)=>btns[i]&&btns[i].classList.toggle('on',l===level));
-  calcProteinGoal();
+function setupWeightKg(){
+  let w=parseFloat(setupDraft.weight);
+  if(!w)return null;
+  return setupWeightUnit==='lbs'?w*0.4536:w;
 }
-function calcProteinGoal(){
-  if(!setupDraft)return;
-  const input=document.getElementById('setup-weight-input');
-  let w=parseFloat(input&&input.value);
-  const result=document.getElementById('setup-protein-result');
-  if(!w||w<30){if(result)result.style.display='none';setupDraft.proteinGoal=0;return;}
-  if(setupWeightUnit==='lbs')w=w*0.4536;
-  const mult={light:1.2,moderate:1.4,active:1.6}[setupActivityLevel]||1.4;
-  const goal=Math.round(w*mult/5)*5;
-  setupDraft.proteinGoal=goal;
-  if(result){result.style.display='block';result.textContent=`💚 Your goal: ~${goal}g protein / day`;}
+// Mifflin–St Jeor → daily kcal + protein, tuned by goals & focus
+function setupComputeMacros(){
+  const w=setupWeightKg(),age=parseInt(setupDraft.age),h=parseInt(setupDraft.height);
+  const res=document.getElementById('setup-protein-result');
+  if(!w||!age||!h||age<14||h<100){if(res)res.style.display='none';setupDraft.calcResult=null;return null;}
+  const bmr=10*w+6.25*h-5*age+(setupDraft.sex==='male'?5:-161);
+  const actMult=(ACTIVITY_OPTIONS.find(a=>a.id===setupDraft.activity)||{mult:1.55}).mult;
+  let goalMult=1.0,proteinPerKg=1.6;
+  if(setupDraft.goals.includes('loseWeight')){goalMult=0.85;proteinPerKg=1.8;}
+  else if(setupDraft.goals.includes('buildMuscle')){goalMult=1.10;proteinPerKg=2.0;}
+  if(setupDraft.focus.includes('highProtein'))proteinPerKg=Math.max(proteinPerKg,2.0);
+  const kcal=Math.round(bmr*actMult*goalMult/10)*10;
+  const protein=Math.round(w*proteinPerKg/5)*5;
+  setupDraft.calcResult={kcal,protein};
+  if(res){
+    res.style.display='block';
+    res.innerHTML=`<div class="rrow"><div><div class="rv">${kcal}</div><div class="rl">${t('calcResKcal')}</div></div><div><div class="rv">${protein} g</div><div class="rl">${t('calcResProtein')}</div></div></div><div class="rnote">${t('calcNote')}</div>`;
+  }
+  return setupDraft.calcResult;
 }
-function skipProteinGoal(){
-  if(!setupDraft)return;
-  setupDraft.proteinGoal=0;
-  const input=document.getElementById('setup-weight-input');
-  const result=document.getElementById('setup-protein-result');
-  if(input)input.value='';
-  if(result)result.style.display='none';
+function renderSetupSummary(){
+  const el=document.getElementById('setup-summary');if(!el)return;
+  const rows=[];
+  const fam=setupDraft.adults+(setupDraft.children?' + '+setupDraft.children+' '+t('childWord'):'');
+  rows.push(['👥',t('sumHouse'),setupDraft.adults+' '+t('adultsWord')+(setupDraft.children?', '+setupDraft.children+' '+t('childWord'):'')]);
+  rows.push(['🍽️',t('sumMeal'),t(setupDraft.mainMeal==='lunch'?'mealLunch':'mealDinner')]);
+  if(setupDraft.diet.length){const names=setupDraft.diet.map(id=>{const o=DIET_OPTIONS.find(d=>d.id===id);return o?optLabel(o):id;});rows.push(['🥦',t('sumDiet'),names.join(', ')]);}
+  if(setupDraft.calcResult)rows.push(['🔥',t('sumTarget'),`${setupDraft.calcResult.kcal} kcal · ${setupDraft.calcResult.protein} g ${t('macroProtein').toLowerCase()}`]);
+  if(setupDraft.focus.length){const names=setupDraft.focus.map(id=>t((FOCUS_OPTIONS.find(f=>f.id===id)||{}).k||id));rows.push(['🎯',t('sumFocus'),names.join(' · ')]);}
+  el.innerHTML=rows.map(([em,lbl,val])=>`<div class="setup-summary-row"><span class="em">${em}</span><div><div class="lbl">${lbl}</div><div class="val">${val}</div></div></div>`).join('');
 }
 function finishSetup(skip){
-  if(!skip){
-    state.family.adults=setupDraft.adults;state.family.children=setupDraft.children;
-    state.dietaryPrefs=setupDraft.diet;state.allergies=setupDraft.allergies;
-    state.dislikes=setupDraft.dislikes;
-    if(setupDraft.proteinGoal>0){if(!state.macroGoals)state.macroGoals={kcal:0,protein:0};state.macroGoals.protein=setupDraft.proteinGoal;}
+  // commit everything the user entered (even on skip we keep what's there)
+  state.userName=(setupDraft.name||'').trim();
+  state.goals=setupDraft.goals;
+  state.family.adults=setupDraft.adults;state.family.children=setupDraft.children;
+  state.mainMeal=setupDraft.mainMeal||'dinner';
+  state.dietaryPrefs=setupDraft.diet;state.allergies=setupDraft.allergies;state.dislikes=setupDraft.dislikes;
+  state.focus=setupDraft.focus;
+  if(setupDraft.height||setupDraft.weight||setupDraft.age){
+    state.calc={sex:setupDraft.sex,age:setupDraft.age,height:setupDraft.height,weight:setupDraft.weight,activity:setupDraft.activity,unit:setupWeightUnit};
   }
+  if(setupDraft.calcResult){if(!state.macroGoals)state.macroGoals={kcal:0,protein:0};state.macroGoals.kcal=setupDraft.calcResult.kcal;state.macroGoals.protein=setupDraft.calcResult.protein;}
   state.setupDone=true;
   save();renderFamily();renderDietPrefs();closeSetup();
+  // Editing from Me tab → just close back to where they were
+  if(!setupIsFirstRun){toast(t('prefsSaved'));return;}
+  // First run, not signed in → now offer the account (signup-last)
+  if(!currentUser||currentUser.id==='guest'){showAuth();switchAuthTab('signup');return;}
   showTab('plan');
-  if(!skip)setTimeout(openWeekPick,200);   // pick which nights to cook for the first week
+  setTimeout(openWeekPick,200);   // pick which nights to cook for the first week
 }
 
 // ─── Mark a meal as cooked ──────────────────────
@@ -3914,6 +4319,13 @@ function tasteScore(dish){
   ensureTaste();let s=0;
   (dish.tags||[]).forEach(tag=>{s+=(state.taste.tags[tag]||0);});
   s+=(state.taste.recipes[dish.id]||0);
+  // gentle nudge toward the user's chosen focus (never a hard filter)
+  const focus=state.focus||[];
+  if(focus.length&&dish.nutrition){
+    const n=dish.nutrition;
+    if(focus.includes('highProtein')&&n.protein>=25)s+=1.2;
+    if(focus.includes('lowCarb')&&n.carbs&&n.carbs<=30)s+=1.2;
+  }
   return s;
 }
 // dishes planned the previous week (avoid repeating)
@@ -5031,7 +5443,7 @@ function hideLoading(){
 function showAuth(){hideWelcome();document.getElementById('auth-screen').classList.add('active');document.getElementById('app').style.display='none';}
 function showWelcome(){const w=document.getElementById('welcome-screen');if(w)w.classList.add('open');document.getElementById('auth-screen').classList.remove('active');document.getElementById('app').style.display='none';}
 function hideWelcome(){const w=document.getElementById('welcome-screen');if(w)w.classList.remove('open');}
-function welcomeGetStarted(){showAuth();switchAuthTab('signup');}
+function welcomeGetStarted(){hideWelcome();openSetup(true);}
 function welcomeSignin(){showAuth();switchAuthTab('signin');}
 function welcomeGuest(){hideWelcome();continueAsGuest();}
 function showApp(user){
@@ -5054,7 +5466,7 @@ function showApp(user){
   // Me-tab account header (the visible one after header declutter)
   const tierLabelsArrow={guest:'🌱 Explorer — get a free account ›',registered:'🌿 Member (free) — go Premium ›',premium:'⭐ Premium'};
   const meAvatar=document.getElementById('me-avatar');if(meAvatar)meAvatar.textContent=meta.avatar||'🥗';
-  const meName=document.getElementById('me-name');if(meName)meName.textContent=meta.first_name||user.email?.split('@')[0]||'Friend';
+  const meName=document.getElementById('me-name');if(meName)meName.textContent=(state.userName||'').trim()||meta.first_name||user.email?.split('@')[0]||'Friend';
   const mePlan=document.getElementById('me-plan');if(mePlan)mePlan.textContent=tierLabelsArrow[tier]||tier;
   const meUpgrade=document.getElementById('me-upgrade');if(meUpgrade)meUpgrade.style.display=tier==='premium'?'none':'block';
   const daWrap=document.getElementById('delete-acct-wrap');if(daWrap)daWrap.style.display=(tier==='guest')?'none':'block';
@@ -5092,7 +5504,7 @@ async function init(){
       hideLoading();
       showApp(session.user);
     }else if(event==='SIGNED_OUT'){
-      state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
+      state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},userName:'',goals:[],mainMeal:'dinner',focus:[],calc:null,weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
       showWelcome();
     }
   });
