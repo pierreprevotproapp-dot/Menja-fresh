@@ -686,7 +686,23 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .macro-bar-protein .macro-bar-fill{background:#C8622A}
 .macro-bar-carbs .macro-bar-fill{background:#4A90D9}
 .macro-bar-fat .macro-bar-fill{background:#F5A623}
+.macro-bar-row.macro-bar-protein .macro-bar-track{height:8px}
+.macro-bar-row.macro-bar-protein .macro-bar-lbl{font-weight:600;color:var(--text2)}
 .macro-goal-met{margin-top:10px;background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border-radius:var(--rsm);padding:8px 12px;font-size:12px;font-weight:600;color:#2E7D32;text-align:center;animation:pop .35s ease}
+.macro-protein-chip{display:inline-flex;align-items:center;gap:4px;background:#FBF0EB;color:#C8622A;border-radius:99px;padding:3px 9px;font-size:11px;font-weight:700;margin-left:8px;vertical-align:middle}
+.macro-protein-togo{margin-top:8px;font-size:12px;color:var(--text3);text-align:center}
+.macro-protein-togo strong{color:#C8622A}
+.macro-week-score{display:flex;align-items:center;justify-content:center;gap:6px;margin-top:8px}
+.macro-week-dot{width:8px;height:8px;border-radius:50%;background:var(--surface2)}
+.macro-week-dot.hit{background:#C8622A}
+.macro-week-dot.today{box-shadow:0 0 0 2px #C8622A,0 0 0 4px #FBF0EB}
+.meal-protein-pill{display:inline-flex;align-items:center;gap:3px;background:#FBF0EB;color:#C8622A;border-radius:99px;padding:2px 8px;font-size:11px;font-weight:700;margin-left:6px}
+/* recipe overlay big protein */
+.rd-protein-hero{display:flex;align-items:center;gap:12px;background:#FBF0EB;border-radius:12px;padding:12px 14px;margin-bottom:10px}
+.rd-protein-val{font-family:var(--fd);font-size:28px;font-weight:700;color:#C8622A;line-height:1}
+.rd-protein-meta{flex:1}
+.rd-protein-label{font-size:11px;font-weight:700;color:#C8622A;letter-spacing:.04em;text-transform:uppercase}
+.rd-protein-pct{font-size:11px;color:var(--text3);margin-top:2px}
 @keyframes pop{0%{transform:scale(.92);opacity:.6}60%{transform:scale(1.04)}100%{transform:scale(1);opacity:1}}
 /* ── RECIPE NUTRITION BARS ───────────────────── */
 .rd-nut-v2{margin-top:8px}
@@ -1000,7 +1016,6 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <div class="fam-row"><div class="fam-row-left"><div class="fam-avatar adult">👨</div><div><div class="fam-label" data-t="adults">Adults</div><div class="fam-sublabel" data-t="fullPortions">Full portions</div></div></div><div class="fam-counter"><div class="fam-btn" onclick="adjFamily('adults',-1)">−</div><div class="fam-count" id="adults-count">2</div><div class="fam-btn" onclick="adjFamily('adults',1)">+</div></div></div>
       <div class="fam-row"><div class="fam-row-left"><div class="fam-avatar child">👧</div><div><div class="fam-label" data-t="children">Children</div><div class="fam-sublabel" data-t="threeQuarter">¾ adult portion</div></div></div><div class="fam-counter"><div class="fam-btn" onclick="adjFamily('children',-1)">−</div><div class="fam-count" id="children-count">0</div><div class="fam-btn" onclick="adjFamily('children',1)">+</div></div></div>
     </div>
-    <div class="fam-summary" id="fam-summary"></div>
     <div class="fam-section"><h3 data-t="dietaryPrefs">Dietary preferences</h3>
       <div class="diet-tags-row" id="prof-diet-tags"></div>
     </div>
@@ -1463,7 +1478,7 @@ en:{
   planNextTitle:'Plan next week?',planNextSub:'A calm few taps now = a sorted week ahead.',planNextBtn:'Plan next week →',
   letsSortDinner:"Let's sort dinner",nothingPlannedYet:'Nothing planned yet',whenTonight:'tonight',whenThisDay:'this day',pickTonight:"Pick tonight's meal →",lazyDayBasic:'Lazy day? Add a 5-min basic',
   emptyTodaySentence:'A few taps now and {when} is one less thing to think about.',
-  macroLockTitle:'Macro tracking',macroLockSub:'Calories & protein for every day — Premium',unlockWord:'Unlock',proteinGoalMet:'Protein goal reached today!',ofDailyGoal:'of daily goal',
+  macroLockTitle:'Macro tracking',macroLockSub:'Calories & protein for every day — Premium',unlockWord:'Unlock',proteinGoalMet:'Protein goal reached today!',ofDailyGoal:'of daily goal',proteinToGo:'protein to hit your goal',
   todaysNutrition:"Today's nutrition",perPerson:'per person',carbsWord:'carbs',fatWord:'fat',setDailyGoals:'＋ Set daily goals',
   budgetLockTitle:'Budget mode',budgetLockSub:"See your week's cost & a gentle budget — Premium",
   estGroceries:'estimated groceries this week',setBudgetBtn:'＋ Set budget',budgetBtnLbl:'Budget',budgetNote:'A gentle estimate to help you plan — not exact prices.',
@@ -1585,7 +1600,7 @@ fr:{
   planNextTitle:'Planifier la semaine prochaine ?',planNextSub:'Quelques touches maintenant = une semaine réglée.',planNextBtn:'Planifier la semaine prochaine →',
   letsSortDinner:'On règle le dîner',nothingPlannedYet:'Rien de planifié',whenTonight:'ce soir',whenThisDay:'ce jour',pickTonight:'Choisir le dîner →',lazyDayBasic:'Jour flemme ? Un basique en 5 min',
   emptyTodaySentence:'Quelques touches et {when} est une chose de moins à gérer.',
-  macroLockTitle:'Suivi des macros',macroLockSub:'Calories et protéines chaque jour — Premium',unlockWord:'Débloquer',proteinGoalMet:'Objectif protéines atteint !',ofDailyGoal:'de l\'objectif journalier',
+  macroLockTitle:'Suivi des macros',macroLockSub:'Calories et protéines chaque jour — Premium',unlockWord:'Débloquer',proteinGoalMet:'Objectif protéines atteint !',ofDailyGoal:'de l\'objectif journalier',proteinToGo:'de protéines pour atteindre ton objectif',
   todaysNutrition:'Nutrition du jour',perPerson:'par personne',carbsWord:'glucides',fatWord:'lipides',setDailyGoals:'＋ Définir des objectifs',
   budgetLockTitle:'Mode budget',budgetLockSub:'Voyez le coût de la semaine et un budget en douceur — Premium',
   estGroceries:'courses estimées cette semaine',setBudgetBtn:'＋ Définir un budget',budgetBtnLbl:'Budget',budgetNote:'Une estimation indicative pour planifier — pas des prix exacts.',
@@ -1707,7 +1722,7 @@ es:{
   planNextTitle:'¿Planificar la próxima semana?',planNextSub:'Unos toques ahora = una semana resuelta.',planNextBtn:'Planificar la próxima semana →',
   letsSortDinner:'Resolvamos la cena',nothingPlannedYet:'Nada planificado',whenTonight:'esta noche',whenThisDay:'este día',pickTonight:'Elegir la cena →',lazyDayBasic:'¿Día perezoso? Un básico de 5 min',
   emptyTodaySentence:'Unos toques ahora y {when} es una cosa menos en que pensar.',
-  macroLockTitle:'Seguimiento de macros',macroLockSub:'Calorías y proteínas cada día — Premium',unlockWord:'Desbloquear',proteinGoalMet:'¡Objetivo de proteínas alcanzado!',ofDailyGoal:'del objetivo diario',
+  macroLockTitle:'Seguimiento de macros',macroLockSub:'Calorías y proteínas cada día — Premium',unlockWord:'Desbloquear',proteinGoalMet:'¡Objetivo de proteínas alcanzado!',ofDailyGoal:'del objetivo diario',proteinToGo:'de proteína para tu objetivo',
   todaysNutrition:'Nutrición de hoy',perPerson:'por persona',carbsWord:'carbohidratos',fatWord:'grasas',setDailyGoals:'＋ Fijar objetivos diarios',
   budgetLockTitle:'Modo presupuesto',budgetLockSub:'Ve el coste de la semana y un presupuesto suave — Premium',
   estGroceries:'compra estimada esta semana',setBudgetBtn:'＋ Fijar presupuesto',budgetBtnLbl:'Presupuesto',budgetNote:'Una estimación orientativa para planificar — no precios exactos.',
@@ -1875,7 +1890,7 @@ de:{
   planNextTitle:'Nächste Woche planen?',planNextSub:'Ein paar ruhige Tipps jetzt = eine geregelte Woche.',planNextBtn:'Nächste Woche planen →',
   letsSortDinner:'Regeln wir das Abendessen',nothingPlannedYet:'Noch nichts geplant',whenTonight:'heute Abend',whenThisDay:'dieser Tag',pickTonight:'Abendessen wählen →',lazyDayBasic:'Fauler Tag? 5-Minuten-Basic',
   emptyTodaySentence:'Ein paar Tipps jetzt und {when} ist eine Sorge weniger.',
-  macroLockTitle:'Makro-Tracking',macroLockSub:'Kalorien & Eiweiß für jeden Tag — Premium',unlockWord:'Freischalten',proteinGoalMet:'Eiweißziel heute erreicht!',ofDailyGoal:'des Tagesziels',
+  macroLockTitle:'Makro-Tracking',macroLockSub:'Kalorien & Eiweiß für jeden Tag — Premium',unlockWord:'Freischalten',proteinGoalMet:'Eiweißziel heute erreicht!',ofDailyGoal:'des Tagesziels',proteinToGo:'Eiweiß bis zum Ziel',
   todaysNutrition:'Heutige Nährwerte',perPerson:'pro Person',carbsWord:'Kohlenhydrate',fatWord:'Fett',setDailyGoals:'＋ Tagesziele festlegen',
   budgetLockTitle:'Budget-Modus',budgetLockSub:'Sieh die Wochenkosten & ein sanftes Budget — Premium',
   estGroceries:'geschätzter Einkauf diese Woche',setBudgetBtn:'＋ Budget festlegen',budgetBtnLbl:'Budget',budgetNote:'Eine grobe Schätzung zum Planen — keine exakten Preise.',
@@ -3302,12 +3317,6 @@ function adjFamily(type,delta){
 function renderFamily(){
   document.getElementById('adults-count').textContent=state.family.adults;
   document.getElementById('children-count').textContent=state.family.children;
-  const total=state.family.adults+state.family.children;
-  const s=familyServings();const sf=s%1===0?s:s.toFixed(1);
-  let txt=`${t('cookingFor')} <strong>${total} ${total===1?t('person'):t('people')}</strong>`;
-  if(state.family.adults&&state.family.children)txt+=` — ${state.family.adults} ${state.family.adults>1?t('adults2'):t('adult')} ${t('and')} ${state.family.children} ${state.family.children>1?t('children2'):t('child')}`;
-  txt+=`.<br>${t('recipesFor')} <strong>${sf} ${t('servings')}</strong>.`;
-  document.getElementById('fam-summary').innerHTML=`<p>${txt}</p><p class="fam-summary-tip">${t('famTip')}</p>`;
   renderDietPrefs();renderMacroGoals();renderBudget();renderDevTier();
 }
 
@@ -4430,11 +4439,17 @@ function renderRecipeDetail(id,targetId){
       const barW=goal>0?pct:Math.min(80,Math.round(val/4));
       return`<div class="rd-nut-row"><span class="rd-nut-lbl">${label}</span><div class="rd-nut-track"><div class="rd-nut-fill ${cls}" style="width:${barW}%"></div></div><span class="rd-nut-val">${val}${unit}</span>${pctTxt}</div>`;
     };
+    const proteinPct=g.protein>0?Math.min(100,Math.round(n.protein/g.protein*100)):0;
+    const proteinPctTxt=g.protein>0?`<div class="rd-protein-pct">${proteinPct}% ${t('ofDailyGoal')}</div>`:'';
+    const proteinHero=`<div class="rd-protein-hero">
+      <div class="rd-protein-val">${n.protein}g</div>
+      <div class="rd-protein-meta"><div class="rd-protein-label">🥩 ${t('protein')}</div>${proteinPctTxt}</div>
+      <div style="text-align:right"><div style="font-size:11px;color:var(--text3)">${t('kcal')}</div><div style="font-family:var(--fd);font-size:16px;font-weight:600;color:var(--text)">${n.kcal}</div></div>
+    </div>`;
     const goalHint=g.protein>0?`<div style="font-size:10px;color:var(--text3);margin-top:2px">% = ${t('ofDailyGoal')}</div>`:'';
     return`<div class="rd-section"><div class="rd-section-title">${t('nutritionPer')}</div>
+      ${proteinHero}
       <div class="rd-nut-v2">
-        ${nutBar('kcal',n.kcal,g.kcal,t('kcal'),'')}
-        ${nutBar('protein',n.protein,g.protein,t('protein'),'g')}
         ${nutBar('carbs',n.carbs,0,t('carbsWord'),'g')}
         ${nutBar('fat',n.fat,0,t('fatWord'),'g')}
         ${n.fiber?nutBar('carbs',n.fiber,0,t('fiberLbl'),'g'):''}
@@ -4583,8 +4598,10 @@ function renderToday(){
     const totalTime=(dish.prep||0)+(dish.cook||0);
     const cooked=isCooked(key,type);
     const did=typeof dish.id==='string'?`'${dish.id}'`:dish.id;
+    const dishProtein=dish.nutrition&&dish.nutrition.protein?Math.round(dish.nutrition.protein)+'g':'';
+    const proteinPill=dishProtein?`<span class="meal-protein-pill">🥩 ${dishProtein}</span>`:'';
     return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)">
-      <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">${MEAL_ICONS[type]} ${mealName(type)}</div>
+      <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">${MEAL_ICONS[type]} ${mealName(type)}${proteinPill}</div>
       <div style="display:flex;gap:12px;align-items:flex-start;cursor:pointer" onclick="openRecipeOverlay(${did})">
         ${img}
         <div style="flex:1;min-width:0">
@@ -4604,7 +4621,12 @@ function renderToday(){
   const hasMeals=plannedTypes.length>0;
   const reminder=shouldRemindNextWeek()?`<div class="plan-reminder"><div class="plan-reminder-txt">🗓️ <b>${t('planNextTitle')}</b><br>${t('planNextSub')}</div><button class="plan-reminder-btn" onclick="planNextWeek()">${t('planNextBtn')}</button></div>`:'';
   const macro=hasMeals?macroCardHTML(key):'';
-  tm.innerHTML=reminder+macro+(hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="openDishChooser('${key}','Dinner')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button><div class="pday-basic-link" style="justify-content:center;margin-top:14px" onclick="pickBasic('${key}','Dinner')">⏱ ${t('lazyDayBasic')}</div></div>`);
+  tm.innerHTML=reminder+macro+(hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="goToPlanDay('${key}')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button><div class="pday-basic-link" style="justify-content:center;margin-top:14px" onclick="pickBasic('${key}','Dinner')">⏱ ${t('lazyDayBasic')}</div></div>`);
+}
+function goToPlanDay(key){
+  state.openDays[key]=true;save();
+  showTab('plan');
+  setTimeout(()=>{const el=document.getElementById('calday-'+key);if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
 }
 // ── Plan-next-week reminder (in-app, lightweight) ──
 function weekHasPlanAtOffset(off){
@@ -4632,6 +4654,20 @@ function dayMacros(key){
   MEAL_TYPES.forEach(tp=>{const n=mealNutrition(dm[tp]);if(n){any=true;['kcal','protein','carbs','fat','fiber'].forEach(k=>t[k]+=(n[k]||0));}});
   return any?t:null;
 }
+function proteinWeekDots(todayKey){
+  const dots=[];
+  const base=weekStartDate();
+  for(let i=0;i<7;i++){
+    const d=new Date(base.getTime()+i*86400000);
+    const k=dateKey(d);
+    const m=dayMacros(k);
+    const g=state.macroGoals||{};
+    const hit=g.protein>0&&m&&m.protein>=g.protein;
+    const isT=k===todayKey;
+    dots.push(`<div class="macro-week-dot${hit?' hit':''}${isT?' today':''}"></div>`);
+  }
+  return dots.join('');
+}
 function macroCardHTML(key){
   const m=dayMacros(key);if(!m)return'';
   const g=state.macroGoals||{};
@@ -4641,14 +4677,18 @@ function macroCardHTML(key){
     return`<div class="macro-bar-row ${cls}"><span class="macro-bar-lbl">${label}</span><div class="macro-bar-track"><div class="macro-bar-fill" style="width:${pct||0}%"></div></div><span class="macro-bar-val">${valTxt}</span></div>`;
   };
   const kcalPct=g.kcal>0?Math.min(100,Math.round(m.kcal/g.kcal*100)):0;
+  const ringColor=kcalPct>=110?'#C0392B':kcalPct>=90?'#E67E22':'#2D5A3D';
   const proteinMet=g.protein>0&&m.protein>=g.protein;
+  const proteinLeft=g.protein>0&&!proteinMet?Math.round(g.protein-m.protein):0;
   const celebration=proteinMet?`<div class="macro-goal-met">🎉 ${t('proteinGoalMet')}</div>`:'';
+  const toGo=proteinLeft>0?`<div class="macro-protein-togo">💪 <strong>+${proteinLeft}g</strong> ${t('proteinToGo')}</div>`:'';
+  const weekDots=g.protein>0?`<div class="macro-week-score">${proteinWeekDots(key)}</div>`:'';
   const noGoals=!(g.kcal||g.protein)?`<div class="macro-setgoal" onclick="showTab('family')">${t('setDailyGoals')}</div>`:'';
   return`<div class="macro-card">
     <div class="macro-hd">${t('todaysNutrition')} <span class="macro-sub">${t('perPerson')}</span></div>
     <div class="macro-body">
       <div class="macro-kcal-col">
-        <div class="macro-ring" style="--p:${kcalPct};--c:#2D5A3D"><span>${Math.round(m.kcal)}</span></div>
+        <div class="macro-ring" style="--p:${kcalPct};--c:${ringColor}"><span>${Math.round(m.kcal)}</span></div>
         <div class="macro-kcal-lbl">${t('kcal')}${g.kcal?` · ${kcalPct}%`:''}</div>
       </div>
       <div class="macro-bars-col">
@@ -4657,7 +4697,7 @@ function macroCardHTML(key){
         ${bar('macro-bar-fat',m.fat,g.fat||0,t('fatWord'),'g')}
       </div>
     </div>
-    ${celebration}${noGoals}
+    ${celebration}${toGo}${weekDots}${noGoals}
   </div>`;
 }
 
