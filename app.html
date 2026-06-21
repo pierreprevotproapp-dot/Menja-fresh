@@ -1156,6 +1156,12 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <button class="plan-generate" id="plan-generate-btn" onclick="openWeekPick()">✨ Plan my week</button>
       <div style="text-align:center;margin-top:8px"><button class="plan-clear" id="plan-clear-btn" onclick="clearPlan()" style="display:none" data-t="clearWeek">Clear this week</button></div>
     </div>
+    <div id="plan-guest-banner" style="display:none;margin:0 12px 8px">
+      <div style="background:var(--nav);border-radius:var(--r);padding:12px 16px;display:flex;align-items:center;gap:12px">
+        <div style="flex:1"><div style="font-size:13px;font-weight:600;color:#fff">💾 Dein Plan ist nicht gespeichert</div><div style="font-size:11px;color:var(--nav-t);margin-top:2px">Kostenloses Konto — Mahlzeiten auf allen Geräten.</div></div>
+        <button onclick="showAuth();switchAuthTab('signup')" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap">Konto erstellen →</button>
+      </div>
+    </div>
     <div class="cal-scroll" id="cal-scroll"></div>
   </div></div>
   <div class="screen" id="screen-shopping">
@@ -2595,6 +2601,7 @@ let state={
   budgetHidden:false, // user chose to hide the cost card on the Plan
   outOfStaples:{},  // staple id → true when the user needs to buy it
   setupDone:false,  // first-run setup completed
+  weekPickDone:false, // user has completed at least one week-pick
   cooked:{},        // {'YYYY-MM-DD_MealType': true}
   skippedDays:{},   // {'YYYY-MM-DD': true} — days the user chose not to plan
   confirmed:{},     // {'YYYY-MM-DD': true} — dinner accepted ("Chosen") for that day
@@ -4100,10 +4107,9 @@ function finishSetup(skip){
   save();renderFamily();renderDietPrefs();closeSetup();
   // Editing from Me tab → just close back to where they were
   if(!setupIsFirstRun){toast(t('prefsSaved'));return;}
-  // First run, not signed in → now offer the account (signup-last)
-  if(!currentUser||currentUser.id==='guest'){showAuth();switchAuthTab('signup');return;}
+  // First run → go straight to plan + week-pick (guests included; auth comes later via "Save plan" banner)
   showTab('plan');
-  setTimeout(openWeekPick,200);   // pick which nights to cook for the first week
+  setTimeout(openWeekPick,200);
 }
 
 // ─── Mark a meal as cooked ──────────────────────
@@ -4226,7 +4232,13 @@ function renderPlanHeader(){
   if(btn)btn.textContent=cp>0?t('regenerateWeek'):t('planMyWeekBtn');
   if(clr)clr.style.display=cp>0?'':'none';
   if(prev)prev.disabled=weekOffset<=0;
-  if(next)next.disabled=weekOffset>=3;   // hard cap; tier gate handled in changeWeek (shows upsell)
+  if(next)next.disabled=weekOffset>=3;
+  // "Save plan" nudge for guests who already have meals planned
+  const banner=document.getElementById('plan-guest-banner');
+  if(banner){
+    const showBanner=isGuest&&countPlaced()>0;
+    banner.style.display=showBanner?'block':'none';
+  }
 }
 
 // ── Allergens & disliked ingredients ─────────────
@@ -4439,7 +4451,8 @@ function toggleWeekPick(i){if(weekPickSel.has(i))weekPickSel.delete(i);else week
 function closeWeekPick(){document.getElementById('weekpick-bg').classList.remove('open');}
 function confirmWeekPick(){
   if(!weekPickSel.size)return;
-  state.cookDays=[...weekPickSel].sort((a,b)=>a-b);save();
+  state.cookDays=[...weekPickSel].sort((a,b)=>a-b);
+  state.weekPickDone=true;save();
   const sel=new Set(weekPickSel);
   closeWeekPick();
   generateWeek(sel);
@@ -5510,7 +5523,8 @@ function showApp(user){
   const tk=dateKey(new Date());
   const todayHasMeal=state.plan[tk]&&MEAL_TYPES.some(tp=>state.plan[tk][tp]&&state.plan[tk][tp].dishId);
   showTab(todayHasMeal?'today':'plan');
-  if(!state.setupDone)setTimeout(()=>openSetup(true),250);
+  if(!state.setupDone){setTimeout(()=>openSetup(true),250);}
+  else if(!state.weekPickDone&&countPlaced()===0){setTimeout(openWeekPick,400);}
 }
 
 // ═══════════════════════════════════════════════════
