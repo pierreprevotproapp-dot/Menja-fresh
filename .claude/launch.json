@@ -2,9 +2,9 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "menja-fresh",
-      "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", ".", "-p", "3000", "--no-clipboard"],
+      "name": "Menja Vorschau",
+      "command": "python3 -m http.server 3000",
+      "url": "http://localhost:3000/preview-hub.html",
       "port": 3000
     }
   ]
