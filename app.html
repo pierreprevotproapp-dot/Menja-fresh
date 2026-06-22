@@ -4111,7 +4111,18 @@ function finishSetup(skip){
   save();renderFamily();renderDietPrefs();closeSetup();
   // Editing from Me tab → just close back to where they were
   if(!setupIsFirstRun){toast(t('prefsSaved'));return;}
-  // First run → go straight to plan + week-pick (guests included; auth comes later via "Save plan" banner)
+  // First run → make sure the app shell is visible. Onboarding can run on top of
+  // the welcome screen (where #app is hidden), so a guest must formally enter the
+  // app here, otherwise routing to the Plan tab shows a blank page.
+  hideWelcome();
+  if(!currentUser||currentUser.id==='guest'){
+    isGuest=true;
+    const guestUser=currentUser&&currentUser.id==='guest'?currentUser:{id:'guest',email:'',user_metadata:{first_name:(state.userName||'Guest'),avatar:'👤',plan:'guest'}};
+    showApp(guestUser);   // makes #app visible, routes to Plan, triggers week-pick
+    return;
+  }
+  // Already signed in (rare with signup-last) → just route to the plan
+  document.getElementById('app').style.display='block';
   showTab('plan');
   setTimeout(openWeekPick,200);
 }

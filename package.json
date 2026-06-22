@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Menja Fresh — seasonal meal planning PWA",
   "scripts": {
-    "test": "echo \"No tests\" && exit 0"
+    "test": "node test_flow.js"
   },
   "repository": {
     "type": "git",
@@ -14,6 +14,7 @@
   "license": "ISC",
   "type": "commonjs",
   "devDependencies": {
+    "jsdom": "^24.0.0",
     "sharp": "^0.34.5"
   }
 }
