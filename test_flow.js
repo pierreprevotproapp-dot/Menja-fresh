@@ -121,7 +121,7 @@ function enterGuest(w, __t) {
 // ════════════════════════════════════════════════════════════════════════
 // SUITE 1 — Onboarding (new user) — the white-page regression
 // ════════════════════════════════════════════════════════════════════════
-suite('Onboarding: new user → app visible', (w, __t, assert) => {
+suite('Onboarding: new user → app visible', async (w, __t, assert) => {
   w.showWelcome();
   const app = w.document.getElementById('app');
   assert(app.style.display === 'none', 'app hidden on welcome');
@@ -130,12 +130,24 @@ suite('Onboarding: new user → app visible', (w, __t, assert) => {
   assert(!!nameInput, 'onboarding step-1 rendered');
   if (nameInput) nameInput.value = 'Julia';
   let g = 0;
+  // Walk through all setup steps until we reach the final one
   while (g++ < 40) {
     if (!w.document.getElementById('setup-done-btn')) break;
-    w.setupNext(true);
     const bg = w.document.getElementById('setup-bg');
+    const isLastStep = !bg || !bg.classList.contains('open') ||
+      w.document.querySelector('#setup-bg.open .setup-done') === null;
     if (!bg || !bg.classList.contains('open')) break;
+    // Check if this is the last step by calling setupNext and seeing if setup closes
+    w.setupNext(true);
+    const bgAfter = w.document.getElementById('setup-bg');
+    if (!bgAfter || !bgAfter.classList.contains('open')) {
+      // finishSetup was triggered — await it directly since setupNext doesn't
+      await w.finishSetup(false);
+      break;
+    }
   }
+  // Allow async finishSetup (recipe loading) to complete
+  await new Promise(r => setTimeout(r, 20));
   assert(app.style.display === 'block', 'app VISIBLE after onboarding (no white page)');
   assert(w.document.getElementById('screen-plan').classList.contains('active'), 'Plan tab active');
   assert(__t.getState().setupDone === true, 'setupDone flag set');

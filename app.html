@@ -2437,6 +2437,7 @@ function pantryIcon(n){return PANTRY_ICONS_MAP[n.toLowerCase()]||'🥄';}
 // DISHES  (metric European quantities throughout)
 // ═══════════════════════════════════════════════════
 let DISHES = []; // loaded from Supabase
+let _recipesPromise = null; // singleton so parallel callers share one fetch
 
 // Normalise a DB recipe row into the format the app expects
 function normaliseRecipe(r) {
@@ -4092,7 +4093,7 @@ function renderSetupSummary(){
   if(setupDraft.focus.length){const names=setupDraft.focus.map(id=>t((FOCUS_OPTIONS.find(f=>f.id===id)||{}).k||id));rows.push(['🎯',t('sumFocus'),names.join(' · ')]);}
   el.innerHTML=rows.map(([em,lbl,val])=>`<div class="setup-summary-row"><span class="em">${em}</span><div><div class="lbl">${lbl}</div><div class="val">${val}</div></div></div>`).join('');
 }
-function finishSetup(skip){
+async function finishSetup(skip){
   // commit everything the user entered (even on skip we keep what's there)
   state.userName=(setupDraft.name||'').trim();
   state.goals=setupDraft.goals;
@@ -4115,10 +4116,12 @@ function finishSetup(skip){
   if(!currentUser||currentUser.id==='guest'){
     isGuest=true;
     const guestUser=currentUser&&currentUser.id==='guest'?currentUser:{id:'guest',email:'',user_metadata:{first_name:(state.userName||'Guest'),avatar:'👤',plan:'guest'}};
+    await withTimeout(ensureRecipes(),8000); // guarantee dishes are ready before week-pick
     showApp(guestUser);   // makes #app visible, routes to Plan, triggers week-pick
     return;
   }
   // Already signed in (rare with signup-last) → just route to the plan
+  await withTimeout(ensureRecipes(),8000);
   document.getElementById('app').style.display='block';
   showTab('plan');
   setTimeout(openWeekPick,200);
@@ -5493,7 +5496,15 @@ async function loadRecipes() {
   } catch (e) {
     console.warn('Could not load recipes from DB:', e.message);
     DISHES = []; // app still works, just empty
+  } finally {
+    _recipesPromise = null; // allow a fresh fetch next time (e.g. after sign-in)
   }
+}
+// Returns a shared in-flight promise so multiple callers don't double-fetch.
+function ensureRecipes() {
+  if (DISHES.length) return Promise.resolve();
+  if (!_recipesPromise) _recipesPromise = loadRecipes();
+  return _recipesPromise;
 }
 
 // ═══════════════════════════════════════════════════
@@ -5509,7 +5520,7 @@ function hideLoading(){
 function showAuth(){hideWelcome();document.getElementById('auth-screen').classList.add('active');document.getElementById('app').style.display='none';}
 function showWelcome(){const w=document.getElementById('welcome-screen');if(w)w.classList.add('open');document.getElementById('auth-screen').classList.remove('active');document.getElementById('app').style.display='none';}
 function hideWelcome(){const w=document.getElementById('welcome-screen');if(w)w.classList.remove('open');}
-function welcomeGetStarted(){hideWelcome();openSetup(true);}
+function welcomeGetStarted(){hideWelcome();openSetup(true);ensureRecipes();/*pre-load during onboarding*/}
 function welcomeSignin(){showAuth();switchAuthTab('signin');}
 function welcomeGuest(){hideWelcome();continueAsGuest();}
 function showApp(user){
