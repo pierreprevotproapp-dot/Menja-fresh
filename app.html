@@ -2578,6 +2578,7 @@ function niceQty(qty,unit){
 // STATE
 // ═══════════════════════════════════════════════════
 let currentUser=null,isGuest=false,selectedPlan='guest';
+let scrollMemory={}; // {tabName: scrollTop} — in-session scroll positions per tab
 let state={
   family:{adults:2,children:0},
   liked:[],disliked:[],plan:{},shopping:{},catOpen:{},
@@ -2683,9 +2684,44 @@ function starHTML(rating,size=14){return[1,2,3,4,5].map(i=>`<span style="font-si
 // ─── Persistence ────────────────────────────────
 function saveLocal(){
   try{localStorage.setItem('menja_state',JSON.stringify(state));}catch(e){}
+  if(isGuest)markGuest();
 }
 function loadLocal(){
   try{const s=localStorage.getItem('menja_state');if(s)Object.assign(state,JSON.parse(s));}catch(e){}
+}
+// Write the guest flag so returning guests skip the welcome screen.
+function markGuest(){
+  try{localStorage.setItem('menja_guest',JSON.stringify({isGuest:true,name:state.userName||''}));}catch(e){}
+}
+// ── UI state (active tab + per-tab scroll) ─────────────────────────
+function _currentTabKey(){
+  const s=document.querySelector('#app .screen.active');
+  return s?s.id.replace('screen-',''):'plan';
+}
+function _getTabScroll(tab){
+  if(tab==='plan'){const c=document.getElementById('cal-scroll');return c?c.scrollTop:0;}
+  return document.getElementById('app')?.scrollTop||window.scrollY||0;
+}
+function _setTabScroll(tab,pos){
+  if(!pos)return;
+  if(tab==='plan'){const c=document.getElementById('cal-scroll');if(c)c.scrollTop=pos;}
+  else{const a=document.getElementById('app');if(a)a.scrollTop=pos;else window.scrollTo(0,pos);}
+}
+function saveUiState(){
+  try{
+    const tab=_currentTabKey();
+    scrollMemory[tab]=_getTabScroll(tab);
+    localStorage.setItem('menja_ui',JSON.stringify({tab,scrolls:scrollMemory}));
+  }catch(e){}
+}
+function restoreUiState(fallbackTab){
+  try{
+    const ui=JSON.parse(localStorage.getItem('menja_ui')||'{}');
+    const tab=ui.tab||fallbackTab||'plan';
+    if(ui.scrolls)Object.assign(scrollMemory,ui.scrolls);
+    showTab(tab);
+    // Scroll restore happens inside showTab via scrollMemory
+  }catch(e){showTab(fallbackTab||'plan');}
 }
 // ─── AUTH ────────────────────────────────────────
 // ══════════════════════════════════════════════
@@ -2816,9 +2852,11 @@ async function signInWithFacebook(){
 }
 async function continueAsGuest(){
   isGuest=true;loadLocal();
-  await withTimeout(loadRecipes(),8000);
+  markGuest(); // persist so returning guests skip the welcome screen
+  await withTimeout(ensureRecipes(),8000);
   hideLoading();
-  showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤',plan:'guest'}});
+  const name=state.userName||'';
+  showApp({id:'guest',email:'',user_metadata:{first_name:name||'Guest',avatar:'👤',plan:'guest'}});
 }
 function openImpressum(){
   const CONTENT={
@@ -3565,6 +3603,9 @@ Suggest ONE creative recipe I can make. Return ONLY JSON, no other text:
 // NAV
 // ═══════════════════════════════════════════════════
 function showTab(tab){
+  // Save the departing tab's scroll position before switching.
+  const prevTab=_currentTabKey();
+  if(prevTab!==tab)scrollMemory[prevTab]=_getTabScroll(prevTab);
   document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
   document.querySelectorAll('.nav-tab').forEach(nt=>nt.classList.remove('active'));
   const screenEl=document.getElementById('screen-'+tab);
@@ -3577,7 +3618,15 @@ function showTab(tab){
   if(tab==='today'){todayOffset=0;renderToday();}
   if(tab==='recipes')renderRecipes();
   if(tab==='fridge')initFridgeScreen();
-  document.querySelector('#app').scrollTop=0;
+  // Restore scroll for this tab (0 if first visit this session).
+  const savedPos=scrollMemory[tab]||0;
+  if(tab==='plan'){
+    const cal=document.getElementById('cal-scroll');
+    if(cal)cal.scrollTop=savedPos;
+    document.querySelector('#app').scrollTop=0;
+  }else{
+    document.querySelector('#app').scrollTop=savedPos;
+  }
 }
 
 function initFridgeScreen(){
@@ -4115,6 +4164,7 @@ async function finishSetup(skip){
   hideWelcome();
   if(!currentUser||currentUser.id==='guest'){
     isGuest=true;
+    markGuest(); // persist so returning guests skip the welcome screen
     const guestUser=currentUser&&currentUser.id==='guest'?currentUser:{id:'guest',email:'',user_metadata:{first_name:(state.userName||'Guest'),avatar:'👤',plan:'guest'}};
     await withTimeout(ensureRecipes(),8000); // guarantee dishes are ready before week-pick
     showApp(guestUser);   // makes #app visible, routes to Plan, triggers week-pick
@@ -5550,15 +5600,26 @@ function showApp(user){
   applyLang();renderLangBars();renderFamily();initDiscover();rebuildShopping();updateBadge();
   const tk=dateKey(new Date());
   const todayHasMeal=state.plan[tk]&&MEAL_TYPES.some(tp=>state.plan[tk][tp]&&state.plan[tk][tp].dishId);
-  showTab(todayHasMeal?'today':'plan');
-  if(!state.setupDone){setTimeout(()=>openSetup(true),250);}
-  else if(!state.weekPickDone&&countPlaced()===0){setTimeout(openWeekPick,400);}
+  if(!state.setupDone){
+    showTab('plan');
+    setTimeout(()=>openSetup(true),250);
+  }else if(!state.weekPickDone&&countPlaced()===0){
+    showTab('plan');
+    setTimeout(openWeekPick,400);
+  }else{
+    // Returning user — restore the tab and scroll they left on.
+    restoreUiState(todayHasMeal?'today':'plan');
+  }
 }
 
 // ═══════════════════════════════════════════════════
 // INIT
 // ═══════════════════════════════════════════════════
 async function init(){
+  // ── Persist UI state (active tab + scroll) on every page exit ──────────
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='hidden')saveUiState();});
+  window.addEventListener('pagehide',saveUiState);
+
   // ── Load language ──────────────────────────────────────────
   try{const saved=localStorage.getItem('menja_lang');if(saved&&TR[saved])lang=saved;}catch(e){}
   applyLang();
@@ -5620,9 +5681,10 @@ async function init(){
       const g=localStorage.getItem('menja_guest');
       if(g&&JSON.parse(g).isGuest){
         isGuest=true;loadLocal();
-        await withTimeout(loadRecipes(),8000);
+        await withTimeout(ensureRecipes(),8000);
         hideLoading();
-        showApp({id:'guest',email:'',user_metadata:{first_name:'Guest',avatar:'👤',plan:'guest'}});
+        const savedName=state.userName||JSON.parse(g).name||'';
+        showApp({id:'guest',email:'',user_metadata:{first_name:savedName||'Guest',avatar:'👤',plan:'guest'}});
         return;
       }
     }catch(e){}
