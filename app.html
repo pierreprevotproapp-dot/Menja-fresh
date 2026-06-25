@@ -5340,7 +5340,7 @@ function renderToday(){
   const macro=hasMeals?macroCardHTML(key):'';
   const mealsSection=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="goToPlanDay('${key}')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button><div class="pday-basic-link" style="justify-content:center;margin-top:14px" onclick="pickBasic('${key}','Dinner')">⏱ ${t('lazyDayBasic')}</div></div>`;
   const microCard=(isToday&&!hasMeals)?microbiomeTodayCardHTML():''; // embedded in macroCard when meals exist
-  tm.innerHTML=reminder+macro+mealsSection+microCard;
+  tm.innerHTML=reminder+mealsSection+macro+microCard;
 }
 function goToPlanDay(key){
   state.openDays[key]=true;save();
