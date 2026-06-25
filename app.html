@@ -5412,22 +5412,24 @@ function goToPlanDay(key){
   state.openDays[key]=true;save();
   weekOffset=0;
   showTab('plan');
-  requestAnimationFrame(()=>requestAnimationFrame(()=>{
+  let animated=false;
+  const _go=()=>{
     const el=document.getElementById('calday-'+key);
+    const sc=document.getElementById('cal-scroll');
     if(!el)return;
-    // scrollIntoView finds the right scroll container automatically (works on
-    // all devices regardless of whether cal-scroll or window is scrolling).
-    // behavior:'instant' cannot be cancelled unlike 'smooth'.
+    if(sc)sc.scrollTop=Math.max(0,el.offsetTop-8);
     el.scrollIntoView({block:'start',behavior:'instant'});
+    if(animated)return;
+    animated=true;
     el.style.boxShadow='0 0 0 2.5px var(--accent)';
     el.style.transition='box-shadow .1s';
     const slot=el.querySelector('.pday-empty');
     if(slot){slot.style.boxShadow='0 0 0 2px var(--accent)';slot.style.transition='box-shadow .1s';}
-    setTimeout(()=>{
-      el.style.transition='box-shadow .8s';el.style.boxShadow='';
-      if(slot){slot.style.transition='box-shadow .8s';slot.style.boxShadow='';}
-    },800);
-  }));
+    setTimeout(()=>{el.style.transition='box-shadow .8s';el.style.boxShadow='';
+      if(slot){slot.style.transition='box-shadow .8s';slot.style.boxShadow='';}},800);
+  };
+  _go();
+  requestAnimationFrame(()=>requestAnimationFrame(_go));
 }
 // ── Plan-next-week reminder (in-app, lightweight) ──
 function weekHasPlanAtOffset(off){
