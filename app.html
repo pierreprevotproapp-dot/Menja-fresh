@@ -722,6 +722,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .mring-lbl{font-size:11px;color:var(--text3);text-align:center;line-height:1.35}
 .mring-lbl span{font-size:10px;color:var(--text2)}
 .macro-goal-met{margin-top:10px;background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border-radius:var(--rsm);padding:8px 12px;font-size:12px;font-weight:600;color:#2E7D32;text-align:center;animation:pop .35s ease}
+.today-nudge{margin:0 0 12px;padding:10px 14px;background:var(--surface);border:.5px solid var(--border);border-radius:var(--rsm);font-size:13px;color:var(--text2);font-weight:500;line-height:1.4}
+.today-celebrate{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;align-items:center;justify-content:center;z-index:9999;pointer-events:none}
+.today-celebrate-box{background:linear-gradient(135deg,#2D5A3D,#4a8c5e);color:#fff;border-radius:20px;padding:28px 36px;text-align:center;box-shadow:0 8px 40px rgba(0,0,0,.3);animation:popIn .4s ease}
+@keyframes popIn{0%{transform:scale(.65);opacity:0}70%{transform:scale(1.06)}100%{transform:scale(1);opacity:1}}
 .macro-protein-chip{display:inline-flex;align-items:center;gap:4px;background:#FBF0EB;color:#C8622A;border-radius:99px;padding:3px 9px;font-size:11px;font-weight:700;margin-left:8px;vertical-align:middle}
 .macro-protein-togo{margin-top:8px;font-size:12px;color:var(--text3);text-align:center}
 .macro-protein-togo strong{color:#C8622A}
@@ -1729,6 +1733,8 @@ en:{
   microFact1:'70% of your immune cells live in your gut',microFact2:'Your gut produces 90% of serotonin — your mood molecule',microFact3:'Each new plant variety introduces new beneficial bacteria strains',
   calcDisc:'Guidance only, not medical or dietary advice. Talk to a professional for individual needs.',
   calcApply:'Use these values as my goal',calcInvalid:'Please enter a realistic age, height and weight.',
+  nudgeAllCooked:'All meals cooked today — great job! 🎉',nudgeProteinMet:'Protein goal hit for today 💚',nudgeProteinLeft:'+{n}g protein left to hit your goal',nudgePlantsProgress:'{n}/30 plants this week 🌿',
+  celebrationTitle:'All done today!',celebrationSub:'Every meal cooked — you\'re on a roll 🔥',
   budgetWeekly:'Weekly budget',budgetLocked:'Weekly grocery budget — Premium',budgetHeader:'Weekly grocery budget',budgetEstimate:'estimate',budgetLabel:'Budget (€ / week)',budgetShowOnPlan:'💶 Show cost on the Plan',onWord:'On',offWord:'Off',costHiddenToast:'Cost hidden · turn it back on in Me',saveWord:'Save',savedConfirm:'Saved ✓',
   opt_peanuts:'Peanuts',opt_treenuts:'Tree nuts',opt_shellfish:'Shellfish',opt_fish:'Fish',opt_dairy:'Dairy',opt_eggs:'Eggs',opt_gluten:'Gluten',opt_soy:'Soy',
   opt_mushroom:'Mushrooms',opt_olives:'Olives',opt_coriander:'Coriander',opt_aubergine:'Aubergine',opt_bellpepper:'Bell pepper',opt_spicy:'Spicy',
@@ -1875,6 +1881,8 @@ fr:{
   microFact1:'70% de tes cellules immunitaires vivent dans ton intestin',microFact2:'Ton intestin produit 90% de la sérotonine — l\'hormone de la bonne humeur',microFact3:'Chaque nouvelle plante apporte de nouvelles souches de bactéries bénéfiques',
   calcDisc:'Indicatif seulement, pas un avis médical ou nutritionnel. Consulte un professionnel pour des besoins individuels.',
   calcApply:'Utiliser ces valeurs comme objectif',calcInvalid:'Saisis un âge, une taille et un poids réalistes.',
+  nudgeAllCooked:'Tous les repas cuisinés aujourd\'hui — bravo ! 🎉',nudgeProteinMet:'Objectif protéines atteint 💚',nudgeProteinLeft:'+{n}g de protéines pour atteindre ton objectif',nudgePlantsProgress:'{n}/30 plantes cette semaine 🌿',
+  celebrationTitle:'Tout est fait !',celebrationSub:'Tous tes repas cuisinés — continue comme ça 🔥',
   budgetWeekly:'Budget hebdo',budgetLocked:'Budget courses hebdomadaire — Premium',budgetHeader:'Budget courses hebdomadaire',budgetEstimate:'estimation',budgetLabel:'Budget (€ / semaine)',budgetShowOnPlan:'💶 Afficher le coût sur le planning',onWord:'Activé',offWord:'Désactivé',costHiddenToast:'Coût masqué · réactive-le dans Moi',saveWord:'Enregistrer',savedConfirm:'Enregistré ✓',
   opt_peanuts:'Arachides',opt_treenuts:'Fruits à coque',opt_shellfish:'Crustacés',opt_fish:'Poisson',opt_dairy:'Produits laitiers',opt_eggs:'Œufs',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Champignons',opt_olives:'Olives',opt_coriander:'Coriandre',opt_aubergine:'Aubergine',opt_bellpepper:'Poivron',opt_spicy:'Épicé',
@@ -2021,6 +2029,8 @@ es:{
   microFact1:'El 70% de tus células inmunes viven en tu intestino',microFact2:'Tu intestino produce el 90% de la serotonina — la hormona del bienestar',microFact3:'Cada planta nueva aporta nuevas cepas de bacterias beneficiosas',
   calcDisc:'Solo orientativo, no es consejo médico ni nutricional. Consulta a un profesional para necesidades individuales.',
   calcApply:'Usar estos valores como objetivo',calcInvalid:'Introduce una edad, altura y peso realistas.',
+  nudgeAllCooked:'¡Todas las comidas cocinadas hoy — genial! 🎉',nudgeProteinMet:'¡Meta de proteínas alcanzada hoy! 💚',nudgeProteinLeft:'+{n}g de proteínas para tu objetivo de hoy',nudgePlantsProgress:'{n}/30 plantas esta semana 🌿',
+  celebrationTitle:'¡Todo listo hoy!',celebrationSub:'Todas tus comidas cocinadas — ¡sigue así! 🔥',
   budgetWeekly:'Presupuesto semanal',budgetLocked:'Presupuesto semanal de la compra — Premium',budgetHeader:'Presupuesto semanal de la compra',budgetEstimate:'estimación',budgetLabel:'Presupuesto (€ / semana)',budgetShowOnPlan:'💶 Mostrar el coste en el Plan',onWord:'Activado',offWord:'Desactivado',costHiddenToast:'Coste oculto · vuelve a activarlo en Yo',saveWord:'Guardar',savedConfirm:'Guardado ✓',
   opt_peanuts:'Cacahuetes',opt_treenuts:'Frutos secos',opt_shellfish:'Marisco',opt_fish:'Pescado',opt_dairy:'Lácteos',opt_eggs:'Huevos',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Setas',opt_olives:'Aceitunas',opt_coriander:'Cilantro',opt_aubergine:'Berenjena',opt_bellpepper:'Pimiento',opt_spicy:'Picante',
@@ -2213,6 +2223,8 @@ de:{
   microFact1:'70% deiner Immunzellen leben in deinem Darm',microFact2:'Dein Darm produziert 90% des Serotonins — das Glückshormon',microFact3:'Jede neue Pflanzensorte bringt neue nützliche Bakterienstämme mit sich',
   calcDisc:'Nur ein Richtwert, keine medizinische oder ernährungswissenschaftliche Beratung. Bei individuellem Bedarf bitte Fachpersonal fragen.',
   calcApply:'Diese Werte als Ziel übernehmen',calcInvalid:'Bitte realistisches Alter, Größe und Gewicht eingeben.',
+  nudgeAllCooked:'Alle Mahlzeiten heute gekocht — super! 🎉',nudgeProteinMet:'Proteinziel heute erreicht 💚',nudgeProteinLeft:'Noch +{n}g Protein bis zu deinem Tagesziel',nudgePlantsProgress:'{n}/30 Pflanzen diese Woche 🌿',
+  celebrationTitle:'Alles geschafft!',celebrationSub:'Alle Mahlzeiten gekocht — weiter so! 🔥',
   budgetWeekly:'Wochenbudget',budgetLocked:'Wöchentliches Lebensmittelbudget — Premium',budgetHeader:'Wöchentliches Lebensmittelbudget',budgetEstimate:'Schätzung',budgetLabel:'Budget (€ / Woche)',budgetShowOnPlan:'💶 Kosten im Plan anzeigen',onWord:'An',offWord:'Aus',costHiddenToast:'Kosten ausgeblendet · wieder einschalten unter Ich',saveWord:'Speichern',savedConfirm:'Gespeichert ✓',
   opt_peanuts:'Erdnüsse',opt_treenuts:'Schalenfrüchte',opt_shellfish:'Schalentiere',opt_fish:'Fisch',opt_dairy:'Milchprodukte',opt_eggs:'Eier',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Pilze',opt_olives:'Oliven',opt_coriander:'Koriander',opt_aubergine:'Aubergine',opt_bellpepper:'Paprika',opt_spicy:'Scharf',
@@ -4201,10 +4213,18 @@ function markCooked(e,key,type){
   if(!state.cooked)state.cooked={};
   const ck=key+'_'+type;
   state.cooked[ck]=!state.cooked[ck];
-  if(state.cooked[ck]){const slot=state.plan[key]&&state.plan[key][type];if(slot)learnById(slot.dishId,1);} // actually cooked = +
+  if(state.cooked[ck]){const slot=state.plan[key]&&state.plan[key][type];if(slot)learnById(slot.dishId,1);}
   save();
   if(document.getElementById('screen-plan').classList.contains('active'))renderPlan();
-  if(document.getElementById('screen-today').classList.contains('active'))renderToday();
+  if(document.getElementById('screen-today').classList.contains('active')){
+    renderToday();
+    // Celebrate when last meal of today gets checked off
+    if(key===dateKey(new Date())&&state.cooked[ck]){
+      const dm=state.plan[key]||{};
+      const allDone=MEAL_TYPES.filter(tp=>dm[tp]&&dm[tp].dishId).every(tp=>isCooked(key,tp));
+      if(allDone)showTodayCelebration();
+    }
+  }
 }
 function isCooked(key,type){return!!(state.cooked&&state.cooked[key+'_'+type]);}
 
@@ -5286,6 +5306,24 @@ function closeRating(){document.getElementById('rate-bg').classList.remove('open
 let todayOffset=0;
 function todayNavDay(delta){todayOffset+=delta;renderToday();}
 function todayNavReset(){todayOffset=0;renderToday();}
+function todayNudge(key,m,g,isToday,plannedTypes){
+  if(!isToday||!m)return'';
+  const allCooked=plannedTypes.length>0&&plannedTypes.every(tp=>isCooked(key,tp));
+  if(allCooked)return`<div class="today-nudge" style="background:linear-gradient(135deg,#E8F5E9,#C8E6C9);color:#2E7D32;border-color:#A5D6A7">${t('nudgeAllCooked')}</div>`;
+  const proteinMet=g.protein>0&&m.protein>=g.protein;
+  if(proteinMet)return`<div class="today-nudge">${t('nudgeProteinMet')}</div>`;
+  const proteinLeft=g.protein>0?Math.round(g.protein-m.protein):0;
+  if(proteinLeft>0)return`<div class="today-nudge">${tf('nudgeProteinLeft',{n:proteinLeft})}</div>`;
+  const {count,target}=microbiomeData();
+  if(count>0)return`<div class="today-nudge">${tf('nudgePlantsProgress',{n:count})}</div>`;
+  return'';
+}
+function showTodayCelebration(){
+  const el=document.createElement('div');el.className='today-celebrate';
+  el.innerHTML=`<div class="today-celebrate-box"><div style="font-size:40px;margin-bottom:10px">🎉</div><div style="font-family:var(--fd);font-size:20px;font-weight:700;margin-bottom:6px">${t('celebrationTitle')}</div><div style="font-size:13px;opacity:.88">${t('celebrationSub')}</div></div>`;
+  document.body.appendChild(el);
+  setTimeout(()=>{el.style.transition='opacity .5s';el.style.opacity='0';setTimeout(()=>el.remove(),500);},2200);
+}
 function renderToday(){
   const base=new Date();base.setHours(0,0,0,0);
   const target=new Date(base.getTime()+todayOffset*86400000);
@@ -5309,7 +5347,6 @@ function renderToday(){
   const plannedTypes=MEAL_TYPES.filter(type=>dm[type]&&dm[type].dishId);   // only meals that were planned
   const meals=plannedTypes.map(type=>{
     const slot=dm[type];const dish=getDish(slot.dishId);if(!dish)return'';
-    const img=dish.photo?`<img src="${dish.photo}" style="width:56px;height:56px;object-fit:cover;border-radius:10px;flex-shrink:0" onerror="this.style.display='none'">`:`<div style="width:56px;height:56px;border-radius:10px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">${dish.emoji}</div>`;
     const sf=familyServings();const mult=sf/(dish.servings||2);
     const ingList=dish.ingredients.slice(0,4).map(ing=>`${ing.emoji} ${fmtIngQty(ing,mult)}`).join(' · ');
     const totalTime=(dish.prep||0)+(dish.cook||0);
@@ -5317,10 +5354,13 @@ function renderToday(){
     const did=typeof dish.id==='string'?`'${dish.id}'`:dish.id;
     const dishProtein=dish.nutrition&&dish.nutrition.protein?Math.round(dish.nutrition.protein):'';
     const proteinPill=dishProtein?`<span class="meal-protein-pill">💚 ${dishProtein}g prot</span>`:'';
+    const bannerPhoto=dish.photo?`<div style="margin-bottom:10px;border-radius:12px;overflow:hidden;cursor:pointer" onclick="openRecipeOverlay(${did})"><img src="${dish.photo}" style="width:100%;height:150px;object-fit:cover;display:block" onerror="this.parentElement.style.display='none'"></div>`:'';
+    const emojiThumb=!dish.photo?`<div style="width:46px;height:46px;border-radius:10px;background:var(--accent-l);display:flex;align-items:center;justify-content:center;font-size:24px;flex-shrink:0">${dish.emoji}</div>`:'';
     return`<div style="padding:12px 0;border-bottom:.5px solid var(--border)">
       <div style="font-size:11px;font-weight:600;color:var(--text3);text-transform:uppercase;letter-spacing:.06em;margin-bottom:8px">${MEAL_ICONS[type]} ${mealName(type)}${proteinPill}</div>
-      <div style="display:flex;gap:12px;align-items:flex-start;cursor:pointer" onclick="openRecipeOverlay(${did})">
-        ${img}
+      ${bannerPhoto}
+      <div style="display:flex;gap:12px;align-items:center;cursor:pointer" onclick="openRecipeOverlay(${did})">
+        ${emojiThumb}
         <div style="flex:1;min-width:0">
           <div class="tmeal-name ${cooked?'cooked':''}" style="font-size:15px;font-weight:600;color:var(--text);margin-bottom:3px">${dishName(dish)}</div>
           <div style="font-size:11px;color:var(--text3);margin-bottom:5px">${dishSubtitle(dish)||dishDesc(dish)}</div>
@@ -5337,10 +5377,12 @@ function renderToday(){
   }).join('');
   const hasMeals=plannedTypes.length>0;
   const reminder=shouldRemindNextWeek()?`<div class="plan-reminder"><div class="plan-reminder-txt">🗓️ <b>${t('planNextTitle')}</b><br>${t('planNextSub')}</div><button class="plan-reminder-btn" onclick="planNextWeek()">${t('planNextBtn')}</button></div>`:'';
+  const m=dayMacros(key);const g=state.macroGoals||{};
   const macro=hasMeals?macroCardHTML(key):'';
+  const nudge=hasMeals?todayNudge(key,m,g,isToday,plannedTypes):'';
   const mealsSection=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="goToPlanDay('${key}')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button><div class="pday-basic-link" style="justify-content:center;margin-top:14px" onclick="pickBasic('${key}','Dinner')">⏱ ${t('lazyDayBasic')}</div></div>`;
   const microCard=(isToday&&!hasMeals)?microbiomeTodayCardHTML():''; // embedded in macroCard when meals exist
-  tm.innerHTML=reminder+mealsSection+macro+microCard;
+  tm.innerHTML=reminder+mealsSection+nudge+macro+microCard;
 }
 function goToPlanDay(key){
   state.openDays[key]=true;save();
