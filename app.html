@@ -715,6 +715,12 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .macro-bar-fat .macro-bar-fill{background:#F5A623}
 .macro-bar-row.macro-bar-protein .macro-bar-track{height:8px}
 .macro-bar-row.macro-bar-protein .macro-bar-lbl{font-weight:600;color:var(--text2)}
+.mring-row{display:flex;justify-content:space-around;margin:4px 0 10px}
+.mring-wrap{display:flex;flex-direction:column;align-items:center;gap:4px}
+.mring-svg-wrap{position:relative;width:72px;height:72px;display:flex;align-items:center;justify-content:center}
+.mring-val{position:absolute;font-family:var(--fd);font-size:13px;font-weight:600;color:var(--text);text-align:center;pointer-events:none}
+.mring-lbl{font-size:11px;color:var(--text3);text-align:center;line-height:1.35}
+.mring-lbl span{font-size:10px;color:var(--text2)}
 .macro-goal-met{margin-top:10px;background:linear-gradient(135deg,#E8F5E9,#C8E6C9);border-radius:var(--rsm);padding:8px 12px;font-size:12px;font-weight:600;color:#2E7D32;text-align:center;animation:pop .35s ease}
 .macro-protein-chip{display:inline-flex;align-items:center;gap:4px;background:#FBF0EB;color:#C8622A;border-radius:99px;padding:3px 9px;font-size:11px;font-weight:700;margin-left:8px;vertical-align:middle}
 .macro-protein-togo{margin-top:8px;font-size:12px;color:var(--text3);text-align:center}
@@ -4664,7 +4670,7 @@ function renderCal(){
     const adds=['Breakfast','Lunch'].filter(tp=>!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
     const pdayMacros=dayMacros(key);
     const pdayProteinBadge=pdayMacros&&pdayMacros.protein?`<span class="pday-protein-badge">💚 ${Math.round(pdayMacros.protein)}g prot</span>`:'';
-    return`<div class="pday ${isToday?'today':''}">
+    return`<div class="pday ${isToday?'today':''}" id="calday-${key}">
       <div class="pday-label-row"><span class="pday-label">${labelTxt}${pdayProteinBadge}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑 ${t('skipDay')}</button></div>
       ${cards}
       ${adds?`<div class="pday-extra">${adds}</div>`:''}
@@ -5321,13 +5327,22 @@ function renderToday(){
   const reminder=shouldRemindNextWeek()?`<div class="plan-reminder"><div class="plan-reminder-txt">🗓️ <b>${t('planNextTitle')}</b><br>${t('planNextSub')}</div><button class="plan-reminder-btn" onclick="planNextWeek()">${t('planNextBtn')}</button></div>`:'';
   const macro=hasMeals?macroCardHTML(key):'';
   const mealsSection=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="goToPlanDay('${key}')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button><div class="pday-basic-link" style="justify-content:center;margin-top:14px" onclick="pickBasic('${key}','Dinner')">⏱ ${t('lazyDayBasic')}</div></div>`;
-  const microCard=isToday?microbiomeTodayCardHTML():'';
+  const microCard=(isToday&&!hasMeals)?microbiomeTodayCardHTML():''; // embedded in macroCard when meals exist
   tm.innerHTML=reminder+macro+mealsSection+microCard;
 }
 function goToPlanDay(key){
   state.openDays[key]=true;save();
   showTab('plan');
-  setTimeout(()=>{const el=document.getElementById('calday-'+key);if(el)el.scrollIntoView({behavior:'smooth',block:'nearest'});},80);
+  setTimeout(()=>{
+    const el=document.getElementById('calday-'+key);
+    const scroll=document.getElementById('cal-scroll');
+    if(el&&scroll){
+      scroll.scrollTo({top:Math.max(0,el.offsetTop-16),behavior:'smooth'});
+      el.style.transition='box-shadow .15s';
+      el.style.boxShadow='0 0 0 2.5px var(--accent)';
+      setTimeout(()=>{el.style.transition='box-shadow .7s';el.style.boxShadow='';},1300);
+    }
+  },350);
 }
 // ── Plan-next-week reminder (in-app, lightweight) ──
 function weekHasPlanAtOffset(off){
@@ -5372,40 +5387,53 @@ function proteinWeekDots(todayKey){
 function macroCardHTML(key){
   const m=dayMacros(key);if(!m)return'';
   const g=state.macroGoals||{};
-  const bar=(cls,val,goal,label,unit)=>{
+  const C=113.1; // circumference of r=18 SVG circle (2π×18)
+  function svgRing(val,goal,color,lbl,unit){
     const pct=goal>0?Math.min(100,Math.round(val/goal*100)):0;
-    const valTxt=goal>0?`${Math.round(val)}${unit} / ${goal}${unit} · ${pct}%`:`${Math.round(val)}${unit}`;
-    return`<div class="macro-bar-row ${cls}"><span class="macro-bar-lbl">${label}</span><div class="macro-bar-track"><div class="macro-bar-fill" style="width:${pct||0}%"></div></div><span class="macro-bar-val">${valTxt}</span></div>`;
-  };
+    const fill=(pct/100*C).toFixed(1);
+    return`<div class="mring-wrap">
+      <div class="mring-svg-wrap">
+        <svg viewBox="0 0 48 48" width="72" height="72">
+          <circle cx="24" cy="24" r="18" fill="none" stroke="var(--surface2)" stroke-width="5"/>
+          <circle cx="24" cy="24" r="18" fill="none" stroke="${color}" stroke-width="5" stroke-dasharray="${fill} ${C}" stroke-linecap="round" transform="rotate(-90 24 24)"/>
+        </svg>
+        <div class="mring-val">${Math.round(val)}${unit}</div>
+      </div>
+      <div class="mring-lbl">${lbl}${goal>0?`<br><span>${pct}%</span>`:''}</div>
+    </div>`;
+  }
   const kcalPct=g.kcal>0?Math.min(100,Math.round(m.kcal/g.kcal*100)):0;
   const kcalColor=kcalPct>=110?'#C0392B':kcalPct>=90?'#E67E22':'#2D5A3D';
-  const proteinPct=g.protein>0?Math.min(100,Math.round(m.protein/g.protein*100)):0;
-  const proteinColor=proteinPct>=100?'#2E7D32':'#C8622A';
+  const proteinColor=g.protein>0&&m.protein>=g.protein?'#2E7D32':'#C8622A';
   const proteinMet=g.protein>0&&m.protein>=g.protein;
   const proteinLeft=g.protein>0&&!proteinMet?Math.round(g.protein-m.protein):0;
   const celebration=proteinMet?`<div class="macro-goal-met">🎉 ${t('proteinGoalMet')}</div>`:'';
   const toGo=proteinLeft>0?`<div class="macro-protein-togo">💚 <strong>+${proteinLeft}g</strong> ${t('proteinToGo')}</div>`:'';
   const weekDots=g.protein>0?`<div class="macro-week-score">${proteinWeekDots(key)}</div>`:'';
   const noGoals=!(g.kcal||g.protein)?`<div class="macro-setgoal" onclick="showTab('family')">${t('setDailyGoals')}</div>`:'';
-  const proteinLbl=g.protein?`${Math.round(m.protein)}g / ${g.protein}g`:`${Math.round(m.protein)}g`;
-  const kcalLbl=g.kcal?`${Math.round(m.kcal)} · ${kcalPct}%`:`${Math.round(m.kcal)}`;
+  // Microbiome integrated below macros
+  const {count,plants,target}=microbiomeData();
+  const microPct=Math.min(100,Math.round(count/target*100));
+  const microColor=count>=target?'#7EC87A':count>=target*0.5?'#9BC47E':'#C8B86A';
+  const microMsg=count===0?t('microEmpty'):count>=target?t('microHit'):tf('microGo',{n:target-count});
+  const microChips=plants.length?`<div class="micro-plants" style="margin-top:8px">${plants.slice(0,12).map(p=>`<span>${p}</span>`).join('')}${plants.length>12?`<span class="more">+${plants.length-12}</span>`:''}</div>`:'';
   return`<div class="macro-card">
-    <div class="macro-hd">${t('todaysNutrition')} <span class="macro-sub">${t('perPerson')}</span></div>
-    <div class="macro-rings">
-      <div class="macro-ring-wrap">
-        <div class="macro-ring protein-ring" style="--p:${proteinPct};--c:${proteinColor}"><span>${Math.round(m.protein)}g</span></div>
-        <div class="macro-kcal-lbl" style="font-weight:600;color:#C8622A;margin-top:4px">${t('protein')}${g.protein?` · ${proteinPct}%`:''}</div>
-      </div>
-      <div class="macro-ring-wrap">
-        <div class="macro-ring kcal-ring" style="--p:${kcalPct};--c:${kcalColor}"><span>${Math.round(m.kcal)}</span></div>
-        <div class="macro-kcal-lbl" style="margin-top:3px">${t('kcal')}</div>
-      </div>
-      <div class="macro-bars-col" style="padding-top:4px">
-        ${bar('macro-bar-carbs',m.carbs,g.carbs||0,t('carbsWord'),'g')}
-        ${bar('macro-bar-fat',m.fat,g.fat||0,t('fatWord'),'g')}
-      </div>
+    <div class="macro-hd">${t('todaysNutrition')} <span class="macro-sub">${t('perPerson')}</span><span style="float:right;font-size:12px;color:${kcalColor};font-weight:700">${Math.round(m.kcal)} kcal${g.kcal?` · ${kcalPct}%`:''}</span></div>
+    <div class="mring-row">
+      ${svgRing(m.protein,g.protein||0,proteinColor,t('protein'),'g')}
+      ${svgRing(m.carbs,g.carbs||0,'#4A90D9',t('carbsWord'),'g')}
+      ${svgRing(m.fat,g.fat||0,'#F5A623',t('fatWord'),'g')}
     </div>
     ${celebration}${toGo}${weekDots}${noGoals}
+    <div style="border-top:.5px solid var(--border);margin-top:10px;padding-top:10px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px">
+        <span style="font-size:12px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.05em">🌿 ${t('microTitle')} · ${t('microWeek')}</span>
+        <span style="font-size:14px;font-weight:700;color:${microColor}">${count}<span style="font-size:11px;color:var(--text3);font-weight:400"> / ${target}</span></span>
+      </div>
+      <div style="height:7px;background:var(--surface2);border-radius:99px;overflow:hidden;margin-bottom:7px"><div style="height:100%;width:${microPct}%;background:${microColor};border-radius:99px;transition:width .6s ease"></div></div>
+      <div style="font-size:12px;color:var(--text2)">${microMsg}</div>
+      ${microChips}
+    </div>
   </div>`;
 }
 
