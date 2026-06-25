@@ -84,10 +84,20 @@ async function saveDB(id,url){
   const r=await fetch(SUPA_URL+'/rest/v1/recipes?id=eq.'+encodeURIComponent(id),{method:'PATCH',headers:{apikey:svc,Authorization:'Bearer '+svc,'Content-Type':'application/json',Prefer:'return=minimal'},body:JSON.stringify({image_url:url})});
   if(!r.ok)throw new Error('save '+r.status+' '+(await r.text()).slice(0,140));
 }
+function autoPrompt(r){
+  if(r.image_prompt)return r.image_prompt;
+  const parts=[];
+  if(r.emoji)parts.push(r.emoji);
+  parts.push(r.title||r.id);
+  if(r.subtitle)parts.push(r.subtitle);
+  return parts.join(' — ')+', close-up, realistic editorial food photography, natural window light, homemade, vibrant colours';
+}
 function card(r){
+  const generatedPrompt=!r.image_prompt;
   const el=document.createElement('div');el.className='card';
-  el.innerHTML=`<div><h3>${r.title||r.id}${r.badge?'<span class=\"badge\">'+r.badge+'</span>':''}</h3><div class="id">${r.id}</div>
-    <textarea class="prompt">${(r.image_prompt||'').replace(/</g,'&lt;')}</textarea>
+  el.innerHTML=`<div><h3>${r.title||r.id}${r.badge?'<span class=\"badge\">'+r.badge+'</span>':''}${generatedPrompt?'<span class=\"badge\" style=\"background:#2e7d3222;color:#2e7d32\">auto prompt</span>':''}</h3><div class="id">${r.id}</div>
+    ${generatedPrompt?'<div style="font-size:11px;color:#7a7a72;margin-bottom:4px">⚡ Prompt auto-generated — edit before generating if needed</div>':''}
+    <textarea class="prompt">${autoPrompt(r).replace(/</g,'&lt;')}</textarea>
     <div class="actions"><button class="gen">✨ Generate</button><button class="save ghost" disabled>💾 Save to DB</button><a class="open" target="_blank" style="font-size:12px;display:none">open ↗</a></div>
     <div class="status"></div></div><div class="imgbox"><div class="ph">no image yet</div></div>`;
   const box=el.querySelector('.imgbox'),st=el.querySelector('.status'),g=el.querySelector('.gen'),s=el.querySelector('.save'),o=el.querySelector('.open');let url=null;
@@ -101,10 +111,10 @@ function card(r){
 $('loadBtn').onclick=async()=>{
   $('headStatus').textContent='Loading…';
   try{
-    const r=await fetch(SUPA_URL+'/rest/v1/recipes?select=id,title,image_url,image_prompt&order=title&limit=1000',{headers:{apikey:ANON,Authorization:'Bearer '+ANON}});
+    const r=await fetch(SUPA_URL+'/rest/v1/recipes?select=id,title,subtitle,emoji,image_url,image_prompt&order=title&limit=1000',{headers:{apikey:ANON,Authorization:'Bearer '+ANON}});
     const all=await r.json();
     if(!Array.isArray(all))throw new Error('DB read failed: '+JSON.stringify(all).slice(0,120));
-    const missing=all.filter(x=>!x.image_url&&x.image_prompt&&x.id!=='apple-pie-pecan-oat-bowl');
+    const missing=all.filter(x=>!x.image_url&&x.id!=='apple-pie-pecan-oat-bowl');
     const list=$('list');list.innerHTML='';
     FORCE.forEach(f=>list.appendChild(card(f)));
     missing.forEach(x=>list.appendChild(card(x)));
