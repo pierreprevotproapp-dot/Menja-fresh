@@ -228,6 +228,29 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
   .foot-grid{grid-template-columns:1fr}
   .hero-ctas .btn{flex:1}
 }
+
+/* ─── MOBILE MENU + STICKY CTA ──────────────────── */
+/* Psychology: single focus CTA, thumb-zone placement, progressive disclosure */
+.mob-menu{display:none;position:fixed;inset:0;z-index:500;background:var(--cream);flex-direction:column}
+.mob-menu.open{display:flex}
+.mob-menu-hd{display:flex;align-items:center;justify-content:space-between;height:68px;padding:0 20px;border-bottom:1px solid var(--border);flex-shrink:0}
+.mob-menu-body{flex:1;padding:28px 24px;overflow-y:auto}
+.mob-menu-body nav a{display:block;font-family:var(--fd);font-size:30px;font-weight:600;color:var(--green-d);padding:14px 0;border-bottom:1px solid var(--border);line-height:1.1;letter-spacing:-.01em}
+.mob-menu-lang{display:flex;gap:8px;flex-wrap:wrap;margin-top:28px}
+.mob-menu-lang a,.mob-menu-lang b{font-size:13px;font-weight:700;padding:8px 16px;border:1.5px solid var(--border);border-radius:999px;color:var(--muted);text-decoration:none}
+.mob-menu-lang b{font-style:normal;color:var(--green-d);border-color:var(--green);background:rgba(47,90,57,.08)}
+.mob-menu-ft{flex-shrink:0;padding:18px 24px calc(18px + env(safe-area-inset-bottom));border-top:1px solid var(--border);display:flex;flex-direction:column;gap:12px}
+.mob-menu-ft .btn{justify-content:center;width:100%;font-size:16px;padding:16px}
+.mob-menu-ft .login{text-align:center;font-size:14px;font-weight:600;color:var(--green)}
+.mob-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;padding:10px 16px calc(10px + env(safe-area-inset-bottom));background:rgba(251,245,233,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border)}
+.mob-cta a{display:flex;align-items:center;justify-content:center;background:var(--tomato);color:#fff;font-family:var(--fb);font-weight:700;font-size:15px;padding:14px 22px;border-radius:999px;box-shadow:0 6px 18px rgba(188,58,34,.30);letter-spacing:.01em}
+@media(max-width:640px){
+  .menu-btn{display:block;font-size:26px;padding:4px 6px}
+  .lang-switch,.nav-cta .signin,.nav-cta>.btn{display:none}
+  .mob-cta{display:block}
+  .hero{padding-bottom:110px}
+  footer{padding-bottom:calc(30px + 72px + env(safe-area-inset-bottom))}
+}
 </style>
 </head>
 <body>
@@ -246,9 +269,33 @@ footer{background:var(--green-d);color:rgba(255,255,255,.8);padding:54px 0 30px;
       <span class="lang-switch"><b>DE</b><a href="en.html">EN</a><a href="es.html">ES</a><a href="fr.html">FR</a></span>
       <a class="signin" href="app.html">Anmelden</a>
       <a class="btn btn-primary" href="app.html">Kostenlos starten</a>
+      <button class="menu-btn" onclick="openMenu()" aria-label="Menü öffnen">☰</button>
     </div>
   </div>
 </header>
+
+<!-- MOBILE FULL-SCREEN MENU -->
+<div class="mob-menu" id="mob-menu" role="dialog" aria-modal="true" aria-label="Navigation">
+  <div class="mob-menu-hd">
+    <a href="#top" class="logo" onclick="closeMenu()"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#2F5A39"/><path d="M6 16 h20 a10 10 0 0 1 -20 0 Z" fill="#FBF5E9"/><circle cx="16" cy="11" r="3.4" fill="#D6492F"/><path d="M19 9 q3.5 -3 5.5 -1.2" stroke="#E6A92E" stroke-width="2.2" fill="none" stroke-linecap="round"/></svg> <span class="wm">Menja <em>Fresh</em></span></a>
+    <button onclick="closeMenu()" style="background:none;border:none;cursor:pointer;color:var(--green-d);font-size:26px;padding:6px;line-height:1" aria-label="Schließen">✕</button>
+  </div>
+  <div class="mob-menu-body">
+    <nav>
+      <a href="#how" onclick="closeMenu()">So funktioniert's</a>
+      <a href="#features" onclick="closeMenu()">Funktionen</a>
+      <a href="#rezepte" onclick="closeMenu()">Rezepte</a>
+      <a href="#preise" onclick="closeMenu()">Preise</a>
+    </nav>
+    <div class="mob-menu-lang">
+      <b>DE</b><a href="en.html">EN</a><a href="es.html">ES</a><a href="fr.html">FR</a>
+    </div>
+  </div>
+  <div class="mob-menu-ft">
+    <a class="btn btn-primary btn-lg" href="app.html">Kostenlos starten →</a>
+    <div class="login"><a href="app.html">Bereits dabei? Anmelden</a></div>
+  </div>
+</div>
 
 <a id="top"></a>
 <!-- HERO -->
@@ -519,6 +566,10 @@ if(window.caches&&caches.keys){caches.keys().then(ks=>ks.forEach(k=>caches.delet
 </div>
 <script>
 (function(){var k='menja_cc';function ccSet(v){localStorage.setItem(k,v);document.getElementById('cc-bar').style.display='none';}window.ccSet=ccSet;if(!localStorage.getItem(k)){document.getElementById('cc-bar').style.display='block';}})();
+function openMenu(){document.getElementById('mob-menu').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('mob-menu').classList.remove('open');document.body.style.overflow='';}
 </script>
+<!-- Mobile sticky CTA — thumb-zone, always accessible -->
+<div class="mob-cta" id="mob-cta"><a href="app.html">Jetzt kostenlos starten →</a></div>
 </body>
 </html>
