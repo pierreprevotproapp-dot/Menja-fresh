@@ -3834,6 +3834,10 @@ function openCalc(){
     if(c.weight){let w=parseFloat(c.weight);if(c.unit==='lbs')w=Math.round(w*0.4536);calcDraft.weight=String(w);}
     const am={light:1.375,moderate:1.55,active:1.725}[c.activity];if(am)calcDraft.activity=am;
   }
+  // Ensure fields are never blank — placeholders look filled but aren't; pre-fill with typical defaults
+  if(!calcDraft.age)calcDraft.age='30';
+  if(!calcDraft.height)calcDraft.height='170';
+  if(!calcDraft.weight)calcDraft.weight='70';
   renderCalc();document.getElementById('calc-bg').classList.add('open');
 }
 function _calcActivityId(mult){return mult<=1.375?'light':mult<=1.55?'moderate':'active';}
@@ -3873,13 +3877,15 @@ function renderCalc(){
   el.innerHTML=html;
 }
 function calcCompute(){
-  // Read directly from DOM as fallback — oninput can be missed on mobile (tap → button without blur)
+  // Read directly from DOM — handles mobile blur quirks; normalise decimal comma for EU keyboards
   const ageEl=document.getElementById('calc-age'),hEl=document.getElementById('calc-height'),wEl=document.getElementById('calc-weight');
   if(ageEl&&ageEl.value)calcDraft.age=ageEl.value;
   if(hEl&&hEl.value)calcDraft.height=hEl.value;
   if(wEl&&wEl.value)calcDraft.weight=wEl.value;
-  const age=parseInt(calcDraft.age),h=parseInt(calcDraft.height),w=parseFloat(calcDraft.weight);
-  if(!age||!h||!w||age<10||age>100||h<100||h>230||w<30||w>250){alert(t('calcInvalid'));return;}
+  const age=parseInt(calcDraft.age,10);
+  const h=parseInt(calcDraft.height,10);
+  const w=parseFloat(String(calcDraft.weight).replace(',','.'));
+  if(!age||!h||!w||age<10||age>110||h<100||h>250||w<20||w>300){alert(t('calcInvalid'));return;}
   const bmr=10*w+6.25*h-5*age+(calcDraft.sex==='male'?5:-161);
   const goal=CALC_GOAL.find(g=>g.v===calcDraft.goal)||CALC_GOAL[1];
   const kcal=Math.round(bmr*calcDraft.activity*calcDraft.goal/10)*10;
