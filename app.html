@@ -5198,21 +5198,33 @@ function renderRecipeDetail(id,targetId){
       const barW=goal>0?pct:Math.min(80,Math.round(val/4));
       return`<div class="rd-nut-row"><span class="rd-nut-lbl">${label}</span><div class="rd-nut-track"><div class="rd-nut-fill ${cls}" style="width:${barW}%"></div></div><span class="rd-nut-val">${val}${unit}</span>${pctTxt}</div>`;
     };
-    const proteinPct=g.protein>0?Math.min(100,Math.round(n.protein/g.protein*100)):0;
-    const proteinPctTxt=g.protein>0?`<div class="rd-protein-pct">${proteinPct}% ${t('ofDailyGoal')}</div>`:'';
-    const proteinHero=`<div class="rd-protein-hero">
-      <div class="rd-protein-val">${n.protein}g</div>
-      <div class="rd-protein-meta"><div class="rd-protein-label">🥩 ${t('protein')}</div>${proteinPctTxt}</div>
-      <div style="text-align:right"><div style="font-size:11px;color:var(--text3)">${t('kcal')}</div><div style="font-family:var(--fd);font-size:16px;font-weight:600;color:var(--text)">${n.kcal}</div></div>
+    const proteinColor=g.protein>0&&n.protein>=g.protein?'#2E7D32':'#C8622A';
+    const proteinMet=g.protein>0&&n.protein>=g.protein;
+    const proteinLeft=g.protein>0&&!proteinMet?Math.round(g.protein-n.protein):0;
+    const proteinRingPct=g.protein>0?Math.min(100,Math.round(n.protein/g.protein*100)):0;
+    const RR=42,RC=263.89;
+    const proteinRingFill=+(proteinRingPct/100*RC).toFixed(1);
+    const proteinHero=`<div style="text-align:center;padding:8px 0 6px">
+      <div style="position:relative;width:110px;height:110px;margin:0 auto 8px;display:inline-block">
+        <svg width="110" height="110" viewBox="0 0 110 110">
+          <circle cx="55" cy="55" r="${RR}" fill="none" stroke="var(--surface2)" stroke-width="9"/>
+          <circle cx="55" cy="55" r="${RR}" fill="none" stroke="${proteinColor}" stroke-width="9" stroke-dasharray="${proteinRingFill} ${RC}" stroke-linecap="round" transform="rotate(-90 55 55)"/>
+        </svg>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none">
+          <div style="font-family:var(--fd);font-size:26px;font-weight:700;color:${proteinColor};line-height:1">${n.protein}g</div>
+          ${g.protein>0?`<div style="font-size:10px;color:var(--text3);margin-top:2px">/ ${g.protein}g</div>`:''}
+        </div>
+      </div>
+      ${g.protein>0?`<div style="font-size:12px;font-weight:600;color:${proteinColor};margin-bottom:4px">${proteinMet?'🎉 '+t('proteinGoalMet'):`+${proteinLeft}g ${t('proteinToGo')}`}</div>`:''}
+      <div style="font-size:11px;color:var(--text3)">${n.kcal} kcal</div>
     </div>`;
-    const goalHint=g.protein>0?`<div style="font-size:10px;color:var(--text3);margin-top:2px">% = ${t('ofDailyGoal')}</div>`:'';
     return`<div class="rd-section"><div class="rd-section-title">${t('nutritionPer')}</div>
       ${proteinHero}
       <div class="rd-nut-v2">
         ${nutBar('carbs',n.carbs,0,t('carbsWord'),'g')}
         ${nutBar('fat',n.fat,0,t('fatWord'),'g')}
         ${n.fiber?nutBar('carbs',n.fiber,0,t('fiberLbl'),'g'):''}
-      </div>${goalHint}</div>`;
+      </div></div>`;
   })();
 
   const _at=(_rdTab==='macro'&&!d.nutrition)?'ing':_rdTab;   // active tab (fallback if no macros)
@@ -5406,7 +5418,7 @@ function renderToday(){
   const nudge=hasMeals?todayNudge(key,m,g,isToday,plannedTypes):'';
   const mealsSection=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="goToPlanDay('${key}')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button></div>`;
   const microCard=(isToday&&!hasMeals)?microbiomeTodayCardHTML():''; // embedded in macroCard when meals exist
-  tm.innerHTML=reminder+mealsSection+nudge+macro+microCard;
+  tm.innerHTML=reminder+mealsSection+macro+microCard;
 }
 function goToPlanDay(key){
   state.openDays[key]=true;save();
@@ -5474,64 +5486,73 @@ function proteinWeekDots(todayKey){
 function macroCardHTML(key){
   const m=dayMacros(key);if(!m)return'';
   const g=state.macroGoals||{};
-  const C=113.1; // circumference r=18 (2π×18)
-  const CP=125.66; // circumference r=20 (2π×20) — protein hero ring
-  // Small ring helper (carbs, fat)
-  function smallRing(val,goal,color,lbl,unit){
-    const pct=goal>0?Math.min(100,Math.round(val/goal*100)):0;
-    const fill=(pct/100*C).toFixed(1);
-    return`<div class="mring-wrap">
-      <div class="mring-svg-wrap" style="width:64px;height:64px">
-        <svg viewBox="0 0 48 48" width="64" height="64">
-          <circle cx="24" cy="24" r="18" fill="none" stroke="var(--surface2)" stroke-width="5"/>
-          <circle cx="24" cy="24" r="18" fill="none" stroke="${color}" stroke-width="5" stroke-dasharray="${fill} ${C}" stroke-linecap="round" transform="rotate(-90 24 24)"/>
-        </svg>
-        <div class="mring-val" style="font-size:12px">${Math.round(val)}${unit}</div>
-      </div>
-      <div class="mring-lbl">${lbl}${goal>0?`<br><span>${pct}%</span>`:''}</div>
-    </div>`;
-  }
-  const kcalPct=g.kcal>0?Math.min(100,Math.round(m.kcal/g.kcal*100)):0;
-  const kcalColor=kcalPct>=110?'#C0392B':kcalPct>=90?'#E67E22':'#2D5A3D';
-  // Protein — hero ring
-  const proteinColor=g.protein>0&&m.protein>=g.protein?'#2E7D32':'#C8622A';
-  const proteinPct=g.protein>0?Math.min(100,Math.round(m.protein/g.protein*100)):0;
-  const proteinFill=(proteinPct/100*CP).toFixed(1);
+  // Protein hero ring (r=50, circumference≈314.16)
   const proteinMet=g.protein>0&&m.protein>=g.protein;
   const proteinLeft=g.protein>0&&!proteinMet?Math.round(g.protein-m.protein):0;
-  const proteinSub=proteinMet
-    ?`<div style="font-size:10px;color:#2E7D32;font-weight:700;text-align:center;margin-top:3px">✓ ${t('proteinGoalMet')}</div>`
-    :proteinLeft>0
-    ?`<div style="font-size:11px;color:${proteinColor};font-weight:600;text-align:center;margin-top:3px">+${proteinLeft}g ${t('proteinToGo')}</div>`
-    :'';
-  const proteinRing=`<div class="mring-wrap">
-    <div class="mring-svg-wrap" style="width:90px;height:90px">
-      <svg viewBox="0 0 52 52" width="90" height="90">
-        <circle cx="26" cy="26" r="20" fill="none" stroke="var(--surface2)" stroke-width="5.5"/>
-        <circle cx="26" cy="26" r="20" fill="none" stroke="${proteinColor}" stroke-width="5.5" stroke-dasharray="${proteinFill} ${CP}" stroke-linecap="round" transform="rotate(-90 26 26)"/>
-      </svg>
-      <div class="mring-val" style="font-size:15px;font-weight:700">${Math.round(m.protein)}g</div>
-    </div>
-    <div class="mring-lbl" style="font-weight:700;color:var(--text2);font-size:12px">${t('protein')}${g.protein>0?`<br><span>${proteinPct}%</span>`:''}</div>
-    ${proteinSub}
-  </div>`;
-  const weekDots=g.protein>0?`<div class="macro-week-score">${proteinWeekDots(key)}</div>`:'';
+  const proteinPct=g.protein>0?Math.min(100,Math.round(m.protein/g.protein*100)):0;
+  const ringColor=proteinMet?'#2E7D32':'#C8622A';
+  const PR=50,PCC=314.16;
+  const proteinFill=+(proteinPct/100*PCC).toFixed(1);
+  // Week dots with date numbers
+  const weekDotsHTML=(()=>{
+    if(!g.protein)return'';
+    const base=weekStartDate();
+    const items=[];
+    for(let i=0;i<7;i++){
+      const d=new Date(base.getTime()+i*86400000);
+      const k=dateKey(d);
+      const dm=dayMacros(k);
+      const hit=dm&&dm.protein>=g.protein;
+      const isT=k===key;
+      items.push(`<div style="display:flex;flex-direction:column;align-items:center;gap:3px"><div class="macro-week-dot${hit?' hit':''}${isT?' today':''}"></div><div style="font-size:9px;color:var(--text3)">${d.getDate()}</div></div>`);
+    }
+    return`<div style="display:flex;justify-content:space-around;margin:0 4px 10px">${items.join('')}</div>`;
+  })();
   const noGoals=!(g.kcal||g.protein)?`<div class="macro-setgoal" onclick="openCalc()">${t('setDailyGoals')}</div>`:'';
-  // Microbiome integrated
+  // Secondary macros
+  const kcalPct=g.kcal>0?Math.min(100,Math.round(m.kcal/g.kcal*100)):0;
+  const kcalColor=kcalPct>=110?'#C0392B':kcalPct>=90?'#E67E22':'#2D5A3D';
+  const carbPct=g.carbs>0?Math.min(100,Math.round(m.carbs/g.carbs*100)):0;
+  const fatPct=g.fat>0?Math.min(100,Math.round(m.fat/g.fat*100)):0;
+  // Microbiome
   const {count,plants,target}=microbiomeData();
   const microPct=Math.min(100,Math.round(count/target*100));
   const microColor=count>=target?'#7EC87A':count>=target*0.5?'#9BC47E':'#C8B86A';
   const microMsg=count===0?t('microEmpty'):count>=target?t('microHit'):tf('microGo',{n:target-count});
   const microChips=plants.length?`<div class="micro-plants" style="margin-top:8px">${plants.slice(0,12).map(p=>`<span>${p}</span>`).join('')}${plants.length>12?`<span class="more">+${plants.length-12}</span>`:''}</div>`:'';
   return`<div class="macro-card">
-    <div class="macro-hd">${t('todaysNutrition')} <span class="macro-sub">${t('perPerson')}</span><span style="float:right;font-size:12px;color:${kcalColor};font-weight:700">${Math.round(m.kcal)} kcal${g.kcal?` · ${kcalPct}%`:''}</span></div>
-    <div class="mring-row" style="align-items:flex-end">
-      ${smallRing(m.carbs,g.carbs||0,'#4A90D9',t('carbsWord'),'g')}
-      ${proteinRing}
-      ${smallRing(m.fat,g.fat||0,'#F5A623',t('fatWord'),'g')}
+    <div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text3);text-align:center;margin-bottom:10px">💪 ${t('protein')}</div>
+    <div style="position:relative;width:130px;height:130px;margin:0 auto 6px">
+      <svg width="130" height="130" viewBox="0 0 130 130">
+        <circle cx="65" cy="65" r="${PR}" fill="none" stroke="var(--surface2)" stroke-width="10"/>
+        <circle cx="65" cy="65" r="${PR}" fill="none" stroke="${ringColor}" stroke-width="10" stroke-dasharray="${proteinFill} ${PCC}" stroke-linecap="round" transform="rotate(-90 65 65)"/>
+      </svg>
+      <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none">
+        <div style="font-family:var(--fd);font-size:30px;font-weight:700;color:${ringColor};line-height:1">${Math.round(m.protein)}g</div>
+        ${g.protein>0?`<div style="font-size:11px;color:var(--text3);margin-top:3px">/ ${g.protein}g</div>`:''}
+      </div>
     </div>
-    ${weekDots}${noGoals}
-    <div style="border-top:.5px solid var(--border);margin-top:10px;padding-top:10px">
+    ${g.protein>0?`<div style="height:7px;background:var(--surface2);border-radius:99px;margin:0 12px 6px;overflow:hidden"><div style="height:100%;width:${proteinPct}%;background:${ringColor};border-radius:99px;transition:width .5s ease"></div></div>`:''}
+    ${g.protein>0?`<div style="text-align:center;font-size:13px;font-weight:600;color:${ringColor};margin-bottom:10px">${proteinMet?'🎉 '+t('proteinGoalMet'):`+${proteinLeft}g ${t('proteinToGo')}`}</div>`:''}
+    ${weekDotsHTML}
+    ${noGoals}
+    <div style="display:flex;align-items:stretch;border-top:.5px solid var(--border);margin-top:4px;padding-top:10px;margin-bottom:2px">
+      <div style="flex:1;text-align:center">
+        <div style="font-family:var(--fd);font-size:15px;font-weight:700;color:#4A90D9">${Math.round(m.carbs)}g</div>
+        <div style="font-size:10px;color:var(--text3);margin-top:1px">${t('carbsWord')}${carbPct?` · ${carbPct}%`:''}</div>
+      </div>
+      <div style="width:.5px;background:var(--border);margin:0 4px"></div>
+      <div style="flex:1;text-align:center">
+        <div style="font-family:var(--fd);font-size:15px;font-weight:700;color:#F5A623">${Math.round(m.fat)}g</div>
+        <div style="font-size:10px;color:var(--text3);margin-top:1px">${t('fatWord')}${fatPct?` · ${fatPct}%`:''}</div>
+      </div>
+      <div style="width:.5px;background:var(--border);margin:0 4px"></div>
+      <div style="flex:1;text-align:center">
+        <div style="font-family:var(--fd);font-size:15px;font-weight:700;color:${kcalColor}">${Math.round(m.kcal)}</div>
+        <div style="font-size:10px;color:var(--text3);margin-top:1px">kcal${kcalPct?` · ${kcalPct}%`:''}</div>
+      </div>
+    </div>
+    <div style="border-top:.5px solid var(--border);margin-top:12px;padding-top:12px">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px">
         <span style="font-size:12px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.05em">🌿 ${t('microTitle')} · ${t('microWeek')}</span>
         <span style="font-size:14px;font-weight:700;color:${microColor}">${count}<span style="font-size:11px;color:var(--text3);font-weight:400"> / ${target}</span></span>
