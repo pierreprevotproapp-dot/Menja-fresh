@@ -5414,9 +5414,11 @@ function goToPlanDay(key){
   showTab('plan');
   requestAnimationFrame(()=>requestAnimationFrame(()=>{
     const el=document.getElementById('calday-'+key);
-    const scroll=document.getElementById('cal-scroll');
-    if(!el||!scroll)return;
-    scroll.scrollTop=Math.max(0,el.offsetTop-8);
+    if(!el)return;
+    // scrollIntoView finds the right scroll container automatically (works on
+    // all devices regardless of whether cal-scroll or window is scrolling).
+    // behavior:'instant' cannot be cancelled unlike 'smooth'.
+    el.scrollIntoView({block:'start',behavior:'instant'});
     el.style.boxShadow='0 0 0 2.5px var(--accent)';
     el.style.transition='box-shadow .1s';
     const slot=el.querySelector('.pday-empty');
