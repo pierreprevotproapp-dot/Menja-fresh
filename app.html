@@ -5418,17 +5418,21 @@ function renderToday(){
 }
 function goToPlanDay(key){
   state.openDays[key]=true;save();
+  weekOffset=0; // ensure today's week is shown, not a different week
   showTab('plan');
   setTimeout(()=>{
     const el=document.getElementById('calday-'+key);
     const scroll=document.getElementById('cal-scroll');
     if(el&&scroll){
-      scroll.scrollTo({top:Math.max(0,el.offsetTop-16),behavior:'smooth'});
+      // getBoundingClientRect gives accurate position relative to visible area,
+      // accounting for the motivCard and any other elements above the day
+      const targetScrollTop=scroll.scrollTop+(el.getBoundingClientRect().top-scroll.getBoundingClientRect().top)-16;
+      scroll.scrollTo({top:Math.max(0,targetScrollTop),behavior:'smooth'});
       el.style.transition='box-shadow .15s';
       el.style.boxShadow='0 0 0 2.5px var(--accent)';
       setTimeout(()=>{el.style.transition='box-shadow .7s';el.style.boxShadow='';},1300);
     }
-  },350);
+  },420);
 }
 // ── Plan-next-week reminder (in-app, lightweight) ──
 function weekHasPlanAtOffset(off){
@@ -5755,9 +5759,6 @@ function showApp(user){
   if(!state.setupDone){
     showTab('plan');
     setTimeout(()=>openSetup(true),250);
-  }else if(!state.weekPickDone&&countPlaced()===0){
-    showTab('plan');
-    setTimeout(openWeekPick,400);
   }else{
     // Returning user — restore the tab and scroll they left on.
     restoreUiState(todayHasMeal?'today':'plan');
