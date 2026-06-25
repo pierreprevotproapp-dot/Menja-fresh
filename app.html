@@ -560,6 +560,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .pday-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
 .pday-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
 .pday.today .pday-label{color:var(--accent)}
+@keyframes caldayArrive{0%,55%{background:rgba(200,98,42,.11);box-shadow:0 0 0 2.5px var(--accent)}85%{background:rgba(200,98,42,.04);box-shadow:0 0 0 1px var(--accent)}100%{background:transparent;box-shadow:none}}
+.calday-arriving{border-radius:var(--r);animation:caldayArrive 2.5s ease forwards}
 .pday-skip-btn{background:none;border:none;color:var(--text3);font-size:11px;cursor:pointer;padding:3px 8px;border-radius:99px;font-family:var(--fb)}
 .pday-skip-btn:hover{color:var(--danger);background:var(--surface2)}
 .pday-skip-row{display:flex;align-items:center;justify-content:space-between;background:var(--surface2);border:1px dashed var(--border2);border-radius:var(--r);padding:13px 15px}
@@ -5424,24 +5426,21 @@ function goToPlanDay(key){
   state.openDays[key]=true;save();
   weekOffset=0;
   showTab('plan');
-  let animated=false;
-  const _go=()=>{
+  // setTimeout(0) defers until after the browser paints the newly active plan screen,
+  // so getBoundingClientRect returns real rendered positions (not pre-paint stale values).
+  setTimeout(()=>{
     const el=document.getElementById('calday-'+key);
     const sc=document.getElementById('cal-scroll');
-    if(!el)return;
-    if(sc)sc.scrollTop=Math.max(0,el.offsetTop-8);
-    el.scrollIntoView({block:'start',behavior:'instant'});
-    if(animated)return;
-    animated=true;
-    el.style.boxShadow='0 0 0 2.5px var(--accent)';
-    el.style.transition='box-shadow .1s';
-    const slot=el.querySelector('.pday-empty');
-    if(slot){slot.style.boxShadow='0 0 0 2px var(--accent)';slot.style.transition='box-shadow .1s';}
-    setTimeout(()=>{el.style.transition='box-shadow .8s';el.style.boxShadow='';
-      if(slot){slot.style.transition='box-shadow .8s';slot.style.boxShadow='';}},800);
-  };
-  _go();
-  requestAnimationFrame(()=>requestAnimationFrame(_go));
+    if(!el||!sc)return;
+    // getBoundingClientRect gives viewport-relative positions at current scroll,
+    // making the delta calculation accurate regardless of what showTab set scrollTop to.
+    const elTop=el.getBoundingClientRect().top;
+    const scTop=sc.getBoundingClientRect().top;
+    sc.scrollTop=sc.scrollTop+(elTop-scTop)-8;
+    // CSS class animation: can't be overridden by other inline styles or child animations
+    el.classList.add('calday-arriving');
+    setTimeout(()=>el.classList.remove('calday-arriving'),2500);
+  },0);
 }
 // ── Plan-next-week reminder (in-app, lightweight) ──
 function weekHasPlanAtOffset(off){
