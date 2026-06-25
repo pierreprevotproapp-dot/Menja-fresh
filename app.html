@@ -3892,7 +3892,9 @@ function calcApply(){
   // keep the inputs so the Me-tab calculator stays pre-filled next time
   state.calc={sex:calcDraft.sex,age:String(calcDraft.age),height:String(calcDraft.height),weight:String(calcDraft.weight),activity:_calcActivityId(calcDraft.activity),unit:'kg'};
   macroEditOpen=false;
-  save();renderMacroGoals();closeCalc();
+  save();renderMacroGoals();
+  if(document.querySelector('#screen-today.active'))renderToday();
+  closeCalc();
 }
 function renderBudget(){
   const el=document.getElementById('budget-section');if(!el)return;
@@ -5387,31 +5389,50 @@ function proteinWeekDots(todayKey){
 function macroCardHTML(key){
   const m=dayMacros(key);if(!m)return'';
   const g=state.macroGoals||{};
-  const C=113.1; // circumference of r=18 SVG circle (2π×18)
-  function svgRing(val,goal,color,lbl,unit){
+  const C=113.1; // circumference r=18 (2π×18)
+  const CP=125.66; // circumference r=20 (2π×20) — protein hero ring
+  // Small ring helper (carbs, fat)
+  function smallRing(val,goal,color,lbl,unit){
     const pct=goal>0?Math.min(100,Math.round(val/goal*100)):0;
     const fill=(pct/100*C).toFixed(1);
     return`<div class="mring-wrap">
-      <div class="mring-svg-wrap">
-        <svg viewBox="0 0 48 48" width="72" height="72">
+      <div class="mring-svg-wrap" style="width:64px;height:64px">
+        <svg viewBox="0 0 48 48" width="64" height="64">
           <circle cx="24" cy="24" r="18" fill="none" stroke="var(--surface2)" stroke-width="5"/>
           <circle cx="24" cy="24" r="18" fill="none" stroke="${color}" stroke-width="5" stroke-dasharray="${fill} ${C}" stroke-linecap="round" transform="rotate(-90 24 24)"/>
         </svg>
-        <div class="mring-val">${Math.round(val)}${unit}</div>
+        <div class="mring-val" style="font-size:12px">${Math.round(val)}${unit}</div>
       </div>
       <div class="mring-lbl">${lbl}${goal>0?`<br><span>${pct}%</span>`:''}</div>
     </div>`;
   }
   const kcalPct=g.kcal>0?Math.min(100,Math.round(m.kcal/g.kcal*100)):0;
   const kcalColor=kcalPct>=110?'#C0392B':kcalPct>=90?'#E67E22':'#2D5A3D';
+  // Protein — hero ring
   const proteinColor=g.protein>0&&m.protein>=g.protein?'#2E7D32':'#C8622A';
+  const proteinPct=g.protein>0?Math.min(100,Math.round(m.protein/g.protein*100)):0;
+  const proteinFill=(proteinPct/100*CP).toFixed(1);
   const proteinMet=g.protein>0&&m.protein>=g.protein;
   const proteinLeft=g.protein>0&&!proteinMet?Math.round(g.protein-m.protein):0;
-  const celebration=proteinMet?`<div class="macro-goal-met">🎉 ${t('proteinGoalMet')}</div>`:'';
-  const toGo=proteinLeft>0?`<div class="macro-protein-togo">💚 <strong>+${proteinLeft}g</strong> ${t('proteinToGo')}</div>`:'';
+  const proteinSub=proteinMet
+    ?`<div style="font-size:10px;color:#2E7D32;font-weight:700;text-align:center;margin-top:3px">✓ ${t('proteinGoalMet')}</div>`
+    :proteinLeft>0
+    ?`<div style="font-size:11px;color:${proteinColor};font-weight:600;text-align:center;margin-top:3px">+${proteinLeft}g ${t('proteinToGo')}</div>`
+    :'';
+  const proteinRing=`<div class="mring-wrap">
+    <div class="mring-svg-wrap" style="width:90px;height:90px">
+      <svg viewBox="0 0 52 52" width="90" height="90">
+        <circle cx="26" cy="26" r="20" fill="none" stroke="var(--surface2)" stroke-width="5.5"/>
+        <circle cx="26" cy="26" r="20" fill="none" stroke="${proteinColor}" stroke-width="5.5" stroke-dasharray="${proteinFill} ${CP}" stroke-linecap="round" transform="rotate(-90 26 26)"/>
+      </svg>
+      <div class="mring-val" style="font-size:15px;font-weight:700">${Math.round(m.protein)}g</div>
+    </div>
+    <div class="mring-lbl" style="font-weight:700;color:var(--text2);font-size:12px">${t('protein')}${g.protein>0?`<br><span>${proteinPct}%</span>`:''}</div>
+    ${proteinSub}
+  </div>`;
   const weekDots=g.protein>0?`<div class="macro-week-score">${proteinWeekDots(key)}</div>`:'';
-  const noGoals=!(g.kcal||g.protein)?`<div class="macro-setgoal" onclick="showTab('family')">${t('setDailyGoals')}</div>`:'';
-  // Microbiome integrated below macros
+  const noGoals=!(g.kcal||g.protein)?`<div class="macro-setgoal" onclick="openCalc()">${t('setDailyGoals')}</div>`:'';
+  // Microbiome integrated
   const {count,plants,target}=microbiomeData();
   const microPct=Math.min(100,Math.round(count/target*100));
   const microColor=count>=target?'#7EC87A':count>=target*0.5?'#9BC47E':'#C8B86A';
@@ -5419,12 +5440,12 @@ function macroCardHTML(key){
   const microChips=plants.length?`<div class="micro-plants" style="margin-top:8px">${plants.slice(0,12).map(p=>`<span>${p}</span>`).join('')}${plants.length>12?`<span class="more">+${plants.length-12}</span>`:''}</div>`:'';
   return`<div class="macro-card">
     <div class="macro-hd">${t('todaysNutrition')} <span class="macro-sub">${t('perPerson')}</span><span style="float:right;font-size:12px;color:${kcalColor};font-weight:700">${Math.round(m.kcal)} kcal${g.kcal?` · ${kcalPct}%`:''}</span></div>
-    <div class="mring-row">
-      ${svgRing(m.protein,g.protein||0,proteinColor,t('protein'),'g')}
-      ${svgRing(m.carbs,g.carbs||0,'#4A90D9',t('carbsWord'),'g')}
-      ${svgRing(m.fat,g.fat||0,'#F5A623',t('fatWord'),'g')}
+    <div class="mring-row" style="align-items:flex-end">
+      ${smallRing(m.carbs,g.carbs||0,'#4A90D9',t('carbsWord'),'g')}
+      ${proteinRing}
+      ${smallRing(m.fat,g.fat||0,'#F5A623',t('fatWord'),'g')}
     </div>
-    ${celebration}${toGo}${weekDots}${noGoals}
+    ${weekDots}${noGoals}
     <div style="border-top:.5px solid var(--border);margin-top:10px;padding-top:10px">
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:7px">
         <span style="font-size:12px;font-weight:700;color:var(--text3);text-transform:uppercase;letter-spacing:.05em">🌿 ${t('microTitle')} · ${t('microWeek')}</span>
