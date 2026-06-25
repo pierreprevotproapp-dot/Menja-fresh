@@ -3871,10 +3871,10 @@ function openCalc(){
   if(!calcDraft.age)calcDraft.age='30';
   if(!calcDraft.height)calcDraft.height='170';
   if(!calcDraft.weight)calcDraft.weight='70';
-  renderCalc();document.getElementById('calc-bg').classList.add('open');
+  renderCalc();_ovDepth++;history.pushState({_ov:'calc-bg'},'');document.getElementById('calc-bg').classList.add('open');
 }
 function _calcActivityId(mult){return mult<=1.375?'light':mult<=1.55?'moderate':'active';}
-function closeCalc(){document.getElementById('calc-bg').classList.remove('open');}
+function closeCalc(){document.getElementById('calc-bg').classList.remove('open');if(_ovDepth>0){_ovDepth--;history.back();}}
 function calcSet(k,v){calcDraft[k]=v;renderCalc();}
 function calcSetNum(k,v){calcDraft[k]=v;} // no re-render while typing
 function renderCalc(){
@@ -4997,9 +4997,9 @@ function cleanupDrag(){activeDrag=null;ghost.style.display='none';document.query
 function assignDirect(dishId,key,type){if(!state.plan[key])state.plan[key]={};state.plan[key][type]={dishId,...defaultGuests()};save();rebuildShopping();updateBadge();renderPlan();}
 
 let pickerState=null;
-function openPicker(dishId,key){const dish=getDish(dishId);if(!dish)return;pickerState={dishId,key};const dm=state.plan[key]||{};const imgH=dish.photo?`<img class="p-img" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="p-img-em" style="display:none">${dish.emoji}</div>`:`<div class="p-img-em">${dish.emoji}</div>`;document.getElementById('p-preview').innerHTML=`${imgH}<div><div class="p-name">${dishName(dish)}</div><div class="p-sub">${dish.tags.map(tk=>tTag(tk)).join(' · ')}</div></div>`;const d=new Date(key+'T00:00:00');document.getElementById('p-q').textContent=`${t('assignMeal')} — ${dow(d)} ${d.getDate()} ${mon(d)}`;document.getElementById('p-opts').innerHTML=MEAL_TYPES.map(type=>{const exist=dm[type]?.dishId?getDish(dm[type].dishId):null;return`<div class="p-opt" onclick="pickerSel('${type}')"><div class="p-ico ${type.toLowerCase()}">${MEAL_ICONS[type]}</div><div><div class="p-lbl">${mealName(type)}</div><div class="p-sl">${exist?t('replacesWord')+' '+dishName(exist):t('emptySlot')}</div></div></div>`;}).join('');document.getElementById('picker-bg').classList.add('open');}
+function openPicker(dishId,key){const dish=getDish(dishId);if(!dish)return;pickerState={dishId,key};const dm=state.plan[key]||{};const imgH=dish.photo?`<img class="p-img" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="p-img-em" style="display:none">${dish.emoji}</div>`:`<div class="p-img-em">${dish.emoji}</div>`;document.getElementById('p-preview').innerHTML=`${imgH}<div><div class="p-name">${dishName(dish)}</div><div class="p-sub">${dish.tags.map(tk=>tTag(tk)).join(' · ')}</div></div>`;const d=new Date(key+'T00:00:00');document.getElementById('p-q').textContent=`${t('assignMeal')} — ${dow(d)} ${d.getDate()} ${mon(d)}`;document.getElementById('p-opts').innerHTML=MEAL_TYPES.map(type=>{const exist=dm[type]?.dishId?getDish(dm[type].dishId):null;return`<div class="p-opt" onclick="pickerSel('${type}')"><div class="p-ico ${type.toLowerCase()}">${MEAL_ICONS[type]}</div><div><div class="p-lbl">${mealName(type)}</div><div class="p-sl">${exist?t('replacesWord')+' '+dishName(exist):t('emptySlot')}</div></div></div>`;}).join('');_ovDepth++;history.pushState({_ov:'picker-bg'},'');document.getElementById('picker-bg').classList.add('open');}
 function pickerSel(type){if(!pickerState)return;assignDirect(pickerState.dishId,pickerState.key,type);closePicker();}
-function closePicker(){document.getElementById('picker-bg').classList.remove('open');pickerState=null;}
+function closePicker(){document.getElementById('picker-bg').classList.remove('open');pickerState=null;if(_ovDepth>0){_ovDepth--;history.back();}}
 
 // Tap-to-assign: tap a day's meal slot → choose a dish from your saved list.
 function openSlotPicker(key,type){
@@ -5016,7 +5016,7 @@ function openSlotPicker(key,type){
     opts=liked.map(id=>{const dish=getDish(id);if(!dish)return'';const img=dish.photo?`<img class="p-ico" style="object-fit:cover" src="${dish.photo}" onerror="this.style.display='none';this.nextSibling.style.display='flex'"><div class="p-ico" style="display:none;background:var(--surface2)">${dish.emoji}</div>`:`<div class="p-ico" style="background:var(--surface2)">${dish.emoji}</div>`;const isCur=current&&current.id===dish.id;return`<div class="p-opt" onclick="slotPickerSel('${key}','${type}',${typeof id==='string'?`'${id}'`:id})">${img}<div><div class="p-lbl">${dishName(dish)}${isCur?' ✓':''}</div><div class="p-sl">${dish.tags.map(tk=>tTag(tk)).join(' · ')}</div></div></div>`;}).join('');
   }
   document.getElementById('p-opts').innerHTML=opts;
-  document.getElementById('picker-bg').classList.add('open');
+  _ovDepth++;history.pushState({_ov:'picker-bg'},'');document.getElementById('picker-bg').classList.add('open');
 }
 function slotPickerSel(key,type,dishId){assignDirect(dishId,key,type);closePicker();}
 function autoFill(){if(!state.liked.length){alert(t('saveFirst'));return;}const dates=getDateRange();let idx=0;dates.forEach(d=>{const key=dateKey(d);if(!state.plan[key])state.plan[key]={};MEAL_TYPES.forEach(type=>{if(!state.plan[key][type]||!state.plan[key][type].dishId){state.plan[key][type]={dishId:state.liked[idx%state.liked.length],...defaultGuests()};idx++;}});});save();rebuildShopping();updateBadge();renderPlan();}
@@ -5622,20 +5622,26 @@ function budgetCardHTML(){
 
 // In-tab recipe overlay (stay on Plan/Today; close to return)
 let _detailTarget=null;
+let _ovDepth=0; // tracks overlay history entries so popstate closes them instead of navigating away
 function openRecipeOverlay(id){
+  _ovDepth++;history.pushState({_ov:'recipe-ov'},'');
   _rdTab='ing';
   _detailTarget='recipe-ov-content';
   document.getElementById('recipe-ov').classList.add('open');
   renderRecipeDetail(id,'recipe-ov-content');
   document.getElementById('recipe-ov').scrollTop=0;
 }
-function closeRecipeOverlay(){document.getElementById('recipe-ov').classList.remove('open');_detailTarget=null;}
+function closeRecipeOverlay(){
+  document.getElementById('recipe-ov').classList.remove('open');_detailTarget=null;
+  if(_ovDepth>0){_ovDepth--;history.back();}
+}
 
 // Cook mode: big steps, screen stays awake, tap anywhere to advance
 let cookState=null;
 async function openCookMode(key,type){
   const slot=state.plan[key]&&state.plan[key][type];const dish=slot&&slot.dishId?getDish(slot.dishId):null;if(!dish)return;
   cookState={key,type,dishId:dish.id,steps:dishSteps(dish),idx:0,wake:null};
+  _ovDepth++;history.pushState({_ov:'cook-bg'},'');
   document.getElementById('cook-bg').classList.add('open');
   renderCookStep();
   try{if('wakeLock'in navigator)cookState.wake=await navigator.wakeLock.request('screen');}catch(e){}
@@ -5673,6 +5679,7 @@ function closeCook(){
   document.getElementById('cook-bg').classList.remove('open');
   if(cookState&&cookState.wake){try{cookState.wake.release();}catch(e){}}
   cookState=null;
+  if(_ovDepth>0){_ovDepth--;history.back();}
 }
 
 
@@ -5770,6 +5777,20 @@ async function init(){
   applyLang();
   renderLangBars();
   document.getElementById('loading-sub').textContent=t('loadingKitchen');
+
+  // ── Back-button handler: close overlays instead of leaving the app ──
+  window.addEventListener('popstate',()=>{
+    if(_ovDepth>0)_ovDepth--;
+    const layers=[
+      ['recipe-ov',()=>{document.getElementById('recipe-ov').classList.remove('open');_detailTarget=null;}],
+      ['cook-bg',()=>{document.getElementById('cook-bg').classList.remove('open');if(cookState&&cookState.wake){try{cookState.wake.release();}catch(e){}}cookState=null;}],
+      ['calc-bg',()=>document.getElementById('calc-bg').classList.remove('open')],
+      ['picker-bg',()=>{document.getElementById('picker-bg').classList.remove('open');pickerState=null;}],
+      ['rate-bg',()=>{document.getElementById('rate-bg').classList.remove('open');ratingState={id:null,stars:0};}],
+      ['chooser-bg',()=>document.getElementById('chooser-bg').classList.remove('open')],
+    ];
+    for(const[id,fn]of layers){const el=document.getElementById(id);if(el&&el.classList.contains('open')){fn();return;}}
+  });
 
   // ── Register auth listener FIRST (before any async calls) ──
   // This ensures OAuth callbacks and email confirmations always work
