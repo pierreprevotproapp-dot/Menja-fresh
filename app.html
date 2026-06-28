@@ -1011,6 +1011,15 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-day-label{font-size:15px;font-weight:700;color:var(--text)}
 .bento-day-actions{display:flex;gap:6px;flex-shrink:0}
 .bento-mini-btn{background:var(--surface2);border:none;border-radius:99px;padding:6px 11px;font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;font-family:var(--fb);white-space:nowrap}
+/* Day-picker bar — choose which days to plan; selected days auto-fill */
+.bento-daybar{display:flex;gap:5px;justify-content:space-between;margin-top:12px}
+.bento-chip{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0;border-radius:12px;border:1.5px solid var(--border2);background:var(--surface);cursor:pointer;transition:all .15s;position:relative}
+.bento-chip .bc-dow{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--text3)}
+.bento-chip .bc-num{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--text2);line-height:1}
+.bento-chip.on{background:var(--accent);border-color:var(--accent)}
+.bento-chip.on .bc-dow{color:var(--nav-a)}.bento-chip.on .bc-num{color:#fff}
+.bento-chip.on::after{content:'🍱';position:absolute;top:-7px;right:-3px;font-size:11px}
+.bento-chip.today{border-color:var(--accent2);border-width:2px}
 .bento-empty-day{text-align:center;padding:22px 14px 16px;color:var(--text2);font-size:13px;line-height:1.5}
 .bento-plan-btn{background:var(--accent);color:#fff;border:none;border-radius:99px;padding:11px 22px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb);margin-top:10px}
 /* YumBox-style tray: large main top-left, protein top-right, veggies bottom-left, fruit bottom-right, round dip well in centre */
@@ -1259,6 +1268,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       </div>
       <h1 style="text-align:center;font-size:18px;font-weight:800;margin:8px 0 2px;color:var(--text)" data-t="bentoTitle">🍱 Bento Kids Planning</h1>
       <div style="text-align:center;font-size:12px;color:var(--text2);line-height:1.4" data-t="bentoSub">Pick your days, then fill 5 compartments with healthy food</div>
+      <div class="bento-daybar" id="bento-daybar"></div>
     </div>
     <div class="bento-scroll" id="bento-scroll"></div>
   </div></div>
@@ -6406,6 +6416,12 @@ function renderBentoKids(){
   if(pv)pv.disabled=bentoWeekOffset<=0;if(nx)nx.disabled=bentoWeekOffset>=3;
   const sc=document.getElementById('bento-scroll');if(!sc)return;
   const todayKey=dateKey(new Date());
+  // Day-picker bar: tap a day to plan it (auto-fills a box); tap again to clear it.
+  const bar=document.getElementById('bento-daybar');
+  if(bar)bar.innerHTML=dates.map(d=>{
+    const k=dateKey(d);const on=!!state.bentoDays[k];const isT=k===todayKey;
+    return`<button class="bento-chip ${on?'on':''} ${isT?'today':''}" onclick="bentoToggleDay('${k}')"><span class="bc-dow">${dow(d)}</span><span class="bc-num">${d.getDate()}</span></button>`;
+  }).join('');
   sc.innerHTML=dates.map(d=>{
     const key=dateKey(d);const isToday=key===todayKey;
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
@@ -6440,6 +6456,11 @@ function bentoTrayHTML(key){
 // Activating a day fills the whole box with a balanced surprise selection;
 // the child can then swap individual compartments by tapping → swipe.
 function bentoActivateDay(key){bentoSurprise(key);}
+// Day-picker bar toggle: select → auto-fill a surprise box; deselect → clear it.
+function bentoToggleDay(key){
+  if(state.bentoDays&&state.bentoDays[key])bentoRemoveDay(key);
+  else bentoSurprise(key);
+}
 function bentoRemoveDay(key){if(state.bentoDays)delete state.bentoDays[key];if(state.bentoPlan)delete state.bentoPlan[key];save();renderBentoKids();}
 function bentoClearSlot(key,slotId){if(state.bentoPlan&&state.bentoPlan[key]){delete state.bentoPlan[key][slotId];save();renderBentoKids();}}
 function bentoSurprise(key){
