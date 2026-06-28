@@ -1001,6 +1001,69 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .rd-tabpane{display:none}
 .rd-tabpane.active{display:block;animation:fadein .2s}
 @keyframes fadein{from{opacity:0}to{opacity:1}}
+/* ── Bento Kids Planning ─────────────────────── */
+.bento-layout{display:flex;flex-direction:column;height:100%}
+.bento-top{flex-shrink:0;padding:10px 12px 8px}
+.bento-scroll{flex:1;overflow-y:auto;padding:6px 12px 100px;-webkit-overflow-scrolling:touch}
+.bento-day{background:var(--surface);border-radius:var(--r);box-shadow:var(--sh);padding:14px;margin-bottom:14px}
+.bento-day.today{box-shadow:0 0 0 2px var(--accent),var(--sh)}
+.bento-day-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;gap:8px}
+.bento-day-label{font-size:15px;font-weight:700;color:var(--text)}
+.bento-day-actions{display:flex;gap:6px;flex-shrink:0}
+.bento-mini-btn{background:var(--surface2);border:none;border-radius:99px;padding:6px 11px;font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;font-family:var(--fb);white-space:nowrap}
+.bento-empty-day{text-align:center;padding:22px 14px 16px;color:var(--text2);font-size:13px;line-height:1.5}
+.bento-plan-btn{background:var(--accent);color:#fff;border:none;border-radius:99px;padding:11px 22px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb);margin-top:10px}
+/* YumBox-style tray: large main top-left, protein top-right, veggies bottom-left, fruit bottom-right, round dip well in centre */
+.bento-tray{position:relative;width:100%;max-width:380px;margin:0 auto;aspect-ratio:1.34/1;background:linear-gradient(140deg,#1FB0A6,#138F88);border-radius:24px;padding:5%;display:grid;grid-template-columns:1.32fr 1fr;grid-template-rows:1.12fr 1fr;gap:4.5%;box-shadow:inset 0 2px 12px rgba(0,0,0,.20),0 5px 16px rgba(19,143,136,.28)}
+.bento-cell{position:relative;background:rgba(255,255,255,.93);border-radius:14px;box-shadow:inset 0 1px 5px rgba(0,0,0,.13);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden;padding:6px;transition:transform .12s}
+.bento-cell:active{transform:scale(.97)}
+.bento-cell.c-main{grid-column:1;grid-row:1}
+.bento-cell.c-veg{grid-column:1;grid-row:2}
+.bento-cell.c-protein{grid-column:2;grid-row:1}
+.bento-cell.c-fruit{grid-column:2;grid-row:2}
+.bento-well{position:absolute;left:56.5%;top:50%;transform:translate(-50%,-50%);width:23%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.95);box-shadow:inset 0 1px 6px rgba(0,0,0,.16),0 0 0 5px #16978F;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;z-index:2;overflow:hidden}
+.bento-well:active{transform:translate(-50%,-50%) scale(.94)}
+.bento-emoji{font-size:30px;line-height:1}
+.bento-cell.c-main .bento-emoji{font-size:40px}
+.bento-well .bento-emoji{font-size:20px}
+.bento-food-name{font-size:10px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.1;max-width:96%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.bento-well .bento-food-name{font-size:7px;margin-top:1px;-webkit-line-clamp:1}
+.bento-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#8FC4BF}
+.bento-empty .plus{font-size:26px;font-weight:300;line-height:1}
+.bento-empty .role{font-size:9px;font-weight:700;margin-top:2px;text-transform:uppercase;letter-spacing:.04em}
+.bento-cell.c-main .bento-empty .plus{font-size:32px}
+.bento-well .bento-empty .plus{font-size:17px}
+.bento-well .bento-empty .role{font-size:6px;margin-top:0}
+.bento-cell.filled,.bento-well.filled{background:#fff}
+.bento-x{position:absolute;top:3px;right:4px;width:17px;height:17px;border-radius:50%;background:rgba(0,0,0,.30);color:#fff;font-size:10px;line-height:17px;text-align:center;border:none;cursor:pointer;z-index:3;padding:0}
+.bento-well .bento-x{top:1px;right:auto;width:14px;height:14px;line-height:14px;font-size:8px}
+/* Bottom-sheet food picker */
+.bento-sheet-bg{position:fixed;inset:0;background:rgba(20,30,22,.55);z-index:600;display:none;align-items:flex-end}
+.bento-sheet-bg.open{display:flex}
+.bento-sheet{background:var(--bg);width:100%;border-radius:22px 22px 0 0;padding:14px 14px calc(16px + env(safe-area-inset-bottom));max-height:88vh;display:flex;flex-direction:column;animation:bsheetUp .26s cubic-bezier(.2,.8,.2,1)}
+@keyframes bsheetUp{from{transform:translateY(100%)}to{transform:translateY(0)}}
+.bento-sheet-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+.bento-sheet-title{font-size:16px;font-weight:700;color:var(--text)}
+.bento-sheet-x{background:var(--surface2);border:none;width:32px;height:32px;border-radius:50%;font-size:16px;cursor:pointer;color:var(--text2)}
+.bento-cats{display:flex;gap:6px;overflow-x:auto;padding-bottom:8px;margin-bottom:8px;-webkit-overflow-scrolling:touch}
+.bento-cat{flex-shrink:0;background:var(--surface2);border:none;border-radius:99px;padding:7px 13px;font-size:12px;font-weight:600;color:var(--text2);cursor:pointer;font-family:var(--fb);white-space:nowrap}
+.bento-cat.active{background:var(--accent);color:#fff}
+.bento-deck{position:relative;flex:1;min-height:260px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.bento-swipe-card{position:relative;width:100%;background:var(--surface);border-radius:20px;box-shadow:var(--shl);overflow:hidden;cursor:grab;user-select:none;touch-action:pan-y}
+.bento-swipe-card.swiping{transition:none}
+.bento-card-img{height:170px;display:flex;align-items:center;justify-content:center;font-size:88px;background:var(--accent-l)}
+.bento-card-body{padding:14px 16px 16px}
+.bento-card-name{font-size:19px;font-weight:700;color:var(--text)}
+.bento-card-tag{display:inline-block;margin-top:7px;font-size:11px;font-weight:600;color:var(--accent);background:var(--accent-l);padding:3px 11px;border-radius:99px}
+.bento-card-note{font-size:12px;color:var(--text2);margin-top:9px;line-height:1.4}
+.bento-deck-nav{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:12px}
+.bento-arrow{background:var(--surface);border:1.5px solid var(--border2);width:46px;height:46px;border-radius:50%;font-size:22px;color:var(--text2);cursor:pointer;flex-shrink:0}
+.bento-choose{flex:1;background:var(--accent);color:#fff;border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.bento-counter{text-align:center;font-size:12px;color:var(--text3);margin-top:9px}
+.bento-swipe-card.fly-left{animation:bflyL .2s forwards}
+.bento-swipe-card.fly-right{animation:bflyR .2s forwards}
+@keyframes bflyL{to{transform:translateX(-130%) rotate(-12deg);opacity:0}}
+@keyframes bflyR{to{transform:translateX(130%) rotate(12deg);opacity:0}}
 </style>
 </head>
 <body>
@@ -1115,6 +1178,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <nav class="nav"><div class="nav-tabs">
     <button class="nav-tab" onclick="showTab('today')" id="tab-today"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><span data-t="navToday">Today</span></button>
     <button class="nav-tab active" onclick="showTab('plan')" id="tab-plan"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-t="navPlan">Plan</span></button>
+    <button class="nav-tab" onclick="showTab('bentokids')" id="tab-bentokids"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="3" y1="12" x2="21" y2="12"/><circle cx="12" cy="12" r="2.4"/></svg><span data-t="navBento">Bento</span></button>
     <button class="nav-tab" onclick="showTab('shopping')" id="tab-shopping"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span data-t="navGroceries">Groceries</span><span class="badge" id="shopping-badge" style="display:none">0</span></button>
     <button class="nav-tab" onclick="showTab('recipes')" id="tab-recipes"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg><span data-t="navRecipes">Recipes</span></button>
     <button class="nav-tab" onclick="showTab('family')" id="tab-family"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span data-t="navMe">Me</span></button>
@@ -1179,6 +1243,31 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     </div>
     <div class="cal-scroll" id="cal-scroll"></div>
   </div></div>
+  <div class="screen" id="screen-bentokids"><div class="bento-layout">
+    <div class="bento-top">
+      <div class="week-nav">
+        <button class="week-nav-btn" id="bento-wk-prev" onclick="bentoChangeWeek(-1)">‹</button>
+        <div class="week-nav-label"><div id="bento-wk-label">This week</div><div class="week-nav-sub" id="bento-wk-range"></div></div>
+        <button class="week-nav-btn" id="bento-wk-next" onclick="bentoChangeWeek(1)">›</button>
+      </div>
+      <h1 style="text-align:center;font-size:18px;font-weight:800;margin:8px 0 2px;color:var(--text)" data-t="bentoTitle">🍱 Bento Kids Planning</h1>
+      <div style="text-align:center;font-size:12px;color:var(--text2);line-height:1.4" data-t="bentoSub">Pick your days, then fill 5 compartments with healthy food</div>
+    </div>
+    <div class="bento-scroll" id="bento-scroll"></div>
+  </div></div>
+  <div class="bento-sheet-bg" id="bento-sheet-bg" onclick="if(event.target===this)closeBentoPick()">
+    <div class="bento-sheet">
+      <div class="bento-sheet-hd"><div class="bento-sheet-title" id="bento-sheet-title">Fill compartment</div><button class="bento-sheet-x" onclick="closeBentoPick()">✕</button></div>
+      <div class="bento-cats" id="bento-cats"></div>
+      <div class="bento-deck" id="bento-deck"></div>
+      <div class="bento-deck-nav">
+        <button class="bento-arrow" onclick="bentoNav(-1)">‹</button>
+        <button class="bento-choose" onclick="bentoChoose()" data-t="bentoAddToBox">Add to box</button>
+        <button class="bento-arrow" onclick="bentoNav(1)">›</button>
+      </div>
+      <div class="bento-counter" id="bento-counter"></div>
+    </div>
+  </div>
   <div class="screen" id="screen-shopping">
     <div class="shop-hdr"><h1 data-t="shoppingList">Shopping list</h1><div style="display:flex;gap:8px;align-items:center"><button class="cbtn shop-share" onclick="shareShoppingList()">↗ Share</button><button class="cbtn" onclick="clearChecked()" data-t="clearTicked">Clear ticked</button></div></div>
     <div class="shop-summary" id="shop-summary"></div>
@@ -1659,7 +1748,11 @@ en:{
   wstat1:'to plan your whole week',wstat2:'recipes, in 5 languages',wstat3:'auto shopping list, by aisle',
   welcomeStart:"Get started — it's free →",welcomeGuestBtn:'Try without signing up',
   welcomeSigninPre:'Already with us?',welcomeSigninLink:'Sign in',
-  navPlan:'Plan',navGroceries:'Groceries',navMe:'Me',
+  navPlan:'Plan',navGroceries:'Groceries',navMe:'Me',navBento:'Bento',
+  bentoTitle:'🍱 Bento Kids Planning',bentoSub:'Pick your days, then fill 5 compartments with healthy food',
+  bentoNoBox:'No bento box planned for this day yet.',bentoPlanDay:'Plan a bento box',bentoSurprise:'Surprise',
+  bentoRoleMain:'Main',bentoRoleProtein:'Protein',bentoRoleVeg:'Veggies',bentoRoleFruit:'Fruit',bentoRoleDip:'Dip & treat',
+  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',
   langHeader:'Language',meName:'Me',prefsAllergies:'⚙️ Preferences & allergies',
   deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',legalNotice:'Legal notice / Impressum',
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
@@ -1807,7 +1900,11 @@ fr:{
   wstat1:'pour planifier toute la semaine',wstat2:'recettes, en 5 langues',wstat3:'liste de courses auto, par rayon',
   welcomeStart:"Commencer — c'est gratuit →",welcomeGuestBtn:'Essayer sans inscription',
   welcomeSigninPre:'Déjà parmi nous ?',welcomeSigninLink:'Se connecter',
-  navPlan:'Planifier',navGroceries:'Courses',navMe:'Moi',
+  navPlan:'Planifier',navGroceries:'Courses',navMe:'Moi',navBento:'Bento',
+  bentoTitle:'🍱 Bento Enfants',bentoSub:'Choisis tes jours, puis remplis 5 compartiments de bons aliments',
+  bentoNoBox:'Aucune boîte prévue pour ce jour.',bentoPlanDay:'Planifier une boîte',bentoSurprise:'Surprise',
+  bentoRoleMain:'Plat',bentoRoleProtein:'Protéine',bentoRoleVeg:'Légumes',bentoRoleFruit:'Fruits',bentoRoleDip:'Sauce & en-cas',
+  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',
   langHeader:'Langue',meName:'Moi',prefsAllergies:'⚙️ Préférences et allergies',
   deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',legalNotice:'Mentions légales / Impressum',
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
@@ -1955,7 +2052,11 @@ es:{
   wstat1:'para planificar toda la semana',wstat2:'recetas, en 5 idiomas',wstat3:'lista de la compra automática, por pasillo',
   welcomeStart:'Empezar — es gratis →',welcomeGuestBtn:'Probar sin registrarse',
   welcomeSigninPre:'¿Ya con nosotros?',welcomeSigninLink:'Iniciar sesión',
-  navPlan:'Planificar',navGroceries:'Compras',navMe:'Yo',
+  navPlan:'Planificar',navGroceries:'Compras',navMe:'Yo',navBento:'Bento',
+  bentoTitle:'🍱 Bento para Niños',bentoSub:'Elige tus días y llena 5 compartimentos con comida sana',
+  bentoNoBox:'Aún no hay caja planificada para este día.',bentoPlanDay:'Planificar una caja',bentoSurprise:'Sorpresa',
+  bentoRoleMain:'Principal',bentoRoleProtein:'Proteína',bentoRoleVeg:'Verduras',bentoRoleFruit:'Fruta',bentoRoleDip:'Salsa & snack',
+  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',
   langHeader:'Idioma',meName:'Yo',prefsAllergies:'⚙️ Preferencias y alergias',
   deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',legalNotice:'Aviso legal / Impressum',
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
@@ -2149,7 +2250,11 @@ de:{
   wstat1:'für die ganze Wochenplanung',wstat2:'Rezepte, in 5 Sprachen',wstat3:'automatische Einkaufsliste, nach Gang',
   welcomeStart:'Loslegen — kostenlos →',welcomeGuestBtn:'Ohne Anmeldung testen',
   welcomeSigninPre:'Schon dabei?',welcomeSigninLink:'Anmelden',
-  navPlan:'Planen',navGroceries:'Einkauf',navMe:'Ich',
+  navPlan:'Planen',navGroceries:'Einkauf',navMe:'Ich',navBento:'Bento',
+  bentoTitle:'🍱 Bento Kinder-Planung',bentoSub:'Wähle deine Tage und fülle 5 Fächer mit gesundem Essen',
+  bentoNoBox:'Für diesen Tag ist noch keine Box geplant.',bentoPlanDay:'Bento-Box planen',bentoSurprise:'Überraschung',
+  bentoRoleMain:'Hauptteil',bentoRoleProtein:'Eiweiß',bentoRoleVeg:'Gemüse',bentoRoleFruit:'Obst',bentoRoleDip:'Dip & Snack',
+  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',
   langHeader:'Sprache',meName:'Ich',prefsAllergies:'⚙️ Vorlieben & Allergien',
   deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',legalNotice:'Impressum',
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
@@ -2628,6 +2733,8 @@ let state={
   skippedDays:{},   // {'YYYY-MM-DD': true} — days the user chose not to plan
   confirmed:{},     // {'YYYY-MM-DD': true} — dinner accepted ("Chosen") for that day
   shoppingFrom:'',  // 'YYYY-MM-DD' cutoff — only plan entries ≥ this date feed the list
+  bentoPlan:{},     // {'YYYY-MM-DD': {main,protein,veg,fruit,well: foodId}} — Bento Kids boxes
+  bentoDays:{},     // {'YYYY-MM-DD': true} — days with an active bento box
 };
 
 const STABLE=7;
@@ -2719,11 +2826,13 @@ function _currentTabKey(){
 }
 function _getTabScroll(tab){
   if(tab==='plan'){const c=document.getElementById('cal-scroll');return c?c.scrollTop:0;}
+  if(tab==='bentokids'){const c=document.getElementById('bento-scroll');return c?c.scrollTop:0;}
   return document.getElementById('app')?.scrollTop||window.scrollY||0;
 }
 function _setTabScroll(tab,pos){
   if(!pos)return;
   if(tab==='plan'){const c=document.getElementById('cal-scroll');if(c)c.scrollTop=pos;}
+  else if(tab==='bentokids'){const c=document.getElementById('bento-scroll');if(c)c.scrollTop=pos;}
   else{const a=document.getElementById('app');if(a)a.scrollTop=pos;else window.scrollTo(0,pos);}
 }
 function saveUiState(){
@@ -3654,12 +3763,17 @@ function showTab(tab){
   if(tab==='shopping')renderShopping();
   if(tab==='today'){todayOffset=0;renderToday();}
   if(tab==='recipes')renderRecipes();
+  if(tab==='bentokids')renderBentoKids();
   if(tab==='fridge')initFridgeScreen();
   // Restore scroll for this tab (0 if first visit this session).
   const savedPos=scrollMemory[tab]||0;
   if(tab==='plan'){
     const cal=document.getElementById('cal-scroll');
     if(cal)cal.scrollTop=savedPos;
+    document.querySelector('#app').scrollTop=0;
+  }else if(tab==='bentokids'){
+    const bs=document.getElementById('bento-scroll');
+    if(bs)bs.scrollTop=savedPos;
     document.querySelector('#app').scrollTop=0;
   }else{
     document.querySelector('#app').scrollTop=savedPos;
@@ -5422,6 +5536,218 @@ function renderToday(){
   const microCard=(isToday&&!hasMeals)?microbiomeTodayCardHTML():''; // embedded in macroCard when meals exist
   tm.innerHTML=reminder+mealsSection+macro+microCard;
 }
+// ═══════════════════════════════════════════════════
+// BENTO KIDS PLANNING
+// Vegetarian, wholesome kid-food library inspired by
+// "Little Green Kitchen" (Luise Vindahl & David Frenkiel).
+// ═══════════════════════════════════════════════════
+const BENTO_CATS=[
+  {id:'main',emoji:'🥪',label:{en:'Main',de:'Hauptteil',fr:'Plat',es:'Principal'}},
+  {id:'protein',emoji:'🧀',label:{en:'Protein',de:'Eiweiß',fr:'Protéine',es:'Proteína'}},
+  {id:'veg',emoji:'🥕',label:{en:'Veggies',de:'Gemüse',fr:'Légumes',es:'Verduras'}},
+  {id:'fruit',emoji:'🍓',label:{en:'Fruit',de:'Obst',fr:'Fruits',es:'Fruta'}},
+  {id:'dip',emoji:'🫐',label:{en:'Dip & treat',de:'Dip & Snack',fr:'Sauce & en-cas',es:'Salsa & snack'}},
+];
+// The 5 YumBox compartments: 4 cells + centre round dip well.
+const BENTO_SLOTS=[
+  {id:'main',cls:'c-main',cat:'main',roleKey:'bentoRoleMain'},
+  {id:'protein',cls:'c-protein',cat:'protein',roleKey:'bentoRoleProtein'},
+  {id:'veg',cls:'c-veg',cat:'veg',roleKey:'bentoRoleVeg'},
+  {id:'fruit',cls:'c-fruit',cat:'fruit',roleKey:'bentoRoleFruit'},
+  {id:'well',cls:'c-well',cat:'dip',roleKey:'bentoRoleDip'},
+];
+const BENTO_FOODS=[
+  // ── Main ──
+  {id:'veggie-wrap',emoji:'🌯',cat:'main',name:{en:'Veggie hummus wrap',de:'Gemüse-Hummus-Wrap',fr:'Wrap houmous-légumes',es:'Wrap de verduras y humus'}},
+  {id:'spinach-pinwheel',emoji:'🌀',cat:'main',name:{en:'Spinach pinwheels',de:'Spinat-Schnecken',fr:'Roulés aux épinards',es:'Rollitos de espinaca'}},
+  {id:'sweet-potato-pancake',emoji:'🥞',cat:'main',name:{en:'Sweet potato pancakes',de:'Süßkartoffel-Puffer',fr:'Pancakes patate douce',es:'Tortitas de boniato'}},
+  {id:'veggie-muffin',emoji:'🧁',cat:'main',name:{en:'Savoury veggie muffin',de:'Herzhafter Gemüsemuffin',fr:'Muffin salé aux légumes',es:'Muffin salado de verduras'}},
+  {id:'pea-pesto-pasta',emoji:'🍝',cat:'main',name:{en:'Pea-pesto pasta',de:'Erbsen-Pesto-Nudeln',fr:'Pâtes pesto de petits pois',es:'Pasta con pesto de guisantes'}},
+  {id:'rice-balls',emoji:'🍙',cat:'main',name:{en:'Mini rice balls',de:'Mini-Reisbällchen',fr:'Boulettes de riz',es:'Bolitas de arroz'}},
+  {id:'mini-frittata',emoji:'🍳',cat:'main',name:{en:'Veggie mini frittata',de:'Gemüse-Mini-Frittata',fr:'Mini frittata aux légumes',es:'Mini frittata de verduras'}},
+  {id:'banana-oat-pancake',emoji:'🥞',cat:'main',name:{en:'Banana-oat pancakes',de:'Bananen-Hafer-Pancakes',fr:'Pancakes banane-avoine',es:'Tortitas de plátano y avena'}},
+  {id:'pita-pocket',emoji:'🫓',cat:'main',name:{en:'Hummus pita pocket',de:'Hummus-Pita-Tasche',fr:'Pochette pita houmous',es:'Pan de pita con humus'}},
+  {id:'corn-fritter',emoji:'🌽',cat:'main',name:{en:'Sweetcorn fritters',de:'Mais-Puffer',fr:'Beignets de maïs',es:'Buñuelos de maíz'}},
+  // ── Protein ──
+  {id:'cheese-cubes',emoji:'🧀',cat:'protein',name:{en:'Cheese cubes',de:'Käsewürfel',fr:'Dés de fromage',es:'Dados de queso'}},
+  {id:'boiled-egg',emoji:'🥚',cat:'protein',name:{en:'Boiled egg',de:'Gekochtes Ei',fr:'Œuf dur',es:'Huevo cocido'}},
+  {id:'edamame',emoji:'🫛',cat:'protein',name:{en:'Edamame beans',de:'Edamame',fr:'Edamame',es:'Edamame'}},
+  {id:'halloumi',emoji:'🧆',cat:'protein',name:{en:'Halloumi bites',de:'Halloumi-Happen',fr:'Bouchées de halloumi',es:'Bocados de halloumi'}},
+  {id:'white-beans',emoji:'🫘',cat:'protein',name:{en:'White bean salad',de:'Weiße-Bohnen-Salat',fr:'Salade de haricots blancs',es:'Ensalada de alubias'}},
+  {id:'cottage-cheese',emoji:'🥛',cat:'protein',name:{en:'Cottage cheese',de:'Hüttenkäse',fr:'Cottage cheese',es:'Requesón'}},
+  {id:'falafel',emoji:'🧆',cat:'protein',name:{en:'Mini falafel',de:'Mini-Falafel',fr:'Mini falafels',es:'Mini falafel'}},
+  {id:'lentil-balls',emoji:'🟤',cat:'protein',name:{en:'Lentil balls',de:'Linsenbällchen',fr:'Boulettes de lentilles',es:'Albóndigas de lentejas'}},
+  {id:'yogurt-pot',emoji:'🥣',cat:'protein',name:{en:'Greek yogurt',de:'Griechischer Joghurt',fr:'Yaourt grec',es:'Yogur griego'}},
+  // ── Veggies ──
+  {id:'cucumber',emoji:'🥒',cat:'veg',name:{en:'Cucumber sticks',de:'Gurkensticks',fr:'Bâtonnets de concombre',es:'Palitos de pepino'}},
+  {id:'cherry-tomato',emoji:'🍅',cat:'veg',name:{en:'Cherry tomatoes',de:'Kirschtomaten',fr:'Tomates cerises',es:'Tomates cherry'}},
+  {id:'carrot',emoji:'🥕',cat:'veg',name:{en:'Carrot sticks',de:'Karottensticks',fr:'Bâtonnets de carotte',es:'Palitos de zanahoria'}},
+  {id:'pepper',emoji:'🫑',cat:'veg',name:{en:'Pepper strips',de:'Paprikastreifen',fr:'Lamelles de poivron',es:'Tiras de pimiento'}},
+  {id:'snap-peas',emoji:'🫛',cat:'veg',name:{en:'Sugar snap peas',de:'Zuckerschoten',fr:'Pois gourmands',es:'Tirabeques'}},
+  {id:'broccoli',emoji:'🥦',cat:'veg',name:{en:'Broccoli trees',de:'Brokkoli-Bäumchen',fr:'Arbres de brocoli',es:'Arbolitos de brócoli'}},
+  {id:'corn-cob',emoji:'🌽',cat:'veg',name:{en:'Sweetcorn',de:'Mais',fr:'Maïs',es:'Maíz'}},
+  {id:'avocado',emoji:'🥑',cat:'veg',name:{en:'Avocado slices',de:'Avocado-Scheiben',fr:'Tranches d\'avocat',es:'Láminas de aguacate'}},
+  {id:'roasted-chickpea',emoji:'🟤',cat:'veg',name:{en:'Roasted chickpeas',de:'Geröstete Kichererbsen',fr:'Pois chiches rôtis',es:'Garbanzos tostados'}},
+  // ── Fruit ──
+  {id:'blueberries',emoji:'🫐',cat:'fruit',name:{en:'Blueberries',de:'Heidelbeeren',fr:'Myrtilles',es:'Arándanos'}},
+  {id:'grapes',emoji:'🍇',cat:'fruit',name:{en:'Grapes',de:'Weintrauben',fr:'Raisins',es:'Uvas'}},
+  {id:'apple',emoji:'🍎',cat:'fruit',name:{en:'Apple slices',de:'Apfelspalten',fr:'Tranches de pomme',es:'Rodajas de manzana'}},
+  {id:'strawberry',emoji:'🍓',cat:'fruit',name:{en:'Strawberries',de:'Erdbeeren',fr:'Fraises',es:'Fresas'}},
+  {id:'melon',emoji:'🍈',cat:'fruit',name:{en:'Melon balls',de:'Melonenkugeln',fr:'Billes de melon',es:'Bolitas de melón'}},
+  {id:'mandarin',emoji:'🍊',cat:'fruit',name:{en:'Mandarin segments',de:'Mandarinen',fr:'Quartiers de mandarine',es:'Gajos de mandarina'}},
+  {id:'banana-coins',emoji:'🍌',cat:'fruit',name:{en:'Banana coins',de:'Bananenscheiben',fr:'Rondelles de banane',es:'Rodajas de plátano'}},
+  {id:'pear',emoji:'🍐',cat:'fruit',name:{en:'Pear slices',de:'Birnenspalten',fr:'Tranches de poire',es:'Rodajas de pera'}},
+  {id:'kiwi',emoji:'🥝',cat:'fruit',name:{en:'Kiwi slices',de:'Kiwi-Scheiben',fr:'Tranches de kiwi',es:'Rodajas de kiwi'}},
+  {id:'raspberry',emoji:'🍇',cat:'fruit',name:{en:'Raspberries',de:'Himbeeren',fr:'Framboises',es:'Frambuesas'}},
+  // ── Dip & treat (centre well) ──
+  {id:'hummus',emoji:'🥣',cat:'dip',name:{en:'Hummus dip',de:'Hummus-Dip',fr:'Houmous',es:'Humus'}},
+  {id:'guacamole',emoji:'🥑',cat:'dip',name:{en:'Guacamole',de:'Guacamole',fr:'Guacamole',es:'Guacamole'}},
+  {id:'yogurt-honey',emoji:'🍯',cat:'dip',name:{en:'Yogurt-honey dip',de:'Joghurt-Honig-Dip',fr:'Sauce yaourt-miel',es:'Salsa de yogur y miel'}},
+  {id:'nut-butter',emoji:'🥜',cat:'dip',name:{en:'Nut butter',de:'Nussmus',fr:'Beurre de noix',es:'Crema de frutos secos'}},
+  {id:'dark-choc',emoji:'🍫',cat:'dip',name:{en:'Dark choc buttons',de:'Zartbitter-Drops',fr:'Pépites chocolat noir',es:'Gotas de chocolate negro'}},
+  {id:'granola',emoji:'🥣',cat:'dip',name:{en:'Granola clusters',de:'Granola',fr:'Granola',es:'Granola'}},
+  {id:'seed-cracker',emoji:'🍘',cat:'dip',name:{en:'Seed crackers',de:'Saatencracker',fr:'Crackers aux graines',es:'Crackers de semillas'}},
+  {id:'applesauce',emoji:'🍎',cat:'dip',name:{en:'Apple sauce',de:'Apfelmus',fr:'Compote de pomme',es:'Puré de manzana'}},
+  {id:'raisins',emoji:'🍇',cat:'dip',name:{en:'Raisins',de:'Rosinen',fr:'Raisins secs',es:'Pasas'}},
+];
+function bentoL(o){return (o&&(o[lang]||o.en))||'';}
+function bentoFood(id){for(const f of BENTO_FOODS)if(f.id===id)return f;return null;}
+function bentoSlotById(id){for(const s of BENTO_SLOTS)if(s.id===id)return s;return BENTO_SLOTS[0];}
+
+let bentoWeekOffset=0;
+let bentoPick={key:null,slot:null,cat:'all',idx:0,_cache:null,_cacheCat:null};
+
+function bentoDateRange(){
+  const tt=new Date();tt.setHours(0,0,0,0);
+  const dowMon=(tt.getDay()+6)%7;            // 0 = Monday
+  const monday=new Date(tt);monday.setDate(tt.getDate()-dowMon+bentoWeekOffset*7);
+  const days=[];for(let i=0;i<7;i++){const d=new Date(monday);d.setDate(monday.getDate()+i);days.push(d);}
+  return days;
+}
+function bentoChangeWeek(delta){
+  const target=bentoWeekOffset+delta;
+  if(target<0||target>3)return;
+  bentoWeekOffset=target;renderBentoKids();
+}
+function renderBentoKids(){
+  if(!state.bentoPlan)state.bentoPlan={};
+  if(!state.bentoDays)state.bentoDays={};
+  const dates=bentoDateRange();
+  const lbl=document.getElementById('bento-wk-label');
+  const rng=document.getElementById('bento-wk-range');
+  if(lbl)lbl.textContent=bentoWeekOffset===0?t('thisWeek'):bentoWeekOffset===1?t('nextWeekLbl'):tf('inWeeks',{n:bentoWeekOffset});
+  if(rng)rng.textContent=`${dow(dates[0])} ${dates[0].getDate()} ${mon(dates[0])} – ${dow(dates[6])} ${dates[6].getDate()} ${mon(dates[6])}`;
+  const pv=document.getElementById('bento-wk-prev'),nx=document.getElementById('bento-wk-next');
+  if(pv)pv.disabled=bentoWeekOffset<=0;if(nx)nx.disabled=bentoWeekOffset>=3;
+  const sc=document.getElementById('bento-scroll');if(!sc)return;
+  const todayKey=dateKey(new Date());
+  sc.innerHTML=dates.map(d=>{
+    const key=dateKey(d);const isToday=key===todayKey;
+    const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
+    if(!state.bentoDays[key]){
+      return`<div class="bento-day ${isToday?'today':''}">
+        <div class="bento-day-label-row"><span class="bento-day-label">${labelTxt}</span></div>
+        <div class="bento-empty-day">${t('bentoNoBox')}<br><button class="bento-plan-btn" onclick="bentoActivateDay('${key}')">🍱 ${t('bentoPlanDay')}</button></div>
+      </div>`;
+    }
+    return`<div class="bento-day ${isToday?'today':''}" id="bentoday-${key}">
+      <div class="bento-day-label-row"><span class="bento-day-label">${labelTxt}</span>
+        <div class="bento-day-actions"><button class="bento-mini-btn" onclick="bentoSurprise('${key}')">🎲 ${t('bentoSurprise')}</button><button class="bento-mini-btn" onclick="bentoRemoveDay('${key}')">🗑</button></div>
+      </div>
+      ${bentoTrayHTML(key)}
+    </div>`;
+  }).join('');
+}
+function bentoTrayHTML(key){
+  const plan=(state.bentoPlan&&state.bentoPlan[key])||{};
+  const cells=BENTO_SLOTS.map(slot=>{
+    const isWell=slot.id==='well';
+    const food=plan[slot.id]?bentoFood(plan[slot.id]):null;
+    const inner=food
+      ?`<button class="bento-x" onclick="event.stopPropagation();bentoClearSlot('${key}','${slot.id}')">✕</button><div class="bento-emoji">${food.emoji}</div><div class="bento-food-name">${bentoL(food.name)}</div>`
+      :`<div class="bento-empty"><div class="plus">＋</div><div class="role">${t(slot.roleKey)}</div></div>`;
+    const cls=isWell?`bento-well ${food?'filled':''}`:`bento-cell ${slot.cls} ${food?'filled':''}`;
+    return`<div class="${cls}" onclick="openBentoPick('${key}','${slot.id}')">${inner}</div>`;
+  }).join('');
+  return`<div class="bento-tray">${cells}</div>`;
+}
+function bentoActivateDay(key){if(!state.bentoDays)state.bentoDays={};state.bentoDays[key]=true;save();renderBentoKids();}
+function bentoRemoveDay(key){if(state.bentoDays)delete state.bentoDays[key];if(state.bentoPlan)delete state.bentoPlan[key];save();renderBentoKids();}
+function bentoClearSlot(key,slotId){if(state.bentoPlan&&state.bentoPlan[key]){delete state.bentoPlan[key][slotId];save();renderBentoKids();}}
+function bentoSurprise(key){
+  if(!state.bentoPlan)state.bentoPlan={};if(!state.bentoPlan[key])state.bentoPlan[key]={};
+  if(!state.bentoDays)state.bentoDays={};state.bentoDays[key]=true;
+  BENTO_SLOTS.forEach(slot=>{
+    const opts=BENTO_FOODS.filter(f=>f.cat===slot.cat);
+    if(opts.length)state.bentoPlan[key][slot.id]=opts[Math.floor(Math.random()*opts.length)].id;
+  });
+  save();renderBentoKids();
+}
+function openBentoPick(key,slotId){
+  const slot=bentoSlotById(slotId);
+  bentoPick={key,slot:slotId,cat:slot.cat,idx:0,_cache:null,_cacheCat:null};
+  const ttl=document.getElementById('bento-sheet-title');if(ttl)ttl.textContent=t(slot.roleKey);
+  renderBentoCats();renderBentoDeck();
+  const cur=state.bentoPlan&&state.bentoPlan[key]&&state.bentoPlan[key][slotId];
+  if(cur){const l=bentoListNow();const i=l.findIndex(f=>f.id===cur);if(i>=0){bentoPick.idx=i;renderBentoDeck();}}
+  document.getElementById('bento-sheet-bg').classList.add('open');
+}
+function closeBentoPick(){const bg=document.getElementById('bento-sheet-bg');if(bg)bg.classList.remove('open');bentoPick.key=null;}
+function bentoListNow(){
+  if(!bentoPick._cache||bentoPick._cacheCat!==bentoPick.cat){
+    bentoPick._cache=bentoPick.cat==='all'?BENTO_FOODS.slice():BENTO_FOODS.filter(f=>f.cat===bentoPick.cat);
+    bentoPick._cacheCat=bentoPick.cat;
+  }
+  return bentoPick._cache;
+}
+function bentoSetCat(c){bentoPick.cat=c;bentoPick.idx=0;bentoPick._cache=null;renderBentoCats();renderBentoDeck();}
+function bentoNav(dir){const l=bentoListNow();if(!l.length)return;bentoPick.idx=((bentoPick.idx+dir)%l.length+l.length)%l.length;renderBentoDeck();}
+function renderBentoCats(){
+  const el=document.getElementById('bento-cats');if(!el)return;
+  const cats=[{id:'all',emoji:'🍱',label:{en:t('bentoAllCat')}}].concat(BENTO_CATS);
+  el.innerHTML=cats.map(c=>`<button class="bento-cat ${bentoPick.cat===c.id?'active':''}" onclick="bentoSetCat('${c.id}')">${c.emoji} ${c.id==='all'?t('bentoAllCat'):bentoL(c.label)}</button>`).join('');
+}
+function renderBentoDeck(){
+  const deck=document.getElementById('bento-deck');if(!deck)return;
+  const cnt=document.getElementById('bento-counter');
+  const l=bentoListNow();
+  if(!l.length){deck.innerHTML=`<div style="color:var(--text3);padding:40px">${t('bentoNoFoods')}</div>`;if(cnt)cnt.textContent='';return;}
+  if(bentoPick.idx>=l.length)bentoPick.idx=0;
+  const f=l[bentoPick.idx];
+  const cat=BENTO_CATS.find(c=>c.id===f.cat);
+  deck.innerHTML=`<div class="bento-swipe-card" id="bento-swipe-card">
+    <div class="bento-card-img">${f.emoji}</div>
+    <div class="bento-card-body">
+      <div class="bento-card-name">${bentoL(f.name)}</div>
+      <span class="bento-card-tag">${cat?cat.emoji+' '+bentoL(cat.label):''}</span>
+      <div class="bento-card-note">🌱 ${t('bentoVeggieNote')}</div>
+    </div>
+  </div>`;
+  if(cnt)cnt.textContent=`${bentoPick.idx+1} / ${l.length}`;
+  bindBentoSwipe();
+}
+function bentoChoose(){
+  const l=bentoListNow();const f=l[bentoPick.idx];if(!f)return;
+  const key=bentoPick.key,slotId=bentoPick.slot;
+  if(!state.bentoPlan)state.bentoPlan={};if(!state.bentoPlan[key])state.bentoPlan[key]={};
+  if(!state.bentoDays)state.bentoDays={};state.bentoDays[key]=true;
+  state.bentoPlan[key][slotId]=f.id;
+  save();closeBentoPick();renderBentoKids();
+}
+function bindBentoSwipe(){
+  const card=document.getElementById('bento-swipe-card');if(!card)return;
+  let sx=0,sy=0,dx=0,dragging=false,moved=false;
+  const down=e=>{if(e.target.closest('button'))return;const p=e.touches?e.touches[0]:e;sx=p.clientX;sy=p.clientY;dx=0;dragging=true;moved=false;card.classList.add('swiping');};
+  const move=e=>{if(!dragging)return;const p=e.touches?e.touches[0]:e;dx=p.clientX-sx;const dy=p.clientY-sy;if(Math.abs(dx)>8||Math.abs(dy)>8)moved=true;if(Math.abs(dx)>Math.abs(dy))card.style.transform=`translateX(${dx}px) rotate(${dx*.03}deg)`;};
+  const up=()=>{if(!dragging)return;dragging=false;card.classList.remove('swiping');
+    if(Math.abs(dx)>64){const dir=dx<0?1:-1;card.classList.add(dir>0?'fly-left':'fly-right');setTimeout(()=>bentoNav(dir),150);}
+    else{card.style.transform='';if(!moved)bentoChoose();}   // tap a card = add it to the box
+  };
+  card.addEventListener('mousedown',down);card.addEventListener('touchstart',down,{passive:true});
+  card.addEventListener('mousemove',move);card.addEventListener('touchmove',move,{passive:true});
+  card.addEventListener('mouseup',up);card.addEventListener('mouseleave',up);card.addEventListener('touchend',up);
+}
+
 function goToPlanDay(key){
   state.openDays[key]=true;save();
   weekOffset=0;
