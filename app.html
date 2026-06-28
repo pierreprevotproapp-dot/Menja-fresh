@@ -1064,6 +1064,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-swipe-card.fly-right{animation:bflyR .2s forwards}
 @keyframes bflyL{to{transform:translateX(-130%) rotate(-12deg);opacity:0}}
 @keyframes bflyR{to{transform:translateX(130%) rotate(12deg);opacity:0}}
+/* Bento recipe detail sheet */
+#bento-recipe-body{display:flex;flex-direction:column;min-height:0;flex:1}
+.bento-recipe-scroll{overflow-y:auto;flex:1;-webkit-overflow-scrolling:touch;padding-bottom:4px}
+.bento-recipe-hero{height:120px;display:flex;align-items:center;justify-content:center;font-size:64px;background:linear-gradient(140deg,var(--accent-l),#d6e8cc);border-radius:18px;margin-bottom:12px}
+.bento-tip{display:flex;gap:10px;align-items:flex-start;background:#FFF6E5;border:1px solid #F0D9A8;border-radius:14px;padding:11px 13px;margin-bottom:12px;font-size:13px;line-height:1.45;color:#6B5318}
+.bento-tip-ic{font-size:18px;line-height:1;flex-shrink:0}
+.bento-swap-btn{width:100%;margin:14px 0 4px;background:var(--surface2);color:var(--text);border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
 </style>
 </head>
 <body>
@@ -1267,6 +1274,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       </div>
       <div class="bento-counter" id="bento-counter"></div>
     </div>
+  </div>
+  <div class="bento-sheet-bg" id="bento-recipe-bg" onclick="if(event.target===this)closeBentoRecipe()">
+    <div class="bento-sheet"><div id="bento-recipe-body"></div></div>
   </div>
   <div class="screen" id="screen-shopping">
     <div class="shop-hdr"><h1 data-t="shoppingList">Shopping list</h1><div style="display:flex;gap:8px;align-items:center"><button class="cbtn shop-share" onclick="shareShoppingList()">↗ Share</button><button class="cbtn" onclick="clearChecked()" data-t="clearTicked">Clear ticked</button></div></div>
@@ -1752,7 +1762,7 @@ en:{
   bentoTitle:'🍱 Bento Kids Planning',bentoSub:'Pick your days, then fill 5 compartments with healthy food',
   bentoNoBox:'No bento box planned for this day yet.',bentoPlanDay:'Plan a bento box',bentoSurprise:'Surprise',
   bentoRoleMain:'Main',bentoRoleProtein:'Protein',bentoRoleVeg:'Veggies',bentoRoleFruit:'Fruit',bentoRoleDip:'Dip & treat',
-  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',
+  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',
   langHeader:'Language',meName:'Me',prefsAllergies:'⚙️ Preferences & allergies',
   deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',legalNotice:'Legal notice / Impressum',
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
@@ -1904,7 +1914,7 @@ fr:{
   bentoTitle:'🍱 Bento Enfants',bentoSub:'Choisis tes jours, puis remplis 5 compartiments de bons aliments',
   bentoNoBox:'Aucune boîte prévue pour ce jour.',bentoPlanDay:'Planifier une boîte',bentoSurprise:'Surprise',
   bentoRoleMain:'Plat',bentoRoleProtein:'Protéine',bentoRoleVeg:'Légumes',bentoRoleFruit:'Fruits',bentoRoleDip:'Sauce & en-cas',
-  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',
+  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',
   langHeader:'Langue',meName:'Moi',prefsAllergies:'⚙️ Préférences et allergies',
   deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',legalNotice:'Mentions légales / Impressum',
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
@@ -2056,7 +2066,7 @@ es:{
   bentoTitle:'🍱 Bento para Niños',bentoSub:'Elige tus días y llena 5 compartimentos con comida sana',
   bentoNoBox:'Aún no hay caja planificada para este día.',bentoPlanDay:'Planificar una caja',bentoSurprise:'Sorpresa',
   bentoRoleMain:'Principal',bentoRoleProtein:'Proteína',bentoRoleVeg:'Verduras',bentoRoleFruit:'Fruta',bentoRoleDip:'Salsa & snack',
-  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',
+  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',
   langHeader:'Idioma',meName:'Yo',prefsAllergies:'⚙️ Preferencias y alergias',
   deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',legalNotice:'Aviso legal / Impressum',
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
@@ -2254,7 +2264,7 @@ de:{
   bentoTitle:'🍱 Bento Kinder-Planung',bentoSub:'Wähle deine Tage und fülle 5 Fächer mit gesundem Essen',
   bentoNoBox:'Für diesen Tag ist noch keine Box geplant.',bentoPlanDay:'Bento-Box planen',bentoSurprise:'Überraschung',
   bentoRoleMain:'Hauptteil',bentoRoleProtein:'Eiweiß',bentoRoleVeg:'Gemüse',bentoRoleFruit:'Obst',bentoRoleDip:'Dip & Snack',
-  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',
+  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',
   langHeader:'Sprache',meName:'Ich',prefsAllergies:'⚙️ Vorlieben & Allergien',
   deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',legalNotice:'Impressum',
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
@@ -5558,57 +5568,57 @@ const BENTO_SLOTS=[
 ];
 const BENTO_FOODS=[
   // ── Main ──
-  {id:'veggie-wrap',emoji:'🌯',cat:'main',name:{en:'Veggie hummus wrap',de:'Gemüse-Hummus-Wrap',fr:'Wrap houmous-légumes',es:'Wrap de verduras y humus'}},
-  {id:'spinach-pinwheel',emoji:'🌀',cat:'main',name:{en:'Spinach pinwheels',de:'Spinat-Schnecken',fr:'Roulés aux épinards',es:'Rollitos de espinaca'}},
+  {id:'dino-burger',emoji:'🦕',cat:'main',name:{en:'Dino veggie burgers',de:'Dino-Gemüse-Burger',fr:'Burgers dino aux légumes',es:'Hamburguesas dino de verduras'}},
+  {id:'spinach-waffle',emoji:'🧇',cat:'main',name:{en:'Spinach waffles',de:'Spinat-Waffeln',fr:'Gaufres aux épinards',es:'Gofres de espinaca'}},
+  {id:'veggie-pinwheel',emoji:'🌀',cat:'main',name:{en:'Rainbow veggie pinwheels',de:'Regenbogen-Gemüse-Schnecken',fr:'Roulés arc-en-ciel aux légumes',es:'Rollitos de verduras arcoíris'}},
   {id:'sweet-potato-pancake',emoji:'🥞',cat:'main',name:{en:'Sweet potato pancakes',de:'Süßkartoffel-Puffer',fr:'Pancakes patate douce',es:'Tortitas de boniato'}},
-  {id:'veggie-muffin',emoji:'🧁',cat:'main',name:{en:'Savoury veggie muffin',de:'Herzhafter Gemüsemuffin',fr:'Muffin salé aux légumes',es:'Muffin salado de verduras'}},
-  {id:'pea-pesto-pasta',emoji:'🍝',cat:'main',name:{en:'Pea-pesto pasta',de:'Erbsen-Pesto-Nudeln',fr:'Pâtes pesto de petits pois',es:'Pasta con pesto de guisantes'}},
   {id:'rice-balls',emoji:'🍙',cat:'main',name:{en:'Mini rice balls',de:'Mini-Reisbällchen',fr:'Boulettes de riz',es:'Bolitas de arroz'}},
-  {id:'mini-frittata',emoji:'🍳',cat:'main',name:{en:'Veggie mini frittata',de:'Gemüse-Mini-Frittata',fr:'Mini frittata aux légumes',es:'Mini frittata de verduras'}},
+  {id:'frittata-muffin',emoji:'🍳',cat:'main',name:{en:'Mini frittata muffins',de:'Mini-Frittata-Muffins',fr:'Mini muffins frittata',es:'Mini muffins de frittata'}},
   {id:'banana-oat-pancake',emoji:'🥞',cat:'main',name:{en:'Banana-oat pancakes',de:'Bananen-Hafer-Pancakes',fr:'Pancakes banane-avoine',es:'Tortitas de plátano y avena'}},
-  {id:'pita-pocket',emoji:'🫓',cat:'main',name:{en:'Hummus pita pocket',de:'Hummus-Pita-Tasche',fr:'Pochette pita houmous',es:'Pan de pita con humus'}},
+  {id:'pita-pocket',emoji:'🫓',cat:'main',name:{en:'Hummus pita pockets',de:'Hummus-Pita-Taschen',fr:'Pochettes pita houmous',es:'Bolsitas de pita con humus'}},
   {id:'corn-fritter',emoji:'🌽',cat:'main',name:{en:'Sweetcorn fritters',de:'Mais-Puffer',fr:'Beignets de maïs',es:'Buñuelos de maíz'}},
+  {id:'stuffed-tomato',emoji:'🍅',cat:'main',name:{en:'Stuffed rainbow tomatoes',de:'Gefüllte Regenbogen-Tomaten',fr:'Tomates farcies arc-en-ciel',es:'Tomates rellenos arcoíris'}},
   // ── Protein ──
-  {id:'cheese-cubes',emoji:'🧀',cat:'protein',name:{en:'Cheese cubes',de:'Käsewürfel',fr:'Dés de fromage',es:'Dados de queso'}},
-  {id:'boiled-egg',emoji:'🥚',cat:'protein',name:{en:'Boiled egg',de:'Gekochtes Ei',fr:'Œuf dur',es:'Huevo cocido'}},
+  {id:'cheese-shapes',emoji:'🧀',cat:'protein',name:{en:'Cheese shapes',de:'Käse-Figuren',fr:'Formes de fromage',es:'Figuras de queso'}},
+  {id:'egg-shapes',emoji:'🥚',cat:'protein',name:{en:'Boiled egg shapes',de:'Eier-Figuren',fr:'Œuf dur en formes',es:'Huevo en formas'}},
   {id:'edamame',emoji:'🫛',cat:'protein',name:{en:'Edamame beans',de:'Edamame',fr:'Edamame',es:'Edamame'}},
   {id:'halloumi',emoji:'🧆',cat:'protein',name:{en:'Halloumi bites',de:'Halloumi-Happen',fr:'Bouchées de halloumi',es:'Bocados de halloumi'}},
-  {id:'white-beans',emoji:'🫘',cat:'protein',name:{en:'White bean salad',de:'Weiße-Bohnen-Salat',fr:'Salade de haricots blancs',es:'Ensalada de alubias'}},
-  {id:'cottage-cheese',emoji:'🥛',cat:'protein',name:{en:'Cottage cheese',de:'Hüttenkäse',fr:'Cottage cheese',es:'Requesón'}},
-  {id:'falafel',emoji:'🧆',cat:'protein',name:{en:'Mini falafel',de:'Mini-Falafel',fr:'Mini falafels',es:'Mini falafel'}},
-  {id:'lentil-balls',emoji:'🟤',cat:'protein',name:{en:'Lentil balls',de:'Linsenbällchen',fr:'Boulettes de lentilles',es:'Albóndigas de lentejas'}},
-  {id:'yogurt-pot',emoji:'🥣',cat:'protein',name:{en:'Greek yogurt',de:'Griechischer Joghurt',fr:'Yaourt grec',es:'Yogur griego'}},
+  {id:'white-bean-dip',emoji:'🫘',cat:'protein',name:{en:'White bean & herb salad',de:'Weiße-Bohnen-Kräuter-Salat',fr:'Salade de haricots blancs',es:'Ensalada de alubias y hierbas'}},
+  {id:'cottage-fruit',emoji:'🥛',cat:'protein',name:{en:'Cottage cheese & berries',de:'Hüttenkäse mit Beeren',fr:'Cottage cheese & baies',es:'Requesón con frutos rojos'}},
+  {id:'falafel',emoji:'🧆',cat:'protein',name:{en:'Baked mini falafel',de:'Gebackene Mini-Falafel',fr:'Mini falafels au four',es:'Mini falafel al horno'}},
+  {id:'lentil-balls',emoji:'🟤',cat:'protein',name:{en:'Lentil & herb balls',de:'Linsen-Kräuter-Bällchen',fr:'Boulettes de lentilles',es:'Albóndigas de lentejas'}},
+  {id:'yogurt-pot',emoji:'🥣',cat:'protein',name:{en:'Greek yogurt pot',de:'Griechischer Joghurt',fr:'Yaourt grec',es:'Yogur griego'}},
   // ── Veggies ──
-  {id:'cucumber',emoji:'🥒',cat:'veg',name:{en:'Cucumber sticks',de:'Gurkensticks',fr:'Bâtonnets de concombre',es:'Palitos de pepino'}},
-  {id:'cherry-tomato',emoji:'🍅',cat:'veg',name:{en:'Cherry tomatoes',de:'Kirschtomaten',fr:'Tomates cerises',es:'Tomates cherry'}},
-  {id:'carrot',emoji:'🥕',cat:'veg',name:{en:'Carrot sticks',de:'Karottensticks',fr:'Bâtonnets de carotte',es:'Palitos de zanahoria'}},
-  {id:'pepper',emoji:'🫑',cat:'veg',name:{en:'Pepper strips',de:'Paprikastreifen',fr:'Lamelles de poivron',es:'Tiras de pimiento'}},
+  {id:'cucumber-rolls',emoji:'🥒',cat:'veg',name:{en:'Cucumber roll-ups',de:'Gurken-Röllchen',fr:'Roulés de concombre',es:'Rollitos de pepino'}},
+  {id:'caprese-skewer',emoji:'🍅',cat:'veg',name:{en:'Caprese skewers',de:'Caprese-Spieße',fr:'Brochettes caprese',es:'Brochetas caprese'}},
+  {id:'carrot-slaw',emoji:'🥕',cat:'veg',name:{en:'Carrot & raisin slaw',de:'Karotten-Rosinen-Salat',fr:'Salade carotte-raisins',es:'Ensalada de zanahoria y pasas'}},
+  {id:'pepper-stars',emoji:'⭐',cat:'veg',name:{en:'Bell pepper stars',de:'Paprika-Sterne',fr:'Étoiles de poivron',es:'Estrellas de pimiento'}},
   {id:'snap-peas',emoji:'🫛',cat:'veg',name:{en:'Sugar snap peas',de:'Zuckerschoten',fr:'Pois gourmands',es:'Tirabeques'}},
-  {id:'broccoli',emoji:'🥦',cat:'veg',name:{en:'Broccoli trees',de:'Brokkoli-Bäumchen',fr:'Arbres de brocoli',es:'Arbolitos de brócoli'}},
-  {id:'corn-cob',emoji:'🌽',cat:'veg',name:{en:'Sweetcorn',de:'Mais',fr:'Maïs',es:'Maíz'}},
-  {id:'avocado',emoji:'🥑',cat:'veg',name:{en:'Avocado slices',de:'Avocado-Scheiben',fr:'Tranches d\'avocat',es:'Láminas de aguacate'}},
-  {id:'roasted-chickpea',emoji:'🟤',cat:'veg',name:{en:'Roasted chickpeas',de:'Geröstete Kichererbsen',fr:'Pois chiches rôtis',es:'Garbanzos tostados'}},
-  // ── Fruit ──
-  {id:'blueberries',emoji:'🫐',cat:'fruit',name:{en:'Blueberries',de:'Heidelbeeren',fr:'Myrtilles',es:'Arándanos'}},
-  {id:'grapes',emoji:'🍇',cat:'fruit',name:{en:'Grapes',de:'Weintrauben',fr:'Raisins',es:'Uvas'}},
-  {id:'apple',emoji:'🍎',cat:'fruit',name:{en:'Apple slices',de:'Apfelspalten',fr:'Tranches de pomme',es:'Rodajas de manzana'}},
-  {id:'strawberry',emoji:'🍓',cat:'fruit',name:{en:'Strawberries',de:'Erdbeeren',fr:'Fraises',es:'Fresas'}},
-  {id:'melon',emoji:'🍈',cat:'fruit',name:{en:'Melon balls',de:'Melonenkugeln',fr:'Billes de melon',es:'Bolitas de melón'}},
-  {id:'mandarin',emoji:'🍊',cat:'fruit',name:{en:'Mandarin segments',de:'Mandarinen',fr:'Quartiers de mandarine',es:'Gajos de mandarina'}},
-  {id:'banana-coins',emoji:'🍌',cat:'fruit',name:{en:'Banana coins',de:'Bananenscheiben',fr:'Rondelles de banane',es:'Rodajas de plátano'}},
-  {id:'pear',emoji:'🍐',cat:'fruit',name:{en:'Pear slices',de:'Birnenspalten',fr:'Tranches de poire',es:'Rodajas de pera'}},
-  {id:'kiwi',emoji:'🥝',cat:'fruit',name:{en:'Kiwi slices',de:'Kiwi-Scheiben',fr:'Tranches de kiwi',es:'Rodajas de kiwi'}},
-  {id:'raspberry',emoji:'🍇',cat:'fruit',name:{en:'Raspberries',de:'Himbeeren',fr:'Framboises',es:'Frambuesas'}},
+  {id:'broccoli-tots',emoji:'🥦',cat:'veg',name:{en:'Broccoli cheese tots',de:'Brokkoli-Käse-Tots',fr:'Croquettes brocoli-fromage',es:'Bolitas de brócoli y queso'}},
+  {id:'corn-salsa',emoji:'🌽',cat:'veg',name:{en:'Corn & bean salsa',de:'Mais-Bohnen-Salsa',fr:'Salsa maïs-haricots',es:'Salsa de maíz y alubias'}},
+  {id:'avocado-smash',emoji:'🥑',cat:'veg',name:{en:'Avocado lime smash',de:'Avocado-Limetten-Creme',fr:'Écrasé avocat-citron vert',es:'Aguacate con lima'}},
+  {id:'roasted-chickpea',emoji:'🌰',cat:'veg',name:{en:'Crunchy roasted chickpeas',de:'Knusprige Kichererbsen',fr:'Pois chiches croustillants',es:'Garbanzos crujientes'}},
+  // ── Fruit (creative, lunchbox-smart) ──
+  {id:'cinnamon-apple',emoji:'🍎',cat:'fruit',name:{en:'Cinnamon baked apple',de:'Gebackener Zimt-Apfel',fr:'Pomme au four à la cannelle',es:'Manzana al horno con canela'}},
+  {id:'apple-nutbutter',emoji:'🍏',cat:'fruit',name:{en:'Apple & nut-butter rings',de:'Apfel-Nussmus-Ringe',fr:'Anneaux pomme & beurre de noix',es:'Aros de manzana con crema'}},
+  {id:'fruit-skewer',emoji:'🍢',cat:'fruit',name:{en:'Rainbow fruit skewers',de:'Regenbogen-Obstspieße',fr:'Brochettes de fruits',es:'Brochetas de fruta arcoíris'}},
+  {id:'frozen-yogurt-bites',emoji:'❄️',cat:'fruit',name:{en:'Frozen yogurt-berry bites',de:'Gefrorene Joghurt-Beeren-Bites',fr:'Bouchées yaourt-baies glacées',es:'Bocados helados de yogur'}},
+  {id:'melon-stars',emoji:'⭐',cat:'fruit',name:{en:'Melon stars',de:'Melonen-Sterne',fr:'Étoiles de melon',es:'Estrellas de melón'}},
+  {id:'berry-salad',emoji:'🍓',cat:'fruit',name:{en:'Berry & mint salad',de:'Beeren-Minz-Salat',fr:'Salade de baies à la menthe',es:'Ensalada de bayas y menta'}},
+  {id:'banana-sushi',emoji:'🍌',cat:'fruit',name:{en:'Banana-oat sushi',de:'Bananen-Hafer-Sushi',fr:'Sushi banane-avoine',es:'Sushi de plátano y avena'}},
+  {id:'grape-cheese-skewer',emoji:'🍇',cat:'fruit',name:{en:'Grape & cheese skewers',de:'Trauben-Käse-Spieße',fr:'Brochettes raisin-fromage',es:'Brochetas de uva y queso'}},
+  {id:'mango-melon-balls',emoji:'🍈',cat:'fruit',name:{en:'Mango & melon balls',de:'Mango-Melonen-Kugeln',fr:'Billes de mangue et melon',es:'Bolitas de mango y melón'}},
+  {id:'baked-pear',emoji:'🍐',cat:'fruit',name:{en:'Baked cinnamon pear',de:'Gebackene Zimt-Birne',fr:'Poire au four à la cannelle',es:'Pera al horno con canela'}},
   // ── Dip & treat (centre well) ──
-  {id:'hummus',emoji:'🥣',cat:'dip',name:{en:'Hummus dip',de:'Hummus-Dip',fr:'Houmous',es:'Humus'}},
-  {id:'guacamole',emoji:'🥑',cat:'dip',name:{en:'Guacamole',de:'Guacamole',fr:'Guacamole',es:'Guacamole'}},
+  {id:'hummus',emoji:'🥣',cat:'dip',name:{en:'Creamy hummus',de:'Cremiger Hummus',fr:'Houmous crémeux',es:'Humus cremoso'}},
+  {id:'guacamole',emoji:'🥑',cat:'dip',name:{en:'Mild guacamole',de:'Milde Guacamole',fr:'Guacamole doux',es:'Guacamole suave'}},
   {id:'yogurt-honey',emoji:'🍯',cat:'dip',name:{en:'Yogurt-honey dip',de:'Joghurt-Honig-Dip',fr:'Sauce yaourt-miel',es:'Salsa de yogur y miel'}},
-  {id:'nut-butter',emoji:'🥜',cat:'dip',name:{en:'Nut butter',de:'Nussmus',fr:'Beurre de noix',es:'Crema de frutos secos'}},
-  {id:'dark-choc',emoji:'🍫',cat:'dip',name:{en:'Dark choc buttons',de:'Zartbitter-Drops',fr:'Pépites chocolat noir',es:'Gotas de chocolate negro'}},
-  {id:'granola',emoji:'🥣',cat:'dip',name:{en:'Granola clusters',de:'Granola',fr:'Granola',es:'Granola'}},
-  {id:'seed-cracker',emoji:'🍘',cat:'dip',name:{en:'Seed crackers',de:'Saatencracker',fr:'Crackers aux graines',es:'Crackers de semillas'}},
-  {id:'applesauce',emoji:'🍎',cat:'dip',name:{en:'Apple sauce',de:'Apfelmus',fr:'Compote de pomme',es:'Puré de manzana'}},
-  {id:'raisins',emoji:'🍇',cat:'dip',name:{en:'Raisins',de:'Rosinen',fr:'Raisins secs',es:'Pasas'}},
+  {id:'nut-butter',emoji:'🥜',cat:'dip',name:{en:'Nut or seed butter',de:'Nuss- oder Saatenmus',fr:'Beurre de noix ou graines',es:'Crema de frutos secos'}},
+  {id:'choc-clusters',emoji:'🍫',cat:'dip',name:{en:'Dark choc oat clusters',de:'Zartbitter-Hafer-Cluster',fr:'Clusters choco-avoine',es:'Clusters de chocolate y avena'}},
+  {id:'granola',emoji:'🥣',cat:'dip',name:{en:'Granola clusters',de:'Granola-Cluster',fr:'Clusters de granola',es:'Clusters de granola'}},
+  {id:'energy-bites',emoji:'⚡',cat:'dip',name:{en:'Date-oat energy bites',de:'Dattel-Hafer-Energiebällchen',fr:'Billes énergie datte-avoine',es:'Bolitas energéticas de dátil'}},
+  {id:'apple-cinnamon-sauce',emoji:'🍎',cat:'dip',name:{en:'Apple-cinnamon sauce',de:'Apfel-Zimt-Mus',fr:'Compote pomme-cannelle',es:'Puré de manzana y canela'}},
+  {id:'trail-mix',emoji:'🥜',cat:'dip',name:{en:'Fruit & seed trail mix',de:'Obst-Saaten-Studentenfutter',fr:'Mélange fruits & graines',es:'Mezcla de frutas y semillas'}},
 ];
 function bentoL(o){return (o&&(o[lang]||o.en))||'';}
 function bentoFood(id){for(const f of BENTO_FOODS)if(f.id===id)return f;return null;}
@@ -5667,11 +5677,14 @@ function bentoTrayHTML(key){
       ?`<button class="bento-x" onclick="event.stopPropagation();bentoClearSlot('${key}','${slot.id}')">✕</button><div class="bento-emoji">${food.emoji}</div><div class="bento-food-name">${bentoL(food.name)}</div>`
       :`<div class="bento-empty"><div class="plus">＋</div><div class="role">${t(slot.roleKey)}</div></div>`;
     const cls=isWell?`bento-well ${food?'filled':''}`:`bento-cell ${slot.cls} ${food?'filled':''}`;
-    return`<div class="${cls}" onclick="openBentoPick('${key}','${slot.id}')">${inner}</div>`;
+    const tap=food?`openBentoRecipe('${key}','${slot.id}')`:`openBentoPick('${key}','${slot.id}')`;
+    return`<div class="${cls}" onclick="${tap}">${inner}</div>`;
   }).join('');
   return`<div class="bento-tray">${cells}</div>`;
 }
-function bentoActivateDay(key){if(!state.bentoDays)state.bentoDays={};state.bentoDays[key]=true;save();renderBentoKids();}
+// Activating a day fills the whole box with a balanced surprise selection;
+// the child can then swap individual compartments by tapping → swipe.
+function bentoActivateDay(key){bentoSurprise(key);}
 function bentoRemoveDay(key){if(state.bentoDays)delete state.bentoDays[key];if(state.bentoPlan)delete state.bentoPlan[key];save();renderBentoKids();}
 function bentoClearSlot(key,slotId){if(state.bentoPlan&&state.bentoPlan[key]){delete state.bentoPlan[key][slotId];save();renderBentoKids();}}
 function bentoSurprise(key){
@@ -5746,6 +5759,78 @@ function bindBentoSwipe(){
   card.addEventListener('mousedown',down);card.addEventListener('touchstart',down,{passive:true});
   card.addEventListener('mousemove',move);card.addEventListener('touchmove',move,{passive:true});
   card.addEventListener('mouseup',up);card.addEventListener('mouseleave',up);card.addEventListener('touchend',up);
+}
+
+// ── Bento recipe detail (Ingredients / Preparation / Macros — same look as Plan tab) ──
+let _bentoRd={foodId:null,key:null,slot:null,tab:'ing'};
+function bentoRecipe(id){return (typeof BENTO_RECIPES!=='undefined'&&BENTO_RECIPES[id])||null;}
+function openBentoRecipe(key,slotId){
+  const id=state.bentoPlan&&state.bentoPlan[key]&&state.bentoPlan[key][slotId];
+  if(!id)return openBentoPick(key,slotId);
+  _bentoRd={foodId:id,key,slot:slotId,tab:'ing'};
+  renderBentoRecipe();
+  document.getElementById('bento-recipe-bg').classList.add('open');
+}
+function closeBentoRecipe(){const bg=document.getElementById('bento-recipe-bg');if(bg)bg.classList.remove('open');}
+function setBentoRecipeTab(name){
+  _bentoRd.tab=name;
+  document.querySelectorAll('#bento-recipe-body .rd-tab').forEach(b=>b.classList.toggle('active',b.dataset.pane===name));
+  document.querySelectorAll('#bento-recipe-body .rd-tabpane').forEach(p=>p.classList.toggle('active',p.dataset.pane===name));
+}
+function bentoSwapCurrent(){const{key,slot}=_bentoRd;closeBentoRecipe();openBentoPick(key,slot);}
+function renderBentoRecipe(){
+  const body=document.getElementById('bento-recipe-body');if(!body)return;
+  const food=bentoFood(_bentoRd.foodId);if(!food)return;
+  const rec=bentoRecipe(_bentoRd.foodId);
+  const cat=BENTO_CATS.find(c=>c.id===food.cat);
+  const _at=_bentoRd.tab;
+  const ings=rec?(rec.ings&&(rec.ings[lang]||rec.ings.en))||[]:[];
+  const steps=rec?(rec.steps&&(rec.steps[lang]||rec.steps.en))||[]:[];
+  const tip=rec&&rec.tip?(rec.tip[lang]||rec.tip.en):'';
+  const n=rec&&rec.nutrition;
+  const ingGrid=ings.length?`<div class="rd-ing-grid">${ings.map(ing=>`<div class="rd-ing-item"><span class="rd-ing-emoji">${ing.emoji||'•'}</span><div class="rd-ing-mid"><div class="rd-ing-name">${ing.name||''}</div><div class="rd-ing-amt">${ing.amount||''}</div></div></div>`).join('')}</div>`:`<div style="color:var(--text3);padding:20px 16px">${t('bentoNoRecipe')}</div>`;
+  const stepsHtml=steps.length?steps.map((s,i)=>`<div class="rd-step-card"><div class="rd-step-hdr"><div class="rd-step-num">${i+1}</div><div class="rd-step-title">${s.title||''}</div></div><div class="rd-step-body"><div class="rd-step-txt">${s.text||''}</div></div></div>`).join(''):`<div style="color:var(--text3);padding:20px 16px">${t('bentoNoRecipe')}</div>`;
+  // Macro ring (visual reference ~20g protein) + carb/fat/fibre bars — mirrors the Plan-tab macro tab
+  let macroHtml=`<div style="color:var(--text3);padding:20px 16px">${t('bentoNoRecipe')}</div>`;
+  if(n){
+    const col='#2D5A3D',RR=42,RC=263.89;
+    const ringPct=Math.min(100,Math.round((n.protein||0)/20*100));
+    const ringFill=+(ringPct/100*RC).toFixed(1);
+    const bar=(cls,val,label)=>`<div class="rd-nut-row"><span class="rd-nut-lbl">${label}</span><div class="rd-nut-track"><div class="rd-nut-fill ${cls}" style="width:${Math.min(90,Math.round((val||0)*3))}%"></div></div><span class="rd-nut-val">${val||0}g</span></div>`;
+    macroHtml=`<div class="rd-section"><div class="rd-section-title">${t('nutritionPer')}</div>
+      <div style="text-align:center;padding:8px 0 6px">
+        <div style="position:relative;width:110px;height:110px;margin:0 auto 8px;display:inline-block">
+          <svg width="110" height="110" viewBox="0 0 110 110">
+            <circle cx="55" cy="55" r="${RR}" fill="none" stroke="var(--surface2)" stroke-width="9"/>
+            <circle cx="55" cy="55" r="${RR}" fill="none" stroke="${col}" stroke-width="9" stroke-dasharray="${ringFill} ${RC}" stroke-linecap="round" transform="rotate(-90 55 55)"/>
+          </svg>
+          <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none">
+            <div style="font-family:var(--fd);font-size:26px;font-weight:700;color:${col};line-height:1">${n.protein||0}g</div>
+            <div style="font-size:10px;color:var(--text3);margin-top:2px">${t('proteinWord')||'Protein'}</div>
+          </div>
+        </div>
+        <div style="font-size:11px;color:var(--text3)">${n.kcal||0} kcal</div>
+      </div>
+      <div class="rd-nut-v2">
+        ${bar('carbs',n.carbs,t('carbsWord'))}
+        ${bar('fat',n.fat,t('fatWord'))}
+        ${n.fiber?bar('carbs',n.fiber,t('fiberLbl')):''}
+      </div></div>`;
+  }
+  body.innerHTML=`<div class="bento-sheet-hd"><div class="bento-sheet-title">${cat?cat.emoji+' ':''}${bentoL(food.name)}</div><button class="bento-sheet-x" onclick="closeBentoRecipe()">✕</button></div>
+    <div class="bento-recipe-scroll">
+      <div class="bento-recipe-hero">${food.emoji}</div>
+      ${tip?`<div class="bento-tip"><span class="bento-tip-ic">🎒</span><div>${tip}</div></div>`:''}
+      <div class="rd-tabs">
+        <button class="rd-tab ${_at==='ing'?'active':''}" data-pane="ing" onclick="setBentoRecipeTab('ing')">${t('ingredients')}</button>
+        <button class="rd-tab ${_at==='prep'?'active':''}" data-pane="prep" onclick="setBentoRecipeTab('prep')">${t('tabPrep')}</button>
+        <button class="rd-tab ${_at==='macro'?'active':''}" data-pane="macro" onclick="setBentoRecipeTab('macro')">${t('tabMacros')}</button>
+      </div>
+      <div class="rd-tabpane ${_at==='ing'?'active':''}" data-pane="ing">${ingGrid}</div>
+      <div class="rd-tabpane ${_at==='prep'?'active':''}" data-pane="prep">${stepsHtml}</div>
+      <div class="rd-tabpane ${_at==='macro'?'active':''}" data-pane="macro">${macroHtml}</div>
+      <button class="bento-swap-btn" onclick="bentoSwapCurrent()">🔄 ${t('bentoSwap')}</button>
+    </div>`;
 }
 
 function goToPlanDay(key){
