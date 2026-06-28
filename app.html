@@ -5620,6 +5620,761 @@ const BENTO_FOODS=[
   {id:'apple-cinnamon-sauce',emoji:'🍎',cat:'dip',name:{en:'Apple-cinnamon sauce',de:'Apfel-Zimt-Mus',fr:'Compote pomme-cannelle',es:'Puré de manzana y canela'}},
   {id:'trail-mix',emoji:'🥜',cat:'dip',name:{en:'Fruit & seed trail mix',de:'Obst-Saaten-Studentenfutter',fr:'Mélange fruits & graines',es:'Mezcla de frutas y semillas'}},
 ];
+// Recipe data for the 47 bento foods (macros, ingredients, steps, lunchbox tip — localized)
+const BENTO_RECIPES = {
+  "dino-burger": {
+    nutrition: { kcal: 180, protein: 8, carbs: 24, fat: 5, fiber: 5 },
+    ings: {
+      en: [ { emoji:"🥬", name:"Spinach", amount:"1 handful" }, { emoji:"🫛", name:"Peas", amount:"3 tbsp" }, { emoji:"🌾", name:"Oats", amount:"3 tbsp" }, { emoji:"🍚", name:"Cooked quinoa", amount:"3 tbsp" } ],
+      de: [ { emoji:"🥬", name:"Spinat", amount:"1 Handvoll" }, { emoji:"🫛", name:"Erbsen", amount:"3 EL" }, { emoji:"🌾", name:"Haferflocken", amount:"3 EL" }, { emoji:"🍚", name:"Gekochte Quinoa", amount:"3 EL" } ],
+      fr: [ { emoji:"🥬", name:"Épinards", amount:"1 poignée" }, { emoji:"🫛", name:"Petits pois", amount:"3 c. à soupe" }, { emoji:"🌾", name:"Flocons d'avoine", amount:"3 c. à soupe" }, { emoji:"🍚", name:"Quinoa cuit", amount:"3 c. à soupe" } ],
+      es: [ { emoji:"🥬", name:"Espinacas", amount:"1 puñado" }, { emoji:"🫛", name:"Guisantes", amount:"3 cdas" }, { emoji:"🌾", name:"Avena", amount:"3 cdas" }, { emoji:"🍚", name:"Quinoa cocida", amount:"3 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Blend", text:"Blitz spinach, peas, oats and quinoa into a green dough." }, { title:"Shape", text:"Press into little dino-shaped patties." }, { title:"Bake", text:"Bake 20 min at 200°C until firm and golden." } ],
+      de: [ { title:"Mixen", text:"Spinat, Erbsen, Hafer und Quinoa zu grünem Teig pürieren." }, { title:"Formen", text:"Zu kleinen Dino-Buletten drücken." }, { title:"Backen", text:"20 Min bei 200°C backen, bis fest und goldbraun." } ],
+      fr: [ { title:"Mixer", text:"Mixez épinards, pois, avoine et quinoa en pâte verte." }, { title:"Former", text:"Façonnez de petites galettes en forme de dino." }, { title:"Cuire", text:"Cuire 20 min à 200°C jusqu'à doré." } ],
+      es: [ { title:"Triturar", text:"Tritura espinacas, guisantes, avena y quinoa en masa verde." }, { title:"Formar", text:"Haz pequeñas hamburguesas con forma de dino." }, { title:"Hornear", text:"Hornea 20 min a 200°C hasta dorar." } ]
+    },
+    tip: { en:"Cool fully before packing so patties stay firm and don't crumble.", de:"Vor dem Einpacken auskühlen lassen, damit die Buletten fest bleiben.", fr:"Laissez refroidir avant d'emballer pour qu'elles restent fermes.", es:"Enfría bien antes de empacar para que no se desmoronen." }
+  },
+  "spinach-waffle": {
+    nutrition: { kcal: 210, protein: 9, carbs: 26, fat: 8, fiber: 3 },
+    ings: {
+      en: [ { emoji:"🥬", name:"Spinach", amount:"1 handful" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Flour", amount:"4 tbsp" }, { emoji:"🥛", name:"Milk", amount:"3 tbsp" } ],
+      de: [ { emoji:"🥬", name:"Spinat", amount:"1 Handvoll" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Mehl", amount:"4 EL" }, { emoji:"🥛", name:"Milch", amount:"3 EL" } ],
+      fr: [ { emoji:"🥬", name:"Épinards", amount:"1 poignée" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Farine", amount:"4 c. à soupe" }, { emoji:"🥛", name:"Lait", amount:"3 c. à soupe" } ],
+      es: [ { emoji:"🥬", name:"Espinacas", amount:"1 puñado" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Harina", amount:"4 cdas" }, { emoji:"🥛", name:"Leche", amount:"3 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Blend", text:"Blend spinach with egg and milk until green." }, { title:"Mix", text:"Stir in flour to make a batter." }, { title:"Cook", text:"Cook in a waffle iron until crisp." } ],
+      de: [ { title:"Mixen", text:"Spinat mit Ei und Milch grün pürieren." }, { title:"Rühren", text:"Mehl einrühren, bis ein Teig entsteht." }, { title:"Backen", text:"Im Waffeleisen knusprig backen." } ],
+      fr: [ { title:"Mixer", text:"Mixez épinards, œuf et lait jusqu'au vert." }, { title:"Mélanger", text:"Incorporez la farine pour une pâte." }, { title:"Cuire", text:"Cuire au gaufrier jusqu'à croustillant." } ],
+      es: [ { title:"Triturar", text:"Tritura espinacas con huevo y leche." }, { title:"Mezclar", text:"Añade harina para hacer masa." }, { title:"Cocinar", text:"Cocina en gofrera hasta crujiente." } ]
+    },
+    tip: { en:"Pack cooled and flat; waffles travel well and stay tasty at room temp.", de:"Abgekühlt und flach einpacken; Waffeln bleiben bei Zimmertemperatur lecker.", fr:"Emballez refroidi et à plat; les gaufres voyagent bien.", es:"Empaca frías y planas; los gofres aguantan bien." }
+  },
+  "veggie-pinwheel": {
+    nutrition: { kcal: 200, protein: 6, carbs: 26, fat: 8, fiber: 2 },
+    ings: {
+      en: [ { emoji:"🫓", name:"Tortilla", amount:"1" }, { emoji:"🧀", name:"Cream cheese", amount:"2 tbsp" }, { emoji:"🥕", name:"Grated carrot", amount:"2 tbsp" }, { emoji:"🥒", name:"Grated cucumber", amount:"2 tbsp" } ],
+      de: [ { emoji:"🫓", name:"Tortilla", amount:"1" }, { emoji:"🧀", name:"Frischkäse", amount:"2 EL" }, { emoji:"🥕", name:"Geraspelte Karotte", amount:"2 EL" }, { emoji:"🥒", name:"Geraspelte Gurke", amount:"2 EL" } ],
+      fr: [ { emoji:"🫓", name:"Tortilla", amount:"1" }, { emoji:"🧀", name:"Fromage frais", amount:"2 c. à soupe" }, { emoji:"🥕", name:"Carotte râpée", amount:"2 c. à soupe" }, { emoji:"🥒", name:"Concombre râpé", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🫓", name:"Tortilla", amount:"1" }, { emoji:"🧀", name:"Queso crema", amount:"2 cdas" }, { emoji:"🥕", name:"Zanahoria rallada", amount:"2 cdas" }, { emoji:"🥒", name:"Pepino rallado", amount:"2 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Spread", text:"Spread cream cheese over the tortilla." }, { title:"Top", text:"Sprinkle grated carrot and cucumber on top." }, { title:"Roll", text:"Roll up tightly and slice into pinwheels." } ],
+      de: [ { title:"Streichen", text:"Frischkäse auf die Tortilla streichen." }, { title:"Belegen", text:"Karotte und Gurke darüber streuen." }, { title:"Rollen", text:"Fest aufrollen und in Schnecken schneiden." } ],
+      fr: [ { title:"Tartiner", text:"Étalez le fromage frais sur la tortilla." }, { title:"Garnir", text:"Parsemez de carotte et concombre râpés." }, { title:"Rouler", text:"Roulez serré et coupez en spirales." } ],
+      es: [ { title:"Untar", text:"Unta queso crema en la tortilla." }, { title:"Cubrir", text:"Reparte zanahoria y pepino rallados." }, { title:"Enrollar", text:"Enrolla apretado y corta en espirales." } ]
+    },
+    tip: { en:"Pat grated cucumber dry first so pinwheels don't go soggy.", de:"Gurke vorher trocken tupfen, damit die Schnecken nicht matschig werden.", fr:"Séchez le concombre râpé pour éviter les spirales détrempées.", es:"Seca el pepino rallado para que no queden blandas." }
+  },
+  "sweet-potato-pancake": {
+    nutrition: { kcal: 170, protein: 5, carbs: 28, fat: 4, fiber: 4 },
+    ings: {
+      en: [ { emoji:"🍠", name:"Grated sweet potato", amount:"1 cup" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Flour", amount:"2 tbsp" } ],
+      de: [ { emoji:"🍠", name:"Geraspelte Süßkartoffel", amount:"1 Tasse" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Mehl", amount:"2 EL" } ],
+      fr: [ { emoji:"🍠", name:"Patate douce râpée", amount:"1 tasse" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Farine", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🍠", name:"Boniato rallado", amount:"1 taza" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Harina", amount:"2 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Mix", text:"Stir grated sweet potato with egg and flour." }, { title:"Fry", text:"Cook small spoonfuls in a pan until golden both sides." } ],
+      de: [ { title:"Mischen", text:"Süßkartoffel mit Ei und Mehl verrühren." }, { title:"Braten", text:"Kleine Häufchen in der Pfanne goldbraun braten." } ],
+      fr: [ { title:"Mélanger", text:"Mélangez patate douce, œuf et farine." }, { title:"Cuire", text:"Faites cuire de petites cuillerées des deux côtés." } ],
+      es: [ { title:"Mezclar", text:"Mezcla boniato con huevo y harina." }, { title:"Freír", text:"Cocina cucharadas hasta dorar ambos lados." } ]
+    },
+    tip: { en:"Cool and stack with parchment so they don't stick together.", de:"Auskühlen lassen und mit Backpapier stapeln, damit sie nicht kleben.", fr:"Refroidir et empiler avec du papier cuisson pour éviter qu'ils collent.", es:"Enfría y apila con papel para que no se peguen." }
+  },
+  "rice-balls": {
+    nutrition: { kcal: 190, protein: 4, carbs: 38, fat: 2, fiber: 2 },
+    ings: {
+      en: [ { emoji:"🍚", name:"Cooked sushi rice", amount:"1 cup" }, { emoji:"🥕", name:"Diced carrot", amount:"2 tbsp" }, { emoji:"🫛", name:"Peas", amount:"2 tbsp" }, { emoji:"🌿", name:"Nori strip", amount:"1" } ],
+      de: [ { emoji:"🍚", name:"Gekochter Sushireis", amount:"1 Tasse" }, { emoji:"🥕", name:"Karottenwürfel", amount:"2 EL" }, { emoji:"🫛", name:"Erbsen", amount:"2 EL" }, { emoji:"🌿", name:"Nori-Streifen", amount:"1" } ],
+      fr: [ { emoji:"🍚", name:"Riz à sushi cuit", amount:"1 tasse" }, { emoji:"🥕", name:"Carotte en dés", amount:"2 c. à soupe" }, { emoji:"🫛", name:"Petits pois", amount:"2 c. à soupe" }, { emoji:"🌿", name:"Bande de nori", amount:"1" } ],
+      es: [ { emoji:"🍚", name:"Arroz de sushi cocido", amount:"1 taza" }, { emoji:"🥕", name:"Zanahoria en dados", amount:"2 cdas" }, { emoji:"🫛", name:"Guisantes", amount:"2 cdas" }, { emoji:"🌿", name:"Tira de nori", amount:"1" } ]
+    },
+    steps: {
+      en: [ { title:"Mix", text:"Stir carrot and peas into the warm rice." }, { title:"Shape", text:"Wet hands and press into small balls or triangles." }, { title:"Wrap", text:"Add a little nori strip for a belt." } ],
+      de: [ { title:"Mischen", text:"Karotte und Erbsen unter den warmen Reis rühren." }, { title:"Formen", text:"Mit nassen Händen zu Bällchen oder Dreiecken drücken." }, { title:"Umwickeln", text:"Mit einem Nori-Streifen als Gürtel umwickeln." } ],
+      fr: [ { title:"Mélanger", text:"Mélangez carotte et pois au riz chaud." }, { title:"Former", text:"Mains mouillées, formez des boules ou triangles." }, { title:"Habiller", text:"Ajoutez une bande de nori en ceinture." } ],
+      es: [ { title:"Mezclar", text:"Mezcla zanahoria y guisantes en el arroz tibio." }, { title:"Formar", text:"Con manos húmedas haz bolas o triángulos." }, { title:"Envolver", text:"Pon una tira de nori como cinturón." } ]
+    },
+    tip: { en:"Press rice firmly so balls hold shape during the journey.", de:"Reis fest drücken, damit die Bällchen unterwegs halten.", fr:"Pressez bien le riz pour que les boules tiennent.", es:"Presiona bien el arroz para que aguanten el viaje." }
+  },
+  "frittata-muffin": {
+    nutrition: { kcal: 120, protein: 8, carbs: 4, fat: 8, fiber: 1 },
+    ings: {
+      en: [ { emoji:"🥚", name:"Eggs", amount:"2" }, { emoji:"🌽", name:"Sweetcorn", amount:"2 tbsp" }, { emoji:"🫑", name:"Diced pepper", amount:"2 tbsp" }, { emoji:"🧀", name:"Grated cheese", amount:"2 tbsp" } ],
+      de: [ { emoji:"🥚", name:"Eier", amount:"2" }, { emoji:"🌽", name:"Mais", amount:"2 EL" }, { emoji:"🫑", name:"Paprikawürfel", amount:"2 EL" }, { emoji:"🧀", name:"Geriebener Käse", amount:"2 EL" } ],
+      fr: [ { emoji:"🥚", name:"Œufs", amount:"2" }, { emoji:"🌽", name:"Maïs", amount:"2 c. à soupe" }, { emoji:"🫑", name:"Poivron en dés", amount:"2 c. à soupe" }, { emoji:"🧀", name:"Fromage râpé", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🥚", name:"Huevos", amount:"2" }, { emoji:"🌽", name:"Maíz", amount:"2 cdas" }, { emoji:"🫑", name:"Pimiento en dados", amount:"2 cdas" }, { emoji:"🧀", name:"Queso rallado", amount:"2 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Whisk", text:"Beat eggs and stir in corn, pepper and cheese." }, { title:"Fill", text:"Pour into a muffin tin." }, { title:"Bake", text:"Bake 18 min at 180°C until set." } ],
+      de: [ { title:"Verquirlen", text:"Eier verquirlen, Mais, Paprika und Käse einrühren." }, { title:"Füllen", text:"In ein Muffinblech gießen." }, { title:"Backen", text:"18 Min bei 180°C backen, bis fest." } ],
+      fr: [ { title:"Battre", text:"Battez les œufs, ajoutez maïs, poivron et fromage." }, { title:"Remplir", text:"Versez dans un moule à muffins." }, { title:"Cuire", text:"Cuire 18 min à 180°C jusqu'à prise." } ],
+      es: [ { title:"Batir", text:"Bate huevos y añade maíz, pimiento y queso." }, { title:"Rellenar", text:"Vierte en molde de muffins." }, { title:"Hornear", text:"Hornea 18 min a 180°C hasta cuajar." } ]
+    },
+    tip: { en:"Fully cool before packing; great cold and won't leak.", de:"Vor dem Einpacken auskühlen; schmecken kalt und laufen nicht aus.", fr:"Refroidir avant d'emballer; bons froids et sans fuite.", es:"Enfría antes de empacar; ricos fríos y sin gotear." }
+  },
+  "banana-oat-pancake": {
+    nutrition: { kcal: 160, protein: 6, carbs: 26, fat: 3, fiber: 3 },
+    ings: {
+      en: [ { emoji:"🍌", name:"Banana", amount:"1" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Oats", amount:"3 tbsp" } ],
+      de: [ { emoji:"🍌", name:"Banane", amount:"1" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Haferflocken", amount:"3 EL" } ],
+      fr: [ { emoji:"🍌", name:"Banane", amount:"1" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Flocons d'avoine", amount:"3 c. à soupe" } ],
+      es: [ { emoji:"🍌", name:"Plátano", amount:"1" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Avena", amount:"3 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Mash", text:"Mash banana and mix with egg and oats." }, { title:"Cook", text:"Fry small pancakes until golden." } ],
+      de: [ { title:"Zerdrücken", text:"Banane zerdrücken, mit Ei und Hafer mischen." }, { title:"Braten", text:"Kleine Pfannkuchen goldbraun braten." } ],
+      fr: [ { title:"Écraser", text:"Écrasez la banane, mélangez œuf et avoine." }, { title:"Cuire", text:"Faites cuire de petites crêpes dorées." } ],
+      es: [ { title:"Aplastar", text:"Aplasta el plátano y mezcla con huevo y avena." }, { title:"Cocinar", text:"Cocina pequeñas tortitas hasta dorar." } ]
+    },
+    tip: { en:"Cool before packing so they stay fluffy and not gummy.", de:"Vor dem Einpacken auskühlen, damit sie locker bleiben.", fr:"Refroidir avant d'emballer pour qu'elles restent moelleuses.", es:"Enfría antes de empacar para que queden esponjosas." }
+  },
+  "pita-pocket": {
+    nutrition: { kcal: 220, protein: 8, carbs: 32, fat: 7, fiber: 5 },
+    ings: {
+      en: [ { emoji:"🫓", name:"Mini wholemeal pita", amount:"1" }, { emoji:"🫘", name:"Hummus", amount:"3 tbsp" }, { emoji:"🥒", name:"Cucumber sticks", amount:"4" }, { emoji:"🥕", name:"Carrot sticks", amount:"4" } ],
+      de: [ { emoji:"🫓", name:"Mini-Vollkornpita", amount:"1" }, { emoji:"🫘", name:"Hummus", amount:"3 EL" }, { emoji:"🥒", name:"Gurkensticks", amount:"4" }, { emoji:"🥕", name:"Karottensticks", amount:"4" } ],
+      fr: [ { emoji:"🫓", name:"Mini pita complète", amount:"1" }, { emoji:"🫘", name:"Houmous", amount:"3 c. à soupe" }, { emoji:"🥒", name:"Bâtonnets de concombre", amount:"4" }, { emoji:"🥕", name:"Bâtonnets de carotte", amount:"4" } ],
+      es: [ { emoji:"🫓", name:"Mini pita integral", amount:"1" }, { emoji:"🫘", name:"Hummus", amount:"3 cdas" }, { emoji:"🥒", name:"Bastones de pepino", amount:"4" }, { emoji:"🥕", name:"Bastones de zanahoria", amount:"4" } ]
+    },
+    steps: {
+      en: [ { title:"Open", text:"Cut the pita to make a pocket." }, { title:"Fill", text:"Spread hummus inside and tuck in veg sticks." } ],
+      de: [ { title:"Öffnen", text:"Die Pita zu einer Tasche aufschneiden." }, { title:"Füllen", text:"Hummus hineinstreichen und Gemüsesticks einstecken." } ],
+      fr: [ { title:"Ouvrir", text:"Coupez la pita pour faire une poche." }, { title:"Remplir", text:"Tartinez le houmous et glissez les bâtonnets." } ],
+      es: [ { title:"Abrir", text:"Corta la pita para hacer un bolsillo." }, { title:"Rellenar", text:"Unta hummus y mete los bastones de verdura." } ]
+    },
+    tip: { en:"Pat veg sticks dry before filling so the pita stays soft, not soggy.", de:"Gemüsesticks trocken tupfen, damit die Pita nicht durchweicht.", fr:"Séchez les bâtonnets pour que la pita reste moelleuse.", es:"Seca las verduras para que la pita no se ablande." }
+  },
+  "corn-fritter": {
+    nutrition: { kcal: 150, protein: 5, carbs: 20, fat: 5, fiber: 2 },
+    ings: {
+      en: [ { emoji:"🌽", name:"Sweetcorn", amount:"1/2 cup" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Flour", amount:"3 tbsp" } ],
+      de: [ { emoji:"🌽", name:"Mais", amount:"1/2 Tasse" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Mehl", amount:"3 EL" } ],
+      fr: [ { emoji:"🌽", name:"Maïs", amount:"1/2 tasse" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Farine", amount:"3 c. à soupe" } ],
+      es: [ { emoji:"🌽", name:"Maíz", amount:"1/2 taza" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Harina", amount:"3 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Mix", text:"Stir corn with egg and flour into a thick batter." }, { title:"Fry", text:"Cook small fritters until golden both sides." } ],
+      de: [ { title:"Mischen", text:"Mais mit Ei und Mehl zu dickem Teig rühren." }, { title:"Braten", text:"Kleine Puffer beidseitig goldbraun braten." } ],
+      fr: [ { title:"Mélanger", text:"Mélangez maïs, œuf et farine en pâte épaisse." }, { title:"Cuire", text:"Faites cuire de petits beignets dorés." } ],
+      es: [ { title:"Mezclar", text:"Mezcla maíz, huevo y harina en masa espesa." }, { title:"Freír", text:"Cocina buñuelos hasta dorar ambos lados." } ]
+    },
+    tip: { en:"Drain on paper and cool so they stay crisp, not oily.", de:"Auf Papier abtropfen und auskühlen lassen für knusprig statt ölig.", fr:"Égouttez sur papier et refroidir pour rester croustillants.", es:"Escurre en papel y enfría para que queden crujientes." }
+  },
+  "stuffed-tomato": {
+    nutrition: { kcal: 140, protein: 5, carbs: 18, fat: 6, fiber: 2 },
+    ings: {
+      en: [ { emoji:"🍅", name:"Tomato", amount:"1" }, { emoji:"🍚", name:"Cooked rice", amount:"3 tbsp" }, { emoji:"🧀", name:"Feta", amount:"1 tbsp" }, { emoji:"🍇", name:"Raisins", amount:"1 tsp" }, { emoji:"🥄", name:"Cinnamon", amount:"1 pinch" } ],
+      de: [ { emoji:"🍅", name:"Tomate", amount:"1" }, { emoji:"🍚", name:"Gekochter Reis", amount:"3 EL" }, { emoji:"🧀", name:"Feta", amount:"1 EL" }, { emoji:"🍇", name:"Rosinen", amount:"1 TL" }, { emoji:"🥄", name:"Zimt", amount:"1 Prise" } ],
+      fr: [ { emoji:"🍅", name:"Tomate", amount:"1" }, { emoji:"🍚", name:"Riz cuit", amount:"3 c. à soupe" }, { emoji:"🧀", name:"Feta", amount:"1 c. à soupe" }, { emoji:"🍇", name:"Raisins secs", amount:"1 c. à café" }, { emoji:"🥄", name:"Cannelle", amount:"1 pincée" } ],
+      es: [ { emoji:"🍅", name:"Tomate", amount:"1" }, { emoji:"🍚", name:"Arroz cocido", amount:"3 cdas" }, { emoji:"🧀", name:"Feta", amount:"1 cda" }, { emoji:"🍇", name:"Pasas", amount:"1 cdta" }, { emoji:"🥄", name:"Canela", amount:"1 pizca" } ]
+    },
+    steps: {
+      en: [ { title:"Scoop", text:"Hollow out the tomato." }, { title:"Stuff", text:"Mix rice, feta, raisins and cinnamon, then fill the tomato." }, { title:"Bake", text:"Bake 20 min at 180°C." } ],
+      de: [ { title:"Aushöhlen", text:"Die Tomate aushöhlen." }, { title:"Füllen", text:"Reis, Feta, Rosinen und Zimt mischen und einfüllen." }, { title:"Backen", text:"20 Min bei 180°C backen." } ],
+      fr: [ { title:"Évider", text:"Évidez la tomate." }, { title:"Farcir", text:"Mélangez riz, feta, raisins, cannelle et garnissez." }, { title:"Cuire", text:"Cuire 20 min à 180°C." } ],
+      es: [ { title:"Vaciar", text:"Vacía el tomate." }, { title:"Rellenar", text:"Mezcla arroz, feta, pasas y canela y rellena." }, { title:"Hornear", text:"Hornea 20 min a 180°C." } ]
+    },
+    tip: { en:"Cool fully and pack upright so the filling stays put.", de:"Auskühlen und aufrecht einpacken, damit die Füllung hält.", fr:"Refroidir et emballer debout pour garder la farce en place.", es:"Enfría y empaca de pie para que no se salga el relleno." }
+  },
+  "cheese-shapes": {
+    nutrition: { kcal: 110, protein: 7, carbs: 1, fat: 9, fiber: 0 },
+    ings: {
+      en: [ { emoji:"🧀", name:"Firm cheese slice", amount:"1 thick slice" } ],
+      de: [ { emoji:"🧀", name:"Feste Käsescheibe", amount:"1 dicke Scheibe" } ],
+      fr: [ { emoji:"🧀", name:"Tranche de fromage ferme", amount:"1 tranche épaisse" } ],
+      es: [ { emoji:"🧀", name:"Loncha de queso firme", amount:"1 loncha gruesa" } ]
+    },
+    steps: {
+      en: [ { title:"Cut", text:"Press cookie cutters into the cheese to make fun shapes." } ],
+      de: [ { title:"Ausstechen", text:"Mit Plätzchenformen lustige Käseformen ausstechen." } ],
+      fr: [ { title:"Découper", text:"Découpez des formes amusantes avec des emporte-pièces." } ],
+      es: [ { title:"Cortar", text:"Corta formas divertidas con moldes de galleta." } ]
+    },
+    tip: { en:"Keep cool with an ice pack; cheese softens in warm lunchboxes.", de:"Mit Kühlpack kühl halten; Käse wird in warmer Brotdose weich.", fr:"Gardez au frais avec un pain de glace; le fromage ramollit.", es:"Mantén frío con acumulador; el queso se ablanda con calor." }
+  },
+  "egg-shapes": {
+    nutrition: { kcal: 78, protein: 6, carbs: 1, fat: 5, fiber: 0 },
+    ings: {
+      en: [ { emoji:"🥚", name:"Egg", amount:"1" } ],
+      de: [ { emoji:"🥚", name:"Ei", amount:"1" } ],
+      fr: [ { emoji:"🥚", name:"Œuf", amount:"1" } ],
+      es: [ { emoji:"🥚", name:"Huevo", amount:"1" } ]
+    },
+    steps: {
+      en: [ { title:"Boil", text:"Hard-boil the egg for 9 minutes, then cool and peel." }, { title:"Shape", text:"Press into a fun egg mould or slice into rounds." } ],
+      de: [ { title:"Kochen", text:"Ei 9 Minuten hart kochen, abkühlen und schälen." }, { title:"Formen", text:"In eine lustige Eierform drücken oder in Scheiben schneiden." } ],
+      fr: [ { title:"Cuire", text:"Cuisez l'œuf dur 9 minutes, refroidir et écaler." }, { title:"Former", text:"Pressez dans un moule rigolo ou coupez en rondelles." } ],
+      es: [ { title:"Hervir", text:"Hierve el huevo 9 minutos, enfría y pela." }, { title:"Formar", text:"Mete en un molde divertido o corta en rodajas." } ]
+    },
+    tip: { en:"Pack peeled and dry; keep cool with an ice pack.", de:"Geschält und trocken einpacken; mit Kühlpack kühl halten.", fr:"Emballez écalé et sec; gardez au frais.", es:"Empaca pelado y seco; mantén frío con acumulador." }
+  },
+  "edamame": {
+    nutrition: { kcal: 100, protein: 9, carbs: 8, fat: 4, fiber: 4 },
+    ings: {
+      en: [ { emoji:"🫛", name:"Edamame pods", amount:"1/2 cup" }, { emoji:"🧂", name:"Salt", amount:"1 pinch" } ],
+      de: [ { emoji:"🫛", name:"Edamame-Schoten", amount:"1/2 Tasse" }, { emoji:"🧂", name:"Salz", amount:"1 Prise" } ],
+      fr: [ { emoji:"🫛", name:"Cosses d'édamame", amount:"1/2 tasse" }, { emoji:"🧂", name:"Sel", amount:"1 pincée" } ],
+      es: [ { emoji:"🫛", name:"Vainas de edamame", amount:"1/2 taza" }, { emoji:"🧂", name:"Sal", amount:"1 pizca" } ]
+    },
+    steps: {
+      en: [ { title:"Steam", text:"Steam edamame for 4 minutes." }, { title:"Season", text:"Drain, cool and sprinkle lightly with salt." } ],
+      de: [ { title:"Dämpfen", text:"Edamame 4 Minuten dämpfen." }, { title:"Würzen", text:"Abtropfen, abkühlen und leicht salzen." } ],
+      fr: [ { title:"Cuire", text:"Cuisez les édamames à la vapeur 4 minutes." }, { title:"Assaisonner", text:"Égouttez, refroidir et salez légèrement." } ],
+      es: [ { title:"Cocer", text:"Cuece el edamame al vapor 4 minutos." }, { title:"Sazonar", text:"Escurre, enfría y sala ligeramente." } ]
+    },
+    tip: { en:"Pack cooled and dry; kids love popping the beans out of the pods.", de:"Abgekühlt und trocken einpacken; Kinder lieben das Auspulen.", fr:"Emballez refroidi et sec; les enfants adorent les sortir des cosses.", es:"Empaca frío y seco; encanta sacar los granos de la vaina." }
+  },
+  "halloumi": {
+    nutrition: { kcal: 170, protein: 11, carbs: 2, fat: 13, fiber: 0 },
+    ings: {
+      en: [ { emoji:"🧀", name:"Halloumi", amount:"60 g" }, { emoji:"🫒", name:"Olive oil", amount:"1 tsp" } ],
+      de: [ { emoji:"🧀", name:"Halloumi", amount:"60 g" }, { emoji:"🫒", name:"Olivenöl", amount:"1 TL" } ],
+      fr: [ { emoji:"🧀", name:"Halloumi", amount:"60 g" }, { emoji:"🫒", name:"Huile d'olive", amount:"1 c. à café" } ],
+      es: [ { emoji:"🧀", name:"Halloumi", amount:"60 g" }, { emoji:"🫒", name:"Aceite de oliva", amount:"1 cdta" } ]
+    },
+    steps: {
+      en: [ { title:"Cut", text:"Cut halloumi into small cubes." }, { title:"Fry", text:"Pan-fry in a little oil until golden." } ],
+      de: [ { title:"Schneiden", text:"Halloumi in kleine Würfel schneiden." }, { title:"Braten", text:"In etwas Öl goldbraun braten." } ],
+      fr: [ { title:"Couper", text:"Coupez le halloumi en petits cubes." }, { title:"Cuire", text:"Faites dorer à la poêle dans un peu d'huile." } ],
+      es: [ { title:"Cortar", text:"Corta el halloumi en cubos pequeños." }, { title:"Freír", text:"Dora en un poco de aceite." } ]
+    },
+    tip: { en:"Tastes great cooled; pat off excess oil before packing.", de:"Schmeckt auch kalt; überschüssiges Öl vor dem Einpacken abtupfen.", fr:"Bon froid aussi; épongez l'excès d'huile avant d'emballer.", es:"Rico también frío; quita el exceso de aceite antes de empacar." }
+  },
+  "white-bean-dip": {
+    nutrition: { kcal: 130, protein: 7, carbs: 18, fat: 3, fiber: 5 },
+    ings: {
+      en: [ { emoji:"🫘", name:"White beans", amount:"1/2 cup" }, { emoji:"🍋", name:"Lemon juice", amount:"1 tsp" }, { emoji:"🌿", name:"Fresh herbs", amount:"1 tbsp" }, { emoji:"🫒", name:"Olive oil", amount:"1 tsp" } ],
+      de: [ { emoji:"🫘", name:"Weiße Bohnen", amount:"1/2 Tasse" }, { emoji:"🍋", name:"Zitronensaft", amount:"1 TL" }, { emoji:"🌿", name:"Frische Kräuter", amount:"1 EL" }, { emoji:"🫒", name:"Olivenöl", amount:"1 TL" } ],
+      fr: [ { emoji:"🫘", name:"Haricots blancs", amount:"1/2 tasse" }, { emoji:"🍋", name:"Jus de citron", amount:"1 c. à café" }, { emoji:"🌿", name:"Herbes fraîches", amount:"1 c. à soupe" }, { emoji:"🫒", name:"Huile d'olive", amount:"1 c. à café" } ],
+      es: [ { emoji:"🫘", name:"Alubias blancas", amount:"1/2 taza" }, { emoji:"🍋", name:"Zumo de limón", amount:"1 cdta" }, { emoji:"🌿", name:"Hierbas frescas", amount:"1 cda" }, { emoji:"🫒", name:"Aceite de oliva", amount:"1 cdta" } ]
+    },
+    steps: {
+      en: [ { title:"Mash", text:"Mash beans with lemon and oil." }, { title:"Mix", text:"Stir in chopped herbs." } ],
+      de: [ { title:"Zerdrücken", text:"Bohnen mit Zitrone und Öl zerdrücken." }, { title:"Mischen", text:"Gehackte Kräuter unterrühren." } ],
+      fr: [ { title:"Écraser", text:"Écrasez les haricots avec citron et huile." }, { title:"Mélanger", text:"Incorporez les herbes hachées." } ],
+      es: [ { title:"Aplastar", text:"Aplasta las alubias con limón y aceite." }, { title:"Mezclar", text:"Añade las hierbas picadas." } ]
+    },
+    tip: { en:"Lemon keeps it fresh; pack in a small sealed pot.", de:"Zitrone hält es frisch; in einem kleinen Döschen einpacken.", fr:"Le citron le garde frais; emballez en petit pot fermé.", es:"El limón lo mantiene fresco; empaca en un bote cerrado." }
+  },
+  "cottage-fruit": {
+    nutrition: { kcal: 120, protein: 11, carbs: 12, fat: 3, fiber: 1 },
+    ings: {
+      en: [ { emoji:"🧀", name:"Cottage cheese", amount:"1/2 cup" }, { emoji:"🫐", name:"Blueberries", amount:"2 tbsp" }, { emoji:"🍓", name:"Strawberries", amount:"2" } ],
+      de: [ { emoji:"🧀", name:"Hüttenkäse", amount:"1/2 Tasse" }, { emoji:"🫐", name:"Heidelbeeren", amount:"2 EL" }, { emoji:"🍓", name:"Erdbeeren", amount:"2" } ],
+      fr: [ { emoji:"🧀", name:"Cottage cheese", amount:"1/2 tasse" }, { emoji:"🫐", name:"Myrtilles", amount:"2 c. à soupe" }, { emoji:"🍓", name:"Fraises", amount:"2" } ],
+      es: [ { emoji:"🧀", name:"Requesón", amount:"1/2 taza" }, { emoji:"🫐", name:"Arándanos", amount:"2 cdas" }, { emoji:"🍓", name:"Fresas", amount:"2" } ]
+    },
+    steps: {
+      en: [ { title:"Spoon", text:"Spoon cottage cheese into a small pot." }, { title:"Top", text:"Add berries on top." } ],
+      de: [ { title:"Füllen", text:"Hüttenkäse in ein Döschen füllen." }, { title:"Belegen", text:"Beeren darüber geben." } ],
+      fr: [ { title:"Verser", text:"Versez le cottage dans un petit pot." }, { title:"Garnir", text:"Ajoutez les fruits sur le dessus." } ],
+      es: [ { title:"Servir", text:"Pon el requesón en un bote." }, { title:"Cubrir", text:"Añade las frutas por encima." } ]
+    },
+    tip: { en:"Keep cool with an ice pack and pack berries dry on top.", de:"Mit Kühlpack kühl halten und Beeren trocken obenauf legen.", fr:"Gardez au frais et placez les fruits secs dessus.", es:"Mantén frío y pon las frutas secas encima." }
+  },
+  "falafel": {
+    nutrition: { kcal: 170, protein: 7, carbs: 20, fat: 7, fiber: 5 },
+    ings: {
+      en: [ { emoji:"🫘", name:"Chickpeas", amount:"1/2 cup" }, { emoji:"🧄", name:"Garlic", amount:"1 small clove" }, { emoji:"🌿", name:"Parsley", amount:"1 tbsp" }, { emoji:"🥄", name:"Cumin", amount:"1 pinch" } ],
+      de: [ { emoji:"🫘", name:"Kichererbsen", amount:"1/2 Tasse" }, { emoji:"🧄", name:"Knoblauch", amount:"1 kleine Zehe" }, { emoji:"🌿", name:"Petersilie", amount:"1 EL" }, { emoji:"🥄", name:"Kreuzkümmel", amount:"1 Prise" } ],
+      fr: [ { emoji:"🫘", name:"Pois chiches", amount:"1/2 tasse" }, { emoji:"🧄", name:"Ail", amount:"1 petite gousse" }, { emoji:"🌿", name:"Persil", amount:"1 c. à soupe" }, { emoji:"🥄", name:"Cumin", amount:"1 pincée" } ],
+      es: [ { emoji:"🫘", name:"Garbanzos", amount:"1/2 taza" }, { emoji:"🧄", name:"Ajo", amount:"1 diente pequeño" }, { emoji:"🌿", name:"Perejil", amount:"1 cda" }, { emoji:"🥄", name:"Comino", amount:"1 pizca" } ]
+    },
+    steps: {
+      en: [ { title:"Blend", text:"Blitz chickpeas, garlic, parsley and cumin." }, { title:"Shape", text:"Roll into small balls and flatten slightly." }, { title:"Bake", text:"Bake 20 min at 200°C until golden." } ],
+      de: [ { title:"Mixen", text:"Kichererbsen, Knoblauch, Petersilie und Kreuzkümmel mixen." }, { title:"Formen", text:"Zu kleinen Bällchen rollen und etwas flach drücken." }, { title:"Backen", text:"20 Min bei 200°C goldbraun backen." } ],
+      fr: [ { title:"Mixer", text:"Mixez pois chiches, ail, persil et cumin." }, { title:"Former", text:"Roulez en petites boules aplaties." }, { title:"Cuire", text:"Cuire 20 min à 200°C jusqu'à doré." } ],
+      es: [ { title:"Triturar", text:"Tritura garbanzos, ajo, perejil y comino." }, { title:"Formar", text:"Haz bolitas y aplástalas un poco." }, { title:"Hornear", text:"Hornea 20 min a 200°C hasta dorar." } ]
+    },
+    tip: { en:"Cool fully so they firm up and won't crumble in the box.", de:"Gut auskühlen, damit sie fest werden und nicht zerbröseln.", fr:"Refroidir bien pour qu'ils raffermissent et ne s'émiettent pas.", es:"Enfría bien para que se afirmen y no se desmoronen." }
+  },
+  "lentil-balls": {
+    nutrition: { kcal: 160, protein: 8, carbs: 20, fat: 5, fiber: 5 },
+    ings: {
+      en: [ { emoji:"🫘", name:"Cooked lentils", amount:"1/2 cup" }, { emoji:"🌾", name:"Breadcrumbs", amount:"2 tbsp" }, { emoji:"🌿", name:"Herbs", amount:"1 tbsp" }, { emoji:"🥚", name:"Egg", amount:"1/2" } ],
+      de: [ { emoji:"🫘", name:"Gekochte Linsen", amount:"1/2 Tasse" }, { emoji:"🌾", name:"Semmelbrösel", amount:"2 EL" }, { emoji:"🌿", name:"Kräuter", amount:"1 EL" }, { emoji:"🥚", name:"Ei", amount:"1/2" } ],
+      fr: [ { emoji:"🫘", name:"Lentilles cuites", amount:"1/2 tasse" }, { emoji:"🌾", name:"Chapelure", amount:"2 c. à soupe" }, { emoji:"🌿", name:"Herbes", amount:"1 c. à soupe" }, { emoji:"🥚", name:"Œuf", amount:"1/2" } ],
+      es: [ { emoji:"🫘", name:"Lentejas cocidas", amount:"1/2 taza" }, { emoji:"🌾", name:"Pan rallado", amount:"2 cdas" }, { emoji:"🌿", name:"Hierbas", amount:"1 cda" }, { emoji:"🥚", name:"Huevo", amount:"1/2" } ]
+    },
+    steps: {
+      en: [ { title:"Mash", text:"Mash lentils with breadcrumbs, herbs and egg." }, { title:"Roll", text:"Shape into small balls." }, { title:"Bake", text:"Bake 20 min at 200°C until firm." } ],
+      de: [ { title:"Zerdrücken", text:"Linsen mit Bröseln, Kräutern und Ei zerdrücken." }, { title:"Rollen", text:"Zu kleinen Bällchen formen." }, { title:"Backen", text:"20 Min bei 200°C backen, bis fest." } ],
+      fr: [ { title:"Écraser", text:"Écrasez lentilles, chapelure, herbes et œuf." }, { title:"Rouler", text:"Façonnez de petites boules." }, { title:"Cuire", text:"Cuire 20 min à 200°C jusqu'à fermeté." } ],
+      es: [ { title:"Aplastar", text:"Aplasta lentejas con pan, hierbas y huevo." }, { title:"Bolear", text:"Forma bolitas." }, { title:"Hornear", text:"Hornea 20 min a 200°C hasta firme." } ]
+    },
+    tip: { en:"Cool fully before packing so they hold together.", de:"Vor dem Einpacken auskühlen, damit sie zusammenhalten.", fr:"Refroidir avant d'emballer pour qu'elles tiennent.", es:"Enfría antes de empacar para que no se rompan." }
+  },
+  "yogurt-pot": {
+    nutrition: { kcal: 100, protein: 10, carbs: 6, fat: 4, fiber: 0 },
+    ings: {
+      en: [ { emoji:"🥛", name:"Greek yogurt", amount:"1/2 cup" } ],
+      de: [ { emoji:"🥛", name:"Griechischer Joghurt", amount:"1/2 Tasse" } ],
+      fr: [ { emoji:"🥛", name:"Yaourt grec", amount:"1/2 tasse" } ],
+      es: [ { emoji:"🥛", name:"Yogur griego", amount:"1/2 taza" } ]
+    },
+    steps: {
+      en: [ { title:"Pot", text:"Spoon yogurt into a small leakproof pot." } ],
+      de: [ { title:"Abfüllen", text:"Joghurt in ein kleines auslaufsicheres Döschen füllen." } ],
+      fr: [ { title:"Verser", text:"Versez le yaourt dans un petit pot hermétique." } ],
+      es: [ { title:"Envasar", text:"Pon el yogur en un bote hermético." } ]
+    },
+    tip: { en:"Keep cool with an ice pack and use a tight-sealing lid.", de:"Mit Kühlpack kühl halten und einen dichten Deckel verwenden.", fr:"Gardez au frais et fermez bien le couvercle.", es:"Mantén frío con acumulador y cierra bien la tapa." }
+  },
+  "cucumber-rolls": {
+    nutrition: { kcal: 70, protein: 2, carbs: 4, fat: 5, fiber: 1 },
+    ings: {
+      en: [ { emoji:"🥒", name:"Cucumber", amount:"1/2" }, { emoji:"🧀", name:"Cream cheese", amount:"2 tbsp" } ],
+      de: [ { emoji:"🥒", name:"Gurke", amount:"1/2" }, { emoji:"🧀", name:"Frischkäse", amount:"2 EL" } ],
+      fr: [ { emoji:"🥒", name:"Concombre", amount:"1/2" }, { emoji:"🧀", name:"Fromage frais", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🥒", name:"Pepino", amount:"1/2" }, { emoji:"🧀", name:"Queso crema", amount:"2 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Ribbon", text:"Peel cucumber into long thin ribbons." }, { title:"Roll", text:"Spread with cream cheese and roll up." } ],
+      de: [ { title:"Hobeln", text:"Gurke in lange dünne Bänder hobeln." }, { title:"Rollen", text:"Mit Frischkäse bestreichen und aufrollen." } ],
+      fr: [ { title:"Trancher", text:"Taillez le concombre en longs rubans fins." }, { title:"Rouler", text:"Tartinez de fromage frais et roulez." } ],
+      es: [ { title:"Laminar", text:"Lamina el pepino en tiras largas finas." }, { title:"Enrollar", text:"Unta queso crema y enrolla." } ]
+    },
+    tip: { en:"Pat ribbons dry before rolling so they hold and stay crunchy.", de:"Bänder vor dem Rollen trocken tupfen für Halt und Knack.", fr:"Séchez les rubans avant de rouler pour qu'ils tiennent.", es:"Seca las tiras antes de enrollar para que aguanten." }
+  },
+  "caprese-skewer": {
+    nutrition: { kcal: 110, protein: 7, carbs: 4, fat: 8, fiber: 1 },
+    ings: {
+      en: [ { emoji:"🍅", name:"Cherry tomatoes", amount:"4" }, { emoji:"🧀", name:"Mini mozzarella", amount:"4" }, { emoji:"🌿", name:"Basil leaves", amount:"4" } ],
+      de: [ { emoji:"🍅", name:"Kirschtomaten", amount:"4" }, { emoji:"🧀", name:"Mini-Mozzarella", amount:"4" }, { emoji:"🌿", name:"Basilikumblätter", amount:"4" } ],
+      fr: [ { emoji:"🍅", name:"Tomates cerises", amount:"4" }, { emoji:"🧀", name:"Mini mozzarella", amount:"4" }, { emoji:"🌿", name:"Feuilles de basilic", amount:"4" } ],
+      es: [ { emoji:"🍅", name:"Tomates cherry", amount:"4" }, { emoji:"🧀", name:"Mini mozzarella", amount:"4" }, { emoji:"🌿", name:"Hojas de albahaca", amount:"4" } ]
+    },
+    steps: {
+      en: [ { title:"Thread", text:"Thread tomato, mozzarella and basil onto a blunt pick." } ],
+      de: [ { title:"Aufspießen", text:"Tomate, Mozzarella und Basilikum auf einen stumpfen Spieß stecken." } ],
+      fr: [ { title:"Embrocher", text:"Enfilez tomate, mozzarella et basilic sur un pic émoussé." } ],
+      es: [ { title:"Ensartar", text:"Ensarta tomate, mozzarella y albahaca en un palillo romo." } ]
+    },
+    tip: { en:"Pat mozzarella dry and keep cool with an ice pack.", de:"Mozzarella trocken tupfen und mit Kühlpack kühl halten.", fr:"Séchez la mozzarella et gardez au frais.", es:"Seca la mozzarella y mantén frío con acumulador." }
+  },
+  "carrot-slaw": {
+    nutrition: { kcal: 90, protein: 1, carbs: 16, fat: 3, fiber: 3 },
+    ings: {
+      en: [ { emoji:"🥕", name:"Grated carrot", amount:"1 cup" }, { emoji:"🍇", name:"Raisins", amount:"1 tbsp" }, { emoji:"🍋", name:"Lemon juice", amount:"1 tsp" }, { emoji:"🫒", name:"Olive oil", amount:"1 tsp" } ],
+      de: [ { emoji:"🥕", name:"Geraspelte Karotte", amount:"1 Tasse" }, { emoji:"🍇", name:"Rosinen", amount:"1 EL" }, { emoji:"🍋", name:"Zitronensaft", amount:"1 TL" }, { emoji:"🫒", name:"Olivenöl", amount:"1 TL" } ],
+      fr: [ { emoji:"🥕", name:"Carotte râpée", amount:"1 tasse" }, { emoji:"🍇", name:"Raisins secs", amount:"1 c. à soupe" }, { emoji:"🍋", name:"Jus de citron", amount:"1 c. à café" }, { emoji:"🫒", name:"Huile d'olive", amount:"1 c. à café" } ],
+      es: [ { emoji:"🥕", name:"Zanahoria rallada", amount:"1 taza" }, { emoji:"🍇", name:"Pasas", amount:"1 cda" }, { emoji:"🍋", name:"Zumo de limón", amount:"1 cdta" }, { emoji:"🫒", name:"Aceite de oliva", amount:"1 cdta" } ]
+    },
+    steps: {
+      en: [ { title:"Toss", text:"Toss grated carrot with raisins, lemon and oil." } ],
+      de: [ { title:"Mischen", text:"Karotte mit Rosinen, Zitrone und Öl mischen." } ],
+      fr: [ { title:"Mélanger", text:"Mélangez carotte, raisins, citron et huile." } ],
+      es: [ { title:"Mezclar", text:"Mezcla zanahoria con pasas, limón y aceite." } ]
+    },
+    tip: { en:"Lemon keeps it fresh; pack in a sealed pot to avoid leaks.", de:"Zitrone hält frisch; in dichtem Döschen einpacken.", fr:"Le citron garde la fraîcheur; emballez en pot fermé.", es:"El limón lo mantiene fresco; empaca en bote cerrado." }
+  },
+  "pepper-stars": {
+    nutrition: { kcal: 30, protein: 1, carbs: 6, fat: 0, fiber: 2 },
+    ings: {
+      en: [ { emoji:"🫑", name:"Bell pepper", amount:"1" } ],
+      de: [ { emoji:"🫑", name:"Paprika", amount:"1" } ],
+      fr: [ { emoji:"🫑", name:"Poivron", amount:"1" } ],
+      es: [ { emoji:"🫑", name:"Pimiento", amount:"1" } ]
+    },
+    steps: {
+      en: [ { title:"Cut", text:"Press small cutters into flat pepper pieces to make stars." } ],
+      de: [ { title:"Ausstechen", text:"Mit kleinen Förmchen Sterne aus flachen Paprikastücken stechen." } ],
+      fr: [ { title:"Découper", text:"Découpez des étoiles dans des morceaux de poivron plats." } ],
+      es: [ { title:"Cortar", text:"Corta estrellas en trozos planos de pimiento con moldes." } ]
+    },
+    tip: { en:"Pat dry and pack snugly so the stars stay crisp.", de:"Trocken tupfen und eng einpacken, damit die Sterne knackig bleiben.", fr:"Séchez et calez bien pour garder les étoiles croquantes.", es:"Seca y empaca ajustado para que queden crujientes." }
+  },
+  "snap-peas": {
+    nutrition: { kcal: 40, protein: 3, carbs: 7, fat: 0, fiber: 3 },
+    ings: {
+      en: [ { emoji:"🫛", name:"Sugar snap peas", amount:"1 cup" } ],
+      de: [ { emoji:"🫛", name:"Zuckerschoten", amount:"1 Tasse" } ],
+      fr: [ { emoji:"🫛", name:"Pois gourmands", amount:"1 tasse" } ],
+      es: [ { emoji:"🫛", name:"Tirabeques", amount:"1 taza" } ]
+    },
+    steps: {
+      en: [ { title:"Wash", text:"Rinse the snap peas and pat dry." } ],
+      de: [ { title:"Waschen", text:"Zuckerschoten abspülen und trocken tupfen." } ],
+      fr: [ { title:"Laver", text:"Rincez les pois gourmands et séchez-les." } ],
+      es: [ { title:"Lavar", text:"Enjuaga los tirabeques y sécalos." } ]
+    },
+    tip: { en:"Pat fully dry so they stay crunchy, not damp, in the box.", de:"Ganz trocken tupfen, damit sie knackig statt feucht bleiben.", fr:"Séchez bien pour qu'ils restent croquants.", es:"Seca bien para que queden crujientes." }
+  },
+  "broccoli-tots": {
+    nutrition: { kcal: 150, protein: 8, carbs: 14, fat: 7, fiber: 3 },
+    ings: {
+      en: [ { emoji:"🥦", name:"Broccoli", amount:"1 cup" }, { emoji:"🧀", name:"Grated cheese", amount:"3 tbsp" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Breadcrumbs", amount:"2 tbsp" } ],
+      de: [ { emoji:"🥦", name:"Brokkoli", amount:"1 Tasse" }, { emoji:"🧀", name:"Geriebener Käse", amount:"3 EL" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Semmelbrösel", amount:"2 EL" } ],
+      fr: [ { emoji:"🥦", name:"Brocoli", amount:"1 tasse" }, { emoji:"🧀", name:"Fromage râpé", amount:"3 c. à soupe" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Chapelure", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🥦", name:"Brócoli", amount:"1 taza" }, { emoji:"🧀", name:"Queso rallado", amount:"3 cdas" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Pan rallado", amount:"2 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Chop", text:"Finely chop steamed broccoli." }, { title:"Mix", text:"Combine with cheese, egg and breadcrumbs." }, { title:"Bake", text:"Shape into tots and bake 20 min at 200°C." } ],
+      de: [ { title:"Hacken", text:"Gedämpften Brokkoli fein hacken." }, { title:"Mischen", text:"Mit Käse, Ei und Bröseln vermengen." }, { title:"Backen", text:"Zu Tots formen und 20 Min bei 200°C backen." } ],
+      fr: [ { title:"Hacher", text:"Hachez finement le brocoli cuit." }, { title:"Mélanger", text:"Mélangez fromage, œuf et chapelure." }, { title:"Cuire", text:"Façonnez des tots et cuire 20 min à 200°C." } ],
+      es: [ { title:"Picar", text:"Pica fino el brócoli al vapor." }, { title:"Mezclar", text:"Combina con queso, huevo y pan rallado." }, { title:"Hornear", text:"Forma tots y hornea 20 min a 200°C." } ]
+    },
+    tip: { en:"Cool fully so they crisp up and won't fall apart.", de:"Gut auskühlen, damit sie knusprig werden und halten.", fr:"Refroidir bien pour qu'ils croustillent et tiennent.", es:"Enfría bien para que queden crujientes y firmes." }
+  },
+  "corn-salsa": {
+    nutrition: { kcal: 120, protein: 5, carbs: 22, fat: 1, fiber: 5 },
+    ings: {
+      en: [ { emoji:"🌽", name:"Sweetcorn", amount:"1/4 cup" }, { emoji:"🫘", name:"Black beans", amount:"1/4 cup" }, { emoji:"🍋", name:"Lime juice", amount:"1 tsp" } ],
+      de: [ { emoji:"🌽", name:"Mais", amount:"1/4 Tasse" }, { emoji:"🫘", name:"Schwarze Bohnen", amount:"1/4 Tasse" }, { emoji:"🍋", name:"Limettensaft", amount:"1 TL" } ],
+      fr: [ { emoji:"🌽", name:"Maïs", amount:"1/4 tasse" }, { emoji:"🫘", name:"Haricots noirs", amount:"1/4 tasse" }, { emoji:"🍋", name:"Jus de citron vert", amount:"1 c. à café" } ],
+      es: [ { emoji:"🌽", name:"Maíz", amount:"1/4 taza" }, { emoji:"🫘", name:"Frijoles negros", amount:"1/4 taza" }, { emoji:"🍋", name:"Zumo de lima", amount:"1 cdta" } ]
+    },
+    steps: {
+      en: [ { title:"Mix", text:"Stir corn and beans together with lime juice." } ],
+      de: [ { title:"Mischen", text:"Mais und Bohnen mit Limettensaft vermengen." } ],
+      fr: [ { title:"Mélanger", text:"Mélangez maïs et haricots avec le jus de citron vert." } ],
+      es: [ { title:"Mezclar", text:"Mezcla maíz y frijoles con zumo de lima." } ]
+    },
+    tip: { en:"Drain well and pack in a sealed cup so it doesn't leak.", de:"Gut abtropfen und in dichtem Becher einpacken.", fr:"Bien égoutter et emballer en gobelet fermé.", es:"Escurre bien y empaca en vaso cerrado." }
+  },
+  "avocado-smash": {
+    nutrition: { kcal: 130, protein: 2, carbs: 7, fat: 11, fiber: 5 },
+    ings: {
+      en: [ { emoji:"🥑", name:"Avocado", amount:"1/2" }, { emoji:"🍋", name:"Lime juice", amount:"1 tsp" }, { emoji:"🧂", name:"Salt", amount:"1 pinch" } ],
+      de: [ { emoji:"🥑", name:"Avocado", amount:"1/2" }, { emoji:"🍋", name:"Limettensaft", amount:"1 TL" }, { emoji:"🧂", name:"Salz", amount:"1 Prise" } ],
+      fr: [ { emoji:"🥑", name:"Avocat", amount:"1/2" }, { emoji:"🍋", name:"Jus de citron vert", amount:"1 c. à café" }, { emoji:"🧂", name:"Sel", amount:"1 pincée" } ],
+      es: [ { emoji:"🥑", name:"Aguacate", amount:"1/2" }, { emoji:"🍋", name:"Zumo de lima", amount:"1 cdta" }, { emoji:"🧂", name:"Sal", amount:"1 pizca" } ]
+    },
+    steps: {
+      en: [ { title:"Mash", text:"Mash avocado with lime juice and a pinch of salt." } ],
+      de: [ { title:"Zerdrücken", text:"Avocado mit Limettensaft und einer Prise Salz zerdrücken." } ],
+      fr: [ { title:"Écraser", text:"Écrasez l'avocat avec citron vert et une pincée de sel." } ],
+      es: [ { title:"Aplastar", text:"Aplasta el aguacate con lima y una pizca de sal." } ]
+    },
+    tip: { en:"Extra lime stops browning; press cling film onto the surface.", de:"Mehr Limette stoppt das Braunwerden; Folie direkt aufdrücken.", fr:"Plus de citron vert évite le brunissement; filmez au contact.", es:"Más lima evita que se oxide; cubre con film al contacto." }
+  },
+  "roasted-chickpea": {
+    nutrition: { kcal: 140, protein: 6, carbs: 18, fat: 5, fiber: 5 },
+    ings: {
+      en: [ { emoji:"🫘", name:"Chickpeas", amount:"1/2 cup" }, { emoji:"🫒", name:"Olive oil", amount:"1 tsp" }, { emoji:"🌶️", name:"Mild paprika", amount:"1 pinch" } ],
+      de: [ { emoji:"🫘", name:"Kichererbsen", amount:"1/2 Tasse" }, { emoji:"🫒", name:"Olivenöl", amount:"1 TL" }, { emoji:"🌶️", name:"Mildes Paprikapulver", amount:"1 Prise" } ],
+      fr: [ { emoji:"🫘", name:"Pois chiches", amount:"1/2 tasse" }, { emoji:"🫒", name:"Huile d'olive", amount:"1 c. à café" }, { emoji:"🌶️", name:"Paprika doux", amount:"1 pincée" } ],
+      es: [ { emoji:"🫘", name:"Garbanzos", amount:"1/2 taza" }, { emoji:"🫒", name:"Aceite de oliva", amount:"1 cdta" }, { emoji:"🌶️", name:"Pimentón dulce", amount:"1 pizca" } ]
+    },
+    steps: {
+      en: [ { title:"Dry", text:"Pat chickpeas dry and toss with oil and paprika." }, { title:"Roast", text:"Roast 30 min at 200°C until crunchy." } ],
+      de: [ { title:"Trocknen", text:"Kichererbsen trocken tupfen, mit Öl und Paprika mischen." }, { title:"Rösten", text:"30 Min bei 200°C knusprig rösten." } ],
+      fr: [ { title:"Sécher", text:"Séchez les pois chiches, mélangez huile et paprika." }, { title:"Rôtir", text:"Rôtissez 30 min à 200°C jusqu'à croustillant." } ],
+      es: [ { title:"Secar", text:"Seca los garbanzos y mezcla con aceite y pimentón." }, { title:"Asar", text:"Asa 30 min a 200°C hasta crujiente." } ]
+    },
+    tip: { en:"Pack only when fully cool and dry, or they lose their crunch.", de:"Erst ganz kalt und trocken einpacken, sonst werden sie weich.", fr:"Emballez bien refroidis et secs, sinon ils ramollissent.", es:"Empaca bien fríos y secos o pierden lo crujiente." }
+  },
+  "cinnamon-apple": {
+    nutrition: { kcal: 95, protein: 1, carbs: 22, fat: 1, fiber: 4 },
+    ings: {
+      en: [ { emoji:"🍎", name:"Apple", amount:"1" }, { emoji:"🥄", name:"Cinnamon", amount:"1 pinch" }, { emoji:"🍯", name:"Maple syrup", amount:"1 tsp" } ],
+      de: [ { emoji:"🍎", name:"Apfel", amount:"1" }, { emoji:"🥄", name:"Zimt", amount:"1 Prise" }, { emoji:"🍯", name:"Ahornsirup", amount:"1 TL" } ],
+      fr: [ { emoji:"🍎", name:"Pomme", amount:"1" }, { emoji:"🥄", name:"Cannelle", amount:"1 pincée" }, { emoji:"🍯", name:"Sirop d'érable", amount:"1 c. à café" } ],
+      es: [ { emoji:"🍎", name:"Manzana", amount:"1" }, { emoji:"🥄", name:"Canela", amount:"1 pizca" }, { emoji:"🍯", name:"Sirope de arce", amount:"1 cdta" } ]
+    },
+    steps: {
+      en: [ { title:"Slice", text:"Cut apple into bite-size chunks." }, { title:"Bake", text:"Toss with cinnamon and maple, bake 15 min at 180°C until soft." } ],
+      de: [ { title:"Schneiden", text:"Apfel in mundgerechte Stücke schneiden." }, { title:"Backen", text:"Mit Zimt und Sirup mischen, 15 Min bei 180°C backen, bis weich." } ],
+      fr: [ { title:"Couper", text:"Coupez la pomme en morceaux." }, { title:"Cuire", text:"Mélangez avec cannelle et sirop, cuire 15 min à 180°C." } ],
+      es: [ { title:"Cortar", text:"Corta la manzana en trozos." }, { title:"Hornear", text:"Mezcla con canela y sirope, hornea 15 min a 180°C." } ]
+    },
+    tip: { en:"Baked apple won't brown — perfect for lunchboxes. Pack cooled.", de:"Gebackener Apfel wird nicht braun — ideal für die Brotdose. Abgekühlt einpacken.", fr:"La pomme cuite ne brunit pas — parfait. Emballez refroidi.", es:"La manzana horneada no se oxida — ideal. Empaca ya fría." }
+  },
+  "apple-nutbutter": {
+    nutrition: { kcal: 160, protein: 4, carbs: 22, fat: 8, fiber: 4 },
+    ings: {
+      en: [ { emoji:"🍎", name:"Apple", amount:"1" }, { emoji:"🥜", name:"Nut butter", amount:"2 tbsp" } ],
+      de: [ { emoji:"🍎", name:"Apfel", amount:"1" }, { emoji:"🥜", name:"Nussmus", amount:"2 EL" } ],
+      fr: [ { emoji:"🍎", name:"Pomme", amount:"1" }, { emoji:"🥜", name:"Beurre de noix", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🍎", name:"Manzana", amount:"1" }, { emoji:"🥜", name:"Crema de frutos secos", amount:"2 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Slice", text:"Cut apple into rings and remove the core." }, { title:"Fill", text:"Spread nut butter and sandwich two rings together." } ],
+      de: [ { title:"Schneiden", text:"Apfel in Ringe schneiden und Kerngehäuse entfernen." }, { title:"Füllen", text:"Nussmus aufstreichen und zwei Ringe zusammensetzen." } ],
+      fr: [ { title:"Trancher", text:"Coupez la pomme en rondelles et ôtez le cœur." }, { title:"Garnir", text:"Tartinez de beurre de noix et assemblez deux rondelles." } ],
+      es: [ { title:"Cortar", text:"Corta la manzana en aros y quita el corazón." }, { title:"Rellenar", text:"Unta crema y une dos aros como sándwich." } ]
+    },
+    tip: { en:"Brush apple with lemon to stop browning before packing.", de:"Apfel mit Zitrone bestreichen, damit er nicht braun wird.", fr:"Badigeonnez la pomme de citron pour éviter le brunissement.", es:"Pincela la manzana con limón para que no se oxide." }
+  },
+  "fruit-skewer": {
+    nutrition: { kcal: 80, protein: 1, carbs: 20, fat: 0, fiber: 3 },
+    ings: {
+      en: [ { emoji:"🍓", name:"Strawberry", amount:"2" }, { emoji:"🍈", name:"Melon cubes", amount:"3" }, { emoji:"🍇", name:"Grapes", amount:"3" }, { emoji:"🥝", name:"Kiwi slice", amount:"2" } ],
+      de: [ { emoji:"🍓", name:"Erdbeere", amount:"2" }, { emoji:"🍈", name:"Melonenwürfel", amount:"3" }, { emoji:"🍇", name:"Trauben", amount:"3" }, { emoji:"🥝", name:"Kiwischeibe", amount:"2" } ],
+      fr: [ { emoji:"🍓", name:"Fraise", amount:"2" }, { emoji:"🍈", name:"Cubes de melon", amount:"3" }, { emoji:"🍇", name:"Raisins", amount:"3" }, { emoji:"🥝", name:"Rondelle de kiwi", amount:"2" } ],
+      es: [ { emoji:"🍓", name:"Fresa", amount:"2" }, { emoji:"🍈", name:"Cubos de melón", amount:"3" }, { emoji:"🍇", name:"Uvas", amount:"3" }, { emoji:"🥝", name:"Rodaja de kiwi", amount:"2" } ]
+    },
+    steps: {
+      en: [ { title:"Thread", text:"Thread fruit onto a blunt pick in rainbow order." } ],
+      de: [ { title:"Aufspießen", text:"Obst in Regenbogenfolge auf einen stumpfen Spieß stecken." } ],
+      fr: [ { title:"Embrocher", text:"Enfilez les fruits sur un pic émoussé en arc-en-ciel." } ],
+      es: [ { title:"Ensartar", text:"Ensarta la fruta en un palillo romo en orden arcoíris." } ]
+    },
+    tip: { en:"Pat juicy fruit dry and keep cool so it stays firm.", de:"Saftiges Obst trocken tupfen und kühl halten, damit es fest bleibt.", fr:"Séchez les fruits juteux et gardez au frais.", es:"Seca la fruta jugosa y mantén fría para que aguante." }
+  },
+  "frozen-yogurt-bites": {
+    nutrition: { kcal: 90, protein: 4, carbs: 12, fat: 2, fiber: 1 },
+    ings: {
+      en: [ { emoji:"🍓", name:"Berries", amount:"6" }, { emoji:"🥛", name:"Greek yogurt", amount:"1/4 cup" } ],
+      de: [ { emoji:"🍓", name:"Beeren", amount:"6" }, { emoji:"🥛", name:"Griechischer Joghurt", amount:"1/4 Tasse" } ],
+      fr: [ { emoji:"🍓", name:"Baies", amount:"6" }, { emoji:"🥛", name:"Yaourt grec", amount:"1/4 tasse" } ],
+      es: [ { emoji:"🍓", name:"Bayas", amount:"6" }, { emoji:"🥛", name:"Yogur griego", amount:"1/4 taza" } ]
+    },
+    steps: {
+      en: [ { title:"Dip", text:"Dip each berry into yogurt." }, { title:"Freeze", text:"Freeze on a tray until solid." } ],
+      de: [ { title:"Tauchen", text:"Jede Beere in Joghurt tauchen." }, { title:"Einfrieren", text:"Auf einem Tablett fest einfrieren." } ],
+      fr: [ { title:"Tremper", text:"Trempez chaque baie dans le yaourt." }, { title:"Congeler", text:"Congelez sur un plateau jusqu'à solide." } ],
+      es: [ { title:"Mojar", text:"Moja cada baya en el yogur." }, { title:"Congelar", text:"Congela en una bandeja hasta que estén duras." } ]
+    },
+    tip: { en:"Pack frozen — they double as an ice pack and thaw just in time.", de:"Gefroren einpacken — sie kühlen die Box und tauen rechtzeitig auf.", fr:"Emballez congelés — ils refroidissent la box et décongèlent à temps.", es:"Empaca congeladas — enfrían la caja y se descongelan a tiempo." }
+  },
+  "melon-stars": {
+    nutrition: { kcal: 50, protein: 1, carbs: 12, fat: 0, fiber: 1 },
+    ings: {
+      en: [ { emoji:"🍈", name:"Melon", amount:"1 slice" }, { emoji:"🍉", name:"Watermelon", amount:"1 slice" } ],
+      de: [ { emoji:"🍈", name:"Melone", amount:"1 Scheibe" }, { emoji:"🍉", name:"Wassermelone", amount:"1 Scheibe" } ],
+      fr: [ { emoji:"🍈", name:"Melon", amount:"1 tranche" }, { emoji:"🍉", name:"Pastèque", amount:"1 tranche" } ],
+      es: [ { emoji:"🍈", name:"Melón", amount:"1 rodaja" }, { emoji:"🍉", name:"Sandía", amount:"1 rodaja" } ]
+    },
+    steps: {
+      en: [ { title:"Cut", text:"Press star cutters into thick melon slices." } ],
+      de: [ { title:"Ausstechen", text:"Sterne aus dicken Melonenscheiben ausstechen." } ],
+      fr: [ { title:"Découper", text:"Découpez des étoiles dans des tranches épaisses." } ],
+      es: [ { title:"Cortar", text:"Corta estrellas en rodajas gruesas de melón." } ]
+    },
+    tip: { en:"Pat the stars dry and keep cool so they don't go watery.", de:"Sterne trocken tupfen und kühl halten, damit sie nicht wässrig werden.", fr:"Séchez les étoiles et gardez au frais pour éviter le jus.", es:"Seca las estrellas y mantén fría para que no suelten agua." }
+  },
+  "berry-salad": {
+    nutrition: { kcal: 60, protein: 1, carbs: 14, fat: 0, fiber: 4 },
+    ings: {
+      en: [ { emoji:"🍓", name:"Strawberries", amount:"3" }, { emoji:"🫐", name:"Blueberries", amount:"2 tbsp" }, { emoji:"🌿", name:"Mint", amount:"2 leaves" } ],
+      de: [ { emoji:"🍓", name:"Erdbeeren", amount:"3" }, { emoji:"🫐", name:"Heidelbeeren", amount:"2 EL" }, { emoji:"🌿", name:"Minze", amount:"2 Blätter" } ],
+      fr: [ { emoji:"🍓", name:"Fraises", amount:"3" }, { emoji:"🫐", name:"Myrtilles", amount:"2 c. à soupe" }, { emoji:"🌿", name:"Menthe", amount:"2 feuilles" } ],
+      es: [ { emoji:"🍓", name:"Fresas", amount:"3" }, { emoji:"🫐", name:"Arándanos", amount:"2 cdas" }, { emoji:"🌿", name:"Menta", amount:"2 hojas" } ]
+    },
+    steps: {
+      en: [ { title:"Chop", text:"Halve the strawberries." }, { title:"Toss", text:"Mix berries with tiny torn mint." } ],
+      de: [ { title:"Schneiden", text:"Erdbeeren halbieren." }, { title:"Mischen", text:"Beeren mit fein gezupfter Minze mischen." } ],
+      fr: [ { title:"Couper", text:"Coupez les fraises en deux." }, { title:"Mélanger", text:"Mélangez les baies avec un peu de menthe ciselée." } ],
+      es: [ { title:"Cortar", text:"Parte las fresas por la mitad." }, { title:"Mezclar", text:"Mezcla las bayas con menta troceada." } ]
+    },
+    tip: { en:"Pat berries dry and pack in a sealed cup; keep cool.", de:"Beeren trocken tupfen, in dichtem Becher einpacken; kühl halten.", fr:"Séchez les baies, emballez en gobelet fermé; gardez au frais.", es:"Seca las bayas, empaca en vaso cerrado; mantén fría." }
+  },
+  "banana-sushi": {
+    nutrition: { kcal: 170, protein: 4, carbs: 30, fat: 5, fiber: 4 },
+    ings: {
+      en: [ { emoji:"🍌", name:"Banana", amount:"1" }, { emoji:"🥜", name:"Nut butter", amount:"1 tbsp" }, { emoji:"🌾", name:"Oats", amount:"2 tbsp" } ],
+      de: [ { emoji:"🍌", name:"Banane", amount:"1" }, { emoji:"🥜", name:"Nussmus", amount:"1 EL" }, { emoji:"🌾", name:"Haferflocken", amount:"2 EL" } ],
+      fr: [ { emoji:"🍌", name:"Banane", amount:"1" }, { emoji:"🥜", name:"Beurre de noix", amount:"1 c. à soupe" }, { emoji:"🌾", name:"Flocons d'avoine", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🍌", name:"Plátano", amount:"1" }, { emoji:"🥜", name:"Crema de frutos secos", amount:"1 cda" }, { emoji:"🌾", name:"Avena", amount:"2 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Coat", text:"Spread banana with nut butter." }, { title:"Roll", text:"Roll in oats and slice into sushi rounds." } ],
+      de: [ { title:"Bestreichen", text:"Banane mit Nussmus bestreichen." }, { title:"Wälzen", text:"In Haferflocken wälzen und in Sushi-Scheiben schneiden." } ],
+      fr: [ { title:"Enrober", text:"Tartinez la banane de beurre de noix." }, { title:"Rouler", text:"Roulez dans l'avoine et coupez en rondelles." } ],
+      es: [ { title:"Cubrir", text:"Unta el plátano con crema." }, { title:"Rebozar", text:"Reboza en avena y corta en rodajas." } ]
+    },
+    tip: { en:"Brush banana with a little lemon to slow browning.", de:"Banane mit etwas Zitrone bestreichen, damit sie langsamer braun wird.", fr:"Badigeonnez la banane d'un peu de citron contre le brunissement.", es:"Pincela el plátano con limón para que se oxide menos." }
+  },
+  "grape-cheese-skewer": {
+    nutrition: { kcal: 130, protein: 6, carbs: 12, fat: 7, fiber: 1 },
+    ings: {
+      en: [ { emoji:"🍇", name:"Grapes", amount:"4" }, { emoji:"🧀", name:"Cheese cubes", amount:"4" } ],
+      de: [ { emoji:"🍇", name:"Trauben", amount:"4" }, { emoji:"🧀", name:"Käsewürfel", amount:"4" } ],
+      fr: [ { emoji:"🍇", name:"Raisins", amount:"4" }, { emoji:"🧀", name:"Cubes de fromage", amount:"4" } ],
+      es: [ { emoji:"🍇", name:"Uvas", amount:"4" }, { emoji:"🧀", name:"Cubos de queso", amount:"4" } ]
+    },
+    steps: {
+      en: [ { title:"Thread", text:"Alternate grapes and cheese cubes on a blunt pick." } ],
+      de: [ { title:"Aufspießen", text:"Trauben und Käsewürfel abwechselnd auf einen stumpfen Spieß stecken." } ],
+      fr: [ { title:"Embrocher", text:"Alternez raisins et cubes de fromage sur un pic émoussé." } ],
+      es: [ { title:"Ensartar", text:"Alterna uvas y cubos de queso en un palillo romo." } ]
+    },
+    tip: { en:"Halve grapes for little ones and keep cool with an ice pack.", de:"Trauben für Kleine halbieren und mit Kühlpack kühl halten.", fr:"Coupez les raisins en deux pour les petits; gardez au frais.", es:"Parte las uvas para los pequeños y mantén frío." }
+  },
+  "mango-melon-balls": {
+    nutrition: { kcal: 70, protein: 1, carbs: 17, fat: 0, fiber: 2 },
+    ings: {
+      en: [ { emoji:"🥭", name:"Mango", amount:"1/2" }, { emoji:"🍈", name:"Melon", amount:"1 slice" } ],
+      de: [ { emoji:"🥭", name:"Mango", amount:"1/2" }, { emoji:"🍈", name:"Melone", amount:"1 Scheibe" } ],
+      fr: [ { emoji:"🥭", name:"Mangue", amount:"1/2" }, { emoji:"🍈", name:"Melon", amount:"1 tranche" } ],
+      es: [ { emoji:"🥭", name:"Mango", amount:"1/2" }, { emoji:"🍈", name:"Melón", amount:"1 rodaja" } ]
+    },
+    steps: {
+      en: [ { title:"Scoop", text:"Use a melon baller to scoop mango and melon into balls." } ],
+      de: [ { title:"Ausstechen", text:"Mit einem Kugelausstecher Mango und Melone zu Kugeln formen." } ],
+      fr: [ { title:"Façonner", text:"Avec une cuillère parisienne, formez des billes de mangue et melon." } ],
+      es: [ { title:"Bolear", text:"Con una cucharilla saca bolas de mango y melón." } ]
+    },
+    tip: { en:"Pat dry and keep cool; pack snugly so balls don't roll and bruise.", de:"Trocken tupfen, kühl halten und eng einpacken, damit nichts rollt.", fr:"Séchez, gardez au frais et calez bien pour éviter qu'elles roulent.", es:"Seca, mantén fría y empaca ajustado para que no rueden." }
+  },
+  "baked-pear": {
+    nutrition: { kcal: 90, protein: 1, carbs: 22, fat: 0, fiber: 4 },
+    ings: {
+      en: [ { emoji:"🍐", name:"Pear", amount:"1" }, { emoji:"🥄", name:"Cinnamon", amount:"1 pinch" } ],
+      de: [ { emoji:"🍐", name:"Birne", amount:"1" }, { emoji:"🥄", name:"Zimt", amount:"1 Prise" } ],
+      fr: [ { emoji:"🍐", name:"Poire", amount:"1" }, { emoji:"🥄", name:"Cannelle", amount:"1 pincée" } ],
+      es: [ { emoji:"🍐", name:"Pera", amount:"1" }, { emoji:"🥄", name:"Canela", amount:"1 pizca" } ]
+    },
+    steps: {
+      en: [ { title:"Chop", text:"Cut pear into chunks and sprinkle with cinnamon." }, { title:"Bake", text:"Bake 15 min at 180°C until soft." } ],
+      de: [ { title:"Schneiden", text:"Birne in Stücke schneiden und mit Zimt bestreuen." }, { title:"Backen", text:"15 Min bei 180°C backen, bis weich." } ],
+      fr: [ { title:"Couper", text:"Coupez la poire en morceaux et saupoudrez de cannelle." }, { title:"Cuire", text:"Cuire 15 min à 180°C jusqu'à tendre." } ],
+      es: [ { title:"Cortar", text:"Corta la pera en trozos y espolvorea canela." }, { title:"Hornear", text:"Hornea 15 min a 180°C hasta blanda." } ]
+    },
+    tip: { en:"Baked pear won't brown; pack cooled in a sealed cup.", de:"Gebackene Birne wird nicht braun; abgekühlt in dichtem Becher einpacken.", fr:"La poire cuite ne brunit pas; emballez refroidie en gobelet fermé.", es:"La pera horneada no se oxida; empaca fría en vaso cerrado." }
+  },
+  "hummus": {
+    nutrition: { kcal: 150, protein: 6, carbs: 16, fat: 8, fiber: 4 },
+    ings: {
+      en: [ { emoji:"🫘", name:"Chickpeas", amount:"1/2 cup" }, { emoji:"🥄", name:"Tahini", amount:"1 tbsp" }, { emoji:"🍋", name:"Lemon juice", amount:"1 tsp" }, { emoji:"🫒", name:"Olive oil", amount:"1 tsp" } ],
+      de: [ { emoji:"🫘", name:"Kichererbsen", amount:"1/2 Tasse" }, { emoji:"🥄", name:"Tahini", amount:"1 EL" }, { emoji:"🍋", name:"Zitronensaft", amount:"1 TL" }, { emoji:"🫒", name:"Olivenöl", amount:"1 TL" } ],
+      fr: [ { emoji:"🫘", name:"Pois chiches", amount:"1/2 tasse" }, { emoji:"🥄", name:"Tahini", amount:"1 c. à soupe" }, { emoji:"🍋", name:"Jus de citron", amount:"1 c. à café" }, { emoji:"🫒", name:"Huile d'olive", amount:"1 c. à café" } ],
+      es: [ { emoji:"🫘", name:"Garbanzos", amount:"1/2 taza" }, { emoji:"🥄", name:"Tahini", amount:"1 cda" }, { emoji:"🍋", name:"Zumo de limón", amount:"1 cdta" }, { emoji:"🫒", name:"Aceite de oliva", amount:"1 cdta" } ]
+    },
+    steps: {
+      en: [ { title:"Blend", text:"Blend chickpeas, tahini, lemon and oil until smooth." } ],
+      de: [ { title:"Mixen", text:"Kichererbsen, Tahini, Zitrone und Öl glatt pürieren." } ],
+      fr: [ { title:"Mixer", text:"Mixez pois chiches, tahini, citron et huile jusqu'à lisse." } ],
+      es: [ { title:"Triturar", text:"Tritura garbanzos, tahini, limón y aceite hasta cremoso." } ]
+    },
+    tip: { en:"Pack in a sealed pot and keep cool with an ice pack.", de:"In dichtem Döschen einpacken und mit Kühlpack kühl halten.", fr:"Emballez en pot fermé et gardez au frais.", es:"Empaca en bote cerrado y mantén frío con acumulador." }
+  },
+  "guacamole": {
+    nutrition: { kcal: 120, protein: 2, carbs: 7, fat: 10, fiber: 4 },
+    ings: {
+      en: [ { emoji:"🥑", name:"Avocado", amount:"1/2" }, { emoji:"🍋", name:"Lime juice", amount:"1 tsp" }, { emoji:"🍅", name:"Diced tomato", amount:"1 tbsp" } ],
+      de: [ { emoji:"🥑", name:"Avocado", amount:"1/2" }, { emoji:"🍋", name:"Limettensaft", amount:"1 TL" }, { emoji:"🍅", name:"Tomatenwürfel", amount:"1 EL" } ],
+      fr: [ { emoji:"🥑", name:"Avocat", amount:"1/2" }, { emoji:"🍋", name:"Jus de citron vert", amount:"1 c. à café" }, { emoji:"🍅", name:"Tomate en dés", amount:"1 c. à soupe" } ],
+      es: [ { emoji:"🥑", name:"Aguacate", amount:"1/2" }, { emoji:"🍋", name:"Zumo de lima", amount:"1 cdta" }, { emoji:"🍅", name:"Tomate en dados", amount:"1 cda" } ]
+    },
+    steps: {
+      en: [ { title:"Mash", text:"Mash avocado with lime juice." }, { title:"Mix", text:"Stir in the diced tomato." } ],
+      de: [ { title:"Zerdrücken", text:"Avocado mit Limettensaft zerdrücken." }, { title:"Mischen", text:"Tomatenwürfel unterrühren." } ],
+      fr: [ { title:"Écraser", text:"Écrasez l'avocat avec le jus de citron vert." }, { title:"Mélanger", text:"Incorporez la tomate en dés." } ],
+      es: [ { title:"Aplastar", text:"Aplasta el aguacate con lima." }, { title:"Mezclar", text:"Añade el tomate en dados." } ]
+    },
+    tip: { en:"Extra lime and a sealed pot keep it green; keep cool.", de:"Mehr Limette und ein dichtes Döschen halten es grün; kühl halten.", fr:"Plus de citron vert et un pot fermé le gardent vert; au frais.", es:"Más lima y un bote cerrado lo mantienen verde; mantén frío." }
+  },
+  "yogurt-honey": {
+    nutrition: { kcal: 110, protein: 6, carbs: 14, fat: 3, fiber: 0 },
+    ings: {
+      en: [ { emoji:"🥛", name:"Greek yogurt", amount:"1/2 cup" }, { emoji:"🍯", name:"Honey", amount:"1 tsp" }, { emoji:"🥄", name:"Cinnamon", amount:"1 pinch" } ],
+      de: [ { emoji:"🥛", name:"Griechischer Joghurt", amount:"1/2 Tasse" }, { emoji:"🍯", name:"Honig", amount:"1 TL" }, { emoji:"🥄", name:"Zimt", amount:"1 Prise" } ],
+      fr: [ { emoji:"🥛", name:"Yaourt grec", amount:"1/2 tasse" }, { emoji:"🍯", name:"Miel", amount:"1 c. à café" }, { emoji:"🥄", name:"Cannelle", amount:"1 pincée" } ],
+      es: [ { emoji:"🥛", name:"Yogur griego", amount:"1/2 taza" }, { emoji:"🍯", name:"Miel", amount:"1 cdta" }, { emoji:"🥄", name:"Canela", amount:"1 pizca" } ]
+    },
+    steps: {
+      en: [ { title:"Stir", text:"Stir honey and cinnamon into the yogurt." } ],
+      de: [ { title:"Rühren", text:"Honig und Zimt in den Joghurt rühren." } ],
+      fr: [ { title:"Mélanger", text:"Incorporez miel et cannelle au yaourt." } ],
+      es: [ { title:"Mezclar", text:"Mezcla miel y canela en el yogur." } ]
+    },
+    tip: { en:"Pack in a sealed pot and keep cool with an ice pack.", de:"In dichtem Döschen einpacken und mit Kühlpack kühl halten.", fr:"Emballez en pot fermé et gardez au frais.", es:"Empaca en bote cerrado y mantén frío con acumulador." }
+  },
+  "nut-butter": {
+    nutrition: { kcal: 180, protein: 7, carbs: 6, fat: 15, fiber: 2 },
+    ings: {
+      en: [ { emoji:"🥜", name:"Peanut or sunflower butter", amount:"2 tbsp" } ],
+      de: [ { emoji:"🥜", name:"Erdnuss- oder Sonnenblumenmus", amount:"2 EL" } ],
+      fr: [ { emoji:"🥜", name:"Beurre de cacahuète ou tournesol", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🥜", name:"Crema de cacahuete o girasol", amount:"2 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Pot", text:"Spoon the nut or seed butter into a small pot for dipping." } ],
+      de: [ { title:"Abfüllen", text:"Nuss- oder Samenmus zum Dippen in ein Döschen füllen." } ],
+      fr: [ { title:"Verser", text:"Versez le beurre de noix ou de graines dans un petit pot." } ],
+      es: [ { title:"Envasar", text:"Pon la crema en un bote pequeño para mojar." } ]
+    },
+    tip: { en:"Use sunflower butter for nut-free schools; seal the pot well.", de:"Für nussfreie Schulen Sonnenblumenmus nehmen; Döschen gut schließen.", fr:"Beurre de tournesol pour écoles sans noix; fermez bien le pot.", es:"Usa crema de girasol en cole sin frutos secos; cierra bien." }
+  },
+  "choc-clusters": {
+    nutrition: { kcal: 160, protein: 3, carbs: 18, fat: 9, fiber: 2 },
+    ings: {
+      en: [ { emoji:"🍫", name:"Dark chocolate", amount:"30 g" }, { emoji:"🌾", name:"Oats", amount:"3 tbsp" } ],
+      de: [ { emoji:"🍫", name:"Zartbitterschokolade", amount:"30 g" }, { emoji:"🌾", name:"Haferflocken", amount:"3 EL" } ],
+      fr: [ { emoji:"🍫", name:"Chocolat noir", amount:"30 g" }, { emoji:"🌾", name:"Flocons d'avoine", amount:"3 c. à soupe" } ],
+      es: [ { emoji:"🍫", name:"Chocolate negro", amount:"30 g" }, { emoji:"🌾", name:"Avena", amount:"3 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Melt", text:"Melt the chocolate gently." }, { title:"Mix", text:"Stir in oats and spoon into little clusters." }, { title:"Set", text:"Chill until firm." } ],
+      de: [ { title:"Schmelzen", text:"Schokolade sanft schmelzen." }, { title:"Mischen", text:"Hafer unterrühren und kleine Häufchen setzen." }, { title:"Fest werden", text:"Kalt stellen, bis fest." } ],
+      fr: [ { title:"Fondre", text:"Faites fondre le chocolat doucement." }, { title:"Mélanger", text:"Incorporez l'avoine et formez des petits tas." }, { title:"Figer", text:"Réfrigérez jusqu'à fermeté." } ],
+      es: [ { title:"Fundir", text:"Funde el chocolate con suavidad." }, { title:"Mezclar", text:"Añade la avena y forma montoncitos." }, { title:"Cuajar", text:"Enfría hasta que estén firmes." } ]
+    },
+    tip: { en:"Keep cool with an ice pack so the chocolate doesn't melt.", de:"Mit Kühlpack kühl halten, damit die Schokolade nicht schmilzt.", fr:"Gardez au frais pour que le chocolat ne fonde pas.", es:"Mantén frío con acumulador para que no se derrita." }
+  },
+  "granola": {
+    nutrition: { kcal: 170, protein: 4, carbs: 24, fat: 7, fiber: 3 },
+    ings: {
+      en: [ { emoji:"🌾", name:"Oats", amount:"1/3 cup" }, { emoji:"🍯", name:"Maple syrup", amount:"1 tbsp" }, { emoji:"🫒", name:"Oil", amount:"1 tsp" } ],
+      de: [ { emoji:"🌾", name:"Haferflocken", amount:"1/3 Tasse" }, { emoji:"🍯", name:"Ahornsirup", amount:"1 EL" }, { emoji:"🫒", name:"Öl", amount:"1 TL" } ],
+      fr: [ { emoji:"🌾", name:"Flocons d'avoine", amount:"1/3 tasse" }, { emoji:"🍯", name:"Sirop d'érable", amount:"1 c. à soupe" }, { emoji:"🫒", name:"Huile", amount:"1 c. à café" } ],
+      es: [ { emoji:"🌾", name:"Avena", amount:"1/3 taza" }, { emoji:"🍯", name:"Sirope de arce", amount:"1 cda" }, { emoji:"🫒", name:"Aceite", amount:"1 cdta" } ]
+    },
+    steps: {
+      en: [ { title:"Mix", text:"Toss oats with maple and oil." }, { title:"Bake", text:"Bake 15 min at 160°C, stirring once, until golden." } ],
+      de: [ { title:"Mischen", text:"Hafer mit Sirup und Öl mischen." }, { title:"Backen", text:"15 Min bei 160°C backen, einmal wenden, bis goldbraun." } ],
+      fr: [ { title:"Mélanger", text:"Mélangez l'avoine avec sirop et huile." }, { title:"Cuire", text:"Cuire 15 min à 160°C en remuant une fois." } ],
+      es: [ { title:"Mezclar", text:"Mezcla la avena con sirope y aceite." }, { title:"Hornear", text:"Hornea 15 min a 160°C, removiendo una vez." } ]
+    },
+    tip: { en:"Cool fully so clusters stay crunchy; pack in a sealed pot.", de:"Gut auskühlen, damit die Cluster knusprig bleiben; dicht einpacken.", fr:"Refroidir bien pour garder le croustillant; pot fermé.", es:"Enfría bien para que queden crujientes; bote cerrado." }
+  },
+  "energy-bites": {
+    nutrition: { kcal: 150, protein: 4, carbs: 22, fat: 6, fiber: 3 },
+    ings: {
+      en: [ { emoji:"🌴", name:"Dates", amount:"4" }, { emoji:"🌾", name:"Oats", amount:"3 tbsp" }, { emoji:"🌻", name:"Seeds", amount:"1 tbsp" } ],
+      de: [ { emoji:"🌴", name:"Datteln", amount:"4" }, { emoji:"🌾", name:"Haferflocken", amount:"3 EL" }, { emoji:"🌻", name:"Samen", amount:"1 EL" } ],
+      fr: [ { emoji:"🌴", name:"Dattes", amount:"4" }, { emoji:"🌾", name:"Flocons d'avoine", amount:"3 c. à soupe" }, { emoji:"🌻", name:"Graines", amount:"1 c. à soupe" } ],
+      es: [ { emoji:"🌴", name:"Dátiles", amount:"4" }, { emoji:"🌾", name:"Avena", amount:"3 cdas" }, { emoji:"🌻", name:"Semillas", amount:"1 cda" } ]
+    },
+    steps: {
+      en: [ { title:"Blend", text:"Blitz dates, oats and seeds into a sticky mix." }, { title:"Roll", text:"Roll into small balls." } ],
+      de: [ { title:"Mixen", text:"Datteln, Hafer und Samen zu klebriger Masse mixen." }, { title:"Rollen", text:"Zu kleinen Bällchen rollen." } ],
+      fr: [ { title:"Mixer", text:"Mixez dattes, avoine et graines en pâte collante." }, { title:"Rouler", text:"Façonnez de petites boules." } ],
+      es: [ { title:"Triturar", text:"Tritura dátiles, avena y semillas en masa pegajosa." }, { title:"Bolear", text:"Forma bolitas." } ]
+    },
+    tip: { en:"No-bake and sturdy — they travel really well at room temp.", de:"Ohne Backen und stabil — perfekt für unterwegs bei Zimmertemperatur.", fr:"Sans cuisson et robustes — ils voyagent très bien.", es:"Sin horno y resistentes — aguantan muy bien el viaje." }
+  },
+  "apple-cinnamon-sauce": {
+    nutrition: { kcal: 80, protein: 0, carbs: 20, fat: 0, fiber: 2 },
+    ings: {
+      en: [ { emoji:"🍎", name:"Apples", amount:"2" }, { emoji:"🥄", name:"Cinnamon", amount:"1 pinch" }, { emoji:"💧", name:"Water", amount:"2 tbsp" } ],
+      de: [ { emoji:"🍎", name:"Äpfel", amount:"2" }, { emoji:"🥄", name:"Zimt", amount:"1 Prise" }, { emoji:"💧", name:"Wasser", amount:"2 EL" } ],
+      fr: [ { emoji:"🍎", name:"Pommes", amount:"2" }, { emoji:"🥄", name:"Cannelle", amount:"1 pincée" }, { emoji:"💧", name:"Eau", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🍎", name:"Manzanas", amount:"2" }, { emoji:"🥄", name:"Canela", amount:"1 pizca" }, { emoji:"💧", name:"Agua", amount:"2 cdas" } ]
+    },
+    steps: {
+      en: [ { title:"Cook", text:"Simmer chopped apples with water until soft." }, { title:"Blend", text:"Mash smooth and stir in cinnamon." } ],
+      de: [ { title:"Kochen", text:"Apfelstücke mit Wasser weich köcheln." }, { title:"Pürieren", text:"Glatt zerdrücken und Zimt einrühren." } ],
+      fr: [ { title:"Cuire", text:"Faites mijoter les pommes avec l'eau jusqu'à tendre." }, { title:"Mixer", text:"Écrasez lisse et ajoutez la cannelle." } ],
+      es: [ { title:"Cocer", text:"Cuece las manzanas con agua hasta blandas." }, { title:"Triturar", text:"Tritura hasta cremoso y añade canela." } ]
+    },
+    tip: { en:"Cooked sauce won't brown; pack cooled in a sealed pot.", de:"Gekochtes Mus wird nicht braun; abgekühlt in dichtem Döschen einpacken.", fr:"La compote cuite ne brunit pas; emballez refroidie en pot fermé.", es:"La salsa cocida no se oxida; empaca fría en bote cerrado." }
+  },
+  "trail-mix": {
+    nutrition: { kcal: 160, protein: 4, carbs: 22, fat: 7, fiber: 3 },
+    ings: {
+      en: [ { emoji:"🍇", name:"Raisins", amount:"2 tbsp" }, { emoji:"🌻", name:"Sunflower seeds", amount:"1 tbsp" }, { emoji:"🥭", name:"Dried mango", amount:"1 tbsp" } ],
+      de: [ { emoji:"🍇", name:"Rosinen", amount:"2 EL" }, { emoji:"🌻", name:"Sonnenblumenkerne", amount:"1 EL" }, { emoji:"🥭", name:"Getrocknete Mango", amount:"1 EL" } ],
+      fr: [ { emoji:"🍇", name:"Raisins secs", amount:"2 c. à soupe" }, { emoji:"🌻", name:"Graines de tournesol", amount:"1 c. à soupe" }, { emoji:"🥭", name:"Mangue séchée", amount:"1 c. à soupe" } ],
+      es: [ { emoji:"🍇", name:"Pasas", amount:"2 cdas" }, { emoji:"🌻", name:"Pipas de girasol", amount:"1 cda" }, { emoji:"🥭", name:"Mango seco", amount:"1 cda" } ]
+    },
+    steps: {
+      en: [ { title:"Mix", text:"Toss raisins, seeds and dried mango together." } ],
+      de: [ { title:"Mischen", text:"Rosinen, Kerne und getrocknete Mango mischen." } ],
+      fr: [ { title:"Mélanger", text:"Mélangez raisins, graines et mangue séchée." } ],
+      es: [ { title:"Mezclar", text:"Mezcla pasas, pipas y mango seco." } ]
+    },
+    tip: { en:"Nut-free and shelf-stable — ideal for any lunchbox, packs anywhere.", de:"Nussfrei und haltbar — ideal für jede Brotdose, überall einpackbar.", fr:"Sans noix et stable — idéal pour toute lunchbox.", es:"Sin frutos secos y estable — ideal para cualquier fiambrera." }
+  }
+};
 function bentoL(o){return (o&&(o[lang]||o.en))||'';}
 function bentoFood(id){for(const f of BENTO_FOODS)if(f.id===id)return f;return null;}
 function bentoSlotById(id){for(const s of BENTO_SLOTS)if(s.id===id)return s;return BENTO_SLOTS[0];}
