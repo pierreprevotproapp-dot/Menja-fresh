@@ -1080,6 +1080,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-tip{display:flex;gap:10px;align-items:flex-start;background:#FFF6E5;border:1px solid #F0D9A8;border-radius:14px;padding:11px 13px;margin-bottom:12px;font-size:13px;line-height:1.45;color:#6B5318}
 .bento-tip-ic{font-size:18px;line-height:1;flex-shrink:0}
 .bento-swap-btn{width:100%;margin:14px 0 4px;background:var(--surface2);color:var(--text);border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.bento-box-recipe-btn{width:100%;margin-top:12px;background:var(--accent);color:#fff;border:none;border-radius:99px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.bento-prep-group{margin-bottom:18px}
+.bento-prep-head{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--text);margin:0 2px 8px;padding-bottom:7px;border-bottom:1.5px solid var(--border2)}
+.bento-prep-em{font-size:22px}
+.bento-prep-role{margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--text3);background:var(--surface2);padding:3px 9px;border-radius:99px}
 </style>
 </head>
 <body>
@@ -1772,7 +1777,7 @@ en:{
   bentoTitle:'🍱 Bento Kids Planning',bentoSub:'Pick your days, then fill 5 compartments with healthy food',
   bentoNoBox:'No bento box planned for this day yet.',bentoPlanDay:'Plan a bento box',bentoSurprise:'Surprise',
   bentoRoleMain:'Main',bentoRoleProtein:'Protein',bentoRoleVeg:'Veggies',bentoRoleFruit:'Fruit',bentoRoleDip:'Dip & treat',
-  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',
+  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',bentoBoxRecipe:'Whole-box recipe',bentoForWholeBox:'Everything for the whole box',bentoTotalBox:'Whole box · total',
   langHeader:'Language',meName:'Me',prefsAllergies:'⚙️ Preferences & allergies',
   deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',legalNotice:'Legal notice / Impressum',
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
@@ -1924,7 +1929,7 @@ fr:{
   bentoTitle:'🍱 Bento Enfants',bentoSub:'Choisis tes jours, puis remplis 5 compartiments de bons aliments',
   bentoNoBox:'Aucune boîte prévue pour ce jour.',bentoPlanDay:'Planifier une boîte',bentoSurprise:'Surprise',
   bentoRoleMain:'Plat',bentoRoleProtein:'Protéine',bentoRoleVeg:'Légumes',bentoRoleFruit:'Fruits',bentoRoleDip:'Sauce & en-cas',
-  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',
+  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',bentoBoxRecipe:'Recette de la boîte',bentoForWholeBox:'Tout pour la boîte entière',bentoTotalBox:'Boîte entière · total',
   langHeader:'Langue',meName:'Moi',prefsAllergies:'⚙️ Préférences et allergies',
   deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',legalNotice:'Mentions légales / Impressum',
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
@@ -2076,7 +2081,7 @@ es:{
   bentoTitle:'🍱 Bento para Niños',bentoSub:'Elige tus días y llena 5 compartimentos con comida sana',
   bentoNoBox:'Aún no hay caja planificada para este día.',bentoPlanDay:'Planificar una caja',bentoSurprise:'Sorpresa',
   bentoRoleMain:'Principal',bentoRoleProtein:'Proteína',bentoRoleVeg:'Verduras',bentoRoleFruit:'Fruta',bentoRoleDip:'Salsa & snack',
-  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',
+  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',bentoBoxRecipe:'Receta de la caja',bentoForWholeBox:'Todo para la caja entera',bentoTotalBox:'Caja entera · total',
   langHeader:'Idioma',meName:'Yo',prefsAllergies:'⚙️ Preferencias y alergias',
   deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',legalNotice:'Aviso legal / Impressum',
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
@@ -2274,7 +2279,7 @@ de:{
   bentoTitle:'🍱 Bento Kinder-Planung',bentoSub:'Wähle deine Tage und fülle 5 Fächer mit gesundem Essen',
   bentoNoBox:'Für diesen Tag ist noch keine Box geplant.',bentoPlanDay:'Bento-Box planen',bentoSurprise:'Überraschung',
   bentoRoleMain:'Hauptteil',bentoRoleProtein:'Eiweiß',bentoRoleVeg:'Gemüse',bentoRoleFruit:'Obst',bentoRoleDip:'Dip & Snack',
-  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',
+  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',bentoBoxRecipe:'Rezept der ganzen Box',bentoForWholeBox:'Alles für die ganze Box',bentoTotalBox:'Ganze Box · gesamt',
   langHeader:'Sprache',meName:'Ich',prefsAllergies:'⚙️ Vorlieben & Allergien',
   deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',legalNotice:'Impressum',
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
@@ -6436,6 +6441,7 @@ function renderBentoKids(){
         <div class="bento-day-actions"><button class="bento-mini-btn" onclick="bentoSurprise('${key}')">🎲 ${t('bentoSurprise')}</button><button class="bento-mini-btn" onclick="bentoRemoveDay('${key}')">🗑</button></div>
       </div>
       ${bentoTrayHTML(key)}
+      <button class="bento-box-recipe-btn" onclick="bentoBoxRecipe('${key}')">📖 ${t('bentoBoxRecipe')}</button>
     </div>`;
   }).join('');
 }
@@ -6606,6 +6612,61 @@ function renderBentoRecipe(){
       <div class="rd-tabpane ${_at==='prep'?'active':''}" data-pane="prep">${stepsHtml}</div>
       <div class="rd-tabpane ${_at==='macro'?'active':''}" data-pane="macro">${macroHtml}</div>
       <button class="bento-swap-btn" onclick="bentoSwapCurrent()">🔄 ${t('bentoSwap')}</button>
+    </div>`;
+}
+
+// ── Whole-box recipe: tap the box → all ingredients together + per-compartment preparation + total macros ──
+function bentoBoxItems(key){
+  const plan=(state.bentoPlan&&state.bentoPlan[key])||{};
+  return BENTO_SLOTS.map(s=>{const id=plan[s.id];return id?{slot:s,food:bentoFood(id),rec:bentoRecipe(id)}:null;}).filter(Boolean).filter(x=>x.food);
+}
+function bentoBoxRecipe(key){
+  _bentoRd={foodId:null,key,slot:null,tab:'ing',box:true};
+  renderBentoBoxRecipe(key);
+  document.getElementById('bento-recipe-bg').classList.add('open');
+}
+function renderBentoBoxRecipe(key){
+  const body=document.getElementById('bento-recipe-body');if(!body)return;
+  const items=bentoBoxItems(key);
+  const _at=_bentoRd.tab;
+  const d=new Date(key+'T00:00:00');
+  const dateTxt=isNaN(d)?'':`${dow(d)} ${d.getDate()} ${mon(d)}`;
+  const heroRow=items.map(it=>`<span style="font-size:34px">${it.food.emoji}</span>`).join('');
+  // Ingredients — everything combined into one list
+  const allIngs=[];items.forEach(it=>{const ings=(it.rec&&it.rec.ings&&(it.rec.ings[lang]||it.rec.ings.en))||[];ings.forEach(g=>allIngs.push(g));});
+  const ingGrid=allIngs.length?`<div style="font-size:12px;color:var(--text3);margin:0 2px 8px">${t('bentoForWholeBox')}</div><div class="rd-ing-grid">${allIngs.map(ing=>`<div class="rd-ing-item"><span class="rd-ing-emoji">${ing.emoji||'•'}</span><div class="rd-ing-mid"><div class="rd-ing-name">${ing.name||''}</div><div class="rd-ing-amt">${ing.amount||''}</div></div></div>`).join('')}</div>`:`<div style="color:var(--text3);padding:20px 16px">${t('bentoNoRecipe')}</div>`;
+  // Preparation — grouped per compartment
+  const prepHtml=items.length?items.map(it=>{
+    const cat=BENTO_CATS.find(c=>c.id===it.food.cat);
+    const steps=(it.rec&&it.rec.steps&&(it.rec.steps[lang]||it.rec.steps.en))||[];
+    const tip=it.rec&&it.rec.tip?(it.rec.tip[lang]||it.rec.tip.en):'';
+    const stepsHtml=steps.length?steps.map((s,i)=>`<div class="rd-step-card"><div class="rd-step-hdr"><div class="rd-step-num">${i+1}</div><div class="rd-step-title">${s.title||''}</div></div><div class="rd-step-body"><div class="rd-step-txt">${s.text||''}</div></div></div>`).join(''):'';
+    return`<div class="bento-prep-group"><div class="bento-prep-head"><span class="bento-prep-em">${it.food.emoji}</span><span>${bentoL(it.food.name)}</span><span class="bento-prep-role">${cat?cat.emoji+' ':''}${t(it.slot.roleKey)}</span></div>${stepsHtml}${tip?`<div class="bento-tip"><span class="bento-tip-ic">🎒</span><div>${tip}</div></div>`:''}</div>`;
+  }).join(''):`<div style="color:var(--text3);padding:20px 16px">${t('bentoNoRecipe')}</div>`;
+  // Macros — summed over the whole box
+  let kc=0,pr=0,cb=0,ft=0,fb=0;items.forEach(it=>{const n=it.rec&&it.rec.nutrition;if(n){kc+=n.kcal||0;pr+=n.protein||0;cb+=n.carbs||0;ft+=n.fat||0;fb+=n.fiber||0;}});
+  const col='#2D5A3D',RR=42,RC=263.89;const ringPct=Math.min(100,Math.round(pr/30*100));const ringFill=+(ringPct/100*RC).toFixed(1);
+  const bar=(cls,val,label)=>`<div class="rd-nut-row"><span class="rd-nut-lbl">${label}</span><div class="rd-nut-track"><div class="rd-nut-fill ${cls}" style="width:${Math.min(95,Math.round((val||0)*1.5))}%"></div></div><span class="rd-nut-val">${val||0}g</span></div>`;
+  const macroHtml=`<div class="rd-section"><div class="rd-section-title">${t('bentoTotalBox')}</div>
+    <div style="text-align:center;padding:8px 0 6px">
+      <div style="position:relative;width:110px;height:110px;margin:0 auto 8px;display:inline-block">
+        <svg width="110" height="110" viewBox="0 0 110 110"><circle cx="55" cy="55" r="${RR}" fill="none" stroke="var(--surface2)" stroke-width="9"/><circle cx="55" cy="55" r="${RR}" fill="none" stroke="${col}" stroke-width="9" stroke-dasharray="${ringFill} ${RC}" stroke-linecap="round" transform="rotate(-90 55 55)"/></svg>
+        <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;pointer-events:none"><div style="font-family:var(--fd);font-size:26px;font-weight:700;color:${col};line-height:1">${pr}g</div><div style="font-size:10px;color:var(--text3);margin-top:2px">${t('proteinWord')||'Protein'}</div></div>
+      </div>
+      <div style="font-size:11px;color:var(--text3)">${kc} kcal</div>
+    </div>
+    <div class="rd-nut-v2">${bar('carbs',cb,t('carbsWord'))}${bar('fat',ft,t('fatWord'))}${fb?bar('carbs',fb,t('fiberLbl')):''}</div></div>`;
+  body.innerHTML=`<div class="bento-sheet-hd"><div class="bento-sheet-title">🍱 ${t('bentoBoxRecipe')}${dateTxt?` · ${dateTxt}`:''}</div><button class="bento-sheet-x" onclick="closeBentoRecipe()">✕</button></div>
+    <div class="bento-recipe-scroll">
+      <div class="bento-recipe-hero" style="gap:6px">${heroRow}</div>
+      <div class="rd-tabs">
+        <button class="rd-tab ${_at==='ing'?'active':''}" data-pane="ing" onclick="setBentoRecipeTab('ing')">${t('ingredients')}</button>
+        <button class="rd-tab ${_at==='prep'?'active':''}" data-pane="prep" onclick="setBentoRecipeTab('prep')">${t('tabPrep')}</button>
+        <button class="rd-tab ${_at==='macro'?'active':''}" data-pane="macro" onclick="setBentoRecipeTab('macro')">${t('tabMacros')}</button>
+      </div>
+      <div class="rd-tabpane ${_at==='ing'?'active':''}" data-pane="ing">${ingGrid}</div>
+      <div class="rd-tabpane ${_at==='prep'?'active':''}" data-pane="prep">${prepHtml}</div>
+      <div class="rd-tabpane ${_at==='macro'?'active':''}" data-pane="macro">${macroHtml}</div>
     </div>`;
 }
 
