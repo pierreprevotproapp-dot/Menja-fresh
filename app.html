@@ -1091,10 +1091,20 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-tip-ic{font-size:18px;line-height:1;flex-shrink:0}
 .bento-swap-btn{width:100%;margin:14px 0 4px;background:var(--surface2);color:var(--text);border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
 .bento-box-recipe-btn{width:100%;margin-top:12px;background:var(--accent);color:#fff;border:none;border-radius:99px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb)}
-.bento-prep-group{margin-bottom:18px}
-.bento-prep-head{display:flex;align-items:center;gap:8px;font-size:15px;font-weight:700;color:var(--text);margin:0 2px 8px;padding-bottom:7px;border-bottom:1.5px solid var(--border2)}
-.bento-prep-em{font-size:22px}
-.bento-prep-role{margin-left:auto;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.03em;color:var(--text3);background:var(--surface2);padding:3px 9px;border-radius:99px}
+.bento-prep-group{margin-bottom:10px;background:var(--surface);border:1px solid var(--border2);border-radius:14px;overflow:hidden}
+.bento-prep-head{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:700;color:var(--text);padding:13px 14px;cursor:pointer;list-style:none;user-select:none;-webkit-tap-highlight-color:transparent}
+.bento-prep-head::-webkit-details-marker{display:none}
+.bento-prep-head::marker{content:''}
+.bento-prep-em{font-size:22px;flex-shrink:0}
+.bento-prep-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bento-prep-role{font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--text3);background:var(--surface2);padding:3px 9px;border-radius:99px;flex-shrink:0}
+.bento-prep-chev{font-size:13px;color:var(--text3);transition:transform .2s;flex-shrink:0}
+.bento-prep-group[open] .bento-prep-chev{transform:rotate(90deg)}
+.bento-prep-group[open] .bento-prep-head{border-bottom:1px solid var(--border2)}
+.bento-prep-body{padding:11px 14px 5px;animation:fadein .2s}
+.bento-prep-time{font-size:11px;font-weight:700;color:var(--text2);background:var(--surface2);padding:3px 8px;border-radius:99px;flex-shrink:0;white-space:nowrap}
+.bento-time-strip{font-size:12.5px;color:var(--text2);background:var(--surface2);border-radius:99px;padding:8px 14px;text-align:center;margin-bottom:12px}
+.bento-time-strip b{color:var(--text);font-weight:800}
 </style>
 </head>
 <body>
@@ -1874,7 +1884,7 @@ en:{
   rcat_all:'All',rcat_saved:'❤️ Favourites',rcat_quick:'⚡ Quick',rcat_breakfast:'🍳 Breakfast',rcat_meat:'🍗 Meat',rcat_fish:'🐟 Fish',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Gluten-free',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Kids',rcat_basics:'🥄 Basics',
   cookbookEmpty:'Your cookbook is empty.',cookbookEmptySub:"Tap the ♡ on any recipe to save your family's favourites here.",noRecipesCat:'No recipes in this category yet.',
   addWeekShort:'＋ Week',addToMyWeek:'＋ Add to my week',saveFav:'Save to favourites',
-  prepLbl:'Prep',cookLbl:'Cook',totalLbl:'Total',perServingSlash:'/ serving',fiberLbl:'Fiber',sauceDressing:'Sauce & Dressing',closeWordShort:'Close',
+  prepLbl:'Prep',cookLbl:'Cook',freezeLbl:'Freeze',totalLbl:'Total',perServingSlash:'/ serving',fiberLbl:'Fiber',sauceDressing:'Sauce & Dressing',closeWordShort:'Close',
   weekPlannedTitle:'Your week is planned 🎉',weekPlannedSub:'Dinner is one less thing to think about.',toGroceryList:'🛒 Take me to my grocery list →',stayOnPlan:'Stay on this page',
   streakChip:'🔥 {n}-week streak',weeksPlanned1:'🌱 First week planned',weeksPlannedN:'✓ {n} weeks planned',backToToday:'↩ Back to today',
   planCoachHint:'👆 <b>Tap a meal</b> to see the recipe · <b>swipe / ‹ ›</b> to change it · <b>✓ Choose</b> to lock it in · <b>🗑 Skip day</b> to drop one',gotItWord:'Got it',
@@ -2026,7 +2036,7 @@ fr:{
   rcat_all:'Tout',rcat_saved:'❤️ Favoris',rcat_quick:'⚡ Rapide',rcat_breakfast:'🍳 Petit-déj',rcat_meat:'🍗 Viande',rcat_fish:'🐟 Poisson',rcat_vegetarian:'🥦 Végé',rcat_vegan:'🌱 Végétalien',rcat_glutenfree:'🌾 Sans gluten',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Enfants',rcat_basics:'🥄 Basiques',
   cookbookEmpty:'Votre carnet est vide.',cookbookEmptySub:'Touchez le ♡ d\'une recette pour y enregistrer vos favoris.',noRecipesCat:'Aucune recette dans cette catégorie.',
   addWeekShort:'＋ Semaine',addToMyWeek:'＋ Ajouter à ma semaine',saveFav:'Ajouter aux favoris',
-  prepLbl:'Prépa',cookLbl:'Cuisson',totalLbl:'Total',perServingSlash:'/ portion',fiberLbl:'Fibres',sauceDressing:'Sauce & Vinaigrette',closeWordShort:'Fermer',
+  prepLbl:'Prépa',cookLbl:'Cuisson',freezeLbl:'Congélation',totalLbl:'Total',perServingSlash:'/ portion',fiberLbl:'Fibres',sauceDressing:'Sauce & Vinaigrette',closeWordShort:'Fermer',
   weekPlannedTitle:'Votre semaine est planifiée 🎉',weekPlannedSub:'Le dîner, une chose de moins à gérer.',toGroceryList:'🛒 Voir ma liste de courses →',stayOnPlan:'Rester sur cette page',
   streakChip:'🔥 {n} semaines de suite',weeksPlanned1:'🌱 Première semaine planifiée',weeksPlannedN:'✓ {n} semaines planifiées',backToToday:'↩ Retour à aujourd’hui',
   planCoachHint:'👆 <b>Touche</b> un repas pour voir la recette · <b>glisse / ‹ ›</b> pour changer · <b>✓ Choisir</b> pour valider · <b>🗑 Passer le jour</b> pour en retirer un',gotItWord:'Compris',
@@ -2178,7 +2188,7 @@ es:{
   rcat_all:'Todo',rcat_saved:'❤️ Favoritos',rcat_quick:'⚡ Rápido',rcat_breakfast:'🍳 Desayuno',rcat_meat:'🍗 Carne',rcat_fish:'🐟 Pescado',rcat_vegetarian:'🥦 Vegetariano',rcat_vegan:'🌱 Vegano',rcat_glutenfree:'🌾 Sin gluten',rcat_dessert:'🍰 Postre',rcat_kids:'🧒 Niños',rcat_basics:'🥄 Básicos',
   cookbookEmpty:'Tu recetario está vacío.',cookbookEmptySub:'Toca el ♡ en cualquier receta para guardar aquí tus favoritos.',noRecipesCat:'Aún no hay recetas en esta categoría.',
   addWeekShort:'＋ Semana',addToMyWeek:'＋ Añadir a mi semana',saveFav:'Guardar en favoritos',
-  prepLbl:'Prep.',cookLbl:'Cocción',totalLbl:'Total',perServingSlash:'/ ración',fiberLbl:'Fibra',sauceDressing:'Salsa y aliño',closeWordShort:'Cerrar',
+  prepLbl:'Prep.',cookLbl:'Cocción',freezeLbl:'Congelar',totalLbl:'Total',perServingSlash:'/ ración',fiberLbl:'Fibra',sauceDressing:'Salsa y aliño',closeWordShort:'Cerrar',
   weekPlannedTitle:'¡Tu semana está planificada! 🎉',weekPlannedSub:'La cena, una cosa menos en que pensar.',toGroceryList:'🛒 Ir a mi lista de la compra →',stayOnPlan:'Quedarme en esta página',
   streakChip:'🔥 {n} semanas seguidas',weeksPlanned1:'🌱 Primera semana planificada',weeksPlannedN:'✓ {n} semanas planificadas',backToToday:'↩ Volver a hoy',
   planCoachHint:'👆 <b>Toca</b> una comida para ver la receta · <b>desliza / ‹ ›</b> para cambiar · <b>✓ Elegir</b> para fijar · <b>🗑 Saltar día</b> para quitar uno',gotItWord:'Entendido',
@@ -2376,7 +2386,7 @@ de:{
   rcat_all:'Alle',rcat_saved:'❤️ Favoriten',rcat_quick:'⚡ Schnell',rcat_breakfast:'🍳 Frühstück',rcat_meat:'🍗 Fleisch',rcat_fish:'🐟 Fisch',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Glutenfrei',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Kinder',rcat_basics:'🥄 Basics',
   cookbookEmpty:'Dein Kochbuch ist leer.',cookbookEmptySub:'Tippe auf das ♡ einer Rezeptseite, um Familienfavoriten hier zu speichern.',noRecipesCat:'Noch keine Rezepte in dieser Kategorie.',
   addWeekShort:'＋ Woche',addToMyWeek:'＋ Zu meiner Woche',saveFav:'Zu Favoriten',
-  prepLbl:'Vorber.',cookLbl:'Kochen',totalLbl:'Gesamt',perServingSlash:'/ Portion',fiberLbl:'Ballaststoffe',sauceDressing:'Soße & Dressing',closeWordShort:'Schließen',
+  prepLbl:'Vorber.',cookLbl:'Kochen',freezeLbl:'Gefrieren',totalLbl:'Gesamt',perServingSlash:'/ Portion',fiberLbl:'Ballaststoffe',sauceDressing:'Soße & Dressing',closeWordShort:'Schließen',
   weekPlannedTitle:'Deine Woche ist geplant 🎉',weekPlannedSub:'Das Abendessen – eine Sorge weniger.',toGroceryList:'🛒 Zu meiner Einkaufsliste →',stayOnPlan:'Auf dieser Seite bleiben',
   streakChip:'🔥 {n} Wochen in Folge',weeksPlanned1:'🌱 Erste Woche geplant',weeksPlannedN:'✓ {n} Wochen geplant',backToToday:'↩ Zurück zu heute',
   planCoachHint:'👆 <b>Tippe</b> auf eine Mahlzeit für das Rezept · <b>wischen / ‹ ›</b> zum Wechseln · <b>✓ Wählen</b> zum Festlegen · <b>🗑 Tag überspringen</b> zum Streichen',gotItWord:'Verstanden',
@@ -5936,16 +5946,16 @@ const BENTO_RECIPES = {
   "lentil-balls": {
     nutrition: { kcal: 160, protein: 8, carbs: 20, fat: 5, fiber: 5 },
     ings: {
-      en: [ { emoji:"🫘", name:"Cooked lentils", amount:"1/2 cup" }, { emoji:"🌾", name:"Breadcrumbs", amount:"2 tbsp" }, { emoji:"🌿", name:"Herbs", amount:"1 tbsp" }, { emoji:"🥚", name:"Egg", amount:"1/2" } ],
-      de: [ { emoji:"🫘", name:"Gekochte Linsen", amount:"1/2 Tasse" }, { emoji:"🌾", name:"Semmelbrösel", amount:"2 EL" }, { emoji:"🌿", name:"Kräuter", amount:"1 EL" }, { emoji:"🥚", name:"Ei", amount:"1/2" } ],
-      fr: [ { emoji:"🫘", name:"Lentilles cuites", amount:"1/2 tasse" }, { emoji:"🌾", name:"Chapelure", amount:"2 c. à soupe" }, { emoji:"🌿", name:"Herbes", amount:"1 c. à soupe" }, { emoji:"🥚", name:"Œuf", amount:"1/2" } ],
-      es: [ { emoji:"🫘", name:"Lentejas cocidas", amount:"1/2 taza" }, { emoji:"🌾", name:"Pan rallado", amount:"2 cdas" }, { emoji:"🌿", name:"Hierbas", amount:"1 cda" }, { emoji:"🥚", name:"Huevo", amount:"1/2" } ]
+      en: [ { emoji:"🫘", name:"Cooked lentils", amount:"1/2 cup" }, { emoji:"🌾", name:"Breadcrumbs", amount:"2 tbsp" }, { emoji:"🌿", name:"Fresh parsley", amount:"1 tbsp" }, { emoji:"🧄", name:"Garlic & cumin", amount:"1/2 clove + pinch" }, { emoji:"🥚", name:"Egg", amount:"1/2" } ],
+      de: [ { emoji:"🫘", name:"Gekochte Linsen", amount:"1/2 Tasse" }, { emoji:"🌾", name:"Semmelbrösel", amount:"2 EL" }, { emoji:"🌿", name:"Frische Petersilie", amount:"1 EL" }, { emoji:"🧄", name:"Knoblauch & Kreuzkümmel", amount:"1/2 Zehe + Prise" }, { emoji:"🥚", name:"Ei", amount:"1/2" } ],
+      fr: [ { emoji:"🫘", name:"Lentilles cuites", amount:"1/2 tasse" }, { emoji:"🌾", name:"Chapelure", amount:"2 c. à soupe" }, { emoji:"🌿", name:"Persil frais", amount:"1 c. à soupe" }, { emoji:"🧄", name:"Ail & cumin", amount:"1/2 gousse + pincée" }, { emoji:"🥚", name:"Œuf", amount:"1/2" } ],
+      es: [ { emoji:"🫘", name:"Lentejas cocidas", amount:"1/2 taza" }, { emoji:"🌾", name:"Pan rallado", amount:"2 cdas" }, { emoji:"🌿", name:"Perejil fresco", amount:"1 cda" }, { emoji:"🧄", name:"Ajo y comino", amount:"1/2 diente + pizca" }, { emoji:"🥚", name:"Huevo", amount:"1/2" } ]
     },
     steps: {
-      en: [ { title:"Mash", text:"Mash lentils with breadcrumbs, herbs and egg." }, { title:"Roll", text:"Shape into small balls." }, { title:"Bake", text:"Bake 20 min at 200°C until firm." } ],
-      de: [ { title:"Zerdrücken", text:"Linsen mit Bröseln, Kräutern und Ei zerdrücken." }, { title:"Rollen", text:"Zu kleinen Bällchen formen." }, { title:"Backen", text:"20 Min bei 200°C backen, bis fest." } ],
-      fr: [ { title:"Écraser", text:"Écrasez lentilles, chapelure, herbes et œuf." }, { title:"Rouler", text:"Façonnez de petites boules." }, { title:"Cuire", text:"Cuire 20 min à 200°C jusqu'à fermeté." } ],
-      es: [ { title:"Aplastar", text:"Aplasta lentejas con pan, hierbas y huevo." }, { title:"Bolear", text:"Forma bolitas." }, { title:"Hornear", text:"Hornea 20 min a 200°C hasta firme." } ]
+      en: [ { title:"Mash", text:"Mash lentils with breadcrumbs, parsley, garlic, cumin and egg." }, { title:"Roll", text:"Shape into small balls." }, { title:"Bake", text:"Bake 20 min at 200°C until firm." } ],
+      de: [ { title:"Zerdrücken", text:"Linsen mit Bröseln, Petersilie, Knoblauch, Kreuzkümmel und Ei zerdrücken." }, { title:"Rollen", text:"Zu kleinen Bällchen formen." }, { title:"Backen", text:"20 Min bei 200°C backen, bis fest." } ],
+      fr: [ { title:"Écraser", text:"Écrasez lentilles, chapelure, persil, ail, cumin et œuf." }, { title:"Rouler", text:"Façonnez de petites boules." }, { title:"Cuire", text:"Cuire 20 min à 200°C jusqu'à fermeté." } ],
+      es: [ { title:"Aplastar", text:"Aplasta lentejas con pan, perejil, ajo, comino y huevo." }, { title:"Bolear", text:"Forma bolitas." }, { title:"Hornear", text:"Hornea 20 min a 200°C hasta firme." } ]
     },
     tip: { en:"Cool fully before packing so they hold together.", de:"Vor dem Einpacken auskühlen, damit sie zusammenhalten.", fr:"Refroidir avant d'emballer pour qu'elles tiennent.", es:"Enfría antes de empacar para que no se rompan." }
   },
@@ -6623,6 +6633,69 @@ const BENTO_RECIPES = {
     tip: { en:"Hearty and not too sweet. They keep their shape and travel well.", de:"Herzhaft und nicht zu süß. Behalten ihre Form und sind transportfreundlich.", fr:"Consistants et pas trop sucrés. Ils gardent leur forme et voyagent bien.", es:"Sustanciosas y no muy dulces. Mantienen su forma y viajan bien." }
   },
 };
+// Prep & cook times (minutes) per bento recipe
+const BENTO_TIMES = {
+  "dino-burger": { prep: 15, cook: 18 },
+  "spinach-waffle": { prep: 12, cook: 8 },
+  "veggie-pinwheel": { prep: 12, cook: 0 },
+  "sweet-potato-pancake": { prep: 12, cook: 12 },
+  "rice-balls": { prep: 15, cook: 20 },
+  "frittata-muffin": { prep: 12, cook: 22 },
+  "banana-oat-pancake": { prep: 8, cook: 10 },
+  "pita-pocket": { prep: 10, cook: 0 },
+  "corn-fritter": { prep: 12, cook: 12 },
+  "stuffed-tomato": { prep: 10, cook: 0 },
+  "cheese-shapes": { prep: 6, cook: 0 },
+  "egg-shapes": { prep: 8, cook: 10 },
+  "edamame": { prep: 3, cook: 5 },
+  "halloumi": { prep: 5, cook: 8 },
+  "white-bean-dip": { prep: 8, cook: 0 },
+  "cottage-fruit": { prep: 6, cook: 0 },
+  "falafel": { prep: 18, cook: 20 },
+  "lentil-balls": { prep: 15, cook: 22 },
+  "yogurt-pot": { prep: 5, cook: 0 },
+  "cucumber-rolls": { prep: 12, cook: 0 },
+  "caprese-skewer": { prep: 10, cook: 0 },
+  "carrot-slaw": { prep: 12, cook: 0 },
+  "pepper-stars": { prep: 8, cook: 0 },
+  "snap-peas": { prep: 4, cook: 0 },
+  "broccoli-tots": { prep: 15, cook: 25 },
+  "corn-salsa": { prep: 10, cook: 0 },
+  "avocado-smash": { prep: 6, cook: 0 },
+  "roasted-chickpea": { prep: 8, cook: 30 },
+  "cinnamon-apple": { prep: 8, cook: 12 },
+  "apple-nutbutter": { prep: 6, cook: 0 },
+  "fruit-skewer": { prep: 10, cook: 0 },
+  "frozen-yogurt-bites": { prep: 10, cook: 120 },
+  "melon-stars": { prep: 8, cook: 0 },
+  "berry-salad": { prep: 8, cook: 0 },
+  "banana-sushi": { prep: 8, cook: 0 },
+  "grape-cheese-skewer": { prep: 10, cook: 0 },
+  "mango-melon-balls": { prep: 10, cook: 0 },
+  "baked-pear": { prep: 8, cook: 25 },
+  "hummus": { prep: 10, cook: 0 },
+  "guacamole": { prep: 10, cook: 0 },
+  "yogurt-honey": { prep: 4, cook: 0 },
+  "nut-butter": { prep: 8, cook: 0 },
+  "choc-clusters": { prep: 12, cook: 60 },
+  "granola": { prep: 12, cook: 25 },
+  "energy-bites": { prep: 15, cook: 30 },
+  "apple-cinnamon-sauce": { prep: 10, cook: 20 },
+  "trail-mix": { prep: 6, cook: 0 },
+  "spinach-cheese-muffin": { prep: 12, cook: 22 },
+  "pizza-muffin": { prep: 14, cook: 20 },
+  "veggie-quesadilla": { prep: 10, cook: 8 },
+  "veggie-sushi": { prep: 20, cook: 18 },
+  "borek-snake": { prep: 18, cook: 28 },
+  "creamy-broccoli-pasta": { prep: 12, cook: 15 },
+  "bean-quinoa-bowl": { prep: 12, cook: 18 },
+  "chickpea-smash": { prep: 8, cook: 0 },
+  "mini-quiche": { prep: 18, cook: 25 },
+  "fruit-leather": { prep: 15, cook: 240 },
+  "beetroot-hummus": { prep: 10, cook: 0 },
+  "sweet-potato-brownie": { prep: 15, cook: 28 },
+  "oat-apple-cookies": { prep: 12, cook: 15 }
+}
 function bentoL(o){return (o&&(o[lang]||o.en))||'';}
 function bentoFood(id){for(const f of BENTO_FOODS)if(f.id===id)return f;return null;}
 function bentoSlotById(id){for(const s of BENTO_SLOTS)if(s.id===id)return s;return BENTO_SLOTS[0];}
@@ -6779,6 +6852,12 @@ function bindBentoSwipe(){
 // ── Bento recipe detail (Ingredients / Preparation / Macros — same look as Plan tab) ──
 let _bentoRd={foodId:null,key:null,slot:null,tab:'ing'};
 function bentoRecipe(id){return (typeof BENTO_RECIPES!=='undefined'&&BENTO_RECIPES[id])||null;}
+function bentoTime(id){return (typeof BENTO_TIMES!=='undefined'&&BENTO_TIMES[id])||null;}
+function bentoTimeStrip(tm){
+  if(!tm)return'';
+  const c=tm.cook?` · <b>${tm.cook}'</b> ${tm.cook>=120?t('freezeLbl'):t('cookLbl')}`:'';
+  return`<div class="bento-time-strip">⏱ <b>${tm.prep||0}'</b> ${t('prepLbl')}${c}</div>`;
+}
 function openBentoRecipe(key,slotId){
   const id=state.bentoPlan&&state.bentoPlan[key]&&state.bentoPlan[key][slotId];
   if(!id)return openBentoPick(key,slotId);
@@ -6835,6 +6914,7 @@ function renderBentoRecipe(){
   body.innerHTML=`<div class="bento-sheet-hd"><div class="bento-sheet-title">${cat?cat.emoji+' ':''}${bentoL(food.name)}</div><button class="bento-sheet-x" onclick="closeBentoRecipe()">✕</button></div>
     <div class="bento-recipe-scroll">
       <div class="bento-recipe-hero">${food.emoji}</div>
+      ${bentoTimeStrip(bentoTime(_bentoRd.foodId))}
       ${tip?`<div class="bento-tip"><span class="bento-tip-ic">🎒</span><div>${tip}</div></div>`:''}
       <div class="rd-tabs">
         <button class="rd-tab ${_at==='ing'?'active':''}" data-pane="ing" onclick="setBentoRecipeTab('ing')">${t('ingredients')}</button>
@@ -6873,8 +6953,9 @@ function renderBentoBoxRecipe(key){
     const cat=BENTO_CATS.find(c=>c.id===it.food.cat);
     const steps=(it.rec&&it.rec.steps&&(it.rec.steps[lang]||it.rec.steps.en))||[];
     const tip=it.rec&&it.rec.tip?(it.rec.tip[lang]||it.rec.tip.en):'';
-    const stepsHtml=steps.length?steps.map((s,i)=>`<div class="rd-step-card"><div class="rd-step-hdr"><div class="rd-step-num">${i+1}</div><div class="rd-step-title">${s.title||''}</div></div><div class="rd-step-body"><div class="rd-step-txt">${s.text||''}</div></div></div>`).join(''):'';
-    return`<div class="bento-prep-group"><div class="bento-prep-head"><span class="bento-prep-em">${it.food.emoji}</span><span>${bentoL(it.food.name)}</span><span class="bento-prep-role">${cat?cat.emoji+' ':''}${t(it.slot.roleKey)}</span></div>${stepsHtml}${tip?`<div class="bento-tip"><span class="bento-tip-ic">🎒</span><div>${tip}</div></div>`:''}</div>`;
+    const stepsHtml=steps.length?steps.map((s,i)=>`<div class="rd-step-card"><div class="rd-step-hdr"><div class="rd-step-num">${i+1}</div><div class="rd-step-title">${s.title||''}</div></div><div class="rd-step-body"><div class="rd-step-txt">${s.text||''}</div></div></div>`).join(''):`<div style="color:var(--text3);padding:2px 2px 6px">${t('bentoNoRecipe')}</div>`;
+    const tm=bentoTime(it.food.id);const tmTotal=tm?(tm.prep||0)+(tm.cook||0):0;
+    return`<details class="bento-prep-group"><summary class="bento-prep-head"><span class="bento-prep-em">${it.food.emoji}</span><span class="bento-prep-name">${bentoL(it.food.name)}</span>${tmTotal?`<span class="bento-prep-time">⏱ ${tmTotal}'</span>`:''}<span class="bento-prep-role">${cat?cat.emoji+' ':''}${t(it.slot.roleKey)}</span><span class="bento-prep-chev">▸</span></summary><div class="bento-prep-body">${bentoTimeStrip(tm)}${stepsHtml}${tip?`<div class="bento-tip"><span class="bento-tip-ic">🎒</span><div>${tip}</div></div>`:''}</div></details>`;
   }).join(''):`<div style="color:var(--text3);padding:20px 16px">${t('bentoNoRecipe')}</div>`;
   // Macros — summed over the whole box
   let kc=0,pr=0,cb=0,ft=0,fb=0;items.forEach(it=>{const n=it.rec&&it.rec.nutrition;if(n){kc+=n.kcal||0;pr+=n.protein||0;cb+=n.carbs||0;ft+=n.fat||0;fb+=n.fiber||0;}});
