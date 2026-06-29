@@ -1023,29 +1023,39 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-empty-day{text-align:center;padding:22px 14px 16px;color:var(--text2);font-size:13px;line-height:1.5}
 .bento-plan-btn{background:var(--accent);color:#fff;border:none;border-radius:99px;padding:11px 22px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb);margin-top:10px}
 /* YumBox-style tray: large main top-left, protein top-right, veggies bottom-left, fruit bottom-right, round dip well in centre */
-.bento-tray{position:relative;width:100%;max-width:380px;margin:0 auto;aspect-ratio:1.34/1;background:linear-gradient(140deg,#1FB0A6,#138F88);border-radius:24px;padding:5%;display:grid;grid-template-columns:1.32fr 1fr;grid-template-rows:1.12fr 1fr;gap:4.5%;box-shadow:inset 0 2px 12px rgba(0,0,0,.20),0 5px 16px rgba(19,143,136,.28)}
-.bento-cell{position:relative;background:rgba(255,255,255,.93);border-radius:14px;box-shadow:inset 0 1px 5px rgba(0,0,0,.13);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden;padding:6px;transition:transform .12s}
-.bento-cell:active{transform:scale(.97)}
+.bento-tray{position:relative;width:100%;max-width:380px;margin:0 auto;aspect-ratio:1.34/1;background:linear-gradient(150deg,#26C2B6 0%,#16A79D 52%,#0E8B83 100%);border-radius:28px;padding:5.5%;display:grid;grid-template-columns:1.32fr 1fr;grid-template-rows:1.12fr 1fr;gap:5%;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -4px 12px rgba(0,0,0,.16),0 12px 30px rgba(14,139,131,.34)}
+.bento-tray::before{content:'';position:absolute;inset:0;border-radius:28px;background:linear-gradient(180deg,rgba(255,255,255,.25),rgba(255,255,255,0) 40%);pointer-events:none;z-index:1}
+.bento-tray::after{content:'';position:absolute;inset:7px;border-radius:21px;border:1.5px solid rgba(255,255,255,.20);pointer-events:none;z-index:1}
+.bento-cell{position:relative;border-radius:17px;box-shadow:inset 0 2px 7px rgba(0,0,0,.11),inset 0 -2px 5px rgba(0,0,0,.05);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden;padding:6px;transition:transform .12s,box-shadow .15s}
+.bento-cell:active{transform:scale(.96)}
+.bento-cell.filled:active{box-shadow:inset 0 2px 7px rgba(0,0,0,.16)}
 .bento-cell.c-main{grid-column:1;grid-row:1}
 .bento-cell.c-veg{grid-column:1;grid-row:2}
 .bento-cell.c-protein{grid-column:2;grid-row:1}
 .bento-cell.c-fruit{grid-column:2;grid-row:2}
-.bento-well{position:absolute;left:56.5%;top:50%;transform:translate(-50%,-50%);width:23%;aspect-ratio:1;border-radius:50%;background:rgba(255,255,255,.95);box-shadow:inset 0 1px 6px rgba(0,0,0,.16),0 0 0 5px #16978F;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;z-index:2;overflow:hidden}
-.bento-well:active{transform:translate(-50%,-50%) scale(.94)}
-.bento-emoji{font-size:30px;line-height:1}
-.bento-cell.c-main .bento-emoji{font-size:40px}
-.bento-well .bento-emoji{font-size:20px}
-.bento-food-name{font-size:10px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.1;max-width:96%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+/* appetising pastel tint per compartment category */
+.bento-cell.c-main{--g1:#FFF6EC;--g2:#FFE3C6;--cacc:#DD8C3C}
+.bento-cell.c-protein{--g1:#FFFBEE;--g2:#FFEEBC;--cacc:#CFA22E}
+.bento-cell.c-veg{--g1:#F0F8E7;--g2:#D6ECC4;--cacc:#5FA257}
+.bento-cell.c-fruit{--g1:#FDEDED;--g2:#FAD1D1;--cacc:#D85F5F}
+.bento-well{--g1:#F4F0FC;--g2:#E4D8F4;--cacc:#9070D2}
+.bento-cell,.bento-well{background:linear-gradient(160deg,var(--g1),var(--g2))}
+.bento-cell.filled,.bento-well.filled{background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.92),rgba(255,255,255,0) 60%),linear-gradient(160deg,var(--g1),var(--g2))}
+.bento-well{position:absolute;left:56.5%;top:50%;transform:translate(-50%,-50%);width:23.5%;aspect-ratio:1;border-radius:50%;box-shadow:inset 0 2px 7px rgba(0,0,0,.16),0 0 0 5px #15A79D,0 0 0 6.5px rgba(255,255,255,.25);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;z-index:2;overflow:hidden}
+.bento-well:active{transform:translate(-50%,-50%) scale(.93)}
+.bento-emoji{font-size:32px;line-height:1;filter:drop-shadow(0 2px 2px rgba(0,0,0,.13))}
+.bento-cell.c-main .bento-emoji{font-size:43px}
+.bento-well .bento-emoji{font-size:21px}
+.bento-food-name{font-size:10.5px;font-weight:700;color:var(--text);margin-top:4px;line-height:1.12;max-width:96%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .bento-well .bento-food-name{font-size:7px;margin-top:1px;-webkit-line-clamp:1}
-.bento-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;color:#8FC4BF}
-.bento-empty .plus{font-size:26px;font-weight:300;line-height:1}
-.bento-empty .role{font-size:9px;font-weight:700;margin-top:2px;text-transform:uppercase;letter-spacing:.04em}
-.bento-cell.c-main .bento-empty .plus{font-size:32px}
-.bento-well .bento-empty .plus{font-size:17px}
-.bento-well .bento-empty .role{font-size:6px;margin-top:0}
-.bento-cell.filled,.bento-well.filled{background:#fff}
-.bento-x{position:absolute;top:3px;right:4px;width:17px;height:17px;border-radius:50%;background:rgba(0,0,0,.30);color:#fff;font-size:10px;line-height:17px;text-align:center;border:none;cursor:pointer;z-index:3;padding:0}
-.bento-well .bento-x{top:1px;right:auto;width:14px;height:14px;line-height:14px;font-size:8px}
+.bento-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--cacc);opacity:.85}
+.bento-empty .plus{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;border:2px dashed currentColor;font-size:18px;font-weight:400;line-height:1}
+.bento-empty .role{font-size:9px;font-weight:800;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+.bento-cell.c-main .bento-empty .plus{width:36px;height:36px;font-size:22px}
+.bento-well .bento-empty .plus{width:20px;height:20px;font-size:13px;border-width:1.5px}
+.bento-well .bento-empty .role{font-size:6px;margin-top:1px}
+.bento-x{position:absolute;top:4px;right:5px;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,.28);color:#fff;font-size:10px;line-height:18px;text-align:center;border:none;cursor:pointer;z-index:3;padding:0;backdrop-filter:blur(2px)}
+.bento-well .bento-x{top:2px;right:auto;width:14px;height:14px;line-height:14px;font-size:8px}
 /* Bottom-sheet food picker */
 .bento-sheet-bg{position:fixed;inset:0;background:rgba(20,30,22,.55);z-index:600;display:none;align-items:flex-end}
 .bento-sheet-bg.open{display:flex}
