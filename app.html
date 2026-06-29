@@ -5601,6 +5601,26 @@ const BENTO_SLOTS=[
   {id:'fruit',cls:'c-fruit',cat:'fruit',roleKey:'bentoRoleFruit'},
   {id:'well',cls:'c-well',cat:'dip',roleKey:'bentoRoleDip'},
 ];
+// Curated coherent boxes — each compartment is chosen to taste good together,
+// especially the centre dip/treat, which is matched to the rest of the box.
+const BENTO_COMBOS=[
+  {main:'pita-pocket',protein:'falafel',veg:'pepper-stars',fruit:'grape-cheese-skewer',well:'hummus'},            // Mediterranean mezze
+  {main:'veggie-pinwheel',protein:'edamame',veg:'cucumber-rolls',fruit:'melon-stars',well:'guacamole'},           // Fresh & green
+  {main:'pizza-muffin',protein:'cheese-shapes',veg:'caprese-skewer',fruit:'fruit-skewer',well:'hummus'},          // Pizza day
+  {main:'veggie-sushi',protein:'edamame',veg:'snap-peas',fruit:'mango-melon-balls',well:'guacamole'},             // Sushi box
+  {main:'borek-snake',protein:'white-bean-dip',veg:'cucumber-rolls',fruit:'berry-salad',well:'beetroot-hummus'},  // Börek & dips
+  {main:'banana-oat-pancake',protein:'cottage-fruit',veg:'snap-peas',fruit:'berry-salad',well:'nut-butter'},      // Sweet brunch
+  {main:'creamy-broccoli-pasta',protein:'cheese-shapes',veg:'pepper-stars',fruit:'grape-cheese-skewer',well:'hummus'}, // Pasta picnic
+  {main:'spinach-waffle',protein:'egg-shapes',veg:'snap-peas',fruit:'cinnamon-apple',well:'yogurt-honey'},        // Waffle box
+  {main:'rice-balls',protein:'edamame',veg:'carrot-slaw',fruit:'mango-melon-balls',well:'guacamole'},             // Rice-ball bento
+  {main:'veggie-quesadilla',protein:'bean-quinoa-bowl',veg:'corn-salsa',fruit:'melon-stars',well:'guacamole'},    // Mexican fiesta
+  {main:'spinach-cheese-muffin',protein:'cheese-shapes',veg:'cucumber-rolls',fruit:'apple-nutbutter',well:'hummus'}, // Muffin box
+  {main:'frittata-muffin',protein:'halloumi',veg:'pepper-stars',fruit:'fruit-skewer',well:'beetroot-hummus'},     // Frittata box
+  {main:'dino-burger',protein:'cheese-shapes',veg:'broccoli-tots',fruit:'grape-cheese-skewer',well:'hummus'},     // Dino kids box
+  {main:'sweet-potato-pancake',protein:'yogurt-pot',veg:'carrot-slaw',fruit:'baked-pear',well:'apple-cinnamon-sauce'}, // Autumn sweet
+  {main:'corn-fritter',protein:'lentil-balls',veg:'avocado-smash',fruit:'mango-melon-balls',well:'guacamole'},    // Fritter box
+  {main:'stuffed-tomato',protein:'chickpea-smash',veg:'cucumber-rolls',fruit:'fruit-leather',well:'hummus'},      // Stuffed-tomato box
+];
 const BENTO_FOODS=[
   // ── Main ──
   {id:'dino-burger',emoji:'🦕',cat:'main',name:{en:'Dino veggie burgers',de:'Dino-Gemüse-Burger',fr:'Burgers dino aux légumes',es:'Hamburguesas dino de verduras'}},
@@ -6776,12 +6796,22 @@ function bentoToggleDay(key){
 function bentoRemoveDay(key){if(state.bentoDays)delete state.bentoDays[key];if(state.bentoPlan)delete state.bentoPlan[key];save();renderBentoKids();}
 function bentoClearSlot(key,slotId){if(state.bentoPlan&&state.bentoPlan[key]){delete state.bentoPlan[key][slotId];save();renderBentoKids();}}
 function bentoSurprise(key){
-  if(!state.bentoPlan)state.bentoPlan={};if(!state.bentoPlan[key])state.bentoPlan[key]={};
+  if(!state.bentoPlan)state.bentoPlan={};
   if(!state.bentoDays)state.bentoDays={};state.bentoDays[key]=true;
+  // Prefer a curated combo where every compartment harmonises (incl. a fitting dip).
+  const valid=BENTO_COMBOS.filter(c=>BENTO_SLOTS.every(s=>bentoFood(c[s.id])));
+  const pool=valid.length?valid:BENTO_COMBOS;
+  const cur=state.bentoPlan[key];
+  let combo=pool[Math.floor(Math.random()*pool.length)];
+  // Re-roll so a repeat press gives a different box than the one already shown.
+  if(cur&&pool.length>1){let g=0;while(g++<8&&BENTO_SLOTS.every(s=>cur[s.id]===combo[s.id]))combo=pool[Math.floor(Math.random()*pool.length)];}
+  const box={};
   BENTO_SLOTS.forEach(slot=>{
-    const opts=BENTO_FOODS.filter(f=>f.cat===slot.cat);
-    if(opts.length)state.bentoPlan[key][slot.id]=opts[Math.floor(Math.random()*opts.length)].id;
+    if(combo[slot.id]&&bentoFood(combo[slot.id])){box[slot.id]=combo[slot.id];return;}
+    const opts=BENTO_FOODS.filter(f=>f.cat===slot.cat);          // fallback if a combo id is ever missing
+    if(opts.length)box[slot.id]=opts[Math.floor(Math.random()*opts.length)].id;
   });
+  state.bentoPlan[key]=box;
   save();renderBentoKids();
 }
 function openBentoPick(key,slotId){
