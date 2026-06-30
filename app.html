@@ -352,7 +352,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 /* Groceries header — aligned with the Plan-tab green header card */
 .shop-top{padding:18px 20px 16px;background:var(--nav);border-radius:0 0 24px 24px}
 .shop-top-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
-.shop-top-row h1{color:#fff;font-size:21px;margin:0;line-height:1.1}
+.shop-top-row h1{color:#fff;font-size:22px;margin:0;line-height:1.1}
 .shop-top-actions{display:flex;gap:8px;flex-shrink:0}
 .shop-iconbtn{width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:17px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;font-family:inherit}
 .shop-iconbtn:active{background:rgba(255,255,255,.24)}
@@ -438,7 +438,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .rec-hdr{padding:18px 20px 8px}
 .rec-hdr h1{font-family:var(--fd);font-size:22px;font-weight:500}.rec-hdr p{font-size:13px;color:var(--text2);margin-top:3px}
 /* ── Unified tab header: green, fixed at top (sticky just under the 50px tab bar) ── */
-.th,.shop-top,.fam-hero,.rec-hdr,.hero,.fridge-hero{position:sticky;top:0;z-index:100}
+.th,.shop-top,.fam-hero,.rec-sticky,.hero,.fridge-hero{position:sticky;top:0;z-index:100}
+.rec-sticky{background:var(--bg)}
 .th,.shop-top,.fam-hero,.rec-hdr,.hero,.fridge-hero,.plan-top,.bento-top{box-shadow:0 5px 16px rgba(20,46,31,.10)}
 .fam-hero,.fridge-hero,.rec-hdr,.hero,.bento-top{border-radius:0 0 22px 22px}
 .hero{border-bottom:none}
@@ -530,7 +531,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .rate-skip{display:block;text-align:center;padding:12px 20px 0;font-size:13px;color:var(--text3);cursor:pointer}
 .th{padding:20px 20px 12px;background:var(--nav);border-radius:0 0 22px 22px;margin-bottom:4px}
 .th-date{font-size:11px;opacity:.6;margin-bottom:3px;text-transform:uppercase;letter-spacing:.08em;color:var(--nav-t)}
-.th h1{font-family:var(--fd);font-size:25px;font-weight:500;line-height:1.1;color:#fff}
+.th h1{font-family:var(--fd);font-size:22px;font-weight:500;line-height:1.1;color:#fff}
 .tm{padding:12px 20px}
 .tmeal{background:var(--surface);border-radius:var(--r);border:.5px solid var(--border);margin-bottom:10px;overflow:hidden;box-shadow:var(--sh);cursor:pointer;transition:box-shadow .15s}
 .tmeal:hover{box-shadow:var(--shl)}
@@ -1398,7 +1399,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     </div>
     <div class="fridge-results" id="fridge-results" style="display:none"></div>
   </div>
-  <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-hdr"><h1 data-t="recipes">Recipes</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
+  <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-sticky"><div class="rec-hdr"><h1 data-t="recipes">Recipes</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
   <div class="screen" id="screen-today">
     <div class="th">
       <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px">
