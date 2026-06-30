@@ -7154,9 +7154,17 @@ function renderBentoPromo(){
 function bentoTryFromPromo(){state.showBentoTab=true;state.bentoPromoDismissed=true;save();applyBentoTabVisibility();showTab('bentokids');}
 function bentoDismissPromo(){state.bentoPromoDismissed=true;save();renderBentoPromo();}
 
+// Which week (offset from this week) contains a given YYYY-MM-DD date.
+function weekOffsetForKey(key){
+  const target=new Date(key+'T00:00:00');if(isNaN(target))return 0;
+  const ws=d=>{const x=new Date(d);const dm=(x.getDay()+6)%7;x.setDate(x.getDate()-dm);x.setHours(0,0,0,0);return x;};
+  const today=new Date();today.setHours(0,0,0,0);
+  return Math.round((ws(target)-ws(today))/(7*86400000));
+}
 function goToPlanDay(key){
   state.openDays[key]=true;save();
-  weekOffset=0;
+  // Land on the week that actually contains this date — don't assume the current week.
+  weekOffset=Math.max(0,Math.min(maxWeekOffset(),weekOffsetForKey(key)));
   showTab('plan');
   // setTimeout(0) defers until after the browser paints the newly active plan screen,
   // so getBoundingClientRect returns real rendered positions (not pre-paint stale values).
