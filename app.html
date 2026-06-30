@@ -1276,6 +1276,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <!-- budget-section hidden (feature/weekly-budget branch) -->
     <div class="fam-section"><h3 data-t="moreTools">More</h3>
       <button class="me-link" onclick="openSetup(false)"><span data-t="prefsAllergies">⚙️ Preferences & allergies</span><span class="chev">›</span></button>
+      <button class="me-link" onclick="toggleBentoTab()"><span>🍱 <span data-t="bentoTabSetting">Bento Kids planning</span></span><span class="chev" id="bento-tab-state">On</span></button>
       <button class="me-link" onclick="showTab('fridge')"><span>📷 <span data-t="navFridge">Fridge</span></span><span class="chev">›</span></button>
     </div>
     <div class="fam-section"><h3 data-t="langHeader">Language</h3>
@@ -1835,7 +1836,7 @@ en:{
   bentoTitle:'🍱 Bento Kids Planning',bentoSub:'Pick your days, then fill 5 compartments with healthy food',
   bentoNoBox:'No bento box planned for this day yet.',bentoPlanDay:'Plan a bento box',bentoSurprise:'Surprise',
   bentoRoleMain:'Main',bentoRoleProtein:'Protein',bentoRoleVeg:'Veggies',bentoRoleFruit:'Fruit',bentoRoleDip:'Dip & treat',
-  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',bentoBoxRecipe:'Whole-box recipe',bentoForWholeBox:'Everything for the whole box',bentoTotalBox:'Whole box · total',bentoShopTitle:'🥪 Bento lunchbox',
+  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',bentoBoxRecipe:'Whole-box recipe',bentoForWholeBox:'Everything for the whole box',bentoTotalBox:'Whole box · total',bentoShopTitle:'🥪 Bento lunchbox',bentoTabSetting:'Bento Kids planning',
   langHeader:'Language',meName:'Me',prefsAllergies:'⚙️ Preferences & allergies',
   deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',legalNotice:'Legal notice / Impressum',
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
@@ -1987,7 +1988,7 @@ fr:{
   bentoTitle:'🍱 Bento Enfants',bentoSub:'Choisis tes jours, puis remplis 5 compartiments de bons aliments',
   bentoNoBox:'Aucune boîte prévue pour ce jour.',bentoPlanDay:'Planifier une boîte',bentoSurprise:'Surprise',
   bentoRoleMain:'Plat',bentoRoleProtein:'Protéine',bentoRoleVeg:'Légumes',bentoRoleFruit:'Fruits',bentoRoleDip:'Sauce & en-cas',
-  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',bentoBoxRecipe:'Recette de la boîte',bentoForWholeBox:'Tout pour la boîte entière',bentoTotalBox:'Boîte entière · total',bentoShopTitle:'🥪 Boîte bento',
+  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',bentoBoxRecipe:'Recette de la boîte',bentoForWholeBox:'Tout pour la boîte entière',bentoTotalBox:'Boîte entière · total',bentoShopTitle:'🥪 Boîte bento',bentoTabSetting:'Planif. Bento enfants',
   langHeader:'Langue',meName:'Moi',prefsAllergies:'⚙️ Préférences et allergies',
   deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',legalNotice:'Mentions légales / Impressum',
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
@@ -2139,7 +2140,7 @@ es:{
   bentoTitle:'🍱 Bento para Niños',bentoSub:'Elige tus días y llena 5 compartimentos con comida sana',
   bentoNoBox:'Aún no hay caja planificada para este día.',bentoPlanDay:'Planificar una caja',bentoSurprise:'Sorpresa',
   bentoRoleMain:'Principal',bentoRoleProtein:'Proteína',bentoRoleVeg:'Verduras',bentoRoleFruit:'Fruta',bentoRoleDip:'Salsa & snack',
-  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',bentoBoxRecipe:'Receta de la caja',bentoForWholeBox:'Todo para la caja entera',bentoTotalBox:'Caja entera · total',bentoShopTitle:'🥪 Caja bento',
+  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',bentoBoxRecipe:'Receta de la caja',bentoForWholeBox:'Todo para la caja entera',bentoTotalBox:'Caja entera · total',bentoShopTitle:'🥪 Caja bento',bentoTabSetting:'Planif. Bento niños',
   langHeader:'Idioma',meName:'Yo',prefsAllergies:'⚙️ Preferencias y alergias',
   deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',legalNotice:'Aviso legal / Impressum',
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
@@ -2337,7 +2338,7 @@ de:{
   bentoTitle:'🍱 Bento Kinder-Planung',bentoSub:'Wähle deine Tage und fülle 5 Fächer mit gesundem Essen',
   bentoNoBox:'Für diesen Tag ist noch keine Box geplant.',bentoPlanDay:'Bento-Box planen',bentoSurprise:'Überraschung',
   bentoRoleMain:'Hauptteil',bentoRoleProtein:'Eiweiß',bentoRoleVeg:'Gemüse',bentoRoleFruit:'Obst',bentoRoleDip:'Dip & Snack',
-  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',bentoBoxRecipe:'Rezept der ganzen Box',bentoForWholeBox:'Alles für die ganze Box',bentoTotalBox:'Ganze Box · gesamt',bentoShopTitle:'🥪 Bento-Lunchbox',
+  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',bentoBoxRecipe:'Rezept der ganzen Box',bentoForWholeBox:'Alles für die ganze Box',bentoTotalBox:'Ganze Box · gesamt',bentoShopTitle:'🥪 Bento-Lunchbox',bentoTabSetting:'Bento Kinder-Planung',
   langHeader:'Sprache',meName:'Ich',prefsAllergies:'⚙️ Vorlieben & Allergien',
   deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',legalNotice:'Impressum',
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
@@ -3920,6 +3921,7 @@ function adjFamily(type,delta){
   save();renderFamily();
 }
 function renderFamily(){
+  applyBentoTabVisibility();
   document.getElementById('adults-count').textContent=state.family.adults;
   document.getElementById('children-count').textContent=state.family.children;
   renderDietPrefs();renderMacroGoals();renderMicrobiome();renderBudget();renderDevTier();
@@ -7080,6 +7082,27 @@ function renderBentoBoxRecipe(key){
       <div class="rd-tabpane ${_at==='prep'?'active':''}" data-pane="prep">${prepHtml}</div>
       <div class="rd-tabpane ${_at==='macro'?'active':''}" data-pane="macro">${macroHtml}</div>
     </div>`;
+}
+
+// Bento tab is shown only for families who want it: auto when the profile
+// has children, or forced on/off via the toggle in "Me". Keeps the tab bar
+// at 5 tabs for everyone else.
+function bentoTabVisible(){
+  if(state.showBentoTab===true)return true;
+  if(state.showBentoTab===false)return false;
+  return !!(state.family&&state.family.children>0);
+}
+function applyBentoTabVisibility(){
+  const btn=document.getElementById('tab-bentokids');
+  const vis=bentoTabVisible();
+  if(btn)btn.style.display=vis?'':'none';
+  if(!vis&&_currentTabKey()==='bentokids')showTab('plan');
+  const st=document.getElementById('bento-tab-state');
+  if(st)st.textContent=vis?t('onWord'):t('offWord');
+}
+function toggleBentoTab(){
+  state.showBentoTab=!bentoTabVisible();
+  save();applyBentoTabVisibility();
 }
 
 function goToPlanDay(key){
