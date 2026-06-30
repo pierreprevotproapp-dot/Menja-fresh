@@ -366,6 +366,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .shop-top .shop-from-sel{background:rgba(255,255,255,.14);color:#fff}
 .shop-top.gen .shop-summary,.shop-top.gen .prog-wrap,.shop-top.gen .shop-from-row{display:none}
 .shop-sub-tabs{margin:12px 16px 10px!important}
+.bento-tag{font-size:11px;margin-left:6px;vertical-align:1px;opacity:.85}
 .scat{margin:0 14px 7px;border-radius:var(--rsm);overflow:hidden;border:.5px solid var(--border);background:var(--surface)}
 .scat-hdr{display:flex;align-items:center;gap:9px;padding:10px 13px;cursor:pointer;user-select:none}
 .cico{font-size:17px;width:24px;text-align:center;flex-shrink:0}
@@ -3473,9 +3474,10 @@ function renderShopping(){
   const sitemHTML=(name,v)=>{
     const qStr=niceQty(v.qty,v.unit);
     const inPantry=state.pantry[name]&&state.pantry[name].qty>0;
+    const isBento=(v.source||'').includes('🍱');
     return`<div class="sitem" onclick="toggleItem('${name.replace(/'/g,"\\'")}')">
       <div class="schk ${v.checked?'checked':''}"></div>
-      <div class="sitem-mid"><div class="sitem-name ${v.checked?'checked':''}">${name}${inPantry?`<span class="pantry-bdg">✓ ${t('inPantry')}</span>`:''}</div></div>
+      <div class="sitem-mid"><div class="sitem-name ${v.checked?'checked':''}">${name}${isBento?`<span class="bento-tag" title="${t('bentoShopTitle')}">🍱</span>`:''}${inPantry?`<span class="pantry-bdg">✓ ${t('inPantry')}</span>`:''}</div></div>
       <div class="sitem-right">${qStr?`<span class="sitem-qty">${qStr}</span>`:''}</div>
     </div>`;
   };
