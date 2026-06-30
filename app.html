@@ -188,7 +188,23 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .app-lang-btn.active{border-color:var(--nav-a);opacity:1}
 .nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:var(--nav);z-index:300;border-top:1px solid rgba(126,200,122,.16);padding-bottom:env(safe-area-inset-bottom)}
 .nav-tabs{display:flex}
-.nav-tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 2px 8px;font-size:9px;font-weight:500;color:var(--nav-t);cursor:pointer;border:none;background:none;border-top:2px solid transparent;transition:all .2s;text-transform:uppercase;letter-spacing:.03em}
+.nav-tab{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 2px 8px;font-size:9px;font-weight:500;color:var(--nav-t);cursor:pointer;border:none;background:none;border-top:2px solid transparent;transition:all .2s;text-transform:uppercase;letter-spacing:.03em}
+.nav-new{position:absolute;top:6px;left:calc(50% + 7px);width:8px;height:8px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 2px var(--nav);animation:navPulse 1.6s ease-in-out infinite;pointer-events:none}
+@keyframes navPulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.4);opacity:.65}}
+/* (C) Plan discovery card + (D) Me settings card */
+.bento-promo{position:relative;margin:0 12px 8px;background:var(--surface);border:1px solid var(--accent);border-radius:var(--r);box-shadow:var(--sh);padding:14px}
+.bento-promo-head{display:flex;align-items:center;gap:11px;margin-bottom:12px;padding-right:20px}
+.bento-promo-ico{font-size:24px;flex-shrink:0;background:var(--accent-l);width:44px;height:44px;border-radius:12px;display:flex;align-items:center;justify-content:center}
+.bento-promo-title{font-size:14px;font-weight:700;color:var(--text)}
+.bento-promo-sub{font-size:12px;color:var(--text2);margin-top:2px;line-height:1.35}
+.bento-promo-cta{width:100%;background:var(--accent);color:#fff;border:none;border-radius:99px;padding:12px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.bento-promo-x{position:absolute;top:8px;right:10px;background:none;border:none;font-size:15px;color:var(--text3);cursor:pointer;padding:4px;line-height:1}
+.me-bento-card{display:flex;align-items:center;gap:11px;width:100%;background:var(--surface);border:1px solid var(--border2);border-radius:var(--rsm);padding:11px 13px;cursor:pointer;font-family:inherit;text-align:left;margin-top:4px}
+.me-bento-ico{font-size:22px;flex-shrink:0}
+.me-bento-txt{flex:1;min-width:0}
+.me-bento-title{font-size:14px;font-weight:600;color:var(--text);display:flex;align-items:center;gap:7px}
+.me-bento-sub{font-size:11px;color:var(--text3);margin-top:1px}
+.me-new-badge{font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:.04em;color:#fff;background:var(--accent2);padding:2px 6px;border-radius:99px;flex-shrink:0}
 .nav-tab svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:1.7}
 .nav-tab.active{color:var(--nav-a);border-top-color:var(--nav-a)}
 .badge{background:var(--accent2);color:#fff;font-size:9px;font-weight:600;padding:1px 5px;border-radius:99px}
@@ -1250,7 +1266,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <nav class="nav"><div class="nav-tabs">
     <button class="nav-tab" onclick="showTab('today')" id="tab-today"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><span data-t="navToday">Today</span></button>
     <button class="nav-tab active" onclick="showTab('plan')" id="tab-plan"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-t="navPlan">Plan</span></button>
-    <button class="nav-tab" onclick="showTab('bentokids')" id="tab-bentokids"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="3" y1="12" x2="21" y2="12"/><circle cx="12" cy="12" r="2.4"/></svg><span data-t="navBento">Bento</span></button>
+    <button class="nav-tab" onclick="showTab('bentokids')" id="tab-bentokids"><span class="nav-new" id="bento-new-dot" style="display:none"></span><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><line x1="12" y1="4" x2="12" y2="20"/><line x1="3" y1="12" x2="21" y2="12"/><circle cx="12" cy="12" r="2.4"/></svg><span data-t="navBento">Bento</span></button>
     <button class="nav-tab" onclick="showTab('shopping')" id="tab-shopping"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span data-t="navGroceries">Groceries</span><span class="badge" id="shopping-badge" style="display:none">0</span></button>
     <button class="nav-tab" onclick="showTab('recipes')" id="tab-recipes"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg><span data-t="navRecipes">Recipes</span></button>
     <button class="nav-tab" onclick="showTab('family')" id="tab-family"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span data-t="navMe">Me</span></button>
@@ -1278,7 +1294,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <!-- budget-section hidden (feature/weekly-budget branch) -->
     <div class="fam-section"><h3 data-t="moreTools">More</h3>
       <button class="me-link" onclick="openSetup(false)"><span data-t="prefsAllergies">⚙️ Preferences & allergies</span><span class="chev">›</span></button>
-      <button class="me-link" onclick="toggleBentoTab()"><span>🍱 <span data-t="bentoTabSetting">Bento Kids planning</span></span><span class="chev" id="bento-tab-state">On</span></button>
+      <button class="me-bento-card" onclick="toggleBentoTab()">
+        <div class="me-bento-ico">🍱</div>
+        <div class="me-bento-txt"><div class="me-bento-title"><span data-t="bentoTabSetting">Bento Kids planning</span><span class="me-new-badge" id="bento-me-new" data-t="newBadge">New</span></div><div class="me-bento-sub" data-t="bentoTabSettingSub">Healthy school lunchboxes in minutes</div></div>
+        <span class="chev" id="bento-tab-state">On</span>
+      </button>
       <button class="me-link" onclick="showTab('fridge')"><span>📷 <span data-t="navFridge">Fridge</span></span><span class="chev">›</span></button>
     </div>
     <div class="fam-section"><h3 data-t="langHeader">Language</h3>
@@ -1314,6 +1334,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <button onclick="showAuth();switchAuthTab('signup')" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:8px 14px;font-size:12px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap">Konto erstellen →</button>
       </div>
     </div>
+    <div id="plan-bento-promo"></div>
     <div class="cal-scroll" id="cal-scroll"></div>
   </div></div>
   <div class="screen" id="screen-bentokids"><div class="bento-layout">
@@ -1838,7 +1859,7 @@ en:{
   bentoTitle:'🍱 Bento Kids Planning',bentoSub:'Pick your days, then fill 5 compartments with healthy food',
   bentoNoBox:'No bento box planned for this day yet.',bentoPlanDay:'Plan a bento box',bentoSurprise:'Surprise',
   bentoRoleMain:'Main',bentoRoleProtein:'Protein',bentoRoleVeg:'Veggies',bentoRoleFruit:'Fruit',bentoRoleDip:'Dip & treat',
-  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',bentoBoxRecipe:'Whole-box recipe',bentoForWholeBox:'Everything for the whole box',bentoTotalBox:'Whole box · total',bentoShopTitle:'🥪 Bento lunchbox',bentoTabSetting:'Bento Kids planning',
+  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',bentoBoxRecipe:'Whole-box recipe',bentoForWholeBox:'Everything for the whole box',bentoTotalBox:'Whole box · total',bentoShopTitle:'🥪 Bento lunchbox',bentoTabSetting:'Bento Kids planning',bentoTabSettingSub:'Healthy school lunchboxes in minutes',newBadge:'New',bentoPromoTitle:'Plan healthy school lunchboxes',bentoPromoSub:'New: 🍱 Bento Kids — build a balanced lunchbox in minutes',bentoTryBtn:'Try it →',bentoLaterBtn:'Later',bentoNudgeToast:'🍱 Bento Kids is now on — plan their lunchboxes!',
   langHeader:'Language',meName:'Me',prefsAllergies:'⚙️ Preferences & allergies',
   deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',legalNotice:'Legal notice / Impressum',
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
@@ -1990,7 +2011,7 @@ fr:{
   bentoTitle:'🍱 Bento Enfants',bentoSub:'Choisis tes jours, puis remplis 5 compartiments de bons aliments',
   bentoNoBox:'Aucune boîte prévue pour ce jour.',bentoPlanDay:'Planifier une boîte',bentoSurprise:'Surprise',
   bentoRoleMain:'Plat',bentoRoleProtein:'Protéine',bentoRoleVeg:'Légumes',bentoRoleFruit:'Fruits',bentoRoleDip:'Sauce & en-cas',
-  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',bentoBoxRecipe:'Recette de la boîte',bentoForWholeBox:'Tout pour la boîte entière',bentoTotalBox:'Boîte entière · total',bentoShopTitle:'🥪 Boîte bento',bentoTabSetting:'Planif. Bento enfants',
+  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',bentoBoxRecipe:'Recette de la boîte',bentoForWholeBox:'Tout pour la boîte entière',bentoTotalBox:'Boîte entière · total',bentoShopTitle:'🥪 Boîte bento',bentoTabSetting:'Planif. Bento enfants',bentoTabSettingSub:'Lunchbox saines en quelques minutes',newBadge:'Nouv.',bentoPromoTitle:'Planifie des lunchbox saines',bentoPromoSub:'Nouveau : 🍱 Bento Kids — une lunchbox équilibrée en minutes',bentoTryBtn:'Essayer →',bentoLaterBtn:'Plus tard',bentoNudgeToast:'🍱 Bento Kids est activé — planifie leurs lunchbox !',
   langHeader:'Langue',meName:'Moi',prefsAllergies:'⚙️ Préférences et allergies',
   deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',legalNotice:'Mentions légales / Impressum',
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
@@ -2142,7 +2163,7 @@ es:{
   bentoTitle:'🍱 Bento para Niños',bentoSub:'Elige tus días y llena 5 compartimentos con comida sana',
   bentoNoBox:'Aún no hay caja planificada para este día.',bentoPlanDay:'Planificar una caja',bentoSurprise:'Sorpresa',
   bentoRoleMain:'Principal',bentoRoleProtein:'Proteína',bentoRoleVeg:'Verduras',bentoRoleFruit:'Fruta',bentoRoleDip:'Salsa & snack',
-  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',bentoBoxRecipe:'Receta de la caja',bentoForWholeBox:'Todo para la caja entera',bentoTotalBox:'Caja entera · total',bentoShopTitle:'🥪 Caja bento',bentoTabSetting:'Planif. Bento niños',
+  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',bentoBoxRecipe:'Receta de la caja',bentoForWholeBox:'Todo para la caja entera',bentoTotalBox:'Caja entera · total',bentoShopTitle:'🥪 Caja bento',bentoTabSetting:'Planif. Bento niños',bentoTabSettingSub:'Cajas de almuerzo sanas en minutos',newBadge:'Nuevo',bentoPromoTitle:'Planifica cajas de almuerzo sanas',bentoPromoSub:'Nuevo: 🍱 Bento Kids — una caja equilibrada en minutos',bentoTryBtn:'Probar →',bentoLaterBtn:'Más tarde',bentoNudgeToast:'🍱 Bento Kids está activo — ¡planifica sus almuerzos!',
   langHeader:'Idioma',meName:'Yo',prefsAllergies:'⚙️ Preferencias y alergias',
   deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',legalNotice:'Aviso legal / Impressum',
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
@@ -2340,7 +2361,7 @@ de:{
   bentoTitle:'🍱 Bento Kinder-Planung',bentoSub:'Wähle deine Tage und fülle 5 Fächer mit gesundem Essen',
   bentoNoBox:'Für diesen Tag ist noch keine Box geplant.',bentoPlanDay:'Bento-Box planen',bentoSurprise:'Überraschung',
   bentoRoleMain:'Hauptteil',bentoRoleProtein:'Eiweiß',bentoRoleVeg:'Gemüse',bentoRoleFruit:'Obst',bentoRoleDip:'Dip & Snack',
-  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',bentoBoxRecipe:'Rezept der ganzen Box',bentoForWholeBox:'Alles für die ganze Box',bentoTotalBox:'Ganze Box · gesamt',bentoShopTitle:'🥪 Bento-Lunchbox',bentoTabSetting:'Bento Kinder-Planung',
+  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',bentoBoxRecipe:'Rezept der ganzen Box',bentoForWholeBox:'Alles für die ganze Box',bentoTotalBox:'Ganze Box · gesamt',bentoShopTitle:'🥪 Bento-Lunchbox',bentoTabSetting:'Bento Kinder-Planung',bentoTabSettingSub:'Gesunde Lunchboxen in Minuten',newBadge:'Neu',bentoPromoTitle:'Gesunde Schul-Lunchboxen planen',bentoPromoSub:'Neu: 🍱 Bento Kids — in Minuten eine ausgewogene Lunchbox',bentoTryBtn:'Ausprobieren →',bentoLaterBtn:'Später',bentoNudgeToast:'🍱 Bento Kids ist jetzt aktiv — plane ihre Lunchboxen!',
   langHeader:'Sprache',meName:'Ich',prefsAllergies:'⚙️ Vorlieben & Allergien',
   deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',legalNotice:'Impressum',
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
@@ -3879,7 +3900,7 @@ function showTab(tab){
   if(tab==='shopping')renderShopping();
   if(tab==='today'){todayOffset=0;renderToday();}
   if(tab==='recipes')renderRecipes();
-  if(tab==='bentokids')renderBentoKids();
+  if(tab==='bentokids'){if(!state.bentoSeen){state.bentoSeen=true;save();}renderBentoKids();applyBentoTabVisibility();}
   if(tab==='fridge')initFridgeScreen();
   // Restore scroll for this tab (0 if first visit this session).
   const savedPos=scrollMemory[tab]||0;
@@ -3918,8 +3939,14 @@ function saveApiKey(){
 // FAMILY
 // ═══════════════════════════════════════════════════
 function adjFamily(type,delta){
+  const before=state.family[type];
   state.family[type]=Math.max(0,state.family[type]+delta);
   if(state.family.adults===0&&state.family.children===0)state.family.adults=1;
+  // (B) Context nudge the moment a first child is added → Bento becomes relevant
+  if(type==='children'&&before===0&&state.family.children>=1&&!state.bentoNudged&&bentoTabVisible()){
+    state.bentoNudged=true;
+    setTimeout(()=>{try{toast(t('bentoNudgeToast'));}catch(e){}},300);
+  }
   save();renderFamily();
 }
 function renderFamily(){
@@ -4565,7 +4592,7 @@ function countUsage(id){let c=0;Object.values(state.plan).forEach(dm=>Object.val
 function countPlaced(){let c=0;Object.values(state.plan).forEach(dm=>Object.values(dm).forEach(s=>{if(s&&s.dishId)c++;}));return c;}
 function dayHasExp(key){const dm=state.plan[key];if(!dm)return false;return Object.values(dm).some(slot=>{if(!slot||!slot.dishId)return false;const d=getDish(slot.dishId);return d&&d.ingredients.some(ing=>{const days=effDays(ing.name);return days!==null&&days<=3;});});}
 
-function renderPlan(){renderPlanHeader();renderCal();}
+function renderPlan(){renderPlanHeader();renderCal();renderBentoPromo();}
 function renderPlanHeader(){
   const cp=weekPlacedCount();
   const dates=getDateRange();
@@ -7101,11 +7128,27 @@ function applyBentoTabVisibility(){
   if(!vis&&_currentTabKey()==='bentokids')showTab('plan');
   const st=document.getElementById('bento-tab-state');
   if(st)st.textContent=vis?t('onWord'):t('offWord');
+  const dot=document.getElementById('bento-new-dot');                 // (A) "New" spotlight on the tab
+  if(dot)dot.style.display=(vis&&!state.bentoSeen)?'':'none';
+  const meNew=document.getElementById('bento-me-new');                // (D) "New" badge on the Me card
+  if(meNew)meNew.style.display=state.bentoSeen?'none':'';
 }
 function toggleBentoTab(){
   state.showBentoTab=!bentoTabVisible();
   save();applyBentoTabVisibility();
 }
+// (C) Discovery card on the Plan tab for families not yet using Bento
+function renderBentoPromo(){
+  const el=document.getElementById('plan-bento-promo');if(!el)return;
+  if(bentoTabVisible()||state.bentoPromoDismissed){el.innerHTML='';return;}
+  el.innerHTML=`<div class="bento-promo">
+    <button class="bento-promo-x" onclick="bentoDismissPromo()" aria-label="${t('bentoLaterBtn')}">✕</button>
+    <div class="bento-promo-head"><div class="bento-promo-ico">🍱</div><div><div class="bento-promo-title">${t('bentoPromoTitle')}</div><div class="bento-promo-sub">${t('bentoPromoSub')}</div></div></div>
+    <button class="bento-promo-cta" onclick="bentoTryFromPromo()">${t('bentoTryBtn')}</button>
+  </div>`;
+}
+function bentoTryFromPromo(){state.showBentoTab=true;state.bentoPromoDismissed=true;save();applyBentoTabVisibility();showTab('bentokids');}
+function bentoDismissPromo(){state.bentoPromoDismissed=true;save();renderBentoPromo();}
 
 function goToPlanDay(key){
   state.openDays[key]=true;save();
