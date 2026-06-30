@@ -3942,10 +3942,14 @@ function adjFamily(type,delta){
   const before=state.family[type];
   state.family[type]=Math.max(0,state.family[type]+delta);
   if(state.family.adults===0&&state.family.children===0)state.family.adults=1;
-  // (B) Context nudge the moment a first child is added → Bento becomes relevant
-  if(type==='children'&&before===0&&state.family.children>=1&&!state.bentoNudged&&bentoTabVisible()){
-    state.bentoNudged=true;
-    setTimeout(()=>{try{toast(t('bentoNudgeToast'));}catch(e){}},300);
+  if(type==='children'){
+    // The child count is authoritative: re-sync the Bento tab to auto (no kids → hidden).
+    state.showBentoTab=undefined;
+    // (B) Context nudge the moment a first child is added → Bento becomes relevant
+    if(before===0&&state.family.children>=1&&!state.bentoNudged){
+      state.bentoNudged=true;
+      setTimeout(()=>{try{toast(t('bentoNudgeToast'));}catch(e){}},300);
+    }
   }
   save();renderFamily();
 }
