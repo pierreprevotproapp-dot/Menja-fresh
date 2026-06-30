@@ -25,7 +25,7 @@
   --accent:#2D5A3D;--accent-l:#E0EDD8;--accent2:#C8622A;--danger:#C84040;
   --nav:#1A2E1F;--nav-t:#A8C8A0;--nav-a:#7EC87A;--gold:#F59E0B;
   --fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
-  --r:16px;--rsm:10px;--sh:0 2px 16px rgba(45,90,61,.1);--shl:0 8px 40px rgba(45,90,61,.18)
+  --r:16px;--rsm:10px;--navh:50px;--sh:0 2px 16px rgba(45,90,61,.1);--shl:0 8px 40px rgba(45,90,61,.18)
 }
 body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480px;margin:0 auto;min-height:100vh}
 .auth-screen{display:none;min-height:100vh;flex-direction:column}
@@ -436,6 +436,15 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 /* ── RECIPE LIST ───────────────────────────────── */
 .rec-hdr{padding:18px 20px 8px}
 .rec-hdr h1{font-family:var(--fd);font-size:22px;font-weight:500}.rec-hdr p{font-size:13px;color:var(--text2);margin-top:3px}
+/* ── Unified tab header: green, fixed at top (sticky just under the 50px tab bar) ── */
+.th,.shop-top,.fam-hero,.rec-hdr,.hero,.fridge-hero{position:sticky;top:calc(var(--navh) - 1px);z-index:100}
+.th,.shop-top,.fam-hero,.rec-hdr,.hero,.fridge-hero,.plan-top,.bento-top{box-shadow:0 5px 16px rgba(20,46,31,.10)}
+.fam-hero,.fridge-hero,.rec-hdr,.hero,.bento-top{border-radius:0 0 22px 22px}
+.hero{border-bottom:none}
+.rec-hdr{background:var(--nav);padding:18px 20px 14px}
+.rec-hdr h1{color:#fff}
+.rec-hdr p{color:var(--nav-t)}
+.bento-top{background:var(--nav)}
 .rec-grid{padding:0 14px 8px}
 .rec-card{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:10px;cursor:pointer;transition:box-shadow .2s,transform .15s;box-shadow:var(--sh)}
 .rec-card:hover{box-shadow:var(--shl);transform:translateY(-1px)}
@@ -572,7 +581,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .week-nav-btn{width:34px;height:34px;border-radius:50%;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .15s}
 .week-nav-btn:disabled{opacity:.25;cursor:default}
 .week-nav-label{flex:1;text-align:center}
-.week-nav-label #wk-label{font-family:var(--fd);font-size:20px;font-weight:500;color:#fff}
+.week-nav-label #wk-label,.week-nav-label #bento-wk-label{font-family:var(--fd);font-size:20px;font-weight:500;color:#fff}
 .week-nav-sub{font-size:12px;color:var(--nav-t);margin-top:2px}
 /* ── VISUAL DINNER DAY CARDS ─────────────────── */
 .pday{margin-bottom:20px}
@@ -1311,8 +1320,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <div class="week-nav-label"><div id="bento-wk-label">This week</div><div class="week-nav-sub" id="bento-wk-range"></div></div>
         <button class="week-nav-btn" id="bento-wk-next" onclick="bentoChangeWeek(1)">›</button>
       </div>
-      <h1 style="text-align:center;font-size:18px;font-weight:800;margin:8px 0 2px;color:var(--text)" data-t="bentoTitle">🍱 Bento Kids Planning</h1>
-      <div style="text-align:center;font-size:12px;color:var(--text2);line-height:1.4" data-t="bentoSub">Pick your days, then fill 5 compartments with healthy food</div>
+      <h1 style="text-align:center;font-size:18px;font-weight:800;margin:8px 0 2px;color:#fff" data-t="bentoTitle">🍱 Bento Kids Planning</h1>
+      <div style="text-align:center;font-size:12px;color:var(--nav-t);line-height:1.4" data-t="bentoSub">Pick your days, then fill 5 compartments with healthy food</div>
       <div class="bento-daybar" id="bento-daybar"></div>
     </div>
     <div class="bento-scroll" id="bento-scroll"></div>
