@@ -348,6 +348,24 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .prog-bar{height:4px;background:var(--border);border-radius:99px;overflow:hidden;margin-bottom:5px}
 .prog-fill{height:100%;background:var(--accent);border-radius:99px;transition:width .3s}
 .prog-txt{font-size:12px;color:var(--text2)}
+/* Groceries header — aligned with the Plan-tab green header card */
+.shop-top{padding:18px 20px 16px;background:var(--nav);border-radius:0 0 24px 24px}
+.shop-top-row{display:flex;align-items:center;justify-content:space-between;gap:10px}
+.shop-top-row h1{color:#fff;font-size:21px;margin:0;line-height:1.1}
+.shop-top-actions{display:flex;gap:8px;flex-shrink:0}
+.shop-iconbtn{width:36px;height:36px;border-radius:50%;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:17px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .15s;font-family:inherit}
+.shop-iconbtn:active{background:rgba(255,255,255,.24)}
+.shop-iconbtn.share{color:var(--nav-a)}
+.shop-top .shop-summary{padding:6px 0 0;color:var(--nav-t);font-size:12.5px}
+.shop-top .prog-wrap{padding:13px 0 0}
+.shop-top .prog-bar{height:7px;background:rgba(255,255,255,.15);margin-bottom:6px}
+.shop-top .prog-fill{background:var(--nav-a)}
+.shop-top .prog-txt{color:var(--nav-t);font-size:12px}
+.shop-top .shop-from-row{padding:12px 0 0}
+.shop-top .shop-from-lbl{color:var(--nav-t)}
+.shop-top .shop-from-sel{background:rgba(255,255,255,.14);color:#fff}
+.shop-top.gen .shop-summary,.shop-top.gen .prog-wrap,.shop-top.gen .shop-from-row{display:none}
+.shop-sub-tabs{margin:12px 16px 10px!important}
 .scat{margin:0 14px 7px;border-radius:var(--rsm);overflow:hidden;border:.5px solid var(--border);background:var(--surface)}
 .scat-hdr{display:flex;align-items:center;gap:9px;padding:10px 13px;cursor:pointer;user-select:none}
 .cico{font-size:17px;width:24px;text-align:center;flex-shrink:0}
@@ -1316,11 +1334,20 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div class="bento-sheet"><div id="bento-recipe-body"></div></div>
   </div>
   <div class="screen" id="screen-shopping">
-    <div class="shop-hdr"><h1 data-t="shoppingList">Shopping list</h1><div style="display:flex;gap:8px;align-items:center"><button class="cbtn shop-share" onclick="shareShoppingList()">↗ Share</button><button class="cbtn" onclick="clearChecked()" data-t="clearTicked">Clear ticked</button></div></div>
-    <div class="shop-summary" id="shop-summary"></div>
-    <div class="shop-from-row" id="shop-from-row"></div>
+    <div class="shop-top">
+      <div class="shop-top-row">
+        <h1 data-t="shoppingList">Shopping list</h1>
+        <div class="shop-top-actions">
+          <button class="shop-iconbtn share" onclick="shareShoppingList()" title="Share" aria-label="Share">↗</button>
+          <button class="shop-iconbtn" onclick="clearChecked()" title="Clear ticked" aria-label="Clear ticked">↺</button>
+        </div>
+      </div>
+      <div class="shop-summary" id="shop-summary"></div>
+      <div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div><div class="prog-txt" id="prog-txt"></div></div>
+      <div class="shop-from-row" id="shop-from-row"></div>
+    </div>
     <div class="shop-sub-tabs"><div class="shop-stab active" id="stab-menu" onclick="switchShopTab('menu')" data-t="fromMenu">From Menu</div><div class="shop-stab" id="stab-generic" onclick="switchShopTab('generic')" data-t="genericItems">Generic Items</div></div>
-    <div id="shop-menu-panel"><div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div><div class="prog-txt" id="prog-txt"></div></div><div id="shop-delivery"></div><div id="shop-staples"></div><div id="shop-container"></div><div id="shop-bento"></div></div>
+    <div id="shop-menu-panel"><div id="shop-delivery"></div><div id="shop-staples"></div><div id="shop-container"></div><div id="shop-bento"></div></div>
     <div id="shop-generic-panel" style="display:none"><div id="gen-container"></div></div>
   </div>
   <div class="screen" id="screen-fridge">
@@ -3362,6 +3389,7 @@ function switchShopTab(tab){
   document.getElementById('stab-generic').classList.toggle('active',tab==='generic');
   document.getElementById('shop-menu-panel').style.display=tab==='menu'?'':'none';
   document.getElementById('shop-generic-panel').style.display=tab==='generic'?'':'none';
+  const top=document.querySelector('#screen-shopping .shop-top');if(top)top.classList.toggle('gen',tab==='generic');
   if(tab==='generic')renderGenericItems();
 }
 
