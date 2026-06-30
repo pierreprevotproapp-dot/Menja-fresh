@@ -635,13 +635,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .shop-summary{padding:2px 20px 0;font-size:12px;color:var(--text3)}
 /* ── PANTRY STAPLES (assumed at home) ────────── */
 /* ── SUPERMARKET DELIVERY CTA ────────────────── */
-.deliver-card{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:10px 14px 6px;padding:13px 15px;border-radius:var(--r);background:linear-gradient(135deg,#0E4DA4,#1769E0);box-shadow:0 4px 16px rgba(23,105,224,.28);cursor:pointer;transition:transform .12s}
+.deliver-card{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:12px 14px 8px;padding:13px 15px;border-radius:var(--r);background:var(--surface);border:1px solid var(--border2);box-shadow:var(--sh);cursor:pointer;transition:transform .12s}
 .deliver-card:active{transform:scale(.99)}
 .deliver-left{display:flex;align-items:center;gap:12px;min-width:0}
-.deliver-icon{font-size:24px;background:rgba(255,255,255,.18);width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.deliver-title{font-size:14px;font-weight:700;color:#fff}
-.deliver-sub{font-size:11px;color:rgba(255,255,255,.85);margin-top:1px}
-.deliver-btn{flex-shrink:0;background:#fff;color:#0E4DA4;font-size:12px;font-weight:700;padding:8px 13px;border-radius:99px}
+.deliver-icon{font-size:22px;background:var(--accent-l);color:var(--accent);width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.deliver-title{font-size:14px;font-weight:700;color:var(--text)}
+.deliver-sub{font-size:11px;color:var(--text3);margin-top:1px}
+.deliver-btn{flex-shrink:0;background:var(--accent);color:#fff;font-size:12px;font-weight:700;padding:9px 14px;border-radius:99px;white-space:nowrap}
 /* ── CARREFOUR SHEET ─────────────────────────── */
 .cf-modal{max-height:88vh;display:flex;flex-direction:column}
 .cf-head{padding:14px 20px 8px}
@@ -666,11 +666,12 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .dev-switch.on{background:var(--accent)}
 .dev-knob{position:absolute;top:3px;left:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:left .2s}
 .dev-switch.on .dev-knob{left:23px}
-.staples-box{margin:8px 14px 4px;background:var(--surface2);border:.5px solid var(--border);border-radius:var(--r);padding:12px 14px}
-.staples-hd{font-size:13px;font-weight:600;color:var(--text)}
-.staples-sub{font-size:11px;color:var(--text3);margin:2px 0 10px;line-height:1.4}
+.staples-box{margin:10px 14px 6px;background:var(--surface);border:1px solid var(--border2);border-radius:var(--r);padding:13px 15px}
+.staples-hd{font-size:13px;font-weight:700;color:var(--text);display:flex;align-items:center;gap:7px}
+.staples-sub{font-size:11px;color:var(--text3);margin:3px 0 11px;line-height:1.45}
 .staples-chips{display:flex;flex-wrap:wrap;gap:7px}
-.staple-chip{font-size:12px;font-weight:500;padding:6px 12px;border-radius:99px;background:var(--surface);color:var(--text3);border:1.5px solid var(--border2);cursor:pointer;transition:all .15s;text-decoration:line-through;opacity:.75}
+.staple-chip{font-size:12px;font-weight:500;padding:6px 12px;border-radius:99px;background:var(--surface2);color:var(--text3);border:1px solid var(--border);cursor:pointer;transition:all .15s}
+.staple-chip:not(.need){text-decoration:line-through;opacity:.7}
 .staple-chip.need{background:var(--accent-l);color:var(--accent);border-color:var(--accent);text-decoration:none;opacity:1;font-weight:600}
 /* ── CUSTOM ITEM ADD ─────────────────────────── */
 .custom-add{display:flex;gap:8px;margin:6px 14px 24px}
@@ -3430,7 +3431,7 @@ function renderStaples(){
   const staples=planStaples();
   if(!staples.length){el.innerHTML='';return;}
   el.innerHTML=`<div class="staples-box">
-    <div class="staples-hd">${t('staplesHd')}</div>
+    <div class="staples-hd">🧂 ${t('staplesHd')}</div>
     <div class="staples-sub">${t('staplesSub')}</div>
     <div class="staples-chips">${staples.map(s=>{
       const need=isStapleNeeded(s.id);
