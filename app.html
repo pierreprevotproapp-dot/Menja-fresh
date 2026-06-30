@@ -1123,8 +1123,6 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-prep-time{font-size:11px;font-weight:700;color:var(--text2);background:var(--surface2);padding:3px 8px;border-radius:99px;flex-shrink:0;white-space:nowrap}
 .bento-time-strip{font-size:12.5px;color:var(--text2);background:var(--surface2);border-radius:99px;padding:8px 14px;text-align:center;margin-bottom:12px}
 .bento-time-strip b{color:var(--text);font-weight:800}
-.bento-scat{margin-top:16px!important;border-color:var(--accent)!important;box-shadow:0 0 0 1px var(--accent-l)}
-.bento-scat .scat-hdr .clbl{font-weight:700;color:var(--accent)}
 </style>
 </head>
 <body>
@@ -1347,7 +1345,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <div class="shop-from-row" id="shop-from-row"></div>
     </div>
     <div class="shop-sub-tabs"><div class="shop-stab active" id="stab-menu" onclick="switchShopTab('menu')" data-t="fromMenu">From Menu</div><div class="shop-stab" id="stab-generic" onclick="switchShopTab('generic')" data-t="genericItems">Generic Items</div></div>
-    <div id="shop-menu-panel"><div id="shop-delivery"></div><div id="shop-staples"></div><div id="shop-container"></div><div id="shop-bento"></div></div>
+    <div id="shop-menu-panel"><div id="shop-delivery"></div><div id="shop-staples"></div><div id="shop-container"></div></div>
     <div id="shop-generic-panel" style="display:none"><div id="gen-container"></div></div>
   </div>
   <div class="screen" id="screen-fridge">
@@ -2809,7 +2807,6 @@ let state={
   shoppingFrom:'',  // 'YYYY-MM-DD' cutoff — only plan entries ≥ this date feed the list
   bentoPlan:{},     // {'YYYY-MM-DD': {main,protein,veg,fruit,well: foodId}} — Bento Kids boxes
   bentoDays:{},     // {'YYYY-MM-DD': true} — days with an active bento box
-  bentoShopping:{}, // {lowercasedIngredientName: true} — ticked-off bento shopping items
 };
 
 const STABLE=7;
@@ -3349,6 +3346,34 @@ function rebuildShopping(){
       });
     });
   });
+  // Bento lunchbox boxes → merged into the SAME aggregated list, with summed quantities (today onward)
+  if(typeof BENTO_SLOTS!=='undefined'&&state.bentoPlan&&state.bentoDays){
+    Object.keys(state.bentoDays).forEach(day=>{
+      if(!state.bentoDays[day]||day<cutoff)return;
+      const box=state.bentoPlan[day];if(!box)return;
+      BENTO_SLOTS.forEach(s=>{
+        const fid=box[s.id];if(!fid)return;
+        const rec=(typeof bentoRecipe==='function')&&bentoRecipe(fid);if(!rec||!rec.ings)return;
+        const food=(typeof bentoFood==='function')&&bentoFood(fid);
+        const label='🍱 '+(food?(food.name[lang]||food.name.en):'Bento');
+        ((rec.ings[lang]||rec.ings.en)||[]).forEach(ing=>{
+          const n=(ing.name||'').trim();if(!n)return;
+          const sid=stapleIdFor(n);
+          if(sid&&!isStapleNeeded(sid))return;
+          const key=n.toLowerCase();
+          // bento amounts use fractions like "1/2 Tasse" — convert to decimal so parseAmount works
+          const amt=(ing.amount||'').replace(/(\d+)\s*\/\s*(\d+)/,(m,a,b)=>String(Math.round((+a/+b)*100)/100));
+          const p=parseAmount(amt);
+          if(!totals[key])totals[key]={name:n,qty:0,unit:'',hasQty:false,sources:new Set()};
+          const tt=totals[key];tt.sources.add(label);
+          if(p.qty!==null&&(!tt.hasQty||tt.unit===p.unit)){   // only sum when units match, else keep first
+            if(!tt.hasQty)tt.unit=p.unit;
+            tt.qty+=p.qty;tt.hasQty=true;   // one portion per planned box
+          }
+        });
+      });
+    });
+  }
   const nl={};
   Object.values(totals).forEach(v=>{
     nl[v.name]={qty:v.hasQty?v.qty:null,unit:v.unit,source:[...v.sources].join(', '),checked:ex[v.name]?.checked||false,expiryAdj:ex[v.name]?.expiryAdj||0};
@@ -3376,8 +3401,7 @@ function removeCustomItem(name){
 }
 
 function updateBadge(){
-  const bentoUnchecked=(typeof bentoShopItems==='function'?bentoShopItems():[]).filter(it=>!(state.bentoShopping&&state.bentoShopping[it.name.toLowerCase()])).length;
-  const u=Object.values(state.shopping).filter(v=>!v.checked).length+Object.values(state.genericCart).filter(Boolean).length+(state.customItems||[]).length+bentoUnchecked;
+  const u=Object.values(state.shopping).filter(v=>!v.checked).length+Object.values(state.genericCart).filter(Boolean).length+(state.customItems||[]).length;
   const b=document.getElementById('shopping-badge');
   if(u>0){b.style.display='';b.textContent=u;}else b.style.display='none';
 }
@@ -3441,7 +3465,7 @@ function renderShopping(){
   document.getElementById('prog-txt').textContent=`${chk} ${t('of')} ${total} ${t('itemsReady')}`;
   const sumEl=document.getElementById('shop-summary');
   if(sumEl){const meals=countPlaced();sumEl.textContent=total?`${t('everythingFor')} ${meals} ${meals===1?t('plannedMeal'):t('plannedMeals')} · ${total} ${total===1?t('itemWord'):t('itemsWord')}`:'';}
-  renderDelivery();renderStaples();renderBentoShop();
+  renderDelivery();renderStaples();
   updateBadge();
   const grouped={};STORE_CATS.forEach(c=>{grouped[c.id]=[];});
   items.forEach(([n,v])=>grouped[catOf(n)].push([n,v]));
@@ -6825,60 +6849,8 @@ function bentoToggleDay(key){
   if(state.bentoDays&&state.bentoDays[key])bentoRemoveDay(key);
   else bentoSurprise(key);
 }
-function bentoRemoveDay(key){if(state.bentoDays)delete state.bentoDays[key];if(state.bentoPlan)delete state.bentoPlan[key];save();renderBentoKids();updateBadge();}
-function bentoClearSlot(key,slotId){if(state.bentoPlan&&state.bentoPlan[key]){delete state.bentoPlan[key][slotId];save();renderBentoKids();updateBadge();}}
-// ── Bento → shopping list: collect ingredients from the planned boxes (today onward) ──
-function bentoShopItems(){
-  if(!state.bentoPlan||!state.bentoDays||typeof BENTO_SLOTS==='undefined')return [];
-  const today=dateKey(new Date());const map={};
-  Object.keys(state.bentoDays).forEach(day=>{
-    if(!state.bentoDays[day]||day<today)return;
-    const box=state.bentoPlan[day];if(!box)return;
-    BENTO_SLOTS.forEach(s=>{
-      const id=box[s.id];if(!id)return;
-      const rec=bentoRecipe(id);if(!rec||!rec.ings)return;
-      ((rec.ings[lang]||rec.ings.en)||[]).forEach(ing=>{
-        const nm=(ing.name||'').trim();if(!nm)return;
-        const key=nm.toLowerCase();
-        if(!map[key])map[key]={name:nm,emoji:ing.emoji||'',count:0};
-        map[key].count++;
-      });
-    });
-  });
-  return Object.values(map).sort((a,b)=>a.name.localeCompare(b.name));
-}
-function toggleBentoShop(name){
-  const key=name.toLowerCase();
-  if(!state.bentoShopping)state.bentoShopping={};
-  if(state.bentoShopping[key])delete state.bentoShopping[key];else state.bentoShopping[key]=true;
-  save();renderBentoShop();updateBadge();
-}
-function bentoShopToggleOpen(){
-  const open=state.catOpen['_bento']!==false;
-  state.catOpen['_bento']=!open;
-  save();renderBentoShop();
-}
-function renderBentoShop(){
-  const el=document.getElementById('shop-bento');if(!el)return;
-  const items=bentoShopItems();
-  if(!items.length){el.innerHTML='';return;}
-  if(!state.bentoShopping)state.bentoShopping={};
-  const open=state.catOpen['_bento']!==false;
-  const unchecked=items.filter(it=>!state.bentoShopping[it.name.toLowerCase()]).length;
-  const rows=items.map(it=>{
-    const key=it.name.toLowerCase();const checked=!!state.bentoShopping[key];
-    return`<div class="sitem" onclick="toggleBentoShop('${it.name.replace(/'/g,"\\'")}')">
-      <div class="schk ${checked?'checked':''}"></div>
-      <div class="sitem-mid"><div class="sitem-name ${checked?'checked':''}">${it.emoji?it.emoji+' ':''}${it.name}</div></div>
-      <div class="sitem-right">${it.count>1?`<span class="sitem-qty">×${it.count}</span>`:''}</div>
-    </div>`;
-  }).join('');
-  el.innerHTML=`<div class="scat bento-scat"><div class="scat-hdr" onclick="bentoShopToggleOpen()">
-      <span class="cico">🍱</span><span class="clbl">${t('bentoShopTitle')}</span>
-      <span class="ccount">${unchecked}</span>
-      <span class="cchev ${open?'open':''}" id="sc-_bento">›</span>
-    </div><div class="scat-items ${open?'open':''}" id="si-_bento">${rows}</div></div>`;
-}
+function bentoRemoveDay(key){if(state.bentoDays)delete state.bentoDays[key];if(state.bentoPlan)delete state.bentoPlan[key];save();renderBentoKids();rebuildShopping();updateBadge();}
+function bentoClearSlot(key,slotId){if(state.bentoPlan&&state.bentoPlan[key]){delete state.bentoPlan[key][slotId];save();renderBentoKids();rebuildShopping();updateBadge();}}
 function bentoSurprise(key){
   if(!state.bentoPlan)state.bentoPlan={};
   if(!state.bentoDays)state.bentoDays={};state.bentoDays[key]=true;
@@ -6896,7 +6868,7 @@ function bentoSurprise(key){
     if(opts.length)box[slot.id]=opts[Math.floor(Math.random()*opts.length)].id;
   });
   state.bentoPlan[key]=box;
-  save();renderBentoKids();updateBadge();
+  save();renderBentoKids();rebuildShopping();updateBadge();
 }
 function openBentoPick(key,slotId){
   const slot=bentoSlotById(slotId);
@@ -6947,7 +6919,7 @@ function bentoChoose(){
   if(!state.bentoPlan)state.bentoPlan={};if(!state.bentoPlan[key])state.bentoPlan[key]={};
   if(!state.bentoDays)state.bentoDays={};state.bentoDays[key]=true;
   state.bentoPlan[key][slotId]=f.id;
-  save();closeBentoPick();renderBentoKids();updateBadge();
+  save();closeBentoPick();renderBentoKids();rebuildShopping();updateBadge();
 }
 function bindBentoSwipe(){
   const card=document.getElementById('bento-swipe-card');if(!card)return;
