@@ -1823,7 +1823,7 @@ en:{
   famTitle:'🏡 My Family',famSub:'Recipes and portions adjust automatically',
   whoAtTable:"Who's at the table?",adults:'Adults',children:'Children',
   dietaryPrefs:'Dietary preferences',moreTools:'More',
-  planMyWeekBtn:'✨ Plan my week',regenerateWeek:'🔄 Regenerate week',
+  planMyWeekBtn:'✨ Plan my week',planFirstWeekBtn:'✨ Plan your first week',regenerateWeek:'🔄 Regenerate week',
   weekEmptyHint:'One tap and your week is sorted.',
   fullPortions:'Full portions',threeQuarter:'¾ adult portion',
   famTip:'💡 We scale every recipe to your household size automatically.',
@@ -1976,7 +1976,7 @@ fr:{
   navFridge:'Frigo',navRecipes:'Recettes',navToday:"Aujourd'hui",
   famTitle:'🏡 Ma Famille',famSub:'Les quantités s\'adaptent automatiquement',
   whoAtTable:'Qui est à table ?',adults:'Adultes',children:'Enfants',
-  dietaryPrefs:'Préférences alimentaires',moreTools:'Plus',planMyWeekBtn:'✨ Planifier ma semaine',regenerateWeek:'🔄 Régénérer la semaine',weekEmptyHint:'Un geste et ta semaine est réglée.',
+  dietaryPrefs:'Préférences alimentaires',moreTools:'Plus',planMyWeekBtn:'✨ Planifier ma semaine',planFirstWeekBtn:'✨ Planifier ma première semaine',regenerateWeek:'🔄 Régénérer la semaine',weekEmptyHint:'Un geste et ta semaine est réglée.',
   fullPortions:'Portions complètes',threeQuarter:'¾ de portion adulte',
   famTip:'💡 Nous adaptons chaque recette à la taille de ton foyer automatiquement.',
   discoverSub:'Saisonnier · Aliments entiers · Végétal',
@@ -2128,7 +2128,7 @@ es:{
   navFridge:'Nevera',navRecipes:'Recetas',navToday:'Hoy',
   famTitle:'🏡 Mi Familia',famSub:'Las cantidades se ajustan automáticamente',
   whoAtTable:'¿Quién está en la mesa?',adults:'Adultos',children:'Niños',
-  dietaryPrefs:'Preferencias alimentarias',moreTools:'Más',planMyWeekBtn:'✨ Planificar mi semana',regenerateWeek:'🔄 Regenerar la semana',weekEmptyHint:'Un toque y tu semana está lista.',
+  dietaryPrefs:'Preferencias alimentarias',moreTools:'Más',planMyWeekBtn:'✨ Planificar mi semana',planFirstWeekBtn:'✨ Planificar mi primera semana',regenerateWeek:'🔄 Regenerar la semana',weekEmptyHint:'Un toque y tu semana está lista.',
   fullPortions:'Porciones completas',threeQuarter:'¾ porción adulto',
   famTip:'💡 Ajustamos cada receta al tamaño de tu hogar automáticamente.',
   discoverSub:'Estacional · Alimentos integrales · Plantas',
@@ -2326,7 +2326,7 @@ de:{
   navFridge:'Kühlschrank',navRecipes:'Rezepte',navToday:'Heute',
   famTitle:'🏡 Meine Familie',famSub:'Mengen passen sich automatisch an',
   whoAtTable:'Wer sitzt am Tisch?',adults:'Erwachsene',children:'Kinder',
-  dietaryPrefs:'Ernährungsvorlieben',moreTools:'Mehr',planMyWeekBtn:'✨ Woche planen',regenerateWeek:'🔄 Woche neu generieren',weekEmptyHint:'Ein Tipp und deine Woche steht.',
+  dietaryPrefs:'Ernährungsvorlieben',moreTools:'Mehr',planMyWeekBtn:'✨ Woche planen',planFirstWeekBtn:'✨ Meine erste Woche planen',regenerateWeek:'🔄 Woche neu generieren',weekEmptyHint:'Ein Tipp und deine Woche steht.',
   fullPortions:'Volle Portionen',threeQuarter:'¾ Erwachsenenportion',
   famTip:'💡 Wir passen jedes Rezept automatisch an deine Haushaltsgröße an.',
   discoverSub:'Saisonal · Vollwertig · Pflanzenbetont',
@@ -4487,14 +4487,14 @@ async function finishSetup(skip){
     markGuest(); // persist so returning guests skip the welcome screen
     const guestUser=currentUser&&currentUser.id==='guest'?currentUser:{id:'guest',email:'',user_metadata:{first_name:(state.userName||'Guest'),avatar:'👤',plan:'guest'}};
     await withTimeout(ensureRecipes(),8000); // guarantee dishes are ready before week-pick
-    showApp(guestUser);   // makes #app visible, routes to Plan, triggers week-pick
+    showApp(guestUser);   // makes #app visible
+    showTab('plan');      // land on Plan with the "Plan your first week" CTA (single clear next step)
     return;
   }
   // Already signed in (rare with signup-last) → just route to the plan
   await withTimeout(ensureRecipes(),8000);
   document.getElementById('app').style.display='block';
-  showTab('plan');
-  setTimeout(openWeekPick,200);
+  showTab('plan');   // land on Plan; the first-week CTA drives the next action
 }
 
 // ─── Mark a meal as cooked ──────────────────────
@@ -4622,7 +4622,7 @@ function renderPlanHeader(){
   const next=document.getElementById('wk-next');
   if(label)label.textContent=weekOffset===0?t('thisWeek'):weekOffset===1?t('nextWeekLbl'):tf('inWeeks',{n:weekOffset});
   if(range)range.textContent=`${dow(first)} ${first.getDate()} ${mon(first)} – ${dow(last)} ${last.getDate()} ${mon(last)}`;
-  if(btn)btn.textContent=cp>0?t('regenerateWeek'):t('planMyWeekBtn');
+  if(btn)btn.textContent=cp>0?t('regenerateWeek'):(state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn'));
   if(clr)clr.style.display=cp>0?'':'none';
   if(prev)prev.disabled=weekOffset<=0;
   if(next)next.disabled=weekOffset>=3;
@@ -4982,7 +4982,7 @@ function renderCal(){
   const cal=document.getElementById('cal-scroll');const dates=getDateRange();const todayKey=dateKey(new Date());
   const _fn=(state.userName||'').split(' ')[0].trim();
   const _namePart=_fn?`, ${_fn}`:'';
-  const _motivCard=(weekPlacedCount()===0&&weekOffset===0)?`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center"><div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${tf('planMotivTitle',{name:_namePart})}</div><div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('planMotivSub')}</div><button onclick="openWeekPick()" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">✨ ${t('planMyWeekBtn')}</button></div>`:'' ;
+  const _motivCard=(weekPlacedCount()===0&&weekOffset===0)?`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center"><div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${tf('planMotivTitle',{name:_namePart})}</div><div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('planMotivSub')}</div><button onclick="openWeekPick()" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn')}</button></div>`:'' ;
   cal.innerHTML=_motivCard+dates.map(d=>{
     const key=dateKey(d);const isToday=key===todayKey;
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
