@@ -7529,8 +7529,12 @@ function showApp(user){
   if(!state.setupDone){
     showTab('plan');
     setTimeout(()=>openSetup(true),250);
+  }else if(weekPlacedCount()===0){
+    // Returning user with no plan for THIS week → make the next action obvious:
+    // land on Plan with the "Plan this week" CTA (re-activation) rather than resuming a stale tab.
+    weekOffset=0;showTab('plan');
   }else{
-    // Returning user — restore the tab and scroll they left on.
+    // Returning user who already has a plan → resume where they left off.
     restoreUiState(todayHasMeal?'today':'plan');
   }
 }
