@@ -606,6 +606,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .plan-seg-btn{position:relative;flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:8px 6px;border:none;background:none;border-radius:99px;font-size:13px;font-weight:700;color:var(--nav-t);cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .15s}
 .plan-seg-btn.active{background:var(--nav-a);color:var(--nav)}
 .seg-new{position:absolute;top:3px;right:9px;width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 2px var(--nav);animation:navPulse 1.6s ease-in-out infinite}
+/* Returning-user welcome-back nudge on the Plan tab */
+.return-nudge{position:relative;margin:4px 12px 8px;background:var(--surface);border:1px solid var(--accent);border-radius:var(--r);box-shadow:var(--sh);padding:13px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.return-nudge-txt{flex:1;min-width:140px;font-size:14px;font-weight:600;color:var(--text);padding-right:18px;line-height:1.35}
+.return-nudge-cta{background:var(--accent);color:#fff;border:none;border-radius:99px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--fb);white-space:nowrap}
+.return-nudge-x{position:absolute;top:7px;right:9px;background:none;border:none;font-size:14px;color:var(--text3);cursor:pointer;padding:3px;line-height:1}
 /* ── VISUAL DINNER DAY CARDS ─────────────────── */
 .pday{margin-bottom:20px}
 .pday-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
@@ -1343,6 +1348,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       </div>
     </div>
     <div id="plan-bento-promo"></div>
+    <div id="plan-return-nudge"></div>
     <div class="cal-scroll" id="cal-scroll"></div>
   </div></div>
   <div class="screen" id="screen-bentokids"><div class="bento-layout">
@@ -1823,7 +1829,7 @@ en:{
   famTitle:'🏡 My Family',famSub:'Recipes and portions adjust automatically',
   whoAtTable:"Who's at the table?",adults:'Adults',children:'Children',
   dietaryPrefs:'Dietary preferences',moreTools:'More',
-  planMyWeekBtn:'✨ Plan my week',planFirstWeekBtn:'✨ Plan your first week',regenerateWeek:'🔄 Regenerate week',
+  planMyWeekBtn:'✨ Plan my week',planFirstWeekBtn:'✨ Plan your first week',repeatLastWeekBtn:'Repeat last week',repeatedToast:'Last week copied ✓',nothingToRepeat:'No plan from last week yet',returnTodayTitle:'Welcome back! Tonight: {dish}',returnPlannedTitle:'Welcome back — your week is planned.',returnCookBtn:'🍳 See today',returnShopBtn:'🛒 Go shopping',regenerateWeek:'🔄 Regenerate week',
   weekEmptyHint:'One tap and your week is sorted.',
   fullPortions:'Full portions',threeQuarter:'¾ adult portion',
   famTip:'💡 We scale every recipe to your household size automatically.',
@@ -1976,7 +1982,7 @@ fr:{
   navFridge:'Frigo',navRecipes:'Recettes',navToday:"Aujourd'hui",
   famTitle:'🏡 Ma Famille',famSub:'Les quantités s\'adaptent automatiquement',
   whoAtTable:'Qui est à table ?',adults:'Adultes',children:'Enfants',
-  dietaryPrefs:'Préférences alimentaires',moreTools:'Plus',planMyWeekBtn:'✨ Planifier ma semaine',planFirstWeekBtn:'✨ Planifier ma première semaine',regenerateWeek:'🔄 Régénérer la semaine',weekEmptyHint:'Un geste et ta semaine est réglée.',
+  dietaryPrefs:'Préférences alimentaires',moreTools:'Plus',planMyWeekBtn:'✨ Planifier ma semaine',planFirstWeekBtn:'✨ Planifier ma première semaine',repeatLastWeekBtn:'Répéter la semaine',repeatedToast:'Semaine dernière copiée ✓',nothingToRepeat:'Pas encore de plan la semaine dernière',returnTodayTitle:'Content de te revoir ! Ce soir : {dish}',returnPlannedTitle:'Content de te revoir — ta semaine est planifiée.',returnCookBtn:"🍳 Voir aujourd'hui",returnShopBtn:'🛒 Faire les courses',regenerateWeek:'🔄 Régénérer la semaine',weekEmptyHint:'Un geste et ta semaine est réglée.',
   fullPortions:'Portions complètes',threeQuarter:'¾ de portion adulte',
   famTip:'💡 Nous adaptons chaque recette à la taille de ton foyer automatiquement.',
   discoverSub:'Saisonnier · Aliments entiers · Végétal',
@@ -2128,7 +2134,7 @@ es:{
   navFridge:'Nevera',navRecipes:'Recetas',navToday:'Hoy',
   famTitle:'🏡 Mi Familia',famSub:'Las cantidades se ajustan automáticamente',
   whoAtTable:'¿Quién está en la mesa?',adults:'Adultos',children:'Niños',
-  dietaryPrefs:'Preferencias alimentarias',moreTools:'Más',planMyWeekBtn:'✨ Planificar mi semana',planFirstWeekBtn:'✨ Planificar mi primera semana',regenerateWeek:'🔄 Regenerar la semana',weekEmptyHint:'Un toque y tu semana está lista.',
+  dietaryPrefs:'Preferencias alimentarias',moreTools:'Más',planMyWeekBtn:'✨ Planificar mi semana',planFirstWeekBtn:'✨ Planificar mi primera semana',repeatLastWeekBtn:'Repetir semana',repeatedToast:'Semana anterior copiada ✓',nothingToRepeat:'Aún no hay plan de la semana pasada',returnTodayTitle:'¡Bienvenido! Hoy: {dish}',returnPlannedTitle:'¡Bienvenido! Tu semana está planificada.',returnCookBtn:'🍳 Ver hoy',returnShopBtn:'🛒 Ir a comprar',regenerateWeek:'🔄 Regenerar la semana',weekEmptyHint:'Un toque y tu semana está lista.',
   fullPortions:'Porciones completas',threeQuarter:'¾ porción adulto',
   famTip:'💡 Ajustamos cada receta al tamaño de tu hogar automáticamente.',
   discoverSub:'Estacional · Alimentos integrales · Plantas',
@@ -2326,7 +2332,7 @@ de:{
   navFridge:'Kühlschrank',navRecipes:'Rezepte',navToday:'Heute',
   famTitle:'🏡 Meine Familie',famSub:'Mengen passen sich automatisch an',
   whoAtTable:'Wer sitzt am Tisch?',adults:'Erwachsene',children:'Kinder',
-  dietaryPrefs:'Ernährungsvorlieben',moreTools:'Mehr',planMyWeekBtn:'✨ Woche planen',planFirstWeekBtn:'✨ Meine erste Woche planen',regenerateWeek:'🔄 Woche neu generieren',weekEmptyHint:'Ein Tipp und deine Woche steht.',
+  dietaryPrefs:'Ernährungsvorlieben',moreTools:'Mehr',planMyWeekBtn:'✨ Woche planen',planFirstWeekBtn:'✨ Meine erste Woche planen',repeatLastWeekBtn:'Letzte Woche wiederholen',repeatedToast:'Letzte Woche übernommen ✓',nothingToRepeat:'Noch kein Plan aus der letzten Woche',returnTodayTitle:'Willkommen zurück! Heute: {dish}',returnPlannedTitle:'Willkommen zurück — deine Woche ist geplant.',returnCookBtn:'🍳 Heute ansehen',returnShopBtn:'🛒 Einkaufen',regenerateWeek:'🔄 Woche neu generieren',weekEmptyHint:'Ein Tipp und deine Woche steht.',
   fullPortions:'Volle Portionen',threeQuarter:'¾ Erwachsenenportion',
   famTip:'💡 Wir passen jedes Rezept automatisch an deine Haushaltsgröße an.',
   discoverSub:'Saisonal · Vollwertig · Pflanzenbetont',
@@ -4609,7 +4615,7 @@ function countUsage(id){let c=0;Object.values(state.plan).forEach(dm=>Object.val
 function countPlaced(){let c=0;Object.values(state.plan).forEach(dm=>Object.values(dm).forEach(s=>{if(s&&s.dishId)c++;}));return c;}
 function dayHasExp(key){const dm=state.plan[key];if(!dm)return false;return Object.values(dm).some(slot=>{if(!slot||!slot.dishId)return false;const d=getDish(slot.dishId);return d&&d.ingredients.some(ing=>{const days=effDays(ing.name);return days!==null&&days<=3;});});}
 
-function renderPlan(){renderPlanHeader();renderCal();renderBentoPromo();applyBentoTabVisibility();}
+function renderPlan(){renderPlanHeader();renderCal();renderBentoPromo();renderReturnNudge();applyBentoTabVisibility();}
 function renderPlanHeader(){
   const cp=weekPlacedCount();
   const dates=getDateRange();
@@ -4982,7 +4988,8 @@ function renderCal(){
   const cal=document.getElementById('cal-scroll');const dates=getDateRange();const todayKey=dateKey(new Date());
   const _fn=(state.userName||'').split(' ')[0].trim();
   const _namePart=_fn?`, ${_fn}`:'';
-  const _motivCard=(weekPlacedCount()===0&&weekOffset===0)?`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center"><div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${tf('planMotivTitle',{name:_namePart})}</div><div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('planMotivSub')}</div><button onclick="openWeekPick()" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn')}</button></div>`:'' ;
+  const _repeatBtn=(weekPlacedCount()===0&&weekOffset===0&&weekHasPlanAtOffset(-1))?`<div style="margin-top:10px"><button onclick="repeatLastWeek()" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:99px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">🔁 ${t('repeatLastWeekBtn')}</button></div>`:'';
+  const _motivCard=(weekPlacedCount()===0&&weekOffset===0)?`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center"><div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${tf('planMotivTitle',{name:_namePart})}</div><div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('planMotivSub')}</div><button onclick="openWeekPick()" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn')}</button>${_repeatBtn}</div>`:'' ;
   cal.innerHTML=_motivCard+dates.map(d=>{
     const key=dateKey(d);const isToday=key===todayKey;
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
@@ -7210,6 +7217,35 @@ function planNextWeek(){
   if(maxWeekOffset()<1){openLimitPopup('planner_explorer');return;}
   weekOffset=1;showTab('plan');renderPlan();setTimeout(openWeekPick,180);
 }
+// ── Returning users: 1-tap "repeat last week" + a state-aware welcome-back nudge ──
+function repeatLastWeek(){
+  weekOffset=-1;const lastDates=getDateRange();
+  weekOffset=0;const thisDates=getDateRange();
+  let copied=0;
+  thisDates.forEach((d,i)=>{
+    const from=state.plan[dateKey(lastDates[i])];if(!from)return;
+    const to={};MEAL_TYPES.forEach(tp=>{if(from[tp]&&from[tp].dishId){to[tp]={...from[tp]};copied++;}});
+    if(Object.keys(to).length){state.plan[dateKey(d)]=to;if(!state.confirmed)state.confirmed={};state.confirmed[dateKey(d)]=true;}
+  });
+  if(copied){state.weekPickDone=true;save();rebuildShopping();updateBadge();renderPlan();toast(t('repeatedToast'));}
+  else toast(t('nothingToRepeat'));
+}
+let _returnNudge=false;   // set on a returning open with an existing plan; shown once until dismissed/tapped
+function renderReturnNudge(){
+  const el=document.getElementById('plan-return-nudge');if(!el)return;
+  if(!_returnNudge||weekPlacedCount()===0||weekOffset!==0){el.innerHTML='';return;}
+  const dm=state.plan[dateKey(new Date())]||{};
+  const todayDish=dm.Dinner&&dm.Dinner.dishId?getDish(dm.Dinner.dishId):null;
+  const title=todayDish?tf('returnTodayTitle',{dish:dishName(todayDish)}):t('returnPlannedTitle');
+  const cta=todayDish?t('returnCookBtn'):t('returnShopBtn');
+  const action=todayDish?"showTab('today')":"showTab('shopping')";
+  el.innerHTML=`<div class="return-nudge">
+    <button class="return-nudge-x" onclick="dismissReturnNudge()" aria-label="✕">✕</button>
+    <div class="return-nudge-txt">👋 ${title}</div>
+    <button class="return-nudge-cta" onclick="dismissReturnNudge();${action}">${cta}</button>
+  </div>`;
+}
+function dismissReturnNudge(){_returnNudge=false;const el=document.getElementById('plan-return-nudge');if(el)el.innerHTML='';}
 
 // ═══════════════════════════════════════════════════
 // MACROS (premium), RECIPE OVERLAY, COOK MODE
@@ -7534,8 +7570,10 @@ function showApp(user){
     // land on Plan with the "Plan this week" CTA (re-activation) rather than resuming a stale tab.
     weekOffset=0;showTab('plan');
   }else{
-    // Returning user who already has a plan → resume where they left off.
-    restoreUiState(todayHasMeal?'today':'plan');
+    // Returning user who already has a plan → land on Plan with a state-aware welcome-back
+    // nudge (research: an obvious next action beats a silent resume). The nudge itself
+    // links straight to today's meal / shopping.
+    _returnNudge=true;weekOffset=0;showTab('plan');
   }
 }
 
