@@ -4746,16 +4746,26 @@ function dietPool(){
 // Dishes suitable as a dinner (main courses), respecting diet. Falls back if too few.
 function isDinnerDish(d){return(d.meal||[]).some(m=>/main course|hauptspeise|dinner|lunch|mittag|abend/i.test(m));}
 function isBreakfastDish(d){return(d.meal||[]).some(m=>/frühstück|breakfast/i.test(m));}
+// Desserts/sweets must not appear as a Lunch/Dinner option. Robust to missing DB tags:
+// checks meal + category tags AND the title in every language for sweet keywords.
+function isDessertDish(d){
+  if((d.meal||[]).some(m=>/dessert|postre|nachtisch|süß|s[uü]ssspeise|dolci|dessert/i.test(m)))return true;
+  if((d.categories||[]).some(c=>/dessert|postre|nachtisch|süß|s[uü]ssspeise/i.test(c)))return true;
+  const titles=[d._title,d._subtitle];
+  if(d.i18n)['en','de','fr','es'].forEach(L=>{if(d.i18n[L]&&d.i18n[L].title)titles.push(d.i18n[L].title);});
+  const t=titles.filter(Boolean).join(' ').toLowerCase();
+  return /\bcake\b|cheesecake|cupcake|kuchen|torte\b|brownie|cookie|keks|pudding|tiramisu|mousse|\bdessert|crumble|nachtisch|donut|doughnut|éclair|eclair|macaron|muffin.*(schoko|choc|beeren|berry|banana|banane)|(schoko|choc|beeren|berry|banana|banane).*muffin/i.test(t);
+}
 // Meal-appropriate, diet-aware pool. Breakfast → breakfast dishes only; Lunch/Dinner → no breakfast dishes.
 function typePool(type){
   const base=dietPool();
   if(type==='Breakfast'){
     return base.filter(isBreakfastDish); // strict: breakfast only, even if few
   }
-  // Lunch/Dinner: never show breakfast dishes
-  const mains=base.filter(d=>isDinnerDish(d)&&!isBreakfastDish(d));
+  // Lunch/Dinner: never show breakfast dishes or desserts
+  const mains=base.filter(d=>isDinnerDish(d)&&!isBreakfastDish(d)&&!isDessertDish(d));
   if(mains.length>=5)return mains;
-  return base.filter(d=>!isBreakfastDish(d)); // fallback: all non-breakfast
+  return base.filter(d=>!isBreakfastDish(d)&&!isDessertDish(d)); // fallback: all non-breakfast, no desserts
 }
 function dinnerPool(){return typePool('Dinner');}
 
@@ -4930,9 +4940,9 @@ function dishesForCat(cat,type){
     const b=list.filter(isBreakfastDish);
     return b.length?b:list.filter(isBreakfastDish); // empty = "no recipes here" shown
   }
-  // Lunch/Dinner: exclude breakfast dishes, then sort mains first
-  const mains=list.filter(d=>!isBreakfastDish(d));
-  const pool=mains.length?mains:list;
+  // Lunch/Dinner: exclude breakfast AND desserts, then sort mains first
+  const mains=list.filter(d=>!isBreakfastDish(d)&&!isDessertDish(d));
+  const pool=mains.length?mains:list.filter(d=>!isDessertDish(d));
   return pool.slice().sort((a,b)=>(isDinnerDish(b)?1:0)-(isDinnerDish(a)?1:0));
 }
 let browse={key:null,type:null,cat:'all',idx:0};
