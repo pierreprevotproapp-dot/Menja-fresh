@@ -3439,7 +3439,8 @@ function rebuildShopping(){
   });
   state.shopping=nl;save();
 }
-function setShoppingFrom(val){state.shoppingFrom=val;save();renderShopping();}
+let _shopFromUserSet=false;   // becomes true only when the user picks a "shop from" date this session
+function setShoppingFrom(val){state.shoppingFrom=val;_shopFromUserSet=true;save();renderShopping();}
 function addCustomItem(){
   const inp=document.getElementById('custom-item-input');if(!inp)return;
   const v=inp.value.trim();if(!v)return;
@@ -3492,17 +3493,19 @@ function renderStaples(){
   </div>`;
 }
 function renderShopping(){
-  // Ensure shoppingFrom is never in the past (e.g. after a new day starts)
   const todayKey=dateKey(new Date());
-  if(!state.shoppingFrom||state.shoppingFrom<todayKey)state.shoppingFrom=todayKey;
+  // Default the grocery list to the WHOLE current week (Monday-anchored) so a freshly
+  // planned week always populates — even late in the week. Users can narrow via the picker.
+  const _mon=new Date();_mon.setHours(0,0,0,0);_mon.setDate(_mon.getDate()-((_mon.getDay()+6)%7));
+  const weekStartKey=dateKey(_mon);
+  const plannedDates=Object.entries(state.plan)
+    .filter(([d,dm])=>d>=weekStartKey&&Object.values(dm).some(s=>s&&s.dishId))
+    .map(([d])=>d).sort();
+  if(!_shopFromUserSet||!state.shoppingFrom||state.shoppingFrom<weekStartKey)state.shoppingFrom=plannedDates[0]||weekStartKey;
   rebuildShopping();
   // ── Date picker ────────────────────────────────────────────────────────────
   const rowEl=document.getElementById('shop-from-row');
   if(rowEl){
-    // Collect all dates from today onwards that have at least one meal
-    const plannedDates=Object.entries(state.plan)
-      .filter(([d,dm])=>d>=todayKey&&Object.values(dm).some(s=>s&&s.dishId))
-      .map(([d])=>d).sort();
     if(plannedDates.length>1){
       const opts=plannedDates.map(d=>{
         const dt=new Date(d+'T00:00:00');
