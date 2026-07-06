@@ -998,6 +998,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .weekpick-chip.today{box-shadow:0 0 0 2px var(--accent-l)}
 .weekpick-go{display:block;width:calc(100% - 40px);margin:10px 20px 0;background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
 .weekpick-go:disabled{opacity:.5;cursor:not-allowed}
+.cal-adday{display:block;width:calc(100% - 24px);margin:2px 12px 6px;background:transparent;color:var(--text3);border:1.5px dashed var(--border2);border-radius:14px;padding:12px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb)}
+.cal-adday:hover{color:var(--nav);border-color:var(--nav)}
 /* ── FAVOURITES + ADD TO WEEK ────────────────── */
 .rec-fav{position:absolute;top:10px;right:10px;width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.9);border:none;cursor:pointer;font-size:18px;line-height:1;color:var(--text3);display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 1px 6px rgba(0,0,0,.2)}
 .rec-fav.on{color:var(--danger)}
@@ -1925,7 +1927,7 @@ en:{
   pwFreeName:'🌿 Free',pwAlwaysFree:'Always free',pwFree1:'Plan your whole week in minutes',pwFree2:'Swap & choose meals, skip any day',pwFree3:'Automatic grocery list + staples',pwFree4:'Your favourites cookbook',pwFree5:"Learns your family's taste",
   pwPremiumName:'⭐ Premium',pwBest:'BEST',pwPrem1:"💶 Budget mode — your week's cost, per day & per serving",pwPrem2:'📊 Advanced macros — carb & fat goals, weekly trends',pwPrem3:'🗓️ Plan up to 4 weeks ahead',pwPrem4:'📷 AI fridge scanner',pwPrem5:'☁️ Sync across all your devices',
   perMonth:'per month',perYear:'per year',save27:'Save 27%',pwCta:'Try Premium free for 7 days',pwTerms:'7-day free trial · cancel anytime · no hidden fees',
-  weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",
+  weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",weekpickFirstTitle:'Plan your first week 🎉',weekpickFirstSub:'Pick the nights you want dinners for — we’ll fill them in.',addCookingDay:'Add a cooking day',
   setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupDietQ:'Any diet?',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
   cookBack:'‹ Back',cookNext:'Next ›',chooseDinner:'Choose dinner',
   opt_vegetarian:'Vegetarian',opt_pescatarian:'Pescatarian',opt_vegan:'Vegan',opt_glutenfree:'Gluten-free',
@@ -2077,7 +2079,7 @@ fr:{
   pwFreeName:'🌿 Gratuit',pwAlwaysFree:'Toujours gratuit',pwFree1:'Planifiez toute la semaine en minutes',pwFree2:'Changez & choisissez les repas, sautez un jour',pwFree3:'Liste de courses automatique + basiques',pwFree4:'Votre carnet de favoris',pwFree5:'Apprend les goûts de votre famille',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Mode budget — coût de la semaine, par jour & par portion',pwPrem2:'📊 Macros avancés — objectifs glucides & lipides, tendances',pwPrem3:'🗓️ Planifiez jusqu\'à 4 semaines à l\'avance',pwPrem4:'📷 Scanner de frigo IA',pwPrem5:'☁️ Synchro sur tous vos appareils',
   perMonth:'par mois',perYear:'par an',save27:'-27 %',pwCta:'Essayer Premium gratuitement 7 jours',pwTerms:'Essai gratuit 7 jours · annulable à tout moment · sans frais cachés',
-  weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',
+  weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',weekpickFirstTitle:'Planifiez votre première semaine 🎉',weekpickFirstSub:'Choisissez les soirs à cuisiner — on s’occupe du reste.',addCookingDay:'Ajouter un jour',
   setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupDietQ:'Un régime ?',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
   cookBack:'‹ Retour',cookNext:'Suivant ›',chooseDinner:'Choisir le dîner',
   opt_vegetarian:'Végétarien',opt_pescatarian:'Pescétarien',opt_vegan:'Végétalien',opt_glutenfree:'Sans gluten',
@@ -2229,7 +2231,7 @@ es:{
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Siempre gratis',pwFree1:'Planifica toda la semana en minutos',pwFree2:'Cambia y elige comidas, salta cualquier día',pwFree3:'Lista de la compra automática + básicos',pwFree4:'Tu recetario de favoritos',pwFree5:'Aprende los gustos de tu familia',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Modo presupuesto — coste de la semana, por día y por ración',pwPrem2:'📊 Macros avanzados — objetivos de carbos & grasas, tendencias',pwPrem3:'🗓️ Planifica hasta 4 semanas',pwPrem4:'📷 Escáner de nevera con IA',pwPrem5:'☁️ Sincroniza en todos tus dispositivos',
   perMonth:'al mes',perYear:'al año',save27:'-27 %',pwCta:'Prueba Premium gratis 7 días',pwTerms:'7 días de prueba gratis · cancela cuando quieras · sin costes ocultos',
-  weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',
+  weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',weekpickFirstTitle:'Planifica tu primera semana 🎉',weekpickFirstSub:'Elige las noches que quieras cenar — nosotros las llenamos.',addCookingDay:'Añadir un día',
   setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupDietQ:'¿Alguna dieta?',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
   cookBack:'‹ Atrás',cookNext:'Siguiente ›',chooseDinner:'Elegir cena',
   opt_vegetarian:'Vegetariano',opt_pescatarian:'Pescetariano',opt_vegan:'Vegano',opt_glutenfree:'Sin gluten',
@@ -2427,7 +2429,7 @@ de:{
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Immer gratis',pwFree1:'Plane die ganze Woche in Minuten',pwFree2:'Mahlzeiten tauschen & wählen, Tag überspringen',pwFree3:'Automatische Einkaufsliste + Basics',pwFree4:'Dein Favoriten-Kochbuch',pwFree5:'Lernt den Geschmack deiner Familie',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Budget-Modus — Wochenkosten, pro Tag & pro Portion',pwPrem2:'📊 Erweiterte Makros — Kohlenhydrat- & Fettziele, Wochentrends',pwPrem3:'🗓️ Bis zu 4 Wochen im Voraus planen',pwPrem4:'📷 KI-Kühlschrank-Scanner',pwPrem5:'☁️ Synchro auf all deinen Geräten',
   perMonth:'pro Monat',perYear:'pro Jahr',save27:'-27 %',pwCta:'Premium 7 Tage gratis testen',pwTerms:'7 Tage gratis · jederzeit kündbar · keine versteckten Kosten',
-  weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',
+  weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',weekpickFirstTitle:'Plane deine erste Woche 🎉',weekpickFirstSub:'Wähle die Abende, für die du Gerichte möchtest — wir füllen sie.',addCookingDay:'Kochtag hinzufügen',
   setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupDietQ:'Eine Ernährungsweise?',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
   cookBack:'‹ Zurück',cookNext:'Weiter ›',chooseDinner:'Abendessen wählen',
   opt_vegetarian:'Vegetarisch',opt_pescatarian:'Pescetarisch',opt_vegan:'Vegan',opt_glutenfree:'Glutenfrei',
@@ -4527,13 +4529,15 @@ async function finishSetup(skip){
     const guestUser=currentUser&&currentUser.id==='guest'?currentUser:{id:'guest',email:'',user_metadata:{first_name:(state.userName||'Guest'),avatar:'👤',plan:'guest'}};
     await withTimeout(ensureRecipes(),8000); // guarantee dishes are ready before week-pick
     showApp(guestUser);   // makes #app visible
-    showTab('plan');      // land on Plan with the "Plan your first week" CTA (single clear next step)
+    showTab('plan');      // land on Plan…
+    setTimeout(()=>openWeekPick(true),450); // …and pop the "Plan your first week" day-picker
     return;
   }
   // Already signed in (rare with signup-last) → just route to the plan
   await withTimeout(ensureRecipes(),8000);
   document.getElementById('app').style.display='block';
-  showTab('plan');   // land on Plan; the first-week CTA drives the next action
+  showTab('plan');   // land on Plan…
+  setTimeout(()=>openWeekPick(true),450); // …and pop the "Plan your first week" day-picker
 }
 
 // ─── Mark a meal as cooked ──────────────────────
@@ -4878,9 +4882,13 @@ function generateWeek(cookSet){
 
 // ── Week-night picker (Choosy-style: which nights are you cooking?) ──
 let weekPickSel=null;
-function openWeekPick(){
+function openWeekPick(firstRun){
   // start from the user's saved cooking nights (empty the first time → they pick)
   weekPickSel=new Set(state.cookDays||[]);
+  const titleEl=document.querySelector('#weekpick-bg [data-t="weekpickTitle"]');
+  const subEl=document.querySelector('#weekpick-bg [data-t="weekpickSub"]');
+  if(titleEl)titleEl.textContent=firstRun?t('weekpickFirstTitle'):t('weekpickTitle');
+  if(subEl)subEl.textContent=firstRun?t('weekpickFirstSub'):t('weekpickSub');
   renderWeekPick();
   document.getElementById('weekpick-bg').classList.add('open');
 }
@@ -5028,7 +5036,16 @@ function inlineBrowseCard(key,type){
   </div>`;
 }
 function renderCal(){
-  const cal=document.getElementById('cal-scroll');const dates=getDateRange();const todayKey=dateKey(new Date());
+  const cal=document.getElementById('cal-scroll');const todayKey=dateKey(new Date());
+  // Show only the days the user chose to cook (less clutter), but never hide a
+  // day that already carries a meal, so nothing planned can disappear.
+  const _allDates=getDateRange();
+  const _cookSet=(state.cookDays&&state.cookDays.length)?new Set(state.cookDays):null;
+  const _hasMeal=d=>{const dm=state.plan[dateKey(d)]||{};return MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);};
+  let dates;
+  if(_cookSet)dates=_allDates.filter((d,i)=>_cookSet.has(i)||_hasMeal(d));
+  else if(state.weekPickDone)dates=_allDates;      // safety: picked before but no set
+  else dates=_allDates.filter(_hasMeal);           // pre first pick: just the motivation card
   const _fn=(state.userName||'').split(' ')[0].trim();
   const _namePart=_fn?`, ${_fn}`:'';
   const _repeatBtn=(weekPlacedCount()===0&&weekOffset===0&&weekHasPlanAtOffset(-1))?`<div style="margin-top:10px"><button onclick="repeatLastWeek()" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:99px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">🔁 ${t('repeatLastWeekBtn')}</button></div>`:'';
@@ -5058,7 +5075,7 @@ function renderCal(){
       ${cards}
       ${adds?`<div class="pday-extra">${adds}</div>`:''}
     </div>`;
-  }).join('');
+  }).join('')+(( _cookSet && dates.length && dates.length<7)?`<button class="cal-adday" onclick="openWeekPick()">＋ ${t('addCookingDay')}</button>`:'');
   const banner=weekDecided()?`<div class="plan-cta top">
       <div class="plan-cta-title">${t('weekPlannedTitle')}</div>
       <div class="plan-cta-sub">${t('weekPlannedSub')}</div>
