@@ -4339,6 +4339,26 @@ function openSetup(isFirstRun){
   renderSetupStep();
   document.getElementById('setup-bg').classList.add('open');
   document.getElementById('setup-bg').scrollTop=0;
+  fitSetupViewport();
+  if(!openSetup._fitBound){
+    openSetup._fitBound=true;
+    const relay=()=>{if(document.getElementById('setup-bg').classList.contains('open'))fitSetupViewport();};
+    window.addEventListener('resize',relay);
+    window.addEventListener('orientationchange',relay);
+    if(window.visualViewport){window.visualViewport.addEventListener('resize',relay);}
+  }
+}
+// Pin the setup overlay to the *actual* visible viewport (accounts for the
+// mobile address bar being expanded at first open, where 100vh/dvh/svh can
+// over-report). visualViewport is the ground truth; innerHeight is fallback.
+function fitSetupViewport(){
+  const bg=document.getElementById('setup-bg');if(!bg)return;
+  const h=(window.visualViewport&&window.visualViewport.height)||window.innerHeight;
+  if(h)bg.style.height=Math.round(h)+'px';
+  requestAnimationFrame(()=>{
+    const h2=(window.visualViewport&&window.visualViewport.height)||window.innerHeight;
+    if(h2)bg.style.height=Math.round(h2)+'px';
+  });
 }
 function setupStepList(){return setupIsFirstRun?Array.from({length:SETUP_TOTAL},(_,i)=>i+1):SETUP_EDIT_STEPS;}
 function renderSetupStep(){
