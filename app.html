@@ -31,15 +31,16 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .auth-screen{display:none;min-height:100vh;flex-direction:column}
 .auth-screen.active{display:flex}
 /* ── WELCOME / VALUE SCREEN ──────────────────── */
-.welcome-screen{display:none;position:fixed;inset:0;background:var(--nav);z-index:820;overflow-y:auto}
+.welcome-screen{display:none;position:fixed;left:0;right:0;top:0;height:100vh;height:100dvh;height:100svh;background:var(--nav);z-index:820;overflow:hidden}
 .welcome-screen.open{display:block}
-.welcome-inner{max-width:480px;margin:0 auto;min-height:100%;display:flex;flex-direction:column;padding:0 26px calc(28px + env(safe-area-inset-bottom))}
-.welcome-hero{text-align:center;padding:34px 10px 22px}
+.welcome-inner{max-width:480px;margin:0 auto;height:100%;display:flex;flex-direction:column;overflow:hidden}
+.welcome-scroll{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column;padding:0 26px}
+.welcome-hero{text-align:center;padding:26px 10px 16px}
 .welcome-leaf{width:66px;height:66px;display:block;margin:0 auto 14px}
 .welcome-brand{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:18px}
 .welcome-brand svg{width:30px;height:30px}
 .welcome-brand span{font-family:var(--fd);font-size:18px;color:#fff;font-weight:500}
-.welcome-photo{position:relative;width:100%;aspect-ratio:4/3;border-radius:24px;overflow:hidden;margin-bottom:22px;box-shadow:0 14px 44px rgba(0,0,0,.4)}
+.welcome-photo{position:relative;width:100%;aspect-ratio:16/10;max-height:30vh;border-radius:22px;overflow:hidden;margin-bottom:16px;box-shadow:0 14px 44px rgba(0,0,0,.4)}
 .welcome-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .welcome-photo-fb{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 38%,#3a6b47,#1A2E1F)}
 .welcome-photo-fb .plate{width:58%;aspect-ratio:1;border-radius:50%;background:radial-gradient(circle at 50% 42%,#fffdf7,#e9e2d2);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 32px rgba(0,0,0,.35),inset 0 -10px 24px rgba(0,0,0,.06)}
@@ -47,14 +48,14 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .welcome-photo-fb .garnish{position:absolute;font-size:30px;filter:drop-shadow(0 3px 6px rgba(0,0,0,.3))}
 .welcome-photo-fb .g1{top:18%;left:20%}.welcome-photo-fb .g2{top:24%;right:18%}
 .welcome-photo-fb .g3{bottom:20%;left:24%}.welcome-photo-fb .g4{bottom:16%;right:22%}
-.welcome-headline{font-family:var(--fd);font-size:30px;font-weight:600;color:#fff;line-height:1.12;margin-bottom:10px}
-.welcome-subline{font-size:15px;color:var(--nav-t);line-height:1.5;margin-bottom:14px}
+.welcome-headline{font-family:var(--fd);font-size:27px;font-weight:600;color:#fff;line-height:1.12;margin-bottom:8px}
+.welcome-subline{font-size:14px;color:var(--nav-t);line-height:1.45;margin-bottom:12px}
 .welcome-taste{display:flex;justify-content:center;gap:8px;flex-wrap:wrap}
 .welcome-taste span{font-size:12px;font-weight:600;color:#fff;background:rgba(126,200,122,.16);border:1px solid rgba(126,200,122,.34);border-radius:99px;padding:6px 12px}
 .brand-mark{display:block;margin:0 auto}
 .welcome-hero h1{font-family:var(--fd);font-size:34px;font-weight:500;color:#fff;margin-bottom:8px}
 .welcome-tag{font-size:15px;color:var(--nav-t);line-height:1.5}
-.welcome-points{display:flex;flex-direction:column;gap:16px;flex:1;justify-content:center;padding:6px 0 10px}
+.welcome-points{display:flex;flex-direction:column;gap:13px;flex-shrink:0;justify-content:center;padding:8px 0 12px}
 .welcome-point{display:flex;align-items:flex-start;gap:14px}
 .wp-em{font-size:26px;flex-shrink:0;width:34px;text-align:center}
 .wp-t{font-size:16px;font-weight:600;color:#fff}
@@ -63,7 +64,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .wstat{flex:1;background:rgba(255,255,255,.10);border-radius:14px;padding:12px 7px;text-align:center}
 .wstat-n{font-size:22px;font-weight:800;color:var(--nav-a);line-height:1;font-family:var(--fb)}
 .wstat-d{font-size:11px;color:var(--nav-t);margin-top:6px;line-height:1.35}
-.welcome-cta{padding-top:18px}
+.welcome-cta{flex-shrink:0;padding:14px 26px calc(16px + env(safe-area-inset-bottom));background:var(--nav);box-shadow:0 -8px 20px rgba(0,0,0,.3)}
 .welcome-start{width:100%;background:var(--nav-a);color:var(--nav);border:none;border-radius:99px;padding:16px;font-size:16px;font-weight:700;cursor:pointer;font-family:var(--fb)}
 .welcome-guest{width:100%;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.25);border-radius:99px;padding:14px;font-size:14px;font-weight:500;cursor:pointer;font-family:var(--fb);margin-top:10px}
 .welcome-signin{text-align:center;font-size:13px;color:var(--nav-t);margin-top:16px}
@@ -1168,6 +1169,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 <div class="loading-screen" id="loading"><svg class="loading-leaf" viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg><div class="loading-text">Menja Fresh</div><div class="loading-sub" id="loading-sub">Loading...</div></div>
 <div class="welcome-screen" id="welcome-screen">
   <div class="welcome-inner">
+    <div class="welcome-scroll">
     <div class="welcome-hero">
       <div class="welcome-brand">
         <svg viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
@@ -1193,6 +1195,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <div class="welcome-point"><span class="wp-em">🧘</span><div><div class="wp-t" data-t="wp1t">Less mental load</div><div class="wp-d" data-t="wp1d">Your week planned in minutes — no nightly "what's for dinner?"</div></div></div>
       <div class="welcome-point"><span class="wp-em">🛒</span><div><div class="wp-t" data-t="wp2t">Automatic grocery list &amp; delivery</div><div class="wp-d" data-t="wp2d">Built from your meals, sorted by aisle.</div></div></div>
       <div class="welcome-point"><span class="wp-em">🌱</span><div><div class="wp-t" data-t="wp3t">Meals you'll actually love</div><div class="wp-d" data-t="wp3d">Real variety — never the same week twice.</div></div></div>
+    </div>
     </div>
     <div class="welcome-cta">
       <button class="welcome-start" onclick="welcomeGetStarted()" data-t="welcomeStart">Get started — it's free →</button>
@@ -4339,26 +4342,33 @@ function openSetup(isFirstRun){
   renderSetupStep();
   document.getElementById('setup-bg').classList.add('open');
   document.getElementById('setup-bg').scrollTop=0;
-  fitSetupViewport();
-  if(!openSetup._fitBound){
-    openSetup._fitBound=true;
-    const relay=()=>{if(document.getElementById('setup-bg').classList.contains('open'))fitSetupViewport();};
-    window.addEventListener('resize',relay);
-    window.addEventListener('orientationchange',relay);
-    if(window.visualViewport){window.visualViewport.addEventListener('resize',relay);}
-  }
+  fitOverlayViewports();
 }
-// Pin the setup overlay to the *actual* visible viewport (accounts for the
+// Pin full-screen overlays to the *actual* visible viewport (accounts for the
 // mobile address bar being expanded at first open, where 100vh/dvh/svh can
-// over-report). visualViewport is the ground truth; innerHeight is fallback.
-function fitSetupViewport(){
-  const bg=document.getElementById('setup-bg');if(!bg)return;
-  const h=(window.visualViewport&&window.visualViewport.height)||window.innerHeight;
-  if(h)bg.style.height=Math.round(h)+'px';
-  requestAnimationFrame(()=>{
-    const h2=(window.visualViewport&&window.visualViewport.height)||window.innerHeight;
-    if(h2)bg.style.height=Math.round(h2)+'px';
+// over-report and push the fixed footer/CTA below the fold). visualViewport is
+// the ground truth; innerHeight is the fallback. Kept in sync via listeners.
+function _vpHeight(){return (window.visualViewport&&window.visualViewport.height)||window.innerHeight;}
+function fitOverlayViewports(){
+  const h=_vpHeight();if(!h)return;
+  ['setup-bg','welcome-screen'].forEach(id=>{
+    const el=document.getElementById(id);
+    if(el&&el.classList.contains('open'))el.style.height=Math.round(h)+'px';
   });
+  requestAnimationFrame(()=>{
+    const h2=_vpHeight();if(!h2)return;
+    ['setup-bg','welcome-screen'].forEach(id=>{
+      const el=document.getElementById(id);
+      if(el&&el.classList.contains('open'))el.style.height=Math.round(h2)+'px';
+    });
+  });
+}
+function fitSetupViewport(){fitOverlayViewports();}
+if(!window._overlayFitBound){
+  window._overlayFitBound=true;
+  window.addEventListener('resize',fitOverlayViewports);
+  window.addEventListener('orientationchange',fitOverlayViewports);
+  if(window.visualViewport){window.visualViewport.addEventListener('resize',fitOverlayViewports);}
 }
 function setupStepList(){return setupIsFirstRun?Array.from({length:SETUP_TOTAL},(_,i)=>i+1):SETUP_EDIT_STEPS;}
 function renderSetupStep(){
@@ -7584,7 +7594,7 @@ function hideLoading(){
   setTimeout(()=>{el.style.display='none';},500);
 }
 function showAuth(){hideWelcome();document.getElementById('auth-screen').classList.add('active');document.getElementById('app').style.display='none';}
-function showWelcome(){const w=document.getElementById('welcome-screen');if(w)w.classList.add('open');document.getElementById('auth-screen').classList.remove('active');document.getElementById('app').style.display='none';}
+function showWelcome(){const w=document.getElementById('welcome-screen');if(w)w.classList.add('open');document.getElementById('auth-screen').classList.remove('active');document.getElementById('app').style.display='none';fitOverlayViewports();}
 function hideWelcome(){const w=document.getElementById('welcome-screen');if(w)w.classList.remove('open');}
 function welcomeGetStarted(){hideWelcome();openSetup(true);ensureRecipes();/*pre-load during onboarding*/}
 function welcomeSignin(){showAuth();switchAuthTab('signin');}
