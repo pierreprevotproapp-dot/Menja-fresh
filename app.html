@@ -648,6 +648,23 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .pfocus-dotsep{color:var(--text3);font-size:11px}
 /* ── Clean week list rows ── */
 .prow{display:flex;align-items:center;gap:12px;background:var(--surface);border-radius:14px;padding:10px 12px;box-shadow:0 1px 5px rgba(45,90,61,.06);margin-bottom:8px;cursor:pointer}
+/* Main-meal rows with a real photo become wide appetite cards */
+.prow.photo{display:block;position:relative;padding:0;height:124px;border-radius:16px;overflow:hidden;box-shadow:0 3px 12px rgba(45,90,61,.12)}
+.prow.photo>img{width:100%;height:100%;object-fit:cover;display:block;pointer-events:none}
+.prow.photo .prow-ovl{position:absolute;left:0;right:0;bottom:0;padding:30px 13px 10px;background:linear-gradient(transparent,rgba(0,0,0,.72));pointer-events:none}
+.prow.photo .prow-name{color:#fff;font-size:16px;white-space:normal}
+.prow.photo .prow-sub{color:rgba(255,255,255,.88)}
+.prow.photo .prow-ctrl{position:absolute;top:9px;right:9px;display:flex;gap:6px}
+.prow.photo .prow-swap{background:rgba(255,255,255,.92);width:30px;height:30px;font-size:14px}
+.prow.photo .prow-check{width:30px;height:30px}
+.prow.photo .prow-check.on{box-shadow:0 2px 8px rgba(0,0,0,.3)}
+.prow.photo .prow-check.off{border-color:rgba(255,255,255,.9);background:rgba(0,0,0,.18)}
+.prow.photo .prow-fb{display:none}
+.prow.photo.noimg{background:var(--surface2)}
+.prow.photo.noimg .prow-fb{display:flex;align-items:center;justify-content:center;height:100%;font-size:52px}
+.prow.photo.noimg .prow-ovl{background:linear-gradient(transparent,rgba(255,253,247,.94) 60%)}
+.prow.photo.noimg .prow-name{color:var(--text)}
+.prow.photo.noimg .prow-sub{color:var(--text3)}
 .prow-thumb{width:48px;height:48px;border-radius:11px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:25px;flex-shrink:0;overflow:hidden}
 .prow-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .prow-meta{flex:1;min-width:0}
@@ -5252,6 +5269,17 @@ function planRow(key,type,dish){
     right=`<button class="prow-x" onclick="event.stopPropagation();rmMeal('${key}','${type}')" title="${t('removeWord')}">×</button>`;
   }
   const sub=[type!==mt?MEAL_ICONS[type]:'',time?`${time} ${t('minShort')}`:'',tag?tTag(tag):''].filter(Boolean).join(' · ');
+  // Main meal with a photo → wide appetite card: the food is the hero.
+  if(type===mt&&dish.photo){
+    return`<div class="prow photo" onclick="openRecipeOverlay('${dish.id}')">
+      <img src="${dish.photo}" onerror="this.style.display='none';this.parentElement.classList.add('noimg')">
+      <div class="prow-fb">${dish.emoji}</div>
+      <div class="prow-ovl"><div class="prow-name">${dishName(dish)}</div>
+        ${sub?`<div class="prow-sub">${sub}</div>`:''}
+      </div>
+      <div class="prow-ctrl">${right}</div>
+    </div>`;
+  }
   return`<div class="prow" onclick="openRecipeOverlay('${dish.id}')">
     <div class="prow-thumb">${img}</div>
     <div class="prow-meta"><div class="prow-name">${dishName(dish)}</div>
