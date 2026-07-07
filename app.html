@@ -5239,7 +5239,7 @@ function renderCal(){
       <div class="plan-cta-sub">${t('weekPlannedSub')}</div>
       <button class="plan-cta-btn" onclick="showTab('shopping')">${t('toGroceryList')}</button>
     </div>`:'';
-  const hint=(!hintSeen('plan')&&weekPlacedCount()>0)?`<div class="plan-hint"><span>${t('planCoachHint')}</span><button class="plan-hint-x" onclick="dismissHint('plan')">${t('gotItWord')}</button></div>`:'';
+  const hint=''; // coach hint removed — the clean list explains itself
   const budget=''; // hidden — see feature/weekly-budget branch
   cal.innerHTML=hint+banner+budget+cal.innerHTML;
   bindPdaySwipe();bindInlineBrowse();
@@ -7381,14 +7381,8 @@ function toggleBentoTab(){
 }
 // (C) Discovery card on the Plan tab for families not yet using Bento
 function renderBentoPromo(){
-  const el=document.getElementById('plan-bento-promo');if(!el)return;
-  if(planFocus){el.innerHTML='';return;}   // focus mode: one decision, no distractions
-  if(_returnNudge||bentoTabVisible()||state.bentoPromoDismissed){el.innerHTML='';return;}  // welcome-back nudge takes priority
-  el.innerHTML=`<div class="bento-promo">
-    <button class="bento-promo-x" onclick="bentoDismissPromo()" aria-label="${t('bentoLaterBtn')}">✕</button>
-    <div class="bento-promo-head"><div class="bento-promo-ico">🍱</div><div><div class="bento-promo-title">${t('bentoPromoTitle')}</div><div class="bento-promo-sub">${t('bentoPromoSub')}</div></div></div>
-    <button class="bento-promo-cta" onclick="bentoTryFromPromo()">${t('bentoTryBtn')}</button>
-  </div>`;
+  // Promo card removed (clutter) — the Lunchbox lives in the plan-header segment.
+  const el=document.getElementById('plan-bento-promo');if(el)el.innerHTML='';
 }
 function bentoTryFromPromo(){state.showBentoTab=true;state.bentoPromoDismissed=true;save();applyBentoTabVisibility();showTab('bentokids');}
 function bentoDismissPromo(){state.bentoPromoDismissed=true;save();renderBentoPromo();}
