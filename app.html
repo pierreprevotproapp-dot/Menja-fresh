@@ -7122,7 +7122,11 @@ function renderBentoKids(){
   const lbl=document.getElementById('bento-wk-label');
   const rng=document.getElementById('bento-wk-range');
   if(lbl)lbl.textContent=bentoWeekOffset===0?t('thisWeek'):bentoWeekOffset===1?t('nextWeekLbl'):tf('inWeeks',{n:bentoWeekOffset});
-  if(rng)rng.textContent=`${dow(dates[0])} ${dates[0].getDate()} ${mon(dates[0])} – ${dow(dates[6])} ${dates[6].getDate()} ${mon(dates[6])}`;
+  if(rng){
+    const dotted=lang!=='en';
+    const fd=(d,withMon)=>`${d.getDate()}${dotted?'.':''}${withMon?' '+mon(d):''}`;
+    rng.textContent=`${fd(dates[0],dates[0].getMonth()!==dates[6].getMonth())} – ${fd(dates[6],true)}`;
+  }
   const pv=document.getElementById('bento-wk-prev'),nx=document.getElementById('bento-wk-next');
   if(pv)pv.disabled=bentoWeekOffset<=0;if(nx)nx.disabled=bentoWeekOffset>=3;
   const sc=document.getElementById('bento-scroll');if(!sc)return;
