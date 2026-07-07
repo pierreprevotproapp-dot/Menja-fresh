@@ -22,8 +22,9 @@ page.on('console', m => { if(m.type()==='error' && !/Failed to load resource|net
 await page.goto(APP_URL, { waitUntil: 'networkidle' });
 await page.waitForTimeout(2500);
 
-const results = await page.evaluate(() => {
+const results = await page.evaluate(async () => {
   const R=[]; const ok=(name,cond,detail='')=>R.push({name,pass:!!cond,detail:String(detail)});
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   const keep=new Set(['app','bento-sheet-bg','bento-recipe-bg']);
   [...document.body.children].forEach(el=>{if(!keep.has(el.id))el.style.display='none';});
   const app=document.getElementById('app'); app.style.display='block';
@@ -79,8 +80,10 @@ const results = await page.evaluate(() => {
   const nameBefore=document.querySelector('.pfocus .pday-name').textContent;
   document.querySelector('.pfocus .pday-arrow.right').click();
   ok('focus: arrows swap the dish', document.querySelector('.pfocus .pday-name').textContent!==nameBefore);
-  for(let i=0;i<3;i++)document.querySelector('.pfocus-cta')?.click();
+  for(let i=0;i<3;i++){document.querySelector('.pfocus-cta')?.click();await sleep(230);} // fly-out animation defers the confirm
   ok('focus: choose-through lands in clean list', !document.querySelector('.pfocus') && document.querySelectorAll('#cal-scroll .prow-check.on').length===3);
+  ok('strip: chips tick off as you choose', document.querySelectorAll('#plan-daystrip .dchip.done').length===3);
+  ok('flow: no celebration popup, slim bar instead', !document.querySelector('#weekdone-bg.open') && !!document.querySelector('.plan-done-bar'));
   ok('list: week decided after focus flow', weekDecided());
   document.querySelector('#cal-scroll .prow-check.on').click();   // unlock one day
   ok('list: unconfirm reveals swap', !!document.querySelector('#cal-scroll .prow-swap'));

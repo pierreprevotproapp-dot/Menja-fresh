@@ -21,7 +21,7 @@
 :root{
   --bg:#F5F7F2;--surface:#fff;--surface2:#EEF1E8;
   --border:rgba(45,90,61,0.1);--border2:rgba(45,90,61,0.18);
-  --text:#1A2214;--text2:#4A5E40;--text3:#8A9E82;
+  --text:#1A2214;--text2:#4A5E40;--text3:#6E8266;
   --accent:#2D5A3D;--accent-l:#E0EDD8;--accent2:#C8622A;--danger:#C84040;
   --nav:#1A2E1F;--nav-t:#A8C8A0;--nav-a:#7EC87A;--gold:#F59E0B;
   --fd:'Playfair Display',Georgia,serif;--fb:'DM Sans',system-ui,sans-serif;
@@ -598,6 +598,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .guest-line a{color:var(--accent);font-weight:700;cursor:pointer;white-space:nowrap}
 .plan-done-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;background:var(--accent-l);border-radius:12px;padding:11px 14px;margin:2px 0 12px;cursor:pointer}
 .plan-done-bar span{font-size:12.5px;font-weight:700;color:var(--accent)}
+.plan-gaps-bar{display:flex;align-items:center;justify-content:space-between;gap:10px;background:var(--surface);border:1.5px dashed var(--border2);border-radius:12px;padding:11px 14px;margin:2px 0 12px;cursor:pointer}
+.plan-gaps-bar span{font-size:12.5px;font-weight:700;color:var(--text2)}
 .plan-top-row{display:flex;align-items:center;justify-content:space-between}
 .plan-title{font-family:var(--fd);font-size:24px;font-weight:500;color:#fff}
 .plan-clear{background:rgba(255,255,255,.1);border:none;color:var(--nav-t);border-radius:99px;padding:5px 13px;font-size:12px;cursor:pointer;font-family:var(--fb)}
@@ -635,6 +637,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .dchip.filled::after{content:'';position:absolute;bottom:6px;width:4px;height:4px;border-radius:50%;background:var(--nav-a)}
 .dchip.on.filled::after{background:var(--nav-a)}
 .dchip.today:not(.on){box-shadow:0 0 0 2px var(--accent-l)}
+.dchip.done::after{content:'✓';position:absolute;bottom:2px;font-size:9px;font-weight:800;color:var(--accent);animation:chipPop .25s ease}
+.dchip.on.done::after{color:var(--nav-a)}
+@keyframes chipPop{0%{transform:scale(0)}70%{transform:scale(1.4)}100%{transform:scale(1)}}
 /* ── Focus mode: one big card per day to pick the meal — always fits the screen ── */
 .pfocus{height:100%;display:flex;flex-direction:column;padding:2px 4px 4px}
 .pfocus-day{flex-shrink:0;font-family:var(--fd);font-size:18px;font-weight:500;color:var(--text);text-align:center;margin:4px 0 10px}
@@ -897,7 +902,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .macro-lock-mid{flex:1}
 .macro-lock-title{font-size:14px;font-weight:600;color:var(--text)}
 .macro-lock-sub{font-size:12px;color:var(--text3);margin-top:2px}
-.macro-lock-cta{background:var(--gold);color:#fff;font-size:12px;font-weight:700;padding:7px 14px;border-radius:99px}
+.macro-lock-cta{background:var(--gold);color:var(--nav);font-size:12px;font-weight:700;padding:7px 14px;border-radius:99px}
 .macro-goal-inputs{display:flex;gap:10px}
 .macro-goal-inputs label{flex:1;font-size:11px;color:var(--text3);display:flex;flex-direction:column;gap:4px}
 .macro-goal-inputs input{padding:10px 12px;border-radius:var(--rsm);border:1.5px solid var(--border2);background:var(--surface);font-size:15px;font-family:var(--fb);outline:none}
@@ -2012,7 +2017,7 @@ en:{
   pwFreeName:'🌿 Free',pwAlwaysFree:'Always free',pwFree1:'Plan your whole week in minutes',pwFree2:'Swap & choose meals, skip any day',pwFree3:'Automatic grocery list + staples',pwFree4:'Your favourites cookbook',pwFree5:"Learns your family's taste",
   pwPremiumName:'⭐ Premium',pwBest:'BEST',pwPrem1:"💶 Budget mode — your week's cost, per day & per serving",pwPrem2:'📊 Advanced macros — carb & fat goals, weekly trends',pwPrem3:'🗓️ Plan up to 4 weeks ahead',pwPrem4:'📷 AI fridge scanner',pwPrem5:'☁️ Sync across all your devices',
   perMonth:'per month',perYear:'per year',save27:'Save 27%',pwCta:'Try Premium free for 7 days',pwTerms:'7-day free trial · cancel anytime · no hidden fees',
-  weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",weekpickFirstTitle:'Plan your first week 🎉',chooseForDay:'Choose for {day} ✓',swipeForMore:'‹ › swipe for more ideas',seeWholeWeek:'See the whole week',dayOfCount:'Day {i} of {n}',weekpickFirstSub:'Pick the nights you want dinners for — we’ll fill them in.',addCookingDay:'Add a cooking day',
+  weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",weekpickFirstTitle:'Plan your first week 🎉',gapsBar:'{n} days still open — keep planning',gapsBarOne:'1 day still open — plan it',chooseForDay:'Choose for {day} ✓',swipeForMore:'‹ › swipe for more ideas',seeWholeWeek:'See the whole week',dayOfCount:'Day {i} of {n}',weekpickFirstSub:'Pick the nights you want dinners for — we’ll fill them in.',addCookingDay:'Add a cooking day',
   setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupDietQ:'Any diet?',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
   cookBack:'‹ Back',cookNext:'Next ›',chooseDinner:'Choose dinner',
   opt_vegetarian:'Vegetarian',opt_pescatarian:'Pescatarian',opt_vegan:'Vegan',opt_glutenfree:'Gluten-free',
@@ -2164,7 +2169,7 @@ fr:{
   pwFreeName:'🌿 Gratuit',pwAlwaysFree:'Toujours gratuit',pwFree1:'Planifiez toute la semaine en minutes',pwFree2:'Changez & choisissez les repas, sautez un jour',pwFree3:'Liste de courses automatique + basiques',pwFree4:'Votre carnet de favoris',pwFree5:'Apprend les goûts de votre famille',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Mode budget — coût de la semaine, par jour & par portion',pwPrem2:'📊 Macros avancés — objectifs glucides & lipides, tendances',pwPrem3:'🗓️ Planifiez jusqu\'à 4 semaines à l\'avance',pwPrem4:'📷 Scanner de frigo IA',pwPrem5:'☁️ Synchro sur tous vos appareils',
   perMonth:'par mois',perYear:'par an',save27:'-27 %',pwCta:'Essayer Premium gratuitement 7 jours',pwTerms:'Essai gratuit 7 jours · annulable à tout moment · sans frais cachés',
-  weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',weekpickFirstTitle:'Planifiez votre première semaine 🎉',chooseForDay:'Choisir pour {day} ✓',swipeForMore:'‹ › balayez pour d’autres idées',seeWholeWeek:'Voir toute la semaine',dayOfCount:'Jour {i} sur {n}',weekpickFirstSub:'Choisissez les soirs à cuisiner — on s’occupe du reste.',addCookingDay:'Ajouter un jour',
+  weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',weekpickFirstTitle:'Planifiez votre première semaine 🎉',gapsBar:'Encore {n} jours à planifier — continuer',gapsBarOne:'Encore 1 jour à planifier — continuer',chooseForDay:'Choisir pour {day} ✓',swipeForMore:'‹ › balayez pour d’autres idées',seeWholeWeek:'Voir toute la semaine',dayOfCount:'Jour {i} sur {n}',weekpickFirstSub:'Choisissez les soirs à cuisiner — on s’occupe du reste.',addCookingDay:'Ajouter un jour',
   setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupDietQ:'Un régime ?',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
   cookBack:'‹ Retour',cookNext:'Suivant ›',chooseDinner:'Choisir le dîner',
   opt_vegetarian:'Végétarien',opt_pescatarian:'Pescétarien',opt_vegan:'Végétalien',opt_glutenfree:'Sans gluten',
@@ -2316,7 +2321,7 @@ es:{
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Siempre gratis',pwFree1:'Planifica toda la semana en minutos',pwFree2:'Cambia y elige comidas, salta cualquier día',pwFree3:'Lista de la compra automática + básicos',pwFree4:'Tu recetario de favoritos',pwFree5:'Aprende los gustos de tu familia',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Modo presupuesto — coste de la semana, por día y por ración',pwPrem2:'📊 Macros avanzados — objetivos de carbos & grasas, tendencias',pwPrem3:'🗓️ Planifica hasta 4 semanas',pwPrem4:'📷 Escáner de nevera con IA',pwPrem5:'☁️ Sincroniza en todos tus dispositivos',
   perMonth:'al mes',perYear:'al año',save27:'-27 %',pwCta:'Prueba Premium gratis 7 días',pwTerms:'7 días de prueba gratis · cancela cuando quieras · sin costes ocultos',
-  weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',weekpickFirstTitle:'Planifica tu primera semana 🎉',chooseForDay:'Elegir para {day} ✓',swipeForMore:'‹ › desliza para más ideas',seeWholeWeek:'Ver toda la semana',dayOfCount:'Día {i} de {n}',weekpickFirstSub:'Elige las noches que quieras cenar — nosotros las llenamos.',addCookingDay:'Añadir un día',
+  weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',weekpickFirstTitle:'Planifica tu primera semana 🎉',gapsBar:'Quedan {n} días por planificar — seguir',gapsBarOne:'Queda 1 día por planificar — seguir',chooseForDay:'Elegir para {day} ✓',swipeForMore:'‹ › desliza para más ideas',seeWholeWeek:'Ver toda la semana',dayOfCount:'Día {i} de {n}',weekpickFirstSub:'Elige las noches que quieras cenar — nosotros las llenamos.',addCookingDay:'Añadir un día',
   setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupDietQ:'¿Alguna dieta?',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
   cookBack:'‹ Atrás',cookNext:'Siguiente ›',chooseDinner:'Elegir cena',
   opt_vegetarian:'Vegetariano',opt_pescatarian:'Pescetariano',opt_vegan:'Vegano',opt_glutenfree:'Sin gluten',
@@ -2514,7 +2519,7 @@ de:{
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Immer gratis',pwFree1:'Plane die ganze Woche in Minuten',pwFree2:'Mahlzeiten tauschen & wählen, Tag überspringen',pwFree3:'Automatische Einkaufsliste + Basics',pwFree4:'Dein Favoriten-Kochbuch',pwFree5:'Lernt den Geschmack deiner Familie',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Budget-Modus — Wochenkosten, pro Tag & pro Portion',pwPrem2:'📊 Erweiterte Makros — Kohlenhydrat- & Fettziele, Wochentrends',pwPrem3:'🗓️ Bis zu 4 Wochen im Voraus planen',pwPrem4:'📷 KI-Kühlschrank-Scanner',pwPrem5:'☁️ Synchro auf all deinen Geräten',
   perMonth:'pro Monat',perYear:'pro Jahr',save27:'-27 %',pwCta:'Premium 7 Tage gratis testen',pwTerms:'7 Tage gratis · jederzeit kündbar · keine versteckten Kosten',
-  weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',weekpickFirstTitle:'Plane deine erste Woche 🎉',chooseForDay:'Für {day} wählen ✓',swipeForMore:'‹ › wischen für mehr Vorschläge',seeWholeWeek:'Zur Wochenansicht',dayOfCount:'Tag {i} von {n}',weekpickFirstSub:'Wähle die Abende, für die du Gerichte möchtest — wir füllen sie.',addCookingDay:'Kochtag hinzufügen',
+  weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',weekpickFirstTitle:'Plane deine erste Woche 🎉',gapsBar:'Noch {n} Tage offen — weiterplanen',gapsBarOne:'Noch 1 Tag offen — jetzt planen',chooseForDay:'Für {day} wählen ✓',swipeForMore:'‹ › wischen für mehr Vorschläge',seeWholeWeek:'Zur Wochenansicht',dayOfCount:'Tag {i} von {n}',weekpickFirstSub:'Wähle die Abende, für die du Gerichte möchtest — wir füllen sie.',addCookingDay:'Kochtag hinzufügen',
   setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupDietQ:'Eine Ernährungsweise?',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
   cookBack:'‹ Zurück',cookNext:'Weiter ›',chooseDinner:'Abendessen wählen',
   opt_vegetarian:'Vegetarisch',opt_pescatarian:'Pescetarisch',opt_vegan:'Vegan',opt_glutenfree:'Glutenfrei',
@@ -5190,7 +5195,10 @@ function focusChoose(){
   const cur=planFocus;
   const rest=pendingMainKeys().filter(k=>k!==cur);
   planFocus=rest.length?rest[0]:null;          // advance before confirm re-renders
-  confirmMeal(null,cur);                        // saves + renderPlan + checkWeekDone
+  const go=()=>confirmMeal(null,cur);           // saves + renderPlan + checkWeekDone
+  const card=document.querySelector('.pfocus-card');
+  if(card){card.classList.add('fly-l');setTimeout(go,160);}   // card glides out, next day glides in
+  else go();
 }
 // Week strip in the header: 7 chips, dot = day has a meal, active = focus day / today.
 function renderDayStrip(){
@@ -5200,8 +5208,9 @@ function renderDayStrip(){
     const key=dateKey(d);
     const dm=state.plan[key]||{};
     const filled=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);
+    const done=filled&&isConfirmed(key);   // locked in → chip shows a ✓ (the strip is the progress bar)
     const on=planFocus?key===planFocus:key===todayKey;
-    return`<button class="dchip ${on?'on':''} ${filled?'filled':''} ${key===todayKey?'today':''}" onclick="dayStripTap(${i})"><span class="dd">${dow(d)}</span><span class="dn">${d.getDate()}</span></button>`;
+    return`<button class="dchip ${on?'on':''} ${done?'done':filled?'filled':''} ${key===todayKey?'today':''}" onclick="dayStripTap(${i})"><span class="dd">${dow(d)}</span><span class="dn">${d.getDate()}</span></button>`;
   }).join('');
 }
 function dayStripTap(i){
@@ -5339,9 +5348,14 @@ function renderCal(){
   const banner=weekDecided()?`<div class="plan-done-bar" onclick="showTab('shopping')">
       <span>${t('weekPlannedTitle')}</span><span>${t('toGroceryList')}</span>
     </div>`:'';
+  // Picked only today (or left gaps)? One quiet line continues the focus flow.
+  const _open=(!planFocus&&weekOffset===0&&weekPlacedCount()>0&&!weekDecided())?weekOpenDays():{count:0};
+  const gapsBar=_open.count>0?`<div class="plan-gaps-bar" onclick="focusPlanDay('${_open.firstKey}')">
+      <span>${_open.count===1?t('gapsBarOne'):tf('gapsBar',{n:_open.count})}</span><span>→</span>
+    </div>`:'';
   const hint=''; // coach hint removed — the clean list explains itself
   const budget=''; // hidden — see feature/weekly-budget branch
-  cal.innerHTML=hint+banner+budget+cal.innerHTML;
+  cal.innerHTML=hint+banner+gapsBar+budget+cal.innerHTML;
   bindPdaySwipe();bindInlineBrowse();
 }
 function hintSeen(k){return!!(state.hintsSeen&&state.hintsSeen[k]);}
@@ -5462,7 +5476,8 @@ function checkWeekDone(){
     // Record this week as planned (lifetime count + streak). Never un-recorded.
     if(!state.plannedWeeks)state.plannedWeeks={};
     if(!state.plannedWeeks[wk]){state.plannedWeeks[wk]=Date.now();save();renderStreakChip();}
-    if(_weekDoneShownFor!==wk){ _weekDoneShownFor=wk; setTimeout(openWeekDone,180); }
+    // No celebration popup — the list's slim "week is planned" bar is the landing (clean, no clutter).
+    if(_weekDoneShownFor!==wk){ _weekDoneShownFor=wk; }
   }
   else if(_weekDoneShownFor===wk){ _weekDoneShownFor=null; }   // re-arm if they change something
 }
@@ -5690,7 +5705,7 @@ function renderRecipes(){
           ${totalTime?`<span class="rec-time-chip">⏱ ${totalTime} ${t('minShort')}</span>`:''}
           ${isPremium()?`<span class="rec-time-chip">💶 ${money(dishCostPerServing(d))}/${t('perServingSlash').replace('/','').trim()}</span>`:''}
           ${(d.badges||[]).map(b=>BADGE_HTML[b]||'').join('')}
-          ${rating>0?`<span style="font-size:11px;color:var(--gold);font-weight:500">★ ${rating.toFixed(1)}</span>`:''}
+          ${rating>0?`<span style="font-size:11px;color:#B45309;font-weight:600">★ ${rating.toFixed(1)}</span>`:''}
           <button class="rec-add" onclick="event.stopPropagation();openAddToWeek('${id}')">${t('addWeekShort')}</button>
         </div>
       </div>
