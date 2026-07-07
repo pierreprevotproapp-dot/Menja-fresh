@@ -87,9 +87,10 @@ const results = await page.evaluate(() => {
   document.querySelector('#cal-scroll .prow-swap').click();
   ok('list: swap re-enters focus', !!document.querySelector('.pfocus'));
   exitFocus();
-  dayStripTap(6);   // Sunday: not a cook day, empty → should open the browse deck
-  ok('strip: tap empty day opens browse', !!document.getElementById('ibrowse-card'));
-  browseCancel();
+  dayStripTap(6);   // Sunday: not a cook day, empty → straight into the big swipe picker
+  ok('strip: tap empty day opens the big picker', !!document.querySelector('.pfocus') && planFocus===dk(getDateRange()[6]) && !!state.plan[planFocus][mainMealType()].dishId);
+  exitFocus();
+  ok('list: open rows show a single swap control', !document.querySelector('#cal-scroll .prow-check.off'));
   ok('plan: no coach hint & no promo card', !document.querySelector('.plan-hint') && document.getElementById('plan-bento-promo').innerHTML==='');
 
   state.family.children=0; state.showBentoTab=undefined; showTab('plan'); applyBentoTabVisibility();

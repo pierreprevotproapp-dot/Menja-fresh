@@ -634,6 +634,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .dchip.on .dd{color:var(--nav-a)}.dchip.on .dn{color:#fff}
 .dchip.filled::after{content:'';position:absolute;bottom:6px;width:4px;height:4px;border-radius:50%;background:var(--nav-a)}
 .dchip.on.filled::after{background:var(--nav-a)}
+.dchip.today:not(.on){box-shadow:0 0 0 2px var(--accent-l)}
 /* ── Focus mode: one big card per day to pick the meal — always fits the screen ── */
 .pfocus{height:100%;display:flex;flex-direction:column;padding:2px 4px 4px}
 .pfocus-day{flex-shrink:0;font-family:var(--fd);font-size:18px;font-weight:500;color:var(--text);text-align:center;margin:4px 0 10px}
@@ -1132,10 +1133,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-chip{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:7px 0;border-radius:12px;border:1.5px solid var(--border2);background:var(--surface);cursor:pointer;transition:all .15s;position:relative}
 .bento-chip .bc-dow{font-size:9.5px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--text3)}
 .bento-chip .bc-num{font-family:var(--fd);font-size:15px;font-weight:600;color:var(--text2);line-height:1}
-.bento-chip.on{background:var(--accent);border-color:var(--accent)}
+.bento-chip.on{background:var(--nav);border-color:var(--nav)}
 .bento-chip.on .bc-dow{color:var(--nav-a)}.bento-chip.on .bc-num{color:#fff}
 .bento-chip.on::after{content:'🍱';position:absolute;top:-7px;right:-3px;font-size:11px}
-.bento-chip.today{border-color:var(--accent2);border-width:2px}
+.bento-chip.today{box-shadow:0 0 0 2px var(--accent-l)}
 .bento-empty-day{text-align:center;padding:22px 14px 16px;color:var(--text2);font-size:13px;line-height:1.5}
 .bento-plan-btn{background:var(--accent);color:#fff;border:none;border-radius:99px;padding:11px 22px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb);margin-top:10px}
 /* YumBox-style tray: large main top-left, protein top-right, veggies bottom-left, fruit bottom-right, round dip well in centre */
@@ -1233,6 +1234,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <svg viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
         <span>Menja Fresh</span>
       </div>
+      <div class="lang-row" id="welcome-lang-row" style="margin-bottom:12px"></div>
       <div class="welcome-photo">
         <img src="https://v3b.fal.media/files/b/0a9cf80d/7zutElf_TjiowoI0eejH7_15c2f43eb8bb426794a154cab2c0dd86.jpg" alt="" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="welcome-photo-fb">
@@ -2577,11 +2579,12 @@ function setLang(code,rerender){
 }
 
 function renderLangBars(){
-  ['auth-lang-row','app-lang-bar','me-lang-row'].forEach(id=>{
+  ['auth-lang-row','welcome-lang-row','app-lang-bar','me-lang-row'].forEach(id=>{
     const el=document.getElementById(id);
     if(!el)return;
+    const big=id==='auth-lang-row'||id==='welcome-lang-row';
     el.innerHTML=LANGS.map(l=>
-      `<button class="${id==='auth-lang-row'?'lang-btn':'app-lang-btn'} ${l.code===lang?'active':''}" onclick="setLang('${l.code}',true)" title="${l.code}">${l.flag}</button>`
+      `<button class="${big?'lang-btn':'app-lang-btn'} ${l.code===lang?'active':''}" onclick="setLang('${l.code}',true)" title="${l.code}">${l.flag}</button>`
     ).join('');
   });
 }
@@ -5148,7 +5151,7 @@ function renderDayStrip(){
     const dm=state.plan[key]||{};
     const filled=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);
     const on=planFocus?key===planFocus:key===todayKey;
-    return`<button class="dchip ${on?'on':''} ${filled?'filled':''}" onclick="dayStripTap(${i})"><span class="dd">${dow(d)}</span><span class="dn">${d.getDate()}</span></button>`;
+    return`<button class="dchip ${on?'on':''} ${filled?'filled':''} ${key===todayKey?'today':''}" onclick="dayStripTap(${i})"><span class="dd">${dow(d)}</span><span class="dn">${d.getDate()}</span></button>`;
   }).join('');
 }
 function dayStripTap(i){
@@ -5156,11 +5159,11 @@ function dayStripTap(i){
   const dm=state.plan[key]||{};const mt=mainMealType();
   // In focus mode a tap moves the focus if that day still needs a decision
   if(planFocus&&dm[mt]&&dm[mt].dishId&&!isConfirmed(key)){planFocus=key;renderPlan();return;}
+  const has=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);
+  if(!has){focusPlanDay(key);return;}   // empty day → straight into the big swipe picker
   planFocus=null;
   if(isSkipped(key)){if(state.skippedDays)delete state.skippedDays[key];save();}
-  const has=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);
-  if(!has&&!isBrowsing(key,mt)){startBrowse(key,mt);}   // empty day → pick something
-  else renderPlan();
+  renderPlan();
   setTimeout(()=>{const el=document.getElementById('calday-'+key);const sc=document.getElementById('cal-scroll');
     if(el&&sc){sc.scrollTop+=el.getBoundingClientRect().top-sc.getBoundingClientRect().top-6;}},80);
 }
@@ -5209,9 +5212,10 @@ function planRow(key,type,dish){
     :dish.emoji;
   let right='';
   if(type===mt){
+    // One control: ✓ = locked in (tap to unlock), ⇄ = open the big swipe picker.
     right=isConfirmed(key)
       ?`<button class="prow-check on" onclick="event.stopPropagation();unconfirmRow('${key}')" title="${t('planned')}">✓</button>`
-      :`<button class="prow-swap" onclick="event.stopPropagation();enterFocus('${key}')">⇄</button><button class="prow-check off" onclick="event.stopPropagation();confirmMeal(event,'${key}')">✓</button>`;
+      :`<button class="prow-swap" onclick="event.stopPropagation();enterFocus('${key}')">⇄</button>`;
   }else{
     right=`<button class="prow-x" onclick="event.stopPropagation();rmMeal('${key}','${type}')" title="${t('removeWord')}">×</button>`;
   }
@@ -5249,7 +5253,7 @@ function renderCal(){
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
     if(isSkipped(key)){
       return`<div class="pday" id="calday-${key}"><div class="pday-label-row"><span class="pday-label">${labelTxt}</span></div>
-        <div class="prow rest" onclick="planDay('${key}')"><div class="prow-thumb">🌙</div><div class="prow-meta">${t('notPlanningLabel')} — ${t('planThisDay')}</div><button class="prow-swap" onclick="event.stopPropagation();lazyDay('${key}')" title="${t('lazyDayBasic')}">⏱</button></div></div>`;
+        <div class="prow rest" onclick="focusPlanDay('${key}')"><div class="prow-thumb">🌙</div><div class="prow-meta">${t('notPlanningLabel')} — ${t('planThisDay')}</div><button class="prow-swap" onclick="event.stopPropagation();lazyDay('${key}')" title="${t('lazyDayBasic')}">⏱</button></div></div>`;
     }
     const dm=state.plan[key]||{};
     const _mainT=mainMealType();
@@ -5261,7 +5265,7 @@ function renderCal(){
       const m=dm[tp]&&dm[tp].dishId?getDish(dm[tp].dishId):null;
       if(m){cards+=planRow(key,tp,m);return;}
       if(tp===_mainT){
-        cards+=`<div class="prow addrow${isToday?' today-pulse':''}" onclick="startBrowse('${key}','${tp}')"><div class="prow-thumb">＋</div><div class="prow-meta">${t(tp==='Lunch'?'pickALunch':'pickADinner')}</div><button class="prow-swap" onclick="event.stopPropagation();pickBasic('${key}','${tp}')" title="${t('lazyDayBasic')}">⏱</button></div>`;
+        cards+=`<div class="prow addrow${isToday?' today-pulse':''}" onclick="focusPlanDay('${key}')"><div class="prow-thumb">＋</div><div class="prow-meta">${t(tp==='Lunch'?'pickALunch':'pickADinner')}</div><button class="prow-swap" onclick="event.stopPropagation();pickBasic('${key}','${tp}')" title="${t('lazyDayBasic')}">⏱</button></div>`;
       }
     });
     const adds=MEAL_TYPES.filter(tp=>tp!==_mainT&&!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
