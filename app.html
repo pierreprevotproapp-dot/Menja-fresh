@@ -5953,7 +5953,7 @@ function renderToday(){
   const m=dayMacros(key);const g=state.macroGoals||{};
   const macro=hasMeals?macroCardHTML(key):'';
   const nudge=hasMeals?todayNudge(key,m,g,isToday,plannedTypes):'';
-  const mealsSection=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="goToPlanDay('${key}')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button></div>`;
+  const mealsSection=hasMeals?meals:`<div style="text-align:center;padding:40px 20px"><div style="font-size:40px;margin-bottom:12px">🍳</div><div style="font-size:16px;font-weight:600;color:var(--text);margin-bottom:8px">${isToday?t('letsSortDinner'):t('nothingPlannedYet')} ✨</div><div style="font-size:13px;color:var(--text2);margin-bottom:20px">${tf('emptyTodaySentence',{when:isToday?t('whenTonight'):t('whenThisDay')})}</div><button onclick="focusPlanDay('${key}')" style="background:var(--nav);color:var(--nav-a);border:none;border-radius:99px;padding:10px 22px;font-size:14px;font-weight:600;cursor:pointer;font-family:inherit">${t('pickTonight')}</button></div>`;
   const microCard=(isToday&&!hasMeals)?microbiomeTodayCardHTML():''; // embedded in macroCard when meals exist
   tm.innerHTML=reminder+mealsSection+macro+microCard;
 }
@@ -7428,6 +7428,27 @@ function weekOffsetForKey(key){
   const ws=d=>{const x=new Date(d);const dm=(x.getDay()+6)%7;x.setDate(x.getDate()-dm);x.setHours(0,0,0,0);return x;};
   const today=new Date();today.setHours(0,0,0,0);
   return Math.round((ws(target)-ws(today))/(7*86400000));
+}
+// From the Today tab: jump straight into the swipe picker (focus mode) for that day.
+// Seeds a suggestion if the slot is empty, so there is something to swipe through.
+function focusPlanDay(key){
+  const mt=mainMealType();
+  if(state.skippedDays)delete state.skippedDays[key];
+  const dm=state.plan[key]||{};
+  if(!(dm[mt]&&dm[mt].dishId)){
+    const used=new Set();Object.values(state.plan).forEach(x=>Object.values(x||{}).forEach(s=>{if(s&&s.dishId)used.add(String(s.dishId));}));
+    const pool=tasteOrderedPool(typePool(mt));
+    const pick=pool.find(d=>!used.has(String(d.id)))||pool[0];
+    if(!pick){goToPlanDay(key);return;}   // dishes not loaded yet → plain jump
+    if(!state.plan[key])state.plan[key]={};
+    state.plan[key][mt]={dishId:pick.id,...defaultGuests()};
+    if(state.cooked)delete state.cooked[key+'_'+mt];
+  }
+  if(state.confirmed)delete state.confirmed[key];   // pending → swipeable
+  save();rebuildShopping();updateBadge();
+  weekOffset=Math.max(0,Math.min(maxWeekOffset(),weekOffsetForKey(key)));
+  planFocus=key;
+  showTab('plan');renderPlan();
 }
 function goToPlanDay(key){
   state.openDays[key]=true;save();
