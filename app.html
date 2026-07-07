@@ -1646,9 +1646,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 <div class="picker-bg" id="prefsov-bg" onclick="event.target===this&&closePrefsOverview()">
   <div class="picker-modal">
     <div class="p-handle"></div>
-    <div id="prefsov-body" style="padding:8px 20px 4px"></div>
-    <button class="weekpick-go" onclick="closePrefsOverview();openSetup(false)" data-t="editWord">Edit</button>
-    <div class="p-cancel" onclick="closePrefsOverview()" data-t="closeWord">Close</div>
+    <div id="prefsov-body" style="padding:8px 20px 4px;max-height:62vh;overflow-y:auto"></div>
+    <button class="weekpick-go" onclick="closePrefsOverview()" data-t="closeWord">Close</button>
   </div>
 </div>
 
@@ -4090,20 +4089,22 @@ const DIET_OPTIONS=[
   {id:'vegan',label:'🌱 Vegan'},
   {id:'glutenfree',label:'🌾 Gluten-free'},
 ];
-// Quick overview of saved preferences & allergies (read-only; Edit opens the editor).
+// Preferences & allergies sheet: the full lists, editable in place (tap = toggle, saves instantly).
 function openPrefsOverview(){
   const body=document.getElementById('prefsov-body');if(!body)return;
-  const chip=x=>`<span class="diet-tag active" style="cursor:default">${x}</span>`;
-  const none=`<span style="font-size:13px;color:var(--text3)">—</span>`;
-  const sec=(title,items)=>`<div style="margin-bottom:16px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text3);margin-bottom:8px">${title}</div><div style="display:flex;flex-wrap:wrap;gap:6px">${items.length?items.map(chip).join(''):none}</div></div>`;
-  const dietNames=(state.dietaryPrefs||[]).map(id=>{const o=DIET_OPTIONS.find(d=>d.id===id);return o?optLabel(o):id;});
-  const allergyNames=(state.allergies||[]).map(id=>{const a=ALLERGENS.find(x=>x.id===id);return a?optLabel(a):id;});
-  const dislikes=(state.dislikes||[]).slice();
+  const sec=(title,opts,kind,sel)=>`<div style="margin-bottom:16px"><div style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--text3);margin-bottom:8px">${title}</div><div style="display:flex;flex-wrap:wrap;gap:6px">${opts.map(o=>`<span class="diet-tag ${sel.includes(o.id)?'active':''}" onclick="prefsOvToggle('${kind}','${o.id}')">${optLabel(o)}</span>`).join('')}</div></div>`;
   body.innerHTML=`<div style="font-family:var(--fd);font-size:17px;font-weight:500;margin:6px 0 16px">${t('prefsAllergies').replace('⚙️ ','')}</div>`
-    +sec(t('sumDiet'),dietNames)
-    +sec(t('setupAllergiesQ'),allergyNames)
-    +sec(t('dislikesShort'),dislikes);
+    +sec(t('sumDiet'),DIET_OPTIONS,'dietaryPrefs',state.dietaryPrefs||[])
+    +sec(t('setupAllergiesQ'),ALLERGENS,'allergies',state.allergies||[])
+    +sec(t('dislikesShort'),DISLIKES,'dislikes',state.dislikes||[]);
   document.getElementById('prefsov-bg').classList.add('open');
+}
+function prefsOvToggle(kind,id){
+  if(!state[kind])state[kind]=[];
+  const i=state[kind].indexOf(id);
+  if(i>=0)state[kind].splice(i,1);else state[kind].push(id);
+  save();renderDietPrefs();
+  openPrefsOverview();   // re-render the sheet with the new state
 }
 function closePrefsOverview(){document.getElementById('prefsov-bg').classList.remove('open');}
 function renderDietPrefs(){
