@@ -3,7 +3,8 @@
  * Menja Fresh — end-to-end flow test (headless Chromium via Playwright).
  * Covers: boot/no-errors, i18n, bottom-nav + green sticky headers, onboarding CTA,
  * returning-user routing & welcome-back nudge (planned/gaps/once-per-day),
- * "repeat last week", Lunchbox (Bento) visibility/segment, recipe detail & whole-box,
+ * "repeat last week", plan redesign (day strip / focus mode / clean week list),
+ * Lunchbox (Bento) visibility/segment, recipe detail & whole-box,
  * and Bento→Groceries integration (quantities + 🍱 tag).
  *
  * Run:  node test/flow-test.mjs
@@ -66,6 +67,30 @@ const results = await page.evaluate(() => {
   ok('nudge: gaps variant + singular', /Noch 1 Tag offen/.test(document.querySelector('#plan-return-nudge .return-nudge-txt')?.textContent||''));
   dismissReturnNudge();
   ok('nudge: dismiss clears it', document.querySelector('#plan-return-nudge .return-nudge')===null);
+
+  // ── Plan redesign: day strip + focus mode + clean week list ──
+  for(let i=0;i<8;i++)DISHES.push({id:'ft'+i,emoji:'🥗',_title:'Flow Dish '+i,tags:['vegetarian'],meal:['Abendessen'],prep:10,cook:20,servings:2,ingredients:[],i18n:{de:{title:'Flow Dish '+i},en:{title:'Flow Dish '+i}}});
+  state.plan={}; state.confirmed={}; state.skippedDays={}; state.cookDays=[0,2,4]; state.weekPickDone=true; _returnNudge=false; planFocus=null;
+  showTab('plan'); renderPlan();
+  ok('strip: 7 day chips render', document.querySelectorAll('#plan-daystrip .dchip').length===7);
+  weekPickSel=new Set([0,2,4]); confirmWeekPick();
+  ok('focus: weekpick enters focus mode', !!document.querySelector('.pfocus') && /Tag 1 von 3/.test(document.querySelector('.pfocus-count')?.textContent||''));
+  ok('strip: dots mark planned days', document.querySelectorAll('#plan-daystrip .dchip.filled').length===3);
+  const nameBefore=document.querySelector('.pfocus .pday-name').textContent;
+  document.querySelector('.pfocus .pday-arrow.right').click();
+  ok('focus: arrows swap the dish', document.querySelector('.pfocus .pday-name').textContent!==nameBefore);
+  for(let i=0;i<3;i++)document.querySelector('.pfocus-cta')?.click();
+  ok('focus: choose-through lands in clean list', !document.querySelector('.pfocus') && document.querySelectorAll('#cal-scroll .prow-check.on').length===3);
+  ok('list: week decided after focus flow', weekDecided());
+  document.querySelector('#cal-scroll .prow-check.on').click();   // unlock one day
+  ok('list: unconfirm reveals swap', !!document.querySelector('#cal-scroll .prow-swap'));
+  document.querySelector('#cal-scroll .prow-swap').click();
+  ok('list: swap re-enters focus', !!document.querySelector('.pfocus'));
+  exitFocus();
+  dayStripTap(6);   // Sunday: not a cook day, empty → should open the browse deck
+  ok('strip: tap empty day opens browse', !!document.getElementById('ibrowse-card'));
+  browseCancel();
+  ok('plan: no coach hint & no promo card', !document.querySelector('.plan-hint') && document.getElementById('plan-bento-promo').innerHTML==='');
 
   state.family.children=0; state.showBentoTab=undefined; showTab('plan'); applyBentoTabVisibility();
   ok('lunchbox: hidden with no kids', getComputedStyle(document.getElementById('plan-seg')).display==='none');
