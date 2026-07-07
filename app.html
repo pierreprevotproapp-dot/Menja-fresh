@@ -613,9 +613,49 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .return-nudge-cta{background:var(--accent);color:#fff;border:none;border-radius:99px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--fb);white-space:nowrap}
 .return-nudge-x{position:absolute;top:7px;right:9px;background:none;border:none;font-size:14px;color:var(--text3);cursor:pointer;padding:3px;line-height:1}
 /* ── VISUAL DINNER DAY CARDS ─────────────────── */
-.pday{margin-bottom:20px}
-.pday-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
-.pday-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text3)}
+/* ── Day strip (week chips in the plan header) ── */
+.plan-daystrip{display:flex;gap:6px;margin:12px 0 12px;overflow-x:auto;scrollbar-width:none}
+.plan-daystrip::-webkit-scrollbar{display:none}
+.dchip{flex:1;min-width:40px;height:52px;border-radius:12px;border:1.5px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;position:relative;padding:0;font-family:var(--fb)}
+.dchip .dd{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--nav-t)}
+.dchip .dn{font-family:var(--fd);font-size:15px;font-weight:600;color:#fff}
+.dchip.on{background:var(--nav-a);border-color:var(--nav-a)}
+.dchip.on .dd{color:var(--nav)}.dchip.on .dn{color:var(--nav)}
+.dchip.filled::after{content:'';position:absolute;bottom:5px;width:4px;height:4px;border-radius:50%;background:var(--nav-a)}
+.dchip.on.filled::after{background:var(--nav)}
+/* ── Focus mode: one big card per day to pick the meal ── */
+.pfocus{padding:8px 8px 20px}
+.pfocus-day{font-family:var(--fd);font-size:19px;font-weight:500;color:var(--text);text-align:center;margin:6px 0 12px}
+.pfocus-card.pday-card{margin-bottom:0}
+.pfocus-card .pday-img,.pfocus-card .pday-img-em{height:250px}
+.pfocus-card .pday-img-em{font-size:100px}
+.pfocus-hint{font-size:12px;color:var(--text3);text-align:center;margin-top:14px;font-weight:600}
+.pfocus-cta{display:block;width:100%;margin-top:12px;background:var(--nav);color:#fff;border:none;border-radius:99px;padding:15px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.pfocus-exit{display:block;margin:14px auto 0;background:none;border:none;color:var(--text3);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb);text-decoration:underline;text-underline-offset:3px}
+.pfocus-count{font-size:11px;color:var(--text3);text-align:center;margin-top:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+/* ── Clean week list rows ── */
+.prow{display:flex;align-items:center;gap:12px;background:var(--surface);border-radius:14px;padding:10px 12px;box-shadow:0 1px 5px rgba(45,90,61,.06);margin-bottom:8px;cursor:pointer}
+.prow-thumb{width:48px;height:48px;border-radius:11px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:25px;flex-shrink:0;overflow:hidden}
+.prow-thumb img{width:100%;height:100%;object-fit:cover;display:block}
+.prow-meta{flex:1;min-width:0}
+.prow-name{font-size:14px;font-weight:600;color:var(--text);line-height:1.25;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.prow-sub{font-size:11px;color:var(--text3);margin-top:3px;display:flex;align-items:center;gap:5px;flex-wrap:wrap}
+.prow-tag{background:var(--accent-l);color:var(--accent);font-size:9px;font-weight:700;padding:2px 7px;border-radius:99px}
+.prow-mtype{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text3)}
+.prow-check{width:26px;height:26px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;border:none;cursor:pointer;font-family:var(--fb)}
+.prow-check.on{background:var(--nav);color:#fff}
+.prow-check.off{background:none;border:1.8px solid var(--border2);color:transparent}
+.prow-swap{width:26px;height:26px;border-radius:50%;flex-shrink:0;border:none;background:var(--surface2);color:var(--text2);font-size:13px;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.prow-x{width:22px;height:22px;border-radius:50%;flex-shrink:0;border:none;background:none;color:var(--text3);font-size:15px;cursor:pointer;line-height:1}
+.prow-x:hover{color:var(--danger)}
+.prow.rest{border:1.4px dashed var(--border2);background:transparent;box-shadow:none;color:var(--text3);font-size:12.5px;font-weight:600}
+.prow.rest .prow-thumb{background:transparent;font-size:20px}
+.prow.addrow{border:1.5px dashed var(--border2);background:var(--surface);box-shadow:none;color:var(--accent);font-size:13.5px;font-weight:600}
+.prow.addrow .prow-thumb{background:var(--accent-l);font-size:20px}
+.pday{margin-bottom:14px}
+.pday-label-row{display:flex;align-items:center;justify-content:space-between;margin-bottom:7px}
+.pday-label{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text2);display:flex;align-items:center;gap:7px}
+.pday-label::before{content:'';width:3px;height:12px;border-radius:2px;background:var(--nav-a)}
 .pday.today .pday-label{color:var(--accent)}
 @keyframes caldayArrive{0%,55%{background:rgba(200,98,42,.11);box-shadow:0 0 0 2.5px var(--accent)}85%{background:rgba(200,98,42,.04);box-shadow:0 0 0 1px var(--accent)}100%{background:transparent;box-shadow:none}}
 .calday-arriving{border-radius:var(--r);animation:caldayArrive 2.5s ease forwards}
@@ -1343,6 +1383,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <div class="week-nav-label"><div id="wk-label">This week</div><div class="week-nav-sub" id="wk-range"></div></div>
         <button class="week-nav-btn" id="wk-next" onclick="changeWeek(1)">›</button>
       </div>
+      <div class="plan-daystrip" id="plan-daystrip"></div>
       <button class="plan-generate" id="plan-generate-btn" onclick="openWeekPick()">✨ Plan my week</button>
       <div style="text-align:center;margin-top:8px"><button class="plan-clear" id="plan-clear-btn" onclick="clearPlan()" style="display:none" data-t="clearWeek">Clear this week</button></div>
     </div>
@@ -1927,7 +1968,7 @@ en:{
   pwFreeName:'🌿 Free',pwAlwaysFree:'Always free',pwFree1:'Plan your whole week in minutes',pwFree2:'Swap & choose meals, skip any day',pwFree3:'Automatic grocery list + staples',pwFree4:'Your favourites cookbook',pwFree5:"Learns your family's taste",
   pwPremiumName:'⭐ Premium',pwBest:'BEST',pwPrem1:"💶 Budget mode — your week's cost, per day & per serving",pwPrem2:'📊 Advanced macros — carb & fat goals, weekly trends',pwPrem3:'🗓️ Plan up to 4 weeks ahead',pwPrem4:'📷 AI fridge scanner',pwPrem5:'☁️ Sync across all your devices',
   perMonth:'per month',perYear:'per year',save27:'Save 27%',pwCta:'Try Premium free for 7 days',pwTerms:'7-day free trial · cancel anytime · no hidden fees',
-  weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",weekpickFirstTitle:'Plan your first week 🎉',weekpickFirstSub:'Pick the nights you want dinners for — we’ll fill them in.',addCookingDay:'Add a cooking day',
+  weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",weekpickFirstTitle:'Plan your first week 🎉',chooseForDay:'Choose for {day} ✓',swipeForMore:'‹ › swipe for more ideas',seeWholeWeek:'See the whole week',dayOfCount:'Day {i} of {n}',weekpickFirstSub:'Pick the nights you want dinners for — we’ll fill them in.',addCookingDay:'Add a cooking day',
   setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupDietQ:'Any diet?',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
   cookBack:'‹ Back',cookNext:'Next ›',chooseDinner:'Choose dinner',
   opt_vegetarian:'Vegetarian',opt_pescatarian:'Pescatarian',opt_vegan:'Vegan',opt_glutenfree:'Gluten-free',
@@ -2079,7 +2120,7 @@ fr:{
   pwFreeName:'🌿 Gratuit',pwAlwaysFree:'Toujours gratuit',pwFree1:'Planifiez toute la semaine en minutes',pwFree2:'Changez & choisissez les repas, sautez un jour',pwFree3:'Liste de courses automatique + basiques',pwFree4:'Votre carnet de favoris',pwFree5:'Apprend les goûts de votre famille',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Mode budget — coût de la semaine, par jour & par portion',pwPrem2:'📊 Macros avancés — objectifs glucides & lipides, tendances',pwPrem3:'🗓️ Planifiez jusqu\'à 4 semaines à l\'avance',pwPrem4:'📷 Scanner de frigo IA',pwPrem5:'☁️ Synchro sur tous vos appareils',
   perMonth:'par mois',perYear:'par an',save27:'-27 %',pwCta:'Essayer Premium gratuitement 7 jours',pwTerms:'Essai gratuit 7 jours · annulable à tout moment · sans frais cachés',
-  weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',weekpickFirstTitle:'Planifiez votre première semaine 🎉',weekpickFirstSub:'Choisissez les soirs à cuisiner — on s’occupe du reste.',addCookingDay:'Ajouter un jour',
+  weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',weekpickFirstTitle:'Planifiez votre première semaine 🎉',chooseForDay:'Choisir pour {day} ✓',swipeForMore:'‹ › balayez pour d’autres idées',seeWholeWeek:'Voir toute la semaine',dayOfCount:'Jour {i} sur {n}',weekpickFirstSub:'Choisissez les soirs à cuisiner — on s’occupe du reste.',addCookingDay:'Ajouter un jour',
   setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupDietQ:'Un régime ?',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
   cookBack:'‹ Retour',cookNext:'Suivant ›',chooseDinner:'Choisir le dîner',
   opt_vegetarian:'Végétarien',opt_pescatarian:'Pescétarien',opt_vegan:'Végétalien',opt_glutenfree:'Sans gluten',
@@ -2231,7 +2272,7 @@ es:{
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Siempre gratis',pwFree1:'Planifica toda la semana en minutos',pwFree2:'Cambia y elige comidas, salta cualquier día',pwFree3:'Lista de la compra automática + básicos',pwFree4:'Tu recetario de favoritos',pwFree5:'Aprende los gustos de tu familia',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Modo presupuesto — coste de la semana, por día y por ración',pwPrem2:'📊 Macros avanzados — objetivos de carbos & grasas, tendencias',pwPrem3:'🗓️ Planifica hasta 4 semanas',pwPrem4:'📷 Escáner de nevera con IA',pwPrem5:'☁️ Sincroniza en todos tus dispositivos',
   perMonth:'al mes',perYear:'al año',save27:'-27 %',pwCta:'Prueba Premium gratis 7 días',pwTerms:'7 días de prueba gratis · cancela cuando quieras · sin costes ocultos',
-  weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',weekpickFirstTitle:'Planifica tu primera semana 🎉',weekpickFirstSub:'Elige las noches que quieras cenar — nosotros las llenamos.',addCookingDay:'Añadir un día',
+  weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',weekpickFirstTitle:'Planifica tu primera semana 🎉',chooseForDay:'Elegir para {day} ✓',swipeForMore:'‹ › desliza para más ideas',seeWholeWeek:'Ver toda la semana',dayOfCount:'Día {i} de {n}',weekpickFirstSub:'Elige las noches que quieras cenar — nosotros las llenamos.',addCookingDay:'Añadir un día',
   setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupDietQ:'¿Alguna dieta?',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
   cookBack:'‹ Atrás',cookNext:'Siguiente ›',chooseDinner:'Elegir cena',
   opt_vegetarian:'Vegetariano',opt_pescatarian:'Pescetariano',opt_vegan:'Vegano',opt_glutenfree:'Sin gluten',
@@ -2429,7 +2470,7 @@ de:{
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Immer gratis',pwFree1:'Plane die ganze Woche in Minuten',pwFree2:'Mahlzeiten tauschen & wählen, Tag überspringen',pwFree3:'Automatische Einkaufsliste + Basics',pwFree4:'Dein Favoriten-Kochbuch',pwFree5:'Lernt den Geschmack deiner Familie',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Budget-Modus — Wochenkosten, pro Tag & pro Portion',pwPrem2:'📊 Erweiterte Makros — Kohlenhydrat- & Fettziele, Wochentrends',pwPrem3:'🗓️ Bis zu 4 Wochen im Voraus planen',pwPrem4:'📷 KI-Kühlschrank-Scanner',pwPrem5:'☁️ Synchro auf all deinen Geräten',
   perMonth:'pro Monat',perYear:'pro Jahr',save27:'-27 %',pwCta:'Premium 7 Tage gratis testen',pwTerms:'7 Tage gratis · jederzeit kündbar · keine versteckten Kosten',
-  weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',weekpickFirstTitle:'Plane deine erste Woche 🎉',weekpickFirstSub:'Wähle die Abende, für die du Gerichte möchtest — wir füllen sie.',addCookingDay:'Kochtag hinzufügen',
+  weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',weekpickFirstTitle:'Plane deine erste Woche 🎉',chooseForDay:'Für {day} wählen ✓',swipeForMore:'‹ › wischen für mehr Vorschläge',seeWholeWeek:'Zur Wochenansicht',dayOfCount:'Tag {i} von {n}',weekpickFirstSub:'Wähle die Abende, für die du Gerichte möchtest — wir füllen sie.',addCookingDay:'Kochtag hinzufügen',
   setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupDietQ:'Eine Ernährungsweise?',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
   cookBack:'‹ Zurück',cookNext:'Weiter ›',chooseDinner:'Abendessen wählen',
   opt_vegetarian:'Vegetarisch',opt_pescatarian:'Pescetarisch',opt_vegan:'Vegan',opt_glutenfree:'Glutenfrei',
@@ -2922,7 +2963,7 @@ function changeWeek(delta){
     else openLimitPopup('planner_member');
     return;
   }
-  weekOffset=target;renderPlan();
+  weekOffset=target;planFocus=null;renderPlan();
 }
 function weekPlacedCount(){
   let c=0;getDateRange().forEach(d=>{const dm=state.plan[dateKey(d)]||{};MEAL_TYPES.forEach(tp=>{if(dm[tp]&&dm[tp].dishId)c++;});});return c;
@@ -4914,6 +4955,9 @@ function confirmWeekPick(){
   const sel=new Set(weekPickSel);
   closeWeekPick();
   generateWeek(sel);
+  // Straight into focus mode: confirm the week one day at a time on a big card.
+  const pend=pendingMainKeys();
+  if(pend.length){planFocus=pend[0];renderPlan();}
 }
 
 // Deterministic, meal-aware pool ordered stably so ‹/› cycling is predictable.
@@ -5038,17 +5082,125 @@ function inlineBrowseCard(key,type){
     </div>
   </div>`;
 }
+// ── Focus mode: after generating a week, confirm one day at a time on a big card ──
+let planFocus=null;   // dateKey currently being decided, or null = clean list view
+function pendingMainKeys(){
+  const mt=mainMealType();
+  return getDateRange().map(d=>dateKey(d)).filter(k=>{
+    const dm=state.plan[k];return dm&&dm[mt]&&dm[mt].dishId&&!isConfirmed(k);
+  });
+}
+function enterFocus(key){planFocus=key;renderPlan();}
+function exitFocus(){planFocus=null;renderPlan();}
+function focusChoose(){
+  if(!planFocus)return;
+  const cur=planFocus;
+  const rest=pendingMainKeys().filter(k=>k!==cur);
+  planFocus=rest.length?rest[0]:null;          // advance before confirm re-renders
+  confirmMeal(null,cur);                        // saves + renderPlan + checkWeekDone
+}
+// Week strip in the header: 7 chips, dot = day has a meal, active = focus day / today.
+function renderDayStrip(){
+  const el=document.getElementById('plan-daystrip');if(!el)return;
+  const todayKey=dateKey(new Date());
+  el.innerHTML=getDateRange().map((d,i)=>{
+    const key=dateKey(d);
+    const dm=state.plan[key]||{};
+    const filled=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);
+    const on=planFocus?key===planFocus:key===todayKey;
+    return`<button class="dchip ${on?'on':''} ${filled?'filled':''}" onclick="dayStripTap(${i})"><span class="dd">${dow(d)}</span><span class="dn">${d.getDate()}</span></button>`;
+  }).join('');
+}
+function dayStripTap(i){
+  const d=getDateRange()[i];const key=dateKey(d);
+  const dm=state.plan[key]||{};const mt=mainMealType();
+  // In focus mode a tap moves the focus if that day still needs a decision
+  if(planFocus&&dm[mt]&&dm[mt].dishId&&!isConfirmed(key)){planFocus=key;renderPlan();return;}
+  planFocus=null;
+  if(isSkipped(key)){if(state.skippedDays)delete state.skippedDays[key];save();}
+  const has=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);
+  if(!has&&!isBrowsing(key,mt)){startBrowse(key,mt);}   // empty day → pick something
+  else renderPlan();
+  setTimeout(()=>{const el=document.getElementById('calday-'+key);const sc=document.getElementById('cal-scroll');
+    if(el&&sc){sc.scrollTop+=el.getBoundingClientRect().top-sc.getBoundingClientRect().top-6;}},80);
+}
+// The big focus card (one day, one decision): photo, ‹ › to swap, one clear CTA.
+function renderFocusCard(cal){
+  const mt=mainMealType();
+  const dm=state.plan[planFocus]||{};
+  const slot=dm[mt];
+  if(!slot||!slot.dishId||isConfirmed(planFocus)){   // stale focus → advance or fall back to list
+    const rest=pendingMainKeys();planFocus=rest.length?rest[0]:null;
+    if(!planFocus)return false;
+    return renderFocusCard(cal);
+  }
+  const dish=getDish(slot.dishId);if(!dish){planFocus=null;return false;}
+  const d=new Date(planFocus+'T00:00:00');
+  const time=(dish.prep||0)+(dish.cook||0);
+  const tags=(dish.tags||[]).slice(0,2).map(tTag).join(' · ');
+  const img=dish.photo
+    ?`<img class="pday-img" src="${dish.photo}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pday-img-em" style="display:none">${dish.emoji}</div>`
+    :`<div class="pday-img-em">${dish.emoji}</div>`;
+  const pend=pendingMainKeys();const pos=pend.indexOf(planFocus);
+  const dayLbl=`${dow(d)} ${d.getDate()} ${mon(d)}`;
+  cal.innerHTML=`<div class="pfocus">
+    <div class="pfocus-day">${dayLbl}</div>
+    <div class="pday-card pfocus-card" data-key="${planFocus}" data-type="${mt}" data-dish="${dish.id}">
+      ${img}
+      <button class="pday-arrow left" onclick="swapMealDir(event,'${planFocus}','${mt}',-1)">‹</button>
+      <button class="pday-arrow right" onclick="swapMealDir(event,'${planFocus}','${mt}',1)">›</button>
+      <div class="pday-overlay"><div class="pday-meal-badge">${MEAL_ICONS[mt]} ${mealName(mt)}</div><div class="pday-name">${dishName(dish)}</div>
+        <div class="pday-browse-row"><div class="pday-meta">${time?`⏱ ${time} ${t('minShort')}`:''}${tags?` · ${tags}`:''}</div></div>
+      </div>
+    </div>
+    <div class="pfocus-hint">${t('swipeForMore')}</div>
+    <button class="pfocus-cta" onclick="focusChoose()">${tf('chooseForDay',{day:dow(d)})}</button>
+    ${pend.length>1?`<div class="pfocus-count">${tf('dayOfCount',{i:pos+1,n:pend.length})}</div>`:''}
+    <button class="pfocus-exit" onclick="exitFocus()">${t('seeWholeWeek')}</button>
+  </div>`;
+  bindPdaySwipe();
+  return true;
+}
+// One clean list row per planned meal (thumb · name · time · tag · check).
+function planRow(key,type,dish){
+  const time=(dish.prep||0)+(dish.cook||0);
+  const tag=(dish.tags||[])[0];
+  const mt=mainMealType();
+  const img=dish.photo
+    ?`<img src="${dish.photo}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div style="display:none">${dish.emoji}</div>`
+    :dish.emoji;
+  let right='';
+  if(type===mt){
+    right=isConfirmed(key)
+      ?`<button class="prow-check on" onclick="event.stopPropagation();unconfirmRow('${key}')" title="${t('planned')}">✓</button>`
+      :`<button class="prow-swap" onclick="event.stopPropagation();enterFocus('${key}')">⇄</button><button class="prow-check off" onclick="event.stopPropagation();confirmMeal(event,'${key}')">✓</button>`;
+  }else{
+    right=`<button class="prow-x" onclick="event.stopPropagation();rmMeal('${key}','${type}')" title="${t('removeWord')}">×</button>`;
+  }
+  return`<div class="prow" onclick="openRecipeOverlay('${dish.id}')">
+    <div class="prow-thumb">${img}</div>
+    <div class="prow-meta"><div class="prow-name">${dishName(dish)}</div>
+      <div class="prow-sub">${type!==mt?`<span class="prow-mtype">${MEAL_ICONS[type]} ${mealName(type)}</span>`:''}${time?`<span>⏱ ${time} ${t('minShort')}</span>`:''}${tag?`<span class="prow-tag">${tTag(tag)}</span>`:''}</div>
+    </div>
+    ${right}
+  </div>`;
+}
+function unconfirmRow(key){if(state.confirmed)delete state.confirmed[key];save();renderPlan();}
 function renderCal(){
   const cal=document.getElementById('cal-scroll');const todayKey=dateKey(new Date());
+  renderDayStrip();
+  // Focus mode: one big card, one decision — everything else waits.
+  if(planFocus){if(renderFocusCard(cal))return;}
   // Show only the days the user chose to cook (less clutter), but never hide a
   // day that already carries a meal, so nothing planned can disappear.
   const _allDates=getDateRange();
   const _cookSet=(state.cookDays&&state.cookDays.length)?new Set(state.cookDays):null;
   const _hasMeal=d=>{const dm=state.plan[dateKey(d)]||{};return MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);};
   let dates;
-  if(_cookSet)dates=_allDates.filter((d,i)=>_cookSet.has(i)||_hasMeal(d));
+  const _isBrowseDay=d=>browse.key===dateKey(d);   // a day being browsed must stay visible
+  if(_cookSet)dates=_allDates.filter((d,i)=>_cookSet.has(i)||_hasMeal(d)||_isBrowseDay(d));
   else if(state.weekPickDone)dates=_allDates;      // safety: picked before but no set
-  else dates=_allDates.filter(_hasMeal);           // pre first pick: just the motivation card
+  else dates=_allDates.filter(d=>_hasMeal(d)||_isBrowseDay(d)); // pre first pick: just the motivation card
   const _fn=(state.userName||'').split(' ')[0].trim();
   const _namePart=_fn?`, ${_fn}`:'';
   const _repeatBtn=(weekPlacedCount()===0&&weekOffset===0&&weekHasPlanAtOffset(-1))?`<div style="margin-top:10px"><button onclick="repeatLastWeek()" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:99px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">🔁 ${t('repeatLastWeekBtn')}</button></div>`:'';
@@ -5057,26 +5209,27 @@ function renderCal(){
     const key=dateKey(d);const isToday=key===todayKey;
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
     if(isSkipped(key)){
-      return`<div class="pday"><div class="pday-skip-row"><span class="pday-skip-label">${labelTxt}</span><button class="pday-replan" onclick="lazyDay('${key}')">⏱ ${t('lazyDayBasic')}</button></div><div class="pday-basic-link" style="justify-content:center;margin:6px 0 8px" onclick="planDay('${key}')">＋ ${t('planThisDay')}</div></div>`;
+      return`<div class="pday" id="calday-${key}"><div class="pday-label-row"><span class="pday-label">${labelTxt}</span></div>
+        <div class="prow rest" onclick="planDay('${key}')"><div class="prow-thumb">🌙</div><div class="prow-meta">${t('notPlanningLabel')} — ${t('planThisDay')}</div><button class="prow-swap" onclick="event.stopPropagation();lazyDay('${key}')" title="${t('lazyDayBasic')}">⏱</button></div></div>`;
     }
     const dm=state.plan[key]||{};
     const _mainT=mainMealType();
     let cards='';
-    // Render meals chronologically; the chosen main meal (Lunch or Dinner) is the
-    // hero — it shows the "pick a …" empty state. The others only show when filled.
+    // Clean rows, chronological; the chosen main meal (Lunch or Dinner) is the
+    // hero — it shows the "pick a …" add row. The others only show when filled.
     MEAL_TYPES.forEach(tp=>{
       if(isBrowsing(key,tp)){cards+=inlineBrowseCard(key,tp);return;}
       const m=dm[tp]&&dm[tp].dishId?getDish(dm[tp].dishId):null;
-      if(m){cards+=mealCard(key,tp,m);return;}
+      if(m){cards+=planRow(key,tp,m);return;}
       if(tp===_mainT){
-        cards+=`<div class="pday-empty${isToday?' today-pulse':''}" onclick="startBrowse('${key}','${tp}')">＋ ${t(tp==='Lunch'?'pickALunch':'pickADinner')}</div>${isToday?'':`<div class="pday-basic-link" onclick="pickBasic('${key}','${tp}')">⏱ ${t('lazyDayBasic')}</div>`}`;
+        cards+=`<div class="prow addrow${isToday?' today-pulse':''}" onclick="startBrowse('${key}','${tp}')"><div class="prow-thumb">＋</div><div class="prow-meta">${t(tp==='Lunch'?'pickALunch':'pickADinner')}</div><button class="prow-swap" onclick="event.stopPropagation();pickBasic('${key}','${tp}')" title="${t('lazyDayBasic')}">⏱</button></div>`;
       }
     });
     const adds=MEAL_TYPES.filter(tp=>tp!==_mainT&&!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
     const pdayMacros=dayMacros(key);
     const pdayProteinBadge=pdayMacros&&pdayMacros.protein?`<span class="pday-protein-badge">💚 ${Math.round(pdayMacros.protein)}g prot</span>`:'';
     return`<div class="pday ${isToday?'today':''}" id="calday-${key}">
-      <div class="pday-label-row"><span class="pday-label">${labelTxt}${pdayProteinBadge}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑 ${t('skipDay')}</button></div>
+      <div class="pday-label-row"><span class="pday-label">${labelTxt}${pdayProteinBadge}</span><button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑</button></div>
       ${cards}
       ${adds?`<div class="pday-extra">${adds}</div>`:''}
     </div>`;
@@ -5361,7 +5514,7 @@ function openSlotPicker(key,type){
 }
 function slotPickerSel(key,type,dishId){assignDirect(dishId,key,type);closePicker();}
 function autoFill(){if(!state.liked.length){alert(t('saveFirst'));return;}const dates=getDateRange();let idx=0;dates.forEach(d=>{const key=dateKey(d);if(!state.plan[key])state.plan[key]={};MEAL_TYPES.forEach(type=>{if(!state.plan[key][type]||!state.plan[key][type].dishId){state.plan[key][type]={dishId:state.liked[idx%state.liked.length],...defaultGuests()};idx++;}});});save();rebuildShopping();updateBadge();renderPlan();}
-function clearPlan(){if(!confirm(t('clearPlanConfirm')))return;getDateRange().forEach(d=>{delete state.plan[dateKey(d)];});save();rebuildShopping();updateBadge();renderPlan();}
+function clearPlan(){if(!confirm(t('clearPlanConfirm')))return;getDateRange().forEach(d=>{delete state.plan[dateKey(d)];});planFocus=null;save();rebuildShopping();updateBadge();renderPlan();}
 
 // ═══════════════════════════════════════════════════
 // RECIPES
@@ -7229,6 +7382,7 @@ function toggleBentoTab(){
 // (C) Discovery card on the Plan tab for families not yet using Bento
 function renderBentoPromo(){
   const el=document.getElementById('plan-bento-promo');if(!el)return;
+  if(planFocus){el.innerHTML='';return;}   // focus mode: one decision, no distractions
   if(_returnNudge||bentoTabVisible()||state.bentoPromoDismissed){el.innerHTML='';return;}  // welcome-back nudge takes priority
   el.innerHTML=`<div class="bento-promo">
     <button class="bento-promo-x" onclick="bentoDismissPromo()" aria-label="${t('bentoLaterBtn')}">✕</button>
@@ -7310,6 +7464,7 @@ function weekOpenDays(){
 }
 function renderReturnNudge(){
   const el=document.getElementById('plan-return-nudge');if(!el)return;
+  if(planFocus){el.innerHTML='';return;}
   if(!_returnNudge||weekPlacedCount()===0||weekOffset!==0){el.innerHTML='';return;}
   const tk=dateKey(new Date());
   const dm=state.plan[tk]||{};
