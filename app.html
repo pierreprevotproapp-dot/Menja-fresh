@@ -623,16 +623,17 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .dchip.on .dd{color:var(--nav)}.dchip.on .dn{color:var(--nav)}
 .dchip.filled::after{content:'';position:absolute;bottom:5px;width:4px;height:4px;border-radius:50%;background:var(--nav-a)}
 .dchip.on.filled::after{background:var(--nav)}
-/* ── Focus mode: one big card per day to pick the meal ── */
-.pfocus{padding:8px 8px 20px}
-.pfocus-day{font-family:var(--fd);font-size:19px;font-weight:500;color:var(--text);text-align:center;margin:6px 0 12px}
-.pfocus-card.pday-card{margin-bottom:0}
-.pfocus-card .pday-img,.pfocus-card .pday-img-em{height:250px}
-.pfocus-card .pday-img-em{font-size:100px}
-.pfocus-hint{font-size:12px;color:var(--text3);text-align:center;margin-top:14px;font-weight:600}
-.pfocus-cta{display:block;width:100%;margin-top:12px;background:var(--nav);color:#fff;border:none;border-radius:99px;padding:15px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
-.pfocus-exit{display:block;margin:14px auto 0;background:none;border:none;color:var(--text3);font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb);text-decoration:underline;text-underline-offset:3px}
-.pfocus-count{font-size:11px;color:var(--text3);text-align:center;margin-top:10px;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+/* ── Focus mode: one big card per day to pick the meal — always fits the screen ── */
+.pfocus{height:100%;display:flex;flex-direction:column;padding:2px 4px 4px}
+.pfocus-day{flex-shrink:0;font-family:var(--fd);font-size:18px;font-weight:500;color:var(--text);text-align:center;margin:4px 0 10px}
+.pfocus-card.pday-card{margin-bottom:0;flex:1;min-height:150px}
+.pfocus-card .pday-img,.pfocus-card .pday-img-em{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
+.pfocus-card .pday-img-em{font-size:min(100px,18vh)}
+.pfocus-cta{flex-shrink:0;display:block;width:100%;margin-top:12px;background:var(--nav);color:#fff;border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.pfocus-foot{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;min-height:20px}
+.pfocus-exit{background:none;border:none;color:var(--text3);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--fb);text-decoration:underline;text-underline-offset:3px;padding:2px}
+.pfocus-count{font-size:11px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+.pfocus-dotsep{color:var(--text3);font-size:11px}
 /* ── Clean week list rows ── */
 .prow{display:flex;align-items:center;gap:12px;background:var(--surface);border-radius:14px;padding:10px 12px;box-shadow:0 1px 5px rgba(45,90,61,.06);margin-bottom:8px;cursor:pointer}
 .prow-thumb{width:48px;height:48px;border-radius:11px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:25px;flex-shrink:0;overflow:hidden}
@@ -4708,8 +4709,9 @@ function renderPlanHeader(){
   const next=document.getElementById('wk-next');
   if(label)label.textContent=weekOffset===0?t('thisWeek'):weekOffset===1?t('nextWeekLbl'):tf('inWeeks',{n:weekOffset});
   if(range)range.textContent=`${dow(first)} ${first.getDate()} ${mon(first)} – ${dow(last)} ${last.getDate()} ${mon(last)}`;
-  if(btn)btn.textContent=cp>0?t('regenerateWeek'):(state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn'));
-  if(clr)clr.style.display=cp>0?'':'none';
+  // Focus mode strips the header down to week + day strip: one decision on screen.
+  if(btn){btn.textContent=cp>0?t('regenerateWeek'):(state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn'));btn.style.display=planFocus?'none':'';}
+  if(clr)clr.style.display=(cp>0&&!planFocus)?'':'none';
   if(prev)prev.disabled=weekOffset<=0;
   if(next)next.disabled=weekOffset>=3;
   // "Save plan" nudge for guests who already have meals planned
@@ -5153,10 +5155,8 @@ function renderFocusCard(cal){
         <div class="pday-browse-row"><div class="pday-meta">${time?`⏱ ${time} ${t('minShort')}`:''}${tags?` · ${tags}`:''}</div></div>
       </div>
     </div>
-    <div class="pfocus-hint">${t('swipeForMore')}</div>
     <button class="pfocus-cta" onclick="focusChoose()">${tf('chooseForDay',{day:dow(d)})}</button>
-    ${pend.length>1?`<div class="pfocus-count">${tf('dayOfCount',{i:pos+1,n:pend.length})}</div>`:''}
-    <button class="pfocus-exit" onclick="exitFocus()">${t('seeWholeWeek')}</button>
+    <div class="pfocus-foot">${pend.length>1?`<span class="pfocus-count">${tf('dayOfCount',{i:pos+1,n:pend.length})}</span><span class="pfocus-dotsep">·</span>`:''}<button class="pfocus-exit" onclick="exitFocus()">${t('seeWholeWeek')}</button></div>
   </div>`;
   bindPdaySwipe();
   return true;
@@ -5190,7 +5190,7 @@ function renderCal(){
   const cal=document.getElementById('cal-scroll');const todayKey=dateKey(new Date());
   renderDayStrip();
   // Focus mode: one big card, one decision — everything else waits.
-  if(planFocus){if(renderFocusCard(cal))return;}
+  if(planFocus){if(renderFocusCard(cal))return;renderPlanHeader();}
   // Show only the days the user chose to cook (less clutter), but never hide a
   // day that already carries a meal, so nothing planned can disappear.
   const _allDates=getDateRange();
@@ -7370,8 +7370,8 @@ function applyBentoTabVisibility(){
   if(!vis&&_currentTabKey()==='bentokids')showTab('plan');
   const st=document.getElementById('bento-tab-state');
   if(st)st.textContent=vis?t('onWord'):t('offWord');
-  const dot=document.getElementById('lunchbox-seg-new');              // (A) "New" spotlight on the segment
-  if(dot)dot.style.display=(vis&&!state.bentoSeen)?'':'none';
+  const dot=document.getElementById('lunchbox-seg-new');              // "New" dot retired — keep the header clean
+  if(dot)dot.style.display='none';
   const meNew=document.getElementById('bento-me-new');                // (D) "New" badge on the Me card
   if(meNew)meNew.style.display=state.bentoSeen?'none':'';
 }
