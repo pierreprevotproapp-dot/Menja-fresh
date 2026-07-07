@@ -605,7 +605,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .plan-generate{width:100%;padding:15px;background:var(--nav-a);color:var(--nav);font-size:15px;font-weight:700;border:none;border-radius:99px;cursor:pointer;font-family:var(--fb);transition:opacity .15s}
 .plan-generate:active{opacity:.85}
 /* ── WEEK NAVIGATOR ──────────────────────────── */
-.week-nav{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.week-nav{display:flex;align-items:center;gap:8px;margin-bottom:12px}
+.week-nav-label{text-align:left!important}
+.plan-title{font-family:var(--fd);font-size:21px;font-weight:500;color:#fff;line-height:1.15}
 .week-nav-btn{width:34px;height:34px;border-radius:50%;border:none;background:rgba(255,255,255,.12);color:#fff;font-size:20px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:opacity .15s}
 .week-nav-btn:disabled{opacity:.25;cursor:default}
 .week-nav-label{flex:1;text-align:center}
@@ -625,12 +627,12 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 /* ── Day strip (week chips in the plan header) ── */
 .plan-daystrip{display:flex;gap:6px;margin:12px 0 12px;overflow-x:auto;scrollbar-width:none}
 .plan-daystrip::-webkit-scrollbar{display:none}
-.dchip{flex:1;min-width:40px;height:52px;border-radius:12px;border:1.5px solid rgba(255,255,255,.16);background:rgba(255,255,255,.07);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;cursor:pointer;position:relative;padding:0;font-family:var(--fb)}
-.dchip .dd{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.03em;color:var(--nav-t)}
-.dchip .dn{font-family:var(--fd);font-size:15px;font-weight:600;color:#fff}
-.dchip.on{background:var(--nav-a);border-color:var(--nav-a)}
+.dchip{flex:1;min-width:40px;height:56px;border-radius:14px;border:none;background:var(--surface);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;cursor:pointer;position:relative;padding:0;font-family:var(--fb);box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.dchip .dd{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--text3)}
+.dchip .dn{font-family:var(--fd);font-size:16px;font-weight:600;color:var(--text2)}
+.dchip.on{background:var(--nav-a)}
 .dchip.on .dd{color:var(--nav)}.dchip.on .dn{color:var(--nav)}
-.dchip.filled::after{content:'';position:absolute;bottom:5px;width:4px;height:4px;border-radius:50%;background:var(--nav-a)}
+.dchip.filled::after{content:'';position:absolute;bottom:6px;width:4px;height:4px;border-radius:50%;background:var(--nav-a)}
 .dchip.on.filled::after{background:var(--nav)}
 /* ── Focus mode: one big card per day to pick the meal — always fits the screen ── */
 .pfocus{height:100%;display:flex;flex-direction:column;padding:2px 4px 4px}
@@ -1393,8 +1395,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <button class="plan-seg-btn" onclick="showTab('bentokids')">🍱 <span data-t="navBento">Lunchbox</span><span class="seg-new" id="lunchbox-seg-new" style="display:none"></span></button>
       </div>
       <div class="week-nav">
+        <div class="week-nav-label"><div class="plan-title" id="wk-label">Your week plan</div><div class="week-nav-sub" id="wk-range"></div></div>
         <button class="week-nav-btn" id="wk-prev" onclick="changeWeek(-1)">‹</button>
-        <div class="week-nav-label"><div id="wk-label">This week</div><div class="week-nav-sub" id="wk-range"></div></div>
         <button class="week-nav-btn" id="wk-next" onclick="changeWeek(1)">›</button>
         <button class="week-nav-btn" id="plan-menu-btn" onclick="togglePlanMenu(event)" style="display:none">⋯</button>
       </div>
@@ -1955,7 +1957,7 @@ en:{
   yourItems:'Your items',addOwnItem:'Add your own item…',addBtn:'＋ Add',noItems:'No items',
   listCopied:'List copied to clipboard ✓',couldNotCopy:'Could not copy',shareUnsupported:'Sharing not supported here',shareTitle:'Shopping list',
   cfSheetTitle:'Add to Carrefour',cfSheetSub:'Tap "Find" — it opens that product in one Carrefour tab (no typing). Add it, come back, tap the next.',openCarrefourBtn:'Open Carrefour ↗',closeWord:'Close',
-  thisWeek:'This week',nextWeekLbl:'Next week',inWeeks:'In {n} weeks',
+  planHeaderTitle:'Your week plan',thisWeek:'This week',nextWeekLbl:'Next week',inWeeks:'In {n} weeks',
   pickOneNight:'Pick at least one night',planWholeWeek:'Plan the whole week →',planNights:'Plan these {n} nights →',
   mealBreakfast:'Breakfast',mealLunch:'Lunch',mealDinner:'Dinner',
   planned:'✓ Planned · Change',choose:'✓ Choose',minShort:'min',swipeHintTxt:'⇆ swipe',removeWord:'Remove',noRecipesHere:'No recipes here',cancelWord:'cancel',
@@ -2107,7 +2109,7 @@ fr:{
   yourItems:'Vos articles',addOwnItem:'Ajoutez votre article…',addBtn:'＋ Ajouter',noItems:'Aucun article',
   listCopied:'Liste copiée ✓',couldNotCopy:'Copie impossible',shareUnsupported:'Partage non disponible ici',shareTitle:'Liste de courses',
   cfSheetTitle:'Ajouter à Carrefour',cfSheetSub:'Touchez « Chercher » — le produit s\'ouvre dans un seul onglet Carrefour (sans taper). Ajoutez-le, revenez, suivant.',openCarrefourBtn:'Ouvrir Carrefour ↗',closeWord:'Fermer',
-  thisWeek:'Cette semaine',nextWeekLbl:'Semaine prochaine',inWeeks:'Dans {n} semaines',
+  planHeaderTitle:'Ton plan de la semaine',thisWeek:'Cette semaine',nextWeekLbl:'Semaine prochaine',inWeeks:'Dans {n} semaines',
   pickOneNight:'Choisissez au moins un soir',planWholeWeek:'Planifier toute la semaine →',planNights:'Planifier ces {n} soirs →',
   mealBreakfast:'Petit-déjeuner',mealLunch:'Déjeuner',mealDinner:'Dîner',
   planned:'✓ Planifié · Modifier',choose:'✓ Choisir',minShort:'min',swipeHintTxt:'⇆ glisser',removeWord:'Retirer',noRecipesHere:'Aucune recette ici',cancelWord:'annuler',
@@ -2259,7 +2261,7 @@ es:{
   yourItems:'Tus artículos',addOwnItem:'Añade tu artículo…',addBtn:'＋ Añadir',noItems:'Sin artículos',
   listCopied:'Lista copiada ✓',couldNotCopy:'No se pudo copiar',shareUnsupported:'Compartir no disponible aquí',shareTitle:'Lista de compras',
   cfSheetTitle:'Añadir a Carrefour',cfSheetSub:'Toca "Buscar" — abre ese producto en una sola pestaña de Carrefour (sin escribir). Añádelo, vuelve y toca el siguiente.',openCarrefourBtn:'Abrir Carrefour ↗',closeWord:'Cerrar',
-  thisWeek:'Esta semana',nextWeekLbl:'Próxima semana',inWeeks:'En {n} semanas',
+  planHeaderTitle:'Tu plan semanal',thisWeek:'Esta semana',nextWeekLbl:'Próxima semana',inWeeks:'En {n} semanas',
   pickOneNight:'Elige al menos una noche',planWholeWeek:'Planificar toda la semana →',planNights:'Planificar estas {n} noches →',
   mealBreakfast:'Desayuno',mealLunch:'Almuerzo',mealDinner:'Cena',
   planned:'✓ Planificado · Cambiar',choose:'✓ Elegir',minShort:'min',swipeHintTxt:'⇆ desliza',removeWord:'Quitar',noRecipesHere:'No hay recetas aquí',cancelWord:'cancelar',
@@ -2457,7 +2459,7 @@ de:{
   yourItems:'Deine Artikel',addOwnItem:'Eigenen Artikel hinzufügen…',addBtn:'＋ Hinzufügen',noItems:'Keine Artikel',
   listCopied:'Liste kopiert ✓',couldNotCopy:'Kopieren fehlgeschlagen',shareUnsupported:'Teilen hier nicht verfügbar',shareTitle:'Einkaufsliste',
   cfSheetTitle:'Zu Carrefour hinzufügen',cfSheetSub:'Tippe „Suchen" — das Produkt öffnet sich in einem Carrefour-Tab (ohne Tippen). Hinzufügen, zurück, nächstes.',openCarrefourBtn:'Carrefour öffnen ↗',closeWord:'Schließen',
-  thisWeek:'Diese Woche',nextWeekLbl:'Nächste Woche',inWeeks:'In {n} Wochen',
+  planHeaderTitle:'Dein Wochenplan',thisWeek:'Diese Woche',nextWeekLbl:'Nächste Woche',inWeeks:'In {n} Wochen',
   pickOneNight:'Wähle mindestens einen Abend',planWholeWeek:'Ganze Woche planen →',planNights:'Diese {n} Abende planen →',
   mealBreakfast:'Frühstück',mealLunch:'Mittagessen',mealDinner:'Abendessen',
   planned:'✓ Geplant · Ändern',choose:'✓ Wählen',minShort:'Min.',swipeHintTxt:'⇆ wischen',removeWord:'Entfernen',noRecipesHere:'Keine Rezepte hier',cancelWord:'abbrechen',
@@ -4720,8 +4722,14 @@ function renderPlanHeader(){
   const btn=document.getElementById('plan-generate-btn');
   const prev=document.getElementById('wk-prev');
   const next=document.getElementById('wk-next');
-  if(label)label.textContent=weekOffset===0?t('thisWeek'):weekOffset===1?t('nextWeekLbl'):tf('inWeeks',{n:weekOffset});
-  if(range)range.textContent=`${dow(first)} ${first.getDate()} ${mon(first)} – ${dow(last)} ${last.getDate()} ${mon(last)}`;
+  if(label)label.textContent=t('planHeaderTitle');
+  if(range){
+    const dotted=lang!=='en';                       // "6. – 12. Jul" vs "6 – 12 Jul"
+    const fd=(d,withMon)=>`${d.getDate()}${dotted?'.':''}${withMon?' '+mon(d):''}`;
+    const sameMon=first.getMonth()===last.getMonth();
+    const offsetTxt=weekOffset===0?'':(weekOffset===1?t('nextWeekLbl'):tf('inWeeks',{n:weekOffset}))+' · ';
+    range.textContent=offsetTxt+`${fd(first,!sameMon)} – ${fd(last,true)}`;
+  }
   // Header stays minimal: the big CTA only while the week is empty; once meals
   // exist, regenerate/clear live behind the ⋯ menu. Focus mode hides both.
   if(btn){btn.textContent=cp>0?t('regenerateWeek'):(state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn'));btn.style.display=(planFocus||cp>0)?'none':'';}
@@ -5207,10 +5215,11 @@ function planRow(key,type,dish){
   }else{
     right=`<button class="prow-x" onclick="event.stopPropagation();rmMeal('${key}','${type}')" title="${t('removeWord')}">×</button>`;
   }
+  const sub=[type!==mt?MEAL_ICONS[type]:'',time?`${time} ${t('minShort')}`:'',tag?tTag(tag):''].filter(Boolean).join(' · ');
   return`<div class="prow" onclick="openRecipeOverlay('${dish.id}')">
     <div class="prow-thumb">${img}</div>
     <div class="prow-meta"><div class="prow-name">${dishName(dish)}</div>
-      <div class="prow-sub">${type!==mt?`<span class="prow-mtype">${MEAL_ICONS[type]} ${mealName(type)}</span>`:''}${time?`<span>⏱ ${time} ${t('minShort')}</span>`:''}${tag?`<span class="prow-tag">${tTag(tag)}</span>`:''}</div>
+      ${sub?`<div class="prow-sub">${sub}</div>`:''}
     </div>
     ${right}
   </div>`;
@@ -5256,10 +5265,8 @@ function renderCal(){
       }
     });
     const adds=MEAL_TYPES.filter(tp=>tp!==_mainT&&!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="startBrowse('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
-    const pdayMacros=dayMacros(key);
-    const pdayProteinBadge=pdayMacros&&pdayMacros.protein?`<span class="pday-protein-badge">💚 ${Math.round(pdayMacros.protein)}g prot</span>`:'';
     return`<div class="pday ${isToday?'today':''}" id="calday-${key}">
-      <div class="pday-label-row"><span class="pday-label">${labelTxt}${pdayProteinBadge}</span><div class="pday-actions">${adds?`<button class="pday-add-toggle" onclick="toggleAdds(event,'${key}')" title="＋">＋</button>`:''}<button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑</button></div></div>
+      <div class="pday-label-row"><span class="pday-label">${labelTxt}</span><div class="pday-actions">${adds?`<button class="pday-add-toggle" onclick="toggleAdds(event,'${key}')" title="＋">＋</button>`:''}<button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑</button></div></div>
       ${cards}
       ${adds?`<div class="pday-extra" id="adds-${key}">${adds}</div>`:''}
     </div>`;
