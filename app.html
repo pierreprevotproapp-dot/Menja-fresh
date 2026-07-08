@@ -1433,7 +1433,6 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <button class="plan-menu-item danger" data-t="clearWeek" onclick="closePlanMenu();clearPlan()">Clear this week</button>
       </div>
       <div class="plan-daystrip" id="plan-daystrip"></div>
-      <button class="plan-generate" id="plan-generate-btn" onclick="startWeekFlow()">✨ Plan my week</button>
     </div>
     <div id="plan-guest-banner" style="display:none">
       <div class="guest-line"><span data-t="guestPlanTitle">💾 Your plan isn't saved</span><a onclick="showAuth();switchAuthTab('signup')" data-t="guestPlanBtn">Create account →</a></div>
@@ -4795,7 +4794,6 @@ function renderPlanHeader(){
   const first=dates[0],last=dates[6];
   const label=document.getElementById('wk-label');
   const range=document.getElementById('wk-range');
-  const btn=document.getElementById('plan-generate-btn');
   const prev=document.getElementById('wk-prev');
   const next=document.getElementById('wk-next');
   if(label)label.textContent=t('planHeaderTitle');
@@ -4806,9 +4804,8 @@ function renderPlanHeader(){
     const offsetTxt=weekOffset===0?'':(weekOffset===1?t('nextWeekLbl'):tf('inWeeks',{n:weekOffset}))+' · ';
     range.textContent=offsetTxt+`${fd(first,!sameMon)} – ${fd(last,true)}`;
   }
-  // Header stays minimal: the big CTA only while the week is empty; once meals
-  // exist, regenerate/clear live behind the ⋯ menu. Focus mode hides both.
-  if(btn){btn.textContent=cp>0?t('regenerateWeek'):(state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn'));btn.style.display=(planFocus||cp>0)?'none':'';}
+  // Header stays minimal: the motivation card in the list is the only "plan your week"
+  // CTA; regenerate/clear live behind the ⋯ menu (hidden while focusing).
   const mbtn=document.getElementById('plan-menu-btn');
   if(mbtn)mbtn.style.display=(cp>0&&!planFocus)?'':'none';
   if(planFocus||cp===0)closePlanMenu();

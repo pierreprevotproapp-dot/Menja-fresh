@@ -47,9 +47,11 @@ const results = await page.evaluate(async () => {
   ok('design: all tab headers are --nav green', hdrGreen);
 
   state.plan={}; state.weekPickDone=false; weekOffset=0; _returnNudge=false; showTab('plan');
-  ok('onboarding CTA: first-week copy', document.getElementById('plan-generate-btn').textContent==='✨ Meine erste Woche planen');
+  const motivBtn=()=>document.querySelector('#cal-scroll [onclick="startWeekFlow()"]');
+  ok('onboarding CTA: first-week copy', motivBtn()?.textContent==='✨ Meine erste Woche planen');
+  ok('header: no second plan-week button', !document.getElementById('plan-generate-btn'));
   state.weekPickDone=true; renderPlan();
-  ok('CTA reverts after first plan', document.getElementById('plan-generate-btn').textContent==='✨ Woche planen');
+  ok('CTA reverts after first plan', motivBtn()?.textContent==='✨ Woche planen');
 
   state.plan={}; weekOffset=-1; getDateRange().forEach(d=>state.plan[dk(d)]={Dinner:{dishId:'d'+d.getDate(),adults:2,children:0}}); weekOffset=0;
   state.weekPickDone=false; showTab('plan');
