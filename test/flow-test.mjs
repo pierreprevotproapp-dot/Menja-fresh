@@ -62,14 +62,10 @@ const results = await page.evaluate(async () => {
   state.cookDays=[0,1,2,3,4,5,6]; state.skippedDays={}; state.returnNudgeSeen=null;
   state.plan={}; getDateRange().forEach(d=>state.plan[dk(d)]={Dinner:{dishId:'x'+d.getDate()}});
   _returnNudge=true; renderPlan();
-  ok('nudge: planned variant -> shopping', /geplant/.test(document.querySelector('#plan-return-nudge .return-nudge-txt')?.textContent||'') && /Einkaufen/.test(document.querySelector('#plan-return-nudge .return-nudge-cta')?.textContent||''));
-  ok('nudge: marks once-per-day', state.returnNudgeSeen===dk(new Date()));
-  ok('nudge: suppresses bento promo', document.getElementById('plan-bento-promo').innerHTML==='');
-  delete state.plan[dk(new Date())];
-  _returnNudge=true; renderPlan();
-  ok('nudge: gaps variant + singular', /Noch 1 Tag offen/.test(document.querySelector('#plan-return-nudge .return-nudge-txt')?.textContent||''));
-  dismissReturnNudge();
-  ok('nudge: dismiss clears it', document.querySelector('#plan-return-nudge .return-nudge')===null);
+  ok('nudge: welcome-back banner retired', document.getElementById('plan-return-nudge').innerHTML==='');
+  ok('nudge: bento promo stays silent', document.getElementById('plan-bento-promo').innerHTML==='');
+  delete state.plan[dk(new Date())]; state.confirmed={}; renderPlan();
+  ok('nudge: gaps bar took over the fill-CTA', !!document.querySelector('.plan-gaps-bar'));
 
   // ── Plan redesign: popup → day-by-day focus flow (choose/skip) → clean week list ──
   for(let i=0;i<8;i++)DISHES.push({id:'ft'+i,emoji:'🥗',_title:'Flow Dish '+i,tags:['vegetarian'],meal:['Abendessen'],prep:10,cook:20,servings:2,ingredients:[],i18n:{de:{title:'Flow Dish '+i},en:{title:'Flow Dish '+i}}});

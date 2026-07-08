@@ -7761,29 +7761,9 @@ function weekOpenDays(){
   return {count,firstKey};
 }
 function renderReturnNudge(){
-  const el=document.getElementById('plan-return-nudge');if(!el)return;
-  if(planFocus){el.innerHTML='';return;}
-  if(!_returnNudge||weekPlacedCount()===0||weekOffset!==0){el.innerHTML='';return;}
-  const tk=dateKey(new Date());
-  const dm=state.plan[tk]||{};
-  const _mt=mainMealType();
-  const todayDish=dm[_mt]&&dm[_mt].dishId?getDish(dm[_mt].dishId):null;
-  const open=weekOpenDays();
-  let title,cta,action;
-  if(todayDish){                       // most immediate value → tonight's dinner
-    title=tf('returnTodayTitle',{dish:dishName(todayDish)});cta=t('returnCookBtn');action="showTab('today')";
-  }else if(open.count>0){              // complete the week
-    title=open.count===1?t('returnGapsTitleOne'):tf('returnGapsTitle',{n:open.count});cta=t('returnFillBtn');
-    action=open.firstKey?`focusPlanDay('${open.firstKey}')`:"startWeekFlow()";
-  }else{                              // week done → shop
-    title=t('returnPlannedTitle');cta=t('returnShopBtn');action="showTab('shopping')";
-  }
-  el.innerHTML=`<div class="return-nudge">
-    <button class="return-nudge-x" onclick="dismissReturnNudge()" aria-label="✕">✕</button>
-    <div class="return-nudge-txt">👋 ${title}</div>
-    <button class="return-nudge-cta" onclick="dismissReturnNudge();${action}">${cta}</button>
-  </div>`;
-  if(state.returnNudgeSeen!==tk){state.returnNudgeSeen=tk;save();}   // once per day
+  // Welcome-back banner retired: every job it did now has a quieter, persistent home —
+  // today card + cook pill (tonight), gaps bar (open days), done bar (→ groceries).
+  const el=document.getElementById('plan-return-nudge');if(el)el.innerHTML='';
 }
 function dismissReturnNudge(){_returnNudge=false;const el=document.getElementById('plan-return-nudge');if(el)el.innerHTML='';}
 
