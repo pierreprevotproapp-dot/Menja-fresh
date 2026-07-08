@@ -723,10 +723,16 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .trk-meal.add{color:var(--accent)}
 .trk-meal.add .trk-mn{color:var(--accent)}
 .trk-meal.add .trk-em{background:var(--accent-l);font-size:18px}
-.trk-dots{display:flex;gap:7px;justify-content:center;padding:2px 0 6px}
-.trk-dots i{width:32px;height:32px;border-radius:50%;background:var(--surface);border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;font-style:normal;font-size:9.5px;font-weight:800;color:var(--text3);text-transform:uppercase}
-.trk-dots i.hit{background:var(--nav-a);border-color:var(--nav-a);color:var(--nav)}
-.trk-dots i.td{box-shadow:0 0 0 2px var(--accent-l)}
+.trk-bars{display:flex;gap:8px;align-items:flex-end;justify-content:center;padding:2px 0 8px}
+.trk-bar{flex:0 0 36px;display:flex;flex-direction:column;align-items:center;gap:4px}
+.trk-bar .gv{font-size:9px;font-weight:800;color:var(--text3);min-height:11px}
+.trk-bar .col{width:22px;height:58px;border-radius:8px;background:var(--surface2);position:relative;overflow:hidden}
+.trk-bar .fill{position:absolute;bottom:0;left:0;right:0;background:var(--nav-a);border-radius:8px;transition:height .4s ease}
+.trk-bar.hit .fill{background:var(--accent)}
+.trk-bar.hit .gv{color:var(--accent)}
+.trk-bar .dw{font-size:9px;font-weight:800;color:var(--text3);text-transform:uppercase;white-space:nowrap}
+.trk-bar.td .col{box-shadow:0 0 0 2px var(--accent-l)}
+.trk-bar.td .dw{color:var(--accent)}
 .prow-thumb{width:48px;height:48px;border-radius:11px;background:var(--surface2);display:flex;align-items:center;justify-content:center;font-size:25px;flex-shrink:0;overflow:hidden}
 .prow-thumb img{width:100%;height:100%;object-fit:cover;display:block}
 .prow-meta{flex:1;min-width:0}
@@ -1418,7 +1424,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <nav class="nav"><div class="nav-tabs">
     <button class="nav-tab active" onclick="showTab('plan')" id="tab-plan"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-t="navPlan">Plan</span></button>
     <button class="nav-tab" onclick="showTab('shopping')" id="tab-shopping"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span data-t="navGroceries">Groceries</span><span class="badge" id="shopping-badge" style="display:none">0</span></button>
-    <button class="nav-tab" onclick="showTab('today')" id="tab-today"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><span data-t="navToday">Today</span></button>
+    <button class="nav-tab" onclick="showTab('today')" id="tab-today"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><span data-t="navToday">Track</span></button>
     <button class="nav-tab" onclick="showTab('recipes')" id="tab-recipes"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg><span data-t="navRecipes">Recipes</span></button>
     <button class="nav-tab" onclick="showTab('family')" id="tab-family"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span data-t="navMe">Profile</span></button>
   </div></nav>
@@ -1989,7 +1995,7 @@ en:{
 
   firstName:'First name',lastName:'Last name',
   navFamily:'Family',navDiscover:'Discover',navPlanner:'Planner',navShop:'Shop',
-  navFridge:'Fridge',navRecipes:'Recipes',navToday:'Today',
+  navFridge:'Fridge',navRecipes:'Recipes',navToday:'Track',
   famTitle:'🏡 My Family',famSub:'Recipes and portions adjust automatically',
   whoAtTable:"Who's at the table?",adults:'Adults',children:'Children',
   dietaryPrefs:'Dietary preferences',moreTools:'More',
@@ -2143,7 +2149,7 @@ fr:{
 
   firstName:'Prénom',lastName:'Nom',
   navFamily:'Famille',navDiscover:'Découvrir',navPlanner:'Planifier',navShop:'Courses',
-  navFridge:'Frigo',navRecipes:'Recettes',navToday:"Aujourd'hui",
+  navFridge:'Frigo',navRecipes:'Recettes',navToday:'Suivi',
   famTitle:'🏡 Ma Famille',famSub:'Les quantités s\'adaptent automatiquement',
   whoAtTable:'Qui est à table ?',adults:'Adultes',children:'Enfants',
   dietaryPrefs:'Préférences alimentaires',moreTools:'Plus',planMyWeekBtn:'✨ Planifier ma semaine',planFirstWeekBtn:'✨ Planifier ma première semaine',repeatLastWeekBtn:'Répéter la semaine',repeatedToast:'Semaine dernière copiée ✓',nothingToRepeat:'Pas encore de plan la semaine dernière',returnTodayTitle:'Content de te revoir ! Ce soir : {dish}',returnPlannedTitle:'Content de te revoir — ta semaine est planifiée.',returnGapsTitle:'Content de te revoir ! Encore {n} jours à remplir',returnGapsTitleOne:'Content de te revoir ! Encore 1 jour à remplir',returnFillBtn:'➕ Compléter',returnCookBtn:"🍳 Voir aujourd'hui",returnShopBtn:'🛒 Faire les courses',regenerateWeek:'🔄 Régénérer la semaine',weekEmptyHint:'Un geste et ta semaine est réglée.',
@@ -2295,7 +2301,7 @@ es:{
 
   firstName:'Nombre',lastName:'Apellido',
   navFamily:'Familia',navDiscover:'Descubrir',navPlanner:'Planificar',navShop:'Compras',
-  navFridge:'Nevera',navRecipes:'Recetas',navToday:'Hoy',
+  navFridge:'Nevera',navRecipes:'Recetas',navToday:'Registro',
   famTitle:'🏡 Mi Familia',famSub:'Las cantidades se ajustan automáticamente',
   whoAtTable:'¿Quién está en la mesa?',adults:'Adultos',children:'Niños',
   dietaryPrefs:'Preferencias alimentarias',moreTools:'Más',planMyWeekBtn:'✨ Planificar mi semana',planFirstWeekBtn:'✨ Planificar mi primera semana',repeatLastWeekBtn:'Repetir semana',repeatedToast:'Semana anterior copiada ✓',nothingToRepeat:'Aún no hay plan de la semana pasada',returnTodayTitle:'¡Bienvenido! Hoy: {dish}',returnPlannedTitle:'¡Bienvenido! Tu semana está planificada.',returnGapsTitle:'¡Bienvenido! Quedan {n} días por planificar',returnGapsTitleOne:'¡Bienvenido! Queda 1 día por planificar',returnFillBtn:'➕ Completar',returnCookBtn:'🍳 Ver hoy',returnShopBtn:'🛒 Ir a comprar',regenerateWeek:'🔄 Regenerar la semana',weekEmptyHint:'Un toque y tu semana está lista.',
@@ -2447,7 +2453,7 @@ pt:{
 
   firstName:'Nome',lastName:'Sobrenome',
   navFamily:'Família',navDiscover:'Descobrir',navPlanner:'Planejar',navShop:'Compras',
-  navFridge:'Frigorífico',navRecipes:'Receitas',navToday:'Hoje',
+  navFridge:'Frigorífico',navRecipes:'Receitas',navToday:'Registro',
   famTitle:'🏡 Minha Família',famSub:'As quantidades se ajustam automaticamente',
   whoAtTable:'Quem está à mesa?',adults:'Adultos',children:'Crianças',
   dietaryPrefs:'Preferências alimentares',
@@ -2493,7 +2499,7 @@ de:{
 
   firstName:'Vorname',lastName:'Nachname',
   navFamily:'Familie',navDiscover:'Entdecken',navPlanner:'Planer',navShop:'Einkauf',
-  navFridge:'Kühlschrank',navRecipes:'Rezepte',navToday:'Heute',
+  navFridge:'Kühlschrank',navRecipes:'Rezepte',navToday:'Tracking',
   famTitle:'🏡 Meine Familie',famSub:'Mengen passen sich automatisch an',
   whoAtTable:'Wer sitzt am Tisch?',adults:'Erwachsene',children:'Kinder',
   dietaryPrefs:'Ernährungsvorlieben',moreTools:'Mehr',planMyWeekBtn:'✨ Woche planen',planFirstWeekBtn:'✨ Meine erste Woche planen',repeatLastWeekBtn:'Letzte Woche wiederholen',repeatedToast:'Letzte Woche übernommen ✓',nothingToRepeat:'Noch kein Plan aus der letzten Woche',returnTodayTitle:'Willkommen zurück! Heute: {dish}',returnPlannedTitle:'Willkommen zurück — deine Woche ist geplant.',returnGapsTitle:'Willkommen zurück! Noch {n} Tage offen',returnGapsTitleOne:'Willkommen zurück! Noch 1 Tag offen',returnFillBtn:'➕ Auffüllen',returnCookBtn:'🍳 Heute ansehen',returnShopBtn:'🛒 Einkaufen',regenerateWeek:'🔄 Woche neu generieren',weekEmptyHint:'Ein Tipp und deine Woche steht.',
@@ -6156,21 +6162,22 @@ function renderToday(){
   const plannedTypes=MEAL_TYPES.filter(type=>dm[type]&&dm[type].dishId);
   const hasMeals=plannedTypes.length>0;
   const reminder=shouldRemindNextWeek()?`<div class="plan-reminder"><div class="plan-reminder-txt">🗓️ <b>${t('planNextTitle')}</b><br>${t('planNextSub')}</div><button class="plan-reminder-btn" onclick="planNextWeek()">${t('planNextBtn')}</button></div>`:'';
-  // Eaten so far = meals ticked off as cooked
-  const eaten={kcal:0,protein:0,fat:0};
-  plannedTypes.forEach(tp=>{if(isCooked(key,tp)){const n=mealNutrition(dm[tp]);if(n){eaten.kcal+=n.kcal||0;eaten.protein+=n.protein||0;eaten.fat+=n.fat||0;}}});
+  // The day's macros from everything planned — visible before anything is ticked off.
+  const day={kcal:0,protein:0,fat:0};
+  plannedTypes.forEach(tp=>{const n=mealNutrition(dm[tp]);if(n){day.kcal+=n.kcal||0;day.protein+=n.protein||0;day.fat+=n.fat||0;}});
   const g=state.macroGoals||{};
   const gk=g.kcal||2000,gp=g.protein||100,gf=Math.max(40,Math.round((g.kcal||2000)*0.3/9));
   const ring=(val,goal,color,big,label,unit)=>{
     const v=Math.round(val);const deg=Math.min(360,Math.round((goal?v/goal:0)*360));
     const left=Math.max(0,goal-v);
     const sub=v>=goal?'✓ '+t('trackOnTrack'):tf('trackLeft',{n:left+(unit?' '+unit:'')});
-    return`<div class="trk-ringbox"><div class="trk-ring ${big?'big':''}" style="background:conic-gradient(${color} ${deg}deg,var(--surface2) ${deg}deg)"><div class="trk-in"><span class="trk-v">${v}${unit&&!big?'g':''}</span><span class="trk-u">/ ${goal}${big?' kcal':' g'}</span></div></div><div class="trk-lbl">${label}</div><div class="trk-sub">${sub}</div></div>`;
+    return`<div class="trk-ringbox"><div class="trk-ring ${big?'big':''}" style="background:conic-gradient(${color} ${deg}deg,var(--surface2) ${deg}deg)"><div class="trk-in"><span class="trk-v">${v}${unit==='g'?'g':''}</span><span class="trk-u">/ ${goal} ${unit||'kcal'}</span></div></div><div class="trk-lbl">${label}</div><div class="trk-sub">${sub}</div></div>`;
   };
+  // Protein is the hero ring — centre, biggest.
   const rings=`<div class="trk-rings">
-    ${ring(eaten.protein,gp,'#C8622A',false,t('trackProteinT'),'g')}
-    ${ring(eaten.kcal,gk,'var(--accent)',true,t('trackKcalT'),'')}
-    ${ring(eaten.fat,gf,'#E6A92E',false,t('trackFatT'),'g')}
+    ${ring(day.kcal,gk,'var(--accent)',false,t('trackKcalT'),'')}
+    ${ring(day.protein,gp,'#C8622A',true,t('trackProteinT'),'g')}
+    ${ring(day.fat,gf,'#E6A92E',false,t('trackFatT'),'g')}
   </div>`;
   // Daily streak: consecutive days (ending today) with at least one meal ticked off
   let streak=0;
@@ -6206,14 +6213,21 @@ function renderToday(){
   const addRow=`<div class="trk-meal add" onclick="focusPlanDay('${key}')"><div class="trk-em">＋</div><div class="trk-mi"><div class="trk-mn">${t('pickTonight')}</div></div></div>`;
   const mealsSec=`<div class="trk-sec"><h3>${t('trackEatenT')} <span>${cookedCount} / ${plannedTypes.length||1}</span></h3>
     <div class="trk-meals">${hasMeals?rows:addRow}</div></div>`;
-  // Week chain: days with at least one ticked-off meal
+  // Week: protein per day as mini bars (fill = vs goal), ✓ under days already tracked.
   const mon=new Date(_mondayKeyOf(new Date())+'T00:00:00');
-  let trackedDays=0;const dots=[];
+  let trackedDays=0,sumP=0,daysWithP=0;const bars=[];
   for(let i=0;i<7;i++){const d=new Date(mon);d.setDate(mon.getDate()+i);const k2=dateKey(d);
-    const hit=MEAL_TYPES.some(tp=>isCooked(k2,tp));if(hit)trackedDays++;
-    dots.push(`<i class="${hit?'hit':''}${k2===todayKey?' td':''}">${dow(d)}</i>`);}
-  const weekSec=`<div class="trk-sec"><h3>${t('trackWeekT')} <span>${tf('trackDaysN',{n:trackedDays}).toUpperCase()}</span></h3>
-    <div class="trk-dots">${dots.join('')}</div></div>`;
+    const m2=dayMacros(k2);const pv=m2?Math.round(m2.protein||0):0;
+    if(pv>0){sumP+=pv;daysWithP++;}
+    const tracked=MEAL_TYPES.some(tp=>isCooked(k2,tp));if(tracked)trackedDays++;
+    const pct=Math.min(100,Math.round(pv/gp*100));
+    bars.push(`<div class="trk-bar ${k2===todayKey?'td':''} ${pv>=gp?'hit':''}">
+      <span class="gv">${pv||''}</span>
+      <div class="col"><div class="fill" style="height:${pct}%"></div></div>
+      <span class="dw">${tracked?'✓ ':''}${dow(d)}</span></div>`);}
+  const avgP=daysWithP?Math.round(sumP/daysWithP):0;
+  const weekSec=`<div class="trk-sec"><h3>${t('trackWeekT')} <span>Ø ${avgP} g · ${t('trackProteinT').toUpperCase()} / ${gp} g</span></h3>
+    <div class="trk-bars">${bars.join('')}</div></div>`;
   tm.innerHTML=reminder+fire+rings+plantsSec+mealsSec+weekSec;
 }
 // ═══════════════════════════════════════════════════
