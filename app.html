@@ -675,6 +675,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .prow.photo.noimg .prow-ovl{background:linear-gradient(transparent,rgba(255,253,247,.94) 60%)}
 .prow.photo.noimg .prow-name{color:var(--text)}
 .prow.photo.noimg .prow-sub{color:var(--text3)}
+.prow.photo.noimg .prow-check.off{border-color:var(--border2);background:none}
+.prow.photo.noimg .prow-cook{border:1.5px solid var(--border2);box-shadow:none}
+.prow.photo.noimg .prow-swap{border:1.5px solid var(--border2)}
 /* Today's card: badge + a quiet cook-now pill */
 .prow.photo.todaycard{height:140px;box-shadow:0 6px 20px rgba(45,90,61,.2)}
 .prow.photo.todaycard .prow-ovl{padding-right:132px}
@@ -5431,10 +5434,11 @@ function planRow(key,type,dish){
   const cookedNow=isTodayMain&&isCooked(key,type);
   const cookBtn=isTodayMain?`<button class="prow-cook ${cookedNow?'ck':''}" onclick="event.stopPropagation();${cookedNow?`openRecipeOverlay('${dish.id}')`:`openCookMode('${key}','${type}')`}">${cookedNow?t('cookedDone'):t('cookNow')}</button>`:'';
   const todayBadge=isTodayMain?`<span class="prow-today-badge">${t('todayWord')}</span>`:'';
-  // Main meal with a photo → wide appetite card: the food is the hero.
-  if(type===mt&&dish.photo){
-    return`<div class="prow photo ${isTodayMain?'todaycard':''}" onclick="openRecipeOverlay('${dish.id}')">
-      <img src="${dish.photo}" onerror="this.style.display='none';this.parentElement.classList.add('noimg')">
+  // Main meal → always the wide appetite card; without a photo (they're coming)
+  // the same card renders with the emoji fallback, so the week reads uniformly.
+  if(type===mt){
+    return`<div class="prow photo ${dish.photo?'':'noimg'} ${isTodayMain?'todaycard':''}" onclick="openRecipeOverlay('${dish.id}')">
+      ${dish.photo?`<img src="${dish.photo}" onerror="this.style.display='none';this.parentElement.classList.add('noimg')">`:''}
       <div class="prow-fb">${dish.emoji}</div>
       ${todayBadge}
       <div class="prow-ovl"><div class="prow-name">${dishName(dish)}</div>
@@ -5449,7 +5453,6 @@ function planRow(key,type,dish){
     <div class="prow-meta"><div class="prow-name">${dishName(dish)}</div>
       ${sub?`<div class="prow-sub">${sub}</div>`:''}
     </div>
-    ${isTodayMain&&!cookedNow?`<button class="prow-swap" style="background:var(--nav-a);color:var(--nav)" onclick="event.stopPropagation();openCookMode('${key}','${type}')">🍳</button>`:''}
     ${right}
   </div>`;
 }
