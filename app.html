@@ -647,8 +647,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .pfocus-card .pday-img,.pfocus-card .pday-img-em{position:absolute;left:0;top:0;width:100%;height:100%;object-fit:cover}
 .pfocus-card .pday-img-em{font-size:min(100px,18vh)}
 .pfocus-cta{flex-shrink:0;display:block;width:100%;margin-top:12px;background:var(--nav);color:#fff;border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
-.pfocus-foot{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;min-height:20px}
+.pfocus-skip{flex-shrink:0;display:block;width:100%;margin-top:8px;background:none;border:1.5px dashed var(--border2);color:var(--text2);border-radius:99px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb)}
+.pfocus-foot{flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px;margin-top:10px;min-height:20px;flex-wrap:wrap}
 .pfocus-exit{background:none;border:none;color:var(--text3);font-size:12px;font-weight:600;cursor:pointer;font-family:var(--fb);text-decoration:underline;text-underline-offset:3px;padding:2px}
+.pfocus-exit.strong{color:var(--accent)}
+.dchip.past{opacity:.4;cursor:default}
+.dchip.skipped:not(.on){opacity:.55}
+.dchip.skipped:not(.on)::after{content:'–';position:absolute;bottom:2px;font-size:10px;font-weight:800;color:var(--text3)}
 .pfocus-count{font-size:11px;color:var(--text3);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .pfocus-dotsep{color:var(--text3);font-size:11px}
 /* ── Clean week list rows ── */
@@ -1424,11 +1429,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <button class="week-nav-btn" id="plan-menu-btn" onclick="togglePlanMenu(event)" style="display:none">⋯</button>
       </div>
       <div class="plan-menu" id="plan-menu">
-        <button class="plan-menu-item" data-t="regenerateWeek" onclick="closePlanMenu();openWeekPick()">🔄 Regenerate week</button>
+        <button class="plan-menu-item" data-t="regenerateWeek" onclick="closePlanMenu();regenerateWeekFlow()">🔄 Regenerate week</button>
         <button class="plan-menu-item danger" data-t="clearWeek" onclick="closePlanMenu();clearPlan()">Clear this week</button>
       </div>
       <div class="plan-daystrip" id="plan-daystrip"></div>
-      <button class="plan-generate" id="plan-generate-btn" onclick="openWeekPick()">✨ Plan my week</button>
+      <button class="plan-generate" id="plan-generate-btn" onclick="startWeekFlow()">✨ Plan my week</button>
     </div>
     <div id="plan-guest-banner" style="display:none">
       <div class="guest-line"><span data-t="guestPlanTitle">💾 Your plan isn't saved</span><a onclick="showAuth();switchAuthTab('signup')" data-t="guestPlanBtn">Create account →</a></div>
@@ -1646,7 +1651,20 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   </div>
 </div>
 
-<!-- WEEK-NIGHT PICKER (which nights are you cooking?) -->
+<!-- FIRST WEEK — one inviting popup, then day-by-day focus planning -->
+<div class="picker-bg" id="firstweek-bg" onclick="event.target===this&&closeFirstWeek()">
+  <div class="picker-modal" style="text-align:center">
+    <div class="p-handle"></div>
+    <div style="padding:18px 24px 6px">
+      <div style="font-size:44px;margin-bottom:10px">🥗</div>
+      <div style="font-family:var(--fd);font-size:20px;font-weight:500" data-t="weekpickFirstTitle">Plan your first week 🎉</div>
+      <div style="font-size:13px;color:var(--text3);margin-top:6px" data-t="firstweekSub">One day at a time — swipe until it fits.</div>
+    </div>
+    <button class="weekpick-go" onclick="closeFirstWeek();startWeekFlow()" data-t="firstweekCTA">Let's go →</button>
+    <div class="p-cancel" onclick="closeFirstWeek()" data-t="laterWord">Later</div>
+  </div>
+</div>
+
 <!-- PREFS & ALLERGIES — quick read-only overview (edit jumps to the setup editor) -->
 <div class="picker-bg" id="prefsov-bg" onclick="event.target===this&&closePrefsOverview()">
   <div class="picker-modal">
@@ -2017,7 +2035,7 @@ en:{
   pwFreeName:'🌿 Free',pwAlwaysFree:'Always free',pwFree1:'Plan your whole week in minutes',pwFree2:'Swap & choose meals, skip any day',pwFree3:'Automatic grocery list + staples',pwFree4:'Your favourites cookbook',pwFree5:"Learns your family's taste",
   pwPremiumName:'⭐ Premium',pwBest:'BEST',pwPrem1:"💶 Budget mode — your week's cost, per day & per serving",pwPrem2:'📊 Advanced macros — carb & fat goals, weekly trends',pwPrem3:'🗓️ Plan up to 4 weeks ahead',pwPrem4:'📷 AI fridge scanner',pwPrem5:'☁️ Sync across all your devices',
   perMonth:'per month',perYear:'per year',save27:'Save 27%',pwCta:'Try Premium free for 7 days',pwTerms:'7-day free trial · cancel anytime · no hidden fees',
-  weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",weekpickFirstTitle:'Plan your first week 🎉',gapsBar:'{n} days still open — keep planning',gapsBarOne:'1 day still open — plan it',chooseForDay:'Choose for {day} ✓',swipeForMore:'‹ › swipe for more ideas',seeWholeWeek:'See the whole week',dayOfCount:'Day {i} of {n}',weekpickFirstSub:'Pick the nights you want dinners for — we’ll fill them in.',addCookingDay:'Add a cooking day',
+  weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",weekpickFirstTitle:'Plan your first week 🎉',firstweekSub:'One day at a time — swipe until it fits.',firstweekCTA:"Let's go →",laterWord:'Later',skipThisDay:'Skip this day',doneToGroceries:'I’m done — to my groceries 🛒',gapsBar:'{n} days still open — keep planning',gapsBarOne:'1 day still open — plan it',chooseForDay:'Choose for {day} ✓',swipeForMore:'‹ › swipe for more ideas',seeWholeWeek:'See the whole week',dayOfCount:'Day {i} of {n}',weekpickFirstSub:'Pick the nights you want dinners for — we’ll fill them in.',addCookingDay:'Add a cooking day',
   setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupDietQ:'Any diet?',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
   cookBack:'‹ Back',cookNext:'Next ›',chooseDinner:'Choose dinner',
   opt_vegetarian:'Vegetarian',opt_pescatarian:'Pescatarian',opt_vegan:'Vegan',opt_glutenfree:'Gluten-free',
@@ -2169,7 +2187,7 @@ fr:{
   pwFreeName:'🌿 Gratuit',pwAlwaysFree:'Toujours gratuit',pwFree1:'Planifiez toute la semaine en minutes',pwFree2:'Changez & choisissez les repas, sautez un jour',pwFree3:'Liste de courses automatique + basiques',pwFree4:'Votre carnet de favoris',pwFree5:'Apprend les goûts de votre famille',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Mode budget — coût de la semaine, par jour & par portion',pwPrem2:'📊 Macros avancés — objectifs glucides & lipides, tendances',pwPrem3:'🗓️ Planifiez jusqu\'à 4 semaines à l\'avance',pwPrem4:'📷 Scanner de frigo IA',pwPrem5:'☁️ Synchro sur tous vos appareils',
   perMonth:'par mois',perYear:'par an',save27:'-27 %',pwCta:'Essayer Premium gratuitement 7 jours',pwTerms:'Essai gratuit 7 jours · annulable à tout moment · sans frais cachés',
-  weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',weekpickFirstTitle:'Planifiez votre première semaine 🎉',gapsBar:'Encore {n} jours à planifier — continuer',gapsBarOne:'Encore 1 jour à planifier — continuer',chooseForDay:'Choisir pour {day} ✓',swipeForMore:'‹ › balayez pour d’autres idées',seeWholeWeek:'Voir toute la semaine',dayOfCount:'Jour {i} sur {n}',weekpickFirstSub:'Choisissez les soirs à cuisiner — on s’occupe du reste.',addCookingDay:'Ajouter un jour',
+  weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',weekpickFirstTitle:'Planifiez votre première semaine 🎉',firstweekSub:'Jour par jour — balayez jusqu’à ce que ça colle.',firstweekCTA:'C’est parti →',laterWord:'Plus tard',skipThisDay:'Passer ce jour',doneToGroceries:'Terminé — voir mes courses 🛒',gapsBar:'Encore {n} jours à planifier — continuer',gapsBarOne:'Encore 1 jour à planifier — continuer',chooseForDay:'Choisir pour {day} ✓',swipeForMore:'‹ › balayez pour d’autres idées',seeWholeWeek:'Voir toute la semaine',dayOfCount:'Jour {i} sur {n}',weekpickFirstSub:'Choisissez les soirs à cuisiner — on s’occupe du reste.',addCookingDay:'Ajouter un jour',
   setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupDietQ:'Un régime ?',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
   cookBack:'‹ Retour',cookNext:'Suivant ›',chooseDinner:'Choisir le dîner',
   opt_vegetarian:'Végétarien',opt_pescatarian:'Pescétarien',opt_vegan:'Végétalien',opt_glutenfree:'Sans gluten',
@@ -2321,7 +2339,7 @@ es:{
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Siempre gratis',pwFree1:'Planifica toda la semana en minutos',pwFree2:'Cambia y elige comidas, salta cualquier día',pwFree3:'Lista de la compra automática + básicos',pwFree4:'Tu recetario de favoritos',pwFree5:'Aprende los gustos de tu familia',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Modo presupuesto — coste de la semana, por día y por ración',pwPrem2:'📊 Macros avanzados — objetivos de carbos & grasas, tendencias',pwPrem3:'🗓️ Planifica hasta 4 semanas',pwPrem4:'📷 Escáner de nevera con IA',pwPrem5:'☁️ Sincroniza en todos tus dispositivos',
   perMonth:'al mes',perYear:'al año',save27:'-27 %',pwCta:'Prueba Premium gratis 7 días',pwTerms:'7 días de prueba gratis · cancela cuando quieras · sin costes ocultos',
-  weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',weekpickFirstTitle:'Planifica tu primera semana 🎉',gapsBar:'Quedan {n} días por planificar — seguir',gapsBarOne:'Queda 1 día por planificar — seguir',chooseForDay:'Elegir para {day} ✓',swipeForMore:'‹ › desliza para más ideas',seeWholeWeek:'Ver toda la semana',dayOfCount:'Día {i} de {n}',weekpickFirstSub:'Elige las noches que quieras cenar — nosotros las llenamos.',addCookingDay:'Añadir un día',
+  weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',weekpickFirstTitle:'Planifica tu primera semana 🎉',firstweekSub:'Día a día — desliza hasta que encaje.',firstweekCTA:'¡Vamos! →',laterWord:'Más tarde',skipThisDay:'Saltar este día',doneToGroceries:'Listo — a la compra 🛒',gapsBar:'Quedan {n} días por planificar — seguir',gapsBarOne:'Queda 1 día por planificar — seguir',chooseForDay:'Elegir para {day} ✓',swipeForMore:'‹ › desliza para más ideas',seeWholeWeek:'Ver toda la semana',dayOfCount:'Día {i} de {n}',weekpickFirstSub:'Elige las noches que quieras cenar — nosotros las llenamos.',addCookingDay:'Añadir un día',
   setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupDietQ:'¿Alguna dieta?',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
   cookBack:'‹ Atrás',cookNext:'Siguiente ›',chooseDinner:'Elegir cena',
   opt_vegetarian:'Vegetariano',opt_pescatarian:'Pescetariano',opt_vegan:'Vegano',opt_glutenfree:'Sin gluten',
@@ -2519,7 +2537,7 @@ de:{
   pwFreeName:'🌿 Gratis',pwAlwaysFree:'Immer gratis',pwFree1:'Plane die ganze Woche in Minuten',pwFree2:'Mahlzeiten tauschen & wählen, Tag überspringen',pwFree3:'Automatische Einkaufsliste + Basics',pwFree4:'Dein Favoriten-Kochbuch',pwFree5:'Lernt den Geschmack deiner Familie',
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Budget-Modus — Wochenkosten, pro Tag & pro Portion',pwPrem2:'📊 Erweiterte Makros — Kohlenhydrat- & Fettziele, Wochentrends',pwPrem3:'🗓️ Bis zu 4 Wochen im Voraus planen',pwPrem4:'📷 KI-Kühlschrank-Scanner',pwPrem5:'☁️ Synchro auf all deinen Geräten',
   perMonth:'pro Monat',perYear:'pro Jahr',save27:'-27 %',pwCta:'Premium 7 Tage gratis testen',pwTerms:'7 Tage gratis · jederzeit kündbar · keine versteckten Kosten',
-  weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',weekpickFirstTitle:'Plane deine erste Woche 🎉',gapsBar:'Noch {n} Tage offen — weiterplanen',gapsBarOne:'Noch 1 Tag offen — jetzt planen',chooseForDay:'Für {day} wählen ✓',swipeForMore:'‹ › wischen für mehr Vorschläge',seeWholeWeek:'Zur Wochenansicht',dayOfCount:'Tag {i} von {n}',weekpickFirstSub:'Wähle die Abende, für die du Gerichte möchtest — wir füllen sie.',addCookingDay:'Kochtag hinzufügen',
+  weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',weekpickFirstTitle:'Plane deine erste Woche 🎉',firstweekSub:'Tag für Tag — wische, bis es passt.',firstweekCTA:'Los geht’s →',laterWord:'Später',skipThisDay:'Diesen Tag überspringen',doneToGroceries:'Fertig — zur Einkaufsliste 🛒',gapsBar:'Noch {n} Tage offen — weiterplanen',gapsBarOne:'Noch 1 Tag offen — jetzt planen',chooseForDay:'Für {day} wählen ✓',swipeForMore:'‹ › wischen für mehr Vorschläge',seeWholeWeek:'Zur Wochenansicht',dayOfCount:'Tag {i} von {n}',weekpickFirstSub:'Wähle die Abende, für die du Gerichte möchtest — wir füllen sie.',addCookingDay:'Kochtag hinzufügen',
   setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupDietQ:'Eine Ernährungsweise?',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
   cookBack:'‹ Zurück',cookNext:'Weiter ›',chooseDinner:'Abendessen wählen',
   opt_vegetarian:'Vegetarisch',opt_pescatarian:'Pescetarisch',opt_vegan:'Vegan',opt_glutenfree:'Glutenfrei',
@@ -4648,14 +4666,14 @@ async function finishSetup(skip){
     await withTimeout(ensureRecipes(),8000); // guarantee dishes are ready before week-pick
     showApp(guestUser);   // makes #app visible
     showTab('plan');      // land on Plan…
-    setTimeout(()=>openWeekPick(true),450); // …and pop the "Plan your first week" day-picker
+    setTimeout(openFirstWeek,450); // …and invite them to plan the first week (popup → day-by-day flow)
     return;
   }
   // Already signed in (rare with signup-last) → just route to the plan
   await withTimeout(ensureRecipes(),8000);
   document.getElementById('app').style.display='block';
   showTab('plan');   // land on Plan…
-  setTimeout(()=>openWeekPick(true),450); // …and pop the "Plan your first week" day-picker
+  setTimeout(openFirstWeek,450); // …and invite them to plan the first week (popup → day-by-day flow)
 }
 
 // ─── Mark a meal as cooked ──────────────────────
@@ -5039,9 +5057,8 @@ function confirmWeekPick(){
   const sel=new Set(weekPickSel);
   closeWeekPick();
   generateWeek(sel);
-  // Straight into focus mode: confirm the week one day at a time on a big card.
-  const pend=pendingMainKeys();
-  if(pend.length){planFocus=pend[0];renderPlan();}
+  // Legacy path (picker no longer reachable from the UI) — continue in focus mode.
+  startWeekFlow();
 }
 
 // Deterministic, meal-aware pool ordered stably so ‹/› cycling is predictable.
@@ -5168,14 +5185,71 @@ function inlineBrowseCard(key,type){
 }
 // ── Focus mode: after generating a week, confirm one day at a time on a big card ──
 let planFocus=null;   // dateKey currently being decided, or null = clean list view
-function pendingMainKeys(){
+// A day still needs a decision if it's today or later, not skipped, and its main meal isn't locked in.
+function needsDecision(k){
+  const tk=dateKey(new Date());const mt=mainMealType();
+  if(k<tk||isSkipped(k))return false;
+  const dm=state.plan[k];
+  return!(isConfirmed(k)&&dm&&dm[mt]&&dm[mt].dishId);
+}
+function firstOpenDayKey(){return getDateRange().map(d=>dateKey(d)).find(needsDecision)||null;}
+function nextOpenDayKey(after){return getDateRange().map(d=>dateKey(d)).find(k=>k>after&&needsDecision(k))||null;}
+// Seed a taste-ranked suggestion into a day's main-meal slot (avoids dishes already planned).
+// Seeded previews are tracked so leaving the picker without choosing removes them again —
+// nothing the user didn't pick ever reaches the plan or the grocery list.
+let _focusSeeded={};
+function seedDaySuggestion(key){
   const mt=mainMealType();
-  return getDateRange().map(d=>dateKey(d)).filter(k=>{
-    const dm=state.plan[k];return dm&&dm[mt]&&dm[mt].dishId&&!isConfirmed(k);
+  const dm=state.plan[key];
+  if(dm&&dm[mt]&&dm[mt].dishId)return true;   // already has something to swipe from
+  const used=new Set();Object.values(state.plan).forEach(x=>Object.values(x||{}).forEach(s=>{if(s&&s.dishId)used.add(String(s.dishId));}));
+  const pool=tasteOrderedPool(typePool(mt));
+  const pick=pool.find(d=>!used.has(String(d.id)))||pool[0];
+  if(!pick)return false;
+  if(!state.plan[key])state.plan[key]={};
+  state.plan[key][mt]={dishId:pick.id,...defaultGuests()};
+  if(state.cooked)delete state.cooked[key+'_'+mt];
+  _focusSeeded[key]=true;
+  save();rebuildShopping();updateBadge();
+  return true;
+}
+// Drop the not-chosen preview of the currently focused day (if it was seeded by us).
+function _cleanFocusPreview(){
+  const mt=mainMealType();
+  if(planFocus&&_focusSeeded[planFocus]&&!isConfirmed(planFocus)&&state.plan[planFocus]&&state.plan[planFocus][mt]){
+    delete state.plan[planFocus][mt];
+    if(!MEAL_TYPES.some(tp=>state.plan[planFocus][tp]&&state.plan[planFocus][tp].dishId))delete state.plan[planFocus];
+    delete _focusSeeded[planFocus];
+    save();rebuildShopping();updateBadge();
+  }
+}
+// "I'm done planning" → straight to the groceries built from what was chosen.
+function focusDone(){
+  _cleanFocusPreview();
+  planFocus=null;
+  showTab('shopping');
+}
+// Entry point: day-by-day planning, starting at the first day that needs a decision.
+function startWeekFlow(){
+  const k=firstOpenDayKey();
+  if(!k){planFocus=null;showTab('plan');renderPlan();return;}
+  focusPlanDay(k);
+}
+function openFirstWeek(){const el=document.getElementById('firstweek-bg');if(el)el.classList.add('open');}
+function closeFirstWeek(){const el=document.getElementById('firstweek-bg');if(el)el.classList.remove('open');}
+// Fresh suggestions for every future, unskipped day — then walk the week again.
+function regenerateWeekFlow(){
+  const tk=dateKey(new Date());const mt=mainMealType();
+  getDateRange().forEach(d=>{const k=dateKey(d);
+    if(k<tk||isSkipped(k))return;
+    if(state.plan[k]&&state.plan[k][mt])delete state.plan[k][mt];
+    if(state.confirmed)delete state.confirmed[k];
   });
+  save();rebuildShopping();updateBadge();
+  startWeekFlow();
 }
 function enterFocus(key){planFocus=key;renderPlan();}
-function exitFocus(){planFocus=null;renderPlan();}
+function exitFocus(){_cleanFocusPreview();planFocus=null;renderPlan();}
 // ⋯ menu: regenerate / clear live here so the header stays clean.
 function togglePlanMenu(e){
   if(e)e.stopPropagation();
@@ -5193,11 +5267,27 @@ function toggleAdds(e,key){if(e)e.stopPropagation();const el=document.getElement
 function focusChoose(){
   if(!planFocus)return;
   const cur=planFocus;
-  const rest=pendingMainKeys().filter(k=>k!==cur);
-  planFocus=rest.length?rest[0]:null;          // advance before confirm re-renders
+  state.weekPickDone=true;                      // first choice = the user is a planner now
+  delete _focusSeeded[cur];                     // chosen → no longer a disposable preview
+  planFocus=nextOpenDayKey(cur);                // advance before confirm re-renders
   const go=()=>confirmMeal(null,cur);           // saves + renderPlan + checkWeekDone
   const card=document.querySelector('.pfocus-card');
   if(card){card.classList.add('fly-l');setTimeout(go,160);}   // card glides out, next day glides in
+  else go();
+}
+// "Skip this day": no meal planned, day drops out of the week — flow moves on.
+function focusSkip(){
+  if(!planFocus)return;
+  const cur=planFocus;const mt=mainMealType();
+  if(!state.skippedDays)state.skippedDays={};
+  state.skippedDays[cur]=true;
+  if(state.plan[cur]){delete state.plan[cur][mt];if(!MEAL_TYPES.some(tp=>state.plan[cur][tp]&&state.plan[cur][tp].dishId))delete state.plan[cur];}
+  if(state.confirmed)delete state.confirmed[cur];
+  delete _focusSeeded[cur];
+  planFocus=nextOpenDayKey(cur);
+  const go=()=>{save();rebuildShopping();updateBadge();renderPlan();};
+  const card=document.querySelector('.pfocus-card');
+  if(card){card.classList.add('fly-r');setTimeout(go,160);}
   else go();
 }
 // Week strip in the header: 7 chips, dot = day has a meal, active = focus day / today.
@@ -5209,42 +5299,49 @@ function renderDayStrip(){
     const dm=state.plan[key]||{};
     const filled=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);
     const done=filled&&isConfirmed(key);   // locked in → chip shows a ✓ (the strip is the progress bar)
+    const past=key<todayKey;               // gone — grey and not plannable
+    const skipped=!past&&isSkipped(key);
     const on=planFocus?key===planFocus:key===todayKey;
-    return`<button class="dchip ${on?'on':''} ${done?'done':filled?'filled':''} ${key===todayKey?'today':''}" onclick="dayStripTap(${i})"><span class="dd">${dow(d)}</span><span class="dn">${d.getDate()}</span></button>`;
+    return`<button class="dchip ${on?'on':''} ${done?'done':filled?'filled':''} ${past?'past':''} ${skipped?'skipped':''} ${key===todayKey?'today':''}" onclick="dayStripTap(${i})"><span class="dd">${dow(d)}</span><span class="dn">${d.getDate()}</span></button>`;
   }).join('');
 }
 function dayStripTap(i){
   const d=getDateRange()[i];const key=dateKey(d);
   const dm=state.plan[key]||{};const mt=mainMealType();
-  // In focus mode a tap moves the focus if that day still needs a decision
-  if(planFocus&&dm[mt]&&dm[mt].dishId&&!isConfirmed(key)){planFocus=key;renderPlan();return;}
   const has=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);
-  if(!has){focusPlanDay(key);return;}   // empty day → straight into the big swipe picker
+  if(key<dateKey(new Date())){   // the past is closed: at most scroll to what was
+    if(has&&!planFocus)setTimeout(()=>{const el=document.getElementById('calday-'+key);const sc=document.getElementById('cal-scroll');
+      if(el&&sc){sc.scrollTop+=el.getBoundingClientRect().top-sc.getBoundingClientRect().top-6;}},40);
+    return;
+  }
+  // In focus mode a tap moves the focus if that day still needs a decision
+  if(planFocus&&needsDecision(key)){focusPlanDay(key);return;}
+  if(!has||needsDecision(key)){focusPlanDay(key);return;}   // open/skipped day → straight into the big swipe picker
   planFocus=null;
-  if(isSkipped(key)){if(state.skippedDays)delete state.skippedDays[key];save();}
   renderPlan();
   setTimeout(()=>{const el=document.getElementById('calday-'+key);const sc=document.getElementById('cal-scroll');
     if(el&&sc){sc.scrollTop+=el.getBoundingClientRect().top-sc.getBoundingClientRect().top-6;}},80);
 }
-// The big focus card (one day, one decision): photo, ‹ › to swap, one clear CTA.
+// The big focus card (one day, one decision): photo, ‹ › to swap, choose or skip.
+// Exits are always at hand: "done → groceries" (once something is planned) and the week view.
 function renderFocusCard(cal){
   const mt=mainMealType();
-  const dm=state.plan[planFocus]||{};
-  const slot=dm[mt];
-  if(!slot||!slot.dishId||isConfirmed(planFocus)){   // stale focus → advance or fall back to list
-    const rest=pendingMainKeys();planFocus=rest.length?rest[0]:null;
+  if(!planFocus)return false;
+  if(!needsDecision(planFocus)){                     // past/decided/skipped → advance or fall back to list
+    planFocus=firstOpenDayKey();
     if(!planFocus)return false;
-    return renderFocusCard(cal);
   }
-  const dish=getDish(slot.dishId);if(!dish){planFocus=null;return false;}
+  if(!seedDaySuggestion(planFocus)){planFocus=null;return false;}   // no dishes yet → list view
+  const slot=(state.plan[planFocus]||{})[mt];
+  const dish=slot&&getDish(slot.dishId);if(!dish){planFocus=null;return false;}
   const d=new Date(planFocus+'T00:00:00');
   const time=(dish.prep||0)+(dish.cook||0);
   const tags=(dish.tags||[]).slice(0,2).map(tTag).join(' · ');
   const img=dish.photo
     ?`<img class="pday-img" src="${dish.photo}" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="pday-img-em" style="display:none">${dish.emoji}</div>`
     :`<div class="pday-img-em">${dish.emoji}</div>`;
-  const pend=pendingMainKeys();const pos=pend.indexOf(planFocus);
   const dayLbl=`${dow(d)} ${d.getDate()} ${mon(d)}`;
+  const hasPlanned=weekPlacedCount()>0&&Object.keys(state.confirmed||{}).some(k=>state.plan[k]&&state.plan[k][mt]&&state.plan[k][mt].dishId);
   cal.innerHTML=`<div class="pfocus">
     <div class="pfocus-day">${dayLbl}</div>
     <div class="pday-card pfocus-card" data-key="${planFocus}" data-type="${mt}" data-dish="${dish.id}">
@@ -5256,7 +5353,11 @@ function renderFocusCard(cal){
       </div>
     </div>
     <button class="pfocus-cta" onclick="focusChoose()">${tf('chooseForDay',{day:dow(d)})}</button>
-    <div class="pfocus-foot">${pend.length>1?`<span class="pfocus-count">${tf('dayOfCount',{i:pos+1,n:pend.length})}</span><span class="pfocus-dotsep">·</span>`:''}<button class="pfocus-exit" onclick="exitFocus()">${t('seeWholeWeek')}</button></div>
+    <button class="pfocus-skip" onclick="focusSkip()">${t('skipThisDay')}</button>
+    <div class="pfocus-foot">
+      ${hasPlanned?`<button class="pfocus-exit strong" onclick="focusDone()">${t('doneToGroceries')}</button><span class="pfocus-dotsep">·</span>`:''}
+      <button class="pfocus-exit" onclick="exitFocus()">${t('seeWholeWeek')}</button>
+    </div>
   </div>`;
   bindPdaySwipe();
   return true;
@@ -5307,17 +5408,14 @@ function renderCal(){
   // Show only the days the user chose to cook (less clutter), but never hide a
   // day that already carries a meal, so nothing planned can disappear.
   const _allDates=getDateRange();
-  const _cookSet=(state.cookDays&&state.cookDays.length)?new Set(state.cookDays):null;
   const _hasMeal=d=>{const dm=state.plan[dateKey(d)]||{};return MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);};
-  let dates;
   const _isBrowseDay=d=>browse.key===dateKey(d);   // a day being browsed must stay visible
-  if(_cookSet)dates=_allDates.filter((d,i)=>_cookSet.has(i)||_hasMeal(d)||_isBrowseDay(d));
-  else if(state.weekPickDone)dates=_allDates;      // safety: picked before but no set
-  else dates=_allDates.filter(d=>_hasMeal(d)||_isBrowseDay(d)); // pre first pick: just the motivation card
+  // The week view shows only days that carry a meal — skipped/undecided days live in the strip.
+  let dates=_allDates.filter(d=>_hasMeal(d)||_isBrowseDay(d));
   const _fn=(state.userName||'').split(' ')[0].trim();
   const _namePart=_fn?`, ${_fn}`:'';
   const _repeatBtn=(weekPlacedCount()===0&&weekOffset===0&&weekHasPlanAtOffset(-1))?`<div style="margin-top:10px"><button onclick="repeatLastWeek()" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:99px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">🔁 ${t('repeatLastWeekBtn')}</button></div>`:'';
-  const _motivCard=(weekPlacedCount()===0&&weekOffset===0)?`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center"><div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${tf('planMotivTitle',{name:_namePart})}</div><div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('planMotivSub')}</div><button onclick="openWeekPick()" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn')}</button>${_repeatBtn}</div>`:'' ;
+  const _motivCard=(weekPlacedCount()===0&&weekOffset===0)?`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center"><div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${tf('planMotivTitle',{name:_namePart})}</div><div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('planMotivSub')}</div><button onclick="startWeekFlow()" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn')}</button>${_repeatBtn}</div>`:'' ;
   cal.innerHTML=_motivCard+dates.map(d=>{
     const key=dateKey(d);const isToday=key===todayKey;
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
@@ -5344,7 +5442,7 @@ function renderCal(){
       ${cards}
       ${adds?`<div class="pday-extra" id="adds-${key}">${adds}</div>`:''}
     </div>`;
-  }).join('')+(( _cookSet && dates.length && dates.length<7)?`<button class="cal-adday" onclick="openWeekPick()">＋ ${t('addCookingDay')}</button>`:'');
+  }).join('')+((dates.length&&firstOpenDayKey())?`<button class="cal-adday" onclick="startWeekFlow()">＋ ${t('addCookingDay')}</button>`:'');
   const banner=weekDecided()?`<div class="plan-done-bar" onclick="showTab('shopping')">
       <span>${t('weekPlannedTitle')}</span><span>${t('toGroceryList')}</span>
     </div>`:'';
@@ -5447,12 +5545,14 @@ function changeMeal(e,key){
   if(state.confirmed)delete state.confirmed[key];   // back to pending
   startBrowse(key,mainMealType());                   // browse to pick another
 }
-// Every day decided = its dinner is chosen, or the day is skipped.
+// Every day decided = its main meal is chosen, the day is skipped, or it's already gone.
 function weekDecided(){
   const days=getDateRange();
+  const todayKey=dateKey(new Date());
   let anyConfirmed=false;
   const all=days.every(d=>{
     const key=dateKey(d);
+    if(key<todayKey)return true;   // the past can't be planned — don't let it block "done"
     if(isSkipped(key))return true;
     const _mt=mainMealType();const ok=isConfirmed(key)&&state.plan[key]&&state.plan[key][_mt]&&state.plan[key][_mt].dishId;
     if(ok)anyConfirmed=true;
@@ -7513,23 +7613,14 @@ function weekOffsetForKey(key){
   const today=new Date();today.setHours(0,0,0,0);
   return Math.round((ws(target)-ws(today))/(7*86400000));
 }
-// From the Today tab: jump straight into the swipe picker (focus mode) for that day.
-// Seeds a suggestion if the slot is empty, so there is something to swipe through.
+// Jump straight into the swipe picker (focus mode) for a specific day.
+// The focus card seeds a suggestion on render, so there is always something to swipe.
 function focusPlanDay(key){
-  const mt=mainMealType();
+  if(key<dateKey(new Date()))return;                // the past is closed
+  if(!DISHES.length){goToPlanDay(key);return;}      // catalogue not loaded yet → plain jump
   if(state.skippedDays)delete state.skippedDays[key];
-  const dm=state.plan[key]||{};
-  if(!(dm[mt]&&dm[mt].dishId)){
-    const used=new Set();Object.values(state.plan).forEach(x=>Object.values(x||{}).forEach(s=>{if(s&&s.dishId)used.add(String(s.dishId));}));
-    const pool=tasteOrderedPool(typePool(mt));
-    const pick=pool.find(d=>!used.has(String(d.id)))||pool[0];
-    if(!pick){goToPlanDay(key);return;}   // dishes not loaded yet → plain jump
-    if(!state.plan[key])state.plan[key]={};
-    state.plan[key][mt]={dishId:pick.id,...defaultGuests()};
-    if(state.cooked)delete state.cooked[key+'_'+mt];
-  }
   if(state.confirmed)delete state.confirmed[key];   // pending → swipeable
-  save();rebuildShopping();updateBadge();
+  save();
   weekOffset=Math.max(0,Math.min(maxWeekOffset(),weekOffsetForKey(key)));
   planFocus=key;
   showTab('plan');renderPlan();
@@ -7568,7 +7659,7 @@ function shouldRemindNextWeek(){
 }
 function planNextWeek(){
   if(maxWeekOffset()<1){openLimitPopup('planner_explorer');return;}
-  weekOffset=1;showTab('plan');renderPlan();setTimeout(openWeekPick,180);
+  weekOffset=1;showTab('plan');renderPlan();setTimeout(startWeekFlow,180);
 }
 // ── Returning users: 1-tap "repeat last week" + a state-aware welcome-back nudge ──
 function repeatLastWeek(){
@@ -7586,14 +7677,8 @@ function repeatLastWeek(){
 let _returnNudge=false;   // set on a returning open with an existing plan; shown at most once per day
 // Future cook-days in the current week that still have no dinner (genuine gaps to fill).
 function weekOpenDays(){
-  const tk=dateKey(new Date());const cd=state.cookDays||[];let count=0,firstKey=null;
-  getDateRange().forEach(d=>{
-    const k=dateKey(d);if(k<tk)return;
-    if(cd.length&&!cd.includes((d.getDay()+6)%7))return;      // respect chosen cook-days
-    if(state.skippedDays&&state.skippedDays[k])return;         // skipped on purpose
-    const dm=state.plan[k];const _mt=mainMealType();
-    if(!(dm&&dm[_mt]&&dm[_mt].dishId)){count++;if(!firstKey)firstKey=k;}
-  });
+  let count=0,firstKey=null;
+  getDateRange().forEach(d=>{const k=dateKey(d);if(needsDecision(k)){count++;if(!firstKey)firstKey=k;}});
   return {count,firstKey};
 }
 function renderReturnNudge(){
@@ -7610,7 +7695,7 @@ function renderReturnNudge(){
     title=tf('returnTodayTitle',{dish:dishName(todayDish)});cta=t('returnCookBtn');action="showTab('today')";
   }else if(open.count>0){              // complete the week
     title=open.count===1?t('returnGapsTitleOne'):tf('returnGapsTitle',{n:open.count});cta=t('returnFillBtn');
-    action=open.firstKey?`goToPlanDay('${open.firstKey}')`:"openWeekPick()";
+    action=open.firstKey?`focusPlanDay('${open.firstKey}')`:"startWeekFlow()";
   }else{                              // week done → shop
     title=t('returnPlannedTitle');cta=t('returnShopBtn');action="showTab('shopping')";
   }

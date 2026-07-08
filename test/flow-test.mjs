@@ -69,31 +69,40 @@ const results = await page.evaluate(async () => {
   dismissReturnNudge();
   ok('nudge: dismiss clears it', document.querySelector('#plan-return-nudge .return-nudge')===null);
 
-  // ── Plan redesign: day strip + focus mode + clean week list ──
+  // ── Plan redesign: popup → day-by-day focus flow (choose/skip) → clean week list ──
   for(let i=0;i<8;i++)DISHES.push({id:'ft'+i,emoji:'🥗',_title:'Flow Dish '+i,tags:['vegetarian'],meal:['Abendessen'],prep:10,cook:20,servings:2,ingredients:[],i18n:{de:{title:'Flow Dish '+i},en:{title:'Flow Dish '+i}}});
-  state.plan={}; state.confirmed={}; state.skippedDays={}; state.cookDays=[0,2,4]; state.weekPickDone=true; _returnNudge=false; planFocus=null;
+  state.plan={}; state.confirmed={}; state.skippedDays={}; state.cookDays=[]; state.weekPickDone=false; _returnNudge=false; planFocus=null;
   showTab('plan'); renderPlan();
+  const week=getDateRange().map(d=>dk(d)); const tk=dk(new Date());
+  const todayIdx=week.indexOf(tk);
   ok('strip: 7 day chips render', document.querySelectorAll('#plan-daystrip .dchip').length===7);
-  weekPickSel=new Set([0,2,4]); confirmWeekPick();
-  ok('focus: weekpick enters focus mode', !!document.querySelector('.pfocus') && /Tag 1 von 3/.test(document.querySelector('.pfocus-count')?.textContent||''));
-  ok('strip: dots mark planned days', document.querySelectorAll('#plan-daystrip .dchip.filled').length===3);
+  ok('strip: past days greyed out', document.querySelectorAll('#plan-daystrip .dchip.past').length===todayIdx, 'past='+document.querySelectorAll('#plan-daystrip .dchip.past').length);
+  openFirstWeek();
+  ok('flow: first-week popup shows', document.getElementById('firstweek-bg').classList.contains('open'));
+  document.querySelector('#firstweek-bg .weekpick-go').click();   // "Let's go" → day-by-day flow
+  ok('flow: popup starts focus on first plannable day', !!document.querySelector('.pfocus') && planFocus===tk);
+  ok('focus: choose AND skip buttons offered', !!document.querySelector('.pfocus-cta') && !!document.querySelector('.pfocus-skip'));
   const nameBefore=document.querySelector('.pfocus .pday-name').textContent;
   document.querySelector('.pfocus .pday-arrow.right').click();
   ok('focus: arrows swap the dish', document.querySelector('.pfocus .pday-name').textContent!==nameBefore);
-  for(let i=0;i<3;i++){document.querySelector('.pfocus-cta')?.click();await sleep(230);} // fly-out animation defers the confirm
-  ok('focus: choose-through lands in clean list', !document.querySelector('.pfocus') && document.querySelectorAll('#cal-scroll .prow-check.on').length===3);
-  ok('strip: chips tick off as you choose', document.querySelectorAll('#plan-daystrip .dchip.done').length===3);
-  ok('flow: no celebration popup, slim bar instead', !document.querySelector('#weekdone-bg.open') && !!document.querySelector('.plan-done-bar'));
-  ok('list: week decided after focus flow', weekDecided());
-  document.querySelector('#cal-scroll .prow-check.on').click();   // unlock one day
-  ok('list: unconfirm reveals swap', !!document.querySelector('#cal-scroll .prow-swap'));
-  document.querySelector('#cal-scroll .prow-swap').click();
-  ok('list: swap re-enters focus', !!document.querySelector('.pfocus'));
+  document.querySelector('.pfocus-cta').click(); await sleep(240);          // choose today
+  ok('flow: choose advances to next day', planFocus===week[todayIdx+1] && !!document.querySelector('.pfocus'));
+  document.querySelector('.pfocus-skip').click(); await sleep(240);         // skip tomorrow
+  ok('flow: skip drops the day and moves on', state.skippedDays[week[todayIdx+1]]===true && planFocus===week[todayIdx+2]);
+  ok('strip: ✓ and – states shown', document.querySelectorAll('#plan-daystrip .dchip.done').length===1 && document.querySelectorAll('#plan-daystrip .dchip.skipped').length===1);
+  ok('focus: done-to-groceries exit offered', !!document.querySelector('.pfocus-exit.strong'));
+  document.querySelector('.pfocus-exit.strong').click();                    // "I'm done — to my groceries"
+  ok('flow: done lands on groceries', (document.querySelector('#app .screen.active')||{}).id==='screen-shopping' && planFocus===null);
+  showTab('plan'); renderPlan();
+  ok('list: only chosen days show', document.querySelectorAll('#cal-scroll .pday').length===1 && !!document.querySelector('#cal-scroll .prow-check.on'));
+  ok('list: gaps bar continues the flow', !!document.querySelector('.plan-gaps-bar'));
+  focusPlanDay(week[0]);                                                    // Monday is gone
+  ok('flow: past day refuses planning', planFocus!==week[0]);
+  dayStripTap(6);                                                           // Sunday: open → picker
+  ok('strip: tap open day enters the picker', !!document.querySelector('.pfocus') && planFocus===week[6] && !!state.plan[week[6]][mainMealType()].dishId);
   exitFocus();
-  dayStripTap(6);   // Sunday: not a cook day, empty → straight into the big swipe picker
-  ok('strip: tap empty day opens the big picker', !!document.querySelector('.pfocus') && planFocus===dk(getDateRange()[6]) && !!state.plan[planFocus][mainMealType()].dishId);
-  exitFocus();
-  ok('list: open rows show a single swap control', !document.querySelector('#cal-scroll .prow-check.off'));
+  ok('flow: leaving the picker removes the unchosen preview', !(state.plan[week[6]]&&state.plan[week[6]][mainMealType()]&&state.plan[week[6]][mainMealType()].dishId));
+  ok('flow: no celebration popup, slim bars instead', !document.querySelector('#weekdone-bg.open'));
   ok('plan: no coach hint & no promo card', !document.querySelector('.plan-hint') && document.getElementById('plan-bento-promo').innerHTML==='');
 
   state.family.children=0; state.showBentoTab=undefined; showTab('plan'); applyBentoTabVisibility();
