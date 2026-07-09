@@ -3094,12 +3094,16 @@ function getDateRange(){
   for(let i=0;i<7;i++){const d=new Date(start);d.setDate(start.getDate()+i);days.push(d);}
   return days;
 }
+// ── Feature gating: everything ships as standard for now — the premium split
+//    is decided later. Flip ALL_FEATURES_FREE to false to re-arm the old tiers. ──
+const ALL_FEATURES_FREE=true;
 // How many weeks ahead each tier can plan: guest=this week, member=+next, premium=4 weeks
-function maxWeekOffset(){const tier=getUserTier();return tier==='premium'?3:tier==='registered'?1:0;}
+function maxWeekOffset(){if(ALL_FEATURES_FREE)return MAX_WEEK_OFFSET;const tier=getUserTier();return tier==='premium'?3:tier==='registered'?1:0;}
 function changeWeek(delta){
   const target=weekOffset+delta;
   if(target<0)return;
   if(target>maxWeekOffset()){
+    if(ALL_FEATURES_FREE)return;   // hard 4-week cap — no upsell while everything is standard
     if(getUserTier()==='guest')openLimitPopup('planner_explorer');
     else openLimitPopup('planner_member');
     return;
@@ -3180,6 +3184,7 @@ function getUserTier(){
   return plan; // 'registered' or 'premium'
 }
 function canAccessDish(idx){
+  if(ALL_FEATURES_FREE)return true;
   // idx is 0-based index in DISHES array
   const tier=getUserTier();
   if(tier==='premium')return true;
@@ -3187,12 +3192,14 @@ function canAccessDish(idx){
   return idx<4; // guest
 }
 function plannerDays(){
+  if(ALL_FEATURES_FREE)return 28;
   const tier=getUserTier();
   if(tier==='premium')return 28;
   if(tier==='registered')return 7;
   return 3; // guest
 }
 function requiresTier(needed){
+  if(ALL_FEATURES_FREE)return false;
   // needed: 'registered' or 'premium'
   const tier=getUserTier();
   if(needed==='registered'&&tier==='guest')return true;
@@ -3916,7 +3923,7 @@ function clearFridgeImage(){
 }
 
 async function scanFridge(){
-  if(getUserTier()!=='premium'){openLimitPopup('fridge');return;}
+  if(!isPremium()){openLimitPopup('fridge');return;}
   if(!fridgeImageBase64)return;
   const btn=document.getElementById('fridge-scan-btn');
   const scanning=document.getElementById('fridge-scanning');
@@ -4827,7 +4834,7 @@ function swipeCard(dir){
   // Check if liking this dish would exceed the tier limit
   if(dir==='right'){
     const tier=getUserTier();
-    const limit=tier==='guest'?4:tier==='registered'?10:999;
+    const limit=ALL_FEATURES_FREE?999:tier==='guest'?4:tier==='registered'?10:999;
     if(state.liked.length>=limit){
       document.getElementById('dish-card').style.transform='';
       document.getElementById('lbl-no').style.opacity=0;
@@ -5580,7 +5587,7 @@ function toggleDay(key){
   const targetDate=new Date(key+'T00:00:00');
   const diffDays=Math.round((targetDate-today)/(1000*60*60*24));
   const tier=getUserTier();
-  const limit=tier==='guest'?3:tier==='registered'?7:28;
+  const limit=plannerDays();
   if(diffDays>=limit){
     if(tier==='guest')openLimitPopup('planner_explorer');
     else if(tier==='registered')openLimitPopup('planner_member');
@@ -7809,7 +7816,7 @@ function dismissReturnNudge(){_returnNudge=false;const el=document.getElementByI
 // ═══════════════════════════════════════════════════
 // MACROS (premium), RECIPE OVERLAY, COOK MODE
 // ═══════════════════════════════════════════════════
-function isPremium(){return getUserTier()==='premium';}
+function isPremium(){return ALL_FEATURES_FREE||getUserTier()==='premium';}
 function mealNutrition(slot){const d=slot&&slot.dishId?getDish(slot.dishId):null;return d&&d.nutrition?d.nutrition:null;}
 function dayMacros(key){
   const dm=state.plan[key]||{};const t={kcal:0,protein:0,carbs:0,fat:0,fiber:0};let any=false;
