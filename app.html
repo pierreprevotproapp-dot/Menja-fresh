@@ -385,18 +385,33 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .shop-top.gen .shop-summary,.shop-top.gen .prog-wrap,.shop-top.gen .shop-from-row{display:none}
 .shop-sub-tabs{margin:12px 16px 10px!important}
 .bento-tag{font-size:11px;margin-left:6px;vertical-align:1px;opacity:.85}
-.scat{margin:0 14px 7px;border-radius:var(--rsm);overflow:hidden;border:.5px solid var(--border);background:var(--surface)}
-.scat-hdr{display:flex;align-items:center;gap:9px;padding:10px 13px;cursor:pointer;user-select:none}
+/* ── Quick add: always-visible input + tap-to-add chips ── */
+.qadd{margin:12px 14px 10px}
+.qadd-bar{display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--border2);border-radius:14px;padding:6px 8px 6px 14px;box-shadow:0 1px 5px rgba(45,90,61,.06)}
+.qadd-plus{color:var(--accent);font-size:17px;font-weight:700}
+.qadd-bar input{flex:1;border:none;background:none;font-family:var(--fb);font-size:14px;color:var(--text);outline:none;min-width:0}
+.qadd-bar input::placeholder{color:var(--text3)}
+.qadd-go{background:var(--nav);color:var(--nav-a);border:none;border-radius:10px;padding:9px 15px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--fb);flex-shrink:0}
+.qadd-strip{display:flex;gap:7px;overflow-x:auto;padding:10px 2px 4px;scrollbar-width:none}
+.qadd-strip::-webkit-scrollbar{display:none}
+.qadd-chip{flex-shrink:0;display:inline-flex;align-items:center;gap:5px;background:var(--surface);border:1.5px solid var(--border2);border-radius:99px;padding:7px 13px;font-size:12.5px;font-weight:600;color:var(--text2);cursor:pointer;font-family:var(--fb);transition:all .15s}
+.qadd-chip.on{background:var(--nav);border-color:var(--nav);color:#fff}
+/* rows */
+.sitem-em{font-size:19px;flex-shrink:0;width:24px;text-align:center}
+.sitem-x{background:none;border:none;color:var(--text3);font-size:17px;cursor:pointer;padding:2px 4px;line-height:1;flex-shrink:0}
+.sitem-x:hover{color:var(--danger)}
+.scat{margin:0 14px 9px;border-radius:16px;overflow:hidden;border:none;background:var(--surface);box-shadow:0 1px 6px rgba(45,90,61,.07)}
+.scat-hdr{display:flex;align-items:center;gap:9px;padding:11px 14px;cursor:pointer;user-select:none}
 .cico{font-size:17px;width:24px;text-align:center;flex-shrink:0}
 .clbl{font-size:13px;font-weight:500;flex:1;color:var(--text)}.ccount{font-size:11px;color:var(--text3)}
 .cchev{color:var(--text3);transition:transform .2s;font-size:15px}.cchev.open{transform:rotate(90deg)}
 .scat-items{display:none;border-top:.5px solid var(--border)}.scat-items.open{display:block}
 .sitem{display:flex;align-items:center;gap:10px;padding:9px 13px;cursor:pointer;border-bottom:.5px solid var(--border);transition:background .1s}
 .sitem:last-child{border-bottom:none}.sitem:active{background:var(--surface2)}
-.schk{width:21px;height:21px;border-radius:6px;border:1.5px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--surface)}
+.schk{width:24px;height:24px;border-radius:50%;border:1.8px solid var(--border2);display:flex;align-items:center;justify-content:center;flex-shrink:0;background:var(--surface);transition:all .15s}
 .schk.checked{background:var(--accent);border-color:var(--accent)}
 .schk.checked::after{content:'';width:9px;height:5px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
-.sitem-mid{flex:1;min-width:0}.sitem-name{font-size:14px;color:var(--text)}
+.sitem-mid{flex:1;min-width:0}.sitem-name{font-size:14.5px;font-weight:500;color:var(--text)}
 .sitem-name.checked{color:var(--text3);text-decoration:line-through}.sitem-src{font-size:11px;color:var(--text3);margin-top:1px}
 .sitem-right{display:flex;flex-direction:column;align-items:flex-end;gap:3px;flex-shrink:0}
 .sitem-qty{font-size:12px;font-weight:600;color:var(--accent);white-space:nowrap}
@@ -1559,9 +1574,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <div class="prog-wrap"><div class="prog-bar"><div class="prog-fill" id="prog-fill" style="width:0%"></div></div><div class="prog-txt" id="prog-txt"></div></div>
       <div class="shop-from-row" id="shop-from-row"></div>
     </div>
-    <div class="shop-sub-tabs"><div class="shop-stab active" id="stab-menu" onclick="switchShopTab('menu')" data-t="fromMenu">From Menu</div><div class="shop-stab" id="stab-generic" onclick="switchShopTab('generic')" data-t="genericItems">Generic Items</div></div>
-    <div id="shop-menu-panel"><div id="shop-delivery"></div><div id="shop-staples"></div><div id="shop-container"></div></div>
-    <div id="shop-generic-panel" style="display:none"><div id="gen-container"></div></div>
+    <div id="shop-menu-panel"><div id="shop-add"></div><div id="shop-container"></div><div id="shop-staples"></div><div id="shop-delivery"></div></div>
   </div>
   <div class="screen" id="screen-fridge">
     <div class="fridge-hero">
@@ -3633,6 +3646,16 @@ function rebuildShopping(){
       nl[s.name]={qty:null,unit:'',source:'Pantry staple',checked:ex[s.name]?.checked||false,expiryAdj:0};
     }
   });
+  // one list for everything: the user's own items and quick-add picks live
+  // alongside the menu ingredients (no separate tab to overlook)
+  (state.customItems||[]).forEach(n=>{
+    if(!nl[n])nl[n]={qty:null,unit:'',source:'custom',checked:ex[n]?.checked||false,expiryAdj:0};
+  });
+  if(typeof GENERIC_CATS!=='undefined')GENERIC_CATS.forEach(c=>c.items.forEach(it=>{
+    if(!state.genericCart||!state.genericCart[it.id])return;
+    const nm=it.name[lang]||it.name.en;
+    if(!nl[nm])nl[nm]={qty:null,unit:'',source:'generic:'+it.id,checked:ex[nm]?.checked||false,expiryAdj:0,icon:it.icon};
+  }));
   state.shopping=nl;save();
 }
 let _shopFromUserSet=false;   // becomes true only when the user picks a "shop from" date this session
@@ -3642,29 +3665,20 @@ function addCustomItem(){
   const v=inp.value.trim();if(!v)return;
   if(!state.customItems)state.customItems=[];
   if(!state.customItems.some(n=>n.toLowerCase()===v.toLowerCase()))state.customItems.push(v);
-  inp.value='';save();renderGenericItems();updateBadge();
+  inp.value='';save();renderShopping();
   const i2=document.getElementById('custom-item-input');if(i2)i2.focus();
 }
 function removeCustomItem(name){
   state.customItems=(state.customItems||[]).filter(n=>n!==name);
-  save();renderGenericItems();updateBadge();
+  if(state.shopping[name]&&(state.shopping[name].source||'')==='custom')delete state.shopping[name];
+  save();renderShopping();
 }
 
 function updateBadge(){
-  const u=Object.values(state.shopping).filter(v=>!v.checked).length+Object.values(state.genericCart).filter(Boolean).length+(state.customItems||[]).length;
+  // custom & quick-add items are merged into state.shopping — count once
+  const u=Object.values(state.shopping).filter(v=>!v.checked).length;
   const b=document.getElementById('shopping-badge');
   if(u>0){b.style.display='';b.textContent=u;}else b.style.display='none';
-}
-
-let shopTab='menu';
-function switchShopTab(tab){
-  shopTab=tab;
-  document.getElementById('stab-menu').classList.toggle('active',tab==='menu');
-  document.getElementById('stab-generic').classList.toggle('active',tab==='generic');
-  document.getElementById('shop-menu-panel').style.display=tab==='menu'?'':'none';
-  document.getElementById('shop-generic-panel').style.display=tab==='generic'?'':'none';
-  const top=document.querySelector('#screen-shopping .shop-top');if(top)top.classList.toggle('gen',tab==='generic');
-  if(tab==='generic')renderGenericItems();
 }
 
 function toggleCat(id){
@@ -3717,7 +3731,7 @@ function renderShopping(){
   document.getElementById('prog-txt').textContent=`${chk} ${t('of')} ${total} ${t('itemsReady')}`;
   const sumEl=document.getElementById('shop-summary');
   if(sumEl){const meals=countPlaced();sumEl.textContent=total?`${t('everythingFor')} ${meals} ${meals===1?t('plannedMeal'):t('plannedMeals')} · ${total} ${total===1?t('itemWord'):t('itemsWord')}`:'';}
-  renderDelivery();renderStaples();
+  renderShopAdd();renderDelivery();renderStaples();
   updateBadge();
   const grouped={};STORE_CATS.forEach(c=>{grouped[c.id]=[];});
   items.forEach(([n,v])=>grouped[catOf(n)].push([n,v]));
@@ -3725,10 +3739,12 @@ function renderShopping(){
     const qStr=niceQty(v.qty,v.unit);
     const inPantry=state.pantry[name]&&state.pantry[name].qty>0;
     const isBento=(v.source||'').includes('🍱');
+    const isCustom=(v.source||'')==='custom';
     return`<div class="sitem" onclick="toggleItem('${name.replace(/'/g,"\\'")}')">
       <div class="schk ${v.checked?'checked':''}"></div>
+      ${v.icon?`<span class="sitem-em">${v.icon}</span>`:''}
       <div class="sitem-mid"><div class="sitem-name ${v.checked?'checked':''}">${name}${isBento?`<span class="bento-tag" title="${t('bentoShopTitle')}">🍱</span>`:''}${inPantry?`<span class="pantry-bdg">✓ ${t('inPantry')}</span>`:''}</div></div>
-      <div class="sitem-right">${qStr?`<span class="sitem-qty">${qStr}</span>`:''}</div>
+      <div class="sitem-right">${qStr?`<span class="sitem-qty">${qStr}</span>`:''}${isCustom?`<button class="sitem-x" onclick="event.stopPropagation();removeCustomItem('${name.replace(/'/g,"\\'")}')">×</button>`:''}</div>
     </div>`;
   };
   let html='';const ticked=[];
@@ -3887,7 +3903,27 @@ function renderGenericItems(){
 
 function toggleGeneric(id){
   state.genericCart[id]=!state.genericCart[id];
-  save();renderGenericItems();updateBadge();
+  if(!state.genericCart[id]){   // untoggled → drop its row from the list
+    Object.keys(state.shopping).forEach(n=>{if((state.shopping[n].source||'')==='generic:'+id)delete state.shopping[n];});
+  }
+  save();renderShopping();
+}
+// Always-visible quick add (AnyList pattern) + tap-to-add chips (Bring! pattern).
+function renderShopAdd(){
+  const el=document.getElementById('shop-add');if(!el)return;
+  let chips='';
+  if(typeof GENERIC_CATS!=='undefined')GENERIC_CATS.forEach(c=>c.items.forEach(it=>{
+    const nm=it.name[lang]||it.name.en;
+    chips+=`<button class="qadd-chip ${state.genericCart&&state.genericCart[it.id]?'on':''}" onclick="toggleGeneric('${it.id}')">${it.icon} ${nm}</button>`;
+  }));
+  el.innerHTML=`<div class="qadd">
+    <div class="qadd-bar">
+      <span class="qadd-plus">＋</span>
+      <input id="custom-item-input" placeholder="${t('addOwnItem')}" onkeydown="if(event.key==='Enter')addCustomItem()">
+      <button class="qadd-go" onclick="addCustomItem()">${t('addBtn')}</button>
+    </div>
+    ${chips?`<div class="qadd-strip">${chips}</div>`:''}
+  </div>`;
 }
 
 // ═══════════════════════════════════════════════════
