@@ -2,8 +2,9 @@
 /**
  * Menja Fresh — end-to-end flow test (headless Chromium via Playwright).
  * Covers: boot/no-errors, i18n, bottom-nav + green sticky headers, onboarding CTA,
- * returning-user routing & welcome-back nudge (planned/gaps/once-per-day),
- * "repeat last week", plan redesign (day strip / focus mode / clean week list),
+ * returning-user surfaces (gaps bar; welcome-back banner retired),
+ * "repeat last week", plan redesign (day strip / day-by-day focus flow / clean week
+ * list / cook-now on today), Track dashboard (rings, meal log, protein week),
  * Lunchbox (Bento) visibility/segment, recipe detail & whole-box,
  * and Bento→Groceries integration (quantities + 🍱 tag).
  *
@@ -68,7 +69,7 @@ const results = await page.evaluate(async () => {
   ok('nudge: gaps bar took over the fill-CTA', !!document.querySelector('.plan-gaps-bar'));
 
   // ── Plan redesign: popup → day-by-day focus flow (choose/skip) → clean week list ──
-  for(let i=0;i<8;i++)DISHES.push({id:'ft'+i,emoji:'🥗',_title:'Flow Dish '+i,tags:['vegetarian'],meal:['Abendessen'],prep:10,cook:20,servings:2,ingredients:[],i18n:{de:{title:'Flow Dish '+i},en:{title:'Flow Dish '+i}}});
+  for(let i=0;i<8;i++)DISHES.push({id:'ft'+i,emoji:'🥗',_title:'Flow Dish '+i,tags:['vegetarian'],meal:['Abendessen'],prep:10,cook:20,servings:2,nutrition:{kcal:600,protein:45,fat:20},ingredients:[],i18n:{de:{title:'Flow Dish '+i},en:{title:'Flow Dish '+i}}});
   state.plan={}; state.confirmed={}; state.skippedDays={}; state.cookDays=[]; state.weekPickDone=false; _returnNudge=false; planFocus=null;
   showTab('plan'); renderPlan();
   const week=getDateRange().map(d=>dk(d)); const tk=dk(new Date());
@@ -102,6 +103,19 @@ const results = await page.evaluate(async () => {
   ok('flow: leaving the picker removes the unchosen preview', !(state.plan[week[6]]&&state.plan[week[6]][mainMealType()]&&state.plan[week[6]][mainMealType()].dishId));
   ok('flow: no celebration popup, slim bars instead', !document.querySelector('#weekdone-bg.open'));
   ok('plan: no coach hint & no promo card', !document.querySelector('.plan-hint') && document.getElementById('plan-bento-promo').innerHTML==='');
+
+  // ── Track tab: macro/microbiome dashboard ──
+  state.plan={}; state.confirmed={}; state.cooked={}; state.macroGoals={kcal:1950,protein:140}; planFocus=null;
+  state.plan[tk]={Dinner:{dishId:'ft0'},Breakfast:{dishId:'ft1'}};
+  showTab('today'); renderToday();
+  ok('track: nav renamed to Tracking', document.querySelector('#tab-today [data-t="navToday"]').textContent==='Tracking');
+  ok('track: header is title+sub, no date/day-nav/plan-streak', document.getElementById('th-greet').textContent==='Makros & Mikrobiom' && !document.getElementById('th-date') && !document.querySelector('#screen-today [onclick^="todayNavDay"]') && !document.getElementById('streak-chip'));
+  const bigBox=document.querySelector('.trk-ring.big')?.parentElement;
+  ok('track: protein is the hero ring, planned macros pre-fill', bigBox?.querySelector('.trk-lbl')?.textContent==='Protein' && bigBox?.querySelector('.trk-v')?.textContent==='90g');
+  ok('track: 3 rings + plants card + meal log', document.querySelectorAll('.trk-ring').length===3 && !!document.querySelector('.trk-plantbar') && document.querySelectorAll('.trk-meal').length===2);
+  document.querySelector('.trk-chk.off').click();
+  ok('track: ticking a meal updates log + week chain', document.querySelectorAll('.trk-chk.on').length===1 && [...document.querySelectorAll('.trk-bar .dw')].some(x=>x.textContent.includes('✓')));
+  ok('track: protein week bars with values + average', document.querySelectorAll('.trk-bar').length===7 && [...document.querySelectorAll('.trk-sec h3 span')].some(x=>/Ø \d+ g/.test(x.textContent)));
 
   state.family.children=0; state.showBentoTab=undefined; showTab('plan'); applyBentoTabVisibility();
   ok('lunchbox: hidden with no kids', getComputedStyle(document.getElementById('plan-seg')).display==='none');
