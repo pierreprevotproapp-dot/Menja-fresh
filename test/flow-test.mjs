@@ -112,10 +112,11 @@ const results = await page.evaluate(async () => {
   ok('track: header is title+sub, no date/day-nav/plan-streak', document.getElementById('th-greet').textContent==='Makros & Mikrobiom' && !document.getElementById('th-date') && !document.querySelector('#screen-today [onclick^="todayNavDay"]') && !document.getElementById('streak-chip'));
   const bigBox=document.querySelector('.trk-ring.big')?.parentElement;
   ok('track: protein is the hero ring, planned macros pre-fill', bigBox?.querySelector('.trk-lbl')?.textContent==='Protein' && bigBox?.querySelector('.trk-v')?.textContent==='90g');
-  ok('track: 3 rings + plants card + meal log', document.querySelectorAll('.trk-ring').length===3 && !!document.querySelector('.trk-plantbar') && document.querySelectorAll('.trk-meal').length===2);
+  ok('track: 3 rings + plants bar + meal log in cards', document.querySelectorAll('.trk-ring').length===3 && !!document.querySelector('.trk-pbar') && document.querySelectorAll('.trk-meal').length===2 && document.querySelectorAll('.trk-card').length===3);
+  ok('track: microbiome link explained', /Darm|gut|intestin|intestino/i.test(document.querySelector('.trk-pexplain')?.textContent||''));
   document.querySelector('.trk-chk.off').click();
-  ok('track: ticking a meal updates log + week chain', document.querySelectorAll('.trk-chk.on').length===1 && [...document.querySelectorAll('.trk-bar .dw')].some(x=>x.textContent.includes('✓')));
-  ok('track: protein week bars with values + average', document.querySelectorAll('.trk-bar').length===7 && [...document.querySelectorAll('.trk-sec h3 span')].some(x=>/Ø \d+ g/.test(x.textContent)));
+  ok('track: ticking a meal updates the log meta', document.querySelectorAll('.trk-chk.on').length===1 && [...document.querySelectorAll('.trk-sec h3 span')].some(x=>x.textContent.includes('1 / 2')));
+  ok('track: protein week bars + goal line + average', document.querySelectorAll('.trk-bar').length===7 && !!document.querySelector('.trk-goal .lbl') && [...document.querySelectorAll('.trk-sec h3 span')].some(x=>/Ø \d+ g/.test(x.textContent)));
 
   state.family.children=0; state.showBentoTab=undefined; showTab('plan'); applyBentoTabVisibility();
   ok('lunchbox: hidden with no kids', getComputedStyle(document.getElementById('plan-seg')).display==='none');
