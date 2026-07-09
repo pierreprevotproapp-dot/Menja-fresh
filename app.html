@@ -385,6 +385,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .shop-top.gen .shop-summary,.shop-top.gen .prog-wrap,.shop-top.gen .shop-from-row{display:none}
 .shop-sub-tabs{margin:12px 16px 10px!important}
 .bento-tag{font-size:11px;margin-left:6px;vertical-align:1px;opacity:.85}
+/* Floating delivery pill — quiet but always in view while the list has items */
+.deliver-fab{position:fixed;right:14px;bottom:calc(var(--navh) + 16px + env(safe-area-inset-bottom));z-index:120;background:var(--nav);color:#fff;border:none;border-radius:99px;padding:12px 18px;font-size:13.5px;font-weight:700;font-family:var(--fb);box-shadow:0 8px 24px rgba(26,46,31,.38);display:flex;align-items:center;gap:7px;cursor:pointer}
+.deliver-fab:active{transform:scale(.97)}
+#shop-menu-panel{padding-bottom:84px}
 /* ── Quick add: always-visible input + tap-to-add chips ── */
 .qadd{margin:12px 14px 10px}
 .qadd-bar{display:flex;align-items:center;gap:8px;background:var(--surface);border:1.5px solid var(--border2);border-radius:14px;padding:6px 8px 6px 14px;box-shadow:0 1px 5px rgba(45,90,61,.06)}
@@ -2082,7 +2086,7 @@ en:{
   allSetTitle:'All set — enjoy your week',allSetSub:'Everything\'s ticked off. Dinner\'s handled.',seeDinner:"See what's for dinner →",
   groceryListTitle:'🛒 Shopping list — Menja Fresh',householdExtras:'🧴 Household & extras',
   listEmpty:'Your list is empty',cfFound:'✓ Found',cfFind:'Find →',foundWord:'found',
-  deliverTitle:'No time to shop? Get it delivered',deliverSub:'Skip the queues and heavy bags — your whole list from Carrefour, to your door.',deliverBtn:'Shop now →',
+  deliverTitle:'No time to shop? Get it delivered',deliverSub:'Skip the queues and heavy bags — your whole list from Carrefour, to your door.',deliverBtn:'Shop now →',deliverFab:'Get it delivered',
   yourItems:'Your items',addOwnItem:'Add your own item…',addBtn:'＋ Add',noItems:'No items',
   listCopied:'List copied to clipboard ✓',couldNotCopy:'Could not copy',shareUnsupported:'Sharing not supported here',shareTitle:'Shopping list',
   cfSheetTitle:'Add to Carrefour',cfSheetSub:'Tap "Find" — it opens that product in one Carrefour tab (no typing). Add it, come back, tap the next.',openCarrefourBtn:'Open Carrefour ↗',editWord:'✎ Edit',dislikesShort:'Dislikes',closeWord:'Close',
@@ -2234,7 +2238,7 @@ fr:{
   allSetTitle:'Tout est prêt — bonne semaine',allSetSub:'Tout est coché. Le dîner est réglé.',seeDinner:"Voir le dîner →",
   groceryListTitle:'🛒 Liste de courses — Menja Fresh',householdExtras:'🧴 Maison & extras',
   listEmpty:'Votre liste est vide',cfFound:'✓ Trouvé',cfFind:'Chercher →',foundWord:'trouvés',
-  deliverTitle:'Pas le temps de faire les courses ? Faites-vous livrer',deliverSub:'Fini les files et les sacs lourds — toute votre liste depuis Carrefour, à votre porte.',deliverBtn:'Commander →',
+  deliverTitle:'Pas le temps de faire les courses ? Faites-vous livrer',deliverSub:'Fini les files et les sacs lourds — toute votre liste depuis Carrefour, à votre porte.',deliverBtn:'Commander →',deliverFab:'Se faire livrer',
   yourItems:'Vos articles',addOwnItem:'Ajoutez votre article…',addBtn:'＋ Ajouter',noItems:'Aucun article',
   listCopied:'Liste copiée ✓',couldNotCopy:'Copie impossible',shareUnsupported:'Partage non disponible ici',shareTitle:'Liste de courses',
   cfSheetTitle:'Ajouter à Carrefour',cfSheetSub:'Touchez « Chercher » — le produit s\'ouvre dans un seul onglet Carrefour (sans taper). Ajoutez-le, revenez, suivant.',openCarrefourBtn:'Ouvrir Carrefour ↗',editWord:'✎ Modifier',dislikesShort:'Aversions',closeWord:'Fermer',
@@ -2386,7 +2390,7 @@ es:{
   allSetTitle:'Todo listo — buena semana',allSetSub:'Todo marcado. La cena está resuelta.',seeDinner:"Ver la cena →",
   groceryListTitle:'🛒 Lista de compras — Menja Fresh',householdExtras:'🧴 Hogar y extras',
   listEmpty:'Tu lista está vacía',cfFound:'✓ Encontrado',cfFind:'Buscar →',foundWord:'encontrados',
-  deliverTitle:'¿Sin tiempo para comprar? Pídelo a domicilio',deliverSub:'Sin colas ni bolsas pesadas — toda tu lista desde Carrefour, hasta tu puerta.',deliverBtn:'Comprar →',
+  deliverTitle:'¿Sin tiempo para comprar? Pídelo a domicilio',deliverSub:'Sin colas ni bolsas pesadas — toda tu lista desde Carrefour, hasta tu puerta.',deliverBtn:'Comprar →',deliverFab:'Pedir a domicilio',
   yourItems:'Tus artículos',addOwnItem:'Añade tu artículo…',addBtn:'＋ Añadir',noItems:'Sin artículos',
   listCopied:'Lista copiada ✓',couldNotCopy:'No se pudo copiar',shareUnsupported:'Compartir no disponible aquí',shareTitle:'Lista de compras',
   cfSheetTitle:'Añadir a Carrefour',cfSheetSub:'Toca "Buscar" — abre ese producto en una sola pestaña de Carrefour (sin escribir). Añádelo, vuelve y toca el siguiente.',openCarrefourBtn:'Abrir Carrefour ↗',editWord:'✎ Editar',dislikesShort:'No me gusta',closeWord:'Cerrar',
@@ -2584,7 +2588,7 @@ de:{
   allSetTitle:'Alles bereit — schöne Woche',allSetSub:'Alles abgehakt. Das Abendessen ist geregelt.',seeDinner:"Was gibt's zum Essen →",
   groceryListTitle:'🛒 Einkaufsliste — Menja Fresh',householdExtras:'🧴 Haushalt & Extras',
   listEmpty:'Deine Liste ist leer',cfFound:'✓ Gefunden',cfFind:'Suchen →',foundWord:'gefunden',
-  deliverTitle:'Keine Zeit zum Einkaufen? Liefern lassen',deliverSub:'Keine Schlangen, keine schweren Tüten — deine ganze Liste von Carrefour, bis vor die Tür.',deliverBtn:'Jetzt kaufen →',
+  deliverTitle:'Keine Zeit zum Einkaufen? Liefern lassen',deliverSub:'Keine Schlangen, keine schweren Tüten — deine ganze Liste von Carrefour, bis vor die Tür.',deliverBtn:'Jetzt kaufen →',deliverFab:'Liefern lassen',
   yourItems:'Deine Artikel',addOwnItem:'Eigenen Artikel hinzufügen…',addBtn:'＋ Hinzufügen',noItems:'Keine Artikel',
   listCopied:'Liste kopiert ✓',couldNotCopy:'Kopieren fehlgeschlagen',shareUnsupported:'Teilen hier nicht verfügbar',shareTitle:'Einkaufsliste',
   cfSheetTitle:'Zu Carrefour hinzufügen',cfSheetSub:'Tippe „Suchen" — das Produkt öffnet sich in einem Carrefour-Tab (ohne Tippen). Hinzufügen, zurück, nächstes.',openCarrefourBtn:'Carrefour öffnen ↗',editWord:'✎ Bearbeiten',dislikesShort:'Abneigungen',closeWord:'Schließen',
@@ -3864,13 +3868,10 @@ function carrefourSearch(name){
   renderCarrefourSheet();
 }
 function renderDelivery(){
+  // Floating pill instead of a card at the bottom — always in view, never in the way.
   const el=document.getElementById('shop-delivery');if(!el)return;
-  const hasItems=Object.values(state.shopping).some(v=>!v.checked)||(state.customItems||[]).length||Object.values(state.genericCart||{}).some(Boolean);
-  if(!hasItems){el.innerHTML='';return;}
-  el.innerHTML=`<div class="deliver-card" onclick="openCarrefour()">
-    <div class="deliver-left"><div class="deliver-icon">🛒</div><div><div class="deliver-title">${t('deliverTitle')}</div><div class="deliver-sub">${t('deliverSub')}</div></div></div>
-    <span class="deliver-btn">${t('deliverBtn')}</span>
-  </div>`;
+  const hasItems=Object.values(state.shopping).some(v=>!v.checked);
+  el.innerHTML=hasItems?`<button class="deliver-fab" onclick="openCarrefour()" title="${t('deliverTitle')}">🛒 ${t('deliverFab')}</button>`:'';
 }
 
 // ═══════════════════════════════════════════════════
