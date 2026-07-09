@@ -1617,7 +1617,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     </div>
     <div class="fridge-results" id="fridge-results" style="display:none"></div>
   </div>
-  <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-sticky"><div class="rec-hdr"><h1 data-t="recipes">Recipes</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
+  <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-sticky"><div class="rec-hdr"><h1 data-t="recipes">Cookbook</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
   <div class="screen" id="screen-today">
     <div class="th">
       <div style="text-align:center;padding:0 16px 2px">
@@ -2037,7 +2037,7 @@ en:{
   fromMenu:'From Menu',genericItems:'Generic Items',
   myPantry:'My Pantry',pantryIntro:'Track what you have at home. Items update when you tick off your shopping list.',
   pantryEmpty:'Your pantry is empty. Items appear here automatically when you check things off your shopping list.',
-  recipes:'Recipes',recipesSub:'Browse all recipes by category',
+  recipes:'Cookbook',recipesSub:'Browse all recipes by category',
   cancel:'Cancel',rateQ:'How did you enjoy this meal?',saveRating:'Save rating',
   signOut:'Sign out',syncing:'Syncing...',
   cookingFor:'Cooking for',and:'and',adults2:'adults',adult:'adult',children2:'children',child:'child',
@@ -2189,7 +2189,7 @@ fr:{
   fromMenu:'Du menu',genericItems:'Articles généraux',
   myPantry:'Mon Garde-manger',pantryIntro:'Suivez ce que vous avez à la maison. Les articles se mettent à jour quand vous cochez votre liste.',
   pantryEmpty:'Votre garde-manger est vide. Les articles apparaissent automatiquement quand vous cochez votre liste.',
-  recipes:'Recettes',recipesSub:'Appuyez sur un plat sauvegardé pour la recette complète',
+  recipes:'Carnet de recettes',recipesSub:'Appuyez sur un plat sauvegardé pour la recette complète',
   cancel:'Annuler',rateQ:'Comment avez-vous apprécié ce repas ?',saveRating:'Enregistrer',
   signOut:'Se déconnecter',syncing:'Synchronisation...',
   cookingFor:'Cuisine pour',and:'et',adults2:'adultes',adult:'adulte',children2:'enfants',child:'enfant',
@@ -2341,7 +2341,7 @@ es:{
   fromMenu:'Del menú',genericItems:'Artículos generales',
   myPantry:'Mi Despensa',pantryIntro:'Controla lo que tienes en casa. Los artículos se actualizan al tachar tu lista.',
   pantryEmpty:'Tu despensa está vacía. Los artículos aparecen automáticamente cuando tachas tu lista.',
-  recipes:'Recetas',recipesSub:'Toca cualquier plato guardado para la receta completa',
+  recipes:'Recetario',recipesSub:'Toca cualquier plato guardado para la receta completa',
   cancel:'Cancelar',rateQ:'¿Cómo disfrutaste esta comida?',saveRating:'Guardar',
   signOut:'Cerrar sesión',syncing:'Sincronizando...',
   cookingFor:'Cocinando para',and:'y',adults2:'adultos',adult:'adulto',children2:'niños',child:'niño',
@@ -2493,7 +2493,7 @@ pt:{
   fromMenu:'Do menu',genericItems:'Itens genéricos',
   myPantry:'Minha Despensa',pantryIntro:'Acompanhe o que você tem em casa. Os itens são atualizados ao marcar sua lista.',
   pantryEmpty:'Sua despensa está vazia. Os itens aparecem automaticamente quando você marca sua lista.',
-  recipes:'Receitas',recipesSub:'Toque em qualquer prato salvo para a receita completa',
+  recipes:'Livro de receitas',recipesSub:'Toque em qualquer prato salvo para a receita completa',
   cancel:'Cancelar',rateQ:'Como você aproveitou esta refeição?',saveRating:'Salvar',
   signOut:'Sair',syncing:'Sincronizando...',
   cookingFor:'Cozinhando para',and:'e',adults2:'adultos',adult:'adulto',children2:'crianças',child:'criança',
@@ -2539,7 +2539,7 @@ de:{
   fromMenu:'Aus dem Menü',genericItems:'Allgemeine Artikel',
   myPantry:'Meine Speisekammer',pantryIntro:'Verfolgen Sie was Sie zu Hause haben. Artikel aktualisieren sich beim Abhaken.',
   pantryEmpty:'Ihre Speisekammer ist leer. Artikel erscheinen automatisch wenn Sie Ihre Liste abhaken.',
-  recipes:'Rezepte',recipesSub:'Tippen Sie auf ein gespeichertes Gericht für das vollständige Rezept',
+  recipes:'Kochbuch',recipesSub:'Tippen Sie auf ein gespeichertes Gericht für das vollständige Rezept',
   cancel:'Abbrechen',rateQ:'Wie hat Ihnen diese Mahlzeit geschmeckt?',saveRating:'Speichern',
   signOut:'Abmelden',syncing:'Synchronisierung...',
   cookingFor:'Kochen für',and:'und',adults2:'Erwachsene',adult:'Erwachsener',children2:'Kinder',child:'Kind',
@@ -3826,9 +3826,7 @@ function buildGroceryText(){
     ci.forEach(([name,v])=>{const nq=niceQty(v.qty,v.unit);lines.push(`• ${name}${nq?` — ${nq}`:''}`);});
     lines.push('');
   });
-  const gen=[];GENERIC_CATS.forEach(c=>c.items.forEach(it=>{if(state.genericCart[it.id])gen.push((it.name[lang]||it.name.en));}));
-  (state.customItems||[]).forEach(n=>gen.push(n));
-  if(gen.length){lines.push(t('householdExtras'));gen.forEach(n=>lines.push(`• ${n}`));}
+  // custom & quick-add items are already merged into state.shopping above — no second pass
   return lines.join('\n').trim();
 }
 function shareShoppingList(){
@@ -3845,11 +3843,9 @@ const CARREFOUR_URL='https://www.carrefour.es/supermercado';
 const CARREFOUR_SEARCH='https://www.carrefour.es/supermercado?query=';   // per-item search (verified ES pattern)
 // Structured list of what to buy (unchecked groceries + household + custom).
 function groceryItemsForShop(){
-  rebuildShopping();
+  rebuildShopping();   // custom & quick-add items are merged into state.shopping
   const items=[];
   Object.entries(state.shopping).forEach(([n,v])=>{if(!v.checked)items.push({name:n,qty:niceQty(v.qty,v.unit)});});
-  GENERIC_CATS.forEach(c=>c.items.forEach(it=>{if(state.genericCart[it.id])items.push({name:(it.name[lang]||it.name.en),qty:''});}));
-  (state.customItems||[]).forEach(n=>items.push({name:n,qty:''}));
   return items;
 }
 let _cfDone={};
