@@ -3676,17 +3676,9 @@ function toggleCat(id){
 }
 
 function renderStaples(){
-  const el=document.getElementById('shop-staples');if(!el)return;
-  const staples=planStaples();
-  if(!staples.length){el.innerHTML='';return;}
-  el.innerHTML=`<div class="staples-box">
-    <div class="staples-hd">🧂 ${t('staplesHd')}</div>
-    <div class="staples-sub">${t('staplesSub')}</div>
-    <div class="staples-chips">${staples.map(s=>{
-      const need=isStapleNeeded(s.id);
-      return`<button class="staple-chip ${need?'need':''}" onclick="toggleStaple('${s.id}')">${s.icon} ${s.name}${need?' · 🛒':''}</button>`;
-    }).join('')}</div>
-  </div>`;
+  // Pantry/staples box retired from the Groceries tab (clutter). The underlying
+  // rule stays: staples are assumed at home and kept off the buy list.
+  const el=document.getElementById('shop-staples');if(el)el.innerHTML='';
 }
 function renderShopping(){
   const todayKey=dateKey(new Date());
