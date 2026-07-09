@@ -104,6 +104,14 @@ const results = await page.evaluate(async () => {
   ok('flow: no celebration popup, slim bars instead', !document.querySelector('#weekdone-bg.open'));
   ok('plan: no coach hint & no promo card', !document.querySelector('.plan-hint') && document.getElementById('plan-bento-promo').innerHTML==='');
 
+  // ── All features standard (ALL_FEATURES_FREE) ──
+  isGuest=true;
+  ok('free: guests plan 4 weeks ahead', maxWeekOffset()===3 && plannerDays()===28);
+  ok('free: no tier walls anywhere', isPremium()===true && requiresTier('premium')===false && canAccessDish(999)===true);
+  weekOffset=0; changeWeek(1);
+  ok('free: week 2 reachable without upsell', weekOffset===1 && !document.querySelector('#limit-bg.open'));
+  changeWeek(-1);
+
   // ── Track tab: macro/microbiome dashboard ──
   state.plan={}; state.confirmed={}; state.cooked={}; state.macroGoals={kcal:1950,protein:140}; planFocus=null;
   state.plan[tk]={Dinner:{dishId:'ft0'},Breakfast:{dishId:'ft1'}};
