@@ -116,7 +116,7 @@ const results = await page.evaluate(async () => {
   state.plan={}; state.confirmed={}; state.cooked={}; state.macroGoals={kcal:1950,protein:140}; planFocus=null;
   state.plan[tk]={Dinner:{dishId:'ft0'},Breakfast:{dishId:'ft1'}};
   showTab('today'); renderToday();
-  ok('track: nav renamed to Tracking', document.querySelector('#tab-today [data-t="navToday"]').textContent==='Tracking');
+  ok('track: nav renamed to Macros', document.querySelector('#tab-today [data-t="navToday"]').textContent==='Makros');
   ok('track: header is title+sub, no date/day-nav/plan-streak', document.getElementById('th-greet').textContent==='Makros & Mikrobiom' && !document.getElementById('th-date') && !document.querySelector('#screen-today [onclick^="todayNavDay"]') && !document.getElementById('streak-chip'));
   const bigBox=document.querySelector('.trk-ring.big')?.parentElement;
   ok('track: protein is the hero ring, planned macros pre-fill', bigBox?.querySelector('.trk-lbl')?.textContent==='Protein' && bigBox?.querySelector('.trk-v')?.textContent==='90g');

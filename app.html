@@ -1457,7 +1457,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <nav class="nav"><div class="nav-tabs">
     <button class="nav-tab active" onclick="showTab('plan')" id="tab-plan"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="3"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span data-t="navPlan">Plan</span></button>
     <button class="nav-tab" onclick="showTab('shopping')" id="tab-shopping"><svg viewBox="0 0 24 24"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg><span data-t="navGroceries">Groceries</span><span class="badge" id="shopping-badge" style="display:none">0</span></button>
-    <button class="nav-tab" onclick="showTab('today')" id="tab-today"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><span data-t="navToday">Track</span></button>
+    <button class="nav-tab" onclick="showTab('today')" id="tab-today"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15 15"/></svg><span data-t="navToday">Macros</span></button>
     <button class="nav-tab" onclick="showTab('recipes')" id="tab-recipes"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg><span data-t="navRecipes">Recipes</span></button>
     <button class="nav-tab" onclick="showTab('family')" id="tab-family"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span data-t="navMe">Profile</span></button>
   </div></nav>
@@ -2021,7 +2021,7 @@ en:{
 
   firstName:'First name',lastName:'Last name',
   navFamily:'Family',navDiscover:'Discover',navPlanner:'Planner',navShop:'Shop',
-  navFridge:'Fridge',navRecipes:'Recipes',navToday:'Track',
+  navFridge:'Fridge',navRecipes:'Recipes',navToday:'Macros',
   famTitle:'🏡 My Family',famSub:'Recipes and portions adjust automatically',
   whoAtTable:"Who's at the table?",adults:'Adults',children:'Children',
   dietaryPrefs:'Dietary preferences',moreTools:'More',
@@ -2079,7 +2079,7 @@ en:{
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
   facebookBtn:'Continue with Facebook',comingSoon:'coming soon',
   staplesHd:'🧂 Staples — you probably have these',staplesSub:'Tap any you need to buy and we\'ll add it to the list.',
-  everythingFor:'Everything for your',plannedMeal:'planned meal',plannedMeals:'planned meals',itemWord:'item',itemsWord:'items',shoppingFrom:'Shopping from',
+  everythingFor:'Everything for your',plannedMeal:'planned meal',plannedMeals:'planned meals',itemWord:'item',itemsWord:'items',shoppingFrom:'Shopping from',shopForLbl:'🗓 List covers',shopWholeWeek:'Whole week',shopFromToday:'From today',shopFromDay:'From {day}',
   tickedOff:'Ticked off',
   staplesCoverTitle:'Your staples cover it',staplesCoverSub:'Nothing extra to buy for this week. Nice.',
   noListTitle:'No list yet',noListSub:'Plan a few dinners and your grocery list builds itself.',
@@ -2175,7 +2175,7 @@ fr:{
 
   firstName:'Prénom',lastName:'Nom',
   navFamily:'Famille',navDiscover:'Découvrir',navPlanner:'Planifier',navShop:'Courses',
-  navFridge:'Frigo',navRecipes:'Recettes',navToday:'Suivi',
+  navFridge:'Frigo',navRecipes:'Recettes',navToday:'Macros',
   famTitle:'🏡 Ma Famille',famSub:'Les quantités s\'adaptent automatiquement',
   whoAtTable:'Qui est à table ?',adults:'Adultes',children:'Enfants',
   dietaryPrefs:'Préférences alimentaires',moreTools:'Plus',planMyWeekBtn:'✨ Planifier ma semaine',planFirstWeekBtn:'✨ Planifier ma première semaine',repeatLastWeekBtn:'Répéter la semaine',repeatedToast:'Semaine dernière copiée ✓',nothingToRepeat:'Pas encore de plan la semaine dernière',returnTodayTitle:'Content de te revoir ! Ce soir : {dish}',returnPlannedTitle:'Content de te revoir — ta semaine est planifiée.',returnGapsTitle:'Content de te revoir ! Encore {n} jours à remplir',returnGapsTitleOne:'Content de te revoir ! Encore 1 jour à remplir',returnFillBtn:'➕ Compléter',returnCookBtn:"🍳 Voir aujourd'hui",returnShopBtn:'🛒 Faire les courses',regenerateWeek:'🔄 Régénérer la semaine',weekEmptyHint:'Un geste et ta semaine est réglée.',
@@ -2231,7 +2231,7 @@ fr:{
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
   facebookBtn:'Continuer avec Facebook',comingSoon:'bientôt disponible',
   staplesHd:'🧂 Basiques — vous les avez sûrement',staplesSub:'Touchez ceux à acheter, on les ajoute à la liste.',
-  everythingFor:'Tout pour vos',plannedMeal:'repas planifié',plannedMeals:'repas planifiés',itemWord:'article',itemsWord:'articles',shoppingFrom:'Courses à partir du',
+  everythingFor:'Tout pour vos',plannedMeal:'repas planifié',plannedMeals:'repas planifiés',itemWord:'article',itemsWord:'articles',shoppingFrom:'Courses à partir du',shopForLbl:'🗓 La liste couvre',shopWholeWeek:'Semaine entière',shopFromToday:"Dès aujourd'hui",shopFromDay:'Dès {day}',
   tickedOff:'Cochés',
   staplesCoverTitle:'Vos basiques suffisent',staplesCoverSub:'Rien de plus à acheter cette semaine. Parfait.',
   noListTitle:'Pas encore de liste',noListSub:'Planifiez quelques dîners et la liste se crée toute seule.',
@@ -2327,7 +2327,7 @@ es:{
 
   firstName:'Nombre',lastName:'Apellido',
   navFamily:'Familia',navDiscover:'Descubrir',navPlanner:'Planificar',navShop:'Compras',
-  navFridge:'Nevera',navRecipes:'Recetas',navToday:'Registro',
+  navFridge:'Nevera',navRecipes:'Recetas',navToday:'Macros',
   famTitle:'🏡 Mi Familia',famSub:'Las cantidades se ajustan automáticamente',
   whoAtTable:'¿Quién está en la mesa?',adults:'Adultos',children:'Niños',
   dietaryPrefs:'Preferencias alimentarias',moreTools:'Más',planMyWeekBtn:'✨ Planificar mi semana',planFirstWeekBtn:'✨ Planificar mi primera semana',repeatLastWeekBtn:'Repetir semana',repeatedToast:'Semana anterior copiada ✓',nothingToRepeat:'Aún no hay plan de la semana pasada',returnTodayTitle:'¡Bienvenido! Hoy: {dish}',returnPlannedTitle:'¡Bienvenido! Tu semana está planificada.',returnGapsTitle:'¡Bienvenido! Quedan {n} días por planificar',returnGapsTitleOne:'¡Bienvenido! Queda 1 día por planificar',returnFillBtn:'➕ Completar',returnCookBtn:'🍳 Ver hoy',returnShopBtn:'🛒 Ir a comprar',regenerateWeek:'🔄 Regenerar la semana',weekEmptyHint:'Un toque y tu semana está lista.',
@@ -2383,7 +2383,7 @@ es:{
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
   facebookBtn:'Continuar con Facebook',comingSoon:'próximamente',
   staplesHd:'🧂 Básicos — seguro que ya los tienes',staplesSub:'Toca los que necesites comprar y los añadimos a la lista.',
-  everythingFor:'Todo para tus',plannedMeal:'comida planificada',plannedMeals:'comidas planificadas',itemWord:'artículo',itemsWord:'artículos',shoppingFrom:'Compra desde el',
+  everythingFor:'Todo para tus',plannedMeal:'comida planificada',plannedMeals:'comidas planificadas',itemWord:'artículo',itemsWord:'artículos',shoppingFrom:'Compra desde el',shopForLbl:'🗓 La lista cubre',shopWholeWeek:'Semana entera',shopFromToday:'Desde hoy',shopFromDay:'Desde {day}',
   tickedOff:'Marcados',
   staplesCoverTitle:'Con tus básicos basta',staplesCoverSub:'Nada más que comprar esta semana. Genial.',
   noListTitle:'Aún no hay lista',noListSub:'Planifica unas cenas y la lista se crea sola.',
@@ -2479,7 +2479,7 @@ pt:{
 
   firstName:'Nome',lastName:'Sobrenome',
   navFamily:'Família',navDiscover:'Descobrir',navPlanner:'Planejar',navShop:'Compras',
-  navFridge:'Frigorífico',navRecipes:'Receitas',navToday:'Registro',
+  navFridge:'Frigorífico',navRecipes:'Receitas',navToday:'Macros',
   famTitle:'🏡 Minha Família',famSub:'As quantidades se ajustam automaticamente',
   whoAtTable:'Quem está à mesa?',adults:'Adultos',children:'Crianças',
   dietaryPrefs:'Preferências alimentares',
@@ -2525,7 +2525,7 @@ de:{
 
   firstName:'Vorname',lastName:'Nachname',
   navFamily:'Familie',navDiscover:'Entdecken',navPlanner:'Planer',navShop:'Einkauf',
-  navFridge:'Kühlschrank',navRecipes:'Rezepte',navToday:'Tracking',
+  navFridge:'Kühlschrank',navRecipes:'Rezepte',navToday:'Makros',
   famTitle:'🏡 Meine Familie',famSub:'Mengen passen sich automatisch an',
   whoAtTable:'Wer sitzt am Tisch?',adults:'Erwachsene',children:'Kinder',
   dietaryPrefs:'Ernährungsvorlieben',moreTools:'Mehr',planMyWeekBtn:'✨ Woche planen',planFirstWeekBtn:'✨ Meine erste Woche planen',repeatLastWeekBtn:'Letzte Woche wiederholen',repeatedToast:'Letzte Woche übernommen ✓',nothingToRepeat:'Noch kein Plan aus der letzten Woche',returnTodayTitle:'Willkommen zurück! Heute: {dish}',returnPlannedTitle:'Willkommen zurück — deine Woche ist geplant.',returnGapsTitle:'Willkommen zurück! Noch {n} Tage offen',returnGapsTitleOne:'Willkommen zurück! Noch 1 Tag offen',returnFillBtn:'➕ Auffüllen',returnCookBtn:'🍳 Heute ansehen',returnShopBtn:'🛒 Einkaufen',regenerateWeek:'🔄 Woche neu generieren',weekEmptyHint:'Ein Tipp und deine Woche steht.',
@@ -2581,7 +2581,7 @@ de:{
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
   facebookBtn:'Mit Facebook fortfahren',comingSoon:'demnächst',
   staplesHd:'🧂 Basics — hast du wahrscheinlich',staplesSub:'Tippe an, was du kaufen musst, wir setzen es auf die Liste.',
-  everythingFor:'Alles für deine',plannedMeal:'geplante Mahlzeit',plannedMeals:'geplante Mahlzeiten',itemWord:'Artikel',itemsWord:'Artikel',shoppingFrom:'Einkauf ab',
+  everythingFor:'Alles für deine',plannedMeal:'geplante Mahlzeit',plannedMeals:'geplante Mahlzeiten',itemWord:'Artikel',itemsWord:'Artikel',shoppingFrom:'Einkauf ab',shopForLbl:'🗓 Liste umfasst',shopWholeWeek:'Ganze Woche',shopFromToday:'Ab heute',shopFromDay:'Ab {day}',
   tickedOff:'Abgehakt',
   staplesCoverTitle:'Deine Basics reichen',staplesCoverSub:'Diese Woche nichts extra zu kaufen. Schön.',
   noListTitle:'Noch keine Liste',noListSub:'Plane ein paar Abendessen und die Liste entsteht von selbst.',
@@ -3721,12 +3721,17 @@ function renderShopping(){
   const rowEl=document.getElementById('shop-from-row');
   if(rowEl){
     if(plannedDates.length>1){
-      const opts=plannedDates.map(d=>{
+      // Options say what you GET ("Whole week · Mon–Sun", "From today · Wed–Sun"),
+      // not a bare start date — self-explanatory at a glance.
+      const lastKey=plannedDates[plannedDates.length-1];
+      const lastDt=new Date(lastKey+'T00:00:00');
+      const opts=plannedDates.map((d,i)=>{
         const dt=new Date(d+'T00:00:00');
-        const lbl=d===todayKey?t('todayWord'):`${dow(dt)} ${dt.getDate()} ${mon(dt)}`;
-        return`<option value="${d}"${state.shoppingFrom===d?' selected':''}>${lbl}</option>`;
+        const base=i===0?t('shopWholeWeek'):d===todayKey?t('shopFromToday'):tf('shopFromDay',{day:`${dow(dt)} ${dt.getDate()}.`});
+        const range=d===lastKey?dow(lastDt):`${dow(dt)}–${dow(lastDt)}`;
+        return`<option value="${d}"${state.shoppingFrom===d?' selected':''}>${base} · ${range}</option>`;
       }).join('');
-      rowEl.innerHTML=`<span class="shop-from-lbl">${t('shoppingFrom')}:</span><select class="shop-from-sel" onchange="setShoppingFrom(this.value)">${opts}</select>`;
+      rowEl.innerHTML=`<span class="shop-from-lbl">${t('shopForLbl')}:</span><select class="shop-from-sel" onchange="setShoppingFrom(this.value)">${opts}</select>`;
     }else{rowEl.innerHTML='';}
   }
   const items=Object.entries(state.shopping);
