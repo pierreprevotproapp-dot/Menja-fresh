@@ -5541,8 +5541,8 @@ function renderCal(){
   let dates=_allDates.filter(d=>_hasMeal(d)||_isBrowseDay(d));
   const _fn=(state.userName||'').split(' ')[0].trim();
   const _namePart=_fn?`, ${_fn}`:'';
-  const _repeatBtn=(weekPlacedCount()===0&&weekOffset===0&&weekHasPlanAtOffset(-1))?`<div style="margin-top:10px"><button onclick="repeatLastWeek()" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:99px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">🔁 ${t('repeatLastWeekBtn')}</button></div>`:'';
-  const _motivCard=(weekPlacedCount()===0&&weekOffset===0)?`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center"><div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${tf('planMotivTitle',{name:_namePart})}</div><div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('planMotivSub')}</div><button onclick="startWeekFlow()" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn')}</button>${_repeatBtn}</div>`:'' ;
+  const _repeatBtn=(weekPlacedCount()===0&&weekHasPlanAtOffset(weekOffset-1))?`<div style="margin-top:10px"><button onclick="repeatLastWeek()" style="background:rgba(255,255,255,.14);color:#fff;border:none;border-radius:99px;padding:9px 18px;font-size:13px;font-weight:600;cursor:pointer;font-family:inherit">🔁 ${t('repeatLastWeekBtn')}</button></div>`:'';
+  const _motivCard=(weekPlacedCount()===0)?`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center"><div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${tf('planMotivTitle',{name:_namePart})}</div><div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('planMotivSub')}</div><button onclick="startWeekFlow()" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn')}</button>${_repeatBtn}</div>`:'' ;
   cal.innerHTML=_motivCard+dates.map(d=>{
     const key=dateKey(d);const isToday=key===todayKey;
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
@@ -5574,7 +5574,7 @@ function renderCal(){
       <span>${t('weekPlannedTitle')}</span><span>${t('toGroceryList')}</span>
     </div>`:'';
   // Picked only today (or left gaps)? One quiet line continues the focus flow.
-  const _open=(!planFocus&&weekOffset===0&&weekPlacedCount()>0&&!weekDecided())?weekOpenDays():{count:0};
+  const _open=(!planFocus&&weekPlacedCount()>0&&!weekDecided())?weekOpenDays():{count:0};
   const gapsBar=_open.count>0?`<div class="plan-gaps-bar" onclick="focusPlanDay('${_open.firstKey}')">
       <span>${_open.count===1?t('gapsBarOne'):tf('gapsBar',{n:_open.count})}</span><span>→</span>
     </div>`:'';
@@ -7826,8 +7826,10 @@ function planNextWeek(){
 }
 // ── Returning users: 1-tap "repeat last week" + a state-aware welcome-back nudge ──
 function repeatLastWeek(){
-  weekOffset=-1;const lastDates=getDateRange();
-  weekOffset=0;const thisDates=getDateRange();
+  // Copies the previous week into WHATEVER week is being viewed (week 2 repeats week 1, …).
+  const cur=weekOffset;
+  weekOffset=cur-1;const lastDates=getDateRange();
+  weekOffset=cur;const thisDates=getDateRange();
   let copied=0;
   thisDates.forEach((d,i)=>{
     const from=state.plan[dateKey(lastDates[i])];if(!from)return;
