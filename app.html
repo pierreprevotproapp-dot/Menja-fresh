@@ -5500,10 +5500,8 @@ function planRow(key,type,dish){
   const mt=mainMealType();
   let right='';
   if(type===mt){
-    // ⇄ always opens the big swipe picker directly; ✓ marks a locked-in day.
-    right=isConfirmed(key)
-      ?`<button class="prow-swap" onclick="event.stopPropagation();swapDay('${key}')">⇄</button><button class="prow-check on" onclick="event.stopPropagation();unconfirmRow('${key}')" title="${t('planned')}">✓</button>`
-      :`<button class="prow-swap" onclick="event.stopPropagation();planFocusType=null;enterFocus('${key}')">⇄</button>`;
+    // One control: ⇄ opens the big swipe picker (unlocks the day implicitly).
+    right=`<button class="prow-swap" onclick="event.stopPropagation();swapDay('${key}')">⇄</button>`;
   }else{
     right=`<button class="prow-swap" onclick="event.stopPropagation();focusPlanDay('${key}','${type}')">⇄</button><button class="prow-x" onclick="event.stopPropagation();rmMeal('${key}','${type}')" title="${t('removeWord')}">×</button>`;
   }
@@ -5796,6 +5794,7 @@ function chooseDish(key,type,dishId){
   const g=prev&&prev.dishId?{adults:prev.adults,children:prev.children}:defaultGuests();
   state.plan[key][type]={dishId,...g};
   if(state.cooked)delete state.cooked[key+'_'+type];
+  if(type===mainMealType()){if(!state.confirmed)state.confirmed={};state.confirmed[key]=true;}   // an explicit pick decides the day
   learnById(dishId,0.5);   // explicitly chose this dish
   save();rebuildShopping();updateBadge();
   closeDishChooser();renderPlan();checkWeekDone();

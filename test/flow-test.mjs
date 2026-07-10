@@ -93,7 +93,7 @@ const results = await page.evaluate(async () => {
   document.querySelector('.pfocus-exit.strong').click();                    // "I'm done — to my groceries"
   ok('flow: done lands on groceries', (document.querySelector('#app .screen.active')||{}).id==='screen-shopping' && planFocus===null);
   showTab('plan'); renderPlan();
-  ok('list: only chosen days show', document.querySelectorAll('#cal-scroll .pday').length===1 && !!document.querySelector('#cal-scroll .prow-check.on'));
+  ok('list: only chosen days show', document.querySelectorAll('#cal-scroll .pday').length===1 && !!document.querySelector('#cal-scroll .prow-swap') && !document.querySelector('#cal-scroll .prow-check'));
   ok('list: gaps bar continues the flow', !!document.querySelector('.plan-gaps-bar'));
   focusPlanDay(week[0]);                                                    // Monday is gone
   ok('flow: past day refuses planning', planFocus!==week[0]);
