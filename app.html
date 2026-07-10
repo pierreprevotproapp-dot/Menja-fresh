@@ -638,6 +638,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .plan-seg{display:flex;gap:4px;background:rgba(255,255,255,.10);border-radius:99px;padding:3px;margin-bottom:12px}
 .plan-seg-btn{position:relative;flex:1;display:flex;align-items:center;justify-content:center;gap:5px;padding:8px 6px;border:none;background:none;border-radius:99px;font-size:13px;font-weight:700;color:var(--nav-t);cursor:pointer;font-family:var(--fb);white-space:nowrap;transition:all .15s}
 .plan-seg-btn.active{background:var(--nav-a);color:var(--nav)}
+.seg-ico{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2;flex-shrink:0}
 .seg-new{position:absolute;top:3px;right:9px;width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 2px var(--nav);animation:navPulse 1.6s ease-in-out infinite}
 /* Returning-user welcome-back nudge on the Plan tab */
 .return-nudge{position:relative;margin:4px 12px 8px;background:var(--surface);border:1px solid var(--accent);border-radius:var(--r);box-shadow:var(--sh);padding:13px 14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
@@ -1511,7 +1512,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div class="plan-top">
       <div class="plan-seg" id="plan-seg" style="display:none">
         <button class="plan-seg-btn active" onclick="showTab('plan')">🍽 <span data-t="segDinners">Dinners</span></button>
-        <button class="plan-seg-btn" onclick="showTab('bentokids')">🍱 <span data-t="navBento">Lunchbox</span><span class="seg-new" id="lunchbox-seg-new" style="display:none"></span></button>
+        <button class="plan-seg-btn" onclick="showTab('bentokids')"><svg class="seg-ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="15" rx="3.5"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="12" y2="20"/></svg><span data-t="navBento">Lunchbox</span><span class="seg-new" id="lunchbox-seg-new" style="display:none"></span></button>
       </div>
       <div class="week-nav">
         <div class="week-nav-label"><div class="plan-title" id="wk-label">Your week plan</div><div class="week-nav-sub" id="wk-range"></div></div>
@@ -1536,16 +1537,14 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div class="bento-top">
       <div class="plan-seg">
         <button class="plan-seg-btn" onclick="showTab('plan')">🍽 <span data-t="segDinners">Dinners</span></button>
-        <button class="plan-seg-btn active" onclick="showTab('bentokids')">🍱 <span data-t="navBento">Lunchbox</span></button>
+        <button class="plan-seg-btn active" onclick="showTab('bentokids')"><svg class="seg-ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="15" rx="3.5"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="12" y2="20"/></svg><span data-t="navBento">Lunchbox</span></button>
       </div>
       <div class="week-nav">
+        <div class="week-nav-label"><div class="plan-title" data-t="navBento">Lunchbox</div><div class="week-nav-sub" id="bento-wk-range"></div></div>
         <button class="week-nav-btn" id="bento-wk-prev" onclick="bentoChangeWeek(-1)">‹</button>
-        <div class="week-nav-label"><div id="bento-wk-label">This week</div><div class="week-nav-sub" id="bento-wk-range"></div></div>
         <button class="week-nav-btn" id="bento-wk-next" onclick="bentoChangeWeek(1)">›</button>
       </div>
-      <h1 style="text-align:center;font-size:18px;font-weight:800;margin:8px 0 2px;color:#fff" data-t="bentoTitle">🍱 Bento-Lunchbox</h1>
-      <div style="text-align:center;font-size:12px;color:var(--nav-t);line-height:1.4" data-t="bentoSub">Pick your days, then fill 5 compartments with healthy food</div>
-      <div class="bento-daybar" id="bento-daybar"></div>
+      <div class="plan-daystrip" id="bento-daybar"></div>
     </div>
     <div class="bento-scroll" id="bento-scroll"></div>
   </div></div>
@@ -7453,36 +7452,40 @@ function renderBentoKids(){
   if(!state.bentoPlan)state.bentoPlan={};
   if(!state.bentoDays)state.bentoDays={};
   const dates=bentoDateRange();
-  const lbl=document.getElementById('bento-wk-label');
   const rng=document.getElementById('bento-wk-range');
-  if(lbl)lbl.textContent=bentoWeekOffset===0?t('thisWeek'):bentoWeekOffset===1?t('nextWeekLbl'):tf('inWeeks',{n:bentoWeekOffset});
   if(rng){
     const dotted=lang!=='en';
     const fd=(d,withMon)=>`${d.getDate()}${dotted?'.':''}${withMon?' '+mon(d):''}`;
-    rng.textContent=`${fd(dates[0],dates[0].getMonth()!==dates[6].getMonth())} – ${fd(dates[6],true)}`;
+    const offsetTxt=bentoWeekOffset===0?'':(bentoWeekOffset===1?t('nextWeekLbl'):tf('inWeeks',{n:bentoWeekOffset}))+' · ';
+    rng.textContent=offsetTxt+`${fd(dates[0],dates[0].getMonth()!==dates[6].getMonth())} – ${fd(dates[6],true)}`;
   }
   const pv=document.getElementById('bento-wk-prev'),nx=document.getElementById('bento-wk-next');
   if(pv)pv.disabled=bentoWeekOffset<=0;if(nx)nx.disabled=bentoWeekOffset>=3;
   const sc=document.getElementById('bento-scroll');if(!sc)return;
   const todayKey=dateKey(new Date());
-  // Day-picker bar: tap a day to plan it (auto-fills a box); tap again to clear it.
+  // Day strip — same anatomy as the plan tab: tap a day to plan a box, tap again to clear.
   const bar=document.getElementById('bento-daybar');
   if(bar)bar.innerHTML=dates.map(d=>{
-    const k=dateKey(d);const on=!!state.bentoDays[k];const isT=k===todayKey;
-    return`<button class="bento-chip ${on?'on':''} ${isT?'today':''}" onclick="bentoToggleDay('${k}')"><span class="bc-dow">${dow(d)}</span><span class="bc-num">${d.getDate()}</span></button>`;
+    const k=dateKey(d);const on=!!state.bentoDays[k];const isT=k===todayKey;const past=k<todayKey;
+    return`<button class="dchip ${isT?'on':''} ${on?'filled':''} ${past?'past':''} ${isT?'today':''}" onclick="bentoToggleDay('${k}')"><span class="dd">${dow(d)}</span><span class="dn">${d.getDate()}</span></button>`;
   }).join('');
-  sc.innerHTML=dates.map(d=>{
+  // List shows only planned days (like the plan tab); the strip carries the rest.
+  const active=dates.filter(d=>state.bentoDays[dateKey(d)]);
+  if(!active.length){
+    const first=dates.find(d=>dateKey(d)>=todayKey)||dates[0];
+    sc.innerHTML=`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center">
+      <div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${t('bentoPromoTitle')}</div>
+      <div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('bentoPromoSub')}</div>
+      <button onclick="bentoActivateDay('${dateKey(first)}')" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${t('bentoPlanDay')}</button>
+    </div>`;
+    return;
+  }
+  sc.innerHTML=active.map(d=>{
     const key=dateKey(d);const isToday=key===todayKey;
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
-    if(!state.bentoDays[key]){
-      return`<div class="bento-day ${isToday?'today':''}">
-        <div class="bento-day-label-row"><span class="bento-day-label">${labelTxt}</span></div>
-        <div class="bento-empty-day">${t('bentoNoBox')}<br><button class="bento-plan-btn" onclick="bentoActivateDay('${key}')">🍱 ${t('bentoPlanDay')}</button></div>
-      </div>`;
-    }
-    return`<div class="bento-day ${isToday?'today':''}" id="bentoday-${key}">
-      <div class="bento-day-label-row"><span class="bento-day-label">${labelTxt}</span>
-        <div class="bento-day-actions"><button class="bento-mini-btn" onclick="bentoSurprise('${key}')">🎲 ${t('bentoSurprise')}</button><button class="bento-mini-btn" onclick="bentoRemoveDay('${key}')">🗑</button></div>
+    return`<div class="pday ${isToday?'today':''}" id="bentoday-${key}">
+      <div class="pday-label-row"><span class="pday-label">${labelTxt}</span>
+        <div class="pday-actions"><button class="pday-add-toggle" onclick="bentoSurprise('${key}')" title="${t('bentoSurprise')}">🎲</button><button class="pday-skip-btn" onclick="bentoRemoveDay('${key}')" title="${t('removeWord')}">🗑</button></div>
       </div>
       ${bentoTrayHTML(key)}
       <button class="bento-box-recipe-btn" onclick="bentoBoxRecipe('${key}')">📖 ${t('bentoBoxRecipe')}</button>
@@ -7508,6 +7511,7 @@ function bentoTrayHTML(key){
 function bentoActivateDay(key){bentoSurprise(key);}
 // Day-picker bar toggle: select → auto-fill a surprise box; deselect → clear it.
 function bentoToggleDay(key){
+  if(key<dateKey(new Date()))return;   // the past is closed — same rule as the plan tab
   if(state.bentoDays&&state.bentoDays[key])bentoRemoveDay(key);
   else bentoSurprise(key);
 }
