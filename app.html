@@ -384,7 +384,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .shop-top .shop-from-sel{background:rgba(255,255,255,.14);color:#fff}
 .shop-top.gen .shop-summary,.shop-top.gen .prog-wrap,.shop-top.gen .shop-from-row{display:none}
 .shop-sub-tabs{margin:12px 16px 10px!important}
-.bento-tag{font-size:11px;margin-left:6px;vertical-align:1px;opacity:.85}
+.bento-tag{margin-left:6px;vertical-align:-1px;color:var(--accent);opacity:.85}
+.bento-tag svg{width:12px;height:12px;stroke:currentColor;fill:none;stroke-width:2}
 /* Floating delivery pill — quiet but always in view while the list has items */
 .deliver-fab{position:fixed;right:14px;bottom:calc(var(--navh) + 16px + env(safe-area-inset-bottom));z-index:120;background:var(--nav);color:#fff;border:none;border-radius:99px;padding:12px 18px;font-size:13.5px;font-weight:700;font-family:var(--fb);box-shadow:0 8px 24px rgba(26,46,31,.38);display:flex;align-items:center;gap:7px;cursor:pointer}
 .deliver-fab:active{transform:scale(.97)}
@@ -2072,7 +2073,7 @@ en:{
   bentoTitle:'🍱 Bento Lunchbox for Kids',bentoSub:'Pick your days, then fill 5 compartments with healthy food',
   bentoNoBox:'No bento box planned for this day yet.',bentoPlanDay:'Plan a bento box',bentoSurprise:'Surprise',
   bentoRoleMain:'Main',bentoRoleProtein:'Protein',bentoRoleVeg:'Veggies',bentoRoleFruit:'Fruit',bentoRoleDip:'Dip & treat',
-  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome — inspired by Little Green Kitchen',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',bentoBoxRecipe:'Whole-box recipe',bentoForWholeBox:'Everything for the whole box',bentoTotalBox:'Whole box · total',bentoShopTitle:'🥪 Bento lunchbox',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Healthy school lunchboxes in minutes',newBadge:'New',bentoPromoTitle:'Plan healthy school lunchboxes',bentoPromoSub:'New: 🍱 Bento-Lunchbox — build a balanced lunchbox in minutes',bentoTryBtn:'Try it →',bentoLaterBtn:'Later',bentoNudgeToast:'🍱 Bento-Lunchbox is now on — plan their lunchboxes!',guestPlanTitle:"💾 Your plan isn't saved",guestPlanSub:'Free account — your meals on every device.',guestPlanBtn:'Create account →',
+  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',bentoBoxRecipe:'Whole-box recipe',bentoForWholeBox:'Everything for the whole box',bentoTotalBox:'Whole box · total',bentoShopTitle:'🥪 Bento lunchbox',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Healthy school lunchboxes in minutes',newBadge:'New',bentoPromoTitle:'Plan healthy school lunchboxes',bentoPromoSub:'New: 🍱 Bento-Lunchbox — build a balanced lunchbox in minutes',bentoTryBtn:'Try it →',bentoLaterBtn:'Later',bentoNudgeToast:'🍱 Bento-Lunchbox is now on — plan their lunchboxes!',guestPlanTitle:"💾 Your plan isn't saved",guestPlanSub:'Free account — your meals on every device.',guestPlanBtn:'Create account →',
   langHeader:'Language',meName:'Me',prefsAllergies:'⚙️ Preferences & allergies',
   deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',legalNotice:'Legal notice / Impressum',
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
@@ -2224,7 +2225,7 @@ fr:{
   bentoTitle:'🍱 Bento-Lunchbox enfants',bentoSub:'Choisis tes jours, puis remplis 5 compartiments de bons aliments',
   bentoNoBox:'Aucune boîte prévue pour ce jour.',bentoPlanDay:'Planifier une boîte',bentoSurprise:'Surprise',
   bentoRoleMain:'Plat',bentoRoleProtein:'Protéine',bentoRoleVeg:'Légumes',bentoRoleFruit:'Fruits',bentoRoleDip:'Sauce & en-cas',
-  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain — inspiré de Little Green Kitchen',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',bentoBoxRecipe:'Recette de la boîte',bentoForWholeBox:'Tout pour la boîte entière',bentoTotalBox:'Boîte entière · total',bentoShopTitle:'🥪 Boîte bento',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Lunchbox saines en quelques minutes',newBadge:'Nouv.',bentoPromoTitle:'Planifie des lunchbox saines',bentoPromoSub:'Nouveau : 🍱 Bento-Lunchbox — une lunchbox équilibrée en minutes',bentoTryBtn:'Essayer →',bentoLaterBtn:'Plus tard',bentoNudgeToast:'🍱 Bento-Lunchbox est activé — planifie leurs lunchbox !',guestPlanTitle:"💾 Ton plan n'est pas enregistré",guestPlanSub:'Compte gratuit — tes repas sur tous tes appareils.',guestPlanBtn:'Créer un compte →',
+  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',bentoBoxRecipe:'Recette de la boîte',bentoForWholeBox:'Tout pour la boîte entière',bentoTotalBox:'Boîte entière · total',bentoShopTitle:'🥪 Boîte bento',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Lunchbox saines en quelques minutes',newBadge:'Nouv.',bentoPromoTitle:'Planifie des lunchbox saines',bentoPromoSub:'Nouveau : 🍱 Bento-Lunchbox — une lunchbox équilibrée en minutes',bentoTryBtn:'Essayer →',bentoLaterBtn:'Plus tard',bentoNudgeToast:'🍱 Bento-Lunchbox est activé — planifie leurs lunchbox !',guestPlanTitle:"💾 Ton plan n'est pas enregistré",guestPlanSub:'Compte gratuit — tes repas sur tous tes appareils.',guestPlanBtn:'Créer un compte →',
   langHeader:'Langue',meName:'Moi',prefsAllergies:'⚙️ Préférences et allergies',
   deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',legalNotice:'Mentions légales / Impressum',
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
@@ -2376,7 +2377,7 @@ es:{
   bentoTitle:'🍱 Bento-Lunchbox para niños',bentoSub:'Elige tus días y llena 5 compartimentos con comida sana',
   bentoNoBox:'Aún no hay caja planificada para este día.',bentoPlanDay:'Planificar una caja',bentoSurprise:'Sorpresa',
   bentoRoleMain:'Principal',bentoRoleProtein:'Proteína',bentoRoleVeg:'Verduras',bentoRoleFruit:'Fruta',bentoRoleDip:'Salsa & snack',
-  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable — inspirado en Little Green Kitchen',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',bentoBoxRecipe:'Receta de la caja',bentoForWholeBox:'Todo para la caja entera',bentoTotalBox:'Caja entera · total',bentoShopTitle:'🥪 Caja bento',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Cajas de almuerzo sanas en minutos',newBadge:'Nuevo',bentoPromoTitle:'Planifica cajas de almuerzo sanas',bentoPromoSub:'Nuevo: 🍱 Bento-Lunchbox — una caja equilibrada en minutos',bentoTryBtn:'Probar →',bentoLaterBtn:'Más tarde',bentoNudgeToast:'🍱 Bento-Lunchbox está activo — ¡planifica sus almuerzos!',guestPlanTitle:'💾 Tu plan no está guardado',guestPlanSub:'Cuenta gratis — tus comidas en todos tus dispositivos.',guestPlanBtn:'Crear cuenta →',
+  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',bentoBoxRecipe:'Receta de la caja',bentoForWholeBox:'Todo para la caja entera',bentoTotalBox:'Caja entera · total',bentoShopTitle:'🥪 Caja bento',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Cajas de almuerzo sanas en minutos',newBadge:'Nuevo',bentoPromoTitle:'Planifica cajas de almuerzo sanas',bentoPromoSub:'Nuevo: 🍱 Bento-Lunchbox — una caja equilibrada en minutos',bentoTryBtn:'Probar →',bentoLaterBtn:'Más tarde',bentoNudgeToast:'🍱 Bento-Lunchbox está activo — ¡planifica sus almuerzos!',guestPlanTitle:'💾 Tu plan no está guardado',guestPlanSub:'Cuenta gratis — tus comidas en todos tus dispositivos.',guestPlanBtn:'Crear cuenta →',
   langHeader:'Idioma',meName:'Yo',prefsAllergies:'⚙️ Preferencias y alergias',
   deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',legalNotice:'Aviso legal / Impressum',
   upgrade:'⭐ Premium',forgotPw:'¿Olvidaste la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
@@ -2574,7 +2575,7 @@ de:{
   bentoTitle:'🍱 Bento-Lunchbox für Kinder',bentoSub:'Wähle deine Tage und fülle 5 Fächer mit gesundem Essen',
   bentoNoBox:'Für diesen Tag ist noch keine Box geplant.',bentoPlanDay:'Bento-Box planen',bentoSurprise:'Überraschung',
   bentoRoleMain:'Hauptteil',bentoRoleProtein:'Eiweiß',bentoRoleVeg:'Gemüse',bentoRoleFruit:'Obst',bentoRoleDip:'Dip & Snack',
-  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig — inspiriert von Little Green Kitchen',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',bentoBoxRecipe:'Rezept der ganzen Box',bentoForWholeBox:'Alles für die ganze Box',bentoTotalBox:'Ganze Box · gesamt',bentoShopTitle:'🥪 Bento-Lunchbox',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Gesunde Lunchboxen in Minuten',newBadge:'Neu',bentoPromoTitle:'Gesunde Schul-Lunchboxen planen',bentoPromoSub:'Neu: 🍱 Bento-Lunchbox — in Minuten eine ausgewogene Lunchbox',bentoTryBtn:'Ausprobieren →',bentoLaterBtn:'Später',bentoNudgeToast:'🍱 Bento-Lunchbox ist jetzt aktiv — plane ihre Lunchboxen!',guestPlanTitle:'💾 Dein Plan ist nicht gespeichert',guestPlanSub:'Kostenloses Konto — Mahlzeiten auf allen Geräten.',guestPlanBtn:'Konto erstellen →',
+  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',bentoBoxRecipe:'Rezept der ganzen Box',bentoForWholeBox:'Alles für die ganze Box',bentoTotalBox:'Ganze Box · gesamt',bentoShopTitle:'🥪 Bento-Lunchbox',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Gesunde Lunchboxen in Minuten',newBadge:'Neu',bentoPromoTitle:'Gesunde Schul-Lunchboxen planen',bentoPromoSub:'Neu: 🍱 Bento-Lunchbox — in Minuten eine ausgewogene Lunchbox',bentoTryBtn:'Ausprobieren →',bentoLaterBtn:'Später',bentoNudgeToast:'🍱 Bento-Lunchbox ist jetzt aktiv — plane ihre Lunchboxen!',guestPlanTitle:'💾 Dein Plan ist nicht gespeichert',guestPlanSub:'Kostenloses Konto — Mahlzeiten auf allen Geräten.',guestPlanBtn:'Konto erstellen →',
   langHeader:'Sprache',meName:'Ich',prefsAllergies:'⚙️ Vorlieben & Allergien',
   deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',legalNotice:'Impressum',
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
@@ -3751,7 +3752,7 @@ function renderShopping(){
     return`<div class="sitem" onclick="toggleItem('${name.replace(/'/g,"\\'")}')">
       <div class="schk ${v.checked?'checked':''}"></div>
       ${v.icon?`<span class="sitem-em">${v.icon}</span>`:''}
-      <div class="sitem-mid"><div class="sitem-name ${v.checked?'checked':''}">${name}${isBento?`<span class="bento-tag" title="${t('bentoShopTitle')}">🍱</span>`:''}${inPantry?`<span class="pantry-bdg">✓ ${t('inPantry')}</span>`:''}</div></div>
+      <div class="sitem-mid"><div class="sitem-name ${v.checked?'checked':''}">${name}${isBento?`<span class="bento-tag" title="${t('bentoShopTitle')}"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="15" rx="3.5"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="12" y2="20"/></svg></span>`:''}${inPantry?`<span class="pantry-bdg">✓ ${t('inPantry')}</span>`:''}</div></div>
       <div class="sitem-right">${qStr?`<span class="sitem-qty">${qStr}</span>`:''}${isCustom?`<button class="sitem-x" onclick="event.stopPropagation();removeCustomItem('${name.replace(/'/g,"\\'")}')">×</button>`:''}</div>
     </div>`;
   };
@@ -5992,13 +5993,18 @@ function renderRecipeDetail(id,targetId){
     ${isPremium()?`<div class="rd-meta-item"><div class="rd-meta-val">${money(dishCostPerServing(d))}</div><div class="rd-meta-lbl">${t('perServingSlash')}</div></div>`:''}
   </div>`;
 
-  // Ingredient grid
+  // Ingredient grid — ingredients we have a homemade recipe for link straight to it
+  const _ingLink=nm=>{
+    if(/hummus/i.test(nm)&&getDish('homemade-hummus'))return'homemade-hummus';
+    return null;
+  };
   const ingGrid=`<div class="rd-ing-grid">${d.ingredients.map(ing=>{
     const qty=fmtIngQty(ing,mult);
-    return`<div class="rd-ing-item">
+    const link=_ingLink(ingName(ing));
+    return`<div class="rd-ing-item"${link?` style="cursor:pointer" onclick="openRecipeOverlay('${link}')"`:''}>
       <span class="rd-ing-emoji">${ing.emoji}</span>
       <div class="rd-ing-mid">
-        <div class="rd-ing-name">${ingName(ing)}</div>
+        <div class="rd-ing-name">${ingName(ing)}${link?` <span style="color:var(--accent);font-weight:700;font-size:11px">→ ${t('recipeWord')}</span>`:''}</div>
         <div class="rd-ing-amt">${qty}</div>
       </div>
     </div>`;
@@ -6297,7 +6303,7 @@ function renderToday(){
 // ═══════════════════════════════════════════════════
 // BENTO KIDS PLANNING
 // Vegetarian, wholesome kid-food library inspired by
-// "Little Green Kitchen" (Luise Vindahl & David Frenkiel).
+// wholesome vegetarian kid-food library.
 // ═══════════════════════════════════════════════════
 const BENTO_CATS=[
   {id:'main',emoji:'🥪',label:{en:'Main',de:'Hauptteil',fr:'Plat',es:'Principal'}},
@@ -6424,12 +6430,12 @@ const BENTO_RECIPES = {
     tip: { en:"Cool fully before packing so patties stay firm and don't crumble.", de:"Vor dem Einpacken auskühlen lassen, damit die Buletten fest bleiben.", fr:"Laissez refroidir avant d'emballer pour qu'elles restent fermes.", es:"Enfría bien antes de empacar para que no se desmoronen." }
   },
   "spinach-waffle": {
-    nutrition: { kcal: 210, protein: 9, carbs: 26, fat: 8, fiber: 3 },
+    nutrition: { kcal: 210, protein: 9, carbs: 26, fat: 8, fiber: 4 },
     ings: {
-      en: [ { emoji:"🥬", name:"Spinach", amount:"1 handful" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Flour", amount:"4 tbsp" }, { emoji:"🥛", name:"Milk", amount:"3 tbsp" } ],
-      de: [ { emoji:"🥬", name:"Spinat", amount:"1 Handvoll" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Mehl", amount:"4 EL" }, { emoji:"🥛", name:"Milch", amount:"3 EL" } ],
-      fr: [ { emoji:"🥬", name:"Épinards", amount:"1 poignée" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Farine", amount:"4 c. à soupe" }, { emoji:"🥛", name:"Lait", amount:"3 c. à soupe" } ],
-      es: [ { emoji:"🥬", name:"Espinacas", amount:"1 puñado" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Harina", amount:"4 cdas" }, { emoji:"🥛", name:"Leche", amount:"3 cdas" } ]
+      en: [ { emoji:"🥬", name:"Spinach", amount:"1 handful" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Buckwheat & oat flour (50/50)", amount:"4 tbsp" }, { emoji:"🥛", name:"Milk", amount:"3 tbsp" } ],
+      de: [ { emoji:"🥬", name:"Spinat", amount:"1 Handvoll" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Buchweizen- & Hafermehl (50/50)", amount:"4 EL" }, { emoji:"🥛", name:"Milch", amount:"3 EL" } ],
+      fr: [ { emoji:"🥬", name:"Épinards", amount:"1 poignée" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Farine sarrasin & avoine (50/50)", amount:"4 c. à soupe" }, { emoji:"🥛", name:"Lait", amount:"3 c. à soupe" } ],
+      es: [ { emoji:"🥬", name:"Espinacas", amount:"1 puñado" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Harina de sarraceno y avena (50/50)", amount:"4 cdas" }, { emoji:"🥛", name:"Leche", amount:"3 cdas" } ]
     },
     steps: {
       en: [ { title:"Blend", text:"Blend spinach with egg and milk until green." }, { title:"Mix", text:"Stir in flour to make a batter." }, { title:"Cook", text:"Cook in a waffle iron until crisp." } ],
@@ -6456,12 +6462,12 @@ const BENTO_RECIPES = {
     tip: { en:"Pat grated cucumber dry first so pinwheels don't go soggy.", de:"Gurke vorher trocken tupfen, damit die Schnecken nicht matschig werden.", fr:"Séchez le concombre râpé pour éviter les spirales détrempées.", es:"Seca el pepino rallado para que no queden blandas." }
   },
   "sweet-potato-pancake": {
-    nutrition: { kcal: 170, protein: 5, carbs: 28, fat: 4, fiber: 4 },
+    nutrition: { kcal: 170, protein: 5, carbs: 28, fat: 4, fiber: 5 },
     ings: {
-      en: [ { emoji:"🍠", name:"Grated sweet potato", amount:"1 cup" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Flour", amount:"2 tbsp" } ],
-      de: [ { emoji:"🍠", name:"Geraspelte Süßkartoffel", amount:"1 Tasse" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Mehl", amount:"2 EL" } ],
-      fr: [ { emoji:"🍠", name:"Patate douce râpée", amount:"1 tasse" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Farine", amount:"2 c. à soupe" } ],
-      es: [ { emoji:"🍠", name:"Boniato rallado", amount:"1 taza" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Harina", amount:"2 cdas" } ]
+      en: [ { emoji:"🍠", name:"Grated sweet potato", amount:"1 cup" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Oat flour", amount:"2 tbsp" } ],
+      de: [ { emoji:"🍠", name:"Geraspelte Süßkartoffel", amount:"1 Tasse" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Hafermehl", amount:"2 EL" } ],
+      fr: [ { emoji:"🍠", name:"Patate douce râpée", amount:"1 tasse" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Farine d'avoine", amount:"2 c. à soupe" } ],
+      es: [ { emoji:"🍠", name:"Boniato rallado", amount:"1 taza" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Harina de avena", amount:"2 cdas" } ]
     },
     steps: {
       en: [ { title:"Mix", text:"Stir grated sweet potato with egg and flour." }, { title:"Fry", text:"Cook small spoonfuls in a pan until golden both sides." } ],
@@ -6536,12 +6542,12 @@ const BENTO_RECIPES = {
     tip: { en:"Pat veg sticks dry before filling so the pita stays soft, not soggy.", de:"Gemüsesticks trocken tupfen, damit die Pita nicht durchweicht.", fr:"Séchez les bâtonnets pour que la pita reste moelleuse.", es:"Seca las verduras para que la pita no se ablande." }
   },
   "corn-fritter": {
-    nutrition: { kcal: 150, protein: 5, carbs: 20, fat: 5, fiber: 2 },
+    nutrition: { kcal: 150, protein: 6, carbs: 20, fat: 5, fiber: 3 },
     ings: {
-      en: [ { emoji:"🌽", name:"Sweetcorn", amount:"1/2 cup" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Flour", amount:"3 tbsp" } ],
-      de: [ { emoji:"🌽", name:"Mais", amount:"1/2 Tasse" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Mehl", amount:"3 EL" } ],
-      fr: [ { emoji:"🌽", name:"Maïs", amount:"1/2 tasse" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Farine", amount:"3 c. à soupe" } ],
-      es: [ { emoji:"🌽", name:"Maíz", amount:"1/2 taza" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Harina", amount:"3 cdas" } ]
+      en: [ { emoji:"🌽", name:"Sweetcorn", amount:"1/2 cup" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🌾", name:"Chickpea flour", amount:"3 tbsp" } ],
+      de: [ { emoji:"🌽", name:"Mais", amount:"1/2 Tasse" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🌾", name:"Kichererbsenmehl", amount:"3 EL" } ],
+      fr: [ { emoji:"🌽", name:"Maïs", amount:"1/2 tasse" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🌾", name:"Farine de pois chiches", amount:"3 c. à soupe" } ],
+      es: [ { emoji:"🌽", name:"Maíz", amount:"1/2 taza" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🌾", name:"Harina de garbanzo", amount:"3 cdas" } ]
     },
     steps: {
       en: [ { title:"Mix", text:"Stir corn with egg and flour into a thick batter." }, { title:"Fry", text:"Cook small fritters until golden both sides." } ],
@@ -7163,10 +7169,10 @@ const BENTO_RECIPES = {
   "spinach-cheese-muffin": {
     nutrition: { kcal: 250, protein: 11, carbs: 24, fat: 12, fiber: 3 },
     ings: {
-      en: [ { emoji:"🌾", name:"Flour", amount:"120 g" }, { emoji:"🥚", name:"Eggs", amount:"2" }, { emoji:"🧀", name:"Grated cheese", amount:"90 g" }, { emoji:"🥬", name:"Chopped spinach", amount:"2 handfuls" } ],
-      de: [ { emoji:"🌾", name:"Mehl", amount:"120 g" }, { emoji:"🥚", name:"Eier", amount:"2" }, { emoji:"🧀", name:"Geriebener Käse", amount:"90 g" }, { emoji:"🥬", name:"Gehackter Spinat", amount:"2 Handvoll" } ],
-      fr: [ { emoji:"🌾", name:"Farine", amount:"120 g" }, { emoji:"🥚", name:"Œufs", amount:"2" }, { emoji:"🧀", name:"Fromage râpé", amount:"90 g" }, { emoji:"🥬", name:"Épinards hachés", amount:"2 poignées" } ],
-      es: [ { emoji:"🌾", name:"Harina", amount:"120 g" }, { emoji:"🥚", name:"Huevos", amount:"2" }, { emoji:"🧀", name:"Queso rallado", amount:"90 g" }, { emoji:"🥬", name:"Espinacas picadas", amount:"2 puñados" } ]
+      en: [ { emoji:"🌾", name:"Spelt & buckwheat flour (50/50)", amount:"120 g" }, { emoji:"🥚", name:"Eggs", amount:"2" }, { emoji:"🧀", name:"Grated cheese", amount:"90 g" }, { emoji:"🥬", name:"Chopped spinach", amount:"2 handfuls" } ],
+      de: [ { emoji:"🌾", name:"Dinkel- & Buchweizenmehl (50/50)", amount:"120 g" }, { emoji:"🥚", name:"Eier", amount:"2" }, { emoji:"🧀", name:"Geriebener Käse", amount:"90 g" }, { emoji:"🥬", name:"Gehackter Spinat", amount:"2 Handvoll" } ],
+      fr: [ { emoji:"🌾", name:"Farine épeautre & sarrasin (50/50)", amount:"120 g" }, { emoji:"🥚", name:"Œufs", amount:"2" }, { emoji:"🧀", name:"Fromage râpé", amount:"90 g" }, { emoji:"🥬", name:"Épinards hachés", amount:"2 poignées" } ],
+      es: [ { emoji:"🌾", name:"Harina de espelta y sarraceno (50/50)", amount:"120 g" }, { emoji:"🥚", name:"Huevos", amount:"2" }, { emoji:"🧀", name:"Queso rallado", amount:"90 g" }, { emoji:"🥬", name:"Espinacas picadas", amount:"2 puñados" } ]
     },
     steps: {
       en: [ { title:"Mix", text:"Stir eggs and flour together, then fold in the cheese and spinach." }, { title:"Bake", text:"Spoon into a muffin tin and bake 18 min at 180°C until golden." } ],
@@ -7177,12 +7183,12 @@ const BENTO_RECIPES = {
     tip: { en:"Pack 2 — they hold their shape and taste great cold. Freezer-friendly.", de:"Pack 2 ein — sie behalten ihre Form und schmecken kalt super. Einfrierbar.", fr:"Emballe-en 2 — ils gardent leur forme et sont bons froids. Se congèlent bien.", es:"Lleva 2 — mantienen su forma y están ricos fríos. Se pueden congelar." }
   },
   "pizza-muffin": {
-    nutrition: { kcal: 260, protein: 11, carbs: 28, fat: 11, fiber: 2 },
+    nutrition: { kcal: 260, protein: 11, carbs: 28, fat: 11, fiber: 3 },
     ings: {
-      en: [ { emoji:"🌾", name:"Flour", amount:"130 g" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🍅", name:"Passata", amount:"4 tbsp" }, { emoji:"🧀", name:"Grated cheese", amount:"80 g" }, { emoji:"🌿", name:"Italian herbs", amount:"1 tsp" } ],
-      de: [ { emoji:"🌾", name:"Mehl", amount:"130 g" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🍅", name:"Passierte Tomaten", amount:"4 EL" }, { emoji:"🧀", name:"Geriebener Käse", amount:"80 g" }, { emoji:"🌿", name:"Italienische Kräuter", amount:"1 TL" } ],
-      fr: [ { emoji:"🌾", name:"Farine", amount:"130 g" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🍅", name:"Coulis de tomate", amount:"4 c. à s." }, { emoji:"🧀", name:"Fromage râpé", amount:"80 g" }, { emoji:"🌿", name:"Herbes italiennes", amount:"1 c. à c." } ],
-      es: [ { emoji:"🌾", name:"Harina", amount:"130 g" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🍅", name:"Tomate triturado", amount:"4 cdas" }, { emoji:"🧀", name:"Queso rallado", amount:"80 g" }, { emoji:"🌿", name:"Hierbas italianas", amount:"1 cdta" } ]
+      en: [ { emoji:"🌾", name:"Spelt & buckwheat flour (50/50)", amount:"130 g" }, { emoji:"🥚", name:"Egg", amount:"1" }, { emoji:"🍅", name:"Passata", amount:"4 tbsp" }, { emoji:"🧀", name:"Grated cheese", amount:"80 g" }, { emoji:"🌿", name:"Italian herbs", amount:"1 tsp" } ],
+      de: [ { emoji:"🌾", name:"Dinkel- & Buchweizenmehl (50/50)", amount:"130 g" }, { emoji:"🥚", name:"Ei", amount:"1" }, { emoji:"🍅", name:"Passierte Tomaten", amount:"4 EL" }, { emoji:"🧀", name:"Geriebener Käse", amount:"80 g" }, { emoji:"🌿", name:"Italienische Kräuter", amount:"1 TL" } ],
+      fr: [ { emoji:"🌾", name:"Farine épeautre & sarrasin (50/50)", amount:"130 g" }, { emoji:"🥚", name:"Œuf", amount:"1" }, { emoji:"🍅", name:"Coulis de tomate", amount:"4 c. à s." }, { emoji:"🧀", name:"Fromage râpé", amount:"80 g" }, { emoji:"🌿", name:"Herbes italiennes", amount:"1 c. à c." } ],
+      es: [ { emoji:"🌾", name:"Harina de espelta y sarraceno (50/50)", amount:"130 g" }, { emoji:"🥚", name:"Huevo", amount:"1" }, { emoji:"🍅", name:"Tomate triturado", amount:"4 cdas" }, { emoji:"🧀", name:"Queso rallado", amount:"80 g" }, { emoji:"🌿", name:"Hierbas italianas", amount:"1 cdta" } ]
     },
     steps: {
       en: [ { title:"Mix", text:"Stir flour, egg, passata, herbs and most of the cheese into a batter." }, { title:"Bake", text:"Spoon into a muffin tin, top with cheese and bake 18 min at 180°C." } ],
