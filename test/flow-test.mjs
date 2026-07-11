@@ -136,9 +136,9 @@ const results = await page.evaluate(async () => {
   ok('track: protein week bars + goal line + average', document.querySelectorAll('.trk-bar').length===7 && !!document.querySelector('.trk-goal .lbl') && [...document.querySelectorAll('.trk-sec h3 span')].some(x=>/Ø \d+ g/.test(x.textContent)));
 
   state.family.children=0; state.showBentoTab=undefined; showTab('plan'); applyBentoTabVisibility();
-  ok('lunchbox: hidden with no kids', getComputedStyle(document.getElementById('plan-seg')).display==='none');
-  state.family.children=1; showTab('plan'); applyBentoTabVisibility();
-  ok('lunchbox: segment shows with kids', getComputedStyle(document.getElementById('plan-seg')).display!=='none');
+  ok('lunchbox: hidden without opt-in (even with kids)', getComputedStyle(document.getElementById('plan-seg')).display==='none');
+  state.family.children=1; state.showBentoTab=true; showTab('plan'); applyBentoTabVisibility();
+  ok('lunchbox: segment shows after explicit opt-in', getComputedStyle(document.getElementById('plan-seg')).display!=='none');
   document.querySelectorAll('#plan-seg .plan-seg-btn')[1].click();
   ok('lunchbox: segment routes to bento screen', (document.querySelector('#app .screen.active')||{}).id==='screen-bentokids');
   ok('lunchbox: Plan nav stays highlighted', document.getElementById('tab-plan').classList.contains('active'));

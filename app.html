@@ -1512,7 +1512,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <div class="screen active" id="screen-plan"><div class="plan-layout">
     <div class="plan-top">
       <div class="plan-seg" id="plan-seg" style="display:none">
-        <button class="plan-seg-btn active" onclick="showTab('plan')">🍽 <span data-t="segDinners">Dinners</span></button>
+        <button class="plan-seg-btn active" onclick="showTab('plan')">🍽 <span class="seg-main-lbl">Dinners</span></button>
         <button class="plan-seg-btn" onclick="showTab('bentokids')"><svg class="seg-ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="15" rx="3.5"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="12" y2="20"/></svg><span data-t="navBento">Lunchbox</span><span class="seg-new" id="lunchbox-seg-new" style="display:none"></span></button>
       </div>
       <div class="week-nav">
@@ -1537,7 +1537,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <div class="screen" id="screen-bentokids"><div class="bento-layout">
     <div class="bento-top">
       <div class="plan-seg">
-        <button class="plan-seg-btn" onclick="showTab('plan')">🍽 <span data-t="segDinners">Dinners</span></button>
+        <button class="plan-seg-btn" onclick="showTab('plan')">🍽 <span class="seg-main-lbl">Dinners</span></button>
         <button class="plan-seg-btn active" onclick="showTab('bentokids')"><svg class="seg-ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="15" rx="3.5"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="12" y1="12" x2="12" y2="20"/></svg><span data-t="navBento">Lunchbox</span></button>
       </div>
       <div class="week-nav">
@@ -1823,6 +1823,14 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
             <div class="setup-ctr"><span data-t="setupAdults">👨 Adults</span><div class="setup-ctr-ctrls"><button onclick="setupAdj('adults',-1)">−</button><b id="setup-adults">2</b><button onclick="setupAdj('adults',1)">+</button></div></div>
             <div class="setup-ctr"><span data-t="setupChildren">🧒 Children</span><div class="setup-ctr-ctrls"><button onclick="setupAdj('children',-1)">−</button><b id="setup-children">0</b><button onclick="setupAdj('children',1)">+</button></div></div>
           </div>
+        </div>
+        <div class="setup-sec" id="setup-bento-q" style="display:none">
+          <h3 data-t="setupBentoQ">Pack school lunchboxes too?</h3>
+          <div class="setup-chips">
+            <div class="setup-chip" id="setup-bento-yes" onclick="setupPick('bento',true)">🍱 Yes</div>
+            <div class="setup-chip" id="setup-bento-no" onclick="setupPick('bento',false)">Not now</div>
+          </div>
+          <div class="setup-hint" data-t="setupBentoHint">You can switch this on later in Profile.</div>
         </div>
       </div>
       <!-- STEP 4: Main meal -->
@@ -2119,7 +2127,7 @@ en:{
   pwPremiumName:'⭐ Premium',pwBest:'BEST',pwPrem1:"💶 Budget mode — your week's cost, per day & per serving",pwPrem2:'📊 Advanced macros — carb & fat goals, weekly trends',pwPrem3:'🗓️ Plan up to 4 weeks ahead',pwPrem4:'📷 AI fridge scanner',pwPrem5:'☁️ Sync across all your devices',
   perMonth:'per month',perYear:'per year',save27:'Save 27%',pwCta:'Try Premium free for 7 days',pwTerms:'7-day free trial · cancel anytime · no hidden fees',
   weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",weekpickFirstTitle:'Plan your first week 🎉',firstweekSub:'One day at a time — swipe until it fits.',firstweekCTA:"Let's go →",laterWord:'Later',skipThisDay:'Skip this day',doneToGroceries:'I’m done — to my groceries 🛒',gapsBar:'{n} days still open — keep planning',gapsBarOne:'1 day still open — plan it',chooseForDay:'Choose for {day} ✓',swipeForMore:'‹ › swipe for more ideas',seeWholeWeek:'See the whole week',dayOfCount:'Day {i} of {n}',weekpickFirstSub:'Pick the nights you want dinners for — we’ll fill them in.',addCookingDay:'Add a cooking day',
-  setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupDietQ:'Any diet?',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
+  setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupBentoQ:'Pack school lunchboxes too?',setupBentoHint:'You can switch this on later in Profile.',setupBentoYes:'Yes, plan lunchboxes',setupBentoNo:'Not now',setupDietQ:'Any diet?',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
   cookBack:'‹ Back',cookNext:'Next ›',cookedIt:'✓ I cooked it',chooseDinner:'Choose dinner',
   opt_vegetarian:'Vegetarian',opt_pescatarian:'Pescatarian',opt_vegan:'Vegan',opt_glutenfree:'Gluten-free',
   nutritionGoals:'Daily nutrition goals',perPerson:'per person',macroCalories:'Calories',macroProtein:'Protein (g)',macroGoalsLocked:'Daily macro goals — Premium',
@@ -2271,7 +2279,7 @@ fr:{
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Mode budget — coût de la semaine, par jour & par portion',pwPrem2:'📊 Macros avancés — objectifs glucides & lipides, tendances',pwPrem3:'🗓️ Planifiez jusqu\'à 4 semaines à l\'avance',pwPrem4:'📷 Scanner de frigo IA',pwPrem5:'☁️ Synchro sur tous vos appareils',
   perMonth:'par mois',perYear:'par an',save27:'-27 %',pwCta:'Essayer Premium gratuitement 7 jours',pwTerms:'Essai gratuit 7 jours · annulable à tout moment · sans frais cachés',
   weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',weekpickFirstTitle:'Planifiez votre première semaine 🎉',firstweekSub:'Jour par jour — balayez jusqu’à ce que ça colle.',firstweekCTA:'C’est parti →',laterWord:'Plus tard',skipThisDay:'Passer ce jour',doneToGroceries:'Terminé — voir mes courses 🛒',gapsBar:'Encore {n} jours à planifier — continuer',gapsBarOne:'Encore 1 jour à planifier — continuer',chooseForDay:'Choisir pour {day} ✓',swipeForMore:'‹ › balayez pour d’autres idées',seeWholeWeek:'Voir toute la semaine',dayOfCount:'Jour {i} sur {n}',weekpickFirstSub:'Choisissez les soirs à cuisiner — on s’occupe du reste.',addCookingDay:'Ajouter un jour',
-  setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupDietQ:'Un régime ?',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
+  setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupBentoQ:'Préparer aussi des lunchbox ?',setupBentoHint:'Activable plus tard dans Profil.',setupBentoYes:'Oui, planifier',setupBentoNo:'Pas maintenant',setupDietQ:'Un régime ?',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
   cookBack:'‹ Retour',cookNext:'Suivant ›',cookedIt:'✓ Cuisiné !',chooseDinner:'Choisir le dîner',
   opt_vegetarian:'Végétarien',opt_pescatarian:'Pescétarien',opt_vegan:'Végétalien',opt_glutenfree:'Sans gluten',
   nutritionGoals:'Objectifs nutritionnels quotidiens',perPerson:'par personne',macroCalories:'Calories',macroProtein:'Protéines (g)',macroGoalsLocked:'Objectifs de macros — Premium',
@@ -2423,7 +2431,7 @@ es:{
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Modo presupuesto — coste de la semana, por día y por ración',pwPrem2:'📊 Macros avanzados — objetivos de carbos & grasas, tendencias',pwPrem3:'🗓️ Planifica hasta 4 semanas',pwPrem4:'📷 Escáner de nevera con IA',pwPrem5:'☁️ Sincroniza en todos tus dispositivos',
   perMonth:'al mes',perYear:'al año',save27:'-27 %',pwCta:'Prueba Premium gratis 7 días',pwTerms:'7 días de prueba gratis · cancela cuando quieras · sin costes ocultos',
   weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',weekpickFirstTitle:'Planifica tu primera semana 🎉',firstweekSub:'Día a día — desliza hasta que encaje.',firstweekCTA:'¡Vamos! →',laterWord:'Más tarde',skipThisDay:'Saltar este día',doneToGroceries:'Listo — a la compra 🛒',gapsBar:'Quedan {n} días por planificar — seguir',gapsBarOne:'Queda 1 día por planificar — seguir',chooseForDay:'Elegir para {day} ✓',swipeForMore:'‹ › desliza para más ideas',seeWholeWeek:'Ver toda la semana',dayOfCount:'Día {i} de {n}',weekpickFirstSub:'Elige las noches que quieras cenar — nosotros las llenamos.',addCookingDay:'Añadir un día',
-  setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupDietQ:'¿Alguna dieta?',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
+  setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupBentoQ:'¿Planificar también lunchbox escolares?',setupBentoHint:'Puedes activarlo luego en Perfil.',setupBentoYes:'Sí, planificar',setupBentoNo:'Ahora no',setupDietQ:'¿Alguna dieta?',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
   cookBack:'‹ Atrás',cookNext:'Siguiente ›',cookedIt:'✓ ¡Cocinado!',chooseDinner:'Elegir cena',
   opt_vegetarian:'Vegetariano',opt_pescatarian:'Pescetariano',opt_vegan:'Vegano',opt_glutenfree:'Sin gluten',
   nutritionGoals:'Objetivos nutricionales diarios',perPerson:'por persona',macroCalories:'Calorías',macroProtein:'Proteína (g)',macroGoalsLocked:'Objetivos de macros — Premium',
@@ -2621,7 +2629,7 @@ de:{
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Budget-Modus — Wochenkosten, pro Tag & pro Portion',pwPrem2:'📊 Erweiterte Makros — Kohlenhydrat- & Fettziele, Wochentrends',pwPrem3:'🗓️ Bis zu 4 Wochen im Voraus planen',pwPrem4:'📷 KI-Kühlschrank-Scanner',pwPrem5:'☁️ Synchro auf all deinen Geräten',
   perMonth:'pro Monat',perYear:'pro Jahr',save27:'-27 %',pwCta:'Premium 7 Tage gratis testen',pwTerms:'7 Tage gratis · jederzeit kündbar · keine versteckten Kosten',
   weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',weekpickFirstTitle:'Plane deine erste Woche 🎉',firstweekSub:'Tag für Tag — wische, bis es passt.',firstweekCTA:'Los geht’s →',laterWord:'Später',skipThisDay:'Diesen Tag überspringen',doneToGroceries:'Fertig — zur Einkaufsliste 🛒',gapsBar:'Noch {n} Tage offen — weiterplanen',gapsBarOne:'Noch 1 Tag offen — jetzt planen',chooseForDay:'Für {day} wählen ✓',swipeForMore:'‹ › wischen für mehr Vorschläge',seeWholeWeek:'Zur Wochenansicht',dayOfCount:'Tag {i} von {n}',weekpickFirstSub:'Wähle die Abende, für die du Gerichte möchtest — wir füllen sie.',addCookingDay:'Kochtag hinzufügen',
-  setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupDietQ:'Eine Ernährungsweise?',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
+  setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupBentoQ:'Auch Schul-Lunchboxen planen?',setupBentoHint:'Später jederzeit im Profil aktivierbar.',setupBentoYes:'Ja, Lunchboxen planen',setupBentoNo:'Jetzt nicht',setupDietQ:'Eine Ernährungsweise?',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
   cookBack:'‹ Zurück',cookNext:'Weiter ›',cookedIt:'✓ Gekocht!',chooseDinner:'Abendessen wählen',
   opt_vegetarian:'Vegetarisch',opt_pescatarian:'Pescetarisch',opt_vegan:'Vegan',opt_glutenfree:'Glutenfrei',
   nutritionGoals:'Tägliche Nährwertziele',perPerson:'pro Person',macroCalories:'Kalorien',macroProtein:'Protein (g)',macroGoalsLocked:'Tägliche Makro-Ziele — Premium',
@@ -4198,14 +4206,9 @@ function adjFamily(type,delta){
   const before=state.family[type];
   state.family[type]=Math.max(0,state.family[type]+delta);
   if(state.family.adults===0&&state.family.children===0)state.family.adults=1;
-  if(type==='children'){
-    // The child count is authoritative: re-sync the Bento tab to auto (no kids → hidden).
-    state.showBentoTab=undefined;
-    // (B) Context nudge the moment a first child is added → Bento becomes relevant
-    if(before===0&&state.family.children>=1&&!state.bentoNudged){
-      state.bentoNudged=true;
-      setTimeout(()=>{try{toast(t('bentoNudgeToast'));}catch(e){}},300);
-    }
+  if(type==='children'&&state.family.children===0){
+    // No kids → the lunchbox goes dark; re-enabling is the explicit toggle below.
+    state.showBentoTab=false;
   }
   save();renderFamily();
 }
@@ -4577,6 +4580,7 @@ function openSetup(isFirstRun){
     goals:[...(state.goals||[])],
     adults:state.family.adults,children:state.family.children,
     mainMeal:state.mainMeal||'dinner',
+    bento:state.showBentoTab===true,
     diet:[...(state.dietaryPrefs||[])],allergies:[...(state.allergies||[])],
     dislikes:[...(state.dislikes||[])],
     sex:c.sex||'female',age:c.age||'',height:c.height||'',weight:c.weight||'',
@@ -4674,9 +4678,16 @@ function renderSetup(){
   // Step 2 — goals
   const ge=document.getElementById('setup-goals');
   if(ge)ge.innerHTML=GOAL_OPTIONS.map(o=>`<div class="setup-goal ${setupDraft.goals.includes(o.id)?'on':''}" onclick="setupToggle('goals','${o.id}')"><span class="em">${o.em}</span>${t(o.k)}</div>`).join('');
-  // Step 3 — household
+  // Step 3 — household (+ explicit lunchbox opt-in once there are kids)
   document.getElementById('setup-adults').textContent=setupDraft.adults;
   document.getElementById('setup-children').textContent=setupDraft.children;
+  const bq=document.getElementById('setup-bento-q');
+  if(bq){
+    bq.style.display=setupDraft.children>0?'':'none';
+    const y=document.getElementById('setup-bento-yes'),n=document.getElementById('setup-bento-no');
+    if(y){y.textContent='🍱 '+t('setupBentoYes');y.classList.toggle('on',setupDraft.bento===true);}
+    if(n){n.textContent=t('setupBentoNo');n.classList.toggle('on',setupDraft.bento!==true);}
+  }
   // Step 4 — main meal
   const me=document.getElementById('setup-mainmeal');
   if(me)me.innerHTML=MAINMEAL_OPTIONS.map(o=>`<div class="setup-choice ${setupDraft.mainMeal===o.id?'on':''}" onclick="setupPick('mainMeal','${o.id}')"><span class="em">${o.em}</span><div><b>${t(o.k)}</b><div class="d">${t(o.dk)}</div></div></div>`).join('');
@@ -4756,6 +4767,7 @@ async function finishSetup(skip){
   state.goals=setupDraft.goals;
   state.family.adults=setupDraft.adults;state.family.children=setupDraft.children;
   state.mainMeal=setupDraft.mainMeal||'dinner';
+  state.showBentoTab=setupDraft.bento===true&&setupDraft.children>0;   // lunchbox only via explicit opt-in (or later in Profile)
   state.dietaryPrefs=setupDraft.diet;state.allergies=setupDraft.allergies;state.dislikes=setupDraft.dislikes;
   state.focus=setupDraft.focus;
   if(setupDraft.height||setupDraft.weight||setupDraft.age){
@@ -4909,6 +4921,8 @@ function renderPlanHeader(){
   const prev=document.getElementById('wk-prev');
   const next=document.getElementById('wk-next');
   if(label)label.textContent=t('planHeaderTitle');
+  // Segment names the user's actual main meal (Dinners ↔ Lunches)
+  document.querySelectorAll('.seg-main-lbl').forEach(e=>e.textContent=mealName(mainMealType()));
   if(range){
     const dotted=lang!=='en';                       // "6. – 12. Jul" vs "6 – 12 Jul"
     const fd=(d,withMon)=>`${d.getDate()}${dotted?'.':''}${withMon?' '+mon(d):''}`;
@@ -7749,9 +7763,8 @@ function renderBentoBoxRecipe(key){
 // has children, or forced on/off via the toggle in "Me". Keeps the tab bar
 // at 5 tabs for everyone else.
 function bentoTabVisible(){
-  if(state.showBentoTab===true)return true;
-  if(state.showBentoTab===false)return false;
-  return !!(state.family&&state.family.children>0);
+  // Opt-in only: activated by the onboarding question or the Profile toggle.
+  return state.showBentoTab===true;
 }
 function applyBentoTabVisibility(){
   const vis=bentoTabVisible();
