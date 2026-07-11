@@ -6316,22 +6316,25 @@ const BENTO_SLOTS=[
 ];
 // Curated coherent boxes — each compartment is chosen to taste good together,
 // especially the centre dip/treat, which is matched to the rest of the box.
+// Rule for the centre well: a savoury dip (hummus/guacamole/…) only appears when the
+// box actually contains something to dip (peppers, snap peas, cucumber, tots, pita,
+// quesadilla…). Boxes without dippers get a standalone well: yogurt, sauce or a treat.
 const BENTO_COMBOS=[
   {main:'pita-pocket',protein:'falafel',veg:'pepper-stars',fruit:'grape-cheese-skewer',well:'hummus'},            // Mediterranean mezze
   {main:'veggie-pinwheel',protein:'edamame',veg:'cucumber-rolls',fruit:'melon-stars',well:'guacamole'},           // Fresh & green
-  {main:'pizza-muffin',protein:'cheese-shapes',veg:'caprese-skewer',fruit:'fruit-skewer',well:'hummus'},          // Pizza day
+  {main:'pizza-muffin',protein:'cheese-shapes',veg:'caprese-skewer',fruit:'fruit-skewer',well:'choc-clusters'},   // Pizza day (no dippers → treat in the well)
   {main:'veggie-sushi',protein:'edamame',veg:'snap-peas',fruit:'mango-melon-balls',well:'guacamole'},             // Sushi box
   {main:'borek-snake',protein:'white-bean-dip',veg:'cucumber-rolls',fruit:'berry-salad',well:'beetroot-hummus'},  // Börek & dips
   {main:'banana-oat-pancake',protein:'cottage-fruit',veg:'snap-peas',fruit:'berry-salad',well:'nut-butter'},      // Sweet brunch
   {main:'creamy-broccoli-pasta',protein:'cheese-shapes',veg:'pepper-stars',fruit:'grape-cheese-skewer',well:'hummus'}, // Pasta picnic
   {main:'spinach-waffle',protein:'egg-shapes',veg:'snap-peas',fruit:'cinnamon-apple',well:'yogurt-honey'},        // Waffle box
-  {main:'rice-balls',protein:'edamame',veg:'carrot-slaw',fruit:'mango-melon-balls',well:'guacamole'},             // Rice-ball bento
+  {main:'rice-balls',protein:'edamame',veg:'carrot-slaw',fruit:'mango-melon-balls',well:'energy-bites'},          // Rice-ball bento (slaw isn't a dipper → treat)
   {main:'veggie-quesadilla',protein:'bean-quinoa-bowl',veg:'corn-salsa',fruit:'melon-stars',well:'guacamole'},    // Mexican fiesta
   {main:'spinach-cheese-muffin',protein:'cheese-shapes',veg:'cucumber-rolls',fruit:'apple-nutbutter',well:'hummus'}, // Muffin box
   {main:'frittata-muffin',protein:'halloumi',veg:'pepper-stars',fruit:'fruit-skewer',well:'beetroot-hummus'},     // Frittata box
   {main:'dino-burger',protein:'cheese-shapes',veg:'broccoli-tots',fruit:'grape-cheese-skewer',well:'hummus'},     // Dino kids box
   {main:'sweet-potato-pancake',protein:'yogurt-pot',veg:'carrot-slaw',fruit:'baked-pear',well:'apple-cinnamon-sauce'}, // Autumn sweet
-  {main:'corn-fritter',protein:'lentil-balls',veg:'avocado-smash',fruit:'mango-melon-balls',well:'guacamole'},    // Fritter box
+  {main:'corn-fritter',protein:'lentil-balls',veg:'avocado-smash',fruit:'mango-melon-balls',well:'yogurt-honey'}, // Fritter box (fritters dip in yogurt; avocado already in the box)
   {main:'stuffed-tomato',protein:'chickpea-smash',veg:'cucumber-rolls',fruit:'fruit-leather',well:'hummus'},      // Stuffed-tomato box
 ];
 const BENTO_FOODS=[
