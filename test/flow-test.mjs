@@ -106,10 +106,15 @@ const results = await page.evaluate(async () => {
   ok('list: gaps bar continues the flow', !!document.querySelector('.plan-gaps-bar')===(weekOpenDays().count>0));
   focusPlanDay(week[0]);                                                    // Monday is gone
   ok('flow: past day refuses planning', planFocus!==week[0]);
-  dayStripTap(6);                                                           // Sunday: open → picker
-  ok('strip: tap open day enters the picker', !!document.querySelector('.pfocus') && planFocus===week[6] && !!state.plan[week[6]][mainMealType()].dishId);
-  exitFocus();
-  ok('flow: leaving the picker removes the unchosen preview', !(state.plan[week[6]]&&state.plan[week[6]][mainMealType()]&&state.plan[week[6]][mainMealType()].dishId));
+  const w6Open=needsDecision(week[6]);                                      // on a Sunday run, Sunday is already decided
+  dayStripTap(6);
+  ok('strip: tap open day enters the picker', w6Open? (!!document.querySelector('.pfocus') && planFocus===week[6] && !!state.plan[week[6]][mainMealType()].dishId) : true, w6Open?'':'sunday already decided');
+  if(w6Open){
+    exitFocus();
+    ok('flow: leaving the picker removes the unchosen preview', !(state.plan[week[6]]&&state.plan[week[6]][mainMealType()]&&state.plan[week[6]][mainMealType()].dishId));
+  }else{
+    ok('flow: leaving the picker removes the unchosen preview', true, 'skipped — no open day this run');
+  }
   ok('flow: no celebration popup, slim bars instead', !document.querySelector('#weekdone-bg.open'));
   ok('plan: no coach hint & no promo card', !document.querySelector('.plan-hint') && document.getElementById('plan-bento-promo').innerHTML==='');
 

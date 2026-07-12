@@ -74,9 +74,12 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .auth-hero h1{font-family:var(--fd);font-size:32px;font-weight:500;color:#fff;margin-bottom:6px}
 .auth-hero p{font-size:14px;color:var(--nav-t);line-height:1.5}
 .auth-body{padding:28px 24px;flex:1}
-.lang-row{display:flex;justify-content:center;gap:8px;margin-bottom:18px}
-.lang-btn{background:none;border:2px solid transparent;border-radius:8px;font-size:22px;cursor:pointer;padding:3px 6px;transition:all .15s}
-.lang-btn.active{border-color:var(--nav-a);background:rgba(126,200,122,.12)}
+.lang-row{display:flex;justify-content:center;gap:7px;margin-bottom:18px}
+.lang-btn{background:var(--surface);border:1.5px solid var(--border2);border-radius:10px;font-size:12px;font-weight:800;letter-spacing:.08em;color:var(--text2);cursor:pointer;padding:7px 11px;transition:all .15s;font-family:var(--fb)}
+.lang-btn.active{border-color:var(--nav);background:var(--nav);color:#fff}
+/* on the dark welcome hero the same chips go translucent */
+#welcome-lang-row .lang-btn{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.22);color:var(--nav-t)}
+#welcome-lang-row .lang-btn.active{background:var(--nav-a);border-color:var(--nav-a);color:var(--nav)}
 .auth-tabs{display:flex;background:var(--surface2);border-radius:99px;padding:4px;margin-bottom:24px}
 .auth-tab{flex:1;text-align:center;padding:9px;border-radius:99px;font-size:13px;font-weight:500;cursor:pointer;transition:all .2s;color:var(--text3)}
 .auth-tab.active{background:var(--nav);color:var(--nav-a)}
@@ -185,8 +188,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .tier-lock.premium{background:#FFF8E1;color:#F57F17}
 #app{display:none}
 .app-lang-bar{display:flex;align-items:center;gap:5px;padding:5px 16px 3px;background:var(--nav);justify-content:flex-end}
-.app-lang-btn{background:none;border:1.5px solid transparent;border-radius:6px;font-size:17px;cursor:pointer;padding:2px 4px;opacity:.6;transition:all .12s}
-.app-lang-btn.active{border-color:var(--nav-a);opacity:1}
+.app-lang-btn{background:none;border:1.5px solid transparent;border-radius:8px;font-size:10.5px;font-weight:800;letter-spacing:.06em;color:var(--nav-t);cursor:pointer;padding:4px 7px;opacity:.7;transition:all .12s;font-family:var(--fb)}
+.app-lang-btn.active{border-color:var(--nav-a);color:var(--nav-a);opacity:1}
 .nav{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:100%;max-width:480px;background:var(--nav);z-index:300;border-top:1px solid rgba(126,200,122,.16);padding-bottom:env(safe-area-inset-bottom)}
 .nav-tabs{display:flex}
 .nav-tab{position:relative;flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;padding:9px 2px 8px;font-size:9px;font-weight:500;color:var(--nav-t);cursor:pointer;border:none;background:none;border-top:2px solid transparent;transition:all .2s;text-transform:uppercase;letter-spacing:.03em}
@@ -1131,15 +1134,17 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .setup-num-inwrap{position:relative;display:block}
 .setup-num-inwrap b{position:absolute;right:14px;top:50%;transform:translateY(-50%);font-size:12px;font-weight:600;color:var(--text3);pointer-events:none}
 .setup-goalgrid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.setup-goal{display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;padding:16px 10px;border-radius:18px;border:1.5px solid var(--border2);background:var(--surface);cursor:pointer;transition:all .15s;font-size:13px;font-weight:600;color:var(--text)}
-.setup-goal .em{font-size:26px}
+.setup-goal{display:flex;flex-direction:column;align-items:center;gap:9px;text-align:center;padding:16px 10px 14px;border-radius:18px;border:1.5px solid var(--border2);background:var(--surface);cursor:pointer;transition:all .15s;font-size:13px;font-weight:600;color:var(--text);box-shadow:0 1px 5px rgba(45,90,61,.05)}
+.setup-goal .em{font-size:24px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent-l),#f2f6ec);border-radius:15px;box-shadow:inset 0 0 0 1px rgba(45,90,61,.07)}
 .setup-goal.on{border-color:var(--nav);background:var(--accent-l);box-shadow:0 0 0 1.5px var(--nav) inset}
+.setup-goal.on .em{background:var(--surface)}
 .setup-choicegrid{display:flex;flex-direction:column;gap:10px}
-.setup-choice{display:flex;align-items:center;gap:14px;padding:16px;border-radius:18px;border:1.5px solid var(--border2);background:var(--surface);cursor:pointer;transition:all .15s;text-align:left}
-.setup-choice .em{font-size:26px;flex-shrink:0}
+.setup-choice{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:18px;border:1.5px solid var(--border2);background:var(--surface);cursor:pointer;transition:all .15s;text-align:left;box-shadow:0 1px 5px rgba(45,90,61,.05)}
+.setup-choice .em{font-size:23px;flex-shrink:0;width:46px;height:46px;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--accent-l),#f2f6ec);border-radius:14px;box-shadow:inset 0 0 0 1px rgba(45,90,61,.07)}
 .setup-choice b{font-size:15px;font-weight:600;color:var(--text);display:block}
 .setup-choice .d{font-size:12px;color:var(--text3);margin-top:2px}
 .setup-choice.on{border-color:var(--nav);background:var(--accent-l);box-shadow:0 0 0 1.5px var(--nav) inset}
+.setup-choice.on .em{background:var(--surface)}
 .setup-actgrid .setup-choice{padding:14px 16px}
 .setup-result{background:var(--accent-l);border-radius:16px;padding:16px;text-align:center;margin-top:14px}
 .setup-result .rrow{display:flex;justify-content:center;gap:26px;margin-bottom:6px}
@@ -1370,11 +1375,6 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <span data-t="welcomeTaste2">👩‍🍳 Quick to cook</span>
         <span data-t="welcomeTaste3">🔁 Never repetitive</span>
       </div>
-    </div>
-    <div class="welcome-points">
-      <div class="welcome-point"><span class="wp-em">🧘</span><div><div class="wp-t" data-t="wp1t">Less mental load</div><div class="wp-d" data-t="wp1d">Your week planned in minutes — no nightly "what's for dinner?"</div></div></div>
-      <div class="welcome-point"><span class="wp-em">🛒</span><div><div class="wp-t" data-t="wp2t">Automatic grocery list &amp; delivery</div><div class="wp-d" data-t="wp2d">Built from your meals, sorted by aisle.</div></div></div>
-      <div class="welcome-point"><span class="wp-em">🌱</span><div><div class="wp-t" data-t="wp3t">Meals you'll actually love</div><div class="wp-d" data-t="wp3d">Real variety — never the same week twice.</div></div></div>
     </div>
     </div>
     <div class="welcome-cta">
@@ -1848,15 +1848,16 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
           <div class="setup-chips" id="setup-dislikes"></div>
         </div>
       </div>
-      <!-- STEP 5: Goals + Focus (merged) -->
+      <!-- STEP 5: Focus first, then goals -->
       <div class="setup-step" id="setup-step-5" style="display:none">
-        <div class="setup-sec">
-          <div class="setup-goalgrid" id="setup-goals"></div>
-        </div>
         <div class="setup-sec">
           <h3 data-t="stepFocusT">Any nutrition focus?</h3>
           <div class="setup-choicegrid" id="setup-focus"></div>
-          <div class="setup-hint" style="margin-top:12px" data-t="setupFocusHint">Optional — pick one, both, or none.</div>
+          <div class="setup-hint" style="margin-top:10px" data-t="setupFocusHint">Optional — pick one, both, or none.</div>
+        </div>
+        <div class="setup-sec">
+          <h3 data-t="setupGoalsQ2">And what are your goals?</h3>
+          <div class="setup-goalgrid" id="setup-goals"></div>
         </div>
       </div>
       <!-- STEP 6: Body & daily target (merged: sex / height / weight / age / activity → result) -->
@@ -2105,7 +2106,7 @@ en:{
   pwPremiumName:'⭐ Premium',pwBest:'BEST',pwPrem1:"💶 Budget mode — your week's cost, per day & per serving",pwPrem2:'📊 Advanced macros — carb & fat goals, weekly trends',pwPrem3:'🗓️ Plan up to 4 weeks ahead',pwPrem4:'📷 AI fridge scanner',pwPrem5:'☁️ Sync across all your devices',
   perMonth:'per month',perYear:'per year',save27:'Save 27%',pwCta:'Try Premium free for 7 days',pwTerms:'7-day free trial · cancel anytime · no hidden fees',
   weekpickTitle:'Which nights are we cooking?',weekpickSub:"Tap the nights you're cooking.",weekpickFirstTitle:'Plan your first week 🎉',firstweekSub:'One day at a time — swipe until it fits.',firstweekCTA:"Let's go →",laterWord:'Later',skipThisDay:'Skip this day',doneToGroceries:'I’m done — to my groceries 🛒',gapsBar:'{n} days still open — keep planning',gapsBarOne:'1 day still open — plan it',chooseForDay:'Choose for {day} ✓',swipeForMore:'‹ › swipe for more ideas',seeWholeWeek:'See the whole week',dayOfCount:'Day {i} of {n}',weekpickFirstSub:'Pick the nights you want dinners for — we’ll fill them in.',addCookingDay:'Add a cooking day',
-  setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupBentoQ:'Pack school lunchboxes too?',setupBentoHint:'You can switch this on later in Profile.',setupBentoYes:'Yes, plan lunchboxes',setupBentoNo:'Not now',setupDietQ:'Any diet?',dietEverything:'🍽 I eat everything',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
+  setupWho:"Who's at the table?",setupAdults:'👨 Adults',setupChildren:'🧒 Children',setupBentoQ:'Pack school lunchboxes too?',setupBentoHint:'You can switch this on later in Profile.',setupBentoYes:'Yes, plan lunchboxes',setupBentoNo:'Not now',setupGoalsQ2:'And what are your goals?',setupDietQ:'Any diet?',dietEverything:'🍽 I eat everything',setupAllergiesQ:'Allergies',setupAllergiesHint:"we'll never suggest these",setupDislikeQ:'Anything you dislike?',setupNightsHint:"You'll pick which nights to cook each week when you plan.",setupSkipNow:'Skip for now',
   cookBack:'‹ Back',cookNext:'Next ›',cookedIt:'✓ I cooked it',chooseDinner:'Choose dinner',
   opt_vegetarian:'Vegetarian',opt_pescatarian:'Pescatarian',opt_vegan:'Vegan',opt_glutenfree:'Gluten-free',
   nutritionGoals:'Daily nutrition goals',perPerson:'per person',macroCalories:'Calories',macroProtein:'Protein (g)',macroGoalsLocked:'Daily macro goals — Premium',
@@ -2257,7 +2258,7 @@ fr:{
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Mode budget — coût de la semaine, par jour & par portion',pwPrem2:'📊 Macros avancés — objectifs glucides & lipides, tendances',pwPrem3:'🗓️ Planifiez jusqu\'à 4 semaines à l\'avance',pwPrem4:'📷 Scanner de frigo IA',pwPrem5:'☁️ Synchro sur tous vos appareils',
   perMonth:'par mois',perYear:'par an',save27:'-27 %',pwCta:'Essayer Premium gratuitement 7 jours',pwTerms:'Essai gratuit 7 jours · annulable à tout moment · sans frais cachés',
   weekpickTitle:'Quels soirs cuisinons-nous ?',weekpickSub:'Touchez les soirs où vous cuisinez.',weekpickFirstTitle:'Planifiez votre première semaine 🎉',firstweekSub:'Jour par jour — balayez jusqu’à ce que ça colle.',firstweekCTA:'C’est parti →',laterWord:'Plus tard',skipThisDay:'Passer ce jour',doneToGroceries:'Terminé — voir mes courses 🛒',gapsBar:'Encore {n} jours à planifier — continuer',gapsBarOne:'Encore 1 jour à planifier — continuer',chooseForDay:'Choisir pour {day} ✓',swipeForMore:'‹ › balayez pour d’autres idées',seeWholeWeek:'Voir toute la semaine',dayOfCount:'Jour {i} sur {n}',weekpickFirstSub:'Choisissez les soirs à cuisiner — on s’occupe du reste.',addCookingDay:'Ajouter un jour',
-  setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupBentoQ:'Préparer aussi des lunchbox ?',setupBentoHint:'Activable plus tard dans Profil.',setupBentoYes:'Oui, planifier',setupBentoNo:'Pas maintenant',setupDietQ:'Un régime ?',dietEverything:'🍽 Je mange de tout',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
+  setupWho:'Qui est à table ?',setupAdults:'👨 Adultes',setupChildren:'🧒 Enfants',setupBentoQ:'Préparer aussi des lunchbox ?',setupBentoHint:'Activable plus tard dans Profil.',setupBentoYes:'Oui, planifier',setupBentoNo:'Pas maintenant',setupGoalsQ2:'Et quels sont tes objectifs ?',setupDietQ:'Un régime ?',dietEverything:'🍽 Je mange de tout',setupAllergiesQ:'Allergies',setupAllergiesHint:'on ne les proposera jamais',setupDislikeQ:'Quelque chose que vous n\'aimez pas ?',setupNightsHint:'Vous choisirez les soirs à cuisiner lors de la planification.',setupSkipNow:'Passer pour l\'instant',
   cookBack:'‹ Retour',cookNext:'Suivant ›',cookedIt:'✓ Cuisiné !',chooseDinner:'Choisir le dîner',
   opt_vegetarian:'Végétarien',opt_pescatarian:'Pescétarien',opt_vegan:'Végétalien',opt_glutenfree:'Sans gluten',
   nutritionGoals:'Objectifs nutritionnels quotidiens',perPerson:'par personne',macroCalories:'Calories',macroProtein:'Protéines (g)',macroGoalsLocked:'Objectifs de macros — Premium',
@@ -2409,7 +2410,7 @@ es:{
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Modo presupuesto — coste de la semana, por día y por ración',pwPrem2:'📊 Macros avanzados — objetivos de carbos & grasas, tendencias',pwPrem3:'🗓️ Planifica hasta 4 semanas',pwPrem4:'📷 Escáner de nevera con IA',pwPrem5:'☁️ Sincroniza en todos tus dispositivos',
   perMonth:'al mes',perYear:'al año',save27:'-27 %',pwCta:'Prueba Premium gratis 7 días',pwTerms:'7 días de prueba gratis · cancela cuando quieras · sin costes ocultos',
   weekpickTitle:'¿Qué noches cocinamos?',weekpickSub:'Toca las noches que cocinas.',weekpickFirstTitle:'Planifica tu primera semana 🎉',firstweekSub:'Día a día — desliza hasta que encaje.',firstweekCTA:'¡Vamos! →',laterWord:'Más tarde',skipThisDay:'Saltar este día',doneToGroceries:'Listo — a la compra 🛒',gapsBar:'Quedan {n} días por planificar — seguir',gapsBarOne:'Queda 1 día por planificar — seguir',chooseForDay:'Elegir para {day} ✓',swipeForMore:'‹ › desliza para más ideas',seeWholeWeek:'Ver toda la semana',dayOfCount:'Día {i} de {n}',weekpickFirstSub:'Elige las noches que quieras cenar — nosotros las llenamos.',addCookingDay:'Añadir un día',
-  setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupBentoQ:'¿Planificar también lunchbox escolares?',setupBentoHint:'Puedes activarlo luego en Perfil.',setupBentoYes:'Sí, planificar',setupBentoNo:'Ahora no',setupDietQ:'¿Alguna dieta?',dietEverything:'🍽 Como de todo',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
+  setupWho:'¿Quién está en la mesa?',setupAdults:'👨 Adultos',setupChildren:'🧒 Niños',setupBentoQ:'¿Planificar también lunchbox escolares?',setupBentoHint:'Puedes activarlo luego en Perfil.',setupBentoYes:'Sí, planificar',setupBentoNo:'Ahora no',setupGoalsQ2:'¿Y cuáles son tus objetivos?',setupDietQ:'¿Alguna dieta?',dietEverything:'🍽 Como de todo',setupAllergiesQ:'Alergias',setupAllergiesHint:'nunca las sugeriremos',setupDislikeQ:'¿Algo que no te guste?',setupNightsHint:'Elegirás qué noches cocinar al planificar cada semana.',setupSkipNow:'Omitir por ahora',
   cookBack:'‹ Atrás',cookNext:'Siguiente ›',cookedIt:'✓ ¡Cocinado!',chooseDinner:'Elegir cena',
   opt_vegetarian:'Vegetariano',opt_pescatarian:'Pescetariano',opt_vegan:'Vegano',opt_glutenfree:'Sin gluten',
   nutritionGoals:'Objetivos nutricionales diarios',perPerson:'por persona',macroCalories:'Calorías',macroProtein:'Proteína (g)',macroGoalsLocked:'Objetivos de macros — Premium',
@@ -2607,7 +2608,7 @@ de:{
   pwPremiumName:'⭐ Premium',pwBest:'TOP',pwPrem1:'💶 Budget-Modus — Wochenkosten, pro Tag & pro Portion',pwPrem2:'📊 Erweiterte Makros — Kohlenhydrat- & Fettziele, Wochentrends',pwPrem3:'🗓️ Bis zu 4 Wochen im Voraus planen',pwPrem4:'📷 KI-Kühlschrank-Scanner',pwPrem5:'☁️ Synchro auf all deinen Geräten',
   perMonth:'pro Monat',perYear:'pro Jahr',save27:'-27 %',pwCta:'Premium 7 Tage gratis testen',pwTerms:'7 Tage gratis · jederzeit kündbar · keine versteckten Kosten',
   weekpickTitle:'An welchen Abenden kochen wir?',weekpickSub:'Tippe die Abende an, an denen du kochst.',weekpickFirstTitle:'Plane deine erste Woche 🎉',firstweekSub:'Tag für Tag — wische, bis es passt.',firstweekCTA:'Los geht’s →',laterWord:'Später',skipThisDay:'Diesen Tag überspringen',doneToGroceries:'Fertig — zur Einkaufsliste 🛒',gapsBar:'Noch {n} Tage offen — weiterplanen',gapsBarOne:'Noch 1 Tag offen — jetzt planen',chooseForDay:'Für {day} wählen ✓',swipeForMore:'‹ › wischen für mehr Vorschläge',seeWholeWeek:'Zur Wochenansicht',dayOfCount:'Tag {i} von {n}',weekpickFirstSub:'Wähle die Abende, für die du Gerichte möchtest — wir füllen sie.',addCookingDay:'Kochtag hinzufügen',
-  setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupBentoQ:'Auch Schul-Lunchboxen planen?',setupBentoHint:'Später jederzeit im Profil aktivierbar.',setupBentoYes:'Ja, Lunchboxen planen',setupBentoNo:'Jetzt nicht',setupDietQ:'Eine Ernährungsweise?',dietEverything:'🍽 Ich esse alles',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
+  setupWho:'Wer sitzt am Tisch?',setupAdults:'👨 Erwachsene',setupChildren:'🧒 Kinder',setupBentoQ:'Auch Schul-Lunchboxen planen?',setupBentoHint:'Später jederzeit im Profil aktivierbar.',setupBentoYes:'Ja, Lunchboxen planen',setupBentoNo:'Jetzt nicht',setupGoalsQ2:'Und was sind deine Ziele?',setupDietQ:'Eine Ernährungsweise?',dietEverything:'🍽 Ich esse alles',setupAllergiesQ:'Allergien',setupAllergiesHint:'schlagen wir nie vor',setupDislikeQ:'Etwas, das du nicht magst?',setupNightsHint:'Du wählst beim Planen, an welchen Abenden du kochst.',setupSkipNow:'Vorerst überspringen',
   cookBack:'‹ Zurück',cookNext:'Weiter ›',cookedIt:'✓ Gekocht!',chooseDinner:'Abendessen wählen',
   opt_vegetarian:'Vegetarisch',opt_pescatarian:'Pescetarisch',opt_vegan:'Vegan',opt_glutenfree:'Glutenfrei',
   nutritionGoals:'Tägliche Nährwertziele',perPerson:'pro Person',macroCalories:'Kalorien',macroProtein:'Protein (g)',macroGoalsLocked:'Tägliche Makro-Ziele — Premium',
@@ -2706,9 +2707,10 @@ function renderLangBars(){
       ).join('');
       return;
     }
+    // Two-letter codes instead of flags — quieter and cleaner everywhere
     const big=id==='auth-lang-row'||id==='welcome-lang-row';
     el.innerHTML=LANGS.map(l=>
-      `<button class="${big?'lang-btn':'app-lang-btn'} ${l.code===lang?'active':''}" onclick="setLang('${l.code}',true)" title="${l.code}">${l.flag}</button>`
+      `<button class="${big?'lang-btn':'app-lang-btn'} ${l.code===lang?'active':''}" onclick="setLang('${l.code}',true)" title="${LANG_NAMES[l.code]||l.code}">${l.code.toUpperCase()}</button>`
     ).join('');
   });
 }
