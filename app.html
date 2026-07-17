@@ -5422,7 +5422,7 @@ function renderDayStrip(){
   el.innerHTML=getDateRange().map((d,i)=>{
     const key=dateKey(d);
     const dm=state.plan[key]||{};
-    const filled=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId);
+    const filled=MEAL_TYPES.some(tp=>dm[tp]&&dm[tp].dishId&&getDish(dm[tp].dishId));   // only count meals that actually resolve
     const done=filled&&isConfirmed(key);   // locked in → chip shows a ✓ (the strip is the progress bar)
     const past=key<todayKey;               // gone — grey and not plannable
     const skipped=!past&&isSkipped(key);
@@ -5537,6 +5537,7 @@ function renderCal(){
   const _motivCard=(weekPlacedCount()===0)?`<div style="margin:4px 12px 8px;background:var(--nav);border-radius:var(--r);padding:18px 18px 16px;text-align:center"><div style="font-family:var(--fd);font-size:19px;font-weight:500;color:#fff;margin-bottom:6px">${tf('planMotivTitle',{name:_namePart})}</div><div style="font-size:13px;color:var(--nav-t);margin-bottom:14px;line-height:1.5">${t('planMotivSub')}</div><button onclick="startWeekFlow()" style="background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${state.weekPickDone?t('planMyWeekBtn'):t('planFirstWeekBtn')}</button>${_repeatBtn}</div>`:'' ;
   cal.innerHTML=_motivCard+dates.map(d=>{
     const key=dateKey(d);const isToday=key===todayKey;
+    const isPast=key<todayKey;   // the past can't be planned — no prompts, no actions
     const labelTxt=`${dow(d)} ${d.getDate()} ${mon(d)}${isToday?' · '+t('todayWord'):''}`;
     if(isSkipped(key)){
       return`<div class="pday" id="calday-${key}"><div class="pday-label-row"><span class="pday-label">${labelTxt}</span></div>
@@ -5546,18 +5547,19 @@ function renderCal(){
     const _mainT=mainMealType();
     let cards='';
     // Clean rows, chronological; the chosen main meal (Lunch or Dinner) is the
-    // hero — it shows the "pick a …" add row. The others only show when filled.
+    // hero — it shows the "pick a …" add row on today/future days only.
     MEAL_TYPES.forEach(tp=>{
       if(isBrowsing(key,tp)){cards+=inlineBrowseCard(key,tp);return;}
       const m=dm[tp]&&dm[tp].dishId?getDish(dm[tp].dishId):null;
       if(m){cards+=planRow(key,tp,m);return;}
-      if(tp===_mainT){
+      if(tp===_mainT&&!isPast){
         cards+=`<div class="prow addrow${isToday?' today-pulse':''}" onclick="focusPlanDay('${key}')"><div class="prow-thumb">＋</div><div class="prow-meta">${t(tp==='Lunch'?'pickALunch':'pickADinner')}</div><button class="prow-swap" onclick="event.stopPropagation();pickBasic('${key}','${tp}')" title="${t('lazyDayBasic')}">⏱</button></div>`;
       }
     });
-    const adds=MEAL_TYPES.filter(tp=>tp!==_mainT&&!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="focusPlanDay('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
-    return`<div class="pday ${isToday?'today':''}" id="calday-${key}">
-      <div class="pday-label-row"><span class="pday-label">${labelTxt}</span><div class="pday-actions">${adds?`<button class="pday-add-toggle" onclick="toggleAdds(event,'${key}')" title="＋">＋</button>`:''}<button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑</button></div></div>
+    if(!cards.trim())return'';   // nothing to show (e.g. a past day whose dish no longer resolves) → hide it
+    const adds=isPast?'':MEAL_TYPES.filter(tp=>tp!==_mainT&&!(dm[tp]&&dm[tp].dishId)&&!isBrowsing(key,tp)).map(tp=>`<button class="pday-add" onclick="focusPlanDay('${key}','${tp}')">＋ ${mealName(tp)}</button>`).join('');
+    return`<div class="pday ${isToday?'today':''} ${isPast?'past':''}" id="calday-${key}">
+      <div class="pday-label-row"><span class="pday-label">${labelTxt}</span><div class="pday-actions">${adds?`<button class="pday-add-toggle" onclick="toggleAdds(event,'${key}')" title="＋">＋</button>`:''}${isPast?'':`<button class="pday-skip-btn" onclick="rmDay(event,'${key}')" title="${t('skipDayTitle')}">🗑</button>`}</div></div>
       ${cards}
       ${adds?`<div class="pday-extra" id="adds-${key}">${adds}</div>`:''}
     </div>`;

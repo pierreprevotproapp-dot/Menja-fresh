@@ -106,6 +106,14 @@ const results = await page.evaluate(async () => {
   ok('list: gaps bar continues the flow', !!document.querySelector('.plan-gaps-bar')===(weekOpenDays().count>0));
   focusPlanDay(week[0]);                                                    // Monday is gone
   ok('flow: past day refuses planning', planFocus!==week[0]);
+  // A past day carrying an unresolvable (deleted) dish must not show a "pick a dinner" prompt
+  if(todayIdx>0){
+    const gk=week[0]; state.plan[gk]={Dinner:{dishId:'no-such-dish',adults:2,children:0}}; state.confirmed[gk]=true;
+    planFocus=null; renderPlan();
+    const promptOnPast=[...document.querySelectorAll('#cal-scroll .pday')].some(el=>el.id.replace('calday-','')<tk && el.querySelector('.prow.addrow'));
+    ok('past: unresolvable dish shows no plan prompt', !promptOnPast && !document.getElementById('calday-'+gk));
+    delete state.plan[gk]; delete state.confirmed[gk];
+  } else { ok('past: unresolvable dish shows no plan prompt', true, 'monday-run'); }
   const w6Open=needsDecision(week[6]);                                      // on a Sunday run, Sunday is already decided
   dayStripTap(6);
   ok('strip: tap open day enters the picker', w6Open? (!!document.querySelector('.pfocus') && planFocus===week[6] && !!state.plan[week[6]][mainMealType()].dishId) : true, w6Open?'':'sunday already decided');
