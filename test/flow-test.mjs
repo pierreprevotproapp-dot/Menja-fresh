@@ -125,6 +125,16 @@ const results = await page.evaluate(async () => {
   }
   ok('flow: no celebration popup, slim bars instead', !document.querySelector('#weekdone-bg.open'));
   ok('plan: no coach hint & no promo card', !document.querySelector('.plan-hint') && document.getElementById('plan-bento-promo').innerHTML==='');
+  // "Plan my week" must not dead-end while recipes are still loading — it waits, then opens
+  const _savedDishes=DISHES.splice(0);                 // empty the catalogue
+  state.plan={}; state.confirmed={}; state.skippedDays={}; planFocus=null; state.weekPickDone=false;
+  showTab('plan'); renderPlan();
+  const _origEnsure=window.ensureRecipes;
+  window.ensureRecipes=()=>{_savedDishes.forEach(d=>DISHES.push(d));return Promise.resolve();};   // simulate load finishing
+  document.querySelector('#cal-scroll [onclick="startWeekFlow()"]').click();
+  await sleep(120);
+  ok('plan: Plan-my-week waits for recipes then opens (no dead-end)', !!document.querySelector('.pfocus'));
+  window.ensureRecipes=_origEnsure; exitFocus();
 
   // ── All features standard (ALL_FEATURES_FREE) ──
   isGuest=true;
