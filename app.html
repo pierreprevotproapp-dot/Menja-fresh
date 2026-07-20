@@ -2888,7 +2888,7 @@ function pantryIcon(n){return PANTRY_ICONS_MAP[n.toLowerCase()]||'🥄';}
 let DISHES = []; // loaded from Supabase
 let _recipesPromise = null; // singleton so parallel callers share one fetch
 let _recipesFailed = false; // true after a failed fetch → show a retry banner
-function retryRecipes(){_recipesFailed=false;renderPlan();ensureRecipes().then(()=>renderPlan());}
+function retryRecipes(){_recipesFailed=false;try{refreshActiveScreen();}catch(_){}ensureRecipes().then(()=>{try{refreshActiveScreen();}catch(_){}});}
 
 // Normalise a DB recipe row into the format the app expects
 function normaliseRecipe(r) {
@@ -4497,6 +4497,19 @@ function devTogglePremium(){
   if(active){if(active.id==='screen-plan')renderPlan();else if(active.id==='screen-today')renderToday();else if(active.id==='screen-recipes')renderRecipes();else if(active.id==='screen-shopping')renderShopping();}
   toast(toPremium?'⭐ Premium view':'Standard view');
 }
+// Repaint whichever main screen is currently visible (used after a late
+// recipe load so the Cookbook/Plan/etc. fill in instead of staying blank).
+function refreshActiveScreen(){
+  const active=document.querySelector('.screen.active');
+  if(!active)return;
+  try{
+    if(active.id==='screen-plan')renderPlan();
+    else if(active.id==='screen-today')renderToday();
+    else if(active.id==='screen-recipes')renderRecipes();
+    else if(active.id==='screen-discover'){renderFilters();renderDish();}
+    else if(active.id==='screen-shopping')renderShopping();
+  }catch(_){}
+}
 // Reset to a brand-new user and launch onboarding — for showing the full journey.
 function devRunDemo(){
   if(!confirm('Run the demo? This clears the current plan & preferences and starts from onboarding.'))return;
@@ -5913,6 +5926,13 @@ function renderRecipes(){
     `<div class="tag-pill ${state.recTag===c.id?'active':''}" onclick="setRecTag('${c.id}')">${recCatLabel(c)}</div>`
   ).join('');
   const grid=document.getElementById('rec-grid');
+  // No recipes loaded at all → this is a load problem, not an empty category.
+  if(!DISHES.length){
+    grid.innerHTML=_recipesFailed
+      ?`<div class="empty-rec"><span>🔌</span>${t('recipesLoadFail')}<br><button onclick="retryRecipes()" style="margin-top:14px;background:#7EC87A;color:#1A2E1F;border:none;border-radius:99px;padding:11px 24px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit">${t('retryWord')||'↻'}</button></div>`
+      :`<div class="empty-rec"><span>🍳</span>${t('recipesLoading')}</div>`;
+    return;
+  }
   // Favourites float to the top — your cookbook, built over time
   const vis=DISHES.filter(d=>recipeMatchesCat(d,state.recTag)).slice()
     .sort((a,b)=>(isFav(b.id)?1:0)-(isFav(a.id)?1:0));
@@ -8136,22 +8156,43 @@ function closeCook(){
 // ═══════════════════════════════════════════════════
 async function loadRecipes() {
   try {
-    const { data, error } = await sb
+    if (!sb || typeof sb.from !== 'function') {
+      // Supabase client never initialised (script blocked / CDN failed / CSP)
+      throw new Error('Supabase client not ready (sb is '+(sb?typeof sb:'null')+')');
+    }
+    const { data, error, status } = await sb
       .from('recipes')
       .select('*')
       .order('title');
-    if (error) throw error;
-    DISHES = (data || []).map(normaliseRecipe);
-    console.log(`✅ Loaded ${DISHES.length} recipes from Supabase`);
+    if (error) throw new Error(error.message+(status?' [http '+status+']':'')+(error.code?' ['+error.code+']':''));
+    // Normalise row-by-row: one malformed row must never blank the whole cookbook.
+    const rows = data || [];
+    let bad = 0;
+    DISHES = rows.map(r => { try { return normaliseRecipe(r); } catch(err){ bad++; console.warn('Skipping unreadable recipe row', r&&r.id, err&&err.message); return null; } }).filter(Boolean);
+    if (bad) console.warn(`⚠ ${bad} recipe row(s) could not be parsed and were skipped.`);
+    if (DISHES.length) {
+      console.log(`✅ Loaded ${DISHES.length} recipes from Supabase`);
+      _recipesFailed = false;
+      // A late-arriving load (e.g. a waking free-tier project that missed the
+      // 8s startup timeout) must repaint whatever screen the user is on.
+      try{refreshActiveScreen();}catch(_){}
+    } else {
+      // Fetch SUCCEEDED but returned zero rows. This is NOT a working state —
+      // it means the recipes table is empty, RLS is hiding every row, or we are
+      // pointed at the wrong project. Treat it as a failure so the retry banner
+      // shows instead of a silent blank Cookbook/Plan.
+      console.error('⚠ Recipes query returned 0 rows — table empty, RLS blocking SELECT, or wrong project. DISHES is empty.');
+      _recipesFailed = true;
+      try{if(document.getElementById('screen-plan').classList.contains('active'))renderPlan();}catch(_){}
+    }
   } catch (e) {
-    console.warn('Could not load recipes from DB:', e.message);
+    console.error('❌ Could not load recipes from DB:', e && e.message ? e.message : e);
     DISHES = []; // app still works, just empty
     _recipesFailed = true;
     try{if(document.getElementById('screen-plan').classList.contains('active'))renderPlan();}catch(_){}
   } finally {
     _recipesPromise = null; // allow a fresh fetch next time (e.g. after sign-in)
   }
-  if(DISHES.length)_recipesFailed=false;
 }
 // Returns a shared in-flight promise so multiple callers don't double-fetch.
 function ensureRecipes() {
