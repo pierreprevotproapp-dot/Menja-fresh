@@ -2900,7 +2900,7 @@ function normaliseRecipe(r) {
   });
   return {
     id: r.id,                          // string slug, e.g. "sweet-potato-black-bean-rice-bowl"
-    photo: r.image_url || null,
+    photo: r.image_url || bentoPhoto(r.id),   // fall back to recipe-photos/<id>.jpg in Storage (emoji if that 404s too)
     emoji: r.emoji || '🍽️',
     tags: r.tags || [],
     meal: r.meal || [],
