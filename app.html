@@ -7453,9 +7453,9 @@ const BENTO_TIMES = {
 }
 function bentoL(o){return (o&&(o[lang]||o.en))||'';}
 function bentoFood(id){for(const f of BENTO_FOODS)if(f.id===id)return f;return null;}
-// Lunchbox photos are cut-out PNGs (plate/background removed) so the food sits cleanly in the
-// compartment; missing ones fall back to the emoji. Recipes use jpg (see normaliseRecipe).
-function bentoPhoto(id){return SUPA_URL+'/storage/v1/object/public/recipe-photos/'+id+'.png';}
+// Photos live in Supabase Storage as recipe-photos/<id>.jpg (overhead full-frame shots that
+// fill the compartment); missing ones fall back to the emoji.
+function bentoPhoto(id){return SUPA_URL+'/storage/v1/object/public/recipe-photos/'+id+'.jpg';}
 function bentoSlotById(id){for(const s of BENTO_SLOTS)if(s.id===id)return s;return BENTO_SLOTS[0];}
 
 let bentoWeekOffset=0;
