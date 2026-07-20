@@ -104,8 +104,8 @@ const results = await page.evaluate(async () => {
   showTab('plan'); renderPlan();
   ok('list: only chosen days show', document.querySelectorAll('#cal-scroll .pday').length===1 && !!document.querySelector('#cal-scroll .prow-swap') && !document.querySelector('#cal-scroll .prow-check'));
   ok('list: gaps bar continues the flow', !!document.querySelector('.plan-gaps-bar')===(weekOpenDays().count>0));
-  focusPlanDay(week[0]);                                                    // Monday is gone
-  ok('flow: past day refuses planning', planFocus!==week[0]);
+  if(todayIdx>0){ focusPlanDay(week[0]); ok('flow: past day refuses planning', planFocus!==week[0]); }  // week[0] is genuinely past
+  else { ok('flow: past day refuses planning', true, 'monday-run: no past day this week'); }
   // A past day carrying an unresolvable (deleted) dish must not show a "pick a dinner" prompt
   if(todayIdx>0){
     const gk=week[0]; state.plan[gk]={Dinner:{dishId:'no-such-dish',adults:2,children:0}}; state.confirmed[gk]=true;
