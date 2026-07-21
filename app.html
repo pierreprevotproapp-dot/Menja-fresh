@@ -4476,6 +4476,7 @@ function calcApply(){
 }
 function renderBudget(){
   const el=document.getElementById('budget-section');if(!el)return;
+  el.innerHTML='';return; // cost/budget feature removed — no price displays anywhere
   if(!isPremium()){el.innerHTML=`<h3>${t('budgetWeekly')}</h3><button class="me-link" onclick="openPaywall('premium')"><span>🔒 ${t('budgetLocked')}</span><span class="chev">›</span></button>`;return;}
   const b=state.weeklyBudget||0;
   el.innerHTML=`<h3>${t('budgetHeader')} <span style="font-size:11px;color:var(--text3);font-weight:400">${t('budgetEstimate')}</span></h3>
@@ -5343,7 +5344,7 @@ function inlineBrowseCard(key,type){
       <button class="pday-arrow right" onclick="browseNav(1)">›</button>
       <button class="pday-icbtn del" onclick="event.stopPropagation();browseCancel()" title="Cancel">×</button>
       <div class="pday-overlay"><div class="pday-meal-badge">${MEAL_ICONS[type]} ${mealName(type)}</div><div class="pday-name">${dishName(d)}</div>
-        <div class="pday-browse-row"><div class="pday-meta">${time?`⏱ ${time} ${t('minShort')}`:''}${isPremium()?` · 💶 ${money(dishCostPerServing(d))}/serv`:''}${tags?` · ${tags}`:''}</div><button class="pday-browse-choose" onclick="event.stopPropagation();browseChoose()">${t('choose')}</button></div>
+        <div class="pday-browse-row"><div class="pday-meta">${time?`⏱ ${time} ${t('minShort')}`:''}${tags?` · ${tags}`:''}</div><button class="pday-browse-choose" onclick="event.stopPropagation();browseChoose()">${t('choose')}</button></div>
       </div>
     </div>
   </div>`;
@@ -6003,7 +6004,6 @@ function renderRecipes(){
         <div class="rec-card-sub">${dishSubtitle(d)||dishDesc(d)}</div>
         <div class="rec-card-footer">
           ${totalTime?`<span class="rec-time-chip">⏱ ${totalTime} ${t('minShort')}</span>`:''}
-          ${isPremium()?`<span class="rec-time-chip">💶 ${money(dishCostPerServing(d))}/${t('perServingSlash').replace('/','').trim()}</span>`:''}
           ${(d.badges||[]).map(b=>BADGE_HTML[b]||'').join('')}
           ${rating>0?`<span style="font-size:11px;color:#B45309;font-weight:600">★ ${rating.toFixed(1)}</span>`:''}
           <button class="rec-add" onclick="event.stopPropagation();openAddToWeek('${id}')">${t('addWeekShort')}</button>
@@ -6073,7 +6073,6 @@ function renderRecipeDetail(id,targetId){
     ${d.cook?`<div class="rd-meta-item"><div class="rd-meta-val">${d.cook}'</div><div class="rd-meta-lbl">${t('cookLbl')}</div></div>`:''}
     <div class="rd-meta-item"><div class="rd-meta-val">${totalTime}'</div><div class="rd-meta-lbl">${t('totalLbl')}</div></div>
     <div class="rd-meta-item"><div class="rd-meta-val">${d.nutrition?.kcal||'—'}</div><div class="rd-meta-lbl">${t('kcal')}</div></div>
-    ${isPremium()?`<div class="rd-meta-item"><div class="rd-meta-val">${money(dishCostPerServing(d))}</div><div class="rd-meta-lbl">${t('perServingSlash')}</div></div>`:''}
   </div>`;
 
   // Ingredient grid — ingredients we have a homemade recipe for link straight to it
@@ -8115,6 +8114,7 @@ function priciestMeal(){
   return best;
 }
 function budgetCardHTML(){
+  return''; // cost/price displays removed — the app no longer shows how expensive meals are
   if(!isPremium())return`<div class="macro-card locked" onclick="openPaywall('premium')"><div class="macro-lock-em">💶</div><div class="macro-lock-mid"><div class="macro-lock-title">${t('budgetLockTitle')}</div><div class="macro-lock-sub">${t('budgetLockSub')}</div></div><div class="macro-lock-cta">${t('unlockWord')}</div></div>`;
   if(state.budgetHidden)return'';   // user hid it — bring back from Me
   const cost=weekCostEstimate();if(cost<=0)return'';
