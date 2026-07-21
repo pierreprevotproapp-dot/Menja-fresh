@@ -1268,52 +1268,50 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 /* Two-tone like a real Yumbox: teal outer SHELL, light removable inner TRAY.
    ::before paints the cream insert (below the cells), ::after adds a soft
    plastic sheen across the shell rim. */
-.bento-tray{position:relative;width:100%;max-width:380px;margin:0 auto;aspect-ratio:1.34/1;background:linear-gradient(150deg,#26C2B6 0%,#16A79D 52%,#0E8B83 100%);border-radius:28px;padding:6.5%;display:grid;grid-template-columns:1.32fr 1fr;grid-template-rows:1.12fr 1fr;gap:5.5%;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -4px 12px rgba(0,0,0,.16),0 10px 26px rgba(30,42,40,.25),0 2px 6px rgba(30,42,40,.12)}
+.bento-tray{position:relative;width:100%;max-width:380px;margin:0 auto;aspect-ratio:1.4/1;background:linear-gradient(150deg,#26C2B6 0%,#16A79D 52%,#0E8B83 100%);border-radius:28px;padding:5.5%;display:grid;grid-template-columns:1.5fr 1fr 1fr;grid-template-rows:1fr 1fr;gap:4.5%;box-shadow:inset 0 1px 0 rgba(255,255,255,.45),inset 0 -4px 12px rgba(0,0,0,.16),0 10px 26px rgba(30,42,40,.25),0 2px 6px rgba(30,42,40,.12)}
 .bento-tray::before{content:'';position:absolute;inset:11px;border-radius:19px;background:linear-gradient(160deg,#FBF8F1 0%,#F3EEE2 55%,#EAE3D3 100%);box-shadow:inset 0 2px 5px rgba(90,75,45,.14),inset 0 -1px 0 rgba(255,255,255,.8),0 1px 0 rgba(255,255,255,.35);pointer-events:none;z-index:0}
 .bento-tray::after{content:'';position:absolute;inset:0;border-radius:28px;background:linear-gradient(115deg,rgba(255,255,255,.32) 0%,rgba(255,255,255,.08) 16%,rgba(255,255,255,0) 30%,rgba(255,255,255,0) 78%,rgba(255,255,255,.10) 100%);pointer-events:none;z-index:0}
 .bento-cell{position:relative;border-radius:17px;box-shadow:inset 0 2px 7px rgba(0,0,0,.11),inset 0 -2px 5px rgba(0,0,0,.05),0 0 0 2px rgba(255,255,255,.85),0 2px 4px rgba(90,75,45,.16);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;overflow:hidden;padding:6px;transition:transform .12s,box-shadow .15s}
 .bento-cell:active{transform:scale(.96)}
 .bento-cell.filled:active{box-shadow:inset 0 2px 7px rgba(0,0,0,.16)}
-.bento-cell.c-main{grid-column:1;grid-row:1}
-.bento-cell.c-veg{grid-column:1;grid-row:2}
+.bento-cell.c-main{grid-column:1;grid-row:1/3}
 .bento-cell.c-protein{grid-column:2;grid-row:1}
+.bento-cell.c-veg{grid-column:3;grid-row:1}
 .bento-cell.c-fruit{grid-column:2;grid-row:2}
+.bento-cell.c-well{grid-column:3;grid-row:2}
 /* appetising pastel tint per compartment category */
 .bento-cell.c-main{--g1:#FFF6EC;--g2:#FFE3C6;--cacc:#DD8C3C}
 .bento-cell.c-protein{--g1:#FFFBEE;--g2:#FFEEBC;--cacc:#CFA22E}
 .bento-cell.c-veg{--g1:#F0F8E7;--g2:#D6ECC4;--cacc:#5FA257}
 .bento-cell.c-fruit{--g1:#FDEDED;--g2:#FAD1D1;--cacc:#D85F5F}
-.bento-well{--g1:#F4F0FC;--g2:#E4D8F4;--cacc:#9070D2}
-.bento-cell,.bento-well{background:linear-gradient(160deg,var(--g1),var(--g2))}
-.bento-cell.filled,.bento-well.filled{background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.92),rgba(255,255,255,0) 60%),linear-gradient(160deg,var(--g1),var(--g2))}
-.bento-well{position:absolute;left:56.5%;top:50%;transform:translate(-50%,-50%);width:23.5%;aspect-ratio:1;border-radius:50%;box-shadow:inset 0 2px 7px rgba(0,0,0,.16),0 0 0 5px #F3EEE2,0 0 0 6px rgba(255,255,255,.9),0 2px 6px rgba(90,75,45,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;z-index:2;overflow:hidden}
-.bento-well:active{transform:translate(-50%,-50%) scale(.93)}
+.bento-cell.c-well{--g1:#F4F0FC;--g2:#E4D8F4;--cacc:#9070D2}
+.bento-cell{background:linear-gradient(160deg,var(--g1),var(--g2))}
+.bento-cell.filled{background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.92),rgba(255,255,255,0) 60%),linear-gradient(160deg,var(--g1),var(--g2))}
 .bento-emoji{font-size:32px;line-height:1;filter:drop-shadow(0 2px 2px rgba(0,0,0,.13))}
 .bento-cell.c-main .bento-emoji{font-size:43px}
-.bento-well .bento-emoji{font-size:21px}
 .bento-food-name{font-size:10.5px;font-weight:700;color:var(--text);margin-top:4px;line-height:1.12;max-width:96%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .bento-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .2s;filter:saturate(.82) brightness(1.02) contrast(.97)}
 /* One focal point: the big Main cell stays fullest; the small side cells and the
    dip well sit quieter so the eye has somewhere to land instead of five photos
    shouting at once (calms the visual overload while staying photo-based). */
-.bento-cell:not(.c-main) .bento-photo,.bento-well .bento-photo{filter:saturate(.66) brightness(1.0) contrast(.96)}
+.bento-cell:not(.c-main) .bento-photo{filter:saturate(.66) brightness(1.0) contrast(.96)}
 .bento-photo.ok{opacity:1}
-.bento-cell:has(.bento-photo.ok) .bento-emoji,.bento-well:has(.bento-photo.ok) .bento-emoji{display:none}
+.bento-cell:has(.bento-photo.ok) .bento-emoji{display:none}
 /* Depth: photos are frameless food textures — this inset shadow sets them INTO the
    tray (wall shadow top/left matches the photos' upper-left light, soft rim below),
    so all five compartments read as one 3D box. */
-.bento-cell:has(.bento-photo.ok)::after,.bento-well:has(.bento-photo.ok)::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;box-shadow:inset 0 6px 13px rgba(0,0,0,.20),inset 2px 0 8px rgba(0,0,0,.10),inset 0 -2px 6px rgba(255,255,255,.14),inset 0 0 0 1px rgba(0,0,0,.08)}
+.bento-cell:has(.bento-photo.ok)::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;box-shadow:inset 0 6px 13px rgba(0,0,0,.20),inset 2px 0 8px rgba(0,0,0,.10),inset 0 -2px 6px rgba(255,255,255,.14),inset 0 0 0 1px rgba(0,0,0,.08)}
 .bento-cell:has(.bento-photo.ok) .bento-food-name{position:absolute;left:0;right:0;bottom:0;margin:0;padding:14px 6px 5px;font-weight:600;color:#fff;z-index:2;background:linear-gradient(transparent,rgba(0,0,0,.55));max-width:100%}
-.bento-well:has(.bento-photo.ok) .bento-food-name{display:none}
-.bento-well .bento-food-name{font-size:7px;margin-top:1px;-webkit-line-clamp:1}
+/* smaller side cells get a tighter label */
+.bento-cell:not(.c-main):has(.bento-photo.ok) .bento-food-name{font-size:9px;padding:10px 5px 4px}
 .bento-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--cacc);opacity:.85}
 .bento-empty .plus{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;border:2px dashed currentColor;font-size:18px;font-weight:400;line-height:1}
 .bento-empty .role{font-size:9px;font-weight:800;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
 .bento-cell.c-main .bento-empty .plus{width:36px;height:36px;font-size:22px}
-.bento-well .bento-empty .plus{width:20px;height:20px;font-size:13px;border-width:1.5px}
-.bento-well .bento-empty .role{font-size:6px;margin-top:1px}
+.bento-cell:not(.c-main) .bento-empty .plus{width:24px;height:24px;font-size:15px;border-width:1.5px}
+.bento-cell:not(.c-main) .bento-empty .role{font-size:7.5px}
 .bento-x{position:absolute;top:4px;right:5px;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,.28);color:#fff;font-size:10px;line-height:18px;text-align:center;border:none;cursor:pointer;z-index:3;padding:0;backdrop-filter:blur(2px)}
-.bento-well .bento-x{top:2px;right:auto;width:14px;height:14px;line-height:14px;font-size:8px}
+.bento-cell:not(.c-main) .bento-x{width:15px;height:15px;line-height:15px;font-size:8px}
 /* Bottom-sheet food picker */
 .bento-sheet-bg{position:fixed;inset:0;background:rgba(20,30,22,.55);z-index:600;display:none;align-items:flex-end}
 .bento-sheet-bg.open{display:flex}
@@ -7589,12 +7587,11 @@ function renderBentoKids(){
 function bentoTrayHTML(key){
   const plan=(state.bentoPlan&&state.bentoPlan[key])||{};
   const cells=BENTO_SLOTS.map(slot=>{
-    const isWell=slot.id==='well';
     const food=plan[slot.id]?bentoFood(plan[slot.id]):null;
     const inner=food
       ?`<button class="bento-x" onclick="event.stopPropagation();bentoClearSlot('${key}','${slot.id}')">✕</button><img class="bento-photo" src="${bentoPhoto(food.id)}" alt="" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()"><div class="bento-emoji">${food.emoji}</div><div class="bento-food-name">${bentoL(food.name)}</div>`
       :`<div class="bento-empty"><div class="plus">＋</div><div class="role">${t(slot.roleKey)}</div></div>`;
-    const cls=isWell?`bento-well ${food?'filled':''}`:`bento-cell ${slot.cls} ${food?'filled':''}`;
+    const cls=`bento-cell ${slot.cls} ${food?'filled':''}`;   // dip is now its own grid cell — no overlap
     const tap=food?`openBentoRecipe('${key}','${slot.id}')`:`openBentoPick('${key}','${slot.id}')`;
     return`<div class="${cls}" onclick="${tap}">${inner}</div>`;
   }).join('');
