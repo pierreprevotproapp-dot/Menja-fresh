@@ -6014,6 +6014,9 @@ function setRecTag(k){state.recTag=k;save();renderRecipes();}
 let _recListScroll=0;   // remember where the recipe list was scrolled to
 function openRecipe(id){
   const d=getDish(id);if(!d)return;
+  // Push a history entry so the phone back button returns to the recipe list
+  // instead of leaving the app entirely (popstate closes this like an overlay).
+  _ovDepth++;history.pushState({_ov:'rec-detail'},'');
   _recListScroll=window.scrollY||document.documentElement.scrollTop||0;   // save list position
   _rdTab='ing';
   _detailTarget=null;
@@ -6027,9 +6030,15 @@ function openRecipe(id){
   document.getElementById('screen-recipes').scrollTop=0;
 }
 // Back from a recipe → rebuild the list AND restore the previous scroll position.
-function backToRecipes(){
+// Rebuild the list + restore scroll (no history change) — used by both the
+// on-screen back button and the phone back button (popstate).
+function _exitRecipeDetail(){
   renderRecipes();
   requestAnimationFrame(()=>{window.scrollTo(0,_recListScroll);document.documentElement.scrollTop=_recListScroll;});
+}
+function backToRecipes(){
+  _exitRecipeDetail();
+  if(_ovDepth>0){_ovDepth--;history.back();}   // consume the entry openRecipe pushed
 }
 
 function changeServings(id,delta){
@@ -8322,6 +8331,9 @@ async function init(){
       ['chooser-bg',()=>document.getElementById('chooser-bg').classList.remove('open')],
     ];
     for(const[id,fn]of layers){const el=document.getElementById(id);if(el&&el.classList.contains('open')){fn();return;}}
+    // Cookbook inline recipe detail (not an .open overlay) → back to the list
+    const rdv=document.getElementById('rec-detail-view');
+    if(rdv&&rdv.style.display!=='none'){_exitRecipeDetail();return;}
   });
 
   // ── Register auth listener FIRST (before any async calls) ──
