@@ -1367,8 +1367,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       </div>
       <div class="lang-row" id="welcome-lang-row" style="margin-bottom:12px"></div>
       <div class="welcome-photo">
-        <img src="https://v3b.fal.media/files/b/0a9cf80d/7zutElf_TjiowoI0eejH7_15c2f43eb8bb426794a154cab2c0dd86.jpg" alt="" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="welcome-photo-fb">
+        <img id="welcome-hero-img" alt="" loading="eager" style="opacity:0;transition:opacity .4s">
+        <div class="welcome-photo-fb" id="welcome-hero-fb">
           <div class="plate"><b>🥗</b></div>
           <span class="garnish g1">🍅</span><span class="garnish g2">🌿</span>
           <span class="garnish g3">🥑</span><span class="garnish g4">🍋</span>
@@ -1901,6 +1901,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <button class="setup-back" id="setup-back-btn" onclick="setupBack()" style="visibility:hidden">‹</button>
         <button class="setup-done" id="setup-done-btn" onclick="setupNext()">Next →</button>
       </div>
+      <a id="setup-guest-btn" onclick="setupContinueGuest()" style="display:none;text-align:center;padding:10px;border-radius:99px;border:1.5px solid var(--border2);font-size:13px;font-weight:500;color:var(--text2);margin-top:8px;cursor:pointer">👤 <span data-t="guestLink">Continue as guest</span></a>
       <span class="setup-skip" id="setup-skip" onclick="setupNext(true)" data-t="setupSkipNow">Skip</span>
     </div>
   </div>
@@ -3337,6 +3338,7 @@ async function continueAsGuest(){
   hideLoading();
   const name=state.userName||'';
   showApp({id:'guest',email:'',user_metadata:{first_name:name||'Guest',avatar:'👤',plan:'guest'}});
+  routeFirstWeekCTA(); // came from onboarding via the auth screen → Plan + first-week CTA
 }
 function openImpressum(){
   const CONTENT={
@@ -4658,12 +4660,17 @@ function renderSetupStep(){
     if(setupStep===7)btn.textContent=(setupIsFirstRun&&!currentUser)?t('stepDoneCTA'):t('setupDoneFirst');
     else btn.textContent=isLast?t('saveWord'):t('nextWord');
   }
+  // On the final first-run page an anonymous user gets BOTH paths:
+  // primary = create account, secondary = continue as guest.
+  const gbtn=document.getElementById('setup-guest-btn');
+  if(gbtn)gbtn.style.display=(setupStep===7&&setupIsFirstRun&&!currentUser)?'block':'none';
   document.getElementById('setup-bg').scrollTop=0;
 }
 function setupNext(skip){
   const list=setupStepList();
   const pos=list.indexOf(setupStep);
   if(pos<list.length-1){setupStep=list[pos+1];renderSetupStep();}
+  else if(setupIsFirstRun&&!currentUser&&setupStep===7){finishSetupSignup();}
   else{finishSetup(false);}
 }
 function setupBack(){
@@ -4762,8 +4769,8 @@ function renderSetupSummary(){
   if(setupDraft.focus.length){const names=setupDraft.focus.map(id=>t((FOCUS_OPTIONS.find(f=>f.id===id)||{}).k||id));rows.push(['🎯',t('sumFocus'),names.join(' · ')]);}
   el.innerHTML=rows.map(([em,lbl,val])=>`<div class="setup-summary-row"><span class="em">${em}</span><div><div class="lbl">${lbl}</div><div class="val">${val}</div></div></div>`).join('');
 }
-async function finishSetup(skip){
-  // commit everything the user entered (even on skip we keep what's there)
+// commit everything the user entered in onboarding (even on skip we keep what's there)
+function commitSetupDraft(){
   state.userName=(setupDraft.name||'').trim();
   state.goals=setupDraft.goals;
   state.family.adults=setupDraft.adults;state.family.children=setupDraft.children;
@@ -4776,7 +4783,30 @@ async function finishSetup(skip){
   }
   if(setupDraft.calcResult){if(!state.macroGoals)state.macroGoals={kcal:0,protein:0};state.macroGoals.kcal=setupDraft.calcResult.kcal;state.macroGoals.protein=setupDraft.calcResult.protein;}
   state.setupDone=true;
-  save();renderFamily();renderDietPrefs();closeSetup();
+  save();
+}
+// Final onboarding page → "Create account": keep everything they set up, open
+// the sign-up form, and after sign-in land on Plan with the same first-week
+// call-to-action a guest gets (flag survives the e-mail-confirmation gap).
+function finishSetupSignup(){
+  commitSetupDraft();
+  renderFamily();renderDietPrefs();closeSetup();hideWelcome();
+  try{localStorage.setItem('menja_first_week_cta','1');}catch(e){}
+  showAuth();switchAuthTab('signup');
+}
+function setupContinueGuest(){finishSetup(false);}
+// After any sign-in: if onboarding queued the first-week CTA, route to Plan.
+function routeFirstWeekCTA(){
+  try{
+    if(!localStorage.getItem('menja_first_week_cta'))return;
+    localStorage.removeItem('menja_first_week_cta');
+    showTab('plan');
+    setTimeout(openFirstWeek,450);
+  }catch(e){}
+}
+async function finishSetup(skip){
+  commitSetupDraft();
+  renderFamily();renderDietPrefs();closeSetup();
   // Editing from Me tab → just close back to where they were
   if(!setupIsFirstRun){toast(t('prefsSaved'));return;}
   // First run → make sure the app shell is visible. Onboarding can run on top of
@@ -8303,6 +8333,7 @@ async function init(){
       await withTimeout(Promise.all([loadUserData(session.user), loadRecipes()]),8000);
       hideLoading();
       showApp(session.user);
+      routeFirstWeekCTA(); // fresh account straight from onboarding → Plan + first-week CTA
     }else if(event==='SIGNED_OUT'){
       state={family:{adults:2,children:0},liked:[],disliked:[],plan:{},shopping:{},catOpen:{},ratings:{},activeTag:'All',recTag:'All',openDays:{},discoverPaused:false,pantry:{},genericCart:{},dietaryPrefs:[],allergies:[],dislikes:[],dinnersPerWeek:5,cookDays:[],customItems:[],hintsSeen:{},taste:{tags:{},recipes:{}},macroGoals:{kcal:0,protein:0},userName:'',goals:[],mainMeal:'dinner',focus:[],calc:null,weeklyBudget:0,weekCostLog:{},budgetHidden:false,outOfStaples:{},setupDone:false,cooked:{},skippedDays:{},confirmed:{},shoppingFrom:''};
       showWelcome();
@@ -8362,6 +8393,7 @@ async function init(){
       await withTimeout(Promise.all([loadUserData(session.user), loadRecipes()]),8000);
       hideLoading();
       showApp(session.user);
+      routeFirstWeekCTA(); // e.g. returning from e-mail confirmation after onboarding
       return;
     }
 
@@ -8396,6 +8428,22 @@ async function init(){
     hideLoading();showWelcome();
   }
 }
+
+// Welcome hero photo — self-healing: try a few appetising dishes from Storage
+// (permanent URLs, unlike the old fal.media links which expire) and show the
+// first that loads; fall back to the emoji plate if none are uploaded yet.
+function initWelcomeHero(){
+  const img=document.getElementById('welcome-hero-img');
+  if(!img)return;
+  const fb=document.getElementById('welcome-hero-fb');
+  const base=SUPA_URL+'/storage/v1/object/public/recipe-photos/';
+  const cands=['chicken-fajita-bowl','watermelon-feta-salad','margherita-pizza','thai-green-chicken-curry','homemade-granola','spaghetti-bolognese'];
+  let i=0;
+  img.onload=()=>{img.style.opacity='1';if(fb)fb.style.display='none';};
+  img.onerror=()=>{ if(i<cands.length){ img.src=base+cands[i++]+'.jpg'; } else { img.style.display='none'; if(fb)fb.style.display='flex'; } };
+  img.onerror(); // kick off the cascade
+}
+initWelcomeHero();
 
 // init() is called by initSupabase() once the library loads
 initSupabase();
