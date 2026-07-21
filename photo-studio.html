@@ -46,7 +46,7 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
 <header class="top"><div class="top-in">
   <div class="eyebrow">Menja Fresh · Photo production</div>
   <h1>Recipe & Lunchbox Photo Studio</h1>
-  <div class="sub">Generate a photo for every dish and lunchbox item, then <b>Save to app</b> — it uploads to your Supabase and shows up live, no manual steps. One shared style so all 97 match.</div>
+  <div class="sub">Generate a photo for every dish and lunchbox item, then <b>Save to app</b> — it uploads to your Supabase and shows up live, no manual steps. One shared style so all 106 match.</div>
   <div class="keys">
     <input class="in k" id="falkey" type="password" placeholder="fal.ai key (generate)…" autocomplete="off" spellcheck="false">
     <input class="in k" id="supakey" type="password" placeholder="Supabase service_role key (save to app)…" autocomplete="off" spellcheck="false">
@@ -55,7 +55,7 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
   </div>
   <div class="stylewrap"><label class="stylelbl">Lunchbox photo style — edit to fine-tune, then Regenerate</label><textarea id="lunchstyle" class="styletx" rows="2"></textarea></div><div class="keynote">🔒 Both keys live only in <b>this browser</b> — never committed, never sent to us. Uploads go to your Supabase Storage bucket <code>recipe-photos</code>.</div>
   <div class="bar"><div class="progress"><i id="pfill"></i></div><span class="pcount" id="pcount">0 / 0 live</span><button class="btn" id="copyStyle">Copy shared style</button><button class="btn" id="resetBtn">Reset</button></div>
-  <div class="controls"><input class="search" id="search" type="search" placeholder="Filter…" aria-label="Filter"><div class="tabs" id="tabs"><button class="tab on" data-g="all">All 97</button><button class="tab" data-g="Lunchbox">Lunchbox 60</button><button class="tab" data-g="Recipes">Recipes 37</button><button class="tab" data-g="todo">To do</button></div></div>
+  <div class="controls"><input class="search" id="search" type="search" placeholder="Filter…" aria-label="Filter"><div class="tabs" id="tabs"><button class="tab on" data-g="all">All 106</button><button class="tab" data-g="Lunchbox">Lunchbox 60</button><button class="tab" data-g="Recipes">Recipes 46</button><button class="tab" data-g="todo">To do</button></div></div>
 </div></header>
 
 <div class="wrap">
@@ -604,7 +604,7 @@ const DB={
    "id": "margherita-pizza",
    "emoji": "🍽",
    "name": "Margherita Pizza",
-   "prompt": "Classic margherita pizza with blistered crust, melted mozzarella, tomato and fresh basil, overhead shot, wood-fired look, home-style food photography on a simple plate over a linen or wood table, natural soft daylight, realistic matte textures, wholesome artisanal homemade, muted natural tones, not a 3d render"
+   "prompt": "A rustic homemade whole-wheat pizza with a golden blistered wholegrain crust, loaded with colorful vegetables — red bell pepper strips, thin courgette rounds, halved cherry tomatoes, red onion and mushrooms — over melty browned mozzarella and a tomato base, scattered with fresh basil and rocket, one slice pulled slightly with a cheese stretch, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
   },
   {
    "group": "Recipes",
@@ -613,14 +613,6 @@ const DB={
    "emoji": "🍽",
    "name": "Classic Beef Lasagna",
    "prompt": "Classic beef lasagna with golden bubbling cheese top, one portion lifted showing layers of ragù and béchamel, home-style food photography on a simple plate over a linen or wood table, natural soft daylight, realistic matte textures, wholesome artisanal homemade, muted natural tones, not a 3d render"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "creamy-mac-and-cheese",
-   "emoji": "🍽",
-   "name": "Creamy Mac and Cheese",
-   "prompt": "Creamy macaroni and cheese with golden breadcrumb top in a baking dish, spoon pulling a cheesy portion, home-style food photography on a simple plate over a linen or wood table, natural soft daylight, realistic matte textures, wholesome artisanal homemade, muted natural tones, not a 3d render"
   },
   {
    "group": "Recipes",
@@ -708,7 +700,7 @@ const DB={
    "id": "no-bake-chocolate-peanut-oat-bars",
    "emoji": "🍽",
    "name": "No-Bake Chocolate Peanut Oat Bars",
-   "prompt": "No-bake oat bars with a dark chocolate top, cut into squares on parchment, home-style food photography on a simple plate over a linen or wood table, natural soft daylight, realistic matte textures, wholesome artisanal homemade, muted natural tones, not a 3d render"
+   "prompt": "Homemade no-bake chocolate peanut oat bars cut into chunky squares and stacked, showing a dense chewy pressed-together oat-and-peanut-butter base as one solid layer under a glossy dark chocolate top, rustic uneven hand-cut edges, a few crushed peanuts on top, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
   },
   {
    "group": "Recipes",
@@ -724,7 +716,7 @@ const DB={
    "id": "baked-cinnamon-apples-oat-crumble",
    "emoji": "🍽",
    "name": "Baked Cinnamon Apples with Oat Crumble",
-   "prompt": "Baked whole apples stuffed with golden oat-walnut crumble in a rustic dish, steam rising, warm cosy light, home-style food photography on a simple plate over a linen or wood table, natural soft daylight, realistic matte textures, wholesome artisanal homemade, muted natural tones, not a 3d render"
+   "prompt": "Soft baked cinnamon apple wedges topped with a golden crunchy oat and walnut crumble in a small rustic baking dish, syrupy and caramelized at the edges, a little steam rising, cozy and homemade, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
   },
   {
    "group": "Recipes",
@@ -772,7 +764,7 @@ const DB={
    "id": "orange-energy-balls",
    "emoji": "🍽",
    "name": "Orange & Almond Energy Balls",
-   "prompt": "Orange and almond energy balls rolled in desiccated coconut on a plate, fresh orange and dates beside, home-style food photography on a simple plate over a linen or wood table, natural soft daylight, realistic matte textures, wholesome artisanal homemade, muted natural tones, not a 3d render"
+   "prompt": "About a dozen homemade orange and date energy balls, a deep caramel date-brown color, matte and slightly craggy from oats and ground almonds, hand-rolled and imperfectly round, about half rolled in fine white desiccated coconut and the rest bare with flecks of orange zest, a halved orange and a few dates alongside, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
   },
   {
    "group": "Recipes",
@@ -788,7 +780,7 @@ const DB={
    "id": "tiramisu-lighter",
    "emoji": "🍽",
    "name": "Lighter Tiramisu",
-   "prompt": "Lighter tiramisu in a glass dish dusted with cocoa, one portion scooped to show the layers of coffee-soaked biscuit and cream, home-style food photography on a simple plate over a linen or wood table, natural soft daylight, realistic matte textures, wholesome artisanal homemade, muted natural tones, not a 3d render"
+   "prompt": "A generous square slice of homemade tiramisu on a small plate, clearly visible soft layers of coffee-soaked ladyfinger biscuit and mascarpone cream, dusted with cocoa powder, a spoonful lifted showing the creamy layers, rustic home-kitchen look, no glass, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
   },
   {
    "group": "Recipes",
@@ -853,10 +845,90 @@ const DB={
    "emoji": "🍽",
    "name": "Silky Homemade Hummus",
    "prompt": "Silky Homemade Hummus, home-style food photography on a simple plate over a linen or wood table, natural soft daylight, realistic matte textures, wholesome artisanal homemade, muted natural tones, not a 3d render"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "white-bean-roasted-pepper-soup",
+   "emoji": "🫘",
+   "name": "White Bean & Roasted Pepper Soup",
+   "prompt": "A warming bowl of creamy white bean and roasted red pepper soup, deep orange-red, swirled with a little cream and a drizzle of olive oil, fresh thyme on top, the soup filling most of the frame, close overhead, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "veggie-plate-roasted-seasonal",
+   "emoji": "🥦",
+   "name": "Roasted Seasonal Veggie Plate",
+   "prompt": "An abundant plate of golden roasted seasonal vegetables — broccoli, carrot batons, courgette, red pepper and red onion — caramelized and charred at the edges, scattered with fresh thyme and a squeeze of lemon, rustic and colorful, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "hummus-bowl-roasted-veg",
+   "emoji": "🫙",
+   "name": "Hummus Bowl with Warm Roasted Veg",
+   "prompt": "A nourishing bowl that is mostly colorful warm roasted vegetables — courgette, red pepper, cherry tomatoes and golden chickpeas — with just a small swoosh of creamy hummus to one side, sprinkled with chopped parsley, a wedge of warm flatbread tucked in, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "cinnamon-sweet-potato-pecan-bowl",
+   "emoji": "🍠",
+   "name": "Cinnamon Sweet Potato & Maple Pecan Bowl",
+   "prompt": "A cozy bowl of roasted cinnamon sweet potato cubes and fluffy quinoa topped with toasted pecans, ruby pomegranate seeds, crumbled feta and fresh mint, warm autumn colors, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "cinnamon-roll-pecan-yogurt-bowl",
+   "emoji": "🥣",
+   "name": "Cinnamon Roll Pecan Yogurt Bowl",
+   "prompt": "A creamy Greek yogurt bowl swirled with cinnamon and maple, topped with sliced banana, chopped Medjool dates, toasted pecans and a drizzle of almond butter, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "apple-pie-pecan-oat-bowl",
+   "emoji": "🍎",
+   "name": "Apple Pie Pecan Oat Bowl",
+   "prompt": "A warm bowl of creamy porridge oats with soft cinnamon apple pieces, toasted pecans, plump raisins and a few fresh berries, comforting and homemade, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "classic-greek-salad-horiatiki",
+   "emoji": "🥗",
+   "name": "Classic Greek Salad",
+   "prompt": "A rustic Greek horiatiki salad of chunky ripe tomatoes, cucumber, green pepper and red onion with Kalamata olives and a thick slab of feta on top, drizzled with olive oil and oregano, no lettuce, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "spanish-tortilla-herbed-yogurt-greens",
+   "emoji": "🍳",
+   "name": "Spanish Tortilla with Herbed Yogurt & Greens",
+   "prompt": "A thick golden Spanish potato tortilla cut into wedges, one wedge showing the soft layered potato and egg inside, served with a dollop of herbed yogurt and a small handful of peppery greens, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "classic-carrot-cake-cream-cheese",
+   "emoji": "🥕",
+   "name": "Classic Carrot Cake",
+   "prompt": "A slice of moist homemade carrot cake with thick cream-cheese frosting and chopped pecans, showing the tender spiced crumb flecked with carrot, on a small plate, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "strawberry-tomato-burrata-salad",
+   "emoji": "🍓",
+   "name": "Strawberry, Tomato & Burrata Salad",
+   "prompt": "A fresh salad of halved strawberries and cherry tomatoes around a soft creamy burrata torn open in the middle, scattered with toasted pine nuts and basil, a drizzle of olive oil, overhead natural-light food photography, homemade and rustic, true-to-life colors, realistic matte textures with slight imperfections, on a simple plate or bowl on a linen or wood table, soft daylight, appetizing but not glossy, photorealistic, high detail, not a 3d render, no text, no watermark"
   }
  ]
 };
-const items=DB.items;let lunchStyle=localStorage.getItem('menja_lunch_style_v7')||DB.lunchStyle;let promptEdits=JSON.parse(localStorage.getItem('menja_prompt_edits_v7')||'{}');const basePrompt=it=>it.prompt||(it.subject+', '+lunchStyle);const promptFor=it=>promptEdits[it.id]!=null?promptEdits[it.id]:basePrompt(it);const isLunch=it=>it.group==='Lunchbox';const extFor=it=>'jpg';
+const items=DB.items;let lunchStyle=localStorage.getItem('menja_lunch_style_v8')||DB.lunchStyle;let promptEdits=JSON.parse(localStorage.getItem('menja_prompt_edits_v8')||'{}');const basePrompt=it=>it.prompt||(it.subject+', '+lunchStyle);const promptFor=it=>promptEdits[it.id]!=null?promptEdits[it.id]:basePrompt(it);const isLunch=it=>it.group==='Lunchbox';const extFor=it=>'jpg';
 const SUPA='https://ekuynkjtcvpiueollznp.supabase.co', BUCKET='recipe-photos';
 const LIVE='menja_photo_live_v2', FK='menja_fal_key', MK='menja_fal_model', SK='menja_supa_key', IMG='menja_photo_imgs_v2';
 let live=JSON.parse(localStorage.getItem(LIVE)||'{}');
@@ -911,7 +983,7 @@ async function saveCard(it,cardEl){
   }catch(err){cardEl.querySelector('.thumb').innerHTML=(imgs[it.id]?'<img src="'+imgs[it.id]+'">':'<div class="ph">—</div>')+'<div class="ph err" style="position:absolute;inset:auto 0 0 0;background:var(--panel);padding:8px">'+esc(err.message)+'</div>';return false;}
 }
 async function download(it){const url=imgs[it.id];if(!url)return;try{const b=await(await fetch(url)).blob();const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=it.id+'.'+extFor(it);a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);}catch(e){window.open(url,'_blank');}}
-el('list').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const it=items.find(i=>i.id===c.dataset.id);const a=e.target.dataset.act;if(a==='regen'){delete imgs[it.id];delete live[it.id];saveState();saveCard(it,c);}else if(a==='save')saveCard(it,c);else if(a==='dl')download(it);else if(a==='resetprompt'){delete promptEdits[it.id];localStorage.setItem('menja_prompt_edits_v7',JSON.stringify(promptEdits));render();}else if(a==='prompt')copy(promptFor(it),e.target);else if(a==='fname')copy(it.id+'.jpg',e.target);});
+el('list').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const it=items.find(i=>i.id===c.dataset.id);const a=e.target.dataset.act;if(a==='regen'){delete imgs[it.id];delete live[it.id];saveState();saveCard(it,c);}else if(a==='save')saveCard(it,c);else if(a==='dl')download(it);else if(a==='resetprompt'){delete promptEdits[it.id];localStorage.setItem('menja_prompt_edits_v8',JSON.stringify(promptEdits));render();}else if(a==='prompt')copy(promptFor(it),e.target);else if(a==='fname')copy(it.id+'.jpg',e.target);});
 el('genAll').addEventListener('click',async function(){
   if(batching){stopB=true;this.textContent='Stopping…';return;}
   if(!el('falkey').value.trim()){alert('Paste your fal.ai key first.');return;}
@@ -925,9 +997,9 @@ el('supakey').addEventListener('input',e=>{localStorage.setItem(SK,e.target.valu
 el('model').addEventListener('change',e=>localStorage.setItem(MK,e.target.value));
 el('tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;g=b.dataset.g;[...el('tabs').children].forEach(x=>x.classList.toggle('on',x===b));render();});
 el('search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render();});
-el('list').addEventListener('input',e=>{const ta=e.target.closest('.prompt-edit');if(!ta)return;const id=ta.dataset.id,it=items.find(i=>i.id===id);if(ta.value===basePrompt(it))delete promptEdits[id];else promptEdits[id]=ta.value;localStorage.setItem('menja_prompt_edits_v7',JSON.stringify(promptEdits));});
+el('list').addEventListener('input',e=>{const ta=e.target.closest('.prompt-edit');if(!ta)return;const id=ta.dataset.id,it=items.find(i=>i.id===id);if(ta.value===basePrompt(it))delete promptEdits[id];else promptEdits[id]=ta.value;localStorage.setItem('menja_prompt_edits_v8',JSON.stringify(promptEdits));});
 el('copyStyle').addEventListener('click',e=>copy(lunchStyle,e.target));
 el('resetBtn').addEventListener('click',()=>{if(confirm('Clear local generated images & live-marks on this device? (Uploaded photos stay in Supabase; keys stay.)')){live={};imgs={};saveState();progress();render();}});
-el('falkey').value=localStorage.getItem(FK)||'';el('supakey').value=localStorage.getItem(SK)||'';el('model').value=localStorage.getItem(MK)||'fal-ai/flux/dev';el('lunchstyle').value=lunchStyle;el('lunchstyle').addEventListener('input',e=>{lunchStyle=e.target.value;localStorage.setItem('menja_lunch_style_v7',lunchStyle);render();});
+el('falkey').value=localStorage.getItem(FK)||'';el('supakey').value=localStorage.getItem(SK)||'';el('model').value=localStorage.getItem(MK)||'fal-ai/flux/dev';el('lunchstyle').value=lunchStyle;el('lunchstyle').addEventListener('input',e=>{lunchStyle=e.target.value;localStorage.setItem('menja_lunch_style_v8',lunchStyle);render();});
 progress();render();
 </script>
