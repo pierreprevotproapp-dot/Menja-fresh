@@ -92,7 +92,7 @@ const DB={
    "id": "spinach-waffle",
    "emoji": "🧇",
    "name": "Spinach waffles",
-   "subject": "two small golden-green spinach waffles with crisp waffle-iron squares, slightly overlapping, flecks of spinach in the batter"
+   "subject": "two small golden-green spinach waffles filling the whole frame, crisp waffle-iron squares, flecks of spinach in the batter"
   },
   {
    "group": "Lunchbox",
@@ -108,7 +108,7 @@ const DB={
    "id": "sweet-potato-pancake",
    "emoji": "🥞",
    "name": "Sweet potato pancakes",
-   "subject": "three small golden sweet potato pancakes slightly overlapping, crisp lacy edges and soft orange centres"
+   "subject": "three small golden sweet potato pancakes overlapping to fill the whole frame, crisp lacy edges and soft orange centres"
   },
   {
    "group": "Lunchbox",
@@ -132,7 +132,7 @@ const DB={
    "id": "banana-oat-pancake",
    "emoji": "🥞",
    "name": "Banana-oat pancakes",
-   "subject": "three small golden banana-oat pancakes slightly overlapping, soft fluffy texture with visible oat flecks"
+   "subject": "three small golden banana-oat pancakes overlapping to fill the whole frame, soft fluffy texture with visible oat flecks"
   },
   {
    "group": "Lunchbox",
@@ -140,7 +140,7 @@ const DB={
    "id": "pita-pocket",
    "emoji": "🫓",
    "name": "Hummus pita pockets",
-   "subject": "two mini wholemeal pita halves stuffed with creamy hummus, crunchy cucumber and carrot sticks poking out"
+   "subject": "two mini wholemeal pita halves side by side filling the whole frame, stuffed with creamy hummus, crunchy cucumber and carrot sticks poking out"
   },
   {
    "group": "Lunchbox",
@@ -148,7 +148,7 @@ const DB={
    "id": "corn-fritter",
    "emoji": "🌽",
    "name": "Sweetcorn fritters",
-   "subject": "three small golden sweetcorn fritters with crispy edges and bright yellow corn kernels"
+   "subject": "three small golden sweetcorn fritters filling the whole frame, crispy edges and bright yellow corn kernels"
   },
   {
    "group": "Lunchbox",
@@ -244,7 +244,7 @@ const DB={
    "id": "caprese-skewer",
    "emoji": "🍅",
    "name": "Caprese skewers",
-   "subject": "one short skewer of red cherry tomatoes, white mini mozzarella and a fresh basil leaf, laid diagonally"
+   "subject": "one short skewer of red cherry tomatoes, white mini mozzarella and a fresh basil leaf, laid diagonally across the whole frame"
   },
   {
    "group": "Lunchbox",
@@ -324,7 +324,7 @@ const DB={
    "id": "fruit-skewer",
    "emoji": "🍢",
    "name": "Rainbow fruit skewers",
-   "subject": "one short fruit skewer in rainbow order with strawberry, orange melon, green kiwi and a purple grape, laid diagonally"
+   "subject": "one short fruit skewer in rainbow order with strawberry, orange melon, green kiwi and a purple grape, laid diagonally across the whole frame"
   },
   {
    "group": "Lunchbox",
@@ -364,7 +364,7 @@ const DB={
    "id": "grape-cheese-skewer",
    "emoji": "🍇",
    "name": "Grape & cheese skewers",
-   "subject": "one short skewer alternating green and red grapes with pale cheese cubes, laid diagonally"
+   "subject": "one short skewer alternating green and red grapes with pale cheese cubes, laid diagonally across the whole frame"
   },
   {
    "group": "Lunchbox",
@@ -476,7 +476,7 @@ const DB={
    "id": "veggie-quesadilla",
    "emoji": "🫓",
    "name": "Veggie quesadilla",
-   "subject": "three toasted wholegrain quesadilla triangles with golden-brown spots, melted cheese and bright grated carrot and courgette between the layers, fanned slightly"
+   "subject": "three toasted wholegrain quesadilla triangles fanned to fill the whole frame, golden-brown spots, melted cheese and bright grated carrot and courgette between the layers"
   },
   {
    "group": "Lunchbox",
@@ -484,7 +484,7 @@ const DB={
    "id": "veggie-sushi",
    "emoji": "🍣",
    "name": "Veggie sushi rolls",
-   "subject": "four veggie sushi rolls cut-side up, white rice spirals with crisp cucumber and creamy avocado centres, dark nori edges"
+   "subject": "four veggie sushi rolls cut-side up filling the whole frame, white rice spirals with crisp cucumber and creamy avocado centres, dark nori edges"
   },
   {
    "group": "Lunchbox",
@@ -856,7 +856,7 @@ const DB={
   }
  ]
 };
-const items=DB.items;let lunchStyle=localStorage.getItem('menja_lunch_style_v6')||DB.lunchStyle;let promptEdits=JSON.parse(localStorage.getItem('menja_prompt_edits_v6')||'{}');const basePrompt=it=>it.prompt||(it.subject+', '+lunchStyle);const promptFor=it=>promptEdits[it.id]!=null?promptEdits[it.id]:basePrompt(it);const isLunch=it=>it.group==='Lunchbox';const extFor=it=>'jpg';
+const items=DB.items;let lunchStyle=localStorage.getItem('menja_lunch_style_v7')||DB.lunchStyle;let promptEdits=JSON.parse(localStorage.getItem('menja_prompt_edits_v7')||'{}');const basePrompt=it=>it.prompt||(it.subject+', '+lunchStyle);const promptFor=it=>promptEdits[it.id]!=null?promptEdits[it.id]:basePrompt(it);const isLunch=it=>it.group==='Lunchbox';const extFor=it=>'jpg';
 const SUPA='https://ekuynkjtcvpiueollznp.supabase.co', BUCKET='recipe-photos';
 const LIVE='menja_photo_live_v2', FK='menja_fal_key', MK='menja_fal_model', SK='menja_supa_key', IMG='menja_photo_imgs_v2';
 let live=JSON.parse(localStorage.getItem(LIVE)||'{}');
@@ -911,7 +911,7 @@ async function saveCard(it,cardEl){
   }catch(err){cardEl.querySelector('.thumb').innerHTML=(imgs[it.id]?'<img src="'+imgs[it.id]+'">':'<div class="ph">—</div>')+'<div class="ph err" style="position:absolute;inset:auto 0 0 0;background:var(--panel);padding:8px">'+esc(err.message)+'</div>';return false;}
 }
 async function download(it){const url=imgs[it.id];if(!url)return;try{const b=await(await fetch(url)).blob();const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=it.id+'.'+extFor(it);a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);}catch(e){window.open(url,'_blank');}}
-el('list').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const it=items.find(i=>i.id===c.dataset.id);const a=e.target.dataset.act;if(a==='regen'){delete imgs[it.id];delete live[it.id];saveState();saveCard(it,c);}else if(a==='save')saveCard(it,c);else if(a==='dl')download(it);else if(a==='resetprompt'){delete promptEdits[it.id];localStorage.setItem('menja_prompt_edits_v6',JSON.stringify(promptEdits));render();}else if(a==='prompt')copy(promptFor(it),e.target);else if(a==='fname')copy(it.id+'.jpg',e.target);});
+el('list').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const it=items.find(i=>i.id===c.dataset.id);const a=e.target.dataset.act;if(a==='regen'){delete imgs[it.id];delete live[it.id];saveState();saveCard(it,c);}else if(a==='save')saveCard(it,c);else if(a==='dl')download(it);else if(a==='resetprompt'){delete promptEdits[it.id];localStorage.setItem('menja_prompt_edits_v7',JSON.stringify(promptEdits));render();}else if(a==='prompt')copy(promptFor(it),e.target);else if(a==='fname')copy(it.id+'.jpg',e.target);});
 el('genAll').addEventListener('click',async function(){
   if(batching){stopB=true;this.textContent='Stopping…';return;}
   if(!el('falkey').value.trim()){alert('Paste your fal.ai key first.');return;}
@@ -925,9 +925,9 @@ el('supakey').addEventListener('input',e=>{localStorage.setItem(SK,e.target.valu
 el('model').addEventListener('change',e=>localStorage.setItem(MK,e.target.value));
 el('tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;g=b.dataset.g;[...el('tabs').children].forEach(x=>x.classList.toggle('on',x===b));render();});
 el('search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render();});
-el('list').addEventListener('input',e=>{const ta=e.target.closest('.prompt-edit');if(!ta)return;const id=ta.dataset.id,it=items.find(i=>i.id===id);if(ta.value===basePrompt(it))delete promptEdits[id];else promptEdits[id]=ta.value;localStorage.setItem('menja_prompt_edits_v6',JSON.stringify(promptEdits));});
+el('list').addEventListener('input',e=>{const ta=e.target.closest('.prompt-edit');if(!ta)return;const id=ta.dataset.id,it=items.find(i=>i.id===id);if(ta.value===basePrompt(it))delete promptEdits[id];else promptEdits[id]=ta.value;localStorage.setItem('menja_prompt_edits_v7',JSON.stringify(promptEdits));});
 el('copyStyle').addEventListener('click',e=>copy(lunchStyle,e.target));
 el('resetBtn').addEventListener('click',()=>{if(confirm('Clear local generated images & live-marks on this device? (Uploaded photos stay in Supabase; keys stay.)')){live={};imgs={};saveState();progress();render();}});
-el('falkey').value=localStorage.getItem(FK)||'';el('supakey').value=localStorage.getItem(SK)||'';el('model').value=localStorage.getItem(MK)||'fal-ai/flux/dev';el('lunchstyle').value=lunchStyle;el('lunchstyle').addEventListener('input',e=>{lunchStyle=e.target.value;localStorage.setItem('menja_lunch_style_v6',lunchStyle);render();});
+el('falkey').value=localStorage.getItem(FK)||'';el('supakey').value=localStorage.getItem(SK)||'';el('model').value=localStorage.getItem(MK)||'fal-ai/flux/dev';el('lunchstyle').value=lunchStyle;el('lunchstyle').addEventListener('input',e=>{lunchStyle=e.target.value;localStorage.setItem('menja_lunch_style_v7',lunchStyle);render();});
 progress();render();
 </script>
