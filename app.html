@@ -1292,6 +1292,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .2s}
 .bento-photo.ok{opacity:1}
 .bento-cell:has(.bento-photo.ok) .bento-emoji,.bento-well:has(.bento-photo.ok) .bento-emoji{display:none}
+/* Depth: photos are frameless food textures — this inset shadow sets them INTO the
+   tray (wall shadow top/left matches the photos' upper-left light, soft rim below),
+   so all five compartments read as one 3D box. */
+.bento-cell:has(.bento-photo.ok)::after,.bento-well:has(.bento-photo.ok)::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;box-shadow:inset 0 8px 16px rgba(0,0,0,.32),inset 3px 0 10px rgba(0,0,0,.14),inset 0 -3px 8px rgba(255,255,255,.16),inset 0 0 0 1px rgba(0,0,0,.10)}
 .bento-cell:has(.bento-photo.ok) .bento-food-name{position:absolute;left:0;right:0;bottom:0;margin:0;padding:14px 6px 5px;color:#fff;z-index:2;background:linear-gradient(transparent,rgba(0,0,0,.72));max-width:100%}
 .bento-well:has(.bento-photo.ok) .bento-food-name{display:none}
 .bento-well .bento-food-name{font-size:7px;margin-top:1px;-webkit-line-clamp:1}
