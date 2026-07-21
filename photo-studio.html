@@ -50,7 +50,7 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
   <div class="keys">
     <input class="in k" id="falkey" type="password" placeholder="fal.ai key (generate)…" autocomplete="off" spellcheck="false">
     <input class="in k" id="supakey" type="password" placeholder="Supabase service_role key (save to app)…" autocomplete="off" spellcheck="false">
-    <select class="model" id="model"><option value="fal-ai/flux/dev">FLUX dev — realistic</option><option value="fal-ai/flux/schnell">FLUX schnell — fast</option></select>
+    <select class="model" id="model"><option value="fal-ai/flux-pro/v1.1-ultra">FLUX 1.1 Pro Ultra — best (magazine)</option><option value="fal-ai/flux-pro/v1.1">FLUX 1.1 Pro — high quality</option><option value="fal-ai/flux/dev">FLUX dev — standard</option><option value="fal-ai/flux/schnell">FLUX schnell — fast</option></select>
     <button class="btn solid" id="genAll">Generate + save all</button>
   </div>
   <div class="stylewrap"><label class="stylelbl">Lunchbox photo style — edit to fine-tune, then Regenerate</label><textarea id="lunchstyle" class="styletx" rows="2"></textarea></div><div class="keynote">🔒 Both keys live only in <b>this browser</b> — never committed, never sent to us. Uploads go to your Supabase Storage bucket <code>recipe-photos</code>.</div>
@@ -76,7 +76,7 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
 
 <script>
 const DB={
- "lunchStyle": "photographed straight down from above, the food fills the entire image edge to edge, touching the edges of the frame, shot extremely close up, macro food photography, bright airy natural daylight from the upper left, fresh true-to-life colors, homemade look, crisp appetizing texture, every detail in sharp focus, professional food photography for a family recipe app, photorealistic, ultra-high resolution",
+ "lunchStyle": "overhead flat-lay, the food fills the whole frame edge to edge, close-up, styled by a professional food stylist, soft directional window light with gentle natural shadows, fresh true-to-life colors, rich natural textures, crisp focus on the food, editorial food photography, magazine quality like Bon Appétit and Kinfolk, warm inviting and genuinely appetizing, photorealistic, high dynamic range, natural homemade look, no artificial gloss, no plastic sheen",
  "items": [
   {
    "group": "Lunchbox",
@@ -928,7 +928,7 @@ const DB={
   }
  ]
 };
-const items=DB.items;let lunchStyle=localStorage.getItem('menja_lunch_style_v8')||DB.lunchStyle;let promptEdits=JSON.parse(localStorage.getItem('menja_prompt_edits_v8')||'{}');const basePrompt=it=>it.prompt||(it.subject+', '+lunchStyle);const promptFor=it=>promptEdits[it.id]!=null?promptEdits[it.id]:basePrompt(it);const isLunch=it=>it.group==='Lunchbox';const extFor=it=>'jpg';
+const items=DB.items;let lunchStyle=localStorage.getItem('menja_lunch_style_v9')||DB.lunchStyle;let promptEdits=JSON.parse(localStorage.getItem('menja_prompt_edits_v9')||'{}');const basePrompt=it=>it.prompt||(it.subject+', '+lunchStyle);const promptFor=it=>promptEdits[it.id]!=null?promptEdits[it.id]:basePrompt(it);const isLunch=it=>it.group==='Lunchbox';const extFor=it=>'jpg';
 const SUPA='https://ekuynkjtcvpiueollznp.supabase.co', BUCKET='recipe-photos';
 const LIVE='menja_photo_live_v2', FK='menja_fal_key', MK='menja_fal_model', SK='menja_supa_key', IMG='menja_photo_imgs_v2';
 let live=JSON.parse(localStorage.getItem(LIVE)||'{}');
@@ -958,7 +958,13 @@ function setThumb(cardEl,html,busy){const s=cardEl.querySelector('.thumb');s.inn
 async function genImage(it,cardEl){
   const key=el('falkey').value.trim();if(!key){alert('Paste your fal.ai key first.');return null;}
   setThumb(cardEl,'<div class="ph"><div class="spin"></div>Generating…</div>');
-  const res=await fetch('https://fal.run/'+el('model').value,{method:'POST',headers:{'Authorization':'Key '+key,'Content-Type':'application/json'},body:JSON.stringify({prompt:promptFor(it),image_size:'square_hd',num_images:1})});
+  const model=el('model').value;
+  // Pro Ultra takes aspect_ratio (not image_size) and a "raw" flag for a more
+  // natural, less over-processed photographic look — key to killing the AI-plastic feel.
+  const body=/ultra/.test(model)
+    ?{prompt:promptFor(it),aspect_ratio:'1:1',num_images:1,output_format:'jpeg',raw:true,enable_safety_checker:false}
+    :{prompt:promptFor(it),image_size:'square_hd',num_images:1,output_format:'jpeg',enable_safety_checker:false};
+  const res=await fetch('https://fal.run/'+model,{method:'POST',headers:{'Authorization':'Key '+key,'Content-Type':'application/json'},body:JSON.stringify(body)});
   if(!res.ok)throw new Error('fal '+res.status+': '+(await res.text()).slice(0,120));
   const data=await res.json();let url=data.images&&data.images[0]&&data.images[0].url;if(!url)throw new Error('No image returned');
   return url;
@@ -983,7 +989,7 @@ async function saveCard(it,cardEl){
   }catch(err){cardEl.querySelector('.thumb').innerHTML=(imgs[it.id]?'<img src="'+imgs[it.id]+'">':'<div class="ph">—</div>')+'<div class="ph err" style="position:absolute;inset:auto 0 0 0;background:var(--panel);padding:8px">'+esc(err.message)+'</div>';return false;}
 }
 async function download(it){const url=imgs[it.id];if(!url)return;try{const b=await(await fetch(url)).blob();const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=it.id+'.'+extFor(it);a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);}catch(e){window.open(url,'_blank');}}
-el('list').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const it=items.find(i=>i.id===c.dataset.id);const a=e.target.dataset.act;if(a==='regen'){delete imgs[it.id];delete live[it.id];saveState();saveCard(it,c);}else if(a==='save')saveCard(it,c);else if(a==='dl')download(it);else if(a==='resetprompt'){delete promptEdits[it.id];localStorage.setItem('menja_prompt_edits_v8',JSON.stringify(promptEdits));render();}else if(a==='prompt')copy(promptFor(it),e.target);else if(a==='fname')copy(it.id+'.jpg',e.target);});
+el('list').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const it=items.find(i=>i.id===c.dataset.id);const a=e.target.dataset.act;if(a==='regen'){delete imgs[it.id];delete live[it.id];saveState();saveCard(it,c);}else if(a==='save')saveCard(it,c);else if(a==='dl')download(it);else if(a==='resetprompt'){delete promptEdits[it.id];localStorage.setItem('menja_prompt_edits_v9',JSON.stringify(promptEdits));render();}else if(a==='prompt')copy(promptFor(it),e.target);else if(a==='fname')copy(it.id+'.jpg',e.target);});
 el('genAll').addEventListener('click',async function(){
   if(batching){stopB=true;this.textContent='Stopping…';return;}
   if(!el('falkey').value.trim()){alert('Paste your fal.ai key first.');return;}
@@ -997,9 +1003,9 @@ el('supakey').addEventListener('input',e=>{localStorage.setItem(SK,e.target.valu
 el('model').addEventListener('change',e=>localStorage.setItem(MK,e.target.value));
 el('tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;g=b.dataset.g;[...el('tabs').children].forEach(x=>x.classList.toggle('on',x===b));render();});
 el('search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render();});
-el('list').addEventListener('input',e=>{const ta=e.target.closest('.prompt-edit');if(!ta)return;const id=ta.dataset.id,it=items.find(i=>i.id===id);if(ta.value===basePrompt(it))delete promptEdits[id];else promptEdits[id]=ta.value;localStorage.setItem('menja_prompt_edits_v8',JSON.stringify(promptEdits));});
+el('list').addEventListener('input',e=>{const ta=e.target.closest('.prompt-edit');if(!ta)return;const id=ta.dataset.id,it=items.find(i=>i.id===id);if(ta.value===basePrompt(it))delete promptEdits[id];else promptEdits[id]=ta.value;localStorage.setItem('menja_prompt_edits_v9',JSON.stringify(promptEdits));});
 el('copyStyle').addEventListener('click',e=>copy(lunchStyle,e.target));
 el('resetBtn').addEventListener('click',()=>{if(confirm('Clear local generated images & live-marks on this device? (Uploaded photos stay in Supabase; keys stay.)')){live={};imgs={};saveState();progress();render();}});
-el('falkey').value=localStorage.getItem(FK)||'';el('supakey').value=localStorage.getItem(SK)||'';el('model').value=localStorage.getItem(MK)||'fal-ai/flux/dev';el('lunchstyle').value=lunchStyle;el('lunchstyle').addEventListener('input',e=>{lunchStyle=e.target.value;localStorage.setItem('menja_lunch_style_v8',lunchStyle);render();});
+el('falkey').value=localStorage.getItem(FK)||'';el('supakey').value=localStorage.getItem(SK)||'';el('model').value=localStorage.getItem(MK)||'fal-ai/flux-pro/v1.1-ultra';el('lunchstyle').value=lunchStyle;el('lunchstyle').addEventListener('input',e=>{lunchStyle=e.target.value;localStorage.setItem('menja_lunch_style_v9',lunchStyle);render();});
 progress();render();
 </script>
