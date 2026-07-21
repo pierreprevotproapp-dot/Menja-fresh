@@ -1293,10 +1293,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-well .bento-emoji{font-size:21px}
 .bento-food-name{font-size:10.5px;font-weight:700;color:var(--text);margin-top:4px;line-height:1.12;max-width:96%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .bento-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .2s;filter:saturate(.82) brightness(1.02) contrast(.97)}
-/* Photo matte: inset the food a few px so a sliver of the cream tray frames each
-   compartment — distinct, calmer tiles instead of five photos butting edge to edge.
-   The round dip well keeps its full-bleed circular photo. */
-.bento-cell .bento-photo{width:auto;height:auto;inset:4px;border-radius:12px}
+/* Photo matte: a cream frame around each compartment photo — distinct, calmer
+   tiles instead of five photos butting edge to edge. Done as a border (with
+   global box-sizing:border-box) so object-fit:cover stays sharp. The round dip
+   well keeps its full-bleed circular photo. */
+.bento-cell .bento-photo{border:4px solid #F5EFE1;border-radius:14px}
 /* One focal point: the big Main cell stays fullest; the small side cells and the
    dip well sit quieter so the eye has somewhere to land instead of five photos
    shouting at once (calms the visual overload while staying photo-based). */
