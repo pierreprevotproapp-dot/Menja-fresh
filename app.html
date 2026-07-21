@@ -1293,6 +1293,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-well .bento-emoji{font-size:21px}
 .bento-food-name{font-size:10.5px;font-weight:700;color:var(--text);margin-top:4px;line-height:1.12;max-width:96%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .bento-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .2s;filter:saturate(.82) brightness(1.02) contrast(.97)}
+/* Photo matte: inset the food a few px so a sliver of the cream tray frames each
+   compartment — distinct, calmer tiles instead of five photos butting edge to edge.
+   The round dip well keeps its full-bleed circular photo. */
+.bento-cell .bento-photo{width:auto;height:auto;inset:4px;border-radius:12px}
 /* One focal point: the big Main cell stays fullest; the small side cells and the
    dip well sit quieter so the eye has somewhere to land instead of five photos
    shouting at once (calms the visual overload while staying photo-based). */
@@ -1302,8 +1306,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 /* Depth: photos are frameless food textures — this inset shadow sets them INTO the
    tray (wall shadow top/left matches the photos' upper-left light, soft rim below),
    so all five compartments read as one 3D box. */
-.bento-cell:has(.bento-photo.ok)::after,.bento-well:has(.bento-photo.ok)::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;box-shadow:inset 0 6px 13px rgba(0,0,0,.20),inset 2px 0 8px rgba(0,0,0,.10),inset 0 -2px 6px rgba(255,255,255,.14),inset 0 0 0 1px rgba(0,0,0,.08)}
-.bento-cell:has(.bento-photo.ok) .bento-food-name{position:absolute;left:0;right:0;bottom:0;margin:0;padding:14px 6px 5px;font-weight:600;color:#fff;z-index:2;background:linear-gradient(transparent,rgba(0,0,0,.55));max-width:100%}
+.bento-well:has(.bento-photo.ok)::after{content:'';position:absolute;inset:0;border-radius:inherit;pointer-events:none;z-index:3;box-shadow:inset 0 6px 13px rgba(0,0,0,.20),inset 2px 0 8px rgba(0,0,0,.10),inset 0 -2px 6px rgba(255,255,255,.14),inset 0 0 0 1px rgba(0,0,0,.08)}
+.bento-cell:has(.bento-photo.ok)::after{content:'';position:absolute;inset:4px;border-radius:12px;pointer-events:none;z-index:3;box-shadow:inset 0 6px 13px rgba(0,0,0,.18),inset 2px 0 8px rgba(0,0,0,.09),inset 0 -2px 6px rgba(255,255,255,.14),inset 0 0 0 1px rgba(0,0,0,.07)}
+.bento-cell:has(.bento-photo.ok) .bento-food-name{position:absolute;left:4px;right:4px;bottom:4px;margin:0;padding:14px 7px 5px;font-weight:600;color:#fff;z-index:2;background:linear-gradient(transparent,rgba(0,0,0,.55));border-radius:0 0 12px 12px;max-width:calc(100% - 8px)}
 .bento-well:has(.bento-photo.ok) .bento-food-name{display:none}
 .bento-well .bento-food-name{font-size:7px;margin-top:1px;-webkit-line-clamp:1}
 .bento-empty{display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--cacc);opacity:.85}
@@ -1312,8 +1317,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-cell.c-main .bento-empty .plus{width:36px;height:36px;font-size:22px}
 .bento-well .bento-empty .plus{width:20px;height:20px;font-size:13px;border-width:1.5px}
 .bento-well .bento-empty .role{font-size:6px;margin-top:1px}
-.bento-x{position:absolute;top:4px;right:5px;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,.28);color:#fff;font-size:10px;line-height:18px;text-align:center;border:none;cursor:pointer;z-index:3;padding:0;backdrop-filter:blur(2px)}
-.bento-well .bento-x{top:2px;right:auto;width:14px;height:14px;line-height:14px;font-size:8px}
+/* Tray ✕ hidden for a cleaner box — remove/change happens in the compartment
+   sheet (tap a compartment → Swap / Remove). */
+.bento-x{display:none}
 /* Bottom-sheet food picker */
 .bento-sheet-bg{position:fixed;inset:0;background:rgba(20,30,22,.55);z-index:600;display:none;align-items:flex-end}
 .bento-sheet-bg.open{display:flex}
@@ -1348,7 +1354,9 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-recipe-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .bento-tip{display:flex;gap:10px;align-items:flex-start;background:#FFF6E5;border:1px solid #F0D9A8;border-radius:14px;padding:11px 13px;margin-bottom:12px;font-size:13px;line-height:1.45;color:#6B5318}
 .bento-tip-ic{font-size:18px;line-height:1;flex-shrink:0}
-.bento-swap-btn{width:100%;margin:14px 0 4px;background:var(--surface2);color:var(--text);border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.bento-sheet-actions{display:flex;gap:9px;margin:14px 0 4px}
+.bento-swap-btn{flex:1;background:var(--surface2);color:var(--text);border:none;border-radius:99px;padding:14px;font-size:15px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.bento-remove-btn{flex:0 0 auto;background:transparent;color:var(--text3);border:1.5px solid var(--border2);border-radius:99px;padding:14px 18px;font-size:14px;font-weight:600;cursor:pointer;font-family:var(--fb)}
 .bento-box-recipe-btn{width:100%;margin-top:12px;background:var(--accent);color:#fff;border:none;border-radius:99px;padding:13px;font-size:14px;font-weight:700;cursor:pointer;font-family:var(--fb)}
 .bento-prep-group{margin-bottom:10px;background:var(--surface);border:1px solid var(--border2);border-radius:14px;overflow:hidden}
 .bento-prep-head{display:flex;align-items:center;gap:9px;font-size:15px;font-weight:700;color:var(--text);padding:13px 14px;cursor:pointer;list-style:none;user-select:none;-webkit-tap-highlight-color:transparent}
@@ -2078,7 +2086,7 @@ en:{
   bentoTitle:'🍱 Bento Lunchbox for Kids',bentoSub:'Pick your days, then fill 5 compartments with healthy food',
   bentoNoBox:'No bento box planned for this day yet.',bentoPlanDay:'Plan a bento box',bentoSurprise:'Surprise',
   bentoRoleMain:'Main',bentoRoleProtein:'Protein',bentoRoleVeg:'Veggies',bentoRoleFruit:'Fruit',bentoRoleDip:'Dip & treat',
-  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',bentoBoxRecipe:'Whole-box recipe',bentoForWholeBox:'Everything for the whole box',bentoTotalBox:'Whole box · total',bentoShopTitle:'🥪 Bento lunchbox',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Healthy school lunchboxes in minutes',newBadge:'New',bentoPromoTitle:'Plan healthy school lunchboxes',bentoPromoSub:'New: 🍱 Bento-Lunchbox — build a balanced lunchbox in minutes',bentoTryBtn:'Try it →',bentoLaterBtn:'Later',bentoNudgeToast:'🍱 Bento-Lunchbox is now on — plan their lunchboxes!',guestPlanTitle:"💾 Your plan isn't saved",guestPlanSub:'Free account — your meals on every device.',guestPlanBtn:'Create account →',
+  bentoNoFoods:'No foods here',bentoVeggieNote:'Vegetarian & wholesome',bentoAddToBox:'Add to box',bentoAllCat:'All',bentoSwap:'Swap this item',bentoRemove:'Remove from box',bentoNoRecipe:'Recipe coming soon',proteinWord:'Protein',bentoBoxRecipe:'Whole-box recipe',bentoForWholeBox:'Everything for the whole box',bentoTotalBox:'Whole box · total',bentoShopTitle:'🥪 Bento lunchbox',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Healthy school lunchboxes in minutes',newBadge:'New',bentoPromoTitle:'Plan healthy school lunchboxes',bentoPromoSub:'New: 🍱 Bento-Lunchbox — build a balanced lunchbox in minutes',bentoTryBtn:'Try it →',bentoLaterBtn:'Later',bentoNudgeToast:'🍱 Bento-Lunchbox is now on — plan their lunchboxes!',guestPlanTitle:"💾 Your plan isn't saved",guestPlanSub:'Free account — your meals on every device.',guestPlanBtn:'Create account →',
   langHeader:'Language',meName:'Me',prefsAllergies:'⚙️ Preferences & allergies',
   deleteAccount:'Delete account',deleteAccountConfirm:"Delete your account and all your data? This can't be undone.",deleteAccountDone:'Your account has been deleted.',deleteAccountErr:'Signed out and your data removed. For full account closure, email info@menja-fresh.com.',legalNotice:'Legal notice / Impressum',
   upgrade:'⭐ Upgrade',forgotPw:'Forgot password?',orSep:'or',min8Chars:'Min. 8 characters',
@@ -2230,7 +2238,7 @@ fr:{
   bentoTitle:'🍱 Bento-Lunchbox enfants',bentoSub:'Choisis tes jours, puis remplis 5 compartiments de bons aliments',
   bentoNoBox:'Aucune boîte prévue pour ce jour.',bentoPlanDay:'Planifier une boîte',bentoSurprise:'Surprise',
   bentoRoleMain:'Plat',bentoRoleProtein:'Protéine',bentoRoleVeg:'Légumes',bentoRoleFruit:'Fruits',bentoRoleDip:'Sauce & en-cas',
-  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoNoRecipe:'Recette à venir',bentoBoxRecipe:'Recette de la boîte',bentoForWholeBox:'Tout pour la boîte entière',bentoTotalBox:'Boîte entière · total',bentoShopTitle:'🥪 Boîte bento',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Lunchbox saines en quelques minutes',newBadge:'Nouv.',bentoPromoTitle:'Planifie des lunchbox saines',bentoPromoSub:'Nouveau : 🍱 Bento-Lunchbox — une lunchbox équilibrée en minutes',bentoTryBtn:'Essayer →',bentoLaterBtn:'Plus tard',bentoNudgeToast:'🍱 Bento-Lunchbox est activé — planifie leurs lunchbox !',guestPlanTitle:"💾 Ton plan n'est pas enregistré",guestPlanSub:'Compte gratuit — tes repas sur tous tes appareils.',guestPlanBtn:'Créer un compte →',
+  bentoNoFoods:'Aucun aliment ici',bentoVeggieNote:'Végétarien & sain',bentoAddToBox:'Ajouter',bentoAllCat:'Tout',bentoSwap:'Changer',bentoRemove:'Retirer',bentoNoRecipe:'Recette à venir',bentoBoxRecipe:'Recette de la boîte',bentoForWholeBox:'Tout pour la boîte entière',bentoTotalBox:'Boîte entière · total',bentoShopTitle:'🥪 Boîte bento',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Lunchbox saines en quelques minutes',newBadge:'Nouv.',bentoPromoTitle:'Planifie des lunchbox saines',bentoPromoSub:'Nouveau : 🍱 Bento-Lunchbox — une lunchbox équilibrée en minutes',bentoTryBtn:'Essayer →',bentoLaterBtn:'Plus tard',bentoNudgeToast:'🍱 Bento-Lunchbox est activé — planifie leurs lunchbox !',guestPlanTitle:"💾 Ton plan n'est pas enregistré",guestPlanSub:'Compte gratuit — tes repas sur tous tes appareils.',guestPlanBtn:'Créer un compte →',
   langHeader:'Langue',meName:'Moi',prefsAllergies:'⚙️ Préférences et allergies',
   deleteAccount:'Supprimer le compte',deleteAccountConfirm:'Supprimer ton compte et toutes tes données ? Action irréversible.',deleteAccountDone:'Ton compte a été supprimé.',deleteAccountErr:'Déconnecté et tes données supprimées. Pour la clôture complète du compte, écris à info@menja-fresh.com.',legalNotice:'Mentions légales / Impressum',
   upgrade:'⭐ Premium',forgotPw:'Mot de passe oublié ?',orSep:'ou',min8Chars:'Min. 8 caractères',
@@ -2382,7 +2390,7 @@ es:{
   bentoTitle:'🍱 Bento-Lunchbox para niños',bentoSub:'Elige tus días y llena 5 compartimentos con comida sana',
   bentoNoBox:'Aún no hay caja planificada para este día.',bentoPlanDay:'Planificar una caja',bentoSurprise:'Sorpresa',
   bentoRoleMain:'Principal',bentoRoleProtein:'Proteína',bentoRoleVeg:'Verduras',bentoRoleFruit:'Fruta',bentoRoleDip:'Salsa y snack',
-  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoNoRecipe:'Receta próximamente',bentoBoxRecipe:'Receta de la caja',bentoForWholeBox:'Todo para la caja entera',bentoTotalBox:'Caja entera · total',bentoShopTitle:'🥪 Caja bento',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Cajas de almuerzo sanas en minutos',newBadge:'Nuevo',bentoPromoTitle:'Planifica cajas de almuerzo sanas',bentoPromoSub:'Nuevo: 🍱 Bento-Lunchbox — una caja equilibrada en minutos',bentoTryBtn:'Probar →',bentoLaterBtn:'Más tarde',bentoNudgeToast:'🍱 Bento-Lunchbox está activo — ¡planifica sus almuerzos!',guestPlanTitle:'💾 Tu plan no está guardado',guestPlanSub:'Cuenta gratis — tus comidas en todos tus dispositivos.',guestPlanBtn:'Crear cuenta →',
+  bentoNoFoods:'No hay alimentos aquí',bentoVeggieNote:'Vegetariano y saludable',bentoAddToBox:'Añadir',bentoAllCat:'Todo',bentoSwap:'Cambiar',bentoRemove:'Quitar',bentoNoRecipe:'Receta próximamente',bentoBoxRecipe:'Receta de la caja',bentoForWholeBox:'Todo para la caja entera',bentoTotalBox:'Caja entera · total',bentoShopTitle:'🥪 Caja bento',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Cajas de almuerzo sanas en minutos',newBadge:'Nuevo',bentoPromoTitle:'Planifica cajas de almuerzo sanas',bentoPromoSub:'Nuevo: 🍱 Bento-Lunchbox — una caja equilibrada en minutos',bentoTryBtn:'Probar →',bentoLaterBtn:'Más tarde',bentoNudgeToast:'🍱 Bento-Lunchbox está activo — ¡planifica sus almuerzos!',guestPlanTitle:'💾 Tu plan no está guardado',guestPlanSub:'Cuenta gratis — tus comidas en todos tus dispositivos.',guestPlanBtn:'Crear cuenta →',
   langHeader:'Idioma',meName:'Yo',prefsAllergies:'⚙️ Preferencias y alergias',
   deleteAccount:'Eliminar cuenta',deleteAccountConfirm:'¿Eliminar tu cuenta y todos tus datos? No se puede deshacer.',deleteAccountDone:'Tu cuenta ha sido eliminada.',deleteAccountErr:'Sesión cerrada y datos eliminados. Para el cierre completo de la cuenta, escribe a info@menja-fresh.com.',legalNotice:'Aviso legal / Impressum',
   upgrade:'⭐ Premium',forgotPw:'¿Has olvidado la contraseña?',orSep:'o',min8Chars:'Mín. 8 caracteres',
@@ -2580,7 +2588,7 @@ de:{
   bentoTitle:'🍱 Bento-Lunchbox für Kinder',bentoSub:'Wähle deine Tage und fülle 5 Fächer mit gesundem Essen',
   bentoNoBox:'Für diesen Tag ist noch keine Box geplant.',bentoPlanDay:'Bento-Box planen',bentoSurprise:'Überraschung',
   bentoRoleMain:'Hauptgericht',bentoRoleProtein:'Eiweiß',bentoRoleVeg:'Gemüse',bentoRoleFruit:'Obst',bentoRoleDip:'Dip & Snack',
-  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoNoRecipe:'Rezept folgt',bentoBoxRecipe:'Rezept der ganzen Box',bentoForWholeBox:'Alles für die ganze Box',bentoTotalBox:'Ganze Box · gesamt',bentoShopTitle:'🥪 Bento-Lunchbox',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Gesunde Lunchboxen in Minuten',newBadge:'Neu',bentoPromoTitle:'Gesunde Schul-Lunchboxen planen',bentoPromoSub:'Neu: 🍱 Bento-Lunchbox — in Minuten eine ausgewogene Lunchbox',bentoTryBtn:'Ausprobieren →',bentoLaterBtn:'Später',bentoNudgeToast:'🍱 Bento-Lunchbox ist jetzt aktiv — plane ihre Lunchboxen!',guestPlanTitle:'💾 Dein Plan ist nicht gespeichert',guestPlanSub:'Kostenloses Konto — Mahlzeiten auf allen Geräten.',guestPlanBtn:'Konto erstellen →',
+  bentoNoFoods:'Keine Speisen hier',bentoVeggieNote:'Vegetarisch & vollwertig',bentoAddToBox:'In die Box',bentoAllCat:'Alle',bentoSwap:'Anderes wählen',bentoRemove:'Entfernen',bentoNoRecipe:'Rezept folgt',bentoBoxRecipe:'Rezept der ganzen Box',bentoForWholeBox:'Alles für die ganze Box',bentoTotalBox:'Ganze Box · gesamt',bentoShopTitle:'🥪 Bento-Lunchbox',bentoTabSetting:'Bento-Lunchbox',bentoTabSettingSub:'Gesunde Lunchboxen in Minuten',newBadge:'Neu',bentoPromoTitle:'Gesunde Schul-Lunchboxen planen',bentoPromoSub:'Neu: 🍱 Bento-Lunchbox — in Minuten eine ausgewogene Lunchbox',bentoTryBtn:'Ausprobieren →',bentoLaterBtn:'Später',bentoNudgeToast:'🍱 Bento-Lunchbox ist jetzt aktiv — plane ihre Lunchboxen!',guestPlanTitle:'💾 Dein Plan ist nicht gespeichert',guestPlanSub:'Kostenloses Konto — Mahlzeiten auf allen Geräten.',guestPlanBtn:'Konto erstellen →',
   langHeader:'Sprache',meName:'Ich',prefsAllergies:'⚙️ Vorlieben & Allergien',
   deleteAccount:'Konto löschen',deleteAccountConfirm:'Konto und alle Daten löschen? Das kann nicht rückgängig gemacht werden.',deleteAccountDone:'Dein Konto wurde gelöscht.',deleteAccountErr:'Abgemeldet und deine Daten entfernt. Für die vollständige Kontolöschung schreibe an info@menja-fresh.com.',legalNotice:'Impressum',
   upgrade:'⭐ Premium',forgotPw:'Passwort vergessen?',orSep:'oder',min8Chars:'Mind. 8 Zeichen',
@@ -7718,6 +7726,7 @@ function setBentoRecipeTab(name){
   document.querySelectorAll('#bento-recipe-body .rd-tabpane').forEach(p=>p.classList.toggle('active',p.dataset.pane===name));
 }
 function bentoSwapCurrent(){const{key,slot}=_bentoRd;closeBentoRecipe();openBentoPick(key,slot);}
+function bentoRemoveCurrent(){const{key,slot}=_bentoRd;closeBentoRecipe();bentoClearSlot(key,slot);}
 function renderBentoRecipe(){
   const body=document.getElementById('bento-recipe-body');if(!body)return;
   const food=bentoFood(_bentoRd.foodId);if(!food)return;
@@ -7770,7 +7779,7 @@ function renderBentoRecipe(){
       <div class="rd-tabpane ${_at==='ing'?'active':''}" data-pane="ing">${ingGrid}</div>
       <div class="rd-tabpane ${_at==='prep'?'active':''}" data-pane="prep">${stepsHtml}</div>
       <div class="rd-tabpane ${_at==='macro'?'active':''}" data-pane="macro">${macroHtml}</div>
-      <button class="bento-swap-btn" onclick="bentoSwapCurrent()">🔄 ${t('bentoSwap')}</button>
+      <div class="bento-sheet-actions"><button class="bento-swap-btn" onclick="bentoSwapCurrent()">🔄 ${t('bentoSwap')}</button><button class="bento-remove-btn" onclick="bentoRemoveCurrent()">✕ ${t('bentoRemove')}</button></div>
     </div>`;
 }
 
