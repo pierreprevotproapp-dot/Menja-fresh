@@ -486,6 +486,12 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .rec-hdr{background:var(--nav);padding:18px 20px 14px}
 .rec-hdr h1{color:#fff}
 .rec-hdr p{color:var(--nav-t)}
+.rec-search-wrap{position:relative;margin-top:11px}
+.rec-search-ico{position:absolute;left:13px;top:50%;transform:translateY(-50%);color:rgba(255,255,255,.6);pointer-events:none}
+.rec-search-input{width:100%;padding:11px 38px;border-radius:12px;border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.13);color:#fff;font-size:15px;font-family:inherit;-webkit-appearance:none}
+.rec-search-input::placeholder{color:rgba(255,255,255,.6)}
+.rec-search-input:focus{outline:none;border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.2)}
+.rec-search-clear{position:absolute;right:8px;top:50%;transform:translateY(-50%);width:24px;height:24px;border-radius:50%;border:none;background:rgba(255,255,255,.2);color:#fff;font-size:11px;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .bento-top{background:var(--nav)}
 .rec-grid{padding:0 14px 8px}
 .rec-card{background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);overflow:hidden;margin-bottom:10px;cursor:pointer;transition:box-shadow .2s,transform .15s;box-shadow:var(--sh)}
@@ -1639,7 +1645,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     </div>
     <div class="fridge-results" id="fridge-results" style="display:none"></div>
   </div>
-  <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-sticky"><div class="rec-hdr"><h1 data-t="recipes">Cookbook</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
+  <div class="screen" id="screen-recipes"><div id="rec-list-view"><div class="rec-sticky"><div class="rec-hdr"><h1 data-t="recipes">Cookbook</h1><p data-t="recipesSub">Tap any saved dish for the full recipe</p><div class="rec-search-wrap"><svg class="rec-search-ico" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg><input id="rec-search" class="rec-search-input" type="text" inputmode="search" autocomplete="off" data-tph="searchRecipes" oninput="setRecSearch(this.value)"><button id="rec-search-clear" class="rec-search-clear" style="display:none" onclick="clearRecSearch()" aria-label="Clear search">✕</button></div></div><div class="tag-wrap" id="rec-tag-filters" style="padding-bottom:8px"></div></div><div class="rec-grid" id="rec-grid"></div></div><div id="rec-detail-view" style="display:none"></div></div>
   <div class="screen" id="screen-today">
     <div class="th">
       <div style="text-align:center;padding:0 16px 2px">
@@ -2168,7 +2174,7 @@ en:{
   opt_peanuts:'Peanuts',opt_treenuts:'Tree nuts',opt_shellfish:'Shellfish',opt_fish:'Fish',opt_dairy:'Dairy',opt_eggs:'Eggs',opt_gluten:'Gluten',opt_soy:'Soy',
   opt_mushroom:'Mushrooms',opt_olives:'Olives',opt_coriander:'Coriander',opt_aubergine:'Aubergine',opt_bellpepper:'Bell pepper',opt_spicy:'Spicy',
   rcat_all:'All',rcat_saved:'❤️ Favourites',rcat_quick:'⚡ Quick',rcat_breakfast:'🍳 Breakfast',rcat_meat:'🍗 Meat',rcat_fish:'🐟 Fish',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Gluten-free',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Kids',rcat_basics:'🥄 Basics',
-  cookbookEmpty:'Your cookbook is empty.',cookbookEmptySub:"Tap the ♡ on any recipe to save your family's favourites here.",noRecipesCat:'No recipes in this category yet.',
+  cookbookEmpty:'Your cookbook is empty.',cookbookEmptySub:"Tap the ♡ on any recipe to save your family's favourites here.",noRecipesCat:'No recipes in this category yet.',searchRecipes:'Search recipes…',noRecipesSearch:'No recipes match your search.',
   addWeekShort:'＋ Week',addToMyWeek:'＋ Add to my week',saveFav:'Save to favourites',
   prepLbl:'Prep',cookLbl:'Cook',freezeLbl:'Freeze',totalLbl:'Total',perServingSlash:'/ serving',fiberLbl:'Fiber',sauceDressing:'Sauce & Dressing',closeWordShort:'Close',
   weekPlannedTitle:'Your week is planned 🎉',weekPlannedSub:'Dinner is one less thing to think about.',toGroceryList:'🛒 Take me to my grocery list →',stayOnPlan:'Stay on this page',
@@ -2320,7 +2326,7 @@ fr:{
   opt_peanuts:'Arachides',opt_treenuts:'Fruits à coque',opt_shellfish:'Crustacés',opt_fish:'Poisson',opt_dairy:'Produits laitiers',opt_eggs:'Œufs',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Champignons',opt_olives:'Olives',opt_coriander:'Coriandre',opt_aubergine:'Aubergine',opt_bellpepper:'Poivron',opt_spicy:'Épicé',
   rcat_all:'Tout',rcat_saved:'❤️ Favoris',rcat_quick:'⚡ Rapide',rcat_breakfast:'🍳 Petit-déj',rcat_meat:'🍗 Viande',rcat_fish:'🐟 Poisson',rcat_vegetarian:'🥦 Végé',rcat_vegan:'🌱 Végétalien',rcat_glutenfree:'🌾 Sans gluten',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Enfants',rcat_basics:'🥄 Basiques',
-  cookbookEmpty:'Ton carnet est vide.',cookbookEmptySub:'Touche le ♡ d\'une recette pour y enregistrer tes favoris.',noRecipesCat:'Aucune recette dans cette catégorie.',
+  cookbookEmpty:'Ton carnet est vide.',cookbookEmptySub:'Touche le ♡ d\'une recette pour y enregistrer tes favoris.',noRecipesCat:'Aucune recette dans cette catégorie.',searchRecipes:'Rechercher une recette…',noRecipesSearch:'Aucune recette ne correspond.',
   addWeekShort:'＋ Semaine',addToMyWeek:'＋ Ajouter à ma semaine',saveFav:'Ajouter aux favoris',
   prepLbl:'Prépa',cookLbl:'Cuisson',freezeLbl:'Congélation',totalLbl:'Total',perServingSlash:'/ portion',fiberLbl:'Fibres',sauceDressing:'Sauce & Vinaigrette',closeWordShort:'Fermer',
   weekPlannedTitle:'Ta semaine est planifiée 🎉',weekPlannedSub:'Le dîner, une chose de moins à gérer.',toGroceryList:'🛒 Voir ma liste de courses →',stayOnPlan:'Rester sur cette page',
@@ -2472,7 +2478,7 @@ es:{
   opt_peanuts:'Cacahuetes',opt_treenuts:'Frutos secos',opt_shellfish:'Marisco',opt_fish:'Pescado',opt_dairy:'Lácteos',opt_eggs:'Huevos',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Setas',opt_olives:'Aceitunas',opt_coriander:'Cilantro',opt_aubergine:'Berenjena',opt_bellpepper:'Pimiento',opt_spicy:'Picante',
   rcat_all:'Todo',rcat_saved:'❤️ Favoritos',rcat_quick:'⚡ Rápido',rcat_breakfast:'🍳 Desayuno',rcat_meat:'🍗 Carne',rcat_fish:'🐟 Pescado',rcat_vegetarian:'🥦 Vegetariano',rcat_vegan:'🌱 Vegano',rcat_glutenfree:'🌾 Sin gluten',rcat_dessert:'🍰 Postre',rcat_kids:'🧒 Niños',rcat_basics:'🥄 Básicos',
-  cookbookEmpty:'Tu recetario está vacío.',cookbookEmptySub:'Toca el ♡ en cualquier receta para guardar aquí tus favoritos.',noRecipesCat:'Aún no hay recetas en esta categoría.',
+  cookbookEmpty:'Tu recetario está vacío.',cookbookEmptySub:'Toca el ♡ en cualquier receta para guardar aquí tus favoritos.',noRecipesCat:'Aún no hay recetas en esta categoría.',searchRecipes:'Buscar recetas…',noRecipesSearch:'Ninguna receta coincide.',
   addWeekShort:'＋ Semana',addToMyWeek:'＋ Añadir a mi semana',saveFav:'Guardar en favoritos',
   prepLbl:'Prep.',cookLbl:'Cocción',freezeLbl:'Congelar',totalLbl:'Total',perServingSlash:'/ ración',fiberLbl:'Fibra',sauceDressing:'Salsa y aliño',closeWordShort:'Cerrar',
   weekPlannedTitle:'¡Tu semana está planificada! 🎉',weekPlannedSub:'La cena, una cosa menos en que pensar.',toGroceryList:'🛒 Ir a mi lista de la compra →',stayOnPlan:'Quedarme en esta página',
@@ -2670,7 +2676,7 @@ de:{
   opt_peanuts:'Erdnüsse',opt_treenuts:'Schalenfrüchte',opt_shellfish:'Schalentiere',opt_fish:'Fisch',opt_dairy:'Milchprodukte',opt_eggs:'Eier',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Pilze',opt_olives:'Oliven',opt_coriander:'Koriander',opt_aubergine:'Aubergine',opt_bellpepper:'Paprika',opt_spicy:'Scharf',
   rcat_all:'Alle',rcat_saved:'❤️ Favoriten',rcat_quick:'⚡ Schnell',rcat_breakfast:'🍳 Frühstück',rcat_meat:'🍗 Fleisch',rcat_fish:'🐟 Fisch',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Glutenfrei',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Kinder',rcat_basics:'🥄 Basics',
-  cookbookEmpty:'Dein Kochbuch ist leer.',cookbookEmptySub:'Tippe auf das ♡ einer Rezeptseite, um Familienfavoriten hier zu speichern.',noRecipesCat:'Noch keine Rezepte in dieser Kategorie.',
+  cookbookEmpty:'Dein Kochbuch ist leer.',cookbookEmptySub:'Tippe auf das ♡ einer Rezeptseite, um Familienfavoriten hier zu speichern.',noRecipesCat:'Noch keine Rezepte in dieser Kategorie.',searchRecipes:'Rezepte suchen…',noRecipesSearch:'Keine Rezepte für deine Suche.',
   addWeekShort:'＋ Woche',addToMyWeek:'＋ Zu meiner Woche',saveFav:'Zu Favoriten',
   prepLbl:'Vorber.',cookLbl:'Kochen',freezeLbl:'Einfrieren',totalLbl:'Gesamt',perServingSlash:'/ Portion',fiberLbl:'Ballaststoffe',sauceDressing:'Soße & Dressing',closeWordShort:'Schließen',
   weekPlannedTitle:'Deine Woche ist geplant 🎉',weekPlannedSub:'Das Abendessen – eine Sorge weniger.',toGroceryList:'🛒 Zu meiner Einkaufsliste →',stayOnPlan:'Auf dieser Seite bleiben',
@@ -5965,6 +5971,24 @@ function recipeMatchesCat(d,cat){
     default:return true; // 'all'
   }
 }
+let _recSearch=''; // cookbook search query (transient)
+function setRecSearch(v){
+  _recSearch=v;
+  const c=document.getElementById('rec-search-clear');if(c)c.style.display=v?'flex':'none';
+  renderRecipes();
+}
+function clearRecSearch(){const i=document.getElementById('rec-search');if(i)i.value='';setRecSearch('');if(i)i.focus();}
+// Searchable text for a dish: localized name + subtitle + tags + meal + ingredients.
+function dishSearchText(d){
+  const parts=[dishName(d),dishSubtitle(d),...(d.tags||[]),...(d.meal||[]),...(d.categories||[])];
+  try{dishIngredients(d).forEach(ing=>parts.push(ingName(ing)));}catch(e){try{(d.ingredients||[]).forEach(ing=>parts.push(ingName(ing)));}catch(_){}}
+  return parts.join(' ').toLowerCase();
+}
+function dishMatchesSearch(d){
+  const q=(_recSearch||'').trim().toLowerCase();if(!q)return true;
+  const hay=dishSearchText(d);
+  return q.split(/\s+/).every(w=>hay.includes(w));   // all words must match
+}
 function renderRecipes(){
   document.getElementById('rec-list-view').style.display='';
   document.getElementById('rec-detail-view').style.display='none';
@@ -5980,14 +6004,18 @@ function renderRecipes(){
       :`<div class="empty-rec"><span>🍳</span>${t('recipesLoading')}</div>`;
     return;
   }
-  // Favourites float to the top — your cookbook, built over time
-  const vis=DISHES.filter(d=>recipeMatchesCat(d,state.recTag)).slice()
+  // A search query looks across ALL recipes (ignores the category chip); otherwise
+  // the active category applies. Favourites float to the top either way.
+  const searching=!!(_recSearch||'').trim();
+  const vis=DISHES.filter(d=>searching?dishMatchesSearch(d):recipeMatchesCat(d,state.recTag)).slice()
     .sort((a,b)=>(isFav(b.id)?1:0)-(isFav(a.id)?1:0));
   const visible=vis.map(d=>d.id);
   if(!visible.length){
-    grid.innerHTML=state.recTag==='saved'
-      ?`<div class="empty-rec"><span>❤️</span>${t('cookbookEmpty')}<br>${t('cookbookEmptySub')}</div>`
-      :`<div class="empty-rec"><span>🌿</span>${t('noRecipesCat')}</div>`;
+    grid.innerHTML=searching
+      ?`<div class="empty-rec"><span>🔍</span>${t('noRecipesSearch')}</div>`
+      :state.recTag==='saved'
+        ?`<div class="empty-rec"><span>❤️</span>${t('cookbookEmpty')}<br>${t('cookbookEmptySub')}</div>`
+        :`<div class="empty-rec"><span>🌿</span>${t('noRecipesCat')}</div>`;
     return;
   }
   grid.innerHTML=visible.map(id=>{
