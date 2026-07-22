@@ -883,6 +883,10 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .cf-foot{display:flex;gap:8px;padding:12px 16px 4px}
 .cf-copy{flex:1;background:var(--surface2);color:var(--text2);border:1.5px solid var(--border2);border-radius:99px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb)}
 .cf-open{flex:1;background:#0E4DA4;color:#fff;border:none;border-radius:99px;padding:11px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.cf-cart{padding:4px 4px 12px;border-bottom:1px solid var(--border2);margin-bottom:8px}
+.cf-cart-btn{width:100%;background:#FF9900;color:#131921;border:none;border-radius:14px;padding:15px;font-size:15.5px;font-weight:800;cursor:pointer;font-family:var(--fb);box-shadow:0 4px 14px rgba(255,153,0,.35)}
+.cf-cart-btn:active{transform:scale(.98)}
+.cf-cart-sub{text-align:center;font-size:12px;color:var(--text3);margin-top:8px}
 /* ── DEV PREMIUM/STANDARD TOGGLE ─────────────── */
 .dev-toggle{display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:.5px solid var(--border);border-radius:var(--r);padding:13px 15px;box-shadow:var(--sh);cursor:pointer}
 .dev-toggle-title{font-size:14px;font-weight:600;color:var(--text)}
@@ -2174,7 +2178,7 @@ en:{
   opt_peanuts:'Peanuts',opt_treenuts:'Tree nuts',opt_shellfish:'Shellfish',opt_fish:'Fish',opt_dairy:'Dairy',opt_eggs:'Eggs',opt_gluten:'Gluten',opt_soy:'Soy',
   opt_mushroom:'Mushrooms',opt_olives:'Olives',opt_coriander:'Coriander',opt_aubergine:'Aubergine',opt_bellpepper:'Bell pepper',opt_spicy:'Spicy',
   rcat_all:'All',rcat_saved:'❤️ Favourites',rcat_quick:'⚡ Quick',rcat_breakfast:'🍳 Breakfast',rcat_meat:'🍗 Meat',rcat_fish:'🐟 Fish',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Gluten-free',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Kids',rcat_basics:'🥄 Basics',
-  cookbookEmpty:'Your cookbook is empty.',cookbookEmptySub:"Tap the ♡ on any recipe to save your family's favourites here.",noRecipesCat:'No recipes in this category yet.',searchRecipes:'Search recipes…',noRecipesSearch:'No recipes match your search.',
+  cookbookEmpty:'Your cookbook is empty.',cookbookEmptySub:"Tap the ♡ on any recipe to save your family's favourites here.",noRecipesCat:'No recipes in this category yet.',searchRecipes:'Search recipes…',noRecipesSearch:'No recipes match your search.',cartAddAll:'Add {n} items to the basket →',cartRest:'Then search the other {n}:',
   addWeekShort:'＋ Week',addToMyWeek:'＋ Add to my week',saveFav:'Save to favourites',
   prepLbl:'Prep',cookLbl:'Cook',freezeLbl:'Freeze',totalLbl:'Total',perServingSlash:'/ serving',fiberLbl:'Fiber',sauceDressing:'Sauce & Dressing',closeWordShort:'Close',
   weekPlannedTitle:'Your week is planned 🎉',weekPlannedSub:'Dinner is one less thing to think about.',toGroceryList:'🛒 Take me to my grocery list →',stayOnPlan:'Stay on this page',
@@ -2326,7 +2330,7 @@ fr:{
   opt_peanuts:'Arachides',opt_treenuts:'Fruits à coque',opt_shellfish:'Crustacés',opt_fish:'Poisson',opt_dairy:'Produits laitiers',opt_eggs:'Œufs',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Champignons',opt_olives:'Olives',opt_coriander:'Coriandre',opt_aubergine:'Aubergine',opt_bellpepper:'Poivron',opt_spicy:'Épicé',
   rcat_all:'Tout',rcat_saved:'❤️ Favoris',rcat_quick:'⚡ Rapide',rcat_breakfast:'🍳 Petit-déj',rcat_meat:'🍗 Viande',rcat_fish:'🐟 Poisson',rcat_vegetarian:'🥦 Végé',rcat_vegan:'🌱 Végétalien',rcat_glutenfree:'🌾 Sans gluten',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Enfants',rcat_basics:'🥄 Basiques',
-  cookbookEmpty:'Ton carnet est vide.',cookbookEmptySub:'Touche le ♡ d\'une recette pour y enregistrer tes favoris.',noRecipesCat:'Aucune recette dans cette catégorie.',searchRecipes:'Rechercher une recette…',noRecipesSearch:'Aucune recette ne correspond.',
+  cookbookEmpty:'Ton carnet est vide.',cookbookEmptySub:'Touche le ♡ d\'une recette pour y enregistrer tes favoris.',noRecipesCat:'Aucune recette dans cette catégorie.',searchRecipes:'Rechercher une recette…',noRecipesSearch:'Aucune recette ne correspond.',cartAddAll:'Ajouter {n} articles au panier →',cartRest:'Puis chercher les {n} autres :',
   addWeekShort:'＋ Semaine',addToMyWeek:'＋ Ajouter à ma semaine',saveFav:'Ajouter aux favoris',
   prepLbl:'Prépa',cookLbl:'Cuisson',freezeLbl:'Congélation',totalLbl:'Total',perServingSlash:'/ portion',fiberLbl:'Fibres',sauceDressing:'Sauce & Vinaigrette',closeWordShort:'Fermer',
   weekPlannedTitle:'Ta semaine est planifiée 🎉',weekPlannedSub:'Le dîner, une chose de moins à gérer.',toGroceryList:'🛒 Voir ma liste de courses →',stayOnPlan:'Rester sur cette page',
@@ -2478,7 +2482,7 @@ es:{
   opt_peanuts:'Cacahuetes',opt_treenuts:'Frutos secos',opt_shellfish:'Marisco',opt_fish:'Pescado',opt_dairy:'Lácteos',opt_eggs:'Huevos',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Setas',opt_olives:'Aceitunas',opt_coriander:'Cilantro',opt_aubergine:'Berenjena',opt_bellpepper:'Pimiento',opt_spicy:'Picante',
   rcat_all:'Todo',rcat_saved:'❤️ Favoritos',rcat_quick:'⚡ Rápido',rcat_breakfast:'🍳 Desayuno',rcat_meat:'🍗 Carne',rcat_fish:'🐟 Pescado',rcat_vegetarian:'🥦 Vegetariano',rcat_vegan:'🌱 Vegano',rcat_glutenfree:'🌾 Sin gluten',rcat_dessert:'🍰 Postre',rcat_kids:'🧒 Niños',rcat_basics:'🥄 Básicos',
-  cookbookEmpty:'Tu recetario está vacío.',cookbookEmptySub:'Toca el ♡ en cualquier receta para guardar aquí tus favoritos.',noRecipesCat:'Aún no hay recetas en esta categoría.',searchRecipes:'Buscar recetas…',noRecipesSearch:'Ninguna receta coincide.',
+  cookbookEmpty:'Tu recetario está vacío.',cookbookEmptySub:'Toca el ♡ en cualquier receta para guardar aquí tus favoritos.',noRecipesCat:'Aún no hay recetas en esta categoría.',searchRecipes:'Buscar recetas…',noRecipesSearch:'Ninguna receta coincide.',cartAddAll:'Añadir {n} artículos a la cesta →',cartRest:'Luego busca los otros {n}:',
   addWeekShort:'＋ Semana',addToMyWeek:'＋ Añadir a mi semana',saveFav:'Guardar en favoritos',
   prepLbl:'Prep.',cookLbl:'Cocción',freezeLbl:'Congelar',totalLbl:'Total',perServingSlash:'/ ración',fiberLbl:'Fibra',sauceDressing:'Salsa y aliño',closeWordShort:'Cerrar',
   weekPlannedTitle:'¡Tu semana está planificada! 🎉',weekPlannedSub:'La cena, una cosa menos en que pensar.',toGroceryList:'🛒 Ir a mi lista de la compra →',stayOnPlan:'Quedarme en esta página',
@@ -2676,7 +2680,7 @@ de:{
   opt_peanuts:'Erdnüsse',opt_treenuts:'Schalenfrüchte',opt_shellfish:'Schalentiere',opt_fish:'Fisch',opt_dairy:'Milchprodukte',opt_eggs:'Eier',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Pilze',opt_olives:'Oliven',opt_coriander:'Koriander',opt_aubergine:'Aubergine',opt_bellpepper:'Paprika',opt_spicy:'Scharf',
   rcat_all:'Alle',rcat_saved:'❤️ Favoriten',rcat_quick:'⚡ Schnell',rcat_breakfast:'🍳 Frühstück',rcat_meat:'🍗 Fleisch',rcat_fish:'🐟 Fisch',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Glutenfrei',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Kinder',rcat_basics:'🥄 Basics',
-  cookbookEmpty:'Dein Kochbuch ist leer.',cookbookEmptySub:'Tippe auf das ♡ einer Rezeptseite, um Familienfavoriten hier zu speichern.',noRecipesCat:'Noch keine Rezepte in dieser Kategorie.',searchRecipes:'Rezepte suchen…',noRecipesSearch:'Keine Rezepte für deine Suche.',
+  cookbookEmpty:'Dein Kochbuch ist leer.',cookbookEmptySub:'Tippe auf das ♡ einer Rezeptseite, um Familienfavoriten hier zu speichern.',noRecipesCat:'Noch keine Rezepte in dieser Kategorie.',searchRecipes:'Rezepte suchen…',noRecipesSearch:'Keine Rezepte für deine Suche.',cartAddAll:'{n} Artikel in den Korb legen →',cartRest:'Die anderen {n} dann suchen:',
   addWeekShort:'＋ Woche',addToMyWeek:'＋ Zu meiner Woche',saveFav:'Zu Favoriten',
   prepLbl:'Vorber.',cookLbl:'Kochen',freezeLbl:'Einfrieren',totalLbl:'Gesamt',perServingSlash:'/ Portion',fiberLbl:'Ballaststoffe',sauceDressing:'Soße & Dressing',closeWordShort:'Schließen',
   weekPlannedTitle:'Deine Woche ist geplant 🎉',weekPlannedSub:'Das Abendessen – eine Sorge weniger.',toGroceryList:'🛒 Zu meiner Einkaufsliste →',stayOnPlan:'Auf dieser Seite bleiben',
@@ -3627,7 +3631,7 @@ function rebuildShopping(){
         if(sid&&!isStapleNeeded(sid))return;
         const key=n.toLowerCase();
         const p=parseAmount(ing.amount!==undefined?ing.amount:ing.qty);
-        if(!totals[key])totals[key]={name:n,qty:0,unit:'',hasQty:false,sources:new Set()};
+        if(!totals[key])totals[key]={name:n,en:(ing.name||n),qty:0,unit:'',hasQty:false,sources:new Set()};
         const tt=totals[key];tt.sources.add(dishName(dish));
         if(p.qty!==null){
           if(!tt.hasQty){tt.unit=p.unit;}
@@ -3647,15 +3651,16 @@ function rebuildShopping(){
         const rec=(typeof bentoRecipe==='function')&&bentoRecipe(fid);if(!rec||!rec.ings)return;
         const food=(typeof bentoFood==='function')&&bentoFood(fid);
         const label='🍱 '+(food?(food.name[lang]||food.name.en):'Bento');
-        ((rec.ings[lang]||rec.ings.en)||[]).forEach(ing=>{
+        ((rec.ings[lang]||rec.ings.en)||[]).forEach((ing,_ix)=>{
           const n=(ing.name||'').trim();if(!n)return;
+          const enm=((((rec.ings.en||[])[_ix])||{}).name||n);   // English name for ASIN matching
           const sid=stapleIdFor(n);
           if(sid&&!isStapleNeeded(sid))return;
           const key=n.toLowerCase();
           // bento amounts use fractions like "1/2 Tasse" — convert to decimal so parseAmount works
           const amt=(ing.amount||'').replace(/(\d+)\s*\/\s*(\d+)/,(m,a,b)=>String(Math.round((+a/+b)*100)/100));
           const p=parseAmount(amt);
-          if(!totals[key])totals[key]={name:n,qty:0,unit:'',hasQty:false,sources:new Set()};
+          if(!totals[key])totals[key]={name:n,en:enm,qty:0,unit:'',hasQty:false,sources:new Set()};
           const tt=totals[key];tt.sources.add(label);
           if(p.qty!==null&&(!tt.hasQty||tt.unit===p.unit)){   // only sum when units match, else keep first
             if(!tt.hasQty)tt.unit=p.unit;
@@ -3667,7 +3672,7 @@ function rebuildShopping(){
   }
   const nl={};
   Object.values(totals).forEach(v=>{
-    nl[v.name]={qty:v.hasQty?v.qty:null,unit:v.unit,source:[...v.sources].join(', '),checked:ex[v.name]?.checked||false,expiryAdj:ex[v.name]?.expiryAdj||0};
+    nl[v.name]={qty:v.hasQty?v.qty:null,unit:v.unit,en:v.en||v.name,source:[...v.sources].join(', '),checked:ex[v.name]?.checked||false,expiryAdj:ex[v.name]?.expiryAdj||0};
   });
   // add staples the user flagged as "need to buy" (if not already in the list)
   planStaples().forEach(s=>{
@@ -3878,8 +3883,24 @@ const DELIVERY_PROVIDERS={
              homeUrl:()=>'https://www.carrefour.es/supermercado'},
 };
 // Spanish app → Carrefour (Spain); everyone else → Amazon UK.
+// Ingredient → Amazon UK ASIN map (multilingual; generated from ingredients_for_asins.csv).
+const INGREDIENT_ASINS={"olive oil":"B0B9GZYPGW","garlic":"B0B5DMPXSH","lemon":"B09QMQW6Z4","eggs":"B085Y2JNJL","maple syrup":"B0CWMK56LD","onion":"B0B5DMLGZB","cherry tomatoes":"B0CM74J8DK","cinnamon":"B00H73D8MK","butter":"B085Y35QBH","cumin":"B07H29N2TT","honey":"B0923NSGV7","smoked paprika":"B0CFVJNZCM","vanilla extract":"B0000VLU1W","feta cheese":"B085NLMXVX","lime":"B09QMRYPV8","dried oregano":"B014DDVCLU","chilli flakes":"B0177IQFCO","cucumber":"B0863J9YS3","fresh parsley":"B0862Z8VS8","greek yogurt":"B085NLMXWF","parmesan":"B085NLMP2Y","avocado":"B0862Z3QF3","fresh coriander":"B0862YR41J","rolled oats":"B08VFRTB5J","tahini":"B0873R76TQ","chicken breast":"B085NLN9N5","chopped tomatoes":"B08T6X4FJV","salt":"B013QX9XZU","balsamic vinegar":"B09KSNFQ91","dark chocolate":"B014PD0AJI","oat milk":"B0DDY8NXCV","pistachios":"B0CCJK6TJJ","plain flour":"B0CVND18L2","red onion":"B0B61CSB8X","red pepper":"B0862Z71Q1","sugar":"B01DP1SHE6","sweet potato":"B08632BPDV","brown rice":"B0B9H2VN1H","chickpeas":"B08T6YYBHL","fresh basil":"B0179QM4Y2","fresh thyme":"B07TTR6F82","kalamata olives":"B093Q7Q2FR","peanut butter":"B0FMH2RDVG","sea salt":"B01H1M3GPA","vegetable stock":"B00VX2AYHI","almond butter":"B00EJLZ9ZW","brown sugar":"B01AWH376O","cocoa powder":"B009JTVQGK","courgette":"B0B5RVW46K","pecans":"B0CCVD6X17","quinoa":"B09YY87LNL","red wine vinegar":"B09KSNWZ89","sesame oil":"B09MDYBBZH","tamari":"B01CQE03RM","walnuts":"B08WCM1759","banana":"B0862Z3NRR","broccoli":"B08635WGH5","carrots":"B0BCWXNJZ3","pasta":"B0CT3Q17FP","baking powder":"B00MWVBUBI","baking soda":"B00MWV9YJI","blueberries":"B0863CPM7F","chia seeds":"B0CCTYMCFS","dijon mustard":"B0BBLSKYPH","milk":"B085NLJS4T","spring onions":"B0862YGM4X","apple cider vinegar":"B09KSMHSGP","baby potatoes":"B0891XJLGD","bell peppers":"B0CM71Q3DD","coconut milk":"B003C17YGM","hazelnuts":"B0CCJHP58H","jasmine rice":"B01CE3CGZW","maldon sea salt":"B01H1M3GPA","passata":"B00QMD22Z0","sea salt flakes":"B01H1M3GPA","soy sauce":"B0B9X6SDFJ","spaghetti":"B0CT3Q17FP","tomatoes":"B0862Y6FHP","flaky sea salt":"B01H1M3GPA","mixed peppers":"B0CM71Q3DD"};
 function deliveryProvider(){return lang==='es'?DELIVERY_PROVIDERS.carrefour:DELIVERY_PROVIDERS.amazon;}
 function deliveryStore(){return deliveryProvider().name;}
+// ── Amazon one-click cart ────────────────────────────────────────────────────
+// Match on the ENGLISH ingredient name (reliable across UI languages); the ASIN
+// map is keyed by normalised English products only (verified — no guessed rows).
+function normProduct(s){return (s==null?'':String(s)).toLowerCase().replace(/\([^)]*\)/g,'').split(',')[0].replace(/[^a-zà-ÿ0-9\s-]/gi,' ').replace(/\s+/g,' ').trim();}
+function asinForItem(it){const M=(typeof INGREDIENT_ASINS!=='undefined'&&INGREDIENT_ASINS)||{};return M[normProduct(it.en||it.name)]||null;}
+// One Amazon URL that drops every matched item into the basket (Quantity 1 each).
+function amazonCartUrl(items){
+  const seen=new Set(),pairs=[];
+  items.forEach(it=>{const a=asinForItem(it);if(a&&!seen.has(a)){seen.add(a);pairs.push(a);}});
+  if(!pairs.length)return null;
+  const tag=AMAZON_TAG?('&AssociateTag='+encodeURIComponent(AMAZON_TAG)):'';
+  const q=pairs.map((a,i)=>`ASIN.${i+1}=${a}&Quantity.${i+1}=1`).join('&');
+  return 'https://www.amazon.co.uk/gp/aws/cart/add.html?'+q+tag;
+}
 // ONE reused tab for the whole shop — hold the window reference and re-point it,
 // instead of a named window (which spawns a fresh tab per click on mobile).
 let _deliverWin=null;
@@ -3892,10 +3913,11 @@ function openDeliveryUrl(url){
 function groceryItemsForShop(){
   rebuildShopping();   // custom & quick-add items are merged into state.shopping
   const items=[];
-  Object.entries(state.shopping).forEach(([n,v])=>{if(!v.checked)items.push({name:n,qty:niceQty(v.qty,v.unit)});});
+  Object.entries(state.shopping).forEach(([n,v])=>{if(!v.checked)items.push({name:n,en:v.en||n,qty:niceQty(v.qty,v.unit)});});
   return items;
 }
-let _cfDone={};
+let _cfDone={},_cartUrl=null;
+function amazonCartGo(){if(_cartUrl)openDeliveryUrl(_cartUrl);}
 function openCarrefour(){_cfDone={};renderCarrefourSheet();document.getElementById('carrefour-sheet').classList.add('open');}
 function closeCarrefour(){document.getElementById('carrefour-sheet').classList.remove('open');}
 function renderCarrefourSheet(){
@@ -3907,12 +3929,25 @@ function renderCarrefourSheet(){
   setTxt('#carrefour-sheet .cf-open','openCarrefourBtn');
   const items=groceryItemsForShop();
   const body=document.getElementById('carrefour-items');
+  // Amazon: items we have an ASIN for go straight into the basket in one click;
+  // the rest keep the per-item search. Carrefour: everything is per-item.
+  const isAmazon=deliveryProvider()===DELIVERY_PROVIDERS.amazon;
+  const matched=isAmazon?items.filter(it=>asinForItem(it)):[];
+  const rest=isAmazon?items.filter(it=>!asinForItem(it)):items;
+  _cartUrl=matched.length?amazonCartUrl(matched):null;
   if(!items.length){body.innerHTML=`<div style="padding:24px;text-align:center;color:var(--text3);font-size:14px">${t('listEmpty')}</div>`;}
-  else body.innerHTML=items.map(it=>{
-    const done=_cfDone[it.name];
-    return`<div class="cf-item ${done?'done':''}"><div class="cf-item-name">${it.name}${it.qty?` <span class="cf-item-qty">${it.qty}</span>`:''}</div><button class="cf-item-btn ${done?'done':''}" onclick="carrefourSearch('${it.name.replace(/'/g,"\\'")}')">${done?t('cfFound'):t('cfFind')}</button></div>`;
-  }).join('');
-  const total=items.length,done=items.filter(it=>_cfDone[it.name]).length;
+  else{
+    let html='';
+    if(_cartUrl){
+      html+=`<div class="cf-cart"><button class="cf-cart-btn" onclick="amazonCartGo()">🛒 ${tf('cartAddAll',{n:matched.length})}</button>${rest.length?`<div class="cf-cart-sub">${tf('cartRest',{n:rest.length})}</div>`:''}</div>`;
+    }
+    html+=rest.map(it=>{
+      const done=_cfDone[it.name];
+      return`<div class="cf-item ${done?'done':''}"><div class="cf-item-name">${it.name}${it.qty?` <span class="cf-item-qty">${it.qty}</span>`:''}</div><button class="cf-item-btn ${done?'done':''}" onclick="carrefourSearch('${it.name.replace(/'/g,"\\'")}')">${done?t('cfFound'):t('cfFind')}</button></div>`;
+    }).join('');
+    body.innerHTML=html;
+  }
+  const total=rest.length,done=rest.filter(it=>_cfDone[it.name]).length;
   const p=document.getElementById('cf-progress');if(p)p.textContent=total?`${done}/${total} ${t('foundWord')}`:'';
 }
 function carrefourSearch(name){
