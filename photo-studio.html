@@ -76,7 +76,7 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
 
 <script>
 const DB={
- "lunchStyle": "extreme close-up macro food photography, shot from directly above, the food completely fills the entire frame and runs off all four edges, only the food is visible filling every part of the image from edge to edge, professional food photography, soft natural daylight, rich true-to-life colors and appetizing textures, crisp sharp focus, high resolution, photorealistic, natural homemade look, no plastic sheen",
+ "lunchStyle": "close-up food photography from directly above, the food sits large and centered and fills most of the frame, on a plain soft neutral surface with no plate, professional food photography, soft natural daylight, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no plastic sheen",
  "items": [
   {
    "group": "Lunchbox",
@@ -928,7 +928,7 @@ const DB={
   }
  ]
 };
-const items=DB.items;let lunchStyle=localStorage.getItem('menja_lunch_style_v10')||DB.lunchStyle;let promptEdits=JSON.parse(localStorage.getItem('menja_prompt_edits_v10')||'{}');const basePrompt=it=>it.prompt||(it.subject+', '+lunchStyle);const promptFor=it=>promptEdits[it.id]!=null?promptEdits[it.id]:basePrompt(it);const isLunch=it=>it.group==='Lunchbox';const extFor=it=>'jpg';
+const items=DB.items;let lunchStyle=localStorage.getItem('menja_lunch_style_v11')||DB.lunchStyle;let promptEdits=JSON.parse(localStorage.getItem('menja_prompt_edits_v11')||'{}');const basePrompt=it=>it.prompt||(it.subject+', '+lunchStyle);const promptFor=it=>promptEdits[it.id]!=null?promptEdits[it.id]:basePrompt(it);const isLunch=it=>it.group==='Lunchbox';const extFor=it=>'jpg';
 const SUPA='https://ekuynkjtcvpiueollznp.supabase.co', BUCKET='recipe-photos';
 const LIVE='menja_photo_live_v2', FK='menja_fal_key', MK='menja_fal_model', SK='menja_supa_key', IMG='menja_photo_imgs_v2';
 let live=JSON.parse(localStorage.getItem(LIVE)||'{}');
@@ -990,7 +990,7 @@ async function saveCard(it,cardEl){
   }catch(err){cardEl.querySelector('.thumb').innerHTML=(imgs[it.id]?'<img src="'+imgs[it.id]+'">':'<div class="ph">—</div>')+'<div class="ph err" style="position:absolute;inset:auto 0 0 0;background:var(--panel);padding:8px">'+esc(err.message)+'</div>';return false;}
 }
 async function download(it){const url=imgs[it.id];if(!url)return;try{const b=await(await fetch(url)).blob();const a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=it.id+'.'+extFor(it);a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);}catch(e){window.open(url,'_blank');}}
-el('list').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const it=items.find(i=>i.id===c.dataset.id);const a=e.target.dataset.act;if(a==='regen'){delete imgs[it.id];delete live[it.id];saveState();saveCard(it,c);}else if(a==='save')saveCard(it,c);else if(a==='dl')download(it);else if(a==='resetprompt'){delete promptEdits[it.id];localStorage.setItem('menja_prompt_edits_v10',JSON.stringify(promptEdits));render();}else if(a==='prompt')copy(promptFor(it),e.target);else if(a==='fname')copy(it.id+'.jpg',e.target);});
+el('list').addEventListener('click',e=>{const c=e.target.closest('.card');if(!c)return;const it=items.find(i=>i.id===c.dataset.id);const a=e.target.dataset.act;if(a==='regen'){delete imgs[it.id];delete live[it.id];saveState();saveCard(it,c);}else if(a==='save')saveCard(it,c);else if(a==='dl')download(it);else if(a==='resetprompt'){delete promptEdits[it.id];localStorage.setItem('menja_prompt_edits_v11',JSON.stringify(promptEdits));render();}else if(a==='prompt')copy(promptFor(it),e.target);else if(a==='fname')copy(it.id+'.jpg',e.target);});
 el('genAll').addEventListener('click',async function(){
   if(batching){stopB=true;this.textContent='Stopping…';return;}
   if(!el('falkey').value.trim()){alert('Paste your fal.ai key first.');return;}
@@ -1004,9 +1004,9 @@ el('supakey').addEventListener('input',e=>{localStorage.setItem(SK,e.target.valu
 el('model').addEventListener('change',e=>localStorage.setItem(MK,e.target.value));
 el('tabs').addEventListener('click',e=>{const b=e.target.closest('.tab');if(!b)return;g=b.dataset.g;[...el('tabs').children].forEach(x=>x.classList.toggle('on',x===b));render();});
 el('search').addEventListener('input',e=>{q=e.target.value.trim().toLowerCase();render();});
-el('list').addEventListener('input',e=>{const ta=e.target.closest('.prompt-edit');if(!ta)return;const id=ta.dataset.id,it=items.find(i=>i.id===id);if(ta.value===basePrompt(it))delete promptEdits[id];else promptEdits[id]=ta.value;localStorage.setItem('menja_prompt_edits_v10',JSON.stringify(promptEdits));});
+el('list').addEventListener('input',e=>{const ta=e.target.closest('.prompt-edit');if(!ta)return;const id=ta.dataset.id,it=items.find(i=>i.id===id);if(ta.value===basePrompt(it))delete promptEdits[id];else promptEdits[id]=ta.value;localStorage.setItem('menja_prompt_edits_v11',JSON.stringify(promptEdits));});
 el('copyStyle').addEventListener('click',e=>copy(lunchStyle,e.target));
 el('resetBtn').addEventListener('click',()=>{if(confirm('Clear local generated images & live-marks on this device? (Uploaded photos stay in Supabase; keys stay.)')){live={};imgs={};saveState();progress();render();}});
-el('falkey').value=localStorage.getItem(FK)||'';el('supakey').value=localStorage.getItem(SK)||'';el('model').value=localStorage.getItem(MK)||'fal-ai/imagen4/preview/ultra';el('lunchstyle').value=lunchStyle;el('lunchstyle').addEventListener('input',e=>{lunchStyle=e.target.value;localStorage.setItem('menja_lunch_style_v10',lunchStyle);render();});
+el('falkey').value=localStorage.getItem(FK)||'';el('supakey').value=localStorage.getItem(SK)||'';el('model').value=localStorage.getItem(MK)||'fal-ai/imagen4/preview/ultra';el('lunchstyle').value=lunchStyle;el('lunchstyle').addEventListener('input',e=>{lunchStyle=e.target.value;localStorage.setItem('menja_lunch_style_v11',lunchStyle);render();});
 progress();render();
 </script>
