@@ -59,20 +59,36 @@ def _attr(obj, *path, default=None):
 
 
 def pick_best_asin(items):
-    """Curation rule — change here once, applies to every ingredient."""
+    """Curation rule — change here once, applies to every ingredient.
+
+    Third-party (branded) products are totally fine — most groceries are, and the
+    affiliate commission is identical. We pick the most relevant *buyable* result
+    rather than restricting to Amazon's own brand (which only exists for a few
+    staples and would leave most rows empty). Order:
+        1) a buyable, Prime-eligible result (real, in-stock, fast delivery)
+        2) any buyable result (has an offer/price)
+        3) the top relevance hit
+    To bias toward Amazon's own brand instead, uncomment the block below.
+    """
     if not items:
         return None
-    # 1) Amazon's own private label ("by Amazon" / "Amazon Fresh" brand)
-    for it in items:
-        brand = (_attr(it, "item_info", "by_line_info", "brand", "display_value", default="") or "").lower()
-        if "amazon" in brand:
+    def buyable(it):
+        return _attr(it, "offers", "listings", 0, "price", "display_amount") is not None
+    def prime(it):
+        return bool(_attr(it, "offers", "listings", 0, "delivery_info", "is_prime_eligible", default=False))
+
+    # # Prefer Amazon's own private label (opt-in — usually leave off):
+    # for it in items:
+    #     if "amazon" in (_attr(it,"item_info","by_line_info","brand","display_value",default="") or "").lower():
+    #         return it
+
+    for it in items:            # 1) buyable + Prime
+        if buyable(it) and prime(it):
             return it
-    # 2) first Prime-eligible result
-    for it in items:
-        if _attr(it, "offers", "listings", 0, "delivery_info", "is_prime_eligible", default=False):
+    for it in items:            # 2) any buyable
+        if buyable(it):
             return it
-    # 3) top hit
-    return items[0]
+    return items[0]             # 3) top hit
 
 
 def describe(it):
