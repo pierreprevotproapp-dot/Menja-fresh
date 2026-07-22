@@ -116,7 +116,12 @@ def main():
                     help="CSV column to use as the search keyword")
     ap.add_argument("--country", default="UK")
     ap.add_argument("--limit", type=int, default=0, help="only process the first N unfilled rows (0 = all)")
+    ap.add_argument("--skip-flagged", action="store_true",
+                    help="leave vague rows empty ('X or Y', 'Salt & pepper', 'Pinch', 'to taste/serve')")
     args = ap.parse_args()
+
+    import re
+    FLAGGED = re.compile(r"\bor\b|salt\s*&\s*pepper|pinch|to taste|to serve", re.I)
 
     key = os.environ.get("PAAPI_ACCESS_KEY")
     secret = os.environ.get("PAAPI_SECRET_KEY")
@@ -145,6 +150,9 @@ def main():
             continue  # already filled — skip (re-runnable)
         keywords = (row.get(args.search_col) or row.get("product") or "").strip().strip('"')
         if not keywords:
+            continue
+        if args.skip_flagged and FLAGGED.search(row.get("product", "")):
+            print(f"[{i}/{len(rows)}] skip (flagged): {row.get('product')}")
             continue
         print(f"[{i}/{len(rows)}] {keywords}")
         items = search_one(api, keywords)
