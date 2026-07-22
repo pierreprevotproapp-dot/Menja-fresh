@@ -2995,6 +2995,10 @@ function parseAmount(str){
 // QUANTITY FORMATTER  (European/metric)
 // ═══════════════════════════════════════════════════
 function fmtQty(q,unit){
+  // Countable units (medium, pcs, egg, clove…) never make sense as fractions —
+  // a scaled "0.3 medium" sweet potato reads as a whole "1 medium".
+  const _wu=(unit||'').toLowerCase().trim();
+  if(_wu&&WHOLE_UNITS.includes(_wu))return`${Math.max(1,Math.round(q))} ${unit}`;
   if(!unit||unit===''){
     if(q===0.25)return'¼';if(q===0.5)return'½';if(q===0.75)return'¾';
     return q%1===0?String(q):q.toFixed(1);
@@ -3030,6 +3034,7 @@ function scaleChip(chip,mult){
   const scaled=num*mult,u=unit.trim().toLowerCase();
   let numStr;
   if(['g','ml','kg','l'].includes(u))numStr=String(Math.round(scaled));
+  else if(WHOLE_UNITS.includes(u))numStr=String(Math.max(1,Math.round(scaled))); // countable → whole
   else if(scaled%1===0)numStr=String(scaled);
   else numStr=({0.25:'¼',0.5:'½',0.75:'¾'})[scaled]||(Math.round(scaled*10)/10).toString();
   const sep=(unit===''||['g','ml','kg','l'].includes(u))?'':' '; // g/ml attached, other units spaced
