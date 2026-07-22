@@ -1751,12 +1751,12 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
   <div class="picker-modal cf-modal">
     <div class="p-handle"></div>
     <div class="cf-head">
-      <div class="cf-title">🛒 <span data-t="cfSheetTitle">Add to Carrefour</span> <span class="cf-progress" id="cf-progress"></span></div>
-      <div class="cf-sub" data-t="cfSheetSub">Tap "Find" — it opens that product in one Carrefour tab (no typing). Add it, come back, tap the next.</div>
+      <div class="cf-title">🛒 <span>Add to store</span> <span class="cf-progress" id="cf-progress"></span></div>
+      <div class="cf-sub">Tap "Find" — it opens that product in one tab (no typing). Add it, come back, tap the next.</div>
     </div>
     <div class="cf-items" id="carrefour-items"></div>
     <div class="cf-foot">
-      <button class="cf-open" onclick="window.open(CARREFOUR_URL,'menja_carrefour')" data-t="openCarrefourBtn">Open Carrefour ↗</button>
+      <button class="cf-open" onclick="openDeliveryUrl(deliveryProvider().homeUrl())">Open store ↗</button>
     </div>
     <div class="p-cancel" onclick="closeCarrefour()" data-t="closeWord">Close</div>
   </div>
@@ -2105,7 +2105,7 @@ en:{
   deliverTitle:'No time to shop? Get it delivered',deliverSub:'Skip the queues and heavy bags — your whole list from Carrefour, to your door.',deliverBtn:'Shop now →',deliverFab:'Get it delivered',
   yourItems:'Your items',addOwnItem:'Add your own item…',addBtn:'＋ Add',noItems:'No items',
   listCopied:'List copied to clipboard ✓',couldNotCopy:'Could not copy',shareUnsupported:'Sharing not supported here',shareTitle:'Shopping list',
-  cfSheetTitle:'Add to Carrefour',cfSheetSub:'Tap "Find" — it opens that product in one Carrefour tab (no typing). Add it, come back, tap the next.',openCarrefourBtn:'Open Carrefour ↗',editWord:'✎ Edit',dislikesShort:'Dislikes',closeWord:'Close',
+  cfSheetTitle:'Add to {store}',cfSheetSub:'Tap "Find" — it opens that product in one {store} tab (no typing). Add it, come back, tap the next.',openCarrefourBtn:'Open {store} ↗',editWord:'✎ Edit',dislikesShort:'Dislikes',closeWord:'Close',
   planHeaderTitle:'Your week plan',thisWeek:'This week',nextWeekLbl:'Next week',inWeeks:'In {n} weeks',
   pickOneNight:'Pick at least one night',planWholeWeek:'Plan the whole week →',planNights:'Plan these {n} nights →',
   mealBreakfast:'Breakfast',mealLunch:'Lunch',mealDinner:'Dinner',
@@ -2257,7 +2257,7 @@ fr:{
   deliverTitle:'Pas le temps de faire les courses ? Fais-toi livrer',deliverSub:'Fini les files et les sacs lourds — toute ta liste depuis Carrefour, livrée chez toi.',deliverBtn:'Commander →',deliverFab:'Se faire livrer',
   yourItems:'Tes articles',addOwnItem:'Ajoute ton article…',addBtn:'＋ Ajouter',noItems:'Aucun article',
   listCopied:'Liste copiée ✓',couldNotCopy:'Copie impossible',shareUnsupported:'Partage non disponible ici',shareTitle:'Liste de courses',
-  cfSheetTitle:'Ajouter à Carrefour',cfSheetSub:'Touche « Chercher » — le produit s\'ouvre dans un seul onglet Carrefour (sans taper). Ajoute-le, reviens, suivant.',openCarrefourBtn:'Ouvrir Carrefour ↗',editWord:'✎ Modifier',dislikesShort:'Aversions',closeWord:'Fermer',
+  cfSheetTitle:'Ajouter à {store}',cfSheetSub:'Touche « Chercher » — le produit s\'ouvre dans un seul onglet {store} (sans taper). Ajoute-le, reviens, suivant.',openCarrefourBtn:'Ouvrir {store} ↗',editWord:'✎ Modifier',dislikesShort:'Aversions',closeWord:'Fermer',
   planHeaderTitle:'Ton plan de la semaine',thisWeek:'Cette semaine',nextWeekLbl:'Semaine prochaine',inWeeks:'Dans {n} semaines',
   pickOneNight:'Choisis au moins un soir',planWholeWeek:'Planifier toute la semaine →',planNights:'Planifier ces {n} soirs →',
   mealBreakfast:'Petit-déjeuner',mealLunch:'Déjeuner',mealDinner:'Dîner',
@@ -2409,7 +2409,7 @@ es:{
   deliverTitle:'¿Sin tiempo para comprar? Pídelo a domicilio',deliverSub:'Sin colas ni bolsas pesadas — toda tu lista desde Carrefour, hasta tu puerta.',deliverBtn:'Comprar →',deliverFab:'Pedir a domicilio',
   yourItems:'Tus artículos',addOwnItem:'Añade tu artículo…',addBtn:'＋ Añadir',noItems:'Sin artículos',
   listCopied:'Lista copiada ✓',couldNotCopy:'No se pudo copiar',shareUnsupported:'Compartir no disponible aquí',shareTitle:'Lista de la compra',
-  cfSheetTitle:'Añadir a Carrefour',cfSheetSub:'Toca "Buscar" — abre ese producto en una sola pestaña de Carrefour (sin escribir). Añádelo, vuelve y toca el siguiente.',openCarrefourBtn:'Abrir Carrefour ↗',editWord:'✎ Editar',dislikesShort:'No me gusta',closeWord:'Cerrar',
+  cfSheetTitle:'Añadir a {store}',cfSheetSub:'Toca "Buscar" — abre ese producto en una sola pestaña de {store} (sin escribir). Añádelo, vuelve y toca el siguiente.',openCarrefourBtn:'Abrir {store} ↗',editWord:'✎ Editar',dislikesShort:'No me gusta',closeWord:'Cerrar',
   planHeaderTitle:'Tu plan semanal',thisWeek:'Esta semana',nextWeekLbl:'Próxima semana',inWeeks:'En {n} semanas',
   pickOneNight:'Elige al menos una noche',planWholeWeek:'Planificar toda la semana →',planNights:'Planificar estas {n} noches →',
   mealBreakfast:'Desayuno',mealLunch:'Comida',mealDinner:'Cena',
@@ -2607,7 +2607,7 @@ de:{
   deliverTitle:'Keine Zeit zum Einkaufen? Liefern lassen',deliverSub:'Keine Schlangen, keine schweren Tüten — deine ganze Liste von Carrefour, bis vor die Tür.',deliverBtn:'Jetzt kaufen →',deliverFab:'Liefern lassen',
   yourItems:'Deine Artikel',addOwnItem:'Eigenen Artikel hinzufügen…',addBtn:'＋ Hinzufügen',noItems:'Keine Artikel',
   listCopied:'Liste kopiert ✓',couldNotCopy:'Kopieren fehlgeschlagen',shareUnsupported:'Teilen hier nicht verfügbar',shareTitle:'Einkaufsliste',
-  cfSheetTitle:'Zu Carrefour hinzufügen',cfSheetSub:'Tippe „Suchen" — das Produkt öffnet sich in einem Carrefour-Tab (ohne Tippen). Hinzufügen, zurück, nächstes.',openCarrefourBtn:'Carrefour öffnen ↗',editWord:'✎ Bearbeiten',dislikesShort:'Abneigungen',closeWord:'Schließen',
+  cfSheetTitle:'Zu {store} hinzufügen',cfSheetSub:'Tippe „Suchen" — das Produkt öffnet sich in einem {store}-Tab (ohne Tippen). Hinzufügen, zurück, nächstes.',openCarrefourBtn:'{store} öffnen ↗',editWord:'✎ Bearbeiten',dislikesShort:'Abneigungen',closeWord:'Schließen',
   planHeaderTitle:'Dein Wochenplan',thisWeek:'Diese Woche',nextWeekLbl:'Nächste Woche',inWeeks:'In {n} Wochen',
   pickOneNight:'Wähle mindestens einen Abend',planWholeWeek:'Ganze Woche planen →',planNights:'Diese {n} Abende planen →',
   mealBreakfast:'Frühstück',mealLunch:'Mittagessen',mealDinner:'Abendessen',
@@ -3864,8 +3864,30 @@ function shareShoppingList(){
 
 // ── Supermarket (Carrefour affiliate) ──────────────
 // Paste your real Carrefour affiliate entry link + (optionally) their search URL pattern.
-const CARREFOUR_URL='https://www.carrefour.es/supermercado';
-const CARREFOUR_SEARCH='https://www.carrefour.es/supermercado?query=';   // per-item search (verified ES pattern)
+// ─── Grocery delivery providers ───────────────────────────────────────────
+// Amazon UK for English users, Carrefour for Spain. Add your Amazon UK
+// Associate tag below once you have it — leave '' and links still work
+// (just without commission) until then.
+const AMAZON_TAG='';   // ← paste your Amazon UK Associate tag here, e.g. 'menja-21'
+const DELIVERY_PROVIDERS={
+  amazon:   {name:'Amazon UK', win:'menja_amazon',    home:'https://www.amazon.co.uk/',
+             search:q=>'https://www.amazon.co.uk/s?k='+encodeURIComponent(q)+(AMAZON_TAG?('&tag='+encodeURIComponent(AMAZON_TAG)):''),
+             homeUrl:()=>'https://www.amazon.co.uk/'+(AMAZON_TAG?('?tag='+encodeURIComponent(AMAZON_TAG)):'')},
+  carrefour:{name:'Carrefour', win:'menja_carrefour', home:'https://www.carrefour.es/supermercado',
+             search:q=>'https://www.carrefour.es/supermercado?query='+encodeURIComponent(q),
+             homeUrl:()=>'https://www.carrefour.es/supermercado'},
+};
+// Spanish app → Carrefour (Spain); everyone else → Amazon UK.
+function deliveryProvider(){return lang==='es'?DELIVERY_PROVIDERS.carrefour:DELIVERY_PROVIDERS.amazon;}
+function deliveryStore(){return deliveryProvider().name;}
+// ONE reused tab for the whole shop — hold the window reference and re-point it,
+// instead of a named window (which spawns a fresh tab per click on mobile).
+let _deliverWin=null;
+function openDeliveryUrl(url){
+  const pv=deliveryProvider();
+  if(!_deliverWin||_deliverWin.closed){_deliverWin=window.open(url,pv.win);}
+  else{try{_deliverWin.location.href=url;if(_deliverWin.focus)_deliverWin.focus();}catch(e){_deliverWin=window.open(url,pv.win);}}
+}
 // Structured list of what to buy (unchecked groceries + household + custom).
 function groceryItemsForShop(){
   rebuildShopping();   // custom & quick-add items are merged into state.shopping
@@ -3877,6 +3899,12 @@ let _cfDone={};
 function openCarrefour(){_cfDone={};renderCarrefourSheet();document.getElementById('carrefour-sheet').classList.add('open');}
 function closeCarrefour(){document.getElementById('carrefour-sheet').classList.remove('open');}
 function renderCarrefourSheet(){
+  // Provider-specific labels (Amazon UK / Carrefour) injected into the sheet.
+  const store=deliveryStore();
+  const setTxt=(sel,key)=>{const el=document.querySelector(sel);if(el)el.textContent=tf(key,{store});};
+  setTxt('#carrefour-sheet .cf-title span','cfSheetTitle');
+  setTxt('#carrefour-sheet .cf-sub','cfSheetSub');
+  setTxt('#carrefour-sheet .cf-open','openCarrefourBtn');
   const items=groceryItemsForShop();
   const body=document.getElementById('carrefour-items');
   if(!items.length){body.innerHTML=`<div style="padding:24px;text-align:center;color:var(--text3);font-size:14px">${t('listEmpty')}</div>`;}
@@ -3889,8 +3917,7 @@ function renderCarrefourSheet(){
 }
 function carrefourSearch(name){
   _cfDone[name]=true;
-  // reuse ONE Carrefour tab (named window) instead of opening a new tab per item
-  window.open(CARREFOUR_SEARCH+encodeURIComponent(name),'menja_carrefour');
+  openDeliveryUrl(deliveryProvider().search(name));   // reuse ONE tab (held window ref)
   renderCarrefourSheet();
 }
 function renderDelivery(){
