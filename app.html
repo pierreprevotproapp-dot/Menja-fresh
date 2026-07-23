@@ -3897,21 +3897,19 @@ function amazonCartUrl(items){
   const seen=new Set(),pairs=[];
   items.forEach(it=>{const a=asinForItem(it);if(a&&!seen.has(a)){seen.add(a);pairs.push(a);}});
   if(!pairs.length)return null;
-  const tag=AMAZON_TAG?('&AssociateTag='+encodeURIComponent(AMAZON_TAG)):'';
+  const tag=AMAZON_TAG?('AssociateTag='+encodeURIComponent(AMAZON_TAG)+'&'):'';  // canonical: tag first
   const q=pairs.map((a,i)=>`ASIN.${i+1}=${a}&Quantity.${i+1}=1`).join('&');
-  return 'https://www.amazon.co.uk/gp/aws/cart/add.html?'+q+tag;
+  return 'https://www.amazon.co.uk/gp/aws/cart/add.html?'+tag+q;
 }
 // ONE reused tab for the whole shop — hold the window reference and re-point it,
 // instead of a named window (which spawns a fresh tab per click on mobile).
-let _deliverWin=null;
+// Open an external URL from a user tap. window.open() is blocked in an iOS
+// standalone PWA, so use a real anchor+target=_blank click (the only reliable
+// way) — this is what worked for the basket button in testing.
 function openDeliveryUrl(url){
-  // Reuse a still-open tab we hold a handle to (desktop = one reused tab)…
-  if(_deliverWin&&!_deliverWin.closed){
-    try{_deliverWin.location.href=url;if(_deliverWin.focus)_deliverWin.focus();return;}catch(e){_deliverWin=null;}
-  }
-  // …otherwise open a fresh EXTERNAL tab via '_blank' — never a *named* window,
-  // which in an iOS standalone PWA hijacks the app's own view and hangs it.
-  _deliverWin=window.open(url,'_blank')||null;
+  if(!url)return;
+  const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';
+  document.body.appendChild(a);a.click();a.remove();
 }
 // Structured list of what to buy (unchecked groceries + household + custom).
 function groceryItemsForShop(){
