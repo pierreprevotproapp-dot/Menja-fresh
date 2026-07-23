@@ -46,7 +46,7 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
 <header class="top"><div class="top-in">
   <div class="eyebrow">Menja Fresh · Photo production</div>
   <h1>Recipe & Lunchbox Photo Studio</h1>
-  <div class="sub">Generate a photo for every dish and lunchbox item, then <b>Save to app</b> — it uploads to your Supabase and shows up live, no manual steps. One shared style so all 106 match.</div>
+  <div class="sub">Generate a photo for every dish and lunchbox item, then <b>Save to app</b> — it uploads to your Supabase and shows up live, no manual steps. One shared style so all 107 match.</div>
   <div class="keys">
     <input class="in k" id="falkey" type="password" placeholder="fal.ai key (generate)…" autocomplete="off" spellcheck="false">
     <input class="in k" id="supakey" type="password" placeholder="Supabase service_role key (save to app)…" autocomplete="off" spellcheck="false">
@@ -55,7 +55,7 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
   </div>
   <div class="stylewrap"><label class="stylelbl">Lunchbox photo style — edit to fine-tune, then Regenerate</label><textarea id="lunchstyle" class="styletx" rows="2"></textarea></div><div class="keynote">🔒 Both keys live only in <b>this browser</b> — never committed, never sent to us. Uploads go to your Supabase Storage bucket <code>recipe-photos</code>.</div>
   <div class="bar"><div class="progress"><i id="pfill"></i></div><span class="pcount" id="pcount">0 / 0 live</span><button class="btn" id="copyStyle">Copy shared style</button><button class="btn" id="resetBtn">Reset</button></div>
-  <div class="controls"><input class="search" id="search" type="search" placeholder="Filter…" aria-label="Filter"><div class="tabs" id="tabs"><button class="tab on" data-g="all">All 106</button><button class="tab" data-g="Lunchbox">Lunchbox 60</button><button class="tab" data-g="Recipes">Recipes 46</button><button class="tab" data-g="todo">To do</button></div></div>
+  <div class="controls"><input class="search" id="search" type="search" placeholder="Filter…" aria-label="Filter"><div class="tabs" id="tabs"><button class="tab on" data-g="all">All 107</button><button class="tab" data-g="Lunchbox">Lunchbox 60</button><button class="tab" data-g="Recipes">Recipes 47</button><button class="tab" data-g="todo">To do</button></div></div>
 </div></header>
 
 <div class="wrap">
@@ -925,6 +925,14 @@ const DB={
    "emoji": "🍓",
    "name": "Strawberry, Tomato & Burrata Salad",
    "prompt": "A fresh salad of halved strawberries and cherry tomatoes around a soft creamy burrata torn open in the middle, scattered with toasted pine nuts and basil, a drizzle of olive oil, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+  },
+  {
+   "group": "Recipes",
+   "section": "General recipes",
+   "id": "zucchini-noodle-pesto",
+   "emoji": "🥒",
+   "name": "Zucchini Noodle Spaghetti with Pesto",
+   "prompt": "A generous nest of spiralized green zucchini noodles that look just like spaghetti, glossy with fresh green basil pesto, tossed with halved red cherry tomatoes, topped with toasted pine nuts and grated parmesan and a few basil leaves, twirled with a fork, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
   }
  ]
 };
