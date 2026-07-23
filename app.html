@@ -8569,7 +8569,8 @@ function initWelcomeHero(){
   if(!img)return;
   const fb=document.getElementById('welcome-hero-fb');
   const base=SUPA_URL+'/storage/v1/object/public/recipe-photos/';
-  const cands=['chicken-fajita-bowl','watermelon-feta-salad','margherita-pizza','thai-green-chicken-curry','homemade-granola','spaghetti-bolognese'];
+  // Vegetarian, photogenic heroes only — first one with a Storage photo wins.
+  const cands=['watermelon-feta-salad','strawberry-tomato-burrata-salad','margherita-pizza','avocado-greens-beetroot-bowl','hummus-bowl-roasted-veg','veggie-plate-roasted-seasonal','zucchini-noodle-pesto','acai-bowl-granola-berries','berry-smoothie-bowl','homemade-granola'];
   let i=0;
   img.onload=()=>{img.style.opacity='1';if(fb)fb.style.display='none';};
   img.onerror=()=>{ if(i<cands.length){ img.src=base+cands[i++]+'.jpg'; } else { img.style.display='none'; if(fb)fb.style.display='flex'; } };
