@@ -1066,7 +1066,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .streak-pill.soft{background:var(--surface2,#f1efe9);color:var(--text2);font-weight:600}
 .weekdone-streak{font-size:14px;font-weight:700;color:var(--accent);margin:-4px 0 14px}
 /* ── IN-TAB RECIPE OVERLAY ───────────────────── */
-.recipe-ov{display:none;position:fixed;inset:0;background:var(--bg);z-index:760;overflow-y:auto}
+/* stops above the bottom nav so the tab bar stays visible while viewing a recipe */
+.recipe-ov{display:none;position:fixed;top:0;left:0;right:0;bottom:calc(var(--navh) + env(safe-area-inset-bottom));background:var(--bg);z-index:760;overflow-y:auto}
 .recipe-ov.open{display:block}
 .recipe-ov-inner{max-width:480px;margin:0 auto;min-height:100%}
 /* ── COOK MODE ───────────────────────────────── */
@@ -4238,6 +4239,10 @@ Suggest ONE creative recipe I can make. Return ONLY JSON, no other text:
 // NAV
 // ═══════════════════════════════════════════════════
 function showTab(tab){
+  // The fullscreen recipe overlay now sits above the bottom nav, so the tab bar
+  // stays tappable while a recipe is open — dismiss the overlay before switching.
+  const _rov=document.getElementById('recipe-ov');
+  if(_rov&&_rov.classList.contains('open'))closeRecipeOverlay();
   // Save the departing tab's scroll position before switching.
   const prevTab=_currentTabKey();
   if(prevTab!==tab)scrollMemory[prevTab]=_getTabScroll(prevTab);

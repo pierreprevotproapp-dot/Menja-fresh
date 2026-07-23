@@ -46,7 +46,7 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
 <header class="top"><div class="top-in">
   <div class="eyebrow">Menja Fresh · Photo production</div>
   <h1>Recipe & Lunchbox Photo Studio</h1>
-  <div class="sub">Generate a photo for every dish and lunchbox item, then <b>Save to app</b> — it uploads to your Supabase and shows up live, no manual steps. One shared style so all 107 match.</div>
+  <div class="sub">Generate a photo for every dish and lunchbox item, then <b>Save to app</b> — it uploads to your Supabase and shows up live, no manual steps. One shared style so all 108 match.</div>
   <div class="keys">
     <input class="in k" id="falkey" type="password" placeholder="fal.ai key (generate)…" autocomplete="off" spellcheck="false">
     <input class="in k" id="supakey" type="password" placeholder="Supabase service_role key (save to app)…" autocomplete="off" spellcheck="false">
@@ -55,7 +55,7 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
   </div>
   <div class="stylewrap"><label class="stylelbl">Lunchbox photo style — edit to fine-tune, then Regenerate</label><textarea id="lunchstyle" class="styletx" rows="2"></textarea></div><div class="keynote">🔒 Both keys live only in <b>this browser</b> — never committed, never sent to us. Uploads go to your Supabase Storage bucket <code>recipe-photos</code>.</div>
   <div class="bar"><div class="progress"><i id="pfill"></i></div><span class="pcount" id="pcount">0 / 0 live</span><button class="btn" id="copyStyle">Copy shared style</button><button class="btn" id="resetBtn">Reset</button></div>
-  <div class="controls"><input class="search" id="search" type="search" placeholder="Filter…" aria-label="Filter"><div class="tabs" id="tabs"><button class="tab on" data-g="all">All 107</button><button class="tab" data-g="Lunchbox">Lunchbox 60</button><button class="tab" data-g="Recipes">Recipes 47</button><button class="tab" data-g="todo">To do</button></div></div>
+  <div class="controls"><input class="search" id="search" type="search" placeholder="Filter…" aria-label="Filter"><div class="tabs" id="tabs"><button class="tab on" data-g="all">All 108</button><button class="tab" data-g="Lunchbox">Lunchbox 60</button><button class="tab" data-g="Recipes">Recipes 48</button><button class="tab" data-g="todo">To do</button></div></div>
 </div></header>
 
 <div class="wrap">
@@ -76,865 +76,873 @@ footer{margin-top:40px;text-align:center;font-size:12px;color:var(--ink3)}
 
 <script>
 const DB={
- "lunchStyle": "close-up food photography from directly above, the food sits large and centered and fills most of the frame, on a plain soft neutral surface with no plate, professional food photography, soft natural daylight, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no plastic sheen",
- "items": [
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "dino-burger",
-   "emoji": "🦕",
-   "name": "Dino veggie burgers",
-   "subject": "two homemade veggie burger sliders side by side, golden sesame-seed buns, thick crispy green spinach-vegetable patties, fresh lettuce and ripe tomato slices, a little creamy sauce peeking out"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "spinach-waffle",
-   "emoji": "🧇",
-   "name": "Spinach waffles",
-   "subject": "two small golden-green spinach waffles filling the whole frame, crisp waffle-iron squares, flecks of spinach in the batter"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "veggie-pinwheel",
-   "emoji": "🌀",
-   "name": "Rainbow veggie pinwheels",
-   "subject": "three tortilla pinwheels cut-side up, colorful spirals of cream cheese, bright grated carrot and cucumber"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "sweet-potato-pancake",
-   "emoji": "🥞",
-   "name": "Sweet potato pancakes",
-   "subject": "three small golden sweet potato pancakes overlapping to fill the whole frame, crisp lacy edges and soft orange centres"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "rice-balls",
-   "emoji": "🍙",
-   "name": "Mini rice balls",
-   "subject": "three mini white sushi rice balls speckled with diced carrot and green peas, each wrapped with a thin nori belt"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "frittata-muffin",
-   "emoji": "🍳",
-   "name": "Mini frittata muffins",
-   "subject": "two golden mini frittata muffins side by side, studded with yellow sweetcorn and melted cheese, fluffy egg texture"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "banana-oat-pancake",
-   "emoji": "🥞",
-   "name": "Banana-oat pancakes",
-   "subject": "three small golden banana-oat pancakes overlapping to fill the whole frame, soft fluffy texture with visible oat flecks"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "pita-pocket",
-   "emoji": "🫓",
-   "name": "Hummus pita pockets",
-   "subject": "two mini wholemeal pita halves side by side filling the whole frame, stuffed with creamy hummus, crunchy cucumber and carrot sticks poking out"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "corn-fritter",
-   "emoji": "🌽",
-   "name": "Sweetcorn fritters",
-   "subject": "three small golden sweetcorn fritters filling the whole frame, crispy edges and bright yellow corn kernels"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "stuffed-tomato",
-   "emoji": "🍅",
-   "name": "Stuffed rainbow tomatoes",
-   "subject": "two baked red tomatoes filled with fluffy rice, white feta crumbles and sweet raisins, tops lightly golden"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "cheese-shapes",
-   "emoji": "🧀",
-   "name": "Cheese shapes",
-   "subject": "one cheese star and one cheese flower cut from pale yellow firm cheese with cookie cutters, side by side"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "egg-shapes",
-   "emoji": "🥚",
-   "name": "Boiled egg shapes",
-   "subject": "slices of one peeled hard-boiled egg cut into star and flower shapes, bright white with a sunny yellow centre, macro detail with every edge crisply in focus"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "edamame",
-   "emoji": "🫛",
-   "name": "Edamame beans",
-   "subject": "a single close-up layer of glossy bright green shelled edamame beans covering the whole frame, sprinkled with flaky sea salt"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "halloumi",
-   "emoji": "🧆",
-   "name": "Halloumi bites",
-   "subject": "three small cubes of pale ivory halloumi cheese, lightly pan-fried with golden-brown sear marks only on the flat sides, soft matte cheese texture, homemade and slightly irregular"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "white-bean-dip",
-   "emoji": "🫘",
-   "name": "White bean & herb salad",
-   "subject": "creamy white beans flecked with chopped fresh herbs and lemon zest covering the whole frame in a close-up single layer, glistening lightly"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "cottage-fruit",
-   "emoji": "🥛",
-   "name": "Cottage cheese & berries",
-   "subject": "fluffy white cottage cheese covering the whole frame, topped with two blueberries and one sliced strawberry"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "falafel",
-   "emoji": "🧆",
-   "name": "Baked mini falafel",
-   "subject": "two small golden-baked falafel balls flecked with green parsley, crisp crumbly outside"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "lentil-balls",
-   "emoji": "🟤",
-   "name": "Lentil & herb balls",
-   "subject": "two baked lentil and herb balls, golden-brown and speckled with parsley"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "yogurt-pot",
-   "emoji": "🥣",
-   "name": "Greek yogurt pot",
-   "subject": "thick creamy Greek yogurt covering the whole frame, swirled smooth with a thin drizzle of golden honey"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Veggies",
-   "id": "cucumber-rolls",
-   "emoji": "🥒",
-   "name": "Cucumber roll-ups",
-   "subject": "three small cucumber ribbon rosettes with cream cheese, bright green edges, cut-side up"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Veggies",
-   "id": "caprese-skewer",
-   "emoji": "🍅",
-   "name": "Caprese skewers",
-   "subject": "one short skewer of red cherry tomatoes, white mini mozzarella and a fresh basil leaf, laid diagonally across the whole frame"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Veggies",
-   "id": "carrot-slaw",
-   "emoji": "🥕",
-   "name": "Carrot & raisin slaw",
-   "subject": "bright orange grated carrot slaw with plump raisins covering the whole frame in a close-up layer, glossy with lemon dressing"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Veggies",
-   "id": "pepper-stars",
-   "emoji": "⭐",
-   "name": "Bell pepper stars",
-   "subject": "flat star shapes cut from red and yellow bell pepper with a cookie cutter covering the whole frame in a single cheerful layer"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Veggies",
-   "id": "snap-peas",
-   "emoji": "🫛",
-   "name": "Sugar snap peas",
-   "subject": "a few crisp bright green sugar snap peas, one halved open showing the little peas inside"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Veggies",
-   "id": "broccoli-tots",
-   "emoji": "🥦",
-   "name": "Broccoli cheese tots",
-   "subject": "two golden broccoli-cheese tots with crispy breadcrumb coating and bright green flecks"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Veggies",
-   "id": "corn-salsa",
-   "emoji": "🌽",
-   "name": "Corn & bean salsa",
-   "subject": "colorful sweetcorn, black beans and red pepper pieces covering the whole frame in a close-up layer, glistening with lime"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Veggies",
-   "id": "avocado-smash",
-   "emoji": "🥑",
-   "name": "Avocado lime smash",
-   "subject": "creamy pale-green mashed avocado covering the whole frame, rustic texture with flecks of lime zest"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Veggies",
-   "id": "roasted-chickpea",
-   "emoji": "🌰",
-   "name": "Crunchy roasted chickpeas",
-   "subject": "crunchy golden roasted chickpeas dusted with mild paprika covering the whole frame in a single close-up layer"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "cinnamon-apple",
-   "emoji": "🍎",
-   "name": "Cinnamon baked apple",
-   "subject": "soft baked apple wedges glazed with cinnamon and maple syrup covering the whole frame in a close-up layer, golden and glossy"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "apple-nutbutter",
-   "emoji": "🍏",
-   "name": "Apple & nut-butter rings",
-   "subject": "one apple ring sandwich filled with creamy nut butter, fresh red-skinned apple"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "fruit-skewer",
-   "emoji": "🍢",
-   "name": "Rainbow fruit skewers",
-   "subject": "one short fruit skewer in rainbow order with strawberry, orange melon, green kiwi and a purple grape, laid diagonally across the whole frame"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "frozen-yogurt-bites",
-   "emoji": "❄️",
-   "name": "Frozen yogurt-berry bites",
-   "subject": "three small creamy white frozen yogurt bites studded with colorful berries"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "melon-stars",
-   "emoji": "⭐",
-   "name": "Melon stars",
-   "subject": "three juicy bright orange cantaloupe melon stars cut with a cookie cutter, flat star shapes"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "berry-salad",
-   "emoji": "🍓",
-   "name": "Berry & mint salad",
-   "subject": "fresh strawberries and blueberries with tiny torn mint leaves covering the whole frame in a close-up layer, juicy and glistening"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "banana-sushi",
-   "emoji": "🍌",
-   "name": "Banana-oat sushi",
-   "subject": "three banana sushi rounds coated in oats and nut butter, neat little slices"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "grape-cheese-skewer",
-   "emoji": "🍇",
-   "name": "Grape & cheese skewers",
-   "subject": "one short skewer alternating green and red grapes with pale cheese cubes, laid diagonally across the whole frame"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "mango-melon-balls",
-   "emoji": "🍈",
-   "name": "Mango & melon balls",
-   "subject": "three juicy translucent balls of ripe orange mango and pale green honeydew melon, wet and glistening"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "baked-pear",
-   "emoji": "🍐",
-   "name": "Baked cinnamon pear",
-   "subject": "one soft baked pear half dusted with cinnamon, golden and lightly caramelized at the edges"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "hummus",
-   "emoji": "🥣",
-   "name": "Creamy hummus",
-   "subject": "creamy hummus covering the whole frame, swirled smooth with a thin drizzle of olive oil"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "guacamole",
-   "emoji": "🥑",
-   "name": "Mild guacamole",
-   "subject": "chunky mild guacamole with diced tomato flecks covering the whole frame, fresh green and creamy"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "yogurt-honey",
-   "emoji": "🍯",
-   "name": "Yogurt-honey dip",
-   "subject": "creamy yogurt dip covering the whole frame, swirled with golden honey and a light dusting of cinnamon"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "nut-butter",
-   "emoji": "🥜",
-   "name": "Nut or seed butter",
-   "subject": "smooth golden nut butter covering the whole frame, swirled with a glossy surface"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "choc-clusters",
-   "emoji": "🍫",
-   "name": "Dark choc oat clusters",
-   "subject": "two small dark chocolate oat clusters with glossy chocolate coating"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "granola",
-   "emoji": "🥣",
-   "name": "Granola clusters",
-   "subject": "golden crunchy granola clusters with visible oat flakes covering the whole frame in a close-up layer, honey-toasted"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "energy-bites",
-   "emoji": "⚡",
-   "name": "Date-oat energy bites",
-   "subject": "two soft date-oat energy balls rolled in seeds"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "apple-cinnamon-sauce",
-   "emoji": "🍎",
-   "name": "Apple-cinnamon sauce",
-   "subject": "smooth pale-golden apple sauce covering the whole frame, swirled with cinnamon, soft sheen"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "trail-mix",
-   "emoji": "🥜",
-   "name": "Fruit & seed trail mix",
-   "subject": "colorful raisins, sunflower seeds and bright orange dried mango pieces covering the whole frame in a single close-up layer"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "spinach-cheese-muffin",
-   "emoji": "🧁",
-   "name": "Spinach & cheese muffins",
-   "subject": "two savoury spinach and cheese muffins with golden tops, flecks of green spinach and melted cheese"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "pizza-muffin",
-   "emoji": "🍕",
-   "name": "Pizza muffins",
-   "subject": "two mini pizza muffins with bubbling golden cheese and tomato-red tops"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "veggie-quesadilla",
-   "emoji": "🫓",
-   "name": "Veggie quesadilla",
-   "subject": "three toasted wholegrain quesadilla triangles fanned to fill the whole frame, golden-brown spots, melted cheese and bright grated carrot and courgette between the layers"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "veggie-sushi",
-   "emoji": "🍣",
-   "name": "Veggie sushi rolls",
-   "subject": "four veggie sushi rolls cut-side up filling the whole frame, white rice spirals with crisp cucumber and creamy avocado centres, dark nori edges"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "borek-snake",
-   "emoji": "🐍",
-   "name": "Spinach & feta börek snake",
-   "subject": "two pieces of golden spinach and feta börek, crisp filo layers with sesame seeds, green filling at the cut ends"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Main",
-   "id": "creamy-broccoli-pasta",
-   "emoji": "🍝",
-   "name": "Creamy broccoli pasta",
-   "subject": "creamy wholegrain pasta spirals and bright green broccoli florets covering the whole frame in a close-up single layer, glossy with cream cheese sauce"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "bean-quinoa-bowl",
-   "emoji": "🥗",
-   "name": "Black bean & quinoa bowl",
-   "subject": "fluffy quinoa with black beans and bright yellow sweetcorn covering the whole frame in a close-up layer, glistening with lemon dressing"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "chickpea-smash",
-   "emoji": "🥪",
-   "name": "Chickpea smash",
-   "subject": "creamy mashed chickpeas flecked with green chives covering the whole frame, rustic texture, fresh and lemony"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Protein",
-   "id": "mini-quiche",
-   "emoji": "🥧",
-   "name": "Mini veggie quiche",
-   "subject": "one golden mini veggie quiche with colorful pepper and courgette pieces set in fluffy egg"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Fruit",
-   "id": "fruit-leather",
-   "emoji": "🍓",
-   "name": "Berry fruit roll-ups",
-   "subject": "two spiral rolls of homemade deep-red berry fruit leather standing on end"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "beetroot-hummus",
-   "emoji": "🟣",
-   "name": "Pink beetroot hummus",
-   "subject": "vivid pink beetroot hummus covering the whole frame, swirled smooth and creamy"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "sweet-potato-brownie",
-   "emoji": "🍫",
-   "name": "Sweet potato brownie bites",
-   "subject": "one fudgy chocolate brownie bite with soft moist crumb, lightly dusted with cocoa"
-  },
-  {
-   "group": "Lunchbox",
-   "section": "Dip & treat",
-   "id": "oat-apple-cookies",
-   "emoji": "🍪",
-   "name": "Apple-carrot oat cookies",
-   "subject": "one golden oat cookie flecked with grated apple, carrot and raisins, soft and chunky"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "strammer-max",
-   "emoji": "🍽",
-   "name": "Strammer Max",
-   "prompt": "Strammer Max — rye bread topped with ham and a sunny-side-up fried egg, chives, runny yolk, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "pasta-pesto-basic",
-   "emoji": "🍽",
-   "name": "Pasta with Pesto",
-   "prompt": "Bowl of pasta tossed with green basil pesto, grated parmesan and cherry tomatoes, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "pasta-tomato-sauce-basic",
-   "emoji": "🍽",
-   "name": "Pasta with Tomato Sauce",
-   "prompt": "Simple bowl of pasta in tomato sauce topped with grated parmesan and basil, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "spaghetti-bolognese",
-   "emoji": "🍽",
-   "name": "Spaghetti Bolognese",
-   "prompt": "Bowl of spaghetti bolognese with rich meat sauce, grated parmesan and basil, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "thai-green-chicken-curry",
-   "emoji": "🍽",
-   "name": "Thai Green Chicken Curry",
-   "prompt": "Thai green chicken curry with coconut sauce, green beans and red pepper over jasmine rice, fresh basil, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "margherita-pizza",
-   "emoji": "🍽",
-   "name": "Margherita Pizza",
-   "prompt": "A rustic homemade whole-wheat pizza with a golden blistered wholegrain crust, loaded with colorful vegetables — red bell pepper strips, thin courgette rounds, halved cherry tomatoes, red onion and mushrooms — over melty browned mozzarella and a tomato base, scattered with fresh basil and rocket, one slice pulled slightly with a cheese stretch, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "classic-beef-lasagna",
-   "emoji": "🍽",
-   "name": "Classic Beef Lasagna",
-   "prompt": "Classic beef lasagna with golden bubbling cheese top, one portion lifted showing layers of ragù and béchamel, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "chili-con-carne",
-   "emoji": "🍽",
-   "name": "Chili con Carne",
-   "prompt": "Bowl of chili con carne with kidney beans over rice, topped with coriander, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "egg-fried-rice",
-   "emoji": "🍽",
-   "name": "Egg Fried Rice",
-   "prompt": "Egg fried rice with peas, carrot and spring onion in a wok steaming, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "marry-me-chicken",
-   "emoji": "🍽",
-   "name": "Marry Me Chicken",
-   "prompt": "Marry me chicken — golden chicken breasts in creamy sun-dried tomato sauce with spinach and parmesan in a skillet, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "chicken-fajita-bowl",
-   "emoji": "🍽",
-   "name": "Chicken Fajita Bowl",
-   "prompt": "Chicken fajita bowl with charred peppers, black beans, rice, avocado and lime, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "chicken-pad-thai",
-   "emoji": "🍽",
-   "name": "Chicken Pad Thai",
-   "prompt": "Chicken pad thai with rice noodles, beansprouts, crushed peanuts, spring onion and lime wedge, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "vegetarian-lasagna",
-   "emoji": "🍽",
-   "name": "Best-Ever Vegetarian Lasagna",
-   "prompt": "Vegetarian lasagna with roasted aubergine, courgette and pepper, golden mozzarella top, one slice lifted, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "fudgy-chocolate-brownies",
-   "emoji": "🍽",
-   "name": "Fudgy Chocolate Brownies",
-   "prompt": "Stack of fudgy chocolate brownies with crackly tops and dense centres, chocolate chunks visible, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "greek-yogurt-berry-bark",
-   "emoji": "🍽",
-   "name": "Frozen Greek Yogurt Berry Bark",
-   "prompt": "Frozen Greek yogurt bark broken into shards on a marble board, topped with raspberries, blueberries and dark chocolate shavings, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "frozen-banana-nice-cream",
-   "emoji": "🍽",
-   "name": "Chocolate-Peanut Banana Nice Cream",
-   "prompt": "Creamy chocolate banana nice cream swirled in a bowl, dusted with cocoa and a swirl of peanut butter, soft natural light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "berry-chia-pudding-parfait",
-   "emoji": "🍽",
-   "name": "Berry Chia Pudding Parfait",
-   "prompt": "Chia pudding parfait layered with fresh berries in a glass, topped with mint, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "no-bake-chocolate-peanut-oat-bars",
-   "emoji": "🍽",
-   "name": "No-Bake Chocolate Peanut Oat Bars",
-   "prompt": "Homemade no-bake chocolate peanut oat bars cut into chunky squares and stacked, showing a dense chewy pressed-together oat-and-peanut-butter base as one solid layer under a glossy dark chocolate top, rustic uneven hand-cut edges, a few crushed peanuts on top, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "banana-oat-choc-chip-cookies",
-   "emoji": "🍽",
-   "name": "Banana Oat Chocolate-Chip Cookies",
-   "prompt": "Soft banana oat cookies with melting dark chocolate chips on a cooling rack, warm homely light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "baked-cinnamon-apples-oat-crumble",
-   "emoji": "🍽",
-   "name": "Baked Cinnamon Apples with Oat Crumble",
-   "prompt": "Soft baked cinnamon apple wedges topped with a golden crunchy oat and walnut crumble in a small rustic baking dish, syrupy and caramelized at the edges, a little steam rising, cozy and homemade, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "stuffed-medjool-dates",
-   "emoji": "🍽",
-   "name": "Peanut-Butter Stuffed Dates",
-   "prompt": "Medjool dates filled with peanut butter and coated in dark chocolate, sprinkled with sea salt flakes on parchment, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "dark-chocolate-almond-bark",
-   "emoji": "🍽",
-   "name": "Dark Chocolate Almond & Cranberry Bark",
-   "prompt": "Dark chocolate bark studded with whole almonds and dried cranberries, broken into shards on baking paper, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "roasted-honey-peaches-yogurt",
-   "emoji": "🍽",
-   "name": "Roasted Honey Peaches with Yogurt",
-   "prompt": "Roasted peach halves caramelised with honey, served over Greek yogurt and topped with crushed pistachios, bright summer light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "flourless-chocolate-almond-cake",
-   "emoji": "🍽",
-   "name": "Flourless Chocolate Almond Cake",
-   "prompt": "Dense flourless chocolate almond cake dusted with cocoa, one slice removed showing fudgy interior, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "apple-crumble",
-   "emoji": "🍽",
-   "name": "Apple & Oat Crumble",
-   "prompt": "Golden apple and oat crumble in a rustic baking dish, bubbling fruit at the edges, a spoonful served with a little cream, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "orange-energy-balls",
-   "emoji": "🍽",
-   "name": "Orange & Almond Energy Balls",
-   "prompt": "About a dozen homemade orange and date energy balls, a deep caramel date-brown color, matte and slightly craggy from oats and ground almonds, hand-rolled and imperfectly round, about half rolled in fine white desiccated coconut and the rest bare with flecks of orange zest, a halved orange and a few dates alongside, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "baked-cheesecake-lighter",
-   "emoji": "🍽",
-   "name": "Baked Vanilla Cheesecake",
-   "prompt": "Slice of baked vanilla cheesecake on a biscuit base, smooth creamy top, served on a plate with a few berries, soft natural light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "tiramisu-lighter",
-   "emoji": "🍽",
-   "name": "Lighter Tiramisu",
-   "prompt": "A generous square slice of homemade tiramisu on a small plate, clearly visible soft layers of coffee-soaked ladyfinger biscuit and mascarpone cream, dusted with cocoa powder, a spoonful lifted showing the creamy layers, rustic home-kitchen look, no glass, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "chocolate-chip-cookies",
-   "emoji": "🍽",
-   "name": "Chocolate Chip Cookies",
-   "prompt": "Stack of chocolate chip cookies with melty dark chocolate and crisp golden edges on a cooling rack, warm homely light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "molten-chocolate-lava-cake",
-   "emoji": "🍽",
-   "name": "Molten Chocolate Lava Cake",
-   "prompt": "Molten chocolate lava cake on a plate with the gooey centre spilling out, dusting of cocoa and a few raspberries, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "creme-brulee",
-   "emoji": "🍽",
-   "name": "Vanilla Crème Brûlée",
-   "prompt": "Crème brûlée in a ramekin with a glassy caramelised sugar top being cracked with a spoon, vanilla flecks in the custard, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "beetroot-feta-tart",
-   "emoji": "🍽",
-   "name": "Beetroot & Feta Tart",
-   "prompt": "Rustic beetroot and feta puff pastry tart with caramelised red onion, walnuts, thyme and fresh rocket, one slice cut, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "date-pistachio-energy-bar",
-   "emoji": "🍽",
-   "name": "Date & Pistachio Energy Bar",
-   "prompt": "Date & Pistachio Energy Bar, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "watermelon-feta-salad",
-   "emoji": "🍽",
-   "name": "Watermelon & Feta Salad",
-   "prompt": "Watermelon & Feta Salad, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "homemade-granola",
-   "emoji": "🍽",
-   "name": "Crunchy Homemade Granola",
-   "prompt": "Crunchy Homemade Granola, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "homemade-hummus",
-   "emoji": "🍽",
-   "name": "Silky Homemade Hummus",
-   "prompt": "Silky Homemade Hummus, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "white-bean-roasted-pepper-soup",
-   "emoji": "🫘",
-   "name": "White Bean & Roasted Pepper Soup",
-   "prompt": "A warming bowl of creamy white bean and roasted red pepper soup, deep orange-red, swirled with a little cream and a drizzle of olive oil, fresh thyme on top, the soup filling most of the frame, close overhead, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "veggie-plate-roasted-seasonal",
-   "emoji": "🥦",
-   "name": "Roasted Seasonal Veggie Plate",
-   "prompt": "An abundant plate of golden roasted seasonal vegetables — broccoli, carrot batons, courgette, red pepper and red onion — caramelized and charred at the edges, scattered with fresh thyme and a squeeze of lemon, rustic and colorful, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "hummus-bowl-roasted-veg",
-   "emoji": "🫙",
-   "name": "Hummus Bowl with Warm Roasted Veg",
-   "prompt": "A nourishing bowl that is mostly colorful warm roasted vegetables — courgette, red pepper, cherry tomatoes and golden chickpeas — with just a small swoosh of creamy hummus to one side, sprinkled with chopped parsley, a wedge of warm flatbread tucked in, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "cinnamon-sweet-potato-pecan-bowl",
-   "emoji": "🍠",
-   "name": "Cinnamon Sweet Potato & Maple Pecan Bowl",
-   "prompt": "A cozy bowl of roasted cinnamon sweet potato cubes and fluffy quinoa topped with toasted pecans, ruby pomegranate seeds, crumbled feta and fresh mint, warm autumn colors, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "cinnamon-roll-pecan-yogurt-bowl",
-   "emoji": "🥣",
-   "name": "Cinnamon Roll Pecan Yogurt Bowl",
-   "prompt": "A creamy Greek yogurt bowl swirled with cinnamon and maple, topped with sliced banana, chopped Medjool dates, toasted pecans and a drizzle of almond butter, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "apple-pie-pecan-oat-bowl",
-   "emoji": "🍎",
-   "name": "Apple Pie Pecan Oat Bowl",
-   "prompt": "A warm bowl of creamy porridge oats with soft cinnamon apple pieces, toasted pecans, plump raisins and a few fresh berries, comforting and homemade, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "classic-greek-salad-horiatiki",
-   "emoji": "🥗",
-   "name": "Classic Greek Salad",
-   "prompt": "A rustic Greek horiatiki salad of chunky ripe tomatoes, cucumber, green pepper and red onion with Kalamata olives and a thick slab of feta on top, drizzled with olive oil and oregano, no lettuce, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "spanish-tortilla-herbed-yogurt-greens",
-   "emoji": "🍳",
-   "name": "Spanish Tortilla with Herbed Yogurt & Greens",
-   "prompt": "A thick golden Spanish potato tortilla cut into wedges, one wedge showing the soft layered potato and egg inside, served with a dollop of herbed yogurt and a small handful of peppery greens, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "classic-carrot-cake-cream-cheese",
-   "emoji": "🥕",
-   "name": "Classic Carrot Cake",
-   "prompt": "A slice of moist homemade carrot cake with thick cream-cheese frosting and chopped pecans, showing the tender spiced crumb flecked with carrot, on a small plate, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "strawberry-tomato-burrata-salad",
-   "emoji": "🍓",
-   "name": "Strawberry, Tomato & Burrata Salad",
-   "prompt": "A fresh salad of halved strawberries and cherry tomatoes around a soft creamy burrata torn open in the middle, scattered with toasted pine nuts and basil, a drizzle of olive oil, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  },
-  {
-   "group": "Recipes",
-   "section": "General recipes",
-   "id": "zucchini-noodle-pesto",
-   "emoji": "🥒",
-   "name": "Zucchini Noodle Spaghetti with Pesto & Feta",
-   "prompt": "A generous nest of spiralized green zucchini noodles that look just like spaghetti, glossy with fresh green basil pesto, tossed with halved red cherry tomatoes, scattered with crumbled white feta cheese, toasted pine nuts and a few basil leaves, twirled with a fork, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
-  }
- ]
+  "lunchStyle": "close-up food photography from directly above, the food sits large and centered and fills most of the frame, on a plain soft neutral surface with no plate, professional food photography, soft natural daylight, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no plastic sheen",
+  "items": [
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "dino-burger",
+      "emoji": "🦕",
+      "name": "Dino veggie burgers",
+      "subject": "two homemade veggie burger sliders side by side, golden sesame-seed buns, thick crispy green spinach-vegetable patties, fresh lettuce and ripe tomato slices, a little creamy sauce peeking out"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "spinach-waffle",
+      "emoji": "🧇",
+      "name": "Spinach waffles",
+      "subject": "two small golden-green spinach waffles filling the whole frame, crisp waffle-iron squares, flecks of spinach in the batter"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "veggie-pinwheel",
+      "emoji": "🌀",
+      "name": "Rainbow veggie pinwheels",
+      "subject": "three tortilla pinwheels cut-side up, colorful spirals of cream cheese, bright grated carrot and cucumber"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "sweet-potato-pancake",
+      "emoji": "🥞",
+      "name": "Sweet potato pancakes",
+      "subject": "three small golden sweet potato pancakes overlapping to fill the whole frame, crisp lacy edges and soft orange centres"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "rice-balls",
+      "emoji": "🍙",
+      "name": "Mini rice balls",
+      "subject": "three mini white sushi rice balls speckled with diced carrot and green peas, each wrapped with a thin nori belt"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "frittata-muffin",
+      "emoji": "🍳",
+      "name": "Mini frittata muffins",
+      "subject": "two golden mini frittata muffins side by side, studded with yellow sweetcorn and melted cheese, fluffy egg texture"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "banana-oat-pancake",
+      "emoji": "🥞",
+      "name": "Banana-oat pancakes",
+      "subject": "three small golden banana-oat pancakes overlapping to fill the whole frame, soft fluffy texture with visible oat flecks"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "pita-pocket",
+      "emoji": "🫓",
+      "name": "Hummus pita pockets",
+      "subject": "two mini wholemeal pita halves side by side filling the whole frame, stuffed with creamy hummus, crunchy cucumber and carrot sticks poking out"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "corn-fritter",
+      "emoji": "🌽",
+      "name": "Sweetcorn fritters",
+      "subject": "three small golden sweetcorn fritters filling the whole frame, crispy edges and bright yellow corn kernels"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "stuffed-tomato",
+      "emoji": "🍅",
+      "name": "Stuffed rainbow tomatoes",
+      "subject": "two baked red tomatoes filled with fluffy rice, white feta crumbles and sweet raisins, tops lightly golden"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "cheese-shapes",
+      "emoji": "🧀",
+      "name": "Cheese shapes",
+      "subject": "one cheese star and one cheese flower cut from pale yellow firm cheese with cookie cutters, side by side"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "egg-shapes",
+      "emoji": "🥚",
+      "name": "Boiled egg shapes",
+      "subject": "slices of one peeled hard-boiled egg cut into star and flower shapes, bright white with a sunny yellow centre, macro detail with every edge crisply in focus"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "edamame",
+      "emoji": "🫛",
+      "name": "Edamame beans",
+      "subject": "a single close-up layer of glossy bright green shelled edamame beans covering the whole frame, sprinkled with flaky sea salt"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "halloumi",
+      "emoji": "🧆",
+      "name": "Halloumi bites",
+      "subject": "three small cubes of pale ivory halloumi cheese, lightly pan-fried with golden-brown sear marks only on the flat sides, soft matte cheese texture, homemade and slightly irregular"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "white-bean-dip",
+      "emoji": "🫘",
+      "name": "White bean & herb salad",
+      "subject": "creamy white beans flecked with chopped fresh herbs and lemon zest covering the whole frame in a close-up single layer, glistening lightly"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "cottage-fruit",
+      "emoji": "🥛",
+      "name": "Cottage cheese & berries",
+      "subject": "fluffy white cottage cheese covering the whole frame, topped with two blueberries and one sliced strawberry"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "falafel",
+      "emoji": "🧆",
+      "name": "Baked mini falafel",
+      "subject": "two small golden-baked falafel balls flecked with green parsley, crisp crumbly outside"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "lentil-balls",
+      "emoji": "🟤",
+      "name": "Lentil & herb balls",
+      "subject": "two baked lentil and herb balls, golden-brown and speckled with parsley"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "yogurt-pot",
+      "emoji": "🥣",
+      "name": "Greek yogurt pot",
+      "subject": "thick creamy Greek yogurt covering the whole frame, swirled smooth with a thin drizzle of golden honey"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Veggies",
+      "id": "cucumber-rolls",
+      "emoji": "🥒",
+      "name": "Cucumber roll-ups",
+      "subject": "three small cucumber ribbon rosettes with cream cheese, bright green edges, cut-side up"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Veggies",
+      "id": "caprese-skewer",
+      "emoji": "🍅",
+      "name": "Caprese skewers",
+      "subject": "one short skewer of red cherry tomatoes, white mini mozzarella and a fresh basil leaf, laid diagonally across the whole frame"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Veggies",
+      "id": "carrot-slaw",
+      "emoji": "🥕",
+      "name": "Carrot & raisin slaw",
+      "subject": "bright orange grated carrot slaw with plump raisins covering the whole frame in a close-up layer, glossy with lemon dressing"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Veggies",
+      "id": "pepper-stars",
+      "emoji": "⭐",
+      "name": "Bell pepper stars",
+      "subject": "flat star shapes cut from red and yellow bell pepper with a cookie cutter covering the whole frame in a single cheerful layer"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Veggies",
+      "id": "snap-peas",
+      "emoji": "🫛",
+      "name": "Sugar snap peas",
+      "subject": "a few crisp bright green sugar snap peas, one halved open showing the little peas inside"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Veggies",
+      "id": "broccoli-tots",
+      "emoji": "🥦",
+      "name": "Broccoli cheese tots",
+      "subject": "two golden broccoli-cheese tots with crispy breadcrumb coating and bright green flecks"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Veggies",
+      "id": "corn-salsa",
+      "emoji": "🌽",
+      "name": "Corn & bean salsa",
+      "subject": "colorful sweetcorn, black beans and red pepper pieces covering the whole frame in a close-up layer, glistening with lime"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Veggies",
+      "id": "avocado-smash",
+      "emoji": "🥑",
+      "name": "Avocado lime smash",
+      "subject": "creamy pale-green mashed avocado covering the whole frame, rustic texture with flecks of lime zest"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Veggies",
+      "id": "roasted-chickpea",
+      "emoji": "🌰",
+      "name": "Crunchy roasted chickpeas",
+      "subject": "crunchy golden roasted chickpeas dusted with mild paprika covering the whole frame in a single close-up layer"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "cinnamon-apple",
+      "emoji": "🍎",
+      "name": "Cinnamon baked apple",
+      "subject": "soft baked apple wedges glazed with cinnamon and maple syrup covering the whole frame in a close-up layer, golden and glossy"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "apple-nutbutter",
+      "emoji": "🍏",
+      "name": "Apple & nut-butter rings",
+      "subject": "one apple ring sandwich filled with creamy nut butter, fresh red-skinned apple"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "fruit-skewer",
+      "emoji": "🍢",
+      "name": "Rainbow fruit skewers",
+      "subject": "one short fruit skewer in rainbow order with strawberry, orange melon, green kiwi and a purple grape, laid diagonally across the whole frame"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "frozen-yogurt-bites",
+      "emoji": "❄️",
+      "name": "Frozen yogurt-berry bites",
+      "subject": "three small creamy white frozen yogurt bites studded with colorful berries"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "melon-stars",
+      "emoji": "⭐",
+      "name": "Melon stars",
+      "subject": "three juicy bright orange cantaloupe melon stars cut with a cookie cutter, flat star shapes"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "berry-salad",
+      "emoji": "🍓",
+      "name": "Berry & mint salad",
+      "subject": "fresh strawberries and blueberries with tiny torn mint leaves covering the whole frame in a close-up layer, juicy and glistening"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "banana-sushi",
+      "emoji": "🍌",
+      "name": "Banana-oat sushi",
+      "subject": "three banana sushi rounds coated in oats and nut butter, neat little slices"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "grape-cheese-skewer",
+      "emoji": "🍇",
+      "name": "Grape & cheese skewers",
+      "subject": "one short skewer alternating green and red grapes with pale cheese cubes, laid diagonally across the whole frame"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "mango-melon-balls",
+      "emoji": "🍈",
+      "name": "Mango & melon balls",
+      "subject": "three juicy translucent balls of ripe orange mango and pale green honeydew melon, wet and glistening"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "baked-pear",
+      "emoji": "🍐",
+      "name": "Baked cinnamon pear",
+      "subject": "one soft baked pear half dusted with cinnamon, golden and lightly caramelized at the edges"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "hummus",
+      "emoji": "🥣",
+      "name": "Creamy hummus",
+      "subject": "creamy hummus covering the whole frame, swirled smooth with a thin drizzle of olive oil"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "guacamole",
+      "emoji": "🥑",
+      "name": "Mild guacamole",
+      "subject": "chunky mild guacamole with diced tomato flecks covering the whole frame, fresh green and creamy"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "yogurt-honey",
+      "emoji": "🍯",
+      "name": "Yogurt-honey dip",
+      "subject": "creamy yogurt dip covering the whole frame, swirled with golden honey and a light dusting of cinnamon"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "nut-butter",
+      "emoji": "🥜",
+      "name": "Nut or seed butter",
+      "subject": "smooth golden nut butter covering the whole frame, swirled with a glossy surface"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "choc-clusters",
+      "emoji": "🍫",
+      "name": "Dark choc oat clusters",
+      "subject": "two small dark chocolate oat clusters with glossy chocolate coating"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "granola",
+      "emoji": "🥣",
+      "name": "Granola clusters",
+      "subject": "golden crunchy granola clusters with visible oat flakes covering the whole frame in a close-up layer, honey-toasted"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "energy-bites",
+      "emoji": "⚡",
+      "name": "Date-oat energy bites",
+      "subject": "two soft date-oat energy balls rolled in seeds"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "apple-cinnamon-sauce",
+      "emoji": "🍎",
+      "name": "Apple-cinnamon sauce",
+      "subject": "smooth pale-golden apple sauce covering the whole frame, swirled with cinnamon, soft sheen"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "trail-mix",
+      "emoji": "🥜",
+      "name": "Fruit & seed trail mix",
+      "subject": "colorful raisins, sunflower seeds and bright orange dried mango pieces covering the whole frame in a single close-up layer"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "spinach-cheese-muffin",
+      "emoji": "🧁",
+      "name": "Spinach & cheese muffins",
+      "subject": "two savoury spinach and cheese muffins with golden tops, flecks of green spinach and melted cheese"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "pizza-muffin",
+      "emoji": "🍕",
+      "name": "Pizza muffins",
+      "subject": "two mini pizza muffins with bubbling golden cheese and tomato-red tops"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "veggie-quesadilla",
+      "emoji": "🫓",
+      "name": "Veggie quesadilla",
+      "subject": "three toasted wholegrain quesadilla triangles fanned to fill the whole frame, golden-brown spots, melted cheese and bright grated carrot and courgette between the layers"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "veggie-sushi",
+      "emoji": "🍣",
+      "name": "Veggie sushi rolls",
+      "subject": "four veggie sushi rolls cut-side up filling the whole frame, white rice spirals with crisp cucumber and creamy avocado centres, dark nori edges"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "borek-snake",
+      "emoji": "🐍",
+      "name": "Spinach & feta börek snake",
+      "subject": "two pieces of golden spinach and feta börek, crisp filo layers with sesame seeds, green filling at the cut ends"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Main",
+      "id": "creamy-broccoli-pasta",
+      "emoji": "🍝",
+      "name": "Creamy broccoli pasta",
+      "subject": "creamy wholegrain pasta spirals and bright green broccoli florets covering the whole frame in a close-up single layer, glossy with cream cheese sauce"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "bean-quinoa-bowl",
+      "emoji": "🥗",
+      "name": "Black bean & quinoa bowl",
+      "subject": "fluffy quinoa with black beans and bright yellow sweetcorn covering the whole frame in a close-up layer, glistening with lemon dressing"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "chickpea-smash",
+      "emoji": "🥪",
+      "name": "Chickpea smash",
+      "subject": "creamy mashed chickpeas flecked with green chives covering the whole frame, rustic texture, fresh and lemony"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Protein",
+      "id": "mini-quiche",
+      "emoji": "🥧",
+      "name": "Mini veggie quiche",
+      "subject": "one golden mini veggie quiche with colorful pepper and courgette pieces set in fluffy egg"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Fruit",
+      "id": "fruit-leather",
+      "emoji": "🍓",
+      "name": "Berry fruit roll-ups",
+      "subject": "two spiral rolls of homemade deep-red berry fruit leather standing on end"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "beetroot-hummus",
+      "emoji": "🟣",
+      "name": "Pink beetroot hummus",
+      "subject": "vivid pink beetroot hummus covering the whole frame, swirled smooth and creamy"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "sweet-potato-brownie",
+      "emoji": "🍫",
+      "name": "Sweet potato brownie bites",
+      "subject": "one fudgy chocolate brownie bite with soft moist crumb, lightly dusted with cocoa"
+    },
+    {
+      "group": "Lunchbox",
+      "section": "Dip & treat",
+      "id": "oat-apple-cookies",
+      "emoji": "🍪",
+      "name": "Apple-carrot oat cookies",
+      "subject": "one golden oat cookie flecked with grated apple, carrot and raisins, soft and chunky"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "strammer-max",
+      "emoji": "🍽",
+      "name": "Strammer Max",
+      "prompt": "Strammer Max — rye bread topped with ham and a sunny-side-up fried egg, chives, runny yolk, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "pasta-pesto-basic",
+      "emoji": "🍽",
+      "name": "Pasta with Pesto",
+      "prompt": "Bowl of pasta tossed with green basil pesto, grated parmesan and cherry tomatoes, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "pasta-tomato-sauce-basic",
+      "emoji": "🍽",
+      "name": "Pasta with Tomato Sauce",
+      "prompt": "Simple bowl of pasta in tomato sauce topped with grated parmesan and basil, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "spaghetti-bolognese",
+      "emoji": "🍽",
+      "name": "Spaghetti Bolognese",
+      "prompt": "Bowl of spaghetti bolognese with rich meat sauce, grated parmesan and basil, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "thai-green-chicken-curry",
+      "emoji": "🍽",
+      "name": "Thai Green Chicken Curry",
+      "prompt": "Thai green chicken curry with coconut sauce, green beans and red pepper over jasmine rice, fresh basil, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "margherita-pizza",
+      "emoji": "🍽",
+      "name": "Margherita Pizza",
+      "prompt": "A rustic homemade whole-wheat pizza with a golden blistered wholegrain crust, loaded with colorful vegetables — red bell pepper strips, thin courgette rounds, halved cherry tomatoes, red onion and mushrooms — over melty browned mozzarella and a tomato base, scattered with fresh basil and rocket, one slice pulled slightly with a cheese stretch, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "classic-beef-lasagna",
+      "emoji": "🍽",
+      "name": "Classic Beef Lasagna",
+      "prompt": "Classic beef lasagna with golden bubbling cheese top, one portion lifted showing layers of ragù and béchamel, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "chili-con-carne",
+      "emoji": "🍽",
+      "name": "Chili con Carne",
+      "prompt": "Bowl of chili con carne with kidney beans over rice, topped with coriander, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "egg-fried-rice",
+      "emoji": "🍽",
+      "name": "Egg Fried Rice",
+      "prompt": "Egg fried rice with peas, carrot and spring onion in a wok steaming, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "marry-me-chicken",
+      "emoji": "🍽",
+      "name": "Marry Me Chicken",
+      "prompt": "Marry me chicken — golden chicken breasts in creamy sun-dried tomato sauce with spinach and parmesan in a skillet, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "chicken-fajita-bowl",
+      "emoji": "🍽",
+      "name": "Chicken Fajita Bowl",
+      "prompt": "Chicken fajita bowl with charred peppers, black beans, rice, avocado and lime, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "chicken-pad-thai",
+      "emoji": "🍽",
+      "name": "Chicken Pad Thai",
+      "prompt": "Chicken pad thai with rice noodles, beansprouts, crushed peanuts, spring onion and lime wedge, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "vegetarian-lasagna",
+      "emoji": "🍽",
+      "name": "Best-Ever Vegetarian Lasagna",
+      "prompt": "Vegetarian lasagna with roasted aubergine, courgette and pepper, golden mozzarella top, one slice lifted, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "fudgy-chocolate-brownies",
+      "emoji": "🍽",
+      "name": "Fudgy Chocolate Brownies",
+      "prompt": "Stack of fudgy chocolate brownies with crackly tops and dense centres, chocolate chunks visible, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "greek-yogurt-berry-bark",
+      "emoji": "🍽",
+      "name": "Frozen Greek Yogurt Berry Bark",
+      "prompt": "Frozen Greek yogurt bark broken into shards on a marble board, topped with raspberries, blueberries and dark chocolate shavings, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "frozen-banana-nice-cream",
+      "emoji": "🍽",
+      "name": "Chocolate-Peanut Banana Nice Cream",
+      "prompt": "Creamy chocolate banana nice cream swirled in a bowl, dusted with cocoa and a swirl of peanut butter, soft natural light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "berry-chia-pudding-parfait",
+      "emoji": "🍽",
+      "name": "Berry Chia Pudding Parfait",
+      "prompt": "Chia pudding parfait layered with fresh berries in a glass, topped with mint, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "no-bake-chocolate-peanut-oat-bars",
+      "emoji": "🍽",
+      "name": "No-Bake Chocolate Peanut Oat Bars",
+      "prompt": "Homemade no-bake chocolate peanut oat bars cut into chunky squares and stacked, showing a dense chewy pressed-together oat-and-peanut-butter base as one solid layer under a glossy dark chocolate top, rustic uneven hand-cut edges, a few crushed peanuts on top, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "banana-oat-choc-chip-cookies",
+      "emoji": "🍽",
+      "name": "Banana Oat Chocolate-Chip Cookies",
+      "prompt": "Soft banana oat cookies with melting dark chocolate chips on a cooling rack, warm homely light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "baked-cinnamon-apples-oat-crumble",
+      "emoji": "🍽",
+      "name": "Baked Cinnamon Apples with Oat Crumble",
+      "prompt": "Soft baked cinnamon apple wedges topped with a golden crunchy oat and walnut crumble in a small rustic baking dish, syrupy and caramelized at the edges, a little steam rising, cozy and homemade, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "stuffed-medjool-dates",
+      "emoji": "🍽",
+      "name": "Peanut-Butter Stuffed Dates",
+      "prompt": "Medjool dates filled with peanut butter and coated in dark chocolate, sprinkled with sea salt flakes on parchment, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "dark-chocolate-almond-bark",
+      "emoji": "🍽",
+      "name": "Dark Chocolate Almond & Cranberry Bark",
+      "prompt": "Dark chocolate bark studded with whole almonds and dried cranberries, broken into shards on baking paper, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "roasted-honey-peaches-yogurt",
+      "emoji": "🍽",
+      "name": "Roasted Honey Peaches with Yogurt",
+      "prompt": "Roasted peach halves caramelised with honey, served over Greek yogurt and topped with crushed pistachios, bright summer light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "flourless-chocolate-almond-cake",
+      "emoji": "🍽",
+      "name": "Flourless Chocolate Almond Cake",
+      "prompt": "Dense flourless chocolate almond cake dusted with cocoa, one slice removed showing fudgy interior, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "apple-crumble",
+      "emoji": "🍽",
+      "name": "Apple & Oat Crumble",
+      "prompt": "Golden apple and oat crumble in a rustic baking dish, bubbling fruit at the edges, a spoonful served with a little cream, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "orange-energy-balls",
+      "emoji": "🍽",
+      "name": "Orange & Almond Energy Balls",
+      "prompt": "About a dozen homemade orange and date energy balls, a deep caramel date-brown color, matte and slightly craggy from oats and ground almonds, hand-rolled and imperfectly round, about half rolled in fine white desiccated coconut and the rest bare with flecks of orange zest, a halved orange and a few dates alongside, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "baked-cheesecake-lighter",
+      "emoji": "🍽",
+      "name": "Baked Vanilla Cheesecake",
+      "prompt": "Slice of baked vanilla cheesecake on a biscuit base, smooth creamy top, served on a plate with a few berries, soft natural light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "tiramisu-lighter",
+      "emoji": "🍽",
+      "name": "Lighter Tiramisu",
+      "prompt": "A generous square slice of homemade tiramisu on a small plate, clearly visible soft layers of coffee-soaked ladyfinger biscuit and mascarpone cream, dusted with cocoa powder, a spoonful lifted showing the creamy layers, rustic home-kitchen look, no glass, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "chocolate-chip-cookies",
+      "emoji": "🍽",
+      "name": "Chocolate Chip Cookies",
+      "prompt": "Stack of chocolate chip cookies with melty dark chocolate and crisp golden edges on a cooling rack, warm homely light, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "molten-chocolate-lava-cake",
+      "emoji": "🍽",
+      "name": "Molten Chocolate Lava Cake",
+      "prompt": "Molten chocolate lava cake on a plate with the gooey centre spilling out, dusting of cocoa and a few raspberries, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "creme-brulee",
+      "emoji": "🍽",
+      "name": "Vanilla Crème Brûlée",
+      "prompt": "Crème brûlée in a ramekin with a glassy caramelised sugar top being cracked with a spoon, vanilla flecks in the custard, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "beetroot-feta-tart",
+      "emoji": "🍽",
+      "name": "Beetroot & Feta Tart",
+      "prompt": "Rustic beetroot and feta puff pastry tart with caramelised red onion, walnuts, thyme and fresh rocket, one slice cut, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "date-pistachio-energy-bar",
+      "emoji": "🍽",
+      "name": "Date & Pistachio Energy Bar",
+      "prompt": "Date & Pistachio Energy Bar, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "watermelon-feta-salad",
+      "emoji": "🍽",
+      "name": "Watermelon & Feta Salad",
+      "prompt": "Watermelon & Feta Salad, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "homemade-granola",
+      "emoji": "🍽",
+      "name": "Crunchy Homemade Granola",
+      "prompt": "Crunchy Homemade Granola, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "homemade-hummus",
+      "emoji": "🍽",
+      "name": "Silky Homemade Hummus",
+      "prompt": "Silky Homemade Hummus, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "white-bean-roasted-pepper-soup",
+      "emoji": "🫘",
+      "name": "White Bean & Roasted Pepper Soup",
+      "prompt": "A warming bowl of creamy white bean and roasted red pepper soup, deep orange-red, swirled with a little cream and a drizzle of olive oil, fresh thyme on top, the soup filling most of the frame, close overhead, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "veggie-plate-roasted-seasonal",
+      "emoji": "🥦",
+      "name": "Roasted Seasonal Veggie Plate",
+      "prompt": "An abundant plate of golden roasted seasonal vegetables — broccoli, carrot batons, courgette, red pepper and red onion — caramelized and charred at the edges, scattered with fresh thyme and a squeeze of lemon, rustic and colorful, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "hummus-bowl-roasted-veg",
+      "emoji": "🫙",
+      "name": "Hummus Bowl with Warm Roasted Veg",
+      "prompt": "A nourishing bowl that is mostly colorful warm roasted vegetables — courgette, red pepper, cherry tomatoes and golden chickpeas — with just a small swoosh of creamy hummus to one side, sprinkled with chopped parsley, a wedge of warm flatbread tucked in, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "cinnamon-sweet-potato-pecan-bowl",
+      "emoji": "🍠",
+      "name": "Cinnamon Sweet Potato & Maple Pecan Bowl",
+      "prompt": "A cozy bowl of roasted cinnamon sweet potato cubes and fluffy quinoa topped with toasted pecans, ruby pomegranate seeds, crumbled feta and fresh mint, warm autumn colors, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "cinnamon-roll-pecan-yogurt-bowl",
+      "emoji": "🥣",
+      "name": "Cinnamon Roll Pecan Yogurt Bowl",
+      "prompt": "A creamy Greek yogurt bowl swirled with cinnamon and maple, topped with sliced banana, chopped Medjool dates, toasted pecans and a drizzle of almond butter, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "apple-pie-pecan-oat-bowl",
+      "emoji": "🍎",
+      "name": "Apple Pie Pecan Oat Bowl",
+      "prompt": "A warm bowl of creamy porridge oats with soft cinnamon apple pieces, toasted pecans, plump raisins and a few fresh berries, comforting and homemade, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "classic-greek-salad-horiatiki",
+      "emoji": "🥗",
+      "name": "Classic Greek Salad",
+      "prompt": "A rustic Greek horiatiki salad of chunky ripe tomatoes, cucumber, green pepper and red onion with Kalamata olives and a thick slab of feta on top, drizzled with olive oil and oregano, no lettuce, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "spanish-tortilla-herbed-yogurt-greens",
+      "emoji": "🍳",
+      "name": "Spanish Tortilla with Herbed Yogurt & Greens",
+      "prompt": "A thick golden Spanish potato tortilla cut into wedges, one wedge showing the soft layered potato and egg inside, served with a dollop of herbed yogurt and a small handful of peppery greens, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "classic-carrot-cake-cream-cheese",
+      "emoji": "🥕",
+      "name": "Classic Carrot Cake",
+      "prompt": "A slice of moist homemade carrot cake with thick cream-cheese frosting and chopped pecans, showing the tender spiced crumb flecked with carrot, on a small plate, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "strawberry-tomato-burrata-salad",
+      "emoji": "🍓",
+      "name": "Strawberry, Tomato & Burrata Salad",
+      "prompt": "A fresh salad of halved strawberries and cherry tomatoes around a soft creamy burrata torn open in the middle, scattered with toasted pine nuts and basil, a drizzle of olive oil, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "zucchini-noodle-pesto",
+      "emoji": "🥒",
+      "name": "Zucchini Noodle Spaghetti with Pesto & Feta",
+      "prompt": "A generous nest of spiralized green zucchini noodles that look just like spaghetti, glossy with fresh green basil pesto, tossed with halved red cherry tomatoes, scattered with crumbled white feta cheese, toasted pine nuts and a few basil leaves, twirled with a fork, professional food photography, styled on a simple plate or bowl on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    },
+    {
+      "group": "Recipes",
+      "section": "General recipes",
+      "id": "spinach-croquettes",
+      "emoji": "🥬",
+      "name": "Spinach Croquettes",
+      "prompt": "A plate of golden-brown crispy spinach croquettes, small oval fritters made from finely chopped dark green spinach, parmesan and pine nuts, crunchy golden crust, one broken open to show the soft green interior, garnished with a few toasted pine nuts, professional food photography, styled on a rustic plate on a linen or wood table, soft natural window light, rich true-to-life colors and appetizing textures, sharp focus, high resolution, photorealistic, natural homemade look, no artificial gloss, no plastic sheen, no text, no watermark"
+    }
+  ]
 };
 const items=DB.items;let lunchStyle=localStorage.getItem('menja_lunch_style_v11')||DB.lunchStyle;let promptEdits=JSON.parse(localStorage.getItem('menja_prompt_edits_v11')||'{}');const basePrompt=it=>it.prompt||(it.subject+', '+lunchStyle);const promptFor=it=>promptEdits[it.id]!=null?promptEdits[it.id]:basePrompt(it);const isLunch=it=>it.group==='Lunchbox';const extFor=it=>'jpg';
 const SUPA='https://ekuynkjtcvpiueollznp.supabase.co', BUCKET='recipe-photos';
