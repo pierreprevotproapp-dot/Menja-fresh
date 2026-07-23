@@ -3905,9 +3905,13 @@ function amazonCartUrl(items){
 // instead of a named window (which spawns a fresh tab per click on mobile).
 let _deliverWin=null;
 function openDeliveryUrl(url){
-  const pv=deliveryProvider();
-  if(!_deliverWin||_deliverWin.closed){_deliverWin=window.open(url,pv.win);}
-  else{try{_deliverWin.location.href=url;if(_deliverWin.focus)_deliverWin.focus();}catch(e){_deliverWin=window.open(url,pv.win);}}
+  // Reuse a still-open tab we hold a handle to (desktop = one reused tab)…
+  if(_deliverWin&&!_deliverWin.closed){
+    try{_deliverWin.location.href=url;if(_deliverWin.focus)_deliverWin.focus();return;}catch(e){_deliverWin=null;}
+  }
+  // …otherwise open a fresh EXTERNAL tab via '_blank' — never a *named* window,
+  // which in an iOS standalone PWA hijacks the app's own view and hangs it.
+  _deliverWin=window.open(url,'_blank')||null;
 }
 // Structured list of what to buy (unchecked groceries + household + custom).
 function groceryItemsForShop(){
@@ -3917,7 +3921,14 @@ function groceryItemsForShop(){
   return items;
 }
 let _cfDone={},_cartUrl=null;
-function amazonCartGo(){if(_cartUrl)openDeliveryUrl(_cartUrl);}
+// Open the pre-filled Amazon basket. Use a real anchor+target=_blank click — the
+// most reliable way to open an external URL from a user tap without hijacking an
+// iOS standalone PWA (which froze on Menja's own loading screen before).
+function amazonCartGo(){
+  if(!_cartUrl)return;
+  const a=document.createElement('a');a.href=_cartUrl;a.target='_blank';a.rel='noopener';
+  document.body.appendChild(a);a.click();a.remove();
+}
 function openCarrefour(){_cfDone={};renderCarrefourSheet();document.getElementById('carrefour-sheet').classList.add('open');}
 function closeCarrefour(){document.getElementById('carrefour-sheet').classList.remove('open');}
 function renderCarrefourSheet(){
