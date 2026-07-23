@@ -1305,12 +1305,12 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .bento-well{--g1:#F4F0FC;--g2:#E4D8F4;--cacc:#9070D2}
 .bento-cell,.bento-well{background:linear-gradient(160deg,var(--g1),var(--g2))}
 .bento-cell.filled,.bento-well.filled{background:radial-gradient(circle at 50% 38%,rgba(255,255,255,.92),rgba(255,255,255,0) 60%),linear-gradient(160deg,var(--g1),var(--g2))}
-.bento-well{position:absolute;left:56.5%;top:50%;transform:translate(-50%,-50%);width:23.5%;aspect-ratio:1;border-radius:50%;box-shadow:inset 0 2px 7px rgba(0,0,0,.16),0 0 0 5px #F3EEE2,0 0 0 6px rgba(255,255,255,.9),0 2px 6px rgba(90,75,45,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;z-index:2;overflow:hidden}
+.bento-well{position:absolute;left:56.5%;top:50%;transform:translate(-50%,-50%);width:18.5%;aspect-ratio:1;border-radius:50%;box-shadow:inset 0 2px 7px rgba(0,0,0,.16),0 0 0 5px #F3EEE2,0 0 0 6px rgba(255,255,255,.9),0 2px 6px rgba(90,75,45,.22);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;cursor:pointer;z-index:2;overflow:hidden}
 .bento-well:active{transform:translate(-50%,-50%) scale(.93)}
 .bento-emoji{font-size:32px;line-height:1;filter:drop-shadow(0 2px 2px rgba(0,0,0,.13))}
 .bento-cell.c-main .bento-emoji{font-size:43px}
 .bento-well .bento-emoji{font-size:21px}
-.bento-food-name{font-size:10.5px;font-weight:700;color:var(--text);margin-top:4px;line-height:1.12;max-width:96%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.bento-food-name{font-size:10.5px;font-weight:700;color:var(--text);margin-top:4px;line-height:1.12;max-width:88%;overflow:hidden;text-overflow:ellipsis;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
 .bento-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1;opacity:0;transition:opacity .2s}
 /* Photo matte: a cream frame around each compartment photo — distinct, calmer
    tiles instead of five photos butting edge to edge. Done as a border (with
@@ -7696,13 +7696,17 @@ function renderBentoKids(){
     </div>`;
   }).join('');
 }
+// Set to true to show generated food photos in the compartments; false shows the
+// clean colour-coded emoji placeholders (calmer, friendlier — the launch look).
+const BENTO_PHOTOS=false;
 function bentoTrayHTML(key){
   const plan=(state.bentoPlan&&state.bentoPlan[key])||{};
   const cells=BENTO_SLOTS.map(slot=>{
     const isWell=slot.id==='well';
     const food=plan[slot.id]?bentoFood(plan[slot.id]):null;
+    const photoTag=BENTO_PHOTOS&&food?`<img class="bento-photo" src="${bentoPhoto(food.id)}" alt="" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()">`:'';
     const inner=food
-      ?`<button class="bento-x" onclick="event.stopPropagation();bentoClearSlot('${key}','${slot.id}')">✕</button><img class="bento-photo" src="${bentoPhoto(food.id)}" alt="" loading="lazy" onload="this.classList.add('ok')" onerror="this.remove()"><div class="bento-emoji">${food.emoji}</div><div class="bento-food-name">${bentoL(food.name)}</div>`
+      ?`${photoTag}<div class="bento-emoji">${food.emoji}</div><div class="bento-food-name">${bentoL(food.name)}</div>`
       :`<div class="bento-empty"><div class="plus">＋</div><div class="role">${t(slot.roleKey)}</div></div>`;
     const cls=isWell?`bento-well ${food?'filled':''}`:`bento-cell ${slot.cls} ${food?'filled':''}`;
     const tap=food?`openBentoRecipe('${key}','${slot.id}')`:`openBentoPick('${key}','${slot.id}')`;
