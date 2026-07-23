@@ -33,9 +33,11 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 /* ── WELCOME / VALUE SCREEN ──────────────────── */
 .welcome-screen{display:none;position:fixed;left:0;right:0;top:0;height:100vh;height:100dvh;height:100svh;background:var(--nav);z-index:820;overflow:hidden}
 .welcome-screen.open{display:block}
-.welcome-inner{max-width:480px;margin:0 auto;height:100%;display:flex;flex-direction:column;overflow:hidden}
+.welcome-inner{max-width:480px;margin:0 auto;height:100%;display:flex;flex-direction:column;overflow:hidden;position:relative}
+/* Language selector: quiet top-right corner, out of the logo's way */
+#welcome-lang-row{position:absolute;top:calc(10px + env(safe-area-inset-top));right:16px;z-index:6;margin:0;justify-content:flex-end;opacity:.9}
 .welcome-scroll{flex:1;min-height:0;overflow-y:auto;-webkit-overflow-scrolling:touch;display:flex;flex-direction:column;padding:0 26px}
-.welcome-hero{text-align:center;padding:26px 10px 16px}
+.welcome-hero{text-align:center;padding:calc(52px + env(safe-area-inset-top)) 10px 16px}
 .welcome-leaf{width:66px;height:66px;display:block;margin:0 auto 14px}
 .welcome-brand{display:flex;align-items:center;justify-content:center;gap:9px;margin-bottom:18px}
 .welcome-brand svg{width:30px;height:30px}
@@ -1392,13 +1394,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 <div class="loading-screen" id="loading"><svg class="loading-leaf" viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg><div class="loading-text">Menja Fresh</div><div class="loading-sub" id="loading-sub">Loading...</div></div>
 <div class="welcome-screen" id="welcome-screen">
   <div class="welcome-inner">
+    <div class="lang-row" id="welcome-lang-row"></div>
     <div class="welcome-scroll">
     <div class="welcome-hero">
       <div class="welcome-brand">
         <svg viewBox="0 0 64 64" aria-label="Menja Fresh"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg>
         <span>Menja Fresh</span>
       </div>
-      <div class="lang-row" id="welcome-lang-row" style="margin-bottom:12px"></div>
       <div class="welcome-photo">
         <img id="welcome-hero-img" alt="" loading="eager" style="opacity:0;transition:opacity .4s">
         <div class="welcome-photo-fb" id="welcome-hero-fb">
@@ -3939,7 +3941,7 @@ const DELIVERY_STORES={
   ES:[
     {id:'mercadona',name:'Mercadona',emoji:'🛒',sub:'Líder en España',url:'https://www.mercadona.es'},
     {id:'carrefour',name:'Carrefour',emoji:'🛍️',sub:'Súper online',url:'https://www.carrefour.es/supermercado'},
-    {id:'veritas',name:'Veritas',emoji:'🌱',sub:'Bio & ecológico',url:'https://www.veritas.es'},
+    {id:'veritas',name:'Veritas',emoji:'🌱',sub:'Ecológico & fresco',url:'https://www.veritas.es'},
   ],
 };
 function deliveryCountry(){return 'ES';}   // Spain first — extend per country later
@@ -8570,7 +8572,7 @@ function initWelcomeHero(){
   const fb=document.getElementById('welcome-hero-fb');
   const base=SUPA_URL+'/storage/v1/object/public/recipe-photos/';
   // Vegetarian, photogenic heroes only — first one with a Storage photo wins.
-  const cands=['watermelon-feta-salad','strawberry-tomato-burrata-salad','margherita-pizza','avocado-greens-beetroot-bowl','hummus-bowl-roasted-veg','veggie-plate-roasted-seasonal','zucchini-noodle-pesto','acai-bowl-granola-berries','berry-smoothie-bowl','homemade-granola'];
+  const cands=['margherita-pizza','avocado-greens-beetroot-bowl','acai-bowl-granola-berries','hummus-bowl-roasted-veg','strawberry-tomato-burrata-salad','zucchini-noodle-pesto','berry-smoothie-bowl','veggie-plate-roasted-seasonal','homemade-granola','watermelon-feta-salad'];
   let i=0;
   img.onload=()=>{img.style.opacity='1';if(fb)fb.style.display='none';};
   img.onerror=()=>{ if(i<cands.length){ img.src=base+cands[i++]+'.jpg'; } else { img.style.display='none'; if(fb)fb.style.display='flex'; } };
