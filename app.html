@@ -883,6 +883,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .cf-foot{display:flex;gap:8px;padding:12px 16px 4px}
 .cf-copy{flex:1;background:var(--surface2);color:var(--text2);border:1.5px solid var(--border2);border-radius:99px;padding:11px;font-size:13px;font-weight:600;cursor:pointer;font-family:var(--fb)}
 .cf-open{flex:1;background:#0E4DA4;color:#fff;border:none;border-radius:99px;padding:11px;font-size:13px;font-weight:700;cursor:pointer;font-family:var(--fb)}
+.deliv-store{display:flex;align-items:center;gap:13px;width:100%;text-align:left;background:var(--surface2);border:1.5px solid var(--border2);border-radius:16px;padding:15px 16px;margin-bottom:10px;cursor:pointer;font-family:inherit}
+.deliv-store:active{transform:scale(.985)}
+.deliv-store-em{font-size:26px;line-height:1;flex-shrink:0}
+.deliv-store-mid{flex:1;min-width:0;display:flex;flex-direction:column}
+.deliv-store-name{font-size:16px;font-weight:700;color:var(--text)}
+.deliv-store-sub{font-size:12px;color:var(--text3);margin-top:1px}
+.deliv-store-go{font-size:17px;color:var(--nav-a);font-weight:700}
 .cf-cart{padding:4px 4px 12px;border-bottom:1px solid var(--border2);margin-bottom:8px}
 .cf-cart-btn{width:100%;background:#FF9900;color:#131921;border:none;border-radius:14px;padding:15px;font-size:15.5px;font-weight:800;cursor:pointer;font-family:var(--fb);box-shadow:0 4px 14px rgba(255,153,0,.35)}
 .cf-cart-btn:active{transform:scale(.98)}
@@ -1759,9 +1766,6 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
       <div class="cf-sub">Tap "Find" — it opens that product in one tab (no typing). Add it, come back, tap the next.</div>
     </div>
     <div class="cf-items" id="carrefour-items"></div>
-    <div class="cf-foot">
-      <button class="cf-open" onclick="openDeliveryUrl(deliveryProvider().homeUrl())">Open store ↗</button>
-    </div>
     <div class="p-cancel" onclick="closeCarrefour()" data-t="closeWord">Close</div>
   </div>
 </div>
@@ -2178,7 +2182,7 @@ en:{
   opt_peanuts:'Peanuts',opt_treenuts:'Tree nuts',opt_shellfish:'Shellfish',opt_fish:'Fish',opt_dairy:'Dairy',opt_eggs:'Eggs',opt_gluten:'Gluten',opt_soy:'Soy',
   opt_mushroom:'Mushrooms',opt_olives:'Olives',opt_coriander:'Coriander',opt_aubergine:'Aubergine',opt_bellpepper:'Bell pepper',opt_spicy:'Spicy',
   rcat_all:'All',rcat_saved:'❤️ Favourites',rcat_quick:'⚡ Quick',rcat_breakfast:'🍳 Breakfast',rcat_meat:'🍗 Meat',rcat_fish:'🐟 Fish',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Gluten-free',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Kids',rcat_basics:'🥄 Basics',
-  cookbookEmpty:'Your cookbook is empty.',cookbookEmptySub:"Tap the ♡ on any recipe to save your family's favourites here.",noRecipesCat:'No recipes in this category yet.',searchRecipes:'Search recipes…',noRecipesSearch:'No recipes match your search.',cartAddAll:'Add {n} items to the basket →',cartRest:'Then search the other {n}:',
+  cookbookEmpty:'Your cookbook is empty.',cookbookEmptySub:"Tap the ♡ on any recipe to save your family's favourites here.",noRecipesCat:'No recipes in this category yet.',searchRecipes:'Search recipes…',noRecipesSearch:'No recipes match your search.',cartAddAll:'Add {n} items to the basket →',cartRest:'Then search the other {n}:',deliveryPickTitle:'Where would you like to order?',deliveryPickSub:'Pick a supermarket — your list is in the Groceries tab.',
   addWeekShort:'＋ Week',addToMyWeek:'＋ Add to my week',saveFav:'Save to favourites',
   prepLbl:'Prep',cookLbl:'Cook',freezeLbl:'Freeze',totalLbl:'Total',perServingSlash:'/ serving',fiberLbl:'Fiber',sauceDressing:'Sauce & Dressing',closeWordShort:'Close',
   weekPlannedTitle:'Your week is planned 🎉',weekPlannedSub:'Dinner is one less thing to think about.',toGroceryList:'🛒 Take me to my grocery list →',stayOnPlan:'Stay on this page',
@@ -2330,7 +2334,7 @@ fr:{
   opt_peanuts:'Arachides',opt_treenuts:'Fruits à coque',opt_shellfish:'Crustacés',opt_fish:'Poisson',opt_dairy:'Produits laitiers',opt_eggs:'Œufs',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Champignons',opt_olives:'Olives',opt_coriander:'Coriandre',opt_aubergine:'Aubergine',opt_bellpepper:'Poivron',opt_spicy:'Épicé',
   rcat_all:'Tout',rcat_saved:'❤️ Favoris',rcat_quick:'⚡ Rapide',rcat_breakfast:'🍳 Petit-déj',rcat_meat:'🍗 Viande',rcat_fish:'🐟 Poisson',rcat_vegetarian:'🥦 Végé',rcat_vegan:'🌱 Végétalien',rcat_glutenfree:'🌾 Sans gluten',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Enfants',rcat_basics:'🥄 Basiques',
-  cookbookEmpty:'Ton carnet est vide.',cookbookEmptySub:'Touche le ♡ d\'une recette pour y enregistrer tes favoris.',noRecipesCat:'Aucune recette dans cette catégorie.',searchRecipes:'Rechercher une recette…',noRecipesSearch:'Aucune recette ne correspond.',cartAddAll:'Ajouter {n} articles au panier →',cartRest:'Puis chercher les {n} autres :',
+  cookbookEmpty:'Ton carnet est vide.',cookbookEmptySub:'Touche le ♡ d\'une recette pour y enregistrer tes favoris.',noRecipesCat:'Aucune recette dans cette catégorie.',searchRecipes:'Rechercher une recette…',noRecipesSearch:'Aucune recette ne correspond.',cartAddAll:'Ajouter {n} articles au panier →',cartRest:'Puis chercher les {n} autres :',deliveryPickTitle:'Où veux-tu commander ?',deliveryPickSub:'Choisis un supermarché — ta liste est dans l’onglet Courses.',
   addWeekShort:'＋ Semaine',addToMyWeek:'＋ Ajouter à ma semaine',saveFav:'Ajouter aux favoris',
   prepLbl:'Prépa',cookLbl:'Cuisson',freezeLbl:'Congélation',totalLbl:'Total',perServingSlash:'/ portion',fiberLbl:'Fibres',sauceDressing:'Sauce & Vinaigrette',closeWordShort:'Fermer',
   weekPlannedTitle:'Ta semaine est planifiée 🎉',weekPlannedSub:'Le dîner, une chose de moins à gérer.',toGroceryList:'🛒 Voir ma liste de courses →',stayOnPlan:'Rester sur cette page',
@@ -2482,7 +2486,7 @@ es:{
   opt_peanuts:'Cacahuetes',opt_treenuts:'Frutos secos',opt_shellfish:'Marisco',opt_fish:'Pescado',opt_dairy:'Lácteos',opt_eggs:'Huevos',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Setas',opt_olives:'Aceitunas',opt_coriander:'Cilantro',opt_aubergine:'Berenjena',opt_bellpepper:'Pimiento',opt_spicy:'Picante',
   rcat_all:'Todo',rcat_saved:'❤️ Favoritos',rcat_quick:'⚡ Rápido',rcat_breakfast:'🍳 Desayuno',rcat_meat:'🍗 Carne',rcat_fish:'🐟 Pescado',rcat_vegetarian:'🥦 Vegetariano',rcat_vegan:'🌱 Vegano',rcat_glutenfree:'🌾 Sin gluten',rcat_dessert:'🍰 Postre',rcat_kids:'🧒 Niños',rcat_basics:'🥄 Básicos',
-  cookbookEmpty:'Tu recetario está vacío.',cookbookEmptySub:'Toca el ♡ en cualquier receta para guardar aquí tus favoritos.',noRecipesCat:'Aún no hay recetas en esta categoría.',searchRecipes:'Buscar recetas…',noRecipesSearch:'Ninguna receta coincide.',cartAddAll:'Añadir {n} artículos a la cesta →',cartRest:'Luego busca los otros {n}:',
+  cookbookEmpty:'Tu recetario está vacío.',cookbookEmptySub:'Toca el ♡ en cualquier receta para guardar aquí tus favoritos.',noRecipesCat:'Aún no hay recetas en esta categoría.',searchRecipes:'Buscar recetas…',noRecipesSearch:'Ninguna receta coincide.',cartAddAll:'Añadir {n} artículos a la cesta →',cartRest:'Luego busca los otros {n}:',deliveryPickTitle:'¿Dónde quieres pedir?',deliveryPickSub:'Elige un supermercado — tu lista está en la pestaña Compra.',
   addWeekShort:'＋ Semana',addToMyWeek:'＋ Añadir a mi semana',saveFav:'Guardar en favoritos',
   prepLbl:'Prep.',cookLbl:'Cocción',freezeLbl:'Congelar',totalLbl:'Total',perServingSlash:'/ ración',fiberLbl:'Fibra',sauceDressing:'Salsa y aliño',closeWordShort:'Cerrar',
   weekPlannedTitle:'¡Tu semana está planificada! 🎉',weekPlannedSub:'La cena, una cosa menos en que pensar.',toGroceryList:'🛒 Ir a mi lista de la compra →',stayOnPlan:'Quedarme en esta página',
@@ -2680,7 +2684,7 @@ de:{
   opt_peanuts:'Erdnüsse',opt_treenuts:'Schalenfrüchte',opt_shellfish:'Schalentiere',opt_fish:'Fisch',opt_dairy:'Milchprodukte',opt_eggs:'Eier',opt_gluten:'Gluten',opt_soy:'Soja',
   opt_mushroom:'Pilze',opt_olives:'Oliven',opt_coriander:'Koriander',opt_aubergine:'Aubergine',opt_bellpepper:'Paprika',opt_spicy:'Scharf',
   rcat_all:'Alle',rcat_saved:'❤️ Favoriten',rcat_quick:'⚡ Schnell',rcat_breakfast:'🍳 Frühstück',rcat_meat:'🍗 Fleisch',rcat_fish:'🐟 Fisch',rcat_vegetarian:'🥦 Veggie',rcat_vegan:'🌱 Vegan',rcat_glutenfree:'🌾 Glutenfrei',rcat_dessert:'🍰 Dessert',rcat_kids:'🧒 Kinder',rcat_basics:'🥄 Basics',
-  cookbookEmpty:'Dein Kochbuch ist leer.',cookbookEmptySub:'Tippe auf das ♡ einer Rezeptseite, um Familienfavoriten hier zu speichern.',noRecipesCat:'Noch keine Rezepte in dieser Kategorie.',searchRecipes:'Rezepte suchen…',noRecipesSearch:'Keine Rezepte für deine Suche.',cartAddAll:'{n} Artikel in den Korb legen →',cartRest:'Die anderen {n} dann suchen:',
+  cookbookEmpty:'Dein Kochbuch ist leer.',cookbookEmptySub:'Tippe auf das ♡ einer Rezeptseite, um Familienfavoriten hier zu speichern.',noRecipesCat:'Noch keine Rezepte in dieser Kategorie.',searchRecipes:'Rezepte suchen…',noRecipesSearch:'Keine Rezepte für deine Suche.',cartAddAll:'{n} Artikel in den Korb legen →',cartRest:'Die anderen {n} dann suchen:',deliveryPickTitle:'Wo möchtest du bestellen?',deliveryPickSub:'Wähle einen Supermarkt — deine Liste ist im Groceries-Tab.',
   addWeekShort:'＋ Woche',addToMyWeek:'＋ Zu meiner Woche',saveFav:'Zu Favoriten',
   prepLbl:'Vorber.',cookLbl:'Kochen',freezeLbl:'Einfrieren',totalLbl:'Gesamt',perServingSlash:'/ Portion',fiberLbl:'Ballaststoffe',sauceDressing:'Soße & Dressing',closeWordShort:'Schließen',
   weekPlannedTitle:'Deine Woche ist geplant 🎉',weekPlannedSub:'Das Abendessen – eine Sorge weniger.',toGroceryList:'🛒 Zu meiner Einkaufsliste →',stayOnPlan:'Auf dieser Seite bleiben',
@@ -3929,40 +3933,35 @@ function amazonCartGo(){
 }
 function openCarrefour(){_cfDone={};renderCarrefourSheet();document.getElementById('carrefour-sheet').classList.add('open');}
 function closeCarrefour(){document.getElementById('carrefour-sheet').classList.remove('open');}
-function renderCarrefourSheet(){
-  // Provider-specific labels (Amazon UK / Carrefour) injected into the sheet.
-  const store=deliveryStore();
-  const setTxt=(sel,key)=>{const el=document.querySelector(sel);if(el)el.textContent=tf(key,{store});};
-  setTxt('#carrefour-sheet .cf-title span','cfSheetTitle');
-  setTxt('#carrefour-sheet .cf-sub','cfSheetSub');
-  setTxt('#carrefour-sheet .cf-open','openCarrefourBtn');
-  const items=groceryItemsForShop();
-  const body=document.getElementById('carrefour-items');
-  // Amazon: items we have an ASIN for go straight into the basket in one click;
-  // the rest keep the per-item search. Carrefour: everything is per-item.
-  const isAmazon=deliveryProvider()===DELIVERY_PROVIDERS.amazon;
-  const matched=isAmazon?items.filter(it=>asinForItem(it)):[];
-  const rest=isAmazon?items.filter(it=>!asinForItem(it)):items;
-  _cartUrl=matched.length?amazonCartUrl(matched):null;
-  if(!items.length){body.innerHTML=`<div style="padding:24px;text-align:center;color:var(--text3);font-size:14px">${t('listEmpty')}</div>`;}
-  else{
-    let html='';
-    if(_cartUrl){
-      html+=`<div class="cf-cart"><button class="cf-cart-btn" onclick="amazonCartGo()">🛒 ${tf('cartAddAll',{n:matched.length})}</button>${rest.length?`<div class="cf-cart-sub">${tf('cartRest',{n:rest.length})}</div>`:''}</div>`;
-    }
-    html+=rest.map(it=>{
-      const done=_cfDone[it.name];
-      return`<div class="cf-item ${done?'done':''}"><div class="cf-item-name">${it.name}${it.qty?` <span class="cf-item-qty">${it.qty}</span>`:''}</div><button class="cf-item-btn ${done?'done':''}" onclick="carrefourSearch('${it.name.replace(/'/g,"\\'")}')">${done?t('cfFound'):t('cfFind')}</button></div>`;
-    }).join('');
-    body.innerHTML=html;
-  }
-  const total=rest.length,done=rest.filter(it=>_cfDone[it.name]).length;
-  const p=document.getElementById('cf-progress');if(p)p.textContent=total?`${done}/${total} ${t('foundWord')}`:'';
+// ── Grocery-delivery store picker (per country; Spain launch) ──────────────
+// Add more countries here later; the sheet shows whatever the user's country lists.
+const DELIVERY_STORES={
+  ES:[
+    {id:'mercadona',name:'Mercadona',emoji:'🛒',sub:'Líder en España',url:'https://www.mercadona.es'},
+    {id:'carrefour',name:'Carrefour',emoji:'🛍️',sub:'Súper online',url:'https://www.carrefour.es/supermercado'},
+    {id:'veritas',name:'Veritas',emoji:'🌱',sub:'Bio & ecológico',url:'https://www.veritas.es'},
+  ],
+};
+function deliveryCountry(){return 'ES';}   // Spain first — extend per country later
+function currentDeliveryStores(){return DELIVERY_STORES[deliveryCountry()]||DELIVERY_STORES.ES;}
+function pickDeliveryStore(id){
+  const s=currentDeliveryStores().find(x=>x.id===id);if(!s)return;
+  trackDeliveryClick(id);
+  openDeliveryUrl(s.url);   // anchor+_blank (PWA-safe)
 }
-function carrefourSearch(name){
-  _cfDone[name]=true;
-  openDeliveryUrl(deliveryProvider().search(name));   // reuse ONE tab (held window ref)
-  renderCarrefourSheet();
+// Fire-and-forget: log which store users pick (needs the delivery_clicks table).
+function trackDeliveryClick(store){
+  try{ if(sb&&sb.from)sb.from('delivery_clicks').insert({store,country:deliveryCountry(),lang,user_id:(currentUser&&currentUser.id!=='guest')?currentUser.id:null}).then(()=>{},()=>{}); }catch(e){}
+}
+function renderCarrefourSheet(){
+  const setTxt=(sel,key)=>{const el=document.querySelector(sel);if(el)el.textContent=t(key);};
+  setTxt('#carrefour-sheet .cf-title span','deliveryPickTitle');
+  setTxt('#carrefour-sheet .cf-sub','deliveryPickSub');
+  const prog=document.getElementById('cf-progress');if(prog)prog.textContent='';
+  const body=document.getElementById('carrefour-items');
+  body.innerHTML=currentDeliveryStores().map(s=>
+    `<button class="deliv-store" onclick="pickDeliveryStore('${s.id}')"><span class="deliv-store-em">${s.emoji}</span><span class="deliv-store-mid"><span class="deliv-store-name">${s.name}</span>${s.sub?`<span class="deliv-store-sub">${s.sub}</span>`:''}</span><span class="deliv-store-go">↗</span></button>`
+  ).join('');
 }
 function renderDelivery(){
   // Floating pill instead of a card at the bottom — always in view, never in the way.
