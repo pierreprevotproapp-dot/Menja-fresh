@@ -4372,22 +4372,16 @@ function toggleMacroEdit(){macroEditOpen=!macroEditOpen;renderMacroGoals();}
 function renderMacroGoals(){
   const el=document.getElementById('macro-goals-section');if(!el)return;
   const g=state.macroGoals||{};
-  const hasGoal=g.kcal||g.protein;
+  // Always show the editable inputs (pre-filled once set) so the goals can be
+  // changed at any time — the calculator just pre-fills them as a shortcut.
   let html=`<h3>${t('nutritionGoals')} <span style="font-size:11px;color:var(--text3);font-weight:400">${t('perPerson')}</span></h3>`;
-  if(hasGoal){
-    html+=`<div class="macro-sum" onclick="toggleMacroEdit()">
-      <div class="macro-sum-vals"><span>🔥 ${g.kcal||'—'} ${t('kcal')}</span><span>💚 ${g.protein||'—'} g ${t('macroProtein').toLowerCase()}</span></div>
-      <span class="chev" style="transition:transform .2s;transform:rotate(${macroEditOpen?90:0}deg)">›</span></div>`;
-  }
-  if(macroEditOpen||!hasGoal){
-    html+=`<div class="macro-edit">
+  html+=`<div class="macro-edit">
       <button class="me-link calc-open-btn" onclick="openCalc()"><span>${t('calcOpen')}</span><span class="chev">›</span></button>
       <div class="macro-goal-inputs">
         <label>${t('macroCalories')}<input type="number" inputmode="numeric" value="${g.kcal||''}" placeholder="2000" oninput="setMacroGoal('kcal',this.value)"></label>
         <label>${t('macroProtein')}<input type="number" inputmode="numeric" value="${g.protein||''}" placeholder="90" oninput="setMacroGoal('protein',this.value)"></label>
       </div>
     </div>`;
-  }
   el.innerHTML=html;
 }
 function setMacroGoal(k,v){if(!state.macroGoals)state.macroGoals={kcal:0,protein:0};state.macroGoals[k]=parseInt(v)||0;save();}
