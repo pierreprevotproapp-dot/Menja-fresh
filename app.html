@@ -215,8 +215,13 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
 .nav-tab.active{color:var(--nav-a);border-top-color:var(--nav-a)}
 .badge{background:var(--accent2);color:#fff;font-size:9px;font-weight:600;padding:1px 5px;border-radius:99px}
 .screen{display:none;padding:0 0 calc(var(--navh) + 16px + env(safe-area-inset-bottom))}
-#screen-plan,#screen-bentokids{padding-bottom:0}
+#screen-plan,#screen-bentokids,#screen-family{padding-bottom:0}
 .screen.active{display:block}
+/* Profile scrolls inside a fixed-height column (like Plan) so the page body
+   never scrolls — keeps the bottom nav pinned & always visible on this tab. */
+.fam-layout{display:flex;flex-direction:column;height:calc(100vh - var(--navh));height:calc(100dvh - var(--navh) - env(safe-area-inset-bottom));overflow:hidden}
+.fam-layout>.fam-hero{flex-shrink:0;position:static}
+.fam-scroll{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding-bottom:16px}
 .user-bar{background:var(--nav);padding:10px 20px;display:flex;align-items:center;justify-content:space-between}
 .user-bar-left{display:flex;align-items:center;gap:10px}
 .user-avatar{width:32px;height:32px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:15px;border:2px solid var(--nav-a)}
@@ -1505,7 +1510,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <button class="nav-tab" onclick="showTab('recipes')" id="tab-recipes"><svg viewBox="0 0 24 24"><path d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg><span data-t="navRecipes">Cookbook</span></button>
     <button class="nav-tab" onclick="showTab('family')" id="tab-family"><svg viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg><span data-t="navMe">Profile</span></button>
   </div></nav>
-  <div class="screen" id="screen-family">
+  <div class="screen" id="screen-family"><div class="fam-layout">
     <div class="fam-hero">
       <div class="me-acct">
         <div class="user-avatar" id="me-avatar">🥗</div>
@@ -1516,6 +1521,7 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
         <button class="upgrade-btn" id="me-upgrade" onclick="openPaywall('me')" style="display:none" data-t="upgrade">⭐ Upgrade</button>
       </div>
     </div>
+    <div class="fam-scroll" id="fam-scroll">
     <div class="fam-section"><h3 data-t="whoAtTable">Who's at the table?</h3>
       <div class="fam-row"><div class="fam-row-left"><div class="fam-avatar adult">👨</div><div><div class="fam-label" data-t="adults">Adults</div><div class="fam-sublabel" data-t="fullPortions">Full portions</div></div></div><div class="fam-counter"><div class="fam-btn" onclick="adjFamily('adults',-1)">−</div><div class="fam-count" id="adults-count">2</div><div class="fam-btn" onclick="adjFamily('adults',1)">+</div></div></div>
       <div class="fam-row"><div class="fam-row-left"><div class="fam-avatar child">👧</div><div><div class="fam-label" data-t="children">Children</div><div class="fam-sublabel" data-t="threeQuarter">¾ adult portion</div></div></div><div class="fam-counter"><div class="fam-btn" onclick="adjFamily('children',-1)">−</div><div class="fam-count" id="children-count">0</div><div class="fam-btn" onclick="adjFamily('children',1)">+</div></div></div>
@@ -1542,7 +1548,8 @@ body{font-family:var(--fb);background:var(--bg);color:var(--text);max-width:480p
     <div id="delete-acct-wrap" style="text-align:center;margin:8px 20px 0"><a onclick="deleteAccount()" data-t="deleteAccount" style="font-size:12px;color:var(--text3);cursor:pointer;text-decoration:underline">Delete account</a></div>
     <div style="text-align:center;margin:12px 20px 0"><a onclick="openImpressum()" style="font-size:12px;color:var(--text3);cursor:pointer;text-decoration:underline" data-t="legalNotice">Legal notice / Impressum</a></div>
     <div style="height:20px"></div>
-  </div>
+    </div>
+  </div></div>
   <div class="screen" id="screen-discover">
     <div class="hero"><h1><svg viewBox="0 0 64 64" style="height:0.9em;width:0.9em;vertical-align:-0.12em" aria-hidden="true"><rect width="64" height="64" rx="15" fill="#2F5A39"/><circle cx="32" cy="25.4" r="4.1" fill="#E6A92E"/><circle cx="26" cy="28.2" r="5.2" fill="#D6492F"/><circle cx="38" cy="27.8" r="4.6" fill="#83B26A"/><path d="M12 32.5 Q32 56 52 32.5 Z" fill="#FFFDF7"/><ellipse cx="32" cy="32.5" rx="20" ry="3.1" fill="#FFFDF7"/></svg> Menja Fresh</h1><p data-t="discoverSub">Seasonal · Whole foods · Plant-forward</p></div>
     <div class="tag-wrap" id="tag-filters"></div>
@@ -3197,12 +3204,14 @@ function _currentTabKey(){
 function _getTabScroll(tab){
   if(tab==='plan'){const c=document.getElementById('cal-scroll');return c?c.scrollTop:0;}
   if(tab==='bentokids'){const c=document.getElementById('bento-scroll');return c?c.scrollTop:0;}
+  if(tab==='family'){const c=document.getElementById('fam-scroll');return c?c.scrollTop:0;}
   return document.getElementById('app')?.scrollTop||window.scrollY||0;
 }
 function _setTabScroll(tab,pos){
   if(!pos)return;
   if(tab==='plan'){const c=document.getElementById('cal-scroll');if(c)c.scrollTop=pos;}
   else if(tab==='bentokids'){const c=document.getElementById('bento-scroll');if(c)c.scrollTop=pos;}
+  else if(tab==='family'){const c=document.getElementById('fam-scroll');if(c)c.scrollTop=pos;}
   else{const a=document.getElementById('app');if(a)a.scrollTop=pos;else window.scrollTo(0,pos);}
 }
 function saveUiState(){
@@ -4269,6 +4278,10 @@ function showTab(tab){
   }else if(tab==='bentokids'){
     const bs=document.getElementById('bento-scroll');
     if(bs)bs.scrollTop=savedPos;
+    document.querySelector('#app').scrollTop=0;
+  }else if(tab==='family'){
+    const fs=document.getElementById('fam-scroll');
+    if(fs)fs.scrollTop=savedPos;
     document.querySelector('#app').scrollTop=0;
   }else{
     document.querySelector('#app').scrollTop=savedPos;
